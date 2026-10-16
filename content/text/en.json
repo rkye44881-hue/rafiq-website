@@ -1,0 +1,203 @@
+{
+  "hero": {
+    "eyebrow": "Private driver · Private transfers · Private tours",
+    "title": "Your day, *your way.*",
+    "subtitle": "A private car and a professional driver in Cairo, Alexandria and the North Coast, with transfers to anywhere in Egypt. You agree the price before you ride, and it stays that way.",
+    "button_1": "Book on WhatsApp",
+    "button_2": "Explore services",
+    "photo_caption": ""
+  },
+  "highlights": [
+    "Cairo · Alexandria · North Coast",
+    "Transfers to every city in Egypt",
+    "Fixed price, agreed in advance",
+    "On WhatsApp around the clock"
+  ],
+  "sections": {
+    "explore": {
+      "eyebrow": "Explore",
+      "title": "Cairo and Giza, one tap away",
+      "intro": "Pick a category and browse every place in it. Book a ride to any of them, or collect a few into one day and we'll plan the route."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Every journey, one driver you trust",
+      "intro": "From a thirty-minute ride to a multi-day trip across the country. The car is yours alone, and the schedule is yours too."
+    },
+    "cities": {
+      "eyebrow": "Where we drive",
+      "title": "Daily in three regions, and anywhere in Egypt",
+      "intro": "Cairo, Alexandria and the North Coast are home ground. Anywhere else, we'll take you door to door at a fixed price."
+    },
+    "fleet": {
+      "eyebrow": "Fleet",
+      "title": "Choose the car for your trip",
+      "intro": "Every car is clean and air-conditioned. Tell us how many people and bags, and we'll suggest the right size."
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Three steps to your driver",
+      "intro": ""
+    },
+    "promises": {
+      "eyebrow": "Our promise",
+      "title": "What you can count on, every time",
+      "intro": ""
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Before you book",
+      "intro": "Can't find your answer? Ask us on WhatsApp."
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Talk to us directly",
+      "intro": "WhatsApp is the fastest way to reach us. For companies and group bookings, email works well too."
+    }
+  },
+  "cities": [
+    {
+      "id": "cairo",
+      "name": "Cairo",
+      "description": "City rides, airport runs, the Pyramids and the Grand Egyptian Museum.",
+      "chips": [
+        "CAI",
+        "SPX",
+        "New Cairo",
+        "Zayed"
+      ]
+    },
+    {
+      "id": "alex",
+      "name": "Alexandria",
+      "description": "From the airport to the Corniche, from Qaitbay Citadel to the Library.",
+      "chips": [
+        "HBE",
+        "Montaza",
+        "Corniche"
+      ]
+    },
+    {
+      "id": "sahel",
+      "name": "North Coast",
+      "description": "Summer rides between Marina, New Alamein and Ras El Hekma, plus beach-day trips.",
+      "chips": [
+        "Marina",
+        "New Alamein",
+        "Ras El Hekma"
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "All of Egypt",
+      "description": "Direct door-to-door transfers to any city, priced before you leave.",
+      "chips": [
+        "Hurghada",
+        "Sharm",
+        "Luxor",
+        "Aswan",
+        "Siwa"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "museums",
+      "name": "Museums",
+      "description": "From the Grand Egyptian Museum to the royal palaces."
+    },
+    {
+      "id": "sites",
+      "name": "Historic sites",
+      "description": "Pharaonic, Islamic, Coptic and Jewish heritage."
+    },
+    {
+      "id": "mosques",
+      "name": "Historic mosques",
+      "description": "Cairo's great mosques, from Amr ibn al-As to Muhammad Ali."
+    },
+    {
+      "id": "malls",
+      "name": "Malls",
+      "description": "Shopping, dining and cinemas across Cairo and Giza."
+    },
+    {
+      "id": "parks",
+      "name": "Parks & outings",
+      "description": "Gardens, the Nile, and places for the whole family."
+    },
+    {
+      "id": "markets",
+      "name": "Markets & crafts",
+      "description": "The Khan, the tentmakers and handmade crafts."
+    },
+    {
+      "id": "tours",
+      "name": "Ready-made tours",
+      "description": "Full-day plans we organise from start to finish."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Message us on WhatsApp",
+      "description": "Where from, where to, when and how many. One sentence is enough."
+    },
+    {
+      "title": "Get a fixed price",
+      "description": "We reply with one clear price for the whole trip. No extras added later."
+    },
+    {
+      "title": "Meet your driver",
+      "description": "Your driver arrives early in a clean, air-conditioned car and messages you on the way."
+    }
+  ],
+  "promises": [
+    {
+      "title": "One price, agreed first",
+      "description": "What we quote is what you pay, unless you ask to change the route or the hours."
+    },
+    {
+      "title": "Punctual by habit",
+      "description": "Drivers arrive before your pick-up time and tell you straight away about any delay."
+    },
+    {
+      "title": "Clean, cool cars",
+      "description": "Every car is prepared before every trip, in summer and in winter."
+    },
+    {
+      "title": "Privacy respected",
+      "description": "The car is yours alone. Your plans stay between you and your driver."
+    },
+    {
+      "title": "Flexible on the day",
+      "description": "Want another stop or a new destination? Tell your driver and we'll adjust."
+    },
+    {
+      "title": "Drivers who know the roads",
+      "description": "Daily experience on Cairo traffic, the Alexandria desert road and the coast."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do I book?",
+      "answer": "Send your trip details on WhatsApp or use the form at the top of the page. We reply with a fixed price, and your booking is confirmed once you agree."
+    },
+    {
+      "question": "Is the price really fixed?",
+      "answer": "Yes. The price agreed before the trip is the price you pay, unless you ask to change the route or the duration."
+    },
+    {
+      "question": "Can I hire a driver for a full day?",
+      "answer": "Yes, for 8 or 12 hours, with as many stops as you like within the city."
+    },
+    {
+      "question": "Do you go beyond Cairo, Alexandria and the North Coast?",
+      "answer": "Yes, to any city in Egypt. Send us the destination and date and we'll reply with a price."
+    },
+    {
+      "question": "What if my flight is late?",
+      "answer": "Your driver tracks your flight and is waiting when you actually land."
+    }
+  ],
+  "footer": "Private driver and private tours in Egypt."
+}

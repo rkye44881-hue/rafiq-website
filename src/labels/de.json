@@ -1,0 +1,94 @@
+{
+  "nav": [
+    "Leistungen",
+    "Entdecken",
+    "Reiseziele",
+    "Fahrzeuge",
+    "Ablauf",
+    "FAQ",
+    "Kontakt"
+  ],
+  "whatsapp": "WhatsApp",
+  "menu": "Menü",
+  "book": {
+    "title": "Festpreis anfragen",
+    "svc": "Leistung",
+    "from": "Abholort",
+    "to": "Ziel",
+    "date": "Datum",
+    "time": "Uhrzeit",
+    "pax": "Personen",
+    "name": "Name",
+    "fromPh": "z. B. Flughafen Kairo",
+    "toPh": "z. B. Pyramiden von Gizeh",
+    "namePh": "Ihr Name",
+    "send": "Anfrage per WhatsApp senden",
+    "note": "Sie erhalten einen Festpreis, bevor Sie verbindlich buchen."
+  },
+  "bookTabs": [
+    [
+      "airport",
+      "Transfer"
+    ],
+    [
+      "driver",
+      "Stündlich"
+    ],
+    [
+      "tours",
+      "Tour"
+    ],
+    [
+      "intercity",
+      "Fernfahrt"
+    ]
+  ],
+  "serviceLink": "Anfragen",
+  "hours": "Std.",
+  "priceFrom": "Ab {p}",
+  "priceAsk": "Preis auf Anfrage",
+  "tourLink": "Tour anfragen",
+  "seats": "Plätze",
+  "bags": "Koffer",
+  "contact": {
+    "wa": "WhatsApp",
+    "email": "E-Mail",
+    "open": "WhatsApp öffnen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "mail": "E-Mail schreiben"
+  },
+  "wa": {
+    "booking": "Hallo {B}, ich möchte buchen: {svc}\nAbholort: {from}\nZiel: {to}\nDatum: {date} {time}\nPersonen: {pax}\nName: {name}",
+    "tour": "Hallo {B}, ich interessiere mich für die Tour: {t}",
+    "service": "Hallo {B}, ich interessiere mich für: {t}",
+    "hello": "Hallo {B}, ich habe eine Frage zu einer Buchung.",
+    "place": "Hallo {B}, ich möchte eine Fahrt nach: {p}",
+    "plan": "Hallo {B}, ich möchte einen Fahrer für den Tag, um Folgendes zu besuchen:\n{list}\nDatum: \nPersonen: "
+  },
+  "explore": {
+    "close": "Schließen",
+    "more": "Alle {n} Orte zeigen",
+    "less": "Weniger zeigen",
+    "all": "Alle",
+    "gov": {
+      "cairo": "Kairo",
+      "giza": "Gizeh"
+    },
+    "type": {
+      "pharaonic": "Pharaonisch",
+      "islamic": "Islamisch",
+      "coptic": "Koptisch",
+      "jewish": "Jüdisch"
+    },
+    "search": "Nach Ort oder Stadtteil suchen",
+    "count": "{n} Orte",
+    "take": "Dorthin fahren",
+    "add": "Zu meinem Tag",
+    "added": "In meinem Tag",
+    "empty": "Keine Treffer. Versuchen Sie ein anderes Wort.",
+    "myday": "Mein Tag",
+    "plan": "Tagesplan per WhatsApp senden",
+    "clear": "Alle entfernen"
+  }
+}

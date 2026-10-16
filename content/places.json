@@ -1,0 +1,968 @@
+{
+  "museums": [
+    {
+      "name_ar": "المتحف المصري الكبير",
+      "name_en": "Grand Egyptian Museum",
+      "area_ar": "هضبة الأهرام",
+      "area_en": "Pyramids Plateau",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "المتحف المصري بالتحرير",
+      "name_en": "Egyptian Museum, Tahrir",
+      "area_ar": "وسط البلد",
+      "area_en": "Downtown",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "المتحف القومي للحضارة المصرية",
+      "name_en": "National Museum of Egyptian Civilization",
+      "area_ar": "الفسطاط",
+      "area_en": "Fustat",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف الفن الإسلامي",
+      "name_en": "Museum of Islamic Art",
+      "area_ar": "باب الخلق",
+      "area_en": "Bab al-Khalq",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "المتحف القبطي",
+      "name_en": "Coptic Museum",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف قصر عابدين",
+      "name_en": "Abdeen Palace Museum",
+      "area_ar": "عابدين",
+      "area_en": "Abdeen",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف قصر الأمير محمد علي بالمنيل",
+      "name_en": "Manial Palace Museum",
+      "area_ar": "المنيل",
+      "area_en": "Manial",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "قصر البارون إمبان",
+      "name_en": "Baron Empain Palace",
+      "area_ar": "مصر الجديدة",
+      "area_en": "Heliopolis",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف محمد محمود خليل وحرمه",
+      "name_en": "Mohamed Mahmoud Khalil Museum",
+      "area_ar": "الدقي",
+      "area_en": "Dokki",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف الفن المصري الحديث",
+      "name_en": "Museum of Egyptian Modern Art",
+      "area_ar": "الزمالك (الأوبرا)",
+      "area_en": "Zamalek (Opera)",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف جاير أندرسون (بيت الكريتلية)",
+      "name_en": "Gayer-Anderson Museum",
+      "area_ar": "السيدة زينب",
+      "area_en": "Sayeda Zeinab",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف المركبات الملكية",
+      "name_en": "Royal Carriages Museum",
+      "area_ar": "بولاق",
+      "area_en": "Bulaq",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "المتحف الحربي القومي بالقلعة",
+      "name_en": "National Military Museum, Citadel",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف إيمحتب بسقارة",
+      "name_en": "Imhotep Museum, Saqqara",
+      "area_ar": "سقارة",
+      "area_en": "Saqqara",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف أم كلثوم",
+      "name_en": "Umm Kulthum Museum",
+      "area_ar": "الروضة",
+      "area_en": "Roda Island",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف السكة الحديد",
+      "name_en": "Egyptian Railway Museum",
+      "area_ar": "رمسيس",
+      "area_en": "Ramses",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف الخزف الإسلامي",
+      "name_en": "Museum of Islamic Ceramics",
+      "area_ar": "الزمالك",
+      "area_en": "Zamalek",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف النسيج المصري",
+      "name_en": "Egyptian Textile Museum",
+      "area_ar": "شارع المعز",
+      "area_en": "Al-Muizz Street",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف طه حسين (رامتان)",
+      "name_en": "Taha Hussein Museum",
+      "area_ar": "الهرم",
+      "area_en": "Haram",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "متحف أحمد شوقي (كرمة ابن هانئ)",
+      "name_en": "Ahmed Shawky Museum",
+      "area_ar": "الجيزة",
+      "area_en": "Giza",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    }
+  ],
+  "sites": [
+    {
+      "name_ar": "أهرامات الجيزة وأبو الهول",
+      "name_en": "Giza Pyramids & the Sphinx",
+      "area_ar": "هضبة الأهرام",
+      "area_en": "Pyramids Plateau",
+      "governorate": "giza",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "سقارة وهرم زوسر المدرج",
+      "name_en": "Saqqara & the Step Pyramid of Djoser",
+      "area_ar": "سقارة",
+      "area_en": "Saqqara",
+      "governorate": "giza",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "السيرابيوم بسقارة",
+      "name_en": "Serapeum of Saqqara",
+      "area_ar": "سقارة",
+      "area_en": "Saqqara",
+      "governorate": "giza",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "دهشور: الهرم المنحني والهرم الأحمر",
+      "name_en": "Dahshur: Bent & Red Pyramids",
+      "area_ar": "دهشور",
+      "area_en": "Dahshur",
+      "governorate": "giza",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "منف (ميت رهينة)",
+      "name_en": "Memphis (Mit Rahina)",
+      "area_ar": "البدرشين",
+      "area_en": "Badrashin",
+      "governorate": "giza",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "أهرامات أبوصير",
+      "name_en": "Abusir Pyramids",
+      "area_ar": "أبوصير",
+      "area_en": "Abusir",
+      "governorate": "giza",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "مسلة سنوسرت الأول",
+      "name_en": "Obelisk of Senusret I",
+      "area_ar": "المطرية",
+      "area_en": "Matariya",
+      "governorate": "cairo",
+      "type": "pharaonic",
+      "visible": true
+    },
+    {
+      "name_ar": "قلعة صلاح الدين",
+      "name_en": "Saladin Citadel",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "شارع المعز لدين الله",
+      "name_en": "Al-Muizz Street",
+      "area_ar": "الجمالية",
+      "area_en": "Gamaleya",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "باب زويلة",
+      "name_en": "Bab Zuweila",
+      "area_ar": "الدرب الأحمر",
+      "area_en": "Darb al-Ahmar",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "باب الفتوح وباب النصر",
+      "name_en": "Bab al-Futuh & Bab al-Nasr",
+      "area_ar": "الجمالية",
+      "area_en": "Gamaleya",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "بيت السحيمي",
+      "name_en": "Bayt al-Suhaymi",
+      "area_ar": "الدرب الأصفر",
+      "area_en": "Darb al-Asfar",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "قصر الأمير بشتاك",
+      "name_en": "Bashtak Palace",
+      "area_ar": "شارع المعز",
+      "area_en": "Al-Muizz Street",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "قصر الأمير طاز",
+      "name_en": "Amir Taz Palace",
+      "area_ar": "الخليفة",
+      "area_en": "Khalifa",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "وكالة الغوري",
+      "name_en": "Wikala of al-Ghuri",
+      "area_ar": "الغورية",
+      "area_en": "Ghouriya",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "مقياس النيل بالروضة",
+      "name_en": "Nilometer of Roda",
+      "area_ar": "الروضة",
+      "area_en": "Roda Island",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "سور مجرى العيون",
+      "name_en": "Fatimid–Mamluk Aqueduct",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "islamic",
+      "visible": true
+    },
+    {
+      "name_ar": "الكنيسة المعلقة",
+      "name_en": "The Hanging Church",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "كنيسة أبي سرجة",
+      "name_en": "Church of St. Sergius & Bacchus",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "كنيسة القديسة بربارة",
+      "name_en": "Church of St. Barbara",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "دير مارجرجس",
+      "name_en": "Convent of St. George",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "كنيسة أبي سيفين",
+      "name_en": "Church of Abu Sefein",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "حصن بابليون",
+      "name_en": "Babylon Fortress",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "شجرة مريم",
+      "name_en": "Virgin Mary's Tree",
+      "area_ar": "المطرية",
+      "area_en": "Matariya",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "كنيسة العذراء بالمعادي",
+      "name_en": "Church of the Virgin Mary, Maadi",
+      "area_ar": "المعادي",
+      "area_en": "Maadi",
+      "governorate": "cairo",
+      "type": "coptic",
+      "visible": true
+    },
+    {
+      "name_ar": "معبد بن عزرا",
+      "name_en": "Ben Ezra Synagogue",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "jewish",
+      "visible": true
+    },
+    {
+      "name_ar": "معبد شعار هشامايم",
+      "name_en": "Sha'ar Hashamayim Synagogue",
+      "area_ar": "وسط البلد",
+      "area_en": "Downtown",
+      "governorate": "cairo",
+      "type": "jewish",
+      "visible": true
+    }
+  ],
+  "mosques": [
+    {
+      "name_ar": "جامع عمرو بن العاص",
+      "name_en": "Mosque of Amr ibn al-As",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع أحمد بن طولون",
+      "name_en": "Mosque of Ibn Tulun",
+      "area_ar": "السيدة زينب",
+      "area_en": "Sayeda Zeinab",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "الجامع الأزهر",
+      "name_en": "Al-Azhar Mosque",
+      "area_ar": "الأزهر",
+      "area_en": "Al-Azhar",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد الإمام الحسين",
+      "name_en": "Al-Hussein Mosque",
+      "area_ar": "الحسين",
+      "area_en": "Al-Hussein",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد ومدرسة السلطان حسن",
+      "name_en": "Mosque-Madrasa of Sultan Hassan",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد الرفاعي",
+      "name_en": "Al-Rifa'i Mosque",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد محمد علي (المرمر)",
+      "name_en": "Mosque of Muhammad Ali (Alabaster Mosque)",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع الناصر محمد بن قلاوون",
+      "name_en": "Mosque of al-Nasir Muhammad",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد سليمان باشا الخادم",
+      "name_en": "Mosque of Sulayman Pasha",
+      "area_ar": "القلعة",
+      "area_en": "Citadel",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مجموعة السلطان قلاوون",
+      "name_en": "Qalawun Complex",
+      "area_ar": "شارع المعز",
+      "area_en": "Al-Muizz Street",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع الحاكم بأمر الله",
+      "name_en": "Mosque of al-Hakim",
+      "area_ar": "شارع المعز",
+      "area_en": "Al-Muizz Street",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع الأقمر",
+      "name_en": "Al-Aqmar Mosque",
+      "area_ar": "شارع المعز",
+      "area_en": "Al-Muizz Street",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مجموعة السلطان الغوري",
+      "name_en": "Al-Ghuri Complex",
+      "area_ar": "الغورية",
+      "area_en": "Ghouriya",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع المؤيد شيخ",
+      "name_en": "Mosque of al-Mu'ayyad",
+      "area_ar": "باب زويلة",
+      "area_en": "Bab Zuweila",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع الصالح طلائع",
+      "name_en": "Mosque of al-Salih Tala'i",
+      "area_ar": "باب زويلة",
+      "area_en": "Bab Zuweila",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "الجامع الأزرق (آق سنقر)",
+      "name_en": "Blue Mosque (Aqsunqur)",
+      "area_ar": "الدرب الأحمر",
+      "area_en": "Darb al-Ahmar",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد محمد بك أبو الدهب",
+      "name_en": "Mosque of Muhammad Bey Abu al-Dhahab",
+      "area_ar": "الأزهر",
+      "area_en": "Al-Azhar",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد السيدة زينب",
+      "name_en": "Sayeda Zeinab Mosque",
+      "area_ar": "السيدة زينب",
+      "area_en": "Sayeda Zeinab",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مسجد السيدة نفيسة",
+      "name_en": "Sayeda Nafisa Mosque",
+      "area_ar": "الخليفة",
+      "area_en": "Khalifa",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "قبة ومسجد الإمام الشافعي",
+      "name_en": "Imam al-Shafi'i Mausoleum",
+      "area_ar": "الإمام الشافعي",
+      "area_en": "Imam al-Shafi'i",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جامع الظاهر بيبرس",
+      "name_en": "Mosque of al-Zahir Baybars",
+      "area_ar": "الظاهر",
+      "area_en": "Al-Zaher",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مجموعة السلطان قايتباي",
+      "name_en": "Complex of Sultan Qaitbay",
+      "area_ar": "قرافة المماليك",
+      "area_en": "Mamluk Cemetery",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    }
+  ],
+  "malls": [
+    {
+      "name_ar": "مول مصر",
+      "name_en": "Mall of Egypt",
+      "area_ar": "6 أكتوبر",
+      "area_en": "6th of October",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مول العرب",
+      "name_en": "Mall of Arabia",
+      "area_ar": "6 أكتوبر",
+      "area_en": "6th of October",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "سيتي ستارز",
+      "name_en": "City Stars",
+      "area_ar": "مدينة نصر",
+      "area_en": "Nasr City",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "كايرو فستيفال سيتي",
+      "name_en": "Cairo Festival City",
+      "area_ar": "القاهرة الجديدة",
+      "area_en": "New Cairo",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "سيتي سنتر ألماظة",
+      "name_en": "City Centre Almaza",
+      "area_ar": "مصر الجديدة",
+      "area_en": "Heliopolis",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "أركان بلازا",
+      "name_en": "Arkan Plaza",
+      "area_ar": "الشيخ زايد",
+      "area_en": "Sheikh Zayed",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "بوينت 90 مول",
+      "name_en": "Point 90 Mall",
+      "area_ar": "التجمع الخامس",
+      "area_en": "Fifth Settlement",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "داون تاون مول",
+      "name_en": "Downtown Mall Katameya",
+      "area_ar": "القطامية",
+      "area_en": "Katameya",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "ذا ووتر واي",
+      "name_en": "The Waterway",
+      "area_ar": "التجمع الخامس",
+      "area_en": "Fifth Settlement",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "أمريكانا بلازا",
+      "name_en": "Americana Plaza",
+      "area_ar": "الشيخ زايد",
+      "area_en": "Sheikh Zayed",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جاليريا 40",
+      "name_en": "Galleria40",
+      "area_ar": "الشيخ زايد",
+      "area_en": "Sheikh Zayed",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "داندي ميجا مول",
+      "name_en": "Dandy Mega Mall",
+      "area_ar": "طريق مصر الإسكندرية الصحراوي",
+      "area_en": "Cairo–Alex Desert Road",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "فيرست مول",
+      "name_en": "First Mall",
+      "area_ar": "الجيزة",
+      "area_en": "Giza",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "جنينة مول",
+      "name_en": "Genena Mall",
+      "area_ar": "مدينة نصر",
+      "area_en": "Nasr City",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "تيفولي دوم",
+      "name_en": "Tivoli Dome",
+      "area_ar": "مصر الجديدة",
+      "area_en": "Heliopolis",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "صن سيتي مول",
+      "name_en": "Sun City Mall",
+      "area_ar": "مصر الجديدة",
+      "area_en": "Heliopolis",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "أوبن إير مول مدينتي",
+      "name_en": "Open Air Mall Madinaty",
+      "area_ar": "مدينتي",
+      "area_en": "Madinaty",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    }
+  ],
+  "parks": [
+    {
+      "name_ar": "حديقة الأزهر",
+      "name_en": "Al-Azhar Park",
+      "area_ar": "الدراسة",
+      "area_en": "Darrasa",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "حديقة الأورمان",
+      "name_en": "Orman Botanical Garden",
+      "area_ar": "الجيزة",
+      "area_en": "Giza",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "الحديقة اليابانية",
+      "name_en": "Japanese Garden",
+      "area_ar": "حلوان",
+      "area_en": "Helwan",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "حديقة الأسماك",
+      "name_en": "Fish Garden",
+      "area_ar": "الزمالك",
+      "area_en": "Zamalek",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "حديقة الميريلاند",
+      "name_en": "Merryland Park",
+      "area_ar": "مصر الجديدة",
+      "area_en": "Heliopolis",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "الحديقة الدولية",
+      "name_en": "International Garden",
+      "area_ar": "مدينة نصر",
+      "area_en": "Nasr City",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "فاميلي بارك",
+      "name_en": "Family Park",
+      "area_ar": "الرحاب",
+      "area_en": "Rehab",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "دريم بارك",
+      "name_en": "Dream Park",
+      "area_ar": "6 أكتوبر",
+      "area_en": "6th of October",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "برج القاهرة",
+      "name_en": "Cairo Tower",
+      "area_ar": "الزمالك",
+      "area_en": "Zamalek",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "دار الأوبرا المصرية",
+      "name_en": "Cairo Opera House",
+      "area_ar": "الزمالك",
+      "area_en": "Zamalek",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "ممشى أهل مصر",
+      "name_en": "Ahl Masr Nile Walkway",
+      "area_ar": "كورنيش النيل",
+      "area_en": "Nile Corniche",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "رحلة فلوكة في النيل",
+      "name_en": "Felucca ride on the Nile",
+      "area_ar": "جاردن سيتي / المعادي",
+      "area_en": "Garden City / Maadi",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "عشاء في مركب على النيل",
+      "name_en": "Dinner cruise on the Nile",
+      "area_ar": "كورنيش النيل",
+      "area_en": "Nile Corniche",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "القاهرة الخديوية",
+      "name_en": "Khedivial Downtown Cairo",
+      "area_ar": "وسط البلد",
+      "area_en": "Downtown",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "محمية وادي دجلة",
+      "name_en": "Wadi Degla Protected Area",
+      "area_ar": "المعادي",
+      "area_en": "Maadi",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    }
+  ],
+  "markets": [
+    {
+      "name_ar": "خان الخليلي",
+      "name_en": "Khan el-Khalili",
+      "area_ar": "الحسين",
+      "area_en": "Al-Hussein",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "شارع الخيامية",
+      "name_en": "Street of the Tentmakers",
+      "area_ar": "الدرب الأحمر",
+      "area_en": "Darb al-Ahmar",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "سوق الفسطاط",
+      "name_en": "Souq El Fustat",
+      "area_ar": "مصر القديمة",
+      "area_en": "Old Cairo",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "وكالة البلح",
+      "name_en": "Wekalet El Balah",
+      "area_ar": "بولاق",
+      "area_en": "Bulaq",
+      "governorate": "cairo",
+      "type": "",
+      "visible": true
+    },
+    {
+      "name_ar": "مركز رمسيس ويصا واصف للفنون",
+      "name_en": "Wissa Wassef Art Centre",
+      "area_ar": "الحرانية",
+      "area_en": "Harraniya",
+      "governorate": "giza",
+      "type": "",
+      "visible": true
+    }
+  ]
+}

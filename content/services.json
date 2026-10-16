@@ -1,0 +1,161 @@
+{
+  "services": [
+    {
+      "id": "yourday",
+      "visible": true,
+      "title_ar": "يومك على طريقتك",
+      "desc_ar": "قل لنا ماذا تريد أن تفعل اليوم، ونرتب لك كل شيء: الطريق، أوقات الوقوف، أماكن الأكل والقهوة. يوم مرسوم لك أنت، ويتغير معك لو غيرت رأيك.",
+      "points_ar": [
+        "خطة يوم كاملة",
+        "تعديل في أي وقت",
+        "سائق طوال اليوم"
+      ],
+      "title_en": "Your day, your way",
+      "desc_en": "Tell us what you'd like to see and how you like to travel. We plan the route, the stops and the timing around you, and change it on the day if you change your mind.",
+      "points_en": [
+        "Planned around you",
+        "Change plans on the go",
+        "One driver all day"
+      ],
+      "title_fr": "Votre journée, à votre rythme",
+      "desc_fr": "Dites-nous ce qui vous fait envie. Nous composons l'itinéraire, les pauses et les horaires autour de vous, et nous l'adaptons en route si vous changez d'avis.",
+      "points_fr": [
+        "Itinéraire sur mesure",
+        "Modifiable en route",
+        "Un chauffeur toute la journée"
+      ],
+      "title_de": "Ihr Tag, Ihr Plan",
+      "desc_de": "Sie nennen uns Ihre Wünsche, wir planen Route, Pausen und Zeiten. Ändert sich unterwegs etwas, passen wir den Plan sofort an.",
+      "points_de": [
+        "Individuell geplant",
+        "Unterwegs änderbar",
+        "Ein Fahrer für den ganzen Tag"
+      ]
+    },
+    {
+      "id": "driver",
+      "visible": true,
+      "title_ar": "سائق خاص بالساعة أو باليوم",
+      "desc_ar": "سيارة وسائق تحت تصرفك لمشاوير العمل والتسوق والزيارات العائلية.",
+      "points_ar": [
+        "٨ أو ١٢ ساعة",
+        "انتظار بدون عدّاد",
+        "خصوصية تامة"
+      ],
+      "title_en": "Private driver by the hour or day",
+      "desc_en": "A car and driver kept for you alone. Meetings, shopping, a dozen stops or one long lunch. Waiting time is included, so there's no meter running.",
+      "points_en": [
+        "8 or 12 hour days",
+        "Waiting time included",
+        "Discreet and punctual"
+      ],
+      "title_fr": "Chauffeur privé à l'heure ou à la journée",
+      "desc_fr": "Une voiture et un chauffeur à votre disposition, le temps qu'il vous faut. Rendez-vous, boutiques, visites : vous tracez l'itinéraire, le chauffeur vous attend.",
+      "points_fr": [
+        "Journées de 8 ou 12 h",
+        "Attente comprise",
+        "Discrétion assurée"
+      ],
+      "title_de": "Privatfahrer stunden- oder tageweise",
+      "desc_de": "Fahrzeug und Fahrer stehen nur Ihnen zur Verfügung. Termine, Einkäufe, mehrere Stopps: Sie bestimmen die Route, Wartezeit ist inklusive.",
+      "points_de": [
+        "8 oder 12 Stunden",
+        "Wartezeit inklusive",
+        "Diskret und pünktlich"
+      ]
+    },
+    {
+      "id": "airport",
+      "visible": true,
+      "title_ar": "استقبال وتوصيل المطارات",
+      "desc_ar": "مطار القاهرة وسفنكس وبرج العرب والعلمين. السائق يتابع موعد رحلتك وينتظرك بلافتة باسمك.",
+      "points_ar": [
+        "متابعة الطيران",
+        "مساعدة في الحقائب"
+      ],
+      "title_en": "Airport transfers",
+      "desc_en": "Cairo (CAI), Sphinx (SPX), Borg El Arab (HBE) and El Alamein (DBB). Your driver tracks your flight and meets you in arrivals with your name on a sign.",
+      "points_en": [
+        "Flight tracking",
+        "Help with luggage",
+        "Any address, any hour"
+      ],
+      "title_fr": "Transferts aéroport",
+      "desc_fr": "Le Caire (CAI), Sphinx (SPX), Borg El Arab (HBE) et El Alamein (DBB). Votre chauffeur suit votre vol et vous accueille à l'arrivée, une pancarte à votre nom.",
+      "points_fr": [
+        "Suivi des vols",
+        "Aide pour les bagages",
+        "À toute heure"
+      ],
+      "title_de": "Flughafentransfers",
+      "desc_de": "Kairo (CAI), Sphinx (SPX), Borg El Arab (HBE) und El Alamein (DBB). Ihr Fahrer verfolgt Ihren Flug und erwartet Sie mit Namensschild in der Ankunftshalle.",
+      "points_de": [
+        "Flugverfolgung",
+        "Hilfe mit dem Gepäck",
+        "Zu jeder Uhrzeit"
+      ]
+    },
+    {
+      "id": "tours",
+      "visible": true,
+      "title_ar": "جولات سياحية خاصة",
+      "desc_ar": "الأهرامات والمتحف المصري الكبير والقاهرة القديمة والإسكندرية والعلمين، بدون مجموعات وبدون استعجال.",
+      "points_ar": [
+        "مرشد مرخّص عند الطلب",
+        "مواعيد مرنة"
+      ],
+      "title_en": "Private sightseeing tours",
+      "desc_en": "The Pyramids, the Grand Egyptian Museum, Old Cairo, Alexandria and El Alamein, just for your group. No tour bus, no fixed timetable.",
+      "points_en": [
+        "Licensed guide on request",
+        "Start when you like",
+        "Entry tickets arranged with you"
+      ],
+      "title_fr": "Excursions privées",
+      "desc_fr": "Les pyramides, le Grand Musée égyptien, le Caire historique, Alexandrie ou El Alamein, entre vous seulement. Pas de car, pas d'horaire imposé.",
+      "points_fr": [
+        "Guide francophone sur demande",
+        "Départ à l'heure de votre choix",
+        "Billets organisés avec vous"
+      ],
+      "title_de": "Private Besichtigungstouren",
+      "desc_de": "Pyramiden, Großes Ägyptisches Museum, Altkairo, Alexandria oder El Alamein, nur mit Ihrer Begleitung. Kein Reisebus, kein starres Programm.",
+      "points_de": [
+        "Deutschsprachiger Guide auf Anfrage",
+        "Freie Startzeit",
+        "Tickets in Absprache"
+      ]
+    },
+    {
+      "id": "intercity",
+      "visible": true,
+      "title_ar": "سفر بين المدن",
+      "desc_ar": "من القاهرة أو الإسكندرية إلى الغردقة والجونة وشرم الشيخ والعين السخنة والأقصر وأسوان ومرسى مطروح وسيوة.",
+      "points_ar": [
+        "سعر ثابت للسيارة",
+        "توقف للراحة"
+      ],
+      "title_en": "City-to-city transfers",
+      "desc_en": "Door to door from Cairo or Alexandria to Hurghada, El Gouna, Sharm El Sheikh, Ain Sokhna, Luxor, Aswan, Marsa Matrouh or Siwa.",
+      "points_en": [
+        "One price per car",
+        "Rest stops on request",
+        "Long-distance drivers"
+      ],
+      "title_fr": "Transferts entre villes",
+      "desc_fr": "Du Caire ou d'Alexandrie vers Hurghada, El Gouna, Charm el-Cheikh, Aïn Soukhna, Louxor, Assouan, Marsa Matrouh ou Siwa.",
+      "points_fr": [
+        "Un prix pour la voiture",
+        "Pauses à la demande",
+        "Chauffeurs grandes distances"
+      ],
+      "title_de": "Fahrten zwischen Städten",
+      "desc_de": "Von Kairo oder Alexandria nach Hurghada, El Gouna, Scharm El-Scheich, Ain Sokhna, Luxor, Assuan, Marsa Matruh oder Siwa.",
+      "points_de": [
+        "Festpreis pro Fahrzeug",
+        "Pausen nach Wunsch",
+        "Erfahrene Langstreckenfahrer"
+      ]
+    }
+  ]
+}

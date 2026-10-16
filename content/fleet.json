@@ -1,0 +1,60 @@
+{
+  "cars": [
+    {
+      "id": "sedan",
+      "seats": 3,
+      "bags": 2,
+      "image": "",
+      "name_ar": "سيدان",
+      "desc_ar": "للمشاوير اليومية والمطار.",
+      "name_en": "Sedan",
+      "desc_en": "City rides and airport transfers.",
+      "name_fr": "Berline",
+      "desc_fr": "Trajets en ville et aéroport.",
+      "name_de": "Limousine",
+      "desc_de": "Stadtfahrten und Flughafentransfers."
+    },
+    {
+      "id": "suv",
+      "seats": 4,
+      "bags": 4,
+      "image": "",
+      "name_ar": "SUV",
+      "desc_ar": "راحة أكبر للطرق الطويلة والساحل.",
+      "name_en": "SUV",
+      "desc_en": "Extra comfort for long roads and the coast.",
+      "name_fr": "SUV",
+      "desc_fr": "Plus de confort sur les longues routes.",
+      "name_de": "SUV",
+      "desc_de": "Mehr Komfort auf langen Strecken."
+    },
+    {
+      "id": "minivan",
+      "seats": 7,
+      "bags": 6,
+      "image": "",
+      "name_ar": "ميني فان",
+      "desc_ar": "للعائلات والمجموعات الصغيرة.",
+      "name_en": "Minivan",
+      "desc_en": "Families and small groups.",
+      "name_fr": "Monospace",
+      "desc_fr": "Familles et petits groupes.",
+      "name_de": "Minivan",
+      "desc_de": "Familien und kleine Gruppen."
+    },
+    {
+      "id": "van",
+      "seats": 14,
+      "bags": 12,
+      "image": "",
+      "name_ar": "فان",
+      "desc_ar": "للمجموعات والرحلات بين المدن.",
+      "name_en": "Van",
+      "desc_en": "Groups and city-to-city trips.",
+      "name_fr": "Minibus",
+      "desc_fr": "Groupes et trajets entre villes.",
+      "name_de": "Kleinbus",
+      "desc_de": "Gruppen und Fahrten zwischen Städten."
+    }
+  ]
+}

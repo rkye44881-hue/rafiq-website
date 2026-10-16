@@ -1,0 +1,203 @@
+{
+  "hero": {
+    "eyebrow": "Privatfahrer · Transfers · Private Touren in Ägypten",
+    "title": "Ihr Tag. *Ihr Plan.*",
+    "subtitle": "Privatfahrer und eigenes Fahrzeug in Kairo, Alexandria und an der Nordküste, dazu Transfers in jede Stadt Ägyptens. Der Preis steht fest, bevor Sie einsteigen.",
+    "button_1": "Per WhatsApp buchen",
+    "button_2": "Leistungen ansehen",
+    "photo_caption": ""
+  },
+  "highlights": [
+    "Kairo · Alexandria · Nordküste",
+    "Transfers in ganz Ägypten",
+    "Festpreis, vorab vereinbart",
+    "Rund um die Uhr per WhatsApp"
+  ],
+  "sections": {
+    "explore": {
+      "eyebrow": "Entdecken",
+      "title": "Kairo und Gizeh auf einen Blick",
+      "intro": "Wählen Sie eine Kategorie und sehen Sie alle Orte darin. Buchen Sie eine Fahrt zu einem Ort, oder stellen Sie mehrere zu einem Tag zusammen: Wir planen die Route."
+    },
+    "services": {
+      "eyebrow": "Leistungen",
+      "title": "Ein Fahrer, auf den Sie sich verlassen können",
+      "intro": "Von der kurzen Stadtfahrt bis zur mehrtägigen Reise durchs Land. Das Fahrzeug gehört Ihnen, der Zeitplan auch."
+    },
+    "cities": {
+      "eyebrow": "Reiseziele",
+      "title": "Täglich in drei Regionen, und überall in Ägypten",
+      "intro": "In Kairo, Alexandria und an der Nordküste sind wir jeden Tag unterwegs. Alle anderen Ziele fahren wir von Tür zu Tür, zum Festpreis."
+    },
+    "fleet": {
+      "eyebrow": "Fahrzeuge",
+      "title": "Das passende Fahrzeug für Ihre Fahrt",
+      "intro": "Alle Fahrzeuge sind sauber und klimatisiert. Nennen Sie uns Personen- und Gepäckzahl, wir empfehlen die passende Größe."
+    },
+    "steps": {
+      "eyebrow": "Ablauf",
+      "title": "In drei Schritten zu Ihrem Fahrer",
+      "intro": ""
+    },
+    "promises": {
+      "eyebrow": "Unser Versprechen",
+      "title": "Darauf können Sie sich verlassen",
+      "intro": ""
+    },
+    "faq": {
+      "eyebrow": "Häufige Fragen",
+      "title": "Bevor Sie buchen",
+      "intro": "Ihre Frage ist nicht dabei? Schreiben Sie uns per WhatsApp."
+    },
+    "contact": {
+      "eyebrow": "Kontakt",
+      "title": "Sprechen Sie uns direkt an",
+      "intro": "Am schnellsten erreichen Sie uns per WhatsApp. Für Firmen- und Gruppenbuchungen gern auch per E-Mail."
+    }
+  },
+  "cities": [
+    {
+      "id": "cairo",
+      "name": "Kairo",
+      "description": "Stadtfahrten, Flughafen, Pyramiden und das Große Ägyptische Museum.",
+      "chips": [
+        "CAI",
+        "SPX",
+        "New Cairo",
+        "Zayed"
+      ]
+    },
+    {
+      "id": "alex",
+      "name": "Alexandria",
+      "description": "Vom Flughafen zur Corniche, von der Zitadelle Qaitbay zur Bibliothek.",
+      "chips": [
+        "HBE",
+        "Montaza",
+        "Corniche"
+      ]
+    },
+    {
+      "id": "sahel",
+      "name": "Nordküste",
+      "description": "Sommerfahrten zwischen Marina, New Alamein und Ras El Hekma, dazu Strandtage.",
+      "chips": [
+        "Marina",
+        "New Alamein",
+        "Ras El Hekma"
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Ganz Ägypten",
+      "description": "Direkte Transfers von Tür zu Tür, Preis vor Abfahrt vereinbart.",
+      "chips": [
+        "Hurghada",
+        "Scharm",
+        "Luxor",
+        "Assuan",
+        "Siwa"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "museums",
+      "name": "Museen",
+      "description": "Vom Großen Ägyptischen Museum bis zu den Königspalästen."
+    },
+    {
+      "id": "sites",
+      "name": "Historische Stätten",
+      "description": "Pharaonisches, islamisches, koptisches und jüdisches Erbe."
+    },
+    {
+      "id": "mosques",
+      "name": "Historische Moscheen",
+      "description": "Kairos große Moscheen, von Amr ibn al-As bis Muhammad Ali."
+    },
+    {
+      "id": "malls",
+      "name": "Einkaufszentren",
+      "description": "Shopping, Restaurants und Kinos in Kairo und Gizeh."
+    },
+    {
+      "id": "parks",
+      "name": "Parks und Ausflüge",
+      "description": "Gärten, der Nil und Ziele für die ganze Familie."
+    },
+    {
+      "id": "markets",
+      "name": "Märkte und Handwerk",
+      "description": "Der Khan, die Zeltmacher und Handwerkskunst."
+    },
+    {
+      "id": "tours",
+      "name": "Fertige Touren",
+      "description": "Ganztagesprogramme, von uns komplett organisiert."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Per WhatsApp schreiben",
+      "description": "Wo, wohin, wann und wie viele Personen. Ein Satz genügt."
+    },
+    {
+      "title": "Festpreis erhalten",
+      "description": "Ein klarer Preis für die gesamte Fahrt, ohne nachträgliche Zuschläge."
+    },
+    {
+      "title": "Ihr Fahrer wartet",
+      "description": "Pünktlich vor Ort im sauberen, klimatisierten Fahrzeug, mit Nachricht kurz vor Ankunft."
+    }
+  ],
+  "promises": [
+    {
+      "title": "Festpreis vor Fahrtantritt",
+      "description": "Der vereinbarte Preis gilt, solange Sie Route und Dauer nicht ändern."
+    },
+    {
+      "title": "Pünktlichkeit",
+      "description": "Ihr Fahrer ist vor der vereinbarten Zeit da und meldet jede Verzögerung sofort."
+    },
+    {
+      "title": "Gepflegte Fahrzeuge",
+      "description": "Jedes Fahrzeug wird vor jeder Fahrt vorbereitet, sauber und klimatisiert."
+    },
+    {
+      "title": "Diskretion",
+      "description": "Das Fahrzeug gehört Ihnen allein. Ihre Pläne bleiben zwischen Ihnen und Ihrem Fahrer."
+    },
+    {
+      "title": "Flexibel am selben Tag",
+      "description": "Noch ein Halt oder ein anderes Ziel? Sagen Sie es Ihrem Fahrer, wir passen an."
+    },
+    {
+      "title": "Fahrer mit Ortskenntnis",
+      "description": "Täglich unterwegs im Kairoer Verkehr, auf der Wüstenstraße nach Alexandria und an der Küste."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Wie buche ich?",
+      "answer": "Schicken Sie uns die Fahrtdetails per WhatsApp oder nutzen Sie das Formular oben auf der Seite. Sie erhalten einen Festpreis; nach Ihrer Zusage ist die Buchung bestätigt."
+    },
+    {
+      "question": "Ist der Preis wirklich fest?",
+      "answer": "Ja. Es gilt der vor der Fahrt vereinbarte Preis, solange Sie Route oder Dauer nicht ändern."
+    },
+    {
+      "question": "Kann ich einen Fahrer für den ganzen Tag buchen?",
+      "answer": "Ja, für 8 oder 12 Stunden, mit beliebig vielen Stopps innerhalb der Stadt."
+    },
+    {
+      "question": "Fahren Sie auch außerhalb von Kairo, Alexandria und der Nordküste?",
+      "answer": "Ja, in jede Stadt Ägyptens. Nennen Sie uns Ziel und Datum, wir schicken Ihnen den Preis."
+    },
+    {
+      "question": "Was passiert, wenn mein Flug Verspätung hat?",
+      "answer": "Ihr Fahrer verfolgt den Flug und wartet zur tatsächlichen Ankunftszeit auf Sie."
+    }
+  ],
+  "footer": "Privatfahrer und private Touren in Ägypten."
+}

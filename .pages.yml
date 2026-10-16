@@ -1,0 +1,2248 @@
+# Pages CMS dashboard config (https://pagescms.org). JSON is valid YAML.
+{
+  "media": {
+    "input": "media",
+    "output": "/media"
+  },
+  "content": [
+    {
+      "name": "settings",
+      "label": "⚙️ الإعدادات العامة",
+      "type": "file",
+      "path": "content/settings.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "brand_ar",
+          "label": "اسم العلامة بالعربي",
+          "type": "string"
+        },
+        {
+          "name": "brand_latin",
+          "label": "اسم العلامة بالإنجليزي",
+          "type": "string"
+        },
+        {
+          "name": "whatsapp",
+          "label": "رقم واتساب (بكود الدولة بدون +، مثال: 201201573544)",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "label": "البريد الإلكتروني",
+          "type": "string"
+        },
+        {
+          "name": "site_url",
+          "label": "رابط الموقع (مثال: https://rafiqegypt.com)",
+          "type": "string"
+        },
+        {
+          "name": "hero_image",
+          "label": "صورة الواجهة الرئيسية",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "name": "places",
+      "label": "📍 أماكن استكشف (القاهرة والجيزة)",
+      "type": "file",
+      "path": "content/places.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "museums",
+          "label": "المتاحف",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي (يظهر في الإنجليزي والفرنساوي والألماني)",
+              "type": "string"
+            },
+            {
+              "name": "area_ar",
+              "label": "المنطقة بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "area_en",
+              "label": "المنطقة بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "governorate",
+              "label": "المحافظة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "giza",
+                    "label": "الجيزة"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "type",
+              "label": "النوع (للأماكن الأثرية فقط)",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "",
+                    "label": "—"
+                  },
+                  {
+                    "value": "pharaonic",
+                    "label": "فرعوني"
+                  },
+                  {
+                    "value": "islamic",
+                    "label": "إسلامي"
+                  },
+                  {
+                    "value": "coptic",
+                    "label": "قبطي"
+                  },
+                  {
+                    "value": "jewish",
+                    "label": "يهودي"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهر في الموقع",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        },
+        {
+          "name": "sites",
+          "label": "الأماكن الأثرية",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي (يظهر في الإنجليزي والفرنساوي والألماني)",
+              "type": "string"
+            },
+            {
+              "name": "area_ar",
+              "label": "المنطقة بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "area_en",
+              "label": "المنطقة بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "governorate",
+              "label": "المحافظة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "giza",
+                    "label": "الجيزة"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "type",
+              "label": "النوع (للأماكن الأثرية فقط)",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "",
+                    "label": "—"
+                  },
+                  {
+                    "value": "pharaonic",
+                    "label": "فرعوني"
+                  },
+                  {
+                    "value": "islamic",
+                    "label": "إسلامي"
+                  },
+                  {
+                    "value": "coptic",
+                    "label": "قبطي"
+                  },
+                  {
+                    "value": "jewish",
+                    "label": "يهودي"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهر في الموقع",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        },
+        {
+          "name": "mosques",
+          "label": "المساجد الأثرية",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي (يظهر في الإنجليزي والفرنساوي والألماني)",
+              "type": "string"
+            },
+            {
+              "name": "area_ar",
+              "label": "المنطقة بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "area_en",
+              "label": "المنطقة بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "governorate",
+              "label": "المحافظة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "giza",
+                    "label": "الجيزة"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "type",
+              "label": "النوع (للأماكن الأثرية فقط)",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "",
+                    "label": "—"
+                  },
+                  {
+                    "value": "pharaonic",
+                    "label": "فرعوني"
+                  },
+                  {
+                    "value": "islamic",
+                    "label": "إسلامي"
+                  },
+                  {
+                    "value": "coptic",
+                    "label": "قبطي"
+                  },
+                  {
+                    "value": "jewish",
+                    "label": "يهودي"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهر في الموقع",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        },
+        {
+          "name": "malls",
+          "label": "المولات",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي (يظهر في الإنجليزي والفرنساوي والألماني)",
+              "type": "string"
+            },
+            {
+              "name": "area_ar",
+              "label": "المنطقة بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "area_en",
+              "label": "المنطقة بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "governorate",
+              "label": "المحافظة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "giza",
+                    "label": "الجيزة"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "type",
+              "label": "النوع (للأماكن الأثرية فقط)",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "",
+                    "label": "—"
+                  },
+                  {
+                    "value": "pharaonic",
+                    "label": "فرعوني"
+                  },
+                  {
+                    "value": "islamic",
+                    "label": "إسلامي"
+                  },
+                  {
+                    "value": "coptic",
+                    "label": "قبطي"
+                  },
+                  {
+                    "value": "jewish",
+                    "label": "يهودي"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهر في الموقع",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        },
+        {
+          "name": "parks",
+          "label": "أماكن التنزه",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي (يظهر في الإنجليزي والفرنساوي والألماني)",
+              "type": "string"
+            },
+            {
+              "name": "area_ar",
+              "label": "المنطقة بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "area_en",
+              "label": "المنطقة بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "governorate",
+              "label": "المحافظة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "giza",
+                    "label": "الجيزة"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "type",
+              "label": "النوع (للأماكن الأثرية فقط)",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "",
+                    "label": "—"
+                  },
+                  {
+                    "value": "pharaonic",
+                    "label": "فرعوني"
+                  },
+                  {
+                    "value": "islamic",
+                    "label": "إسلامي"
+                  },
+                  {
+                    "value": "coptic",
+                    "label": "قبطي"
+                  },
+                  {
+                    "value": "jewish",
+                    "label": "يهودي"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهر في الموقع",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        },
+        {
+          "name": "markets",
+          "label": "أسواق وحرف",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي (يظهر في الإنجليزي والفرنساوي والألماني)",
+              "type": "string"
+            },
+            {
+              "name": "area_ar",
+              "label": "المنطقة بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "area_en",
+              "label": "المنطقة بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "governorate",
+              "label": "المحافظة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "giza",
+                    "label": "الجيزة"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "type",
+              "label": "النوع (للأماكن الأثرية فقط)",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "",
+                    "label": "—"
+                  },
+                  {
+                    "value": "pharaonic",
+                    "label": "فرعوني"
+                  },
+                  {
+                    "value": "islamic",
+                    "label": "إسلامي"
+                  },
+                  {
+                    "value": "coptic",
+                    "label": "قبطي"
+                  },
+                  {
+                    "value": "jewish",
+                    "label": "يهودي"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهر في الموقع",
+              "type": "boolean",
+              "default": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tours",
+      "label": "🧭 الجولات الجاهزة والأسعار",
+      "type": "file",
+      "path": "content/tours.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "tours",
+          "label": "الجولات",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "كود الجولة (إنجليزي بدون مسافات)",
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "label": "المدينة",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "cairo",
+                    "label": "القاهرة"
+                  },
+                  {
+                    "value": "alex",
+                    "label": "الإسكندرية"
+                  },
+                  {
+                    "value": "sahel",
+                    "label": "الساحل الشمالي"
+                  },
+                  {
+                    "value": "egypt",
+                    "label": "باقي مصر"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "hours",
+              "label": "المدة بالساعات",
+              "type": "number"
+            },
+            {
+              "name": "price",
+              "label": "السعر يبدأ من (اتركه فارغًا = السعر عند الطلب)",
+              "type": "string"
+            },
+            {
+              "name": "image",
+              "label": "صورة (اختياري)",
+              "type": "image"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهرة في الموقع",
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "title_ar",
+              "label": "الاسم — العربي",
+              "type": "string"
+            },
+            {
+              "name": "desc_ar",
+              "label": "الوصف — العربي",
+              "type": "text"
+            },
+            {
+              "name": "title_en",
+              "label": "الاسم — English",
+              "type": "string"
+            },
+            {
+              "name": "desc_en",
+              "label": "الوصف — English",
+              "type": "text"
+            },
+            {
+              "name": "title_fr",
+              "label": "الاسم — Français",
+              "type": "string"
+            },
+            {
+              "name": "desc_fr",
+              "label": "الوصف — Français",
+              "type": "text"
+            },
+            {
+              "name": "title_de",
+              "label": "الاسم — Deutsch",
+              "type": "string"
+            },
+            {
+              "name": "desc_de",
+              "label": "الوصف — Deutsch",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "label": "🚘 الخدمات",
+      "type": "file",
+      "path": "content/services.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "services",
+          "label": "الخدمات",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "visible",
+              "label": "ظاهرة",
+              "type": "boolean",
+              "default": true
+            },
+            {
+              "name": "title_ar",
+              "label": "الاسم — العربي",
+              "type": "string"
+            },
+            {
+              "name": "desc_ar",
+              "label": "الوصف — العربي",
+              "type": "text"
+            },
+            {
+              "name": "points_ar",
+              "label": "نقاط مميزة — العربي",
+              "type": "string",
+              "list": true
+            },
+            {
+              "name": "title_en",
+              "label": "الاسم — English",
+              "type": "string"
+            },
+            {
+              "name": "desc_en",
+              "label": "الوصف — English",
+              "type": "text"
+            },
+            {
+              "name": "points_en",
+              "label": "نقاط مميزة — English",
+              "type": "string",
+              "list": true
+            },
+            {
+              "name": "title_fr",
+              "label": "الاسم — Français",
+              "type": "string"
+            },
+            {
+              "name": "desc_fr",
+              "label": "الوصف — Français",
+              "type": "text"
+            },
+            {
+              "name": "points_fr",
+              "label": "نقاط مميزة — Français",
+              "type": "string",
+              "list": true
+            },
+            {
+              "name": "title_de",
+              "label": "الاسم — Deutsch",
+              "type": "string"
+            },
+            {
+              "name": "desc_de",
+              "label": "الوصف — Deutsch",
+              "type": "text"
+            },
+            {
+              "name": "points_de",
+              "label": "نقاط مميزة — Deutsch",
+              "type": "string",
+              "list": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fleet",
+      "label": "🚐 السيارات",
+      "type": "file",
+      "path": "content/fleet.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "cars",
+          "label": "السيارات",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الشكل",
+              "type": "select",
+              "options": {
+                "values": [
+                  {
+                    "value": "sedan",
+                    "label": "سيدان"
+                  },
+                  {
+                    "value": "suv",
+                    "label": "SUV"
+                  },
+                  {
+                    "value": "minivan",
+                    "label": "ميني فان"
+                  },
+                  {
+                    "value": "van",
+                    "label": "فان"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "seats",
+              "label": "عدد الركاب",
+              "type": "number"
+            },
+            {
+              "name": "bags",
+              "label": "عدد الحقائب",
+              "type": "number"
+            },
+            {
+              "name": "image",
+              "label": "صورة السيارة",
+              "type": "image"
+            },
+            {
+              "name": "name_ar",
+              "label": "الاسم — العربي",
+              "type": "string"
+            },
+            {
+              "name": "desc_ar",
+              "label": "وصف قصير — العربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم — English",
+              "type": "string"
+            },
+            {
+              "name": "desc_en",
+              "label": "وصف قصير — English",
+              "type": "string"
+            },
+            {
+              "name": "name_fr",
+              "label": "الاسم — Français",
+              "type": "string"
+            },
+            {
+              "name": "desc_fr",
+              "label": "وصف قصير — Français",
+              "type": "string"
+            },
+            {
+              "name": "name_de",
+              "label": "الاسم — Deutsch",
+              "type": "string"
+            },
+            {
+              "name": "desc_de",
+              "label": "وصف قصير — Deutsch",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "text_ar",
+      "label": "📝 نصوص الموقع — العربي",
+      "type": "file",
+      "path": "content/text/ar.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "الواجهة الرئيسية",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "السطر الصغير",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "العنوان الكبير (ضع الكلمات المميزة بين *نجمتين*)",
+              "type": "string"
+            },
+            {
+              "name": "subtitle",
+              "label": "النص التعريفي",
+              "type": "text"
+            },
+            {
+              "name": "button_1",
+              "label": "زر واتساب",
+              "type": "string"
+            },
+            {
+              "name": "button_2",
+              "label": "الزر الثاني",
+              "type": "string"
+            },
+            {
+              "name": "photo_caption",
+              "label": "تعليق الصورة (العربي فقط)",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "highlights",
+          "label": "المميزات تحت الأزرار",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "sections",
+          "label": "عناوين الأقسام",
+          "type": "object",
+          "fields": [
+            {
+              "name": "explore",
+              "label": "استكشف",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "label": "الخدمات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "cities",
+              "label": "أين نعمل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "fleet",
+              "label": "السيارات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "steps",
+              "label": "طريقة الحجز",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "promises",
+              "label": "وعدنا",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "faq",
+              "label": "الأسئلة",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "contact",
+              "label": "التواصل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "categories",
+          "label": "أقسام استكشف",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "وصف قصير",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "cities",
+          "label": "المدن",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            },
+            {
+              "name": "chips",
+              "label": "أماكن مختصرة",
+              "type": "string",
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "steps",
+          "label": "خطوات الحجز",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "promises",
+          "label": "وعدنا لك",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "faq",
+          "label": "الأسئلة الشائعة",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "question",
+              "label": "السؤال",
+              "type": "string"
+            },
+            {
+              "name": "answer",
+              "label": "الإجابة",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "label": "سطر أسفل الموقع",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "text_en",
+      "label": "📝 نصوص الموقع — English",
+      "type": "file",
+      "path": "content/text/en.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "الواجهة الرئيسية",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "السطر الصغير",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "العنوان الكبير (ضع الكلمات المميزة بين *نجمتين*)",
+              "type": "string"
+            },
+            {
+              "name": "subtitle",
+              "label": "النص التعريفي",
+              "type": "text"
+            },
+            {
+              "name": "button_1",
+              "label": "زر واتساب",
+              "type": "string"
+            },
+            {
+              "name": "button_2",
+              "label": "الزر الثاني",
+              "type": "string"
+            },
+            {
+              "name": "photo_caption",
+              "label": "تعليق الصورة (العربي فقط)",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "highlights",
+          "label": "المميزات تحت الأزرار",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "sections",
+          "label": "عناوين الأقسام",
+          "type": "object",
+          "fields": [
+            {
+              "name": "explore",
+              "label": "استكشف",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "label": "الخدمات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "cities",
+              "label": "أين نعمل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "fleet",
+              "label": "السيارات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "steps",
+              "label": "طريقة الحجز",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "promises",
+              "label": "وعدنا",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "faq",
+              "label": "الأسئلة",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "contact",
+              "label": "التواصل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "categories",
+          "label": "أقسام استكشف",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "وصف قصير",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "cities",
+          "label": "المدن",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            },
+            {
+              "name": "chips",
+              "label": "أماكن مختصرة",
+              "type": "string",
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "steps",
+          "label": "خطوات الحجز",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "promises",
+          "label": "وعدنا لك",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "faq",
+          "label": "الأسئلة الشائعة",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "question",
+              "label": "السؤال",
+              "type": "string"
+            },
+            {
+              "name": "answer",
+              "label": "الإجابة",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "label": "سطر أسفل الموقع",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "text_fr",
+      "label": "📝 نصوص الموقع — Français",
+      "type": "file",
+      "path": "content/text/fr.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "الواجهة الرئيسية",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "السطر الصغير",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "العنوان الكبير (ضع الكلمات المميزة بين *نجمتين*)",
+              "type": "string"
+            },
+            {
+              "name": "subtitle",
+              "label": "النص التعريفي",
+              "type": "text"
+            },
+            {
+              "name": "button_1",
+              "label": "زر واتساب",
+              "type": "string"
+            },
+            {
+              "name": "button_2",
+              "label": "الزر الثاني",
+              "type": "string"
+            },
+            {
+              "name": "photo_caption",
+              "label": "تعليق الصورة (العربي فقط)",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "highlights",
+          "label": "المميزات تحت الأزرار",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "sections",
+          "label": "عناوين الأقسام",
+          "type": "object",
+          "fields": [
+            {
+              "name": "explore",
+              "label": "استكشف",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "label": "الخدمات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "cities",
+              "label": "أين نعمل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "fleet",
+              "label": "السيارات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "steps",
+              "label": "طريقة الحجز",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "promises",
+              "label": "وعدنا",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "faq",
+              "label": "الأسئلة",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "contact",
+              "label": "التواصل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "categories",
+          "label": "أقسام استكشف",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "وصف قصير",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "cities",
+          "label": "المدن",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            },
+            {
+              "name": "chips",
+              "label": "أماكن مختصرة",
+              "type": "string",
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "steps",
+          "label": "خطوات الحجز",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "promises",
+          "label": "وعدنا لك",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "faq",
+          "label": "الأسئلة الشائعة",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "question",
+              "label": "السؤال",
+              "type": "string"
+            },
+            {
+              "name": "answer",
+              "label": "الإجابة",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "label": "سطر أسفل الموقع",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "text_de",
+      "label": "📝 نصوص الموقع — Deutsch",
+      "type": "file",
+      "path": "content/text/de.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "الواجهة الرئيسية",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "السطر الصغير",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "العنوان الكبير (ضع الكلمات المميزة بين *نجمتين*)",
+              "type": "string"
+            },
+            {
+              "name": "subtitle",
+              "label": "النص التعريفي",
+              "type": "text"
+            },
+            {
+              "name": "button_1",
+              "label": "زر واتساب",
+              "type": "string"
+            },
+            {
+              "name": "button_2",
+              "label": "الزر الثاني",
+              "type": "string"
+            },
+            {
+              "name": "photo_caption",
+              "label": "تعليق الصورة (العربي فقط)",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "highlights",
+          "label": "المميزات تحت الأزرار",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "sections",
+          "label": "عناوين الأقسام",
+          "type": "object",
+          "fields": [
+            {
+              "name": "explore",
+              "label": "استكشف",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "services",
+              "label": "الخدمات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "cities",
+              "label": "أين نعمل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "fleet",
+              "label": "السيارات",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "steps",
+              "label": "طريقة الحجز",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "promises",
+              "label": "وعدنا",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "faq",
+              "label": "الأسئلة",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "contact",
+              "label": "التواصل",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "الكلمة الصغيرة فوق العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "العنوان",
+                  "type": "string"
+                },
+                {
+                  "name": "intro",
+                  "label": "النص التعريفي",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "categories",
+          "label": "أقسام استكشف",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "وصف قصير",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "cities",
+          "label": "المدن",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "label": "الاسم",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            },
+            {
+              "name": "chips",
+              "label": "أماكن مختصرة",
+              "type": "string",
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "steps",
+          "label": "خطوات الحجز",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "promises",
+          "label": "وعدنا لك",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "faq",
+          "label": "الأسئلة الشائعة",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "question",
+              "label": "السؤال",
+              "type": "string"
+            },
+            {
+              "name": "answer",
+              "label": "الإجابة",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "label": "سطر أسفل الموقع",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

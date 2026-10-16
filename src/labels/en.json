@@ -1,0 +1,94 @@
+{
+  "nav": [
+    "Services",
+    "Explore",
+    "Where we drive",
+    "Fleet",
+    "How it works",
+    "FAQ",
+    "Contact"
+  ],
+  "whatsapp": "WhatsApp",
+  "menu": "Menu",
+  "book": {
+    "title": "Get a fixed quote",
+    "svc": "Service",
+    "from": "Pick-up",
+    "to": "Drop-off",
+    "date": "Date",
+    "time": "Time",
+    "pax": "Passengers",
+    "name": "Name",
+    "fromPh": "e.g. Cairo Airport",
+    "toPh": "e.g. Giza Pyramids",
+    "namePh": "Your name",
+    "send": "Send request on WhatsApp",
+    "note": "We reply with one fixed price before you confirm anything."
+  },
+  "bookTabs": [
+    [
+      "airport",
+      "Transfer"
+    ],
+    [
+      "driver",
+      "Hourly"
+    ],
+    [
+      "tours",
+      "Tour"
+    ],
+    [
+      "intercity",
+      "City to city"
+    ]
+  ],
+  "serviceLink": "Ask about this",
+  "hours": "hours",
+  "priceFrom": "From {p}",
+  "priceAsk": "Price on request",
+  "tourLink": "Book this tour",
+  "seats": "seats",
+  "bags": "bags",
+  "contact": {
+    "wa": "WhatsApp",
+    "email": "Email",
+    "open": "Open WhatsApp",
+    "copy": "Copy",
+    "copied": "Copied",
+    "mail": "Send email"
+  },
+  "wa": {
+    "booking": "Hello {B}, I'd like to book: {svc}\nFrom: {from}\nTo: {to}\nDate: {date} {time}\nPassengers: {pax}\nName: {name}",
+    "tour": "Hello {B}, I'd like to ask about the tour: {t}",
+    "service": "Hello {B}, I'd like to ask about: {t}",
+    "hello": "Hello {B}, I'd like to ask about a booking.",
+    "place": "Hello {B}, I'd like a ride to: {p}",
+    "plan": "Hello {B}, I'd like a driver for the day to visit:\n{list}\nDate: \nPassengers: "
+  },
+  "explore": {
+    "close": "Close",
+    "more": "Show all {n} places",
+    "less": "Show fewer",
+    "all": "All",
+    "gov": {
+      "cairo": "Cairo",
+      "giza": "Giza"
+    },
+    "type": {
+      "pharaonic": "Pharaonic",
+      "islamic": "Islamic",
+      "coptic": "Coptic",
+      "jewish": "Jewish"
+    },
+    "search": "Search by place or area",
+    "count": "{n} places",
+    "take": "Take me there",
+    "add": "Add to my day",
+    "added": "In my day",
+    "empty": "Nothing matches. Try another word.",
+    "myday": "My day",
+    "plan": "Send my day plan on WhatsApp",
+    "clear": "Clear all"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "nav": [
+    "Services",
+    "Explorer",
+    "Destinations",
+    "Véhicules",
+    "Réservation",
+    "FAQ",
+    "Contact"
+  ],
+  "whatsapp": "WhatsApp",
+  "menu": "Menu",
+  "book": {
+    "title": "Demander un devis",
+    "svc": "Prestation",
+    "from": "Départ",
+    "to": "Arrivée",
+    "date": "Date",
+    "time": "Heure",
+    "pax": "Passagers",
+    "name": "Nom",
+    "fromPh": "ex. aéroport du Caire",
+    "toPh": "ex. pyramides de Gizeh",
+    "namePh": "Votre nom",
+    "send": "Envoyer sur WhatsApp",
+    "note": "Nous répondons avec un prix fixe, avant toute confirmation."
+  },
+  "bookTabs": [
+    [
+      "airport",
+      "Trajet"
+    ],
+    [
+      "driver",
+      "À l'heure"
+    ],
+    [
+      "tours",
+      "Excursion"
+    ],
+    [
+      "intercity",
+      "Entre villes"
+    ]
+  ],
+  "serviceLink": "Se renseigner",
+  "hours": "heures",
+  "priceFrom": "À partir de {p}",
+  "priceAsk": "Prix sur demande",
+  "tourLink": "Réserver",
+  "seats": "places",
+  "bags": "bagages",
+  "contact": {
+    "wa": "WhatsApp",
+    "email": "E-mail",
+    "open": "Ouvrir WhatsApp",
+    "copy": "Copier",
+    "copied": "Copié",
+    "mail": "Écrire un e-mail"
+  },
+  "wa": {
+    "booking": "Bonjour {B}, je souhaite réserver : {svc}\nDépart : {from}\nArrivée : {to}\nDate : {date} {time}\nPassagers : {pax}\nNom : {name}",
+    "tour": "Bonjour {B}, je souhaite des informations sur l'excursion : {t}",
+    "service": "Bonjour {B}, je souhaite des informations sur : {t}",
+    "hello": "Bonjour {B}, je souhaite des informations pour une réservation.",
+    "place": "Bonjour {B}, je souhaite un trajet vers : {p}",
+    "plan": "Bonjour {B}, je souhaite un chauffeur pour la journée afin de visiter :\n{list}\nDate : \nPassagers : "
+  },
+  "explore": {
+    "close": "Fermer",
+    "more": "Voir les {n} lieux",
+    "less": "Voir moins",
+    "all": "Tous",
+    "gov": {
+      "cairo": "Le Caire",
+      "giza": "Gizeh"
+    },
+    "type": {
+      "pharaonic": "Pharaonique",
+      "islamic": "Islamique",
+      "coptic": "Copte",
+      "jewish": "Juif"
+    },
+    "search": "Rechercher un lieu ou un quartier",
+    "count": "{n} lieux",
+    "take": "M'y conduire",
+    "add": "Ajouter à ma journée",
+    "added": "Dans ma journée",
+    "empty": "Aucun résultat. Essayez un autre mot.",
+    "myday": "Ma journée",
+    "plan": "Envoyer ma journée sur WhatsApp",
+    "clear": "Tout effacer"
+  }
+}

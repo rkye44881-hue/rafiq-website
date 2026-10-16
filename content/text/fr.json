@@ -1,0 +1,203 @@
+{
+  "hero": {
+    "eyebrow": "Chauffeur privé · Transferts · Excursions privées en Égypte",
+    "title": "Votre journée, *à votre rythme.*",
+    "subtitle": "Un chauffeur et une voiture rien que pour vous, au Caire, à Alexandrie et sur la Côte Nord, avec des transferts vers toute l'Égypte. Le prix est fixé avant le départ, et il ne bouge plus.",
+    "button_1": "Réserver sur WhatsApp",
+    "button_2": "Découvrir nos services",
+    "photo_caption": ""
+  },
+  "highlights": [
+    "Le Caire · Alexandrie · Côte Nord",
+    "Transferts dans toute l'Égypte",
+    "Prix fixe convenu à l'avance",
+    "Joignables 24 h/24 sur WhatsApp"
+  ],
+  "sections": {
+    "explore": {
+      "eyebrow": "Explorer",
+      "title": "Le Caire et Gizeh, à portée de main",
+      "intro": "Choisissez une catégorie et parcourez tous les lieux. Réservez un trajet vers l'un d'eux, ou réunissez-en plusieurs en une journée : nous organisons l'itinéraire."
+    },
+    "services": {
+      "eyebrow": "Nos services",
+      "title": "Un seul chauffeur de confiance pour tous vos trajets",
+      "intro": "D'une course de trente minutes à un voyage de plusieurs jours. La voiture est à vous, l'emploi du temps aussi."
+    },
+    "cities": {
+      "eyebrow": "Destinations",
+      "title": "Chaque jour sur trois régions, et partout en Égypte",
+      "intro": "Le Caire, Alexandrie et la Côte Nord sont notre quotidien. Pour le reste du pays, nous vous conduisons de porte à porte, à prix fixe."
+    },
+    "fleet": {
+      "eyebrow": "Véhicules",
+      "title": "La voiture adaptée à votre voyage",
+      "intro": "Toutes nos voitures sont propres et climatisées. Indiquez-nous le nombre de passagers et de bagages, nous vous conseillons."
+    },
+    "steps": {
+      "eyebrow": "Réservation",
+      "title": "Trois étapes jusqu'à votre chauffeur",
+      "intro": ""
+    },
+    "promises": {
+      "eyebrow": "Nos engagements",
+      "title": "Ce sur quoi vous pouvez compter",
+      "intro": ""
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Avant de réserver",
+      "intro": "Une autre question ? Écrivez-nous sur WhatsApp."
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Parlons de votre voyage",
+      "intro": "WhatsApp reste le moyen le plus rapide. Pour les entreprises et les groupes, l'e-mail convient très bien."
+    }
+  },
+  "cities": [
+    {
+      "id": "cairo",
+      "name": "Le Caire",
+      "description": "Trajets en ville, aéroports, pyramides et Grand Musée égyptien.",
+      "chips": [
+        "CAI",
+        "SPX",
+        "New Cairo",
+        "Zayed"
+      ]
+    },
+    {
+      "id": "alex",
+      "name": "Alexandrie",
+      "description": "De l'aéroport à la Corniche, de la citadelle de Qaitbay à la Bibliothèque.",
+      "chips": [
+        "HBE",
+        "Montazah",
+        "Corniche"
+      ]
+    },
+    {
+      "id": "sahel",
+      "name": "Côte Nord",
+      "description": "Les trajets d'été entre Marina, New Alamein et Ras El Hekma, et les journées plage.",
+      "chips": [
+        "Marina",
+        "New Alamein",
+        "Ras El Hekma"
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Toute l'Égypte",
+      "description": "Transferts directs de porte à porte, au prix convenu avant le départ.",
+      "chips": [
+        "Hurghada",
+        "Charm",
+        "Louxor",
+        "Assouan",
+        "Siwa"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "museums",
+      "name": "Musées",
+      "description": "Du Grand Musée égyptien aux palais royaux."
+    },
+    {
+      "id": "sites",
+      "name": "Sites historiques",
+      "description": "Patrimoine pharaonique, islamique, copte et juif."
+    },
+    {
+      "id": "mosques",
+      "name": "Mosquées historiques",
+      "description": "Les grandes mosquées du Caire, d'Amr ibn al-As à Méhémet-Ali."
+    },
+    {
+      "id": "malls",
+      "name": "Centres commerciaux",
+      "description": "Boutiques, restaurants et cinémas au Caire et à Gizeh."
+    },
+    {
+      "id": "parks",
+      "name": "Parcs et balades",
+      "description": "Jardins, bords du Nil et sorties en famille."
+    },
+    {
+      "id": "markets",
+      "name": "Marchés et artisanat",
+      "description": "Le Khan, la rue des tentiers et l'artisanat."
+    },
+    {
+      "id": "tours",
+      "name": "Excursions prêtes",
+      "description": "Des journées complètes organisées de bout en bout."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Écrivez-nous sur WhatsApp",
+      "description": "D'où, vers où, quand et combien de personnes : une phrase suffit."
+    },
+    {
+      "title": "Recevez un prix fixe",
+      "description": "Un seul prix, clair, pour tout le trajet. Aucun supplément ajouté ensuite."
+    },
+    {
+      "title": "Votre chauffeur vous attend",
+      "description": "En avance, dans une voiture propre et climatisée, et il vous prévient en route."
+    }
+  ],
+  "promises": [
+    {
+      "title": "Un prix clair, fixé d'avance",
+      "description": "Le prix annoncé est le prix payé, sauf si vous modifiez l'itinéraire ou la durée."
+    },
+    {
+      "title": "La ponctualité comme habitude",
+      "description": "Le chauffeur arrive avant l'heure et vous prévient du moindre retard."
+    },
+    {
+      "title": "Des voitures soignées",
+      "description": "Chaque voiture est préparée avant chaque trajet, été comme hiver."
+    },
+    {
+      "title": "Votre tranquillité",
+      "description": "La voiture est à vous seuls. Vos projets restent entre vous et votre chauffeur."
+    },
+    {
+      "title": "Souplesse le jour même",
+      "description": "Une étape de plus, une autre destination ? Dites-le au chauffeur, on s'adapte."
+    },
+    {
+      "title": "Des chauffeurs qui connaissent la route",
+      "description": "La circulation du Caire, la route du désert d'Alexandrie et la côte, au quotidien."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Comment réserver ?",
+      "answer": "Envoyez-nous les détails du trajet sur WhatsApp ou remplissez le formulaire en haut de la page. Nous répondons avec un prix fixe ; la réservation est confirmée après votre accord."
+    },
+    {
+      "question": "Le prix est-il vraiment fixe ?",
+      "answer": "Oui. Le prix convenu avant le départ est celui que vous payez, sauf modification de l'itinéraire ou de la durée à votre demande."
+    },
+    {
+      "question": "Peut-on réserver un chauffeur pour la journée ?",
+      "answer": "Oui, pour 8 ou 12 heures, avec autant d'arrêts que vous le souhaitez en ville."
+    },
+    {
+      "question": "Allez-vous au-delà du Caire, d'Alexandrie et de la Côte Nord ?",
+      "answer": "Oui, dans toute l'Égypte. Indiquez-nous la destination et la date, nous vous envoyons un prix."
+    },
+    {
+      "question": "Et si mon vol a du retard ?",
+      "answer": "Le chauffeur suit votre vol et vous attend à l'heure réelle d'arrivée."
+    }
+  ],
+  "footer": "Chauffeur privé et excursions privées en Égypte."
+}
