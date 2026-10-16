@@ -1,6 +1,6 @@
 /* Builds the full HTML page for one language from the content files. */
 "use strict";
-const { esc, md, arDigits, waLink, prettyPhone, ic, scene, carSvg, skyline } = require("./shared.js");
+const { esc, md, arDigits, waLink, prettyPhone, ic, scene, carSvg, skyline, rMark } = require("./shared.js");
 
 const LANGS = ["ar", "en", "fr", "de"];
 const LANG_BTN = { ar: "ع", en: "EN", fr: "FR", de: "DE" };
@@ -25,7 +25,7 @@ function renderPage(lang, c) {
   const services = c.services.filter(s => s.visible);
 
   const header = () => {
-    const logo = '<a class="logo" href="/' + lang + '/"><span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
+    const logo = '<a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
     const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + '</nav>';
     const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
     return '<header class="hdr" id="hdr"><div class="wrap">' + logo + nav + langs
@@ -95,7 +95,7 @@ function renderPage(lang, c) {
       + '</div></div></section>';
   };
 
-  const footer = () => '<footer class="foot"><div class="wrap"><span class="logo"><span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span></div></footer>'
+  const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span></div></footer>'
     + '<a class="fab" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '" aria-label="WhatsApp">' + ic("chat") + '<span>' + esc(L.whatsapp) + '</span></a>';
 
   /* data the browser script needs for the explorer and booking form */
@@ -115,7 +115,7 @@ function renderPage(lang, c) {
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/">'
     + '<link rel="canonical" href="' + base + '/' + lang + '/">'
     + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website">' + (set.hero_image ? '<meta property="og:image" content="' + esc(base + set.hero_image) + '">' : '')
-    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#0E0E0F">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">'
