@@ -76,7 +76,7 @@
       const tags = (it.g ? '<span class="tg">' + esc(E.gov[it.g]) + '</span>' : '') + (it.t ? '<span class="tg">' + esc(E.type[it.t]) + '</span>' : '');
       const extra = it.tour ? '<p class="tour-d">' + esc(it.tour.d) + '</p><div class="meta"><span>' + num(it.tour.h) + ' ' + esc(L.hours) + '</span><span>' + (String(it.tour.price).trim() ? esc(L.priceFrom.replace("{p}", it.tour.price)) : esc(L.priceAsk)) + '</span></div>' : '';
       const msg = it.tour ? L.wa.tour.replace("{t}", it.name) : L.wa.place.replace("{p}", nameOf(it.id));
-      return '<article class="place' + (picked ? " on" : "") + '">' + (it.img ? '<div class="thumb"><img src="' + esc(it.img) + '" alt="" loading="lazy"></div>' : '')
+      return '<article class="place' + (picked ? " on" : "") + '">' + (it.img ? '<div class="thumb"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy"></div>' : '')
         + '<h4>' + esc(it.name) + '</h4>' + (it.alt ? '<span class="alt">' + esc(it.alt) + '</span>' : '')
         + '<span class="loc">' + ic("pin") + esc(it.area) + tags + '</span>' + extra
         + '<div class="acts"><a class="sbtn go" target="_blank" rel="noopener" href="' + wa(msg) + '">' + ic("car") + esc(E.take) + '</a>'

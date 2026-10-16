@@ -107,19 +107,34 @@ function renderPage(lang, c) {
   };
 
   const base = (set.site_url || "").replace(/\/$/, "");
-  const desc = X.hero.subtitle;
-  const title = (ar ? set.brand_ar + " | " : set.brand_latin + " | ") + X.hero.eyebrow;
+  const seo = X.seo || {};
+  const desc = seo.description || X.hero.subtitle;
+  const title = seo.title || (ar ? set.brand_ar + " | " : set.brand_latin + " | ") + X.hero.eyebrow;
+  const OG_LOCALE = { ar: "ar_EG", en: "en_US", fr: "fr_FR", de: "de_DE" };
+  const ld = obj => '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, "\\u003c") + '</script>';
+  const business = {
+    "@context": "https://schema.org", "@type": "LocalBusiness", "@id": base + "/#business",
+    name: set.brand_latin, alternateName: set.brand_ar, description: desc, url: base + "/" + lang + "/",
+    telephone: "+" + String(set.whatsapp).replace(/\D/g, ""), email: set.email,
+    image: set.hero_image ? base + set.hero_image : undefined, logo: base + "/favicon.svg",
+    address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
+    areaServed: ["Cairo", "Giza", "Alexandria", "North Coast", "Egypt"].map(n => ({ "@type": "Place", name: n })),
+    knowsLanguage: ["ar", "en", "fr", "de"], openingHours: "Mo-Su 00:00-23:59",
+    makesOffer: services.map(s => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s["title_" + lang], description: s["desc_" + lang] } }))
+  };
+  const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", inLanguage: lang,
+    mainEntity: X.faq.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
   const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head>'
     + '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
     + '<title>' + esc(title) + '</title><meta name="description" content="' + esc(desc) + '">'
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/">'
     + '<link rel="canonical" href="' + base + '/' + lang + '/">'
-    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website">' + (set.hero_image ? '<meta property="og:image" content="' + esc(base + set.hero_image) + '">' : '')
+    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + OG_LOCALE[lang] + '">' + (set.hero_image ? '<meta property="og:image" content="' + esc(base + set.hero_image) + '"><meta name="twitter:card" content="summary_large_image">' : '')
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">'
-    + '<script type="application/ld+json">' + JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", name: set.brand_latin, alternateName: set.brand_ar, description: desc, telephone: "+" + String(set.whatsapp).replace(/\D/g, ""), email: set.email, areaServed: ["Cairo", "Giza", "Alexandria", "North Coast", "Egypt"], url: base + "/" + lang + "/" }).replace(/</g, "\\u003c") + '</script>'
+    + ld(business) + ld(faqLd)
     + '</head><body>';
 
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + '">' + header() + hero + explore() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact() + footer() + '</div>'

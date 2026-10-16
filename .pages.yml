@@ -900,6 +900,23 @@
       "format": "json",
       "fields": [
         {
+          "name": "seo",
+          "label": "جوجل (عنوان ووصف الصفحة في نتائج البحث)",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان (حتى ٦٠ حرف تقريباً)",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف (حتى ١٦٠ حرف تقريباً)",
+              "type": "text"
+            }
+          ]
+        },
+        {
           "name": "hero",
           "label": "الواجهة الرئيسية",
           "type": "object",
@@ -1245,6 +1262,23 @@
       "path": "content/text/en.json",
       "format": "json",
       "fields": [
+        {
+          "name": "seo",
+          "label": "جوجل (عنوان ووصف الصفحة في نتائج البحث)",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان (حتى ٦٠ حرف تقريباً)",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف (حتى ١٦٠ حرف تقريباً)",
+              "type": "text"
+            }
+          ]
+        },
         {
           "name": "hero",
           "label": "الواجهة الرئيسية",
@@ -1592,6 +1626,23 @@
       "format": "json",
       "fields": [
         {
+          "name": "seo",
+          "label": "جوجل (عنوان ووصف الصفحة في نتائج البحث)",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان (حتى ٦٠ حرف تقريباً)",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف (حتى ١٦٠ حرف تقريباً)",
+              "type": "text"
+            }
+          ]
+        },
+        {
           "name": "hero",
           "label": "الواجهة الرئيسية",
           "type": "object",
@@ -1937,6 +1988,23 @@
       "path": "content/text/de.json",
       "format": "json",
       "fields": [
+        {
+          "name": "seo",
+          "label": "جوجل (عنوان ووصف الصفحة في نتائج البحث)",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "العنوان (حتى ٦٠ حرف تقريباً)",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "الوصف (حتى ١٦٠ حرف تقريباً)",
+              "type": "text"
+            }
+          ]
+        },
         {
           "name": "hero",
           "label": "الواجهة الرئيسية",

@@ -534,7 +534,8 @@
       "area_en": "Al-Muizz Street",
       "governorate": "cairo",
       "type": "",
-      "visible": true
+      "visible": true,
+      "image": "/media/place-al-aqmar-mosque.webp"
     },
     {
       "name_ar": "مجموعة السلطان الغوري",
@@ -880,7 +881,8 @@
       "area_en": "Nile Corniche",
       "governorate": "cairo",
       "type": "",
-      "visible": true
+      "visible": true,
+      "image": "/media/place-nile-corniche-maspero.webp"
     },
     {
       "name_ar": "رحلة فلوكة في النيل",
@@ -927,7 +929,8 @@
       "area_en": "Al-Hussein",
       "governorate": "cairo",
       "type": "",
-      "visible": true
+      "visible": true,
+      "image": "/media/place-khan-el-khalili.webp"
     },
     {
       "name_ar": "شارع الخيامية",

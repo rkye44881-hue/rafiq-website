@@ -199,5 +199,9 @@
       "answer": "Your driver tracks your flight and is waiting when you actually land."
     }
   ],
-  "footer": "Private driver and private tours in Egypt."
+  "footer": "Private driver and private tours in Egypt.",
+  "seo": {
+    "title": "Rafiq | Private Driver in Cairo, Alexandria & North Coast",
+    "description": "Private driver in Cairo, Giza, Alexandria and the North Coast. Airport transfers, full-day chauffeur and private tours. Fixed price, book on WhatsApp."
+  }
 }
