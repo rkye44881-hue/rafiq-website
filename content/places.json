@@ -70,7 +70,8 @@
       "area_en": "Heliopolis",
       "governorate": "cairo",
       "type": "",
-      "visible": true
+      "visible": true,
+      "image": "/media/place-baron-palace.webp"
     },
     {
       "name_ar": "متحف محمد محمود خليل وحرمه",
