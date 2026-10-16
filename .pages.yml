@@ -41,6 +41,38 @@
           "name": "hero_image",
           "label": "صورة الواجهة الرئيسية",
           "type": "image"
+        },
+        {
+          "name": "hero_image_tall",
+          "label": "صورة الواجهة الطولية (النسخة العربية)",
+          "type": "image"
+        },
+        {
+          "name": "city_images",
+          "label": "صور المدن",
+          "type": "object",
+          "fields": [
+            {
+              "name": "cairo",
+              "label": "القاهرة",
+              "type": "image"
+            },
+            {
+              "name": "alex",
+              "label": "الإسكندرية",
+              "type": "image"
+            },
+            {
+              "name": "sahel",
+              "label": "الساحل الشمالي",
+              "type": "image"
+            },
+            {
+              "name": "egypt",
+              "label": "باقي مصر",
+              "type": "image"
+            }
+          ]
         }
       ]
     },

@@ -435,3 +435,5 @@ body.has-picks .fab{display:none}
 .langs a[aria-current="true"]{background:var(--accent);color:var(--accent-ink)}
 .place .tour-d{color:var(--muted);font-size:.88rem}
 @media (max-width:520px){.langs a{padding:4px 7px}}
+.hero-lt .scene img{object-position:65% 60%}
+.lt .hero-lt .scene{opacity:1}

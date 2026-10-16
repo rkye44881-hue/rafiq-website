@@ -38,7 +38,7 @@ function renderPage(lang, c) {
   const heroText = '<div><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + md(X.hero.title) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p>' + ctas + pills + '</div>';
   const hero = ar
     ? '<section class="hero-ar pattern" id="top"><div class="wrap"><div class="grid">' + heroText
-      + '<div class="arch">' + (set.hero_image ? img(set.hero_image, X.hero.title) : scene("giza")) + (X.hero.photo_caption ? '<div class="tag">' + ic("pin") + '<span>' + md(fill(X.hero.photo_caption)).replace(/<em>(.*?)<\/em>/g, "<b>$1</b>") + '</span></div>' : '') + '</div></div></div></section>'
+      + '<div class="arch">' + ((set.hero_image_tall || set.hero_image) ? img(set.hero_image_tall || set.hero_image, X.hero.title) : scene("giza")) + (X.hero.photo_caption ? '<div class="tag">' + ic("pin") + '<span>' + md(fill(X.hero.photo_caption)).replace(/<em>(.*?)<\/em>/g, "<b>$1</b>") + '</span></div>' : '') + '</div></div></div></section>'
     : '<section class="hero-lt" id="top"><div class="scene">' + (set.hero_image ? img(set.hero_image, X.hero.title) : scene("giza")) + '</div><div class="veil"></div><div class="wrap">' + heroText + '</div></section>';
 
   const explore = () => {
@@ -68,7 +68,7 @@ function renderPage(lang, c) {
     + '</div></div></section>';
 
   const cities = () => '<section class="sec dark-band" id="s-cities"><div class="wrap">' + secHead(X.sections.cities) + '<div class="cities">'
-    + X.cities.map(ct => '<article class="city"><div class="pic">' + scene(CITY_SCENES[ct.id] || "road") + '</div><div class="tx"><h3>' + esc(ct.name) + '</h3><p>' + esc(ct.description) + '</p><div class="chips">' + (ct.chips || []).map(x => '<span>' + esc(x) + '</span>').join("") + '</div></div></article>').join("")
+    + X.cities.map(ct => '<article class="city"><div class="pic">' + ((set.city_images || {})[ct.id] ? img(set.city_images[ct.id], ct.name) : scene(CITY_SCENES[ct.id] || "road")) + '</div><div class="tx"><h3>' + esc(ct.name) + '</h3><p>' + esc(ct.description) + '</p><div class="chips">' + (ct.chips || []).map(x => '<span>' + esc(x) + '</span>').join("") + '</div></div></article>').join("")
     + '</div></div></section>';
 
   const fleet = () => '<section class="sec" id="s-fleet"><div class="wrap">' + secHead(X.sections.fleet) + '<div class="fleet">'

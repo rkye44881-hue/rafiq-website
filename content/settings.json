@@ -4,5 +4,12 @@
   "whatsapp": "201201573544",
   "email": "rkye44881@gmail.com",
   "site_url": "https://example.com",
-  "hero_image": ""
+  "hero_image": "/media/hero-geely-sunset.webp",
+  "hero_image_tall": "/media/hero-jetour-t2-tall.webp",
+  "city_images": {
+    "cairo": "/media/city-cairo-nile-sunset.webp",
+    "alex": "",
+    "sahel": "",
+    "egypt": "/media/city-egypt-desert-road.webp"
+  }
 }
