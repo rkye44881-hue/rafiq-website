@@ -748,7 +748,8 @@
         "title": "من العلمين لحد مطروح",
         "intro": "مناطق الساحل بالترتيب، والوقت التقريبي من القاهرة.",
         "fromCairo": "من القاهرة",
-        "fromAlex": "من إسكندرية"
+        "fromAlex": "من إسكندرية",
+        "bookHere": "احجز توصيلة لهنا"
       },
       "explore": {
         "eyebrow": "دليل الساحل",
@@ -948,7 +949,8 @@
         "title": "From Alamein to Matrouh",
         "intro": "The coast's areas in order, with approximate drive times.",
         "fromCairo": "From Cairo",
-        "fromAlex": "From Alexandria"
+        "fromAlex": "From Alexandria",
+        "bookHere": "Book a ride here"
       },
       "explore": {
         "eyebrow": "Coast guide",
@@ -1148,7 +1150,8 @@
         "title": "D'Alamein à Matrouh",
         "intro": "Les zones de la côte dans l'ordre, avec les temps de trajet approximatifs.",
         "fromCairo": "Depuis Le Caire",
-        "fromAlex": "Depuis Alexandrie"
+        "fromAlex": "Depuis Alexandrie",
+        "bookHere": "Réserver un trajet ici"
       },
       "explore": {
         "eyebrow": "Guide de la côte",
@@ -1348,7 +1351,8 @@
         "title": "Von Alamein bis Matruh",
         "intro": "Die Küstenabschnitte der Reihe nach, mit ungefähren Fahrzeiten.",
         "fromCairo": "Ab Kairo",
-        "fromAlex": "Ab Alexandria"
+        "fromAlex": "Ab Alexandria",
+        "bookHere": "Hier eine Fahrt buchen"
       },
       "explore": {
         "eyebrow": "Küstenführer",

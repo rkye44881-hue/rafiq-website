@@ -113,6 +113,15 @@
   }));
   window.addEventListener("resize", placePanel);
 
+  /* ---------- North Coast: tap a place to open its card ---------- */
+  document.querySelectorAll(".vchip").forEach(b => b.addEventListener("click", () => {
+    const card = document.getElementById(b.getAttribute("aria-controls"));
+    const open = card.hidden;
+    document.querySelectorAll(".vcard").forEach(x => { x.hidden = true; });
+    document.querySelectorAll(".vchip").forEach(x => x.setAttribute("aria-expanded", "false"));
+    card.hidden = !open; b.setAttribute("aria-expanded", String(open));
+  }));
+
   /* ---------- booking form → WhatsApp ---------- */
   const svcSel = document.getElementById("bk-svc");
   if (svcSel) {

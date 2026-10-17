@@ -507,3 +507,11 @@ body.has-picks .fab{display:none}
 .nc-tx .hero-pills{margin-top:0}
 .nc-tx .btn{justify-self:start;margin-top:6px}
 @media (max-width:820px){.nc-card{grid-template-columns:1fr}.nc-pic{min-height:200px}}
+
+/* coast places: tap to open a card */
+.zone .vchip{font:inherit;font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--surface);color:var(--ink);cursor:pointer}
+.zone .vchip:hover,.zone .vchip[aria-expanded="true"]{border-color:var(--accent);background:var(--dark);color:var(--on-dark)}
+.zone .vcard{margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:8px}
+.zone .vcard .vc-name{margin:0;font-weight:700;color:var(--ink)}
+.zone .vcard .vc-times{margin:0;font-size:.85rem;color:var(--muted)}
+.zone .vcard .btn{justify-self:start;font-size:.85rem;padding:9px 14px}
