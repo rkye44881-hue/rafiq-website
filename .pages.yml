@@ -43,6 +43,21 @@
           "type": "string"
         },
         {
+          "name": "instagram_url",
+          "label": "رابط Instagram (سيبه فاضي لو مش موجود)",
+          "type": "string"
+        },
+        {
+          "name": "tiktok_url",
+          "label": "رابط TikTok (سيبه فاضي لو مش موجود)",
+          "type": "string"
+        },
+        {
+          "name": "facebook_url",
+          "label": "رابط Facebook (سيبه فاضي لو مش موجود)",
+          "type": "string"
+        },
+        {
           "name": "hero_image",
           "label": "صورة الواجهة الرئيسية",
           "type": "image"
