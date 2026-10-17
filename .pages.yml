@@ -704,6 +704,501 @@
       ]
     },
     {
+      "name": "northcoast",
+      "label": "🌊 صفحة الساحل الشمالي (الأماكن والصورة)",
+      "type": "file",
+      "path": "content/northcoast.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "hero_image",
+          "label": "صورة واجهة صفحة الساحل",
+          "type": "image"
+        },
+        {
+          "name": "zones",
+          "label": "مناطق الساحل وأوقات المشوار (بالساعات)",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود (لا تغيّره)",
+              "type": "string"
+            },
+            {
+              "name": "name_ar",
+              "label": "الاسم بالعربي",
+              "type": "string"
+            },
+            {
+              "name": "name_en",
+              "label": "الاسم بالإنجليزي",
+              "type": "string"
+            },
+            {
+              "name": "hours",
+              "label": "الوقت بالساعات (مثال 1.5 = ساعة ونص)",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "cairo",
+                  "label": "من القاهرة",
+                  "type": "number"
+                },
+                {
+                  "name": "alex",
+                  "label": "من الإسكندرية",
+                  "type": "number"
+                },
+                {
+                  "name": "dbb",
+                  "label": "من مطار العلمين",
+                  "type": "number"
+                },
+                {
+                  "name": "hbe",
+                  "label": "من مطار برج العرب",
+                  "type": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "places",
+          "label": "أماكن الساحل",
+          "type": "object",
+          "fields": [
+            {
+              "name": "villages",
+              "label": "القرى السياحية",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "name_ar",
+                  "label": "الاسم بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "name_en",
+                  "label": "الاسم بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_ar",
+                  "label": "المنطقة بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_en",
+                  "label": "المنطقة بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "zone",
+                  "label": "منطقة الساحل",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      {
+                        "value": "alamein",
+                        "label": "العلمين الجديدة ومارينا"
+                      },
+                      {
+                        "value": "sidi",
+                        "label": "سيدي عبد الرحمن"
+                      },
+                      {
+                        "value": "hekma",
+                        "label": "رأس الحكمة"
+                      },
+                      {
+                        "value": "matrouh",
+                        "label": "مرسى مطروح"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "صورة (اختياري)",
+                  "type": "image"
+                },
+                {
+                  "name": "visible",
+                  "label": "ظاهر في الموقع",
+                  "type": "boolean",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "hotels",
+              "label": "الفنادق والإقامة",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "name_ar",
+                  "label": "الاسم بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "name_en",
+                  "label": "الاسم بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_ar",
+                  "label": "المنطقة بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_en",
+                  "label": "المنطقة بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "zone",
+                  "label": "منطقة الساحل",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      {
+                        "value": "alamein",
+                        "label": "العلمين الجديدة ومارينا"
+                      },
+                      {
+                        "value": "sidi",
+                        "label": "سيدي عبد الرحمن"
+                      },
+                      {
+                        "value": "hekma",
+                        "label": "رأس الحكمة"
+                      },
+                      {
+                        "value": "matrouh",
+                        "label": "مرسى مطروح"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "صورة (اختياري)",
+                  "type": "image"
+                },
+                {
+                  "name": "visible",
+                  "label": "ظاهر في الموقع",
+                  "type": "boolean",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "restaurants",
+              "label": "المطاعم الراقية",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "name_ar",
+                  "label": "الاسم بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "name_en",
+                  "label": "الاسم بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_ar",
+                  "label": "المنطقة بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_en",
+                  "label": "المنطقة بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "zone",
+                  "label": "منطقة الساحل",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      {
+                        "value": "alamein",
+                        "label": "العلمين الجديدة ومارينا"
+                      },
+                      {
+                        "value": "sidi",
+                        "label": "سيدي عبد الرحمن"
+                      },
+                      {
+                        "value": "hekma",
+                        "label": "رأس الحكمة"
+                      },
+                      {
+                        "value": "matrouh",
+                        "label": "مرسى مطروح"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "صورة (اختياري)",
+                  "type": "image"
+                },
+                {
+                  "name": "visible",
+                  "label": "ظاهر في الموقع",
+                  "type": "boolean",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "beaches",
+              "label": "الشواطئ والداي يوز",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "name_ar",
+                  "label": "الاسم بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "name_en",
+                  "label": "الاسم بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_ar",
+                  "label": "المنطقة بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_en",
+                  "label": "المنطقة بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "zone",
+                  "label": "منطقة الساحل",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      {
+                        "value": "alamein",
+                        "label": "العلمين الجديدة ومارينا"
+                      },
+                      {
+                        "value": "sidi",
+                        "label": "سيدي عبد الرحمن"
+                      },
+                      {
+                        "value": "hekma",
+                        "label": "رأس الحكمة"
+                      },
+                      {
+                        "value": "matrouh",
+                        "label": "مرسى مطروح"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "صورة (اختياري)",
+                  "type": "image"
+                },
+                {
+                  "name": "visible",
+                  "label": "ظاهر في الموقع",
+                  "type": "boolean",
+                  "default": true
+                }
+              ]
+            },
+            {
+              "name": "events",
+              "label": "فعاليات العلمين",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "name_ar",
+                  "label": "الاسم بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "name_en",
+                  "label": "الاسم بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_ar",
+                  "label": "المنطقة بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_en",
+                  "label": "المنطقة بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "zone",
+                  "label": "منطقة الساحل",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      {
+                        "value": "alamein",
+                        "label": "العلمين الجديدة ومارينا"
+                      },
+                      {
+                        "value": "sidi",
+                        "label": "سيدي عبد الرحمن"
+                      },
+                      {
+                        "value": "hekma",
+                        "label": "رأس الحكمة"
+                      },
+                      {
+                        "value": "matrouh",
+                        "label": "مرسى مطروح"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "صورة (اختياري)",
+                  "type": "image"
+                },
+                {
+                  "name": "visible",
+                  "label": "ظاهر في الموقع",
+                  "type": "boolean",
+                  "default": true
+                },
+                {
+                  "name": "desc_ar",
+                  "label": "وصف قصير — العربي",
+                  "type": "text"
+                },
+                {
+                  "name": "desc_en",
+                  "label": "وصف قصير — English",
+                  "type": "text"
+                },
+                {
+                  "name": "desc_fr",
+                  "label": "وصف قصير — Français",
+                  "type": "text"
+                },
+                {
+                  "name": "desc_de",
+                  "label": "وصف قصير — Deutsch",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "trips",
+              "label": "رحلات ومزارات",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "name_ar",
+                  "label": "الاسم بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "name_en",
+                  "label": "الاسم بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_ar",
+                  "label": "المنطقة بالعربي",
+                  "type": "string"
+                },
+                {
+                  "name": "area_en",
+                  "label": "المنطقة بالإنجليزي",
+                  "type": "string"
+                },
+                {
+                  "name": "zone",
+                  "label": "منطقة الساحل",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      {
+                        "value": "alamein",
+                        "label": "العلمين الجديدة ومارينا"
+                      },
+                      {
+                        "value": "sidi",
+                        "label": "سيدي عبد الرحمن"
+                      },
+                      {
+                        "value": "hekma",
+                        "label": "رأس الحكمة"
+                      },
+                      {
+                        "value": "matrouh",
+                        "label": "مرسى مطروح"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "صورة (اختياري)",
+                  "type": "image"
+                },
+                {
+                  "name": "visible",
+                  "label": "ظاهر في الموقع",
+                  "type": "boolean",
+                  "default": true
+                },
+                {
+                  "name": "desc_ar",
+                  "label": "وصف قصير — العربي",
+                  "type": "text"
+                },
+                {
+                  "name": "desc_en",
+                  "label": "وصف قصير — English",
+                  "type": "text"
+                },
+                {
+                  "name": "desc_fr",
+                  "label": "وصف قصير — Français",
+                  "type": "text"
+                },
+                {
+                  "name": "desc_de",
+                  "label": "وصف قصير — Deutsch",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "services",
       "label": "🚘 الخدمات",
       "type": "file",
