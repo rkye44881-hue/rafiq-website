@@ -190,7 +190,8 @@
       "area_en": "Pyramids Plateau",
       "governorate": "giza",
       "type": "pharaonic",
-      "visible": true
+      "visible": true,
+      "image": "/media/place-giza-khafre.webp"
     },
     {
       "name_ar": "سقارة وهرم زوسر المدرج",
