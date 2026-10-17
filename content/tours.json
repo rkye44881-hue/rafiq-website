@@ -49,17 +49,17 @@
     {
       "id": "alex",
       "city": "alex",
-      "hours": 10,
+      "hours": 14,
       "image": "/media/tour-alexandria-qaitbay.webp",
       "visible": true,
-      "title_ar": "الإسكندرية في يوم",
-      "desc_ar": "قلعة قايتباي ومكتبة الإسكندرية ومقابر كوم الشقافة، وغداء سمك على البحر.",
-      "title_en": "Alexandria in a day",
-      "desc_en": "Qaitbay Citadel, the Bibliotheca Alexandrina, the Kom el-Shoqafa catacombs and fresh fish by the sea.",
-      "title_fr": "Alexandrie en une journée",
-      "desc_fr": "La citadelle de Qaitbay, la Bibliotheca Alexandrina, les catacombes de Kom el-Chouqafa et un poisson grillé face à la mer.",
-      "title_de": "Alexandria an einem Tag",
-      "desc_de": "Zitadelle Qaitbay, Bibliotheca Alexandrina, die Katakomben von Kom el-Schukafa und frischer Fisch am Meer."
+      "title_ar": "الإسكندرية في يوم (من القاهرة)",
+      "desc_ar": "من باب الفندق أو البيت في القاهرة وعودة في نفس اليوم، مع ٨ إلى ١٠ ساعات في الإسكندرية: قلعة قايتباي، مكتبة الإسكندرية، مقابر كوم الشقافة، وغداء سمك على البحر.",
+      "title_en": "Alexandria day trip from Cairo",
+      "desc_en": "Round trip from your Cairo hotel or home, with 8 to 10 hours in Alexandria: Qaitbay Citadel, the Bibliotheca Alexandrina, the Kom el-Shoqafa catacombs and fresh fish by the sea.",
+      "title_fr": "Alexandrie en une journée depuis Le Caire",
+      "desc_fr": "Aller-retour depuis votre hôtel au Caire, avec 8 à 10 heures sur place : citadelle de Qaitbay, Bibliotheca Alexandrina, catacombes de Kom el-Chouqafa et poisson grillé face à la mer.",
+      "title_de": "Tagesausflug nach Alexandria ab Kairo",
+      "desc_de": "Hin- und Rückfahrt ab Ihrem Hotel in Kairo, mit 8 bis 10 Stunden vor Ort: Zitadelle Qaitbay, Bibliotheca Alexandrina, Katakomben von Kom el-Schukafa und frischer Fisch am Meer."
     },
     {
       "id": "sahel",
