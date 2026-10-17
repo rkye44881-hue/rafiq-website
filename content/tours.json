@@ -67,7 +67,8 @@
     {
       "id": "sahel",
       "city": "sahel",
-      "hours": 10,
+      "hours": 14,
+      "price": "‏ 250$",
       "image": "/media/tour-north-coast-beach.webp",
       "visible": true,
       "title_ar": "العلمين والساحل الشمالي",
@@ -83,6 +84,7 @@
       "id": "fayoum",
       "city": "egypt",
       "hours": 10,
+      "price": "‏150$",
       "visible": true,
       "title_ar": "الفيوم: وادي الريان ووادي الحيتان",
       "desc_ar": "شلالات في قلب الصحراء، وحفريات حيتان عمرها ٤٠ مليون سنة.",
