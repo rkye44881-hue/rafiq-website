@@ -1,0 +1,1335 @@
+{
+  "categories": {
+    "cairo": {
+      "title": {
+        "ar": "القاهرة",
+        "en": "Cairo",
+        "fr": "Le Caire",
+        "de": "Kairo"
+      },
+      "groups": [
+        {
+          "id": "areas",
+          "title": {
+            "ar": "المناطق",
+            "en": "Areas",
+            "fr": "Quartiers",
+            "de": "Stadtteile"
+          },
+          "items": [
+            {
+              "id": "downtown",
+              "name": {
+                "ar": "وسط البلد",
+                "en": "Downtown Cairo",
+                "fr": "Centre-ville",
+                "de": "Downtown Kairo"
+              },
+              "area": {
+                "ar": "وسط القاهرة",
+                "en": "Central Cairo",
+                "fr": "Centre du Caire",
+                "de": "Zentrum Kairo"
+              },
+              "how": {
+                "ar": "مترو محطة الأوبرا أو سعد زغلول.",
+                "en": "Metro: Opera or Saad Zaghloul.",
+                "fr": "Métro : Opéra ou Saad Zaghloul.",
+                "de": "U-Bahn: Opera oder Saad Zaghloul."
+              },
+              "tip": {
+                "ar": "امشي بالنهار، والمحلات بتقفل بدري بعد العصر في أيام معينة.",
+                "en": "Walk by day; many shops close early.",
+                "fr": "Promenez-vous de jour ; beaucoup de boutiques ferment tôt.",
+                "de": "Am besten tagsüber; viele Läden schließen früh."
+              },
+              "official": ""
+            },
+            {
+              "id": "islamic",
+              "name": {
+                "ar": "القاهرة الإسلامية",
+                "en": "Islamic Cairo",
+                "fr": "Le Caire islamique",
+                "de": "Islamisches Kairo"
+              },
+              "area": {
+                "ar": "شرق القاهرة التاريخي",
+                "en": "Historic east Cairo",
+                "fr": "Est historique du Caire",
+                "de": "historischer Osten Kairos"
+              },
+              "how": {
+                "ar": "مترو محطة الأزهر أو الحسين.",
+                "en": "Metro: Al-Azhar or Al-Hussein.",
+                "fr": "Métro : Al-Azhar ou Al-Hussein.",
+                "de": "U-Bahn: Al-Azhar oder Al-Hussein."
+              },
+              "tip": {
+                "ar": "ارتدي ملابس محتشمة، والأحسن تيجي بمرشد.",
+                "en": "Dress modestly; a guide helps a lot.",
+                "fr": "Tenue correcte ; un guide aide beaucoup.",
+                "de": "Angemessene Kleidung; ein Guide hilft sehr."
+              },
+              "official": ""
+            },
+            {
+              "id": "oldcairo",
+              "name": {
+                "ar": "مصر القديمة (القبطية)",
+                "en": "Old Cairo (Coptic)",
+                "fr": "Vieux Caire (copte)",
+                "de": "Altkairo (koptisch)"
+              },
+              "area": {
+                "ar": "جنوب القاهرة",
+                "en": "South Cairo",
+                "fr": "Sud du Caire",
+                "de": "Süd-Kairo"
+              },
+              "how": {
+                "ar": "مترو مار جرجس.",
+                "en": "Metro: Mar Girgis.",
+                "fr": "Métro : Mar Girgis.",
+                "de": "U-Bahn: Mar Girgis."
+              },
+              "tip": {
+                "ar": "المنطقة صغيرة وتتمشي بسهولة.",
+                "en": "Small area, easy to walk.",
+                "fr": "Zone petite et facile à parcourir.",
+                "de": "Kleines Gebiet, gut zu Fuß."
+              },
+              "official": ""
+            },
+            {
+              "id": "zamalek",
+              "name": {
+                "ar": "الزمالك",
+                "en": "Zamalek",
+                "fr": "Zamalek",
+                "de": "Zamalek"
+              },
+              "area": {
+                "ar": "جزيرة على النيل",
+                "en": "Nile island",
+                "fr": "Île sur le Nil",
+                "de": "Nil-Insel"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر.",
+                "en": "Taxi or ride-hailing.",
+                "fr": "Taxi ou VTC.",
+                "de": "Taxi oder Fahrdienst."
+              },
+              "tip": {
+                "ar": "مكان هادي على النيل، ومليان كافيهات.",
+                "en": "Quiet, on the Nile, full of cafés.",
+                "fr": "Calme au bord du Nil, plein de cafés.",
+                "de": "Ruhig am Nil, voller Cafés."
+              },
+              "official": ""
+            },
+            {
+              "id": "heliopolis",
+              "name": {
+                "ar": "مصر الجديدة",
+                "en": "Heliopolis",
+                "fr": "Héliopolis",
+                "de": "Heliopolis"
+              },
+              "area": {
+                "ar": "شرق القاهرة",
+                "en": "East Cairo",
+                "fr": "Est du Caire",
+                "de": "Ost-Kairo"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر، أو ترام مصر الجديدة.",
+                "en": "Taxi, ride-hailing or the Heliopolis tram.",
+                "fr": "Taxi, VTC ou tramway d'Héliopolis.",
+                "de": "Taxi, Fahrdienst oder Heliopolis-Tram."
+              },
+              "tip": {
+                "ar": "فيها قصور وشوارع واسعة وفيلات قديمة.",
+                "en": "Palaces, wide streets and old villas.",
+                "fr": "Palais, larges avenues et villas anciennes.",
+                "de": "Paläste, breite Straßen und alte Villen."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "sites",
+          "title": {
+            "ar": "المواقع الأثرية",
+            "en": "Historic sites",
+            "fr": "Sites historiques",
+            "de": "Historische Stätten"
+          },
+          "items": [
+            {
+              "id": "citadel",
+              "name": {
+                "ar": "قلعة صلاح الدين",
+                "en": "Saladin Citadel",
+                "fr": "Citadelle de Saladin",
+                "de": "Saladin-Zitadelle"
+              },
+              "area": {
+                "ar": "جنوب شرق القاهرة",
+                "en": "South-east Cairo",
+                "fr": "Sud-est du Caire",
+                "de": "Südosten Kairos"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر لحد الباب، والطريق مرتفع.",
+                "en": "Taxi or ride-hailing to the gate; it's uphill.",
+                "fr": "Taxi ou VTC jusqu'à l'entrée ; c'est en montée.",
+                "de": "Taxi oder Fahrdienst bis zum Tor; es geht bergauf."
+              },
+              "tip": {
+                "ar": "الميعاد مهم، والمنظر من فوق يستاهل.",
+                "en": "Mind the opening hours; the view is worth it.",
+                "fr": "Vérifiez les horaires ; la vue vaut le détour.",
+                "de": "Auf Öffnungszeiten achten; die Aussicht lohnt sich."
+              },
+              "official": "https://www.google.com/maps/search/?api=1&query=Saladin+Citadel+Cairo"
+            },
+            {
+              "id": "zuweila",
+              "name": {
+                "ar": "باب زويلة",
+                "en": "Bab Zuweila",
+                "fr": "Bab Zuweila",
+                "de": "Bab Zuweila"
+              },
+              "area": {
+                "ar": "القاهرة الإسلامية",
+                "en": "Islamic Cairo",
+                "fr": "Le Caire islamique",
+                "de": "Islamisches Kairo"
+              },
+              "how": {
+                "ar": "مترو الأزهر، والمشي حوالي ١٠ دقايق.",
+                "en": "Metro Al-Azhar, then about 10 minutes' walk.",
+                "fr": "Métro Al-Azhar puis environ 10 minutes à pied.",
+                "de": "U-Bahn Al-Azhar, dann etwa 10 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "ممكن تطلع فوق البوابة.",
+                "en": "You can climb to the top of the gate.",
+                "fr": "Vous pouvez monter sur la porte.",
+                "de": "Sie können auf das Tor steigen."
+              },
+              "official": ""
+            },
+            {
+              "id": "muizz",
+              "name": {
+                "ar": "شارع المعز لدين الله",
+                "en": "Al-Muizz Street",
+                "fr": "Rue Al-Muizz",
+                "de": "Al-Muizz-Straße"
+              },
+              "area": {
+                "ar": "القاهرة الفاطمية",
+                "en": "Fatimid Cairo",
+                "fr": "Le Caire fatimide",
+                "de": "Fatimidisches Kairo"
+              },
+              "how": {
+                "ar": "مترو الأزهر أو الحسين، وبعدين تمشي.",
+                "en": "Metro Al-Azhar or Al-Hussein, then walk.",
+                "fr": "Métro Al-Azhar ou Al-Hussein, puis à pied.",
+                "de": "U-Bahn Al-Azhar oder Al-Hussein, dann zu Fuß."
+              },
+              "tip": {
+                "ar": "شارع أثري بعمارة فاطمية ومملوكية، والأحسن تمشيه مع مرشد.",
+                "en": "Historic street of Fatimid and Mamluk architecture; best with a guide.",
+                "fr": "Rue historique aux architectures fatimides et mamelouks ; mieux avec un guide.",
+                "de": "Historische Straße mit fatimidischer und mamlukischer Architektur; am besten mit Guide."
+              },
+              "official": ""
+            },
+            {
+              "id": "khan",
+              "name": {
+                "ar": "خان الخليلي",
+                "en": "Khan el-Khalili",
+                "fr": "Khan el-Khalili",
+                "de": "Khan el-Khalili"
+              },
+              "area": {
+                "ar": "القاهرة الإسلامية",
+                "en": "Islamic Cairo",
+                "fr": "Le Caire islamique",
+                "de": "Islamisches Kairo"
+              },
+              "how": {
+                "ar": "مترو الحسين، وبعدين حوالي ١٥ دقيقة مشي.",
+                "en": "Metro Al-Hussein, then about 15 minutes' walk.",
+                "fr": "Métro Al-Hussein puis environ 15 minutes à pied.",
+                "de": "U-Bahn Al-Hussein, dann etwa 15 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "ادفع بالجنيه، وخلي بالك من اللي بيعرض يوديك لمحل معين.",
+                "en": "Pay in pounds; be careful with anyone offering to take you to a specific shop.",
+                "fr": "Payez en livres ; méfiez-vous de ceux qui proposent de vous guider vers une boutique.",
+                "de": "In Pfund bezahlen; vorsicht bei Leuten, die Sie zu einem bestimmten Laden führen wollen."
+              },
+              "official": "https://www.google.com/maps/search/?api=1&query=Khan+el-Khalili+Cairo"
+            }
+          ]
+        },
+        {
+          "id": "mosques",
+          "title": {
+            "ar": "المساجد",
+            "en": "Mosques",
+            "fr": "Mosquées",
+            "de": "Moscheen"
+          },
+          "items": [
+            {
+              "id": "azhar",
+              "name": {
+                "ar": "الجامع الأزهر",
+                "en": "Al-Azhar Mosque",
+                "fr": "Mosquée Al-Azhar",
+                "de": "Al-Azhar-Moschee"
+              },
+              "area": {
+                "ar": "القاهرة الإسلامية",
+                "en": "Islamic Cairo",
+                "fr": "Le Caire islamique",
+                "de": "Islamisches Kairo"
+              },
+              "how": {
+                "ar": "مترو الأزهر.",
+                "en": "Metro Al-Azhar.",
+                "fr": "Métro Al-Azhar.",
+                "de": "U-Bahn Al-Azhar."
+              },
+              "tip": {
+                "ar": "محتشمة، والنسا بغطا شعرها. وممنوع الدخول وقت الصلاة.",
+                "en": "Dress modestly; women cover their hair. No entry during prayer.",
+                "fr": "Tenue correcte ; les femmes se couvrent les cheveux. Pas d'accès pendant la prière.",
+                "de": "Angemessene Kleidung; Frauen bedecken das Haar. Kein Zutritt während des Gebets."
+              },
+              "official": ""
+            },
+            {
+              "id": "sultanhassan",
+              "name": {
+                "ar": "مسجد ومدرسة السلطان حسن",
+                "en": "Sultan Hassan Mosque",
+                "fr": "Mosquée du sultan Hassan",
+                "de": "Sultan-Hassan-Moschee"
+              },
+              "area": {
+                "ar": "القلعة",
+                "en": "Citadel area",
+                "fr": "Zone de la citadelle",
+                "de": "Zitadellen-Gebiet"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر لحد القلعة.",
+                "en": "Taxi or ride-hailing to the Citadel.",
+                "fr": "Taxi ou VTC jusqu'à la Citadelle.",
+                "de": "Taxi oder Fahrdienst bis zur Zitadelle."
+              },
+              "tip": {
+                "ar": "عمارة مملوكية كبيرة وهادية، والأحسن تيجيه مع القلعة.",
+                "en": "A large, calm Mamluk monument; combine with the Citadel.",
+                "fr": "Grand monument mamelouk paisible ; à combiner avec la Citadelle.",
+                "de": "Großes, ruhiges Mamluken-Denkmal; mit der Zitadelle kombinieren."
+              },
+              "official": ""
+            },
+            {
+              "id": "ibntulun",
+              "name": {
+                "ar": "جامع ابن طولون",
+                "en": "Ibn Tulun Mosque",
+                "fr": "Mosquée Ibn Tulun",
+                "de": "Ibn-Tulun-Moschee"
+              },
+              "area": {
+                "ar": "السيدة زينب / الدرب الأحمر",
+                "en": "Sayeda Zeinab / Darb al-Ahmar",
+                "fr": "Sayeda Zeinab / Darb al-Ahmar",
+                "de": "Sayeda Zeinab / Darb al-Ahmar"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر.",
+                "en": "Taxi or ride-hailing.",
+                "fr": "Taxi ou VTC.",
+                "de": "Taxi oder Fahrdienst."
+              },
+              "tip": {
+                "ar": "من أقدم الجوامع في القاهرة، وفيه سلم خارجي مشهور.",
+                "en": "One of the oldest mosques in Cairo, with a famous outer staircase.",
+                "fr": "L'une des plus anciennes mosquées du Caire, avec un célèbre escalier extérieur.",
+                "de": "Eine der ältesten Moscheen Kairos, mit einer berühmten Außentreppe."
+              },
+              "official": ""
+            },
+            {
+              "id": "rifai",
+              "name": {
+                "ar": "جامع الرفاعي",
+                "en": "Al-Rifai Mosque",
+                "fr": "Mosquée Al-Rifai",
+                "de": "Al-Rifai-Moschee"
+              },
+              "area": {
+                "ar": "القلعة",
+                "en": "Citadel area",
+                "fr": "Zone de la citadelle",
+                "de": "Zitadellen-Gebiet"
+              },
+              "how": {
+                "ar": "جنب القلعة، تاكسي لحد الميدان.",
+                "en": "Next to the Citadel; taxi to the square.",
+                "fr": "À côté de la Citadelle ; taxi jusqu'à la place.",
+                "de": "Neben der Zitadelle; Taxi bis zum Platz."
+              },
+              "tip": {
+                "ar": "فيه مقابر ملوك مصر الأخيرة.",
+                "en": "It holds the tombs of Egypt's last kings.",
+                "fr": "Il abrite les tombes des derniers rois d'Égypte.",
+                "de": "Hier liegen die Gräber der letzten ägyptischen Könige."
+              },
+              "official": ""
+            },
+            {
+              "id": "muhammadali",
+              "name": {
+                "ar": "جامع محمد علي (المرمر)",
+                "en": "Muhammad Ali Mosque (Alabaster)",
+                "fr": "Mosquée Mohammed Ali (albâtre)",
+                "de": "Mohammed-Ali-Moschee (Alabaster)"
+              },
+              "area": {
+                "ar": "القلعة",
+                "en": "Citadel area",
+                "fr": "Zone de la citadelle",
+                "de": "Zitadellen-Gebiet"
+              },
+              "how": {
+                "ar": "جوه القلعة، تاكسي أو أوبر لحد الباب.",
+                "en": "Inside the Citadel; taxi or ride-hailing to the gate.",
+                "fr": "Dans la Citadelle ; taxi ou VTC jusqu'à la porte.",
+                "de": "In der Zitadelle; Taxi oder Fahrdienst bis zum Tor."
+              },
+              "tip": {
+                "ar": "جامع كبير من المرمر، والمنظر منه على القاهرة.",
+                "en": "A big alabaster mosque with views over Cairo.",
+                "fr": "Grande mosquée d'albâtre avec vue sur le Caire.",
+                "de": "Große Alabaster-Moschee mit Blick über Kairo."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "churches",
+          "title": {
+            "ar": "الكنائس والمعابد",
+            "en": "Churches & temples",
+            "fr": "Églises et temples",
+            "de": "Kirchen & Tempel"
+          },
+          "items": [
+            {
+              "id": "hanging",
+              "name": {
+                "ar": "الكنيسة المعلقة",
+                "en": "The Hanging Church",
+                "fr": "L'Église suspendue",
+                "de": "Die Hängende Kirche"
+              },
+              "area": {
+                "ar": "مصر القديمة",
+                "en": "Old Cairo",
+                "fr": "Vieux Caire",
+                "de": "Altkairo"
+              },
+              "how": {
+                "ar": "مترو مار جرجس، والمشي حوالي ٥ دقايق.",
+                "en": "Metro Mar Girgis, then about 5 minutes' walk.",
+                "fr": "Métro Mar Girgis puis environ 5 minutes à pied.",
+                "de": "U-Bahn Mar Girgis, dann etwa 5 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "سقفها خشب على شكل سفينة نوح، ولبسك محتشم.",
+                "en": "Its wooden roof is shaped like Noah's ark; dress modestly.",
+                "fr": "Son toit en bois évoque l'arche de Noé ; tenue correcte.",
+                "de": "Das Holzdach erinnert an Noahs Arche; angemessene Kleidung."
+              },
+              "official": ""
+            },
+            {
+              "id": "abuserga",
+              "name": {
+                "ar": "كنيسة أبو سرجة",
+                "en": "Abu Serga Church",
+                "fr": "Église Abu Serga",
+                "de": "Abu-Sarga-Kirche"
+              },
+              "area": {
+                "ar": "مصر القديمة",
+                "en": "Old Cairo",
+                "fr": "Vieux Caire",
+                "de": "Altkairo"
+              },
+              "how": {
+                "ar": "مترو مار جرجس، والمشي قريب.",
+                "en": "Metro Mar Girgis, a short walk.",
+                "fr": "Métro Mar Girgis, à pied.",
+                "de": "U-Bahn Mar Girgis, kurzer Fußweg."
+              },
+              "tip": {
+                "ar": "فيها مغارة بتقول الكنيسة إن العيلة المقدسة استخبت فيها.",
+                "en": "Has a crypt where the church says the Holy Family once sheltered.",
+                "fr": "Crypte où l'Église dit que la Sainte Famille s'est abritée.",
+                "de": "Hat eine Krypta, in der die Kirche die Heilige Familie verortet."
+              },
+              "official": ""
+            },
+            {
+              "id": "benezra",
+              "name": {
+                "ar": "معبد بن عزرا",
+                "en": "Ben Ezra Synagogue",
+                "fr": "Synagogue Ben Ezra",
+                "de": "Ben-Ezra-Synagoge"
+              },
+              "area": {
+                "ar": "مصر القديمة",
+                "en": "Old Cairo",
+                "fr": "Vieux Caire",
+                "de": "Altkairo"
+              },
+              "how": {
+                "ar": "مترو مار جرجس، والمشي حوالي ٥ دقايق.",
+                "en": "Metro Mar Girgis, about 5 minutes' walk.",
+                "fr": "Métro Mar Girgis, environ 5 minutes à pied.",
+                "de": "U-Bahn Mar Girgis, etwa 5 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "من أقدم المعابد اليهودية في القاهرة.",
+                "en": "One of the oldest Jewish temples in Cairo.",
+                "fr": "L'un des plus anciens temples juifs du Caire.",
+                "de": "Einer der ältesten jüdischen Tempel Kairos."
+              },
+              "official": ""
+            },
+            {
+              "id": "barbara",
+              "name": {
+                "ar": "كنيسة القديسة بربارة",
+                "en": "St. Barbara Church",
+                "fr": "Église Sainte-Barbe",
+                "de": "St.-Barbara-Kirche"
+              },
+              "area": {
+                "ar": "مصر القديمة",
+                "en": "Old Cairo",
+                "fr": "Vieux Caire",
+                "de": "Altkairo"
+              },
+              "how": {
+                "ar": "مترو مار جرجس.",
+                "en": "Metro Mar Girgis.",
+                "fr": "Métro Mar Girgis.",
+                "de": "U-Bahn Mar Girgis."
+              },
+              "tip": {
+                "ar": "قريبة من الكنيسة المعلقة، والأحسن تزورها معاها.",
+                "en": "Close to the Hanging Church; visit them together.",
+                "fr": "Proche de l'Église suspendue ; visitez-les ensemble.",
+                "de": "Nahe der Hängenden Kirche; besuchen Sie beide zusammen."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "museums",
+          "title": {
+            "ar": "المتاحف",
+            "en": "Museums",
+            "fr": "Musées",
+            "de": "Museen"
+          },
+          "items": [
+            {
+              "id": "egyptmuseum",
+              "name": {
+                "ar": "المتحف المصري بالتحرير",
+                "en": "Egyptian Museum, Tahrir",
+                "fr": "Musée égyptien de Tahrir",
+                "de": "Ägyptisches Museum am Tahrir"
+              },
+              "area": {
+                "ar": "وسط البلد",
+                "en": "Downtown",
+                "fr": "Centre-ville",
+                "de": "Downtown"
+              },
+              "how": {
+                "ar": "مترو محطة سعد زغلول، والمشي حوالي ١٠ دقايق.",
+                "en": "Metro Saad Zaghloul, about 10 minutes' walk.",
+                "fr": "Métro Saad Zaghloul, environ 10 minutes à pied.",
+                "de": "U-Bahn Saad Zaghloul, etwa 10 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "أغلب القطع اتنقلت للمتحف الكبير، فشوف الميعاد قبل ما تيجي.",
+                "en": "Many pieces moved to the Grand Museum; check hours before you come.",
+                "fr": "Beaucoup de pièces ont déménagé au Grand Musée ; vérifiez les horaires.",
+                "de": "Viele Stücke sind ins Große Museum umgezogen; Öffnungszeiten vorher prüfen."
+              },
+              "official": ""
+            },
+            {
+              "id": "coptic",
+              "name": {
+                "ar": "المتحف القبطي",
+                "en": "Coptic Museum",
+                "fr": "Musée copte",
+                "de": "Koptisches Museum"
+              },
+              "area": {
+                "ar": "مصر القديمة",
+                "en": "Old Cairo",
+                "fr": "Vieux Caire",
+                "de": "Altkairo"
+              },
+              "how": {
+                "ar": "مترو مار جرجس.",
+                "en": "Metro Mar Girgis.",
+                "fr": "Métro Mar Girgis.",
+                "de": "U-Bahn Mar Girgis."
+              },
+              "tip": {
+                "ar": "بيجمع تحف مسيحية من مصر، وقريب من الكنائس.",
+                "en": "Christian artefacts from Egypt, close to the churches.",
+                "fr": "Objets chrétiens d'Égypte, près des églises.",
+                "de": "Christliche Artefakte aus Ägypten, nahe den Kirchen."
+              },
+              "official": ""
+            },
+            {
+              "id": "islamicart",
+              "name": {
+                "ar": "متحف الفن الإسلامي",
+                "en": "Museum of Islamic Art",
+                "fr": "Musée d'art islamique",
+                "de": "Museum für islamische Kunst"
+              },
+              "area": {
+                "ar": "القاهرة الإسلامية",
+                "en": "Islamic Cairo",
+                "fr": "Le Caire islamique",
+                "de": "Islamisches Kairo"
+              },
+              "how": {
+                "ar": "مترو الأزهر، والمشي قريب.",
+                "en": "Metro Al-Azhar, a short walk.",
+                "fr": "Métro Al-Azhar, à pied.",
+                "de": "U-Bahn Al-Azhar, kurzer Fußweg."
+              },
+              "tip": {
+                "ar": "مجموعة كبيرة من الفن الإسلامي من مصر والعالم الإسلامي.",
+                "en": "A large collection of Islamic art from Egypt and the Islamic world.",
+                "fr": "Une grande collection d'art islamique d'Égypte et du monde islamique.",
+                "de": "Eine große Sammlung islamischer Kunst aus Ägypten und der islamischen Welt."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "palaces",
+          "title": {
+            "ar": "القصور",
+            "en": "Palaces",
+            "fr": "Palais",
+            "de": "Paläste"
+          },
+          "items": [
+            {
+              "id": "abdeen",
+              "name": {
+                "ar": "قصر عابدين",
+                "en": "Abdeen Palace",
+                "fr": "Palais d'Abdine",
+                "de": "Abdin-Palast"
+              },
+              "area": {
+                "ar": "وسط البلد",
+                "en": "Downtown",
+                "fr": "Centre-ville",
+                "de": "Downtown"
+              },
+              "how": {
+                "ar": "مترو سعد زغلول أو محمد نجيب، والمشي حوالي ١٠ دقايق.",
+                "en": "Metro Saad Zaghloul or Mohamed Naguib, about 10 minutes' walk.",
+                "fr": "Métro Saad Zaghloul ou Mohamed Naguib, environ 10 minutes à pied.",
+                "de": "U-Bahn Saad Zaghloul oder Mohamed Naguib, etwa 10 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "المتحف جزء صغير منه، والمواعيد بتتغير، فاتأكد قبل ما تيجي.",
+                "en": "Only part is a museum and hours change; confirm before you go.",
+                "fr": "Seule une partie est un musée et les horaires changent ; vérifiez.",
+                "de": "Nur ein Teil ist Museum und die Zeiten ändern sich; vorher prüfen."
+              },
+              "official": ""
+            },
+            {
+              "id": "manial",
+              "name": {
+                "ar": "قصر محمد علي في المنيل",
+                "en": "Manial Palace",
+                "fr": "Palais de Mohammed Ali à Manial",
+                "de": "Manial-Palast"
+              },
+              "area": {
+                "ar": "جزيرة الروضة",
+                "en": "Rawda Island",
+                "fr": "Île de Rawda",
+                "de": "Rawda-Insel"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر لجزيرة الروضة.",
+                "en": "Taxi or ride-hailing to Rawda Island.",
+                "fr": "Taxi ou VTC jusqu'à l'île de Rawda.",
+                "de": "Taxi oder Fahrdienst zur Rawda-Insel."
+              },
+              "tip": {
+                "ar": "ديكور عثماني مزخرف، وفيه حفلات أحيانا.",
+                "en": "Ottoman decor, and it sometimes hosts concerts.",
+                "fr": "Décor ottoman raffiné ; il accueille parfois des concerts.",
+                "de": "Osmanische Ausstattung; manchmal Konzerte."
+              },
+              "official": ""
+            },
+            {
+              "id": "baron",
+              "name": {
+                "ar": "قصر البارون إمبان",
+                "en": "Baron Empain Palace",
+                "fr": "Palais du Baron Empain",
+                "de": "Baron-Empain-Palast"
+              },
+              "area": {
+                "ar": "مصر الجديدة",
+                "en": "Heliopolis",
+                "fr": "Héliopolis",
+                "de": "Heliopolis"
+              },
+              "how": {
+                "ar": "ترام مصر الجديدة أو تاكسي.",
+                "en": "Heliopolis tram or taxi.",
+                "fr": "Tramway d'Héliopolis ou taxi.",
+                "de": "Heliopolis-Tram oder Taxi."
+              },
+              "tip": {
+                "ar": "مبني غريب الشكل، وفيه سطح للمنظر.",
+                "en": "Unusual building with a roof viewpoint.",
+                "fr": "Bâtiment insolite avec une terrasse panoramique.",
+                "de": "Ungewöhnliches Gebäude mit Dachaussicht."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "parks",
+          "title": {
+            "ar": "الحدائق",
+            "en": "Gardens",
+            "fr": "Jardins",
+            "de": "Gärten"
+          },
+          "items": [
+            {
+              "id": "azharpark",
+              "name": {
+                "ar": "حديقة الأزهر",
+                "en": "Al-Azhar Park",
+                "fr": "Parc Al-Azhar",
+                "de": "Al-Azhar-Park"
+              },
+              "area": {
+                "ar": "القاهرة الإسلامية",
+                "en": "Islamic Cairo",
+                "fr": "Le Caire islamique",
+                "de": "Islamisches Kairo"
+              },
+              "how": {
+                "ar": "مترو الحسين، وبعدين تاكسي قصير.",
+                "en": "Metro Al-Hussein, then a short taxi.",
+                "fr": "Métro Al-Hussein puis un court taxi.",
+                "de": "U-Bahn Al-Hussein, dann kurzes Taxi."
+              },
+              "tip": {
+                "ar": "المنظر على القاهرة التاريخية من فوق، والأحسن بالعصر.",
+                "en": "Views over historic Cairo; best in the afternoon.",
+                "fr": "Vue sur le Caire historique ; mieux l'après-midi.",
+                "de": "Blick über das historische Kairo; am besten am Nachmittag."
+              },
+              "official": ""
+            },
+            {
+              "id": "andalus",
+              "name": {
+                "ar": "حديقة الأندلس",
+                "en": "Al-Andalus Garden",
+                "fr": "Jardin Al-Andalus",
+                "de": "Al-Andalus-Garten"
+              },
+              "area": {
+                "ar": "الزمالك",
+                "en": "Zamalek",
+                "fr": "Zamalek",
+                "de": "Zamalek"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر.",
+                "en": "Taxi or ride-hailing.",
+                "fr": "Taxi ou VTC.",
+                "de": "Taxi oder Fahrdienst."
+              },
+              "tip": {
+                "ar": "مكان هادي بمنظر على النيل.",
+                "en": "Calm spot with Nile views.",
+                "fr": "Endroit calme avec vue sur le Nil.",
+                "de": "Ruhiger Ort mit Nilblick."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "malls",
+          "title": {
+            "ar": "المولات",
+            "en": "Malls",
+            "fr": "Centres commerciaux",
+            "de": "Einkaufszentren"
+          },
+          "items": [
+            {
+              "id": "citystars",
+              "name": {
+                "ar": "سيتي ستارز",
+                "en": "City Stars",
+                "fr": "City Stars",
+                "de": "City Stars"
+              },
+              "area": {
+                "ar": "مدينة نصر",
+                "en": "Nasr City",
+                "fr": "Nasr City",
+                "de": "Nasr City"
+              },
+              "how": {
+                "ar": "مترو محطة سيتي ستارز أو تاكسي.",
+                "en": "Metro City Stars station or taxi.",
+                "fr": "Métro City Stars ou taxi.",
+                "de": "U-Bahn City Stars oder Taxi."
+              },
+              "tip": {
+                "ar": "مول كبير فيه مطاعم وسينما.",
+                "en": "A big mall with restaurants and cinemas.",
+                "fr": "Grand centre avec restaurants et cinéma.",
+                "de": "Großes Einkaufszentrum mit Restaurants und Kino."
+              },
+              "official": ""
+            },
+            {
+              "id": "festival",
+              "name": {
+                "ar": "كايرو فستيفال سيتي",
+                "en": "Cairo Festival City",
+                "fr": "Cairo Festival City",
+                "de": "Cairo Festival City"
+              },
+              "area": {
+                "ar": "القاهرة الجديدة",
+                "en": "New Cairo",
+                "fr": "Le Caire nouveau",
+                "de": "Neu-Kairo"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر.",
+                "en": "Taxi or ride-hailing.",
+                "fr": "Taxi ou VTC.",
+                "de": "Taxi oder Fahrdienst."
+              },
+              "tip": {
+                "ar": "مول حديث فيه مطاعم كتير.",
+                "en": "A modern mall with lots of restaurants.",
+                "fr": "Centre moderne avec de nombreux restaurants.",
+                "de": "Modernes Einkaufszentrum mit vielen Restaurants."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "streets",
+          "title": {
+            "ar": "الشوارع",
+            "en": "Streets",
+            "fr": "Rues",
+            "de": "Straßen"
+          },
+          "items": [
+            {
+              "id": "talaat",
+              "name": {
+                "ar": "شارع طلعت حرب",
+                "en": "Talaat Harb Street",
+                "fr": "Rue Talaat Harb",
+                "de": "Talaat-Harb-Straße"
+              },
+              "area": {
+                "ar": "وسط البلد",
+                "en": "Downtown",
+                "fr": "Centre-ville",
+                "de": "Downtown"
+              },
+              "how": {
+                "ar": "مترو سعد زغلول أو الأوبرا، والمشي.",
+                "en": "Metro Saad Zaghloul or Opera, then walk.",
+                "fr": "Métro Saad Zaghloul ou Opéra, puis à pied.",
+                "de": "U-Bahn Saad Zaghloul oder Oper, dann zu Fuß."
+              },
+              "tip": {
+                "ar": "شوارع وسط البلد فيها محلات وكافيهات قديمة.",
+                "en": "Downtown's streets have old shops and cafés.",
+                "fr": "Les rues du centre ont d'anciennes boutiques et cafés.",
+                "de": "Die Straßen von Downtown haben alte Läden und Cafés."
+              },
+              "official": ""
+            },
+            {
+              "id": "diana",
+              "name": {
+                "ar": "سينما ديانا",
+                "en": "Diana Cinema",
+                "fr": "Cinéma Diana",
+                "de": "Kino Diana"
+              },
+              "area": {
+                "ar": "وسط البلد - الأزبكية",
+                "en": "Downtown - Azbakeya",
+                "fr": "Centre-ville - Azbakeya",
+                "de": "Downtown - Azbakeya"
+              },
+              "how": {
+                "ar": "مترو محمد نجيب أو الأوبرا، والمشي حوالي ١٠ دقايق.",
+                "en": "Metro Mohamed Naguib or Opera, about 10 minutes' walk.",
+                "fr": "Métro Mohamed Naguib ou Opéra, environ 10 minutes à pied.",
+                "de": "U-Bahn Mohamed Naguib oder Oper, etwa 10 Minuten zu Fuß."
+              },
+              "tip": {
+                "ar": "سينما قديمة من زمن الفن الجميل، والمبنى أرت ديكو.",
+                "en": "An old cinema from Egypt's golden age, with an Art Deco façade.",
+                "fr": "Un ancien cinéma de l'âge d'or égyptien, façade Art déco.",
+                "de": "Ein altes Kino aus Ägyptens Goldener Ära, mit Art-déco-Fassade."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "area_hist",
+          "title": {
+            "ar": "المناطق التاريخية",
+            "en": "Historic areas",
+            "fr": "Quartiers historiques",
+            "de": "Historische Viertel"
+          },
+          "items": [
+            {
+              "id": "sayeda",
+              "name": {
+                "ar": "السيدة زينب",
+                "en": "Sayeda Zeinab",
+                "fr": "Sayeda Zeinab",
+                "de": "Sayeda Zeinab"
+              },
+              "area": {
+                "ar": "جنوب القاهرة الإسلامية",
+                "en": "South Islamic Cairo",
+                "fr": "Sud du Caire islamique",
+                "de": "Süden des islamischen Kairo"
+              },
+              "how": {
+                "ar": "مترو السادات أو السيدة زينب.",
+                "en": "Metro Sadat or Sayeda Zeinab.",
+                "fr": "Métro Sadat ou Sayeda Zeinab.",
+                "de": "U-Bahn Sadat oder Sayeda Zeinab."
+              },
+              "tip": {
+                "ar": "حي شعبي ديني، والزيارة بتكون بأدب واحترام.",
+                "en": "A popular religious neighbourhood; visit respectfully.",
+                "fr": "Quartier populaire et religieux ; visitez avec respect.",
+                "de": "Beliebtes religiöses Viertel; mit Respekt besuchen."
+              },
+              "official": ""
+            }
+          ]
+        }
+      ]
+    },
+    "giza": {
+      "title": {
+        "ar": "الجيزة",
+        "en": "Giza",
+        "fr": "Gizeh",
+        "de": "Gizeh"
+      },
+      "groups": [
+        {
+          "id": "pyramids",
+          "title": {
+            "ar": "الأهرامات وأبو الهول",
+            "en": "Pyramids & Sphinx",
+            "fr": "Pyramides et Sphinx",
+            "de": "Pyramiden & Sphinx"
+          },
+          "items": [
+            {
+              "id": "gp",
+              "name": {
+                "ar": "أهرامات الجيزة وأبو الهول",
+                "en": "Giza Pyramids & the Sphinx",
+                "fr": "Pyramides de Gizeh et Sphinx",
+                "de": "Pyramiden von Gizeh & Sphinx"
+              },
+              "area": {
+                "ar": "هضبة الجيزة",
+                "en": "Giza Plateau",
+                "fr": "Plateau de Gizeh",
+                "de": "Gizeh-Plateau"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر لحد البوابة. المسافة من القاهرة حوالي ساعة.",
+                "en": "Taxi or ride-hailing to the gate; about an hour from Cairo.",
+                "fr": "Taxi ou VTC jusqu'à l'entrée ; environ une heure du Caire.",
+                "de": "Taxi oder Fahrdienst bis zum Eingang; etwa eine Stunde von Kairo."
+              },
+              "tip": {
+                "ar": "الأحسن تيجي بدري الصبح. وخد بالك من اللي بيعرض خيل أو جمل بفلوس بعد التصوير.",
+                "en": "Come early. Be careful with horse or camel offers that charge after photos.",
+                "fr": "Venez tôt. Méfiez-vous des chevaux ou chameaux qui facturent après les photos.",
+                "de": "Früh kommen. Vorsicht bei Pferden oder Kamelen, die nach Fotos Geld verlangen."
+              },
+              "official": "https://www.google.com/maps/search/?api=1&query=Giza+Pyramids"
+            },
+            {
+              "id": "saqqara",
+              "name": {
+                "ar": "سقارة وهرم زوسر",
+                "en": "Saqqara & Djoser's Step Pyramid",
+                "fr": "Saqqarah et pyramide à degrés",
+                "de": "Sakkara & Djoser-Stufenpyramide"
+              },
+              "area": {
+                "ar": "جنوب الجيزة",
+                "en": "South of Giza",
+                "fr": "Sud de Gizeh",
+                "de": "Süden von Gizeh"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر، وممكن تضم سقارة مع الأهرامات.",
+                "en": "Taxi or ride-hailing; can be combined with the pyramids.",
+                "fr": "Taxi ou VTC ; combinable avec les pyramides.",
+                "de": "Taxi oder Fahrdienst; mit den Pyramiden kombinierbar."
+              },
+              "tip": {
+                "ar": "مكان هادي وأقدم من الأهرامات الكبيرة.",
+                "en": "A quieter site, older than the big pyramids.",
+                "fr": "Site plus calme, plus ancien que les grandes pyramides.",
+                "de": "Ruhigerer Ort, älter als die großen Pyramiden."
+              },
+              "official": ""
+            },
+            {
+              "id": "dahshur",
+              "name": {
+                "ar": "دهشور: الهرم المنحني والأحمر",
+                "en": "Dahshur: Bent & Red Pyramids",
+                "fr": "Dahchour : pyramides rhomboïdale et rouge",
+                "de": "Dahschur: Knickpyramide & Rote Pyramide"
+              },
+              "area": {
+                "ar": "جنوب سقارة",
+                "en": "South of Saqqara",
+                "fr": "Au sud de Saqqarah",
+                "de": "Süd von Sakkara"
+              },
+              "how": {
+                "ar": "محتاج عربية أو سواق، والمسافة أطول.",
+                "en": "Needs a car or driver; further away.",
+                "fr": "Il faut une voiture ou un chauffeur ; plus loin.",
+                "de": "Auto oder Fahrer nötig; weiter entfernt."
+              },
+              "tip": {
+                "ar": "من أقدم الأهرامات، وهادي.",
+                "en": "Among the oldest pyramids; very quiet.",
+                "fr": "Parmi les plus anciennes pyramides ; très calme.",
+                "de": "Zu den ältesten Pyramiden gehörend; sehr ruhig."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "museums",
+          "title": {
+            "ar": "المتاحف",
+            "en": "Museums",
+            "fr": "Musées",
+            "de": "Museen"
+          },
+          "items": [
+            {
+              "id": "gem",
+              "name": {
+                "ar": "المتحف المصري الكبير",
+                "en": "Grand Egyptian Museum",
+                "fr": "Grand Musée égyptien",
+                "de": "Großes Ägyptisches Museum"
+              },
+              "area": {
+                "ar": "هضبة الأهرامات",
+                "en": "Pyramids Plateau",
+                "fr": "Plateau des pyramides",
+                "de": "Pyramidenplateau"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر، أو تجمع مع الأهرامات في نفس الرحلة.",
+                "en": "Taxi or ride-hailing; combine with the pyramids in one trip.",
+                "fr": "Taxi ou VTC ; à combiner avec les pyramides.",
+                "de": "Taxi oder Fahrdienst; mit den Pyramiden an einem Tag kombinierbar."
+              },
+              "tip": {
+                "ar": "الحجز أونلاين بس، واحجز الميعاد بدري في المواسم.",
+                "en": "Online booking only; book early in peak season.",
+                "fr": "Réservation en ligne uniquement ; réservez tôt en haute saison.",
+                "de": "Nur Online-Buchung; in der Hochsaison früh buchen."
+              },
+              "official": "https://tickets.gem.eg"
+            },
+            {
+              "id": "mallgiza",
+              "name": {
+                "ar": "مول مصر",
+                "en": "Mall of Egypt",
+                "fr": "Mall of Egypt",
+                "de": "Mall of Egypt"
+              },
+              "area": {
+                "ar": "٦ أكتوبر",
+                "en": "6th of October",
+                "fr": "6 Octobre",
+                "de": "6. Oktober"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر.",
+                "en": "Taxi or ride-hailing.",
+                "fr": "Taxi ou VTC.",
+                "de": "Taxi oder Fahrdienst."
+              },
+              "tip": {
+                "ar": "مول كبير فيه مطاعم وترفيه.",
+                "en": "A big mall with restaurants and entertainment.",
+                "fr": "Grand centre avec restaurants et loisirs.",
+                "de": "Großes Einkaufszentrum mit Restaurants und Unterhaltung."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "parks",
+          "title": {
+            "ar": "الحدائق",
+            "en": "Gardens",
+            "fr": "Jardins",
+            "de": "Gärten"
+          },
+          "items": [
+            {
+              "id": "orman",
+              "name": {
+                "ar": "حديقة الأورمان",
+                "en": "Orman Botanical Garden",
+                "fr": "Jardin botanique Orman",
+                "de": "Orman-Botanischer Garten"
+              },
+              "area": {
+                "ar": "الجيزة",
+                "en": "Giza",
+                "fr": "Gizeh",
+                "de": "Gizeh"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر، وبعدين مشي داخل الحديقة.",
+                "en": "Taxi or ride-hailing, then walk inside.",
+                "fr": "Taxi ou VTC, puis à pied dans le jardin.",
+                "de": "Taxi oder Fahrdienst, dann zu Fuß im Garten."
+              },
+              "tip": {
+                "ar": "حديقة نباتية قديمة فيها بحيرة اللوتس.",
+                "en": "An old botanical garden with a lotus pond.",
+                "fr": "Un vieux jardin botanique avec un bassin de lotus.",
+                "de": "Ein alter botanischer Garten mit einem Lotusteich."
+              },
+              "official": ""
+            }
+          ]
+        },
+        {
+          "id": "areas",
+          "title": {
+            "ar": "المناطق",
+            "en": "Areas",
+            "fr": "Quartiers",
+            "de": "Stadtteile"
+          },
+          "items": [
+            {
+              "id": "giza_area",
+              "name": {
+                "ar": "الجيزة",
+                "en": "Giza",
+                "fr": "Gizeh",
+                "de": "Gizeh"
+              },
+              "area": {
+                "ar": "الضفة الغربية للنيل",
+                "en": "West bank of the Nile",
+                "fr": "Rive ouest du Nil",
+                "de": "Westufer des Nils"
+              },
+              "how": {
+                "ar": "تاكسي أو أوبر، والمسافة من القاهرة حوالي ٢٠ دقيقة لوسط الجيزة.",
+                "en": "Taxi or ride-hailing; about 20 minutes from downtown Cairo.",
+                "fr": "Taxi ou VTC ; environ 20 minutes du centre du Caire.",
+                "de": "Taxi oder Fahrdienst; etwa 20 Minuten von Downtown Kairo."
+              },
+              "tip": {
+                "ar": "الجيزة فيها الأهرامات وأماكن كتير على النيل.",
+                "en": "Giza has the pyramids and many spots along the Nile.",
+                "fr": "Gizeh abrite les pyramides et de nombreux sites au bord du Nil.",
+                "de": "Gizeh hat die Pyramiden und viele Orte am Nil."
+              },
+              "official": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "tips": [
+    {
+      "id": "passport",
+      "title": {
+        "ar": "الباسبور",
+        "en": "Passport",
+        "fr": "Passeport",
+        "de": "Reisepass"
+      },
+      "text": {
+        "ar": "اعمل نسخة من الباسبور وخليه معاك. والأصلي سيبه في خزنة الفندق، والفندق عادةً بيعمل تسجيل الشرطة للزوار.",
+        "en": "Carry a photocopy and keep the original in the hotel safe. Hotels usually handle police registration for visitors.",
+        "fr": "Gardez une photocopie sur vous et l'original au coffre de l'hôtel. L'hôtel gère généralement l'enregistrement à la police.",
+        "de": "Eine Kopie bei sich tragen und das Original im Hotelsafe lassen. Das Hotel erledigt meist die Polizeimeldung."
+      }
+    },
+    {
+      "id": "money",
+      "title": {
+        "ar": "الفلوس",
+        "en": "Money",
+        "fr": "Argent",
+        "de": "Geld"
+      },
+      "text": {
+        "ar": "متشيلش فلوس كتير. وصرف الدولار من البنوك أو الصرافات الرسمية المعتمدة، ومتتعاملش مع السوق السودا.",
+        "en": "Don't carry much cash. Exchange dollars at banks or licensed exchange offices, and avoid the black market.",
+        "fr": "Ne gardez pas beaucoup d'argent. Changez vos dollars en banque ou dans les bureaux agréés ; évitez le marché noir.",
+        "de": "Nicht viel Bargeld mitnehmen. Dollar bei Banken oder lizenzierten Wechselstuben tauschen; den Schwarzmarkt meiden."
+      }
+    },
+    {
+      "id": "scams",
+      "title": {
+        "ar": "النصب",
+        "en": "Scams",
+        "fr": "Arnaques",
+        "de": "Betrug"
+      },
+      "text": {
+        "ar": "اعد الفكة قبل ما تمشي. وخد بالك من 'الهدية المجانية' والمرشد اللي مش معاه بطاقة رسمية.",
+        "en": "Count your change. Watch for 'free gifts' and guides without official ID.",
+        "fr": "Comptez votre monnaie. Méfiez-vous des 'cadeaux gratuits' et des guides sans badge officiel.",
+        "de": "Wechselgeld zählen. Vorsicht bei 'Gratisgeschenken' und Guides ohne Ausweis."
+      }
+    },
+    {
+      "id": "tickets",
+      "title": {
+        "ar": "التذاكر",
+        "en": "Tickets",
+        "fr": "Billets",
+        "de": "Tickets"
+      },
+      "text": {
+        "ar": "اشتري التذاكر من المواقع الرسمية أو من الشبابيك المعتمدة بس، ومتشتريش من حد بيعرض عليك في الطريق.",
+        "en": "Buy tickets only from official sites or licensed windows, not from people on the street.",
+        "fr": "Achetez uniquement sur les sites officiels ou aux guichets agréés, pas auprès de vendeurs de rue.",
+        "de": "Tickets nur über offizielle Seiten oder lizenzierte Schalter kaufen, nicht von Straßenverkäufern."
+      }
+    },
+    {
+      "id": "dress",
+      "title": {
+        "ar": "اللبس والاحترام",
+        "en": "Dress & respect",
+        "fr": "Tenue et respect",
+        "de": "Kleidung & Respekt"
+      },
+      "text": {
+        "ar": "في الأماكن الدينية البس محتشم، والنسا بيغطوا شعرهم. وصوّر باحترام، ومتصورش الناس من غير إذنها.",
+        "en": "At religious sites dress modestly and women cover their hair. Photograph respectfully and ask before photographing people.",
+        "fr": "Dans les lieux religieux, tenue correcte ; les femmes couvrent leurs cheveux. Photographiez avec respect.",
+        "de": "An religiösen Orten angemessen kleiden; Frauen bedecken das Haar. Respektvoll fotografieren."
+      }
+    },
+    {
+      "id": "traffic",
+      "title": {
+        "ar": "الزحمة والتنقل",
+        "en": "Traffic & getting around",
+        "fr": "Circulation et déplacements",
+        "de": "Verkehr & Unterwegs"
+      },
+      "text": {
+        "ar": "الزحمة في القاهرة كبيرة وقت الذروة. أوبر أو تاكسي بالتطبيق أأمن من الشارع، والمترو أسرع في الزحمة.",
+        "en": "Traffic is heavy at peak times. Ride-hailing apps are safer than street taxis; the metro is faster in traffic.",
+        "fr": "La circulation est dense aux heures de pointe. Les VTC sont plus sûrs que les taxis de rue ; le métro est plus rapide.",
+        "de": "Der Verkehr ist zur Stoßzeit dicht. Fahrdienst-Apps sind sicherer als Straßentaxis; die U-Bahn ist schneller."
+      }
+    }
+  ],
+  "meta": {}
+}

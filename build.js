@@ -3,7 +3,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const { renderPage, LANGS } = require("./src/render.js");
+const { renderPage, renderGuide, LANGS } = require("./src/render.js");
 
 const ROOT = __dirname;
 const OUT = path.join(ROOT, "dist");
@@ -17,6 +17,7 @@ const content = {
   fleet: read("content/fleet.json").cars,
   services: read("content/services.json").services,
   northcoast: read("content/northcoast.json"),
+  guide: read("content/guide.json"),
   text: Object.fromEntries(LANGS.map(l => [l, read("content/text/" + l + ".json")])),
   labels: Object.fromEntries(LANGS.map(l => [l, read("src/labels/" + l + ".json")]))
 };
@@ -29,6 +30,8 @@ for (const lang of LANGS) {
   fs.writeFileSync(path.join(OUT, lang, "index.html"), renderPage(lang, content));
   fs.mkdirSync(path.join(OUT, lang, "north-coast"), { recursive: true });
   fs.writeFileSync(path.join(OUT, lang, "north-coast", "index.html"), renderPage(lang, content, "sahel"));
+  fs.mkdirSync(path.join(OUT, lang, "guide"), { recursive: true });
+  fs.writeFileSync(path.join(OUT, lang, "guide", "index.html"), renderGuide(lang, content));
 }
 
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(OUT, "assets/style.css"));
@@ -40,7 +43,7 @@ if (fs.existsSync(path.join(ROOT, "media"))) fs.cpSync(path.join(ROOT, "media"),
 const base = (content.settings.site_url || "").replace(/\/$/, "");
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-  + ["", "north-coast/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
+  + ["", "north-coast/", "guide/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
   + "\n</urlset>\n");
 fs.writeFileSync(path.join(OUT, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: " + base + "/sitemap.xml\n");
 

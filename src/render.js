@@ -39,7 +39,8 @@ function renderPage(lang, c, page) {
     const logo = '<a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
     const pre = sahel ? "/" + lang + "/" : "";
     const sahelLink = '<a class="nav-sahel" href="/' + lang + '/north-coast/"' + (sahel ? ' aria-current="page"' : '') + '>' + esc(N.nav) + '</a>';
-    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + sahelLink + '</nav>';
+    const guideLink = '<a class="nav-sahel" href="/' + lang + '/guide/">' + esc(GUIDE_UI[lang].title) + '</a>';
+    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + sahelLink + guideLink + '</nav>';
     const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/' + (sahel ? 'north-coast/' : '') + '" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
     return '<header class="hdr" id="hdr"><div class="wrap">' + logo + nav + langs
       + '<a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(L.whatsapp) + '</a>'
@@ -192,4 +193,48 @@ function renderPage(lang, c, page) {
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }
 
-module.exports = { renderPage, LANGS };
+/* ---------- one guide page: Cairo & Giza places, tips, services (no attraction prices) ---------- */
+const GUIDE_UI = {
+  ar: { title: "دليل القاهرة والجيزة", intro: "اختار المدينة، وبعدين القسم، وبعدين المكان. كل مكان فيه كيف توصله ونصايح، ولو محتاج عربية بسائق اضغط احجز.", places: "مكان", tips: "نصايح السائح", services: "خدماتنا", how: "كيف توصله", tip: "نصيحة", map: "الخريطة", official: "الموقع الرسمي", book: "احجز عربية بس", bookMsg: "مرحبًا {B}، عايز أحجز عربية بس لـ: {p}" },
+  en: { title: "Cairo & Giza guide", intro: "Pick a city, then a category, then a place. Each place shows how to get there and tips. Tap book if you need a car with a driver.", places: "places", tips: "Traveller tips", services: "Our services", how: "How to get there", tip: "Tip", map: "Map", official: "Official site", book: "Book a car only", bookMsg: "Hello {B}, I'd like to book a car only for: {p}" },
+  fr: { title: "Guide du Caire et de Gizeh", intro: "Choisissez une ville, puis une catégorie, puis un lieu. Chaque lieu indique comment s'y rendre et des conseils. Appuyez sur réserver si vous voulez seulement une voiture avec chauffeur.", places: "lieux", tips: "Conseils voyageurs", services: "Nos services", how: "Comment s'y rendre", tip: "Conseil", map: "Carte", official: "Site officiel", book: "Réserver une voiture seule", bookMsg: "Bonjour {B}, je souhaite réserver une voiture seule pour : {p}" },
+  de: { title: "Kairo & Gizeh Guide", intro: "Wählen Sie eine Stadt, dann eine Kategorie, dann einen Ort. Jeder Ort zeigt die Anfahrt und Tipps. Tippen Sie auf Buchen, wenn Sie nur ein Auto mit Fahrer möchten.", places: "Orte", tips: "Reisetipps", services: "Unsere Leistungen", how: "Anfahrt", tip: "Tipp", map: "Karte", official: "Offizielle Seite", book: "Nur Auto buchen", bookMsg: "Hallo {B}, ich möchte nur ein Auto buchen für: {p}" }
+};
+function renderGuide(lang, c) {
+  const ar = lang === "ar", U = GUIDE_UI[lang], G = c.guide, set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const num = n => arDigits(n, lang);
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const pick = o => (o && (o[lang] || o.en)) || "";
+  const count = g => g.items.length;
+  const place = (it, cityName) => '<details class="gplace"><summary><span class="gp-n">' + esc(pick(it.name)) + '</span><span class="gp-a">' + esc(pick(it.area)) + '</span></summary><div class="gp-b">'
+    + '<p class="gp-h"><b>' + esc(U.how) + ':</b> ' + esc(pick(it.how)) + '</p>'
+    + '<p class="gp-t"><b>' + esc(U.tip) + ':</b> ' + esc(pick(it.tip)) + '</p>'
+    + '<div class="gp-l"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(pick(it.name) + " " + cityName) + '">' + ic("pin") + esc(U.map) + '</a>'
+    + (it.official ? '<a target="_blank" rel="noopener" href="' + esc(it.official) + '">' + ic("chat") + esc(U.official) + '</a>' : '') + '</div>'
+    + '<a class="btn btn-acc gp-book" target="_blank" rel="noopener" href="' + wa(U.bookMsg.replace("{p}", pick(it.name))) + '">' + ic("car") + esc(U.book) + '</a></div></details>';
+  const city = (cat, cityName, first) => '<details class="gcity"' + (first ? " open" : "") + '><summary><span>' + esc(pick(cat.title)) + '</span></summary>'
+    + cat.groups.map(g => '<details class="ggroup"><summary><span>' + esc(pick(g.title)) + '</span><small>' + num(count(g)) + ' ' + esc(U.places) + '</small></summary><div class="gp-list">' + g.items.map(it => place(it, cityName)).join("") + '</div></details>').join("")
+    + '</details>';
+  const cities = [["Cairo", G.categories.cairo, true], ["Giza", G.categories.giza, false]];
+  const tips = '<details class="gcity"><summary><span>' + esc(U.tips) + '</span></summary><ul class="gtips">' + G.tips.map(t => '<li><b>' + esc(pick(t.title)) + ':</b> ' + esc(pick(t.text)) + '</li>').join("") + '</ul></details>';
+  const svc = '<details class="gcity"><summary><span>' + esc(U.services) + '</span></summary><div class="gp-list">' + c.services.filter(s => s.visible).map(s => '<div class="gplace gsvc"><div class="gp-b"><p class="gp-n">' + esc(s["title_" + lang]) + '</p><p class="gp-h">' + esc(s["desc_" + lang]) + '</p><a class="btn btn-acc gp-book" target="_blank" rel="noopener" href="' + wa(U.bookMsg.replace("{p}", s["title_" + lang])) + '">' + ic("car") + esc(U.book) + '</a></div></div>').join("") + '</div></details>';
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(U.title + " | " + brand) + '</title><meta name="description" content="' + esc(U.intro) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/guide/">').join("") + '<link rel="canonical" href="' + base + '/' + lang + '/guide/">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '"></head><body>';
+  const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/guide/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
+    + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(U.intro) + '</p></div></section>'
+    + '<section class="sec guide-list"><div class="wrap">' + cities.map(([cn, cat, first]) => city(cat, cn, first)).join("") + tips + svc + '</div></section>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span></div></footer>'
+    + '</div>'
+    + '<script type="application/json" id="data">' + JSON.stringify({ lang, brand, whatsapp: set.whatsapp, labels: c.labels[lang], categories: [], places: {}, tours: [] }).replace(/</g, "\\u003c") + '</script>'
+    + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, LANGS };

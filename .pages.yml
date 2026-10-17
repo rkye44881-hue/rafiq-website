@@ -1199,6 +1199,435 @@
       ]
     },
     {
+      "name": "guide",
+      "label": "🗺️ دليل القاهرة والجيزة (الأماكن والنصايح)",
+      "type": "file",
+      "path": "content/guide.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "categories",
+          "label": "المدن",
+          "type": "object",
+          "fields": [
+            {
+              "name": "cairo",
+              "label": "القاهرة",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "groups",
+                  "label": "الأقسام",
+                  "type": "object",
+                  "list": true,
+                  "fields": [
+                    {
+                      "name": "id",
+                      "label": "الكود (لا تغيّره)",
+                      "type": "string"
+                    },
+                    {
+                      "name": "title",
+                      "label": "اسم القسم",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "ar",
+                          "label": "اسم القسم — العربي",
+                          "type": "string"
+                        },
+                        {
+                          "name": "en",
+                          "label": "اسم القسم — English",
+                          "type": "string"
+                        },
+                        {
+                          "name": "fr",
+                          "label": "اسم القسم — Français",
+                          "type": "string"
+                        },
+                        {
+                          "name": "de",
+                          "label": "اسم القسم — Deutsch",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "items",
+                      "label": "الأماكن",
+                      "type": "object",
+                      "list": true,
+                      "fields": [
+                        {
+                          "name": "key",
+                          "label": "الكود (إنجليزي، لا تغيّره)",
+                          "type": "string"
+                        },
+                        {
+                          "name": "name",
+                          "label": "الاسم",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "الاسم — العربي",
+                              "type": "string"
+                            },
+                            {
+                              "name": "en",
+                              "label": "الاسم — English",
+                              "type": "string"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "الاسم — Français",
+                              "type": "string"
+                            },
+                            {
+                              "name": "de",
+                              "label": "الاسم — Deutsch",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "area",
+                          "label": "المنطقة",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "المنطقة — العربي",
+                              "type": "string"
+                            },
+                            {
+                              "name": "en",
+                              "label": "المنطقة — English",
+                              "type": "string"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "المنطقة — Français",
+                              "type": "string"
+                            },
+                            {
+                              "name": "de",
+                              "label": "المنطقة — Deutsch",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "how",
+                          "label": "كيف توصله",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "كيف توصله — العربي",
+                              "type": "text"
+                            },
+                            {
+                              "name": "en",
+                              "label": "كيف توصله — English",
+                              "type": "text"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "كيف توصله — Français",
+                              "type": "text"
+                            },
+                            {
+                              "name": "de",
+                              "label": "كيف توصله — Deutsch",
+                              "type": "text"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "tip",
+                          "label": "نصيحة",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "نصيحة — العربي",
+                              "type": "text"
+                            },
+                            {
+                              "name": "en",
+                              "label": "نصيحة — English",
+                              "type": "text"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "نصيحة — Français",
+                              "type": "text"
+                            },
+                            {
+                              "name": "de",
+                              "label": "نصيحة — Deutsch",
+                              "type": "text"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "official",
+                          "label": "الموقع الرسمي (اختياري، لينك كامل)",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "giza",
+              "label": "الجيزة",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "groups",
+                  "label": "الأقسام",
+                  "type": "object",
+                  "list": true,
+                  "fields": [
+                    {
+                      "name": "id",
+                      "label": "الكود (لا تغيّره)",
+                      "type": "string"
+                    },
+                    {
+                      "name": "title",
+                      "label": "اسم القسم",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "ar",
+                          "label": "اسم القسم — العربي",
+                          "type": "string"
+                        },
+                        {
+                          "name": "en",
+                          "label": "اسم القسم — English",
+                          "type": "string"
+                        },
+                        {
+                          "name": "fr",
+                          "label": "اسم القسم — Français",
+                          "type": "string"
+                        },
+                        {
+                          "name": "de",
+                          "label": "اسم القسم — Deutsch",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "items",
+                      "label": "الأماكن",
+                      "type": "object",
+                      "list": true,
+                      "fields": [
+                        {
+                          "name": "key",
+                          "label": "الكود (إنجليزي، لا تغيّره)",
+                          "type": "string"
+                        },
+                        {
+                          "name": "name",
+                          "label": "الاسم",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "الاسم — العربي",
+                              "type": "string"
+                            },
+                            {
+                              "name": "en",
+                              "label": "الاسم — English",
+                              "type": "string"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "الاسم — Français",
+                              "type": "string"
+                            },
+                            {
+                              "name": "de",
+                              "label": "الاسم — Deutsch",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "area",
+                          "label": "المنطقة",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "المنطقة — العربي",
+                              "type": "string"
+                            },
+                            {
+                              "name": "en",
+                              "label": "المنطقة — English",
+                              "type": "string"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "المنطقة — Français",
+                              "type": "string"
+                            },
+                            {
+                              "name": "de",
+                              "label": "المنطقة — Deutsch",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "how",
+                          "label": "كيف توصله",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "كيف توصله — العربي",
+                              "type": "text"
+                            },
+                            {
+                              "name": "en",
+                              "label": "كيف توصله — English",
+                              "type": "text"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "كيف توصله — Français",
+                              "type": "text"
+                            },
+                            {
+                              "name": "de",
+                              "label": "كيف توصله — Deutsch",
+                              "type": "text"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "tip",
+                          "label": "نصيحة",
+                          "type": "object",
+                          "fields": [
+                            {
+                              "name": "ar",
+                              "label": "نصيحة — العربي",
+                              "type": "text"
+                            },
+                            {
+                              "name": "en",
+                              "label": "نصيحة — English",
+                              "type": "text"
+                            },
+                            {
+                              "name": "fr",
+                              "label": "نصيحة — Français",
+                              "type": "text"
+                            },
+                            {
+                              "name": "de",
+                              "label": "نصيحة — Deutsch",
+                              "type": "text"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "official",
+                          "label": "الموقع الرسمي (اختياري، لينك كامل)",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "tips",
+          "label": "نصايح السائح",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "الكود",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "العنوان",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "ar",
+                  "label": "العنوان — العربي",
+                  "type": "string"
+                },
+                {
+                  "name": "en",
+                  "label": "العنوان — English",
+                  "type": "string"
+                },
+                {
+                  "name": "fr",
+                  "label": "العنوان — Français",
+                  "type": "string"
+                },
+                {
+                  "name": "de",
+                  "label": "العنوان — Deutsch",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "text",
+              "label": "النص",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "ar",
+                  "label": "النص — العربي",
+                  "type": "text"
+                },
+                {
+                  "name": "en",
+                  "label": "النص — English",
+                  "type": "text"
+                },
+                {
+                  "name": "fr",
+                  "label": "النص — Français",
+                  "type": "text"
+                },
+                {
+                  "name": "de",
+                  "label": "النص — Deutsch",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "services",
       "label": "🚘 الخدمات",
       "type": "file",
