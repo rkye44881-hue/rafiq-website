@@ -7,12 +7,22 @@ const LANG_BTN = { ar: "ع", en: "EN", fr: "FR", de: "DE" };
 const HTML_LANG = { ar: "ar", en: "en", fr: "fr", de: "de" };
 const NAV_IDS = ["s-services", "s-explore", "s-cities", "s-fleet", "s-steps", "s-faq", "s-contact"];
 const SVC_ICONS = { driver: "wheel", airport: "plane", yourday: "compass", tours: "pyramid", intercity: "route" };
-const CAT_ICONS = { museums: "museum", sites: "pyramid", mosques: "mosque", malls: "bag", parks: "tree", markets: "lamp", tours: "compass" };
+const CAT_ICONS = { villages: "pin", hotels: "bed", restaurants: "fork", beaches: "wave", events: "music", trips: "route", museums: "museum", sites: "pyramid", mosques: "mosque", malls: "bag", parks: "tree", markets: "lamp", tours: "compass" };
 const CITY_SCENES = { cairo: "giza", alex: "alex", sahel: "sahel", egypt: "road" };
 const PROM_ICONS = ["tag", "clock", "car", "shield", "swap", "pin"];
 const TRUST_ICONS = ["pin", "route", "tag", "chat"];
+const CALC_AND = { ar: " و", en: " ", fr: " ", de: " " };
+const CALC_MIN = { ar: "دقيقة", en: "min", fr: "min", de: "Min." };
+const SAHEL_WA = {
+  ar: { hello: "مرحبًا {B}، أريد حجز عربية بسائق في الساحل الشمالي.", calc: "مرحبًا {B}، أريد توصيلة من {from} إلى {to}. التاريخ: \nعدد الركاب: " },
+  en: { hello: "Hello {B}, I'd like a car with driver on the North Coast.", calc: "Hello {B}, I'd like a transfer from {from} to {to}. Date: \nPassengers: " },
+  fr: { hello: "Bonjour {B}, je souhaite une voiture avec chauffeur sur la Côte Nord.", calc: "Bonjour {B}, je souhaite un transfert de {from} à {to}. Date : \nPassagers : " },
+  de: { hello: "Hallo {B}, ich möchte ein Auto mit Fahrer an der Nordküste.", calc: "Hallo {B}, ich möchte einen Transfer von {from} nach {to}. Datum: \nPersonen: " }
+};
 
-function renderPage(lang, c) {
+function renderPage(lang, c, page) {
+  page = page || "home";
+  const sahel = page === "sahel";
   const ar = lang === "ar";
   const L = c.labels[lang], X = c.text[lang], set = c.settings;
   const brand = ar ? set.brand_ar : set.brand_latin;
@@ -23,11 +33,14 @@ function renderPage(lang, c) {
   const img = (src, alt) => src ? '<img src="' + esc(src) + '" alt="' + esc(alt || "") + '" loading="lazy">' : "";
   const secHead = s => '<div class="sec-head"><p class="eyebrow">' + esc(s.eyebrow) + '</p><h2>' + md(s.title) + '</h2>' + (s.intro ? '<p>' + esc(s.intro) + '</p>' : '') + '</div>';
   const services = c.services.filter(s => s.visible);
+  const NC = c.northcoast, N = NC.text[lang];
 
   const header = () => {
     const logo = '<a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
-    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + '</nav>';
-    const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
+    const pre = sahel ? "/" + lang + "/" : "";
+    const sahelLink = '<a class="nav-sahel" href="/' + lang + '/north-coast/"' + (sahel ? ' aria-current="page"' : '') + '>' + esc(N.nav) + '</a>';
+    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + sahelLink + '</nav>';
+    const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/' + (sahel ? 'north-coast/' : '') + '" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
     return '<header class="hdr" id="hdr"><div class="wrap">' + logo + nav + langs
       + '<a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(L.whatsapp) + '</a>'
       + '<button class="menu-btn" type="button" id="menuBtn" aria-expanded="false">' + esc(L.menu) + '</button></div></header>';
@@ -68,7 +81,7 @@ function renderPage(lang, c) {
     + '</div></div></section>';
 
   const cities = () => '<section class="sec dark-band" id="s-cities"><div class="wrap">' + secHead(X.sections.cities) + '<div class="cities">'
-    + X.cities.map(ct => '<article class="city"><div class="pic">' + ((set.city_images || {})[ct.id] ? img(set.city_images[ct.id], ct.name) : scene(CITY_SCENES[ct.id] || "road")) + '</div><div class="tx"><h3>' + esc(ct.name) + '</h3><p>' + esc(ct.description) + '</p><div class="chips">' + (ct.chips || []).map(x => '<span>' + esc(x) + '</span>').join("") + '</div></div></article>').join("")
+    + X.cities.map(ct => '<article class="city"><div class="pic">' + ((set.city_images || {})[ct.id] ? img(set.city_images[ct.id], ct.name) : scene(CITY_SCENES[ct.id] || "road")) + '</div><div class="tx"><h3>' + esc(ct.name) + '</h3><p>' + esc(ct.description) + '</p><div class="chips">' + (ct.chips || []).map(x => '<span>' + esc(x) + '</span>').join("") + '</div>' + (ct.id === "sahel" ? '<a class="city-more" href="/' + lang + '/north-coast/">' + esc(N.more) + arrow + '</a>' : '') + '</div></article>').join("")
     + '</div></div></section>';
 
   const fleet = () => '<section class="sec" id="s-fleet"><div class="wrap">' + secHead(X.sections.fleet) + '<div class="fleet">'
@@ -83,8 +96,8 @@ function renderPage(lang, c) {
     + X.promises.map((p, i) => '<div class="pr">' + ic(PROM_ICONS[i % PROM_ICONS.length]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>').join("")
     + '</div></div></section>';
 
-  const faq = () => '<section class="sec" id="s-faq" style="padding-top:0"><div class="wrap faq-grid">' + secHead(X.sections.faq) + '<div class="faq">'
-    + X.faq.map((f, i) => '<details' + (i === 0 ? " open" : "") + '><summary>' + esc(f.question) + '</summary><p>' + esc(f.answer) + '</p></details>').join("")
+  const faq = (head, list) => '<section class="sec" id="s-faq" style="padding-top:0"><div class="wrap faq-grid">' + secHead(head || X.sections.faq) + '<div class="faq">'
+    + (list || X.faq).map((f, i) => '<details' + (i === 0 ? " open" : "") + '><summary>' + esc(f.question) + '</summary><p>' + esc(f.answer) + '</p></details>').join("")
     + '</div></div></section>';
 
   const contact = () => {
@@ -98,8 +111,38 @@ function renderPage(lang, c) {
   const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span></div></footer>'
     + '<a class="fab" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '" aria-label="WhatsApp">' + ic("chat") + '<span>' + esc(L.whatsapp) + '</span></a>';
 
+  /* ---------- North Coast page ---------- */
+  const ZN = z => ar ? z.name_ar : z.name_en;
+  const ncPlaces = Object.fromEntries(Object.entries(NC.places).map(([k, list]) => [k, list.filter(p => p.visible).map(p => ({ n: ar ? p.name_ar : p.name_en, a: ar ? "" : p.name_ar, area: ar ? p.area_ar : p.area_en, g: p.zone, t: "", img: p.image || "", d: p["desc_" + lang] || "" }))]));
+  const sHero = () => '<section class="hero-lt hero-nc" id="top"><div class="scene">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.hero.eyebrow) + '">' : scene("sahel")) + '</div><div class="veil"></div><div class="wrap"><div><p class="eyebrow">' + esc(N.hero.eyebrow) + '</p><h1>' + md(N.hero.title) + '</h1><p class="sub">' + esc(N.hero.subtitle) + '</p>'
+    + '<div class="ctas"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(SAHEL_WA[lang].hello) + '">' + ic("chat") + esc(N.hero.button_1) + '</a><a class="btn btn-ghost" href="#s-calc">' + esc(N.hero.button_2) + '</a></div>'
+    + '<div class="hero-pills">' + N.highlights.map((t, i) => '<span>' + ic(["car", "route", "pin", "tag"][i % 4]) + esc(t) + '</span>').join("") + '</div></div></div></section>';
+  const SICON = { day: "wheel", transfer: "route", airport: "plane", family: "user", night: "music" };
+  const sServices = () => '<section class="sec" id="s-services"><div class="wrap">' + secHead(N.services) + '<div class="svc-cards">'
+    + N.services.items.map(s => '<article class="svc-card' + (s.id === "day" ? " feat" : "") + '"><div class="ic">' + ic(SICON[s.id] || "car") + '</div><h3>' + esc(s.title) + '</h3><p>' + esc(s.desc) + '</p><ul>' + s.points.map(p => '<li>' + esc(p) + '</li>').join("") + '</ul><a class="go" target="_blank" rel="noopener" href="' + wa(L.wa.service.replace("{t}", s.title)) + '">' + esc(L.serviceLink) + arrow + '</a></article>').join("")
+    + '</div></div></section>';
+  const sCalc = () => { const K = N.calc; return '<section class="sec dark-band" id="s-calc"><div class="wrap calc-wrap">' + secHead(K) + '<form class="calc" onsubmit="return false">'
+    + '<div class="fld"><label for="calc-from">' + esc(K.from_) + '</label><select id="calc-from">' + Object.entries(K.origins).map(([k, v]) => '<option value="' + k + '">' + esc(v) + '</option>').join("") + '</select></div>'
+    + '<div class="fld"><label for="calc-to">' + esc(K.to) + '</label><select id="calc-to">' + NC.zones.map(z => '<option value="' + z.id + '">' + esc(ZN(z)) + '</option>').join("") + '</select></div>'
+    + '<p class="calc-out" id="calc-out" aria-live="polite"></p><a class="btn btn-acc" id="calc-send" target="_blank" rel="noopener" href="' + wa(SAHEL_WA[lang].hello) + '">' + ic("chat") + esc(K.send) + '</a></form></div></section>'; };
+  const fmtH = h => { const H = Math.floor(h), M = Math.round((h - H) * 60); return (H ? (ar && H < 3 ? ["", "ساعة", "ساعتين"][H] : num(H) + " " + (H > 1 && H < 11 ? N.calc.hours : N.calc.hour)) : "") + (M ? (H ? CALC_AND[lang] : "") + num(M) + " " + CALC_MIN[lang] : ""); };
+  const sCoast = () => '<section class="sec" id="s-coast"><div class="wrap">' + secHead(N.coast) + '<ol class="coast">'
+    + NC.zones.map(z => '<li class="zone"><span class="dot" aria-hidden="true"></span><h3>' + esc(ZN(z)) + '</h3><p class="times"><span>' + ic("clock") + esc(N.coast.fromCairo) + ': ' + fmtH(z.hours.cairo) + '</span><span>' + ic("clock") + esc(N.coast.fromAlex) + ': ' + fmtH(z.hours.alex) + '</span></p><div class="chips">'
+      + NC.places.villages.filter(v => v.visible && v.zone === z.id).map(v => '<a target="_blank" rel="noopener" href="' + wa(L.wa.place.replace("{p}", ar ? v.name_ar : v.name_en)) + '">' + esc(ar ? v.name_ar : v.name_en) + '</a>').join("") + '</div></li>').join("")
+    + '</ol></div></section>';
+  const sExplore = () => { const cnt = id => (ncPlaces[id] || []).length;
+    const cats = N.categories.filter(k => cnt(k.id) > 0).map(k => '<button type="button" class="ex-cat" data-cat="' + k.id + '" aria-expanded="false" aria-pressed="false"><span class="ic">' + ic(CAT_ICONS[k.id] || "pin") + '</span><b>' + esc(k.name) + '</b><small>' + esc(L.explore.count.replace("{n}", num(cnt(k.id)))) + '</small><i class="chev" aria-hidden="true"></i></button>').join("");
+    return '<section class="sec" id="s-explore"><div class="wrap">' + secHead(N.explore) + '<div class="ex-cats" id="exCats" role="group">' + cats + '<div class="ex-panel" id="exPanel" hidden></div></div><div id="exTray"></div></div></section>'; };
+  const sTips = () => '<section class="sec dark-band" id="s-tips"><div class="wrap">' + secHead(N.tips) + '<div class="prom tips">'
+    + N.tips.items.map((p, i) => '<div class="pr">' + ic(["clock", "shield", "fork", "music", "wave"][i % 5]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>').join("") + '</div></div></section>';
+
   /* data the browser script needs for the explorer and booking form */
-  const clientData = {
+  const clientData = sahel ? {
+    lang, brand, whatsapp: set.whatsapp,
+    labels: Object.assign({}, L, { explore: Object.assign({}, L.explore, { gov: Object.fromEntries(NC.zones.map(z => [z.id, ZN(z)])) }) }),
+    categories: N.categories, places: ncPlaces, tours: [], govs: NC.zones.map(z => z.id),
+    calc: { zones: NC.zones.map(z => ({ id: z.id, hours: z.hours })), result: N.calc.result, hour: N.calc.hour, hours: N.calc.hours, and: CALC_AND[lang], min: CALC_MIN[lang], msg: SAHEL_WA[lang].calc }
+  } : {
     lang, brand, whatsapp: set.whatsapp, labels: L,
     categories: X.categories,
     places: Object.fromEntries(Object.entries(c.places).map(([k, list]) => [k, list.filter(p => p.visible).map(p => ({ n: ar ? p.name_ar : p.name_en, a: ar ? "" : p.name_ar, area: ar ? p.area_ar : p.area_en, g: p.governorate, t: p.type || "", img: p.image || "" }))])),
@@ -107,14 +150,15 @@ function renderPage(lang, c) {
   };
 
   const base = (set.site_url || "").replace(/\/$/, "");
-  const seo = X.seo || {};
+  const seo = (sahel ? N.seo : X.seo) || {};
+  const path = sahel ? "north-coast/" : "";
   const desc = seo.description || X.hero.subtitle;
   const title = seo.title || (ar ? set.brand_ar + " | " : set.brand_latin + " | ") + X.hero.eyebrow;
   const OG_LOCALE = { ar: "ar_EG", en: "en_US", fr: "fr_FR", de: "de_DE" };
   const ld = obj => '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, "\\u003c") + '</script>';
   const business = {
     "@context": "https://schema.org", "@type": "LocalBusiness", "@id": base + "/#business",
-    name: set.brand_latin, alternateName: set.brand_ar, description: desc, url: base + "/" + lang + "/",
+    name: set.brand_latin, alternateName: set.brand_ar, description: desc, url: base + "/" + lang + "/" + path,
     telephone: "+" + String(set.whatsapp).replace(/\D/g, ""), email: set.email,
     image: set.hero_image ? base + set.hero_image : undefined, logo: base + "/favicon.svg",
     address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
@@ -123,13 +167,13 @@ function renderPage(lang, c) {
     makesOffer: services.map(s => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s["title_" + lang], description: s["desc_" + lang] } }))
   };
   const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", inLanguage: lang,
-    mainEntity: X.faq.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
+    mainEntity: (sahel ? N.faq.items : X.faq).map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
   const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head>'
     + '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
     + '<title>' + esc(title) + '</title><meta name="description" content="' + esc(desc) + '">'
-    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/">'
-    + '<link rel="canonical" href="' + base + '/' + lang + '/">'
-    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + OG_LOCALE[lang] + '">' + (set.hero_image ? '<meta property="og:image" content="' + esc(base + set.hero_image) + '"><meta name="twitter:card" content="summary_large_image">' : '')
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/' + path + '">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/' + path + '">'
+    + '<link rel="canonical" href="' + base + '/' + lang + '/' + path + '">'
+    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/' + path + '"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + OG_LOCALE[lang] + '">' + ((sahel ? NC.hero_image : set.hero_image) ? '<meta property="og:image" content="' + esc(base + (sahel ? NC.hero_image : set.hero_image)) + '"><meta name="twitter:card" content="summary_large_image">' : '')
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
@@ -137,7 +181,10 @@ function renderPage(lang, c) {
     + ld(business) + ld(faqLd)
     + '</head><body>';
 
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + '">' + header() + hero + explore() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact() + footer() + '</div>'
+  const body = sahel
+    ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
+    : hero + explore() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : "") + '">' + header() + body + footer() + '</div>'
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }

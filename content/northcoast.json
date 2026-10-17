@@ -1,0 +1,1409 @@
+{
+  "hero_image": "/media/hero-north-coast-beach.webp",
+  "zones": [
+    {
+      "id": "alamein",
+      "name_ar": "العلمين الجديدة ومارينا",
+      "name_en": "New Alamein & Marina",
+      "hours": {
+        "cairo": 3,
+        "alex": 1.25,
+        "dbb": 0.75,
+        "hbe": 1.25
+      }
+    },
+    {
+      "id": "sidi",
+      "name_ar": "سيدي عبد الرحمن",
+      "name_en": "Sidi Abdel Rahman",
+      "hours": {
+        "cairo": 3.25,
+        "alex": 1.5,
+        "dbb": 1,
+        "hbe": 1.5
+      }
+    },
+    {
+      "id": "hekma",
+      "name_ar": "رأس الحكمة",
+      "name_en": "Ras El Hekma",
+      "hours": {
+        "cairo": 4,
+        "alex": 2.5,
+        "dbb": 1.75,
+        "hbe": 2.25
+      }
+    },
+    {
+      "id": "matrouh",
+      "name_ar": "مرسى مطروح",
+      "name_en": "Marsa Matrouh",
+      "hours": {
+        "cairo": 5,
+        "alex": 3.5,
+        "dbb": 3,
+        "hbe": 3.25
+      }
+    }
+  ],
+  "places": {
+    "villages": [
+      {
+        "name_ar": "مارينا العلمين",
+        "name_en": "Marina El Alamein",
+        "area_ar": "العلمين الجديدة ومارينا",
+        "area_en": "New Alamein & Marina",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "بورتو مارينا",
+        "name_en": "Porto Marina",
+        "area_ar": "العلمين الجديدة ومارينا",
+        "area_en": "New Alamein & Marina",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "العلمين الجديدة: الأبراج والداون تاون",
+        "name_en": "New Alamein: Towers & Downtown",
+        "area_ar": "العلمين الجديدة ومارينا",
+        "area_en": "New Alamein & Marina",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "مزارين",
+        "name_en": "Mazarine",
+        "area_ar": "العلمين الجديدة ومارينا",
+        "area_en": "New Alamein & Marina",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "نورث إيدج",
+        "name_en": "North Edge",
+        "area_ar": "العلمين الجديدة ومارينا",
+        "area_en": "New Alamein & Marina",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "مراسي",
+        "name_en": "Marassi",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "/media/city-north-coast-marina.webp",
+        "visible": true
+      },
+      {
+        "name_ar": "هاسيندا باي",
+        "name_en": "Hacienda Bay",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "ستيلا سيدي عبد الرحمن",
+        "name_en": "Stella Sidi Abdel Rahman",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "أمواج",
+        "name_en": "Amwaj",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "هاسيندا وايت",
+        "name_en": "Hacienda White",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "فوكا باي",
+        "name_en": "Fouka Bay",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "ألماظة باي",
+        "name_en": "Almaza Bay",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "سي شل رأس الحكمة",
+        "name_en": "Seashell Ras El Hekma",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "سيلفر ساندز",
+        "name_en": "Silver Sands",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "ماونتن فيو رأس الحكمة",
+        "name_en": "Mountain View Ras El Hekma",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "سوان ليك الساحل",
+        "name_en": "Swan Lake North Coast",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "جون (سوديك)",
+        "name_en": "June (SODIC)",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "دايركشن وايت",
+        "name_en": "Direction White",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "مدينة مرسى مطروح",
+        "name_en": "Marsa Matrouh city",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true
+      }
+    ],
+    "hotels": [
+      {
+        "name_ar": "ريكسوس بريميوم العلمين",
+        "name_en": "Rixos Premium Alamein",
+        "area_ar": "العلمين الجديدة",
+        "area_en": "New Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "بورتو مارينا ريزورت آند سبا",
+        "name_en": "Porto Marina Resort & Spa",
+        "area_ar": "بورتو مارينا",
+        "area_en": "Porto Marina",
+        "zone": "alamein",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "فندق العلمين",
+        "name_en": "The Alamein Hotel",
+        "area_ar": "خليج سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman Bay",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "أدرس بيتش ريزورت مراسي",
+        "name_en": "Address Beach Resort Marassi",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "فيدا مارينا ريزورت مراسي",
+        "name_en": "Vida Marina Resort Marassi",
+        "area_ar": "مارينا مراسي",
+        "area_en": "Marassi Marina",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "كازا كوك الساحل الشمالي",
+        "name_en": "Casa Cook North Coast",
+        "area_ar": "هاسيندا وايت",
+        "area_en": "Hacienda White",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "لو سيدي",
+        "name_en": "Le Sidi Hotel",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "جاز ألماظة بيتش ريزورت",
+        "name_en": "Jaz Almaza Beach Resort",
+        "area_ar": "ألماظة باي",
+        "area_en": "Almaza Bay",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      }
+    ],
+    "restaurants": [
+      {
+        "name_ar": "ساتشي مراسي",
+        "name_en": "Sachi Marassi",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "إيزاكايا",
+        "name_en": "Izakaya",
+        "area_ar": "مارينا مراسي",
+        "area_en": "Marassi Marina",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "ريف كوشياكي",
+        "name_en": "Reif Kushiyaki",
+        "area_ar": "مارينا مراسي",
+        "area_en": "Marassi Marina",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "بار دو بور بيتش",
+        "name_en": "Bar du Port Beach",
+        "area_ar": "أدرس بيتش ريزورت مراسي",
+        "area_en": "Address Beach Resort Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "جيمي أوليفر إيطاليان",
+        "name_en": "Jamie Oliver's Italian",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "تشين تشين",
+        "name_en": "Cincin",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "كابيتان",
+        "name_en": "Capitaine",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "ذا سموكري",
+        "name_en": "The Smokery",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "لودج",
+        "name_en": "Lodge",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "بابل",
+        "name_en": "BABEL",
+        "area_ar": "مارينا مراسي",
+        "area_en": "Marassi Marina",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "أوريجينز",
+        "name_en": "Origins",
+        "area_ar": "فندق العلمين",
+        "area_en": "The Alamein Hotel",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "ميّال",
+        "name_en": "MAYYAL",
+        "area_ar": "رأس الحكمة",
+        "area_en": "Ras El Hekma",
+        "zone": "hekma",
+        "image": "",
+        "visible": true
+      }
+    ],
+    "beaches": [
+      {
+        "name_ar": "خليج سيدي عبد الرحمن",
+        "name_en": "Sidi Abdel Rahman Bay",
+        "area_ar": "سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman",
+        "zone": "sidi",
+        "image": "/media/tour-north-coast-beach.webp",
+        "visible": true
+      },
+      {
+        "name_ar": "داي يوز أدرس بيتش مراسي",
+        "name_en": "Day use: Address Beach Resort Marassi",
+        "area_ar": "مراسي",
+        "area_en": "Marassi",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "داي يوز فندق العلمين",
+        "name_en": "Day use: The Alamein Hotel",
+        "area_ar": "خليج سيدي عبد الرحمن",
+        "area_en": "Sidi Abdel Rahman Bay",
+        "zone": "sidi",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "شاطئ عجيبة",
+        "name_en": "Agiba Beach",
+        "area_ar": "غرب مطروح",
+        "area_en": "West of Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "شاطئ كليوباترا",
+        "name_en": "Cleopatra Beach",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "شاطئ روميل",
+        "name_en": "Rommel Beach",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "شاطئ الأبيض",
+        "name_en": "Obayed Beach",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true
+      },
+      {
+        "name_ar": "شاطئ الغرام",
+        "name_en": "Al Gharam Beach",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true
+      }
+    ],
+    "events": [
+      {
+        "name_ar": "مهرجان العلمين",
+        "name_en": "New Alamein Festival",
+        "area_ar": "العلمين الجديدة",
+        "area_en": "New Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "كل صيف (يوليو وأغسطس): حفلات لأكبر نجوم الغناء العربي وعروض وفعاليات.",
+        "desc_en": "Every summer (July–August): concerts by the biggest Arab stars, shows and events.",
+        "desc_fr": "Chaque été (juillet–août) : concerts des grandes stars arabes, spectacles et animations.",
+        "desc_de": "Jeden Sommer (Juli–August): Konzerte großer arabischer Stars, Shows und Events."
+      },
+      {
+        "name_ar": "حفلات يو أرينا (يلا ساحل)",
+        "name_en": "U Arena concerts (Yalla Sahel)",
+        "area_ar": "العلمين الجديدة",
+        "area_en": "New Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "حفلات الصيف الكبيرة في العلمين الجديدة. نوصلك وننتظرك لحد آخر الحفلة.",
+        "desc_en": "The big summer concerts in New Alamein. We drive you there and wait until the last song.",
+        "desc_fr": "Les grands concerts d'été à New Alamein. On vous dépose et on vous attend jusqu'à la fin.",
+        "desc_de": "Die großen Sommerkonzerte in New Alamein. Wir fahren Sie hin und warten bis zum letzten Lied."
+      },
+      {
+        "name_ar": "حفلات العلمين أرينا",
+        "name_en": "New Alamein Arena",
+        "area_ar": "العلمين الجديدة",
+        "area_en": "New Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "مسرح مفتوح لحفلات الصيف والعروض.",
+        "desc_en": "Open-air stage for summer concerts and shows.",
+        "desc_fr": "Scène en plein air pour les concerts d'été.",
+        "desc_de": "Freilichtbühne für Sommerkonzerte und Shows."
+      },
+      {
+        "name_ar": "حفلات البيتش كلوب",
+        "name_en": "Beach club parties",
+        "area_ar": "على طول الساحل",
+        "area_en": "Along the coast",
+        "zone": "sidi",
+        "image": "",
+        "visible": true,
+        "desc_ar": "حفلات نهارية وليلية في البيتش كلوبز. خلي السواقة علينا وارجع براحتك.",
+        "desc_en": "Day and night parties at the beach clubs. Leave the driving to us and head back whenever you like.",
+        "desc_fr": "Fêtes de jour et de nuit dans les beach clubs. Laissez-nous conduire, rentrez quand vous voulez.",
+        "desc_de": "Partys bei Tag und Nacht in den Beach Clubs. Wir fahren, Sie kommen zurück, wann Sie möchten."
+      },
+      {
+        "name_ar": "سهرة مارينا مراسي",
+        "name_en": "Evening at Marassi Marina",
+        "area_ar": "مارينا مراسي",
+        "area_en": "Marassi Marina",
+        "zone": "sidi",
+        "image": "",
+        "visible": true,
+        "desc_ar": "ممشى اليخوت والمطاعم والكافيهات، أحلى سهرة في الساحل.",
+        "desc_en": "The yacht promenade, restaurants and cafés: the coast's favourite night out.",
+        "desc_fr": "La promenade des yachts, restaurants et cafés : la soirée préférée de la côte.",
+        "desc_de": "Die Yachtpromenade mit Restaurants und Cafés: der beliebteste Abend an der Küste."
+      },
+      {
+        "name_ar": "كورنيش وأبراج العلمين الجديدة",
+        "name_en": "New Alamein Corniche & Towers",
+        "area_ar": "العلمين الجديدة",
+        "area_en": "New Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "ممشى على البحر وإطلالة الأبراج، خروجة لطيفة للعيلة بالليل.",
+        "desc_en": "A seafront walk under the towers, a relaxed family evening.",
+        "desc_fr": "Une promenade en bord de mer au pied des tours, idéale en famille le soir.",
+        "desc_de": "Ein Spaziergang am Meer unter den Türmen, ideal für Familien am Abend."
+      }
+    ],
+    "trips": [
+      {
+        "name_ar": "متحف العلمين العسكري",
+        "name_en": "El Alamein War Museum",
+        "area_ar": "العلمين",
+        "area_en": "El Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "قصة معركة العلمين في الحرب العالمية الثانية، بالمعدات والخرائط.",
+        "desc_en": "The story of the WWII Battle of El Alamein, with vehicles, maps and uniforms.",
+        "desc_fr": "L'histoire de la bataille d'El Alamein (1942), avec véhicules, cartes et uniformes.",
+        "desc_de": "Die Geschichte der Schlacht von El Alamein 1942, mit Fahrzeugen, Karten und Uniformen."
+      },
+      {
+        "name_ar": "مقابر الكومنولث بالعلمين",
+        "name_en": "El Alamein Commonwealth War Cemetery",
+        "area_ar": "العلمين",
+        "area_en": "El Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "مكان هادي ومؤثر لآلاف الجنود من الحرب العالمية الثانية.",
+        "desc_en": "A quiet, moving place for thousands of WWII soldiers.",
+        "desc_fr": "Un lieu calme et émouvant pour des milliers de soldats de 1942.",
+        "desc_de": "Ein stiller, bewegender Ort für Tausende Soldaten des Zweiten Weltkriegs."
+      },
+      {
+        "name_ar": "النصب التذكاري الألماني",
+        "name_en": "German War Memorial",
+        "area_ar": "العلمين",
+        "area_en": "El Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "مبنى يشبه القلعة على تل يطل على البحر.",
+        "desc_en": "A fortress-like memorial on a hill overlooking the sea.",
+        "desc_fr": "Un mémorial en forme de forteresse face à la mer.",
+        "desc_de": "Ein festungsartiges Ehrenmal auf einem Hügel über dem Meer."
+      },
+      {
+        "name_ar": "النصب التذكاري الإيطالي",
+        "name_en": "Italian War Memorial",
+        "area_ar": "العلمين",
+        "area_en": "El Alamein",
+        "zone": "alamein",
+        "image": "",
+        "visible": true,
+        "desc_ar": "برج أبيض أنيق على الطريق الساحلي.",
+        "desc_en": "An elegant white tower on the coastal road.",
+        "desc_fr": "Une élégante tour blanche sur la route côtière.",
+        "desc_de": "Ein eleganter weißer Turm an der Küstenstraße."
+      },
+      {
+        "name_ar": "متحف روميل",
+        "name_en": "Rommel's Cave Museum",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true,
+        "desc_ar": "الكهف اللي استخدمه روميل في الحرب، على شاطئ مطروح.",
+        "desc_en": "The cave Rommel used during the war, on the Matrouh shore.",
+        "desc_fr": "La grotte utilisée par Rommel pendant la guerre, au bord de mer à Matrouh.",
+        "desc_de": "Die Höhle, die Rommel im Krieg nutzte, direkt am Strand von Matrouh."
+      },
+      {
+        "name_ar": "رحلة يوم لعجيبة ومطروح",
+        "name_en": "Day trip to Agiba & Matrouh",
+        "area_ar": "مرسى مطروح",
+        "area_en": "Marsa Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true,
+        "desc_ar": "أجمل مياه في مصر: عجيبة والغرام وكليوباترا في يوم واحد.",
+        "desc_en": "Egypt's clearest water: Agiba, Al Gharam and Cleopatra in one day.",
+        "desc_fr": "L'eau la plus claire d'Égypte : Agiba, Al Gharam et Cléopâtre en une journée.",
+        "desc_de": "Das klarste Wasser Ägyptens: Agiba, Al Gharam und Kleopatra an einem Tag."
+      },
+      {
+        "name_ar": "واحة سيوة",
+        "name_en": "Siwa Oasis",
+        "area_ar": "عبر مطروح",
+        "area_en": "Via Matrouh",
+        "zone": "matrouh",
+        "image": "",
+        "visible": true,
+        "desc_ar": "رحلة يومين أو أكتر: بحيرات الملح والعيون والصحراء.",
+        "desc_en": "A trip of two days or more: salt lakes, springs and desert.",
+        "desc_fr": "Un voyage de deux jours ou plus : lacs salés, sources et désert.",
+        "desc_de": "Eine Reise ab zwei Tagen: Salzseen, Quellen und Wüste."
+      }
+    ]
+  },
+  "text": {
+    "ar": {
+      "nav": "الساحل الشمالي",
+      "more": "اكتشف صفحة الساحل",
+      "seo": {
+        "title": "سائق خاص في الساحل الشمالي والعلمين | رحلة القاهرة",
+        "description": "عربية بسائق باليوم في الساحل الشمالي والعلمين الجديدة، توصيل من القاهرة وإسكندرية والمطار لأي قرية. فنادق ومطاعم وشواطئ وفعاليات الساحل في مكان واحد."
+      },
+      "hero": {
+        "eyebrow": "الساحل الشمالي · العلمين الجديدة · رأس الحكمة",
+        "title": "صيفك في الساحل *على طريقتك*",
+        "subtitle": "عربية بسائق تحت أمرك باليوم بين القرى والبيتش والمطاعم والحفلات، وتوصيل من باب بيتك في القاهرة أو إسكندرية لباب الشاليه.",
+        "button_1": "احجز عربية للساحل",
+        "button_2": "احسب وقت المشوار"
+      },
+      "highlights": [
+        "عربية بسائق باليوم",
+        "من القاهرة وإسكندرية والمطار",
+        "كل القرى من مارينا لمطروح",
+        "سعر ثابت حتى في الموسم"
+      ],
+      "services": {
+        "eyebrow": "خدماتنا في الساحل",
+        "title": "كل اللي تحتاجه في الساحل، بسائق واحد",
+        "intro": "",
+        "items": [
+          {
+            "id": "day",
+            "title": "عربية بسائق باليوم",
+            "desc": "العربية والسائق معاك طول اليوم في الساحل: البيتش الصبح، الغدا في المارينا، والحفلة بالليل. ٨ أو ١٢ ساعة، أو طول الإجازة.",
+            "points": [
+              "بين كل القرى",
+              "انتظار بدون عداد",
+              "سهرات وحفلات"
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "توصيل للشاليه",
+            "desc": "من بيتك في القاهرة أو إسكندرية لباب الشاليه، ذهاب أو ذهاب وعودة، ومكان للشنط والعفش.",
+            "points": [
+              "سعر للعربية كلها",
+              "وقفة استراحة"
+            ]
+          },
+          {
+            "id": "airport",
+            "title": "مطار العلمين وبرج العرب",
+            "desc": "استقبال من مطار العلمين أو برج العرب لأي قرية، والسائق متابع موعد الطيارة.",
+            "points": [
+              "متابعة الطيران",
+              "لافتة باسمك"
+            ]
+          },
+          {
+            "id": "family",
+            "title": "عربية للعيلة الكبيرة",
+            "desc": "هيونداي H1 أو جيلي ٧ مقاعد للعيلة والأصحاب والشنط الكتير.",
+            "points": [
+              "لحد ٧ ركاب",
+              "شنط كتير"
+            ]
+          },
+          {
+            "id": "night",
+            "title": "ليلة الحفلة",
+            "desc": "نوصلك لحفلات العلمين والبيتش كلوبز، وننتظرك لحد آخر الحفلة، ونرجّعك بأمان.",
+            "points": [
+              "بدون قلق ركنة",
+              "رجوع آمن"
+            ]
+          }
+        ]
+      },
+      "calc": {
+        "eyebrow": "احسب المشوار",
+        "title": "كام ساعة لحد الشاليه؟",
+        "intro": "اختار من فين ورايح فين، وابعتلنا الطلب على واتساب بضغطة.",
+        "from_": "من",
+        "to": "إلى",
+        "result": "حوالي {h} بالعربية، حسب الزحمة.",
+        "hour": "ساعة",
+        "hours": "ساعات",
+        "send": "اطلب السعر على واتساب",
+        "origins": {
+          "cairo": "القاهرة والجيزة",
+          "alex": "الإسكندرية",
+          "dbb": "مطار العلمين",
+          "hbe": "مطار برج العرب"
+        }
+      },
+      "coast": {
+        "eyebrow": "طريق الساحل",
+        "title": "من العلمين لحد مطروح",
+        "intro": "مناطق الساحل بالترتيب، والوقت التقريبي من القاهرة.",
+        "fromCairo": "من القاهرة",
+        "fromAlex": "من إسكندرية"
+      },
+      "explore": {
+        "eyebrow": "دليل الساحل",
+        "title": "كل حاجة في الساحل والعلمين",
+        "intro": "فنادق، مطاعم، شواطئ، قرى، وفعاليات. اختار مكان واطلب توصيلة، أو اجمع أكتر من مكان في يوم واحد مع سائقك."
+      },
+      "tips": {
+        "eyebrow": "نصايح الساحل",
+        "title": "عشان رحلتك تبقى أسهل",
+        "items": [
+          {
+            "title": "اهرب من الزحمة",
+            "description": "الخميس العصر والجمعة الصبح أزحم أوقات. السفر بدري الصبح أو بالليل بيوفر ساعة أو أكتر."
+          },
+          {
+            "title": "بوابات القرى",
+            "description": "أغلب القرى محتاجة تصريح دخول أو كارنيه. جهّزه قبل ما توصل، والسائق يتواصل مع الأمن."
+          },
+          {
+            "title": "احجز المطاعم بدري",
+            "description": "مطاعم المارينا في الموسم بتتملي بدري، والحجز المسبق أضمن."
+          },
+          {
+            "title": "ليلة الحفلة",
+            "description": "الركنة جنب الحفلات صعبة جداً. خلي السائق يوصلك ويستناك."
+          },
+          {
+            "title": "المية والشمس",
+            "description": "شنطة فيها مية وواقي شمس، خصوصاً في رحلات مطروح والعلمين التاريخية."
+          }
+        ]
+      },
+      "faq": {
+        "eyebrow": "أسئلة الساحل",
+        "title": "قبل ما تحجز للساحل",
+        "intro": "",
+        "items": [
+          {
+            "question": "بتشتغلوا في الساحل باليوم؟",
+            "answer": "أيوه. عربية بسائق معاك ٨ أو ١٢ ساعة في اليوم، أو طول الإجازة، وتتنقل بين أي قرى ومطاعم وشواطئ."
+          },
+          {
+            "question": "كام ساعة من القاهرة للعلمين؟",
+            "answer": "حوالي ٣ ساعات للعلمين الجديدة ومارينا، و٤ ساعات لرأس الحكمة، حسب الزحمة ووقت السفر."
+          },
+          {
+            "question": "هتقدروا تدخلوا القرية؟",
+            "answer": "أغلب القرى بتسمح بدخول عربية التوصيل بتصريح من صاحب الشاليه. لو مش مسموح، بننزّلك عند البوابة بالقرب ما يمكن."
+          },
+          {
+            "question": "السعر بيزيد في الموسم؟",
+            "answer": "بنتفق على السعر قبل الرحلة، وما بيتغيرش بعدها حتى لو في زحمة."
+          },
+          {
+            "question": "ممكن توصلونا لحفلة وتستنونا؟",
+            "answer": "أكيد. ده من أكتر الطلبات في الصيف: نوصلك للحفلة، ننتظرك، ونرجّعك."
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "villages",
+          "name": "القرى السياحية",
+          "description": "من مارينا والعلمين الجديدة لحد رأس الحكمة ومطروح."
+        },
+        {
+          "id": "hotels",
+          "name": "الفنادق والإقامة",
+          "description": "فنادق ومنتجعات الساحل والعلمين."
+        },
+        {
+          "id": "restaurants",
+          "name": "المطاعم الراقية",
+          "description": "أشهر مطاعم مراسي والمارينا والساحل."
+        },
+        {
+          "id": "beaches",
+          "name": "الشواطئ والداي يوز",
+          "description": "شواطئ مفتوحة وداي يوز في الفنادق."
+        },
+        {
+          "id": "events",
+          "name": "فعاليات العلمين",
+          "description": "المهرجانات والحفلات والسهرات."
+        },
+        {
+          "id": "trips",
+          "name": "رحلات ومزارات",
+          "description": "العلمين التاريخية، مطروح، وسيوة."
+        }
+      ]
+    },
+    "en": {
+      "nav": "North Coast",
+      "more": "Explore the North Coast",
+      "seo": {
+        "title": "Private Driver North Coast & New Alamein | Cairo Voyage",
+        "description": "Car with driver by the day on Egypt's North Coast and New Alamein. Transfers from Cairo, Alexandria and El Alamein airport to any resort. Hotels, restaurants, beaches and events."
+      },
+      "hero": {
+        "eyebrow": "North Coast · New Alamein · Ras El Hekma",
+        "title": "Your summer on the coast, *your way.*",
+        "subtitle": "A car and driver by the day between resorts, beaches, restaurants and concerts, plus door-to-door transfers from Cairo, Alexandria or the airport.",
+        "button_1": "Book a car for the coast",
+        "button_2": "Check drive times"
+      },
+      "highlights": [
+        "Car with driver by the day",
+        "From Cairo, Alexandria & airports",
+        "Every resort from Marina to Matrouh",
+        "Fixed price, even in high season"
+      ],
+      "services": {
+        "eyebrow": "On the coast",
+        "title": "Everything on the coast, with one driver",
+        "intro": "",
+        "items": [
+          {
+            "id": "day",
+            "title": "Car with driver by the day",
+            "desc": "Your car and driver stay with you all day: the beach in the morning, lunch at the marina, a concert at night. 8 or 12 hours, or your whole holiday.",
+            "points": [
+              "Between all resorts",
+              "Waiting included",
+              "Evenings & concerts"
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transfers to your chalet",
+            "desc": "Door to door from Cairo or Alexandria to your chalet or hotel, one way or return, with room for luggage.",
+            "points": [
+              "One price per car",
+              "Rest stops"
+            ]
+          },
+          {
+            "id": "airport",
+            "title": "El Alamein & Borg El Arab airports",
+            "desc": "Pick-up from El Alamein (DBB) or Borg El Arab (HBE) to any resort. Your driver tracks your flight.",
+            "points": [
+              "Flight tracking",
+              "Name sign"
+            ]
+          },
+          {
+            "id": "family",
+            "title": "Cars for big families",
+            "desc": "Hyundai H1 or a 7-seat Geely for families, friends and plenty of bags.",
+            "points": [
+              "Up to 7 seats",
+              "Lots of luggage"
+            ]
+          },
+          {
+            "id": "night",
+            "title": "Concert nights",
+            "desc": "We drive you to the Alamein concerts and beach clubs, wait until the end and bring you back safely.",
+            "points": [
+              "No parking stress",
+              "Safe ride home"
+            ]
+          }
+        ]
+      },
+      "calc": {
+        "eyebrow": "Drive times",
+        "title": "How long to the coast?",
+        "intro": "Pick where you start and where you're going, then send us the request on WhatsApp.",
+        "from_": "From",
+        "to": "To",
+        "result": "About {h} by car, depending on traffic.",
+        "hour": "hour",
+        "hours": "hours",
+        "send": "Get a price on WhatsApp",
+        "origins": {
+          "cairo": "Cairo & Giza",
+          "alex": "Alexandria",
+          "dbb": "El Alamein airport (DBB)",
+          "hbe": "Borg El Arab airport (HBE)"
+        }
+      },
+      "coast": {
+        "eyebrow": "The coast road",
+        "title": "From Alamein to Matrouh",
+        "intro": "The coast's areas in order, with approximate drive times.",
+        "fromCairo": "From Cairo",
+        "fromAlex": "From Alexandria"
+      },
+      "explore": {
+        "eyebrow": "Coast guide",
+        "title": "Everything on the North Coast",
+        "intro": "Hotels, restaurants, beaches, resorts and events. Pick a place and book a ride, or collect a few into one day with your driver."
+      },
+      "tips": {
+        "eyebrow": "Good to know",
+        "title": "Tips for the coast",
+        "items": [
+          {
+            "title": "Beat the traffic",
+            "description": "Thursday afternoon and Friday morning are the busiest. Leaving early or late saves an hour or more."
+          },
+          {
+            "title": "Resort gates",
+            "description": "Most resorts need a guest pass. Have it ready; your driver will speak to security."
+          },
+          {
+            "title": "Book tables early",
+            "description": "Marina restaurants fill up fast in summer. Reserve ahead."
+          },
+          {
+            "title": "Concert nights",
+            "description": "Parking near concerts is hard. Let your driver drop you off and wait."
+          },
+          {
+            "title": "Sun and water",
+            "description": "Bring water and sunscreen, especially for Matrouh and the El Alamein sites."
+          }
+        ]
+      },
+      "faq": {
+        "eyebrow": "North Coast FAQ",
+        "title": "Before you book",
+        "intro": "",
+        "items": [
+          {
+            "question": "Can I hire a car with driver by the day on the coast?",
+            "answer": "Yes. A car and driver for 8 or 12 hours a day, or your whole stay, between any resorts, restaurants and beaches."
+          },
+          {
+            "question": "How long is the drive from Cairo?",
+            "answer": "About 3 hours to New Alamein and Marina, and 4 hours to Ras El Hekma, depending on traffic."
+          },
+          {
+            "question": "Can you enter the resort?",
+            "answer": "Most resorts allow the car in with a pass from your host. If not, we drop you as close to the gate as allowed."
+          },
+          {
+            "question": "Do prices go up in high season?",
+            "answer": "We agree the price before the trip and it doesn't change afterwards."
+          },
+          {
+            "question": "Can you take us to a concert and wait?",
+            "answer": "Of course. It's one of our most requested summer services."
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "villages",
+          "name": "Resorts & villages",
+          "description": "From Marina and New Alamein to Ras El Hekma and Matrouh."
+        },
+        {
+          "id": "hotels",
+          "name": "Hotels & stays",
+          "description": "Hotels and resorts on the coast."
+        },
+        {
+          "id": "restaurants",
+          "name": "Fine dining",
+          "description": "The best tables in Marassi, the marina and beyond."
+        },
+        {
+          "id": "beaches",
+          "name": "Beaches & day use",
+          "description": "Open beaches and hotel day passes."
+        },
+        {
+          "id": "events",
+          "name": "Alamein events",
+          "description": "Festivals, concerts and nights out."
+        },
+        {
+          "id": "trips",
+          "name": "Day trips & sights",
+          "description": "Historic El Alamein, Matrouh and Siwa."
+        }
+      ]
+    },
+    "fr": {
+      "nav": "Côte Nord",
+      "more": "Découvrir la Côte Nord",
+      "seo": {
+        "title": "Chauffeur privé Côte Nord & New Alamein | Cairo Voyage",
+        "description": "Voiture avec chauffeur à la journée sur la Côte Nord et à New Alamein. Transferts depuis Le Caire, Alexandrie et l'aéroport d'El Alamein. Hôtels, restaurants, plages et événements."
+      },
+      "hero": {
+        "eyebrow": "Côte Nord · New Alamein · Ras El Hekma",
+        "title": "Votre été sur la côte, *à votre rythme.*",
+        "subtitle": "Une voiture avec chauffeur à la journée entre stations, plages, restaurants et concerts, et des transferts de porte à porte depuis Le Caire, Alexandrie ou l'aéroport.",
+        "button_1": "Réserver une voiture",
+        "button_2": "Temps de trajet"
+      },
+      "highlights": [
+        "Voiture avec chauffeur à la journée",
+        "Depuis Le Caire, Alexandrie et les aéroports",
+        "Toutes les stations, de Marina à Matrouh",
+        "Prix fixe, même en haute saison"
+      ],
+      "services": {
+        "eyebrow": "Sur la côte",
+        "title": "Toute la côte, avec un seul chauffeur",
+        "intro": "",
+        "items": [
+          {
+            "id": "day",
+            "title": "Voiture avec chauffeur à la journée",
+            "desc": "La voiture et le chauffeur restent avec vous : plage le matin, déjeuner à la marina, concert le soir. 8 ou 12 heures, ou tout votre séjour.",
+            "points": [
+              "Entre toutes les stations",
+              "Attente comprise",
+              "Soirées et concerts"
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transfert jusqu'au chalet",
+            "desc": "De porte à porte depuis Le Caire ou Alexandrie, aller simple ou aller-retour, avec de la place pour les bagages.",
+            "points": [
+              "Un prix pour la voiture",
+              "Pauses"
+            ]
+          },
+          {
+            "id": "airport",
+            "title": "Aéroports d'El Alamein et Borg El Arab",
+            "desc": "Accueil à El Alamein (DBB) ou Borg El Arab (HBE) vers toutes les stations. Votre chauffeur suit votre vol.",
+            "points": [
+              "Suivi des vols",
+              "Pancarte à votre nom"
+            ]
+          },
+          {
+            "id": "family",
+            "title": "Voitures pour grandes familles",
+            "desc": "Hyundai H1 ou Geely 7 places pour familles, amis et bagages.",
+            "points": [
+              "Jusqu'à 7 places",
+              "Beaucoup de bagages"
+            ]
+          },
+          {
+            "id": "night",
+            "title": "Soirs de concert",
+            "desc": "On vous dépose aux concerts d'Alamein et dans les beach clubs, on vous attend et on vous ramène.",
+            "points": [
+              "Pas de souci de parking",
+              "Retour en sécurité"
+            ]
+          }
+        ]
+      },
+      "calc": {
+        "eyebrow": "Temps de trajet",
+        "title": "Combien de temps jusqu'à la côte ?",
+        "intro": "Choisissez le départ et la destination, puis envoyez la demande sur WhatsApp.",
+        "from_": "Départ",
+        "to": "Destination",
+        "result": "Environ {h} en voiture, selon la circulation.",
+        "hour": "heure",
+        "hours": "heures",
+        "send": "Demander un prix sur WhatsApp",
+        "origins": {
+          "cairo": "Le Caire et Gizeh",
+          "alex": "Alexandrie",
+          "dbb": "Aéroport d'El Alamein (DBB)",
+          "hbe": "Aéroport de Borg El Arab (HBE)"
+        }
+      },
+      "coast": {
+        "eyebrow": "La route côtière",
+        "title": "D'Alamein à Matrouh",
+        "intro": "Les zones de la côte dans l'ordre, avec les temps de trajet approximatifs.",
+        "fromCairo": "Depuis Le Caire",
+        "fromAlex": "Depuis Alexandrie"
+      },
+      "explore": {
+        "eyebrow": "Guide de la côte",
+        "title": "Toute la Côte Nord",
+        "intro": "Hôtels, restaurants, plages, stations et événements. Choisissez un lieu et réservez un trajet, ou composez votre journée avec votre chauffeur."
+      },
+      "tips": {
+        "eyebrow": "Bon à savoir",
+        "title": "Conseils pour la côte",
+        "items": [
+          {
+            "title": "Évitez les bouchons",
+            "description": "Le jeudi après-midi et le vendredi matin sont les plus chargés. Partir tôt ou tard fait gagner une heure ou plus."
+          },
+          {
+            "title": "Entrée des stations",
+            "description": "La plupart des stations demandent un laissez-passer. Préparez-le ; votre chauffeur parle à la sécurité."
+          },
+          {
+            "title": "Réservez vos tables",
+            "description": "Les restaurants de la marina sont vite complets en été."
+          },
+          {
+            "title": "Soirs de concert",
+            "description": "Se garer près des concerts est difficile. Laissez votre chauffeur vous déposer et attendre."
+          },
+          {
+            "title": "Soleil et eau",
+            "description": "Prévoyez eau et crème solaire, surtout pour Matrouh et les sites d'El Alamein."
+          }
+        ]
+      },
+      "faq": {
+        "eyebrow": "Questions",
+        "title": "Avant de réserver",
+        "intro": "",
+        "items": [
+          {
+            "question": "Peut-on réserver une voiture avec chauffeur à la journée ?",
+            "answer": "Oui, pour 8 ou 12 heures par jour, ou tout votre séjour, entre stations, restaurants et plages."
+          },
+          {
+            "question": "Combien de temps depuis Le Caire ?",
+            "answer": "Environ 3 heures jusqu'à New Alamein et Marina, 4 heures jusqu'à Ras El Hekma, selon la circulation."
+          },
+          {
+            "question": "Pouvez-vous entrer dans la station ?",
+            "answer": "La plupart des stations l'acceptent avec un laissez-passer de votre hôte. Sinon, on vous dépose au plus près de l'entrée."
+          },
+          {
+            "question": "Les prix augmentent-ils en haute saison ?",
+            "answer": "Le prix est fixé avant le départ et ne change plus ensuite."
+          },
+          {
+            "question": "Pouvez-vous nous attendre pendant un concert ?",
+            "answer": "Bien sûr, c'est l'une de nos demandes les plus fréquentes en été."
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "villages",
+          "name": "Stations balnéaires",
+          "description": "De Marina et New Alamein jusqu'à Ras El Hekma et Matrouh."
+        },
+        {
+          "id": "hotels",
+          "name": "Hôtels",
+          "description": "Hôtels et resorts de la côte."
+        },
+        {
+          "id": "restaurants",
+          "name": "Restaurants raffinés",
+          "description": "Les meilleures tables de Marassi et de la marina."
+        },
+        {
+          "id": "beaches",
+          "name": "Plages & day use",
+          "description": "Plages ouvertes et accès à la journée dans les hôtels."
+        },
+        {
+          "id": "events",
+          "name": "Événements d'Alamein",
+          "description": "Festivals, concerts et soirées."
+        },
+        {
+          "id": "trips",
+          "name": "Excursions & visites",
+          "description": "El Alamein historique, Matrouh et Siwa."
+        }
+      ]
+    },
+    "de": {
+      "nav": "Nordküste",
+      "more": "Die Nordküste entdecken",
+      "seo": {
+        "title": "Privatfahrer Nordküste & New Alamein | Cairo Voyage",
+        "description": "Auto mit Fahrer tageweise an Ägyptens Nordküste und in New Alamein. Transfers ab Kairo, Alexandria und Flughafen El Alamein. Hotels, Restaurants, Strände und Events."
+      },
+      "hero": {
+        "eyebrow": "Nordküste · New Alamein · Ras El Hekma",
+        "title": "Ihr Sommer an der Küste. *Ihr Plan.*",
+        "subtitle": "Auto mit Fahrer tageweise zwischen Ferienorten, Stränden, Restaurants und Konzerten, dazu Transfers von Tür zu Tür ab Kairo, Alexandria oder Flughafen.",
+        "button_1": "Auto für die Küste buchen",
+        "button_2": "Fahrzeiten ansehen"
+      },
+      "highlights": [
+        "Auto mit Fahrer tageweise",
+        "Ab Kairo, Alexandria und Flughäfen",
+        "Alle Orte von Marina bis Matruh",
+        "Festpreis, auch in der Hochsaison"
+      ],
+      "services": {
+        "eyebrow": "An der Küste",
+        "title": "Die ganze Küste mit einem Fahrer",
+        "intro": "",
+        "items": [
+          {
+            "id": "day",
+            "title": "Auto mit Fahrer tageweise",
+            "desc": "Auto und Fahrer bleiben den ganzen Tag bei Ihnen: morgens Strand, mittags Marina, abends Konzert. 8 oder 12 Stunden oder den ganzen Urlaub.",
+            "points": [
+              "Zwischen allen Orten",
+              "Wartezeit inklusive",
+              "Abende & Konzerte"
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transfer zum Chalet",
+            "desc": "Von Tür zu Tür ab Kairo oder Alexandria, einfach oder hin und zurück, mit Platz für Gepäck.",
+            "points": [
+              "Festpreis pro Auto",
+              "Pausen nach Wunsch"
+            ]
+          },
+          {
+            "id": "airport",
+            "title": "Flughäfen El Alamein & Borg El Arab",
+            "desc": "Abholung in El Alamein (DBB) oder Borg El Arab (HBE) zu jedem Ferienort. Ihr Fahrer verfolgt den Flug.",
+            "points": [
+              "Flugverfolgung",
+              "Namensschild"
+            ]
+          },
+          {
+            "id": "family",
+            "title": "Autos für große Familien",
+            "desc": "Hyundai H1 oder Geely mit 7 Sitzen für Familien, Freunde und viel Gepäck.",
+            "points": [
+              "Bis 7 Sitze",
+              "Viel Gepäck"
+            ]
+          },
+          {
+            "id": "night",
+            "title": "Konzertabende",
+            "desc": "Wir bringen Sie zu den Konzerten in Alamein und zu Beach Clubs, warten und fahren Sie sicher zurück.",
+            "points": [
+              "Kein Parkstress",
+              "Sichere Heimfahrt"
+            ]
+          }
+        ]
+      },
+      "calc": {
+        "eyebrow": "Fahrzeiten",
+        "title": "Wie lange bis zur Küste?",
+        "intro": "Start und Ziel wählen, dann die Anfrage per WhatsApp senden.",
+        "from_": "Start",
+        "to": "Ziel",
+        "result": "Etwa {h} mit dem Auto, je nach Verkehr.",
+        "hour": "Stunde",
+        "hours": "Stunden",
+        "send": "Preis per WhatsApp anfragen",
+        "origins": {
+          "cairo": "Kairo & Gizeh",
+          "alex": "Alexandria",
+          "dbb": "Flughafen El Alamein (DBB)",
+          "hbe": "Flughafen Borg El Arab (HBE)"
+        }
+      },
+      "coast": {
+        "eyebrow": "Die Küstenstraße",
+        "title": "Von Alamein bis Matruh",
+        "intro": "Die Küstenabschnitte der Reihe nach, mit ungefähren Fahrzeiten.",
+        "fromCairo": "Ab Kairo",
+        "fromAlex": "Ab Alexandria"
+      },
+      "explore": {
+        "eyebrow": "Küstenführer",
+        "title": "Alles an der Nordküste",
+        "intro": "Hotels, Restaurants, Strände, Ferienorte und Events. Ort wählen und Fahrt anfragen, oder mehrere Orte zu einem Tag mit Ihrem Fahrer kombinieren."
+      },
+      "tips": {
+        "eyebrow": "Gut zu wissen",
+        "title": "Tipps für die Küste",
+        "items": [
+          {
+            "title": "Stau vermeiden",
+            "description": "Donnerstagnachmittag und Freitagmorgen ist am meisten los. Früh oder spät losfahren spart eine Stunde oder mehr."
+          },
+          {
+            "title": "Einfahrt in Ferienorte",
+            "description": "Die meisten Anlagen verlangen einen Gästepass. Halten Sie ihn bereit; Ihr Fahrer spricht mit dem Sicherheitsdienst."
+          },
+          {
+            "title": "Tische früh reservieren",
+            "description": "Die Restaurants an der Marina sind im Sommer schnell voll."
+          },
+          {
+            "title": "Konzertabende",
+            "description": "Parken an Konzerten ist schwierig. Lassen Sie sich bringen und abholen."
+          },
+          {
+            "title": "Sonne und Wasser",
+            "description": "Wasser und Sonnenschutz mitnehmen, besonders für Matruh und El Alamein."
+          }
+        ]
+      },
+      "faq": {
+        "eyebrow": "Fragen",
+        "title": "Bevor Sie buchen",
+        "intro": "",
+        "items": [
+          {
+            "question": "Kann ich an der Küste ein Auto mit Fahrer tageweise buchen?",
+            "answer": "Ja, für 8 oder 12 Stunden pro Tag oder den ganzen Aufenthalt, zwischen allen Orten, Restaurants und Stränden."
+          },
+          {
+            "question": "Wie lange dauert die Fahrt ab Kairo?",
+            "answer": "Etwa 3 Stunden bis New Alamein und Marina, 4 Stunden bis Ras El Hekma, je nach Verkehr."
+          },
+          {
+            "question": "Dürfen Sie in die Anlage fahren?",
+            "answer": "Die meisten Anlagen erlauben es mit einem Pass Ihres Gastgebers. Sonst bringen wir Sie so nah wie möglich ans Tor."
+          },
+          {
+            "question": "Steigen die Preise in der Hochsaison?",
+            "answer": "Der Preis wird vor der Fahrt vereinbart und ändert sich danach nicht."
+          },
+          {
+            "question": "Warten Sie während eines Konzerts?",
+            "answer": "Natürlich, das ist im Sommer eine unserer häufigsten Anfragen."
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "villages",
+          "name": "Ferienorte",
+          "description": "Von Marina und New Alamein bis Ras El Hekma und Matrouh."
+        },
+        {
+          "id": "hotels",
+          "name": "Hotels",
+          "description": "Hotels und Resorts an der Küste."
+        },
+        {
+          "id": "restaurants",
+          "name": "Gehobene Restaurants",
+          "description": "Die besten Adressen in Marassi und an der Marina."
+        },
+        {
+          "id": "beaches",
+          "name": "Strände & Day Use",
+          "description": "Offene Strände und Tagespässe in Hotels."
+        },
+        {
+          "id": "events",
+          "name": "Events in Alamein",
+          "description": "Festivals, Konzerte und Abende."
+        },
+        {
+          "id": "trips",
+          "name": "Ausflüge",
+          "description": "Das historische El Alamein, Matrouh und Siwa."
+        }
+      ]
+    }
+  }
+}

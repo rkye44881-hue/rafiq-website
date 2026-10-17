@@ -21,7 +21,7 @@
   function items() {
     if (!S.cat) return [];
     if (S.cat === "tours") return D.tours.map((t, i) => ({ id: "tours:" + i, name: t.n, alt: "", area: t.city, g: "", t: "", tour: t, img: t.img }));
-    return (D.places[S.cat] || []).map((p, i) => ({ id: S.cat + ":" + i, name: p.n, alt: p.a, area: p.area, g: p.g, t: p.t, img: p.img }));
+    return (D.places[S.cat] || []).map((p, i) => ({ id: S.cat + ":" + i, name: p.n, alt: p.a, area: p.area, g: p.g, t: p.t, img: p.img, d: p.d || "" }));
   }
   function nameOf(id) {
     const [cat, i] = id.split(":");
@@ -47,7 +47,7 @@
     const all = items();
     let filters = "";
     if (S.cat !== "tours") {
-      filters += ["all", "cairo", "giza"].filter(g => g === "all" || all.some(it => it.g === g)).map(g => '<button type="button" data-gov="' + g + '" aria-pressed="' + (S.gov === g) + '">' + esc(g === "all" ? E.all : E.gov[g]) + '</button>').join("");
+      filters += ["all"].concat(D.govs || ["cairo", "giza"]).filter(g => g === "all" || all.some(it => it.g === g)).map(g => '<button type="button" data-gov="' + g + '" aria-pressed="' + (S.gov === g) + '">' + esc(g === "all" ? E.all : E.gov[g]) + '</button>').join("");
       const types = ["pharaonic", "islamic", "coptic", "jewish"].filter(t => all.some(it => it.t === t));
       if (types.length) filters += '<span class="sep"></span>' + ["all"].concat(types).map(t => '<button type="button" data-type="' + t + '" aria-pressed="' + (S.type === t) + '">' + esc(t === "all" ? E.all : E.type[t]) + '</button>').join("");
     }
@@ -74,7 +74,7 @@
     list.innerHTML = shown.length ? shown.map(it => {
       const picked = S.picks.includes(it.id);
       const tags = (it.g ? '<span class="tg">' + esc(E.gov[it.g]) + '</span>' : '') + (it.t ? '<span class="tg">' + esc(E.type[it.t]) + '</span>' : '');
-      const extra = it.tour ? '<p class="tour-d">' + esc(it.tour.d) + '</p><div class="meta"><span>' + num(it.tour.h) + ' ' + esc(L.hours) + '</span><span>' + (String(it.tour.price).trim() ? esc(L.priceFrom.replace("{p}", it.tour.price)) : esc(L.priceAsk)) + '</span></div>' : '';
+      const extra = !it.tour && it.d ? '<p class="tour-d">' + esc(it.d) + '</p>' : it.tour ? '<p class="tour-d">' + esc(it.tour.d) + '</p><div class="meta"><span>' + num(it.tour.h) + ' ' + esc(L.hours) + '</span><span>' + (String(it.tour.price).trim() ? esc(L.priceFrom.replace("{p}", it.tour.price)) : esc(L.priceAsk)) + '</span></div>' : '';
       const msg = it.tour ? L.wa.tour.replace("{t}", it.name) : L.wa.place.replace("{p}", nameOf(it.id));
       return '<article class="place' + (picked ? " on" : "") + '">' + (it.img ? '<div class="thumb"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy"></div>' : '')
         + '<h4>' + esc(it.name) + '</h4>' + (it.alt ? '<span class="alt">' + esc(it.alt) + '</span>' : '')
@@ -111,6 +111,7 @@
 
   /* ---------- booking form → WhatsApp ---------- */
   const svcSel = document.getElementById("bk-svc");
+  if (svcSel) {
   const v = id => (document.getElementById(id) || {}).value || "—";
   function updateBooking() {
     const svc = svcSel.selectedIndex >= 0 ? svcSel.options[svcSel.selectedIndex].text : "—";
@@ -130,6 +131,22 @@
   };
   tabs.forEach(b => b.addEventListener("click", () => pickTab(b)));
   if (tabs[0]) pickTab(tabs[0]); else updateBooking();
+  }
+
+  /* ---------- North Coast drive-time calculator ---------- */
+  const cf = document.getElementById("calc-from"), ct = document.getElementById("calc-to");
+  if (cf && ct && D.calc) {
+    const C = D.calc;
+    const upd = () => {
+      const z = C.zones.find(x => x.id === ct.value) || C.zones[0];
+      const h = z.hours[cf.value];
+      const H = Math.floor(h), M = Math.round((h - H) * 60);
+      const hTxt = (H ? (lang === "ar" && H < 3 ? ["", "ساعة", "ساعتين"][H] : num(H) + " " + (H > 1 && H < 11 ? C.hours : C.hour)) : "") + (M ? (H ? C.and : "") + num(M) + " " + C.min : "");
+      document.getElementById("calc-out").textContent = C.result.replace("{h}", hTxt);
+      document.getElementById("calc-send").href = wa(C.msg.replace("{from}", cf.options[cf.selectedIndex].text).replace("{to}", ct.options[ct.selectedIndex].text));
+    };
+    cf.addEventListener("change", upd); ct.addEventListener("change", upd); upd();
+  }
 
   /* ---------- copy buttons ---------- */
   document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => {
