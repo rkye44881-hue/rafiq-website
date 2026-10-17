@@ -177,7 +177,7 @@ function renderPage(lang, c, page) {
     + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/' + path + '"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + OG_LOCALE[lang] + '">' + ((sahel ? NC.hero_image : set.hero_image) ? '<meta property="og:image" content="' + esc(base + (sahel ? NC.hero_image : set.hero_image)) + '"><meta name="twitter:card" content="summary_large_image">' : '')
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=optional">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">'
     + ld(business) + ld(faqLd)
     + '</head><body>';
