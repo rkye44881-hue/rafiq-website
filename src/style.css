@@ -549,4 +549,7 @@ body.has-picks .fab{display:none}
 .cookie-b{display:flex;gap:8px}
 .cookie button{font:inherit;font-weight:700;border-radius:999px;padding:9px 16px;cursor:pointer;border:1px solid rgb(255 255 255 / .35);background:transparent;color:var(--on-dark)}
 .cookie button[data-consent="granted"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.foot .wrap>a,.foot a:not(.logo){color:var(--on-dark);text-decoration:underline;text-underline-offset:3px}
+.soc{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:4px}
+.soc span{font-weight:600;color:var(--on-dark);margin-inline-end:6px}
+.soc a{display:inline-flex;align-items:center;padding:8px 16px;border:1px solid var(--dark-line);border-radius:999px;color:var(--on-dark);text-decoration:none;font-size:.9rem;transition:border-color .2s,color .2s}
+.soc a:hover{border-color:var(--accent);color:var(--accent)}
