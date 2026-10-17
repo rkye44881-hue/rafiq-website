@@ -491,3 +491,19 @@ body.has-picks .fab{display:none}
 .langs{gap:4px}
 .langs a{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:32px}
 @media (max-width:520px){.langs a{min-width:30px;min-height:30px;padding:2px 4px}.hdr .wrap{gap:8px}}
+
+/* home → North Coast promo */
+.nc-promo{padding-block:8px clamp(32px,5vw,56px)}
+.nc-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:var(--dark);color:var(--on-dark);border-radius:26px;overflow:hidden;text-decoration:none;box-shadow:0 30px 60px -36px rgba(20,31,64,.6);transition:transform .25s}
+.nc-card:hover{transform:translateY(-3px)}
+.nc-pic{position:relative;min-height:280px}
+.nc-pic img,.nc-pic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nc-tx{padding:clamp(24px,4vw,44px);display:grid;gap:14px;align-content:center}
+.nc-tx .eyebrow{color:var(--accent)}
+.nc-tx h2{font-size:clamp(1.8rem,3.4vw,2.7rem);color:var(--on-dark)}
+.nc-tx h2 em{color:var(--accent)}
+.ar .nc-tx h2 em{font-style:normal}
+.nc-tx p{color:var(--on-dark-muted);max-width:56ch}
+.nc-tx .hero-pills{margin-top:0}
+.nc-tx .btn{justify-self:start;margin-top:6px}
+@media (max-width:820px){.nc-card{grid-template-columns:1fr}.nc-pic{min-height:200px}}

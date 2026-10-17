@@ -111,6 +111,7 @@ function renderPage(lang, c, page) {
   const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span></div></footer>'
     + '<a class="fab" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '" aria-label="WhatsApp">' + ic("chat") + '<span>' + esc(L.whatsapp) + '</span></a>';
 
+  const ncPromo = () => { const P = N.promo; return '<section class="nc-promo" id="s-north-coast"><div class="wrap"><a class="nc-card" href="/' + lang + '/north-coast/"><div class="nc-pic">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.nav) + '" loading="lazy">' : scene("sahel")) + '</div><div class="nc-tx"><p class="eyebrow">' + esc(P.eyebrow) + '</p><h2>' + md(P.title) + '</h2><p>' + esc(P.text) + '</p><div class="hero-pills">' + P.chips.map((t, i) => '<span>' + ic(["car", "clock", "fork", "music"][i % 4]) + esc(t) + '</span>').join("") + '</div><span class="btn btn-acc">' + ic("wave") + esc(P.button) + arrow + '</span></div></a></div></section>'; };
   /* ---------- North Coast page ---------- */
   const ZN = z => ar ? z.name_ar : z.name_en;
   const ncPlaces = Object.fromEntries(Object.entries(NC.places).map(([k, list]) => [k, list.filter(p => p.visible).map(p => ({ n: ar ? p.name_ar : p.name_en, a: ar ? "" : p.name_ar, area: ar ? p.area_ar : p.area_en, g: p.zone, t: "", img: p.image || "", d: p["desc_" + lang] || "" }))]));
@@ -184,7 +185,7 @@ function renderPage(lang, c, page) {
 
   const body = sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : hero + explore() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
+    : hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : "") + '">' + header() + body + footer() + '</div>'
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';

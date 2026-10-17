@@ -839,7 +839,19 @@
           "name": "رحلات ومزارات",
           "description": "العلمين التاريخية، مطروح، وسيوة."
         }
-      ]
+      ],
+      "promo": {
+        "eyebrow": "جديد · الساحل الشمالي",
+        "title": "صيفك في الساحل *على طريقتك*",
+        "text": "عربية بسائق باليوم بين القرى والبيتش والمطاعم والحفلات، وتوصيل من القاهرة وإسكندرية والمطار. وكمان دليل كامل لفنادق ومطاعم وشواطئ وفعاليات الساحل والعلمين.",
+        "button": "ادخل صفحة الساحل",
+        "chips": [
+          "عربية بسائق باليوم",
+          "حاسبة وقت المشوار",
+          "فنادق ومطاعم وشواطئ",
+          "فعاليات العلمين"
+        ]
+      }
     },
     "en": {
       "nav": "North Coast",
@@ -1027,7 +1039,19 @@
           "name": "Day trips & sights",
           "description": "Historic El Alamein, Matrouh and Siwa."
         }
-      ]
+      ],
+      "promo": {
+        "eyebrow": "New · North Coast",
+        "title": "Your summer on the coast, *your way.*",
+        "text": "A car with driver by the day between resorts, beaches, restaurants and concerts, plus transfers from Cairo, Alexandria and the airports. With a full guide to the coast's hotels, restaurants, beaches and New Alamein events.",
+        "button": "Explore the North Coast",
+        "chips": [
+          "Car with driver by the day",
+          "Drive-time calculator",
+          "Hotels, dining & beaches",
+          "New Alamein events"
+        ]
+      }
     },
     "fr": {
       "nav": "Côte Nord",
@@ -1215,7 +1239,19 @@
           "name": "Excursions & visites",
           "description": "El Alamein historique, Matrouh et Siwa."
         }
-      ]
+      ],
+      "promo": {
+        "eyebrow": "Nouveau · Côte Nord",
+        "title": "Votre été sur la côte, *à votre rythme.*",
+        "text": "Une voiture avec chauffeur à la journée entre stations, plages, restaurants et concerts, et des transferts depuis Le Caire, Alexandrie et les aéroports. Avec un guide complet des hôtels, restaurants, plages et événements.",
+        "button": "Découvrir la Côte Nord",
+        "chips": [
+          "Chauffeur à la journée",
+          "Temps de trajet",
+          "Hôtels, restaurants, plages",
+          "Événements d'Alamein"
+        ]
+      }
     },
     "de": {
       "nav": "Nordküste",
@@ -1403,7 +1439,19 @@
           "name": "Ausflüge",
           "description": "Das historische El Alamein, Matrouh und Siwa."
         }
-      ]
+      ],
+      "promo": {
+        "eyebrow": "Neu · Nordküste",
+        "title": "Ihr Sommer an der Küste. *Ihr Plan.*",
+        "text": "Auto mit Fahrer tageweise zwischen Ferienorten, Stränden, Restaurants und Konzerten, dazu Transfers ab Kairo, Alexandria und den Flughäfen. Mit einem Führer zu Hotels, Restaurants, Stränden und Events.",
+        "button": "Die Nordküste entdecken",
+        "chips": [
+          "Fahrer tageweise",
+          "Fahrzeitrechner",
+          "Hotels, Restaurants, Strände",
+          "Events in Alamein"
+        ]
+      }
     }
   }
 }
