@@ -14,6 +14,10 @@
   const hdr = document.getElementById("hdr"), mb = document.getElementById("menuBtn");
   mb.addEventListener("click", () => { const o = hdr.classList.toggle("open"); mb.setAttribute("aria-expanded", o); });
   document.getElementById("nav").addEventListener("click", e => { if (e.target.tagName === "A") { hdr.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } });
+  /* the menu closes by itself when the page moves, or when the person taps outside it */
+  const closeMenu = () => { if (hdr.classList.contains("open")) { hdr.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } };
+  window.addEventListener("scroll", closeMenu, { passive: true });
+  document.addEventListener("pointerdown", e => { if (!hdr.contains(e.target)) closeMenu(); });
 
   /* ---------- explore ---------- */
   const catName = id => (D.categories.find(c => c.id === id) || {}).name || id;
