@@ -421,9 +421,9 @@ body.has-picks .fab{display:none}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding-block:28px 96px}
 .foot .logo .l1{color:var(--on-dark)}
 
-.fab{position:fixed;z-index:40;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(18px + env(safe-area-inset-right,0px));background:#1F8F5A;color:#fff;border-radius:999px;padding:12px 18px;display:flex;gap:8px;align-items:center;text-decoration:none;font-weight:600;box-shadow:0 10px 30px -8px rgba(0,0,0,.4)}
+.fab{position:fixed;z-index:40;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(18px + env(safe-area-inset-right,0px));background:#14703F;color:#fff;border-radius:999px;padding:12px 18px;display:flex;gap:8px;align-items:center;text-decoration:none;font-weight:600;box-shadow:0 10px 30px -8px rgba(0,0,0,.4)}
 .fab svg{width:22px;height:22px}
-.fab:hover{background:#18784B}
+.fab:hover{background:#0F5A32}
 
 
 /* real photos (when added from the dashboard) */
@@ -487,3 +487,7 @@ body.has-picks .fab{display:none}
 .tips .pr h3{color:var(--on-dark)}
 .tips .pr p{color:var(--on-dark-muted)}
 .tips .pr svg{color:var(--accent)}
+/* touch targets: language links at least 32px */
+.langs{gap:4px}
+.langs a{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:32px}
+@media (max-width:520px){.langs a{min-width:30px;min-height:30px;padding:2px 4px}.hdr .wrap{gap:8px}}
