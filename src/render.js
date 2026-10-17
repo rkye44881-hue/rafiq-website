@@ -20,6 +20,31 @@ const SAHEL_WA = {
   de: { hello: "Hallo {B}, ich möchte ein Auto mit Fahrer an der Nordküste.", calc: "Hallo {B}, ich möchte einen Transfer von {from} nach {to}. Datum: \nPersonen: " }
 };
 
+/* ---------- Google tag + cookie choice. Nothing is added until settings.ga_id is set.
+   Consent Mode v2: Google's tag loads but stores nothing until the visitor accepts. ---------- */
+const CONSENT_UI = {
+  ar: { text: "بنستخدم كوكيز عشان نفهم الزيارات ونحسن الموقع.", accept: "موافق", reject: "رفض" },
+  en: { text: "We use cookies to understand visits and improve the site.", accept: "Accept", reject: "Decline" },
+  fr: { text: "Nous utilisons des cookies pour comprendre les visites et améliorer le site.", accept: "Accepter", reject: "Refuser" },
+  de: { text: "Wir verwenden Cookies, um Besuche zu verstehen und die Website zu verbessern.", accept: "Akzeptieren", reject: "Ablehnen" }
+};
+function analytics(lang, set) {
+  const id = (set.ga_id || "").trim();
+  if (!id) return { head: "", body: "" };
+  const u = CONSENT_UI[lang];
+  const head = '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}'
+    + 'gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});'
+    + 'gtag("js",new Date());gtag("config",' + JSON.stringify(id) + ');</script>'
+    + '<script async src="https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id) + '"></script>';
+  const body = '<div class="cookie" id="cookie" hidden><p>' + esc(u.text) + '</p><div class="cookie-b">'
+    + '<button type="button" data-consent="denied">' + esc(u.reject) + '</button><button type="button" data-consent="granted">' + esc(u.accept) + '</button></div></div>'
+    + '<script>(function(){var k="cv-consent",b=document.getElementById("cookie"),c=null;try{c=localStorage.getItem(k)}catch(e){}'
+    + 'function update(v){gtag("consent","update",{analytics_storage:v,ad_storage:v,ad_user_data:v,ad_personalization:v})}'
+    + 'if(c==="granted"||c==="denied")update(c);else b.hidden=false;'
+    + 'b.addEventListener("click",function(e){var v=e.target.getAttribute("data-consent");if(!v)return;try{localStorage.setItem(k,v)}catch(err){}update(v);b.hidden=true})})();</script>';
+  return { head, body };
+}
+
 function renderPage(lang, c, page) {
   page = page || "home";
   const sahel = page === "sahel";
@@ -182,13 +207,13 @@ function renderPage(lang, c, page) {
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=optional">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">'
-    + ld(business) + ld(faqLd)
+    + ld(business) + ld(faqLd) + analytics(lang, c.settings).head
     + '</head><body>';
 
   const body = sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
     : hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : "") + '">' + header() + body + footer() + '</div>'
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : "") + '">' + header() + body + footer() + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }
@@ -226,13 +251,13 @@ function renderGuide(lang, c) {
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     + '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
-    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '"></head><body>';
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/guide/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(U.intro) + '</p></div></section>'
     + '<section class="sec guide-list"><div class="wrap">' + cities.map(([cn, cat, first]) => city(cat, cn, first)).join("") + tips + svc + '</div></section>'
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span></div></footer>'
-    + '</div>'
+    + '</div>' + analytics(lang, set).body
     + '<script type="application/json" id="data">' + JSON.stringify({ lang, brand, whatsapp: set.whatsapp, labels: c.labels[lang], categories: [], places: {}, tours: [] }).replace(/</g, "\\u003c") + '</script>'
     + '</body></html>';
 }

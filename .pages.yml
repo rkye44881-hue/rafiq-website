@@ -38,6 +38,11 @@
           "type": "string"
         },
         {
+          "name": "ga_id",
+          "label": "Google Analytics ID (مثال: G-XXXXXXXXXX، سيبه فاضي لو مش عايز تتبع)",
+          "type": "string"
+        },
+        {
           "name": "hero_image",
           "label": "صورة الواجهة الرئيسية",
           "type": "image"
