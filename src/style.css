@@ -1,4 +1,4 @@
-/* Rafiq: shared stylesheet for all four languages.
+/* Cairo Voyage: shared stylesheet for all four languages.
    Tokens on :root are the Latin-language look; :root[data-site="ar"] swaps fonts for the Arabic pages. */
 html{-webkit-text-size-adjust:100%}
 body{margin:0}
@@ -444,3 +444,11 @@ body.has-picks .fab{display:none}
 .logo .mark .leg{fill:var(--accent)}
 .logo .mark .cut{stroke:var(--dark)}
 .foot .logo .mark{width:28px;height:28px}
+/* two-word brand name */
+.lt .logo .l1{letter-spacing:.16em;font-size:1.08rem}
+.ar .logo .l1{font-size:1.5rem}
+.logo{gap:8px}
+@media (max-width:520px){.lt .logo .l1{font-size:.92rem;letter-spacing:.1em}.ar .logo .l1{font-size:1.2rem}.logo .mark{width:30px;height:30px}}
+@media (max-width:520px){.hdr .wrap{gap:10px}.lt .logo .l1{font-size:.82rem;letter-spacing:.06em}.langs a{padding:4px 6px;font-size:.72rem}.menu-btn{padding:6px 8px}}
+@media (max-width:380px){.lt .logo .l1{display:none}.menu-btn{font-size:.85rem}}
+#site{overflow-x:clip}

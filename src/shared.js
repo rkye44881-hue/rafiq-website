@@ -111,8 +111,8 @@ function skyline(){
     +'<rect x="190" y="40" width="4" height="80"/><path d="M188 42l4-10 4 10z"/><rect x="200" y="66" width="24" height="54"/><rect x="228" y="52" width="16" height="68"/>'
     +'<rect x="248" y="76" width="20" height="44"/><rect x="272" y="60" width="22" height="60"/></g></svg>';
 }
-/* Rafiq "R" mark: stem and bowl in currentColor, the leg is a road with a dashed centre line */
-const rMark = () => '<svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><rect x="22" y="14" width="13" height="72" rx="2" fill="currentColor"/><path d="M28.5 20.5 H53 a15.5 15.5 0 0 1 0 31 H35" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round"/><path class="leg" d="M44 51.5 H57 L84 86 H63z"/><path class="cut" d="M53 56 L72 82" fill="none" stroke-width="2.4" stroke-dasharray="4 4"/></svg>';
+/* Cairo Voyage mark: an open C in currentColor around a road (gold) with a dashed centre line */
+const rMark = () => '<svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M76 24 A36 36 0 1 0 76 76" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/><path class="leg" d="M38 80 H62 L52 34 H48z"/><path class="cut" d="M50 42 V76" fill="none" stroke-width="2.4" stroke-dasharray="4 4"/></svg>';
 const Shared = {rMark, esc, md, arDigits, waLink, prettyPhone, IC, ic, scene, carSvg, skyline};
 if (typeof module !== "undefined" && module.exports) module.exports = Shared; else root.Shared = Shared;
 })(typeof window !== "undefined" ? window : this);

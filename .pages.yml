@@ -34,7 +34,7 @@
         },
         {
           "name": "site_url",
-          "label": "رابط الموقع (مثال: https://rafiqegypt.com)",
+          "label": "رابط الموقع (مثال: https://cairovoyage.com)",
           "type": "string"
         },
         {
