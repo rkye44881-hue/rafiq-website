@@ -170,6 +170,7 @@ function renderPage(lang, c, page) {
     mainEntity: (sahel ? N.faq.items : X.faq).map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) };
   const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head>'
     + '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + (set.google_verification ? '<meta name="google-site-verification" content="' + esc(set.google_verification) + '">' : '')
     + '<title>' + esc(title) + '</title><meta name="description" content="' + esc(desc) + '">'
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/' + path + '">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/' + path + '">'
     + '<link rel="canonical" href="' + base + '/' + lang + '/' + path + '">'
