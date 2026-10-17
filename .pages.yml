@@ -58,6 +58,11 @@
           "type": "string"
         },
         {
+          "name": "x_url",
+          "label": "رابط X (تويتر) (سيبه فاضي لو مش موجود)",
+          "type": "string"
+        },
+        {
           "name": "hero_image",
           "label": "صورة الواجهة الرئيسية",
           "type": "image"

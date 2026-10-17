@@ -47,7 +47,7 @@ function analytics(lang, set) {
 
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 function socials(set) {
-  return [["instagram_url", "Instagram"], ["tiktok_url", "TikTok"], ["facebook_url", "Facebook"]]
+  return [["instagram_url", "Instagram"], ["tiktok_url", "TikTok"], ["facebook_url", "Facebook"], ["x_url", "X"]]
     .filter(([k]) => set[k])
     .map(([k, label]) => '<a href="' + esc(set[k]) + '" target="_blank" rel="noopener">' + label + '</a>').join("");
 }
