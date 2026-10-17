@@ -210,7 +210,7 @@ function renderGuide(lang, c) {
   const place = (it, cityName) => '<details class="gplace"><summary><span class="gp-n">' + esc(pick(it.name)) + '</span><span class="gp-a">' + esc(pick(it.area)) + '</span></summary><div class="gp-b">'
     + '<p class="gp-h"><b>' + esc(U.how) + ':</b> ' + esc(pick(it.how)) + '</p>'
     + '<p class="gp-t"><b>' + esc(U.tip) + ':</b> ' + esc(pick(it.tip)) + '</p>'
-    + '<div class="gp-l"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(pick(it.name) + " " + cityName) + '">' + ic("pin") + esc(U.map) + '</a>'
+    + '<div class="gp-l"><a target="_blank" rel="noopener" href="' + esc(it.map || ("https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(pick(it.name) + " " + cityName))) + '">' + ic("pin") + esc(U.map) + '</a>'
     + (it.official ? '<a target="_blank" rel="noopener" href="' + esc(it.official) + '">' + ic("chat") + esc(U.official) + '</a>' : '') + '</div>'
     + '<a class="btn btn-acc gp-book" target="_blank" rel="noopener" href="' + wa(U.bookMsg.replace("{p}", pick(it.name))) + '">' + ic("car") + esc(U.book) + '</a></div></details>';
   const city = (cat, cityName, first) => '<details class="gcity"' + (first ? " open" : "") + '><summary><span>' + esc(pick(cat.title)) + '</span></summary>'

@@ -1031,7 +1031,8 @@
                 "fr": "Venez tôt. Méfiez-vous des chevaux ou chameaux qui facturent après les photos.",
                 "de": "Früh kommen. Vorsicht bei Pferden oder Kamelen, die nach Fotos Geld verlangen."
               },
-              "official": "https://www.google.com/maps/search/?api=1&query=Giza+Pyramids"
+              "official": "https://mota.gov.eg",
+              "map": "https://maps.app.goo.gl/bZ824D8taDXanmrw5?g_st=ic"
             },
             {
               "id": "saqqara",
@@ -1126,7 +1127,7 @@
                 "fr": "Réservation en ligne uniquement ; réservez tôt en haute saison.",
                 "de": "Nur Online-Buchung; in der Hochsaison früh buchen."
               },
-              "official": "https://tickets.gem.eg"
+              "official": "https://gem.eg/"
             },
             {
               "id": "mallgiza",
@@ -1294,10 +1295,10 @@
         "de": "Tickets"
       },
       "text": {
-        "ar": "اشتري التذاكر من المواقع الرسمية أو من الشبابيك المعتمدة بس، ومتشتريش من حد بيعرض عليك في الطريق.",
-        "en": "Buy tickets only from official sites or licensed windows, not from people on the street.",
-        "fr": "Achetez uniquement sur les sites officiels ou aux guichets agréés, pas auprès de vendeurs de rue.",
-        "de": "Tickets nur über offizielle Seiten oder lizenzierte Schalter kaufen, nicht von Straßenverkäufern."
+        "ar": "التذاكر وتصاريح التصوير والأنشطة الرسمية من موقع وزارة السياحة والآثار، والمتحف من موقعه الرسمي. اشتري من المواقع الرسمية بس.",
+        "en": "Buy tickets, filming permits and official activities from the Ministry of Tourism and Antiquities site, and the museum from its official site. Only buy from official sites.",
+        "fr": "Achetez billets, autorisations de tournage et activités officielles sur le site du ministère du Tourisme et des Antiquités, et le musée sur son site officiel. Achetez uniquement sur les sites officiels.",
+        "de": "Tickets, Drehgenehmigungen und offizielle Aktivitäten über die Website des Ministeriums für Tourismus und Altertümer, das Museum über seine offizielle Seite. Nur auf offiziellen Seiten kaufen."
       }
     },
     {
