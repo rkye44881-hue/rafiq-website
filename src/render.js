@@ -1,5 +1,7 @@
 /* Builds the full HTML page for one language from the content files. */
 "use strict";
+/* headline words that rise in one after another (each word wrapped at build time, CSS does the motion) */
+const kinetic = html => { let i = 0; return html.split(/(<[^>]+>)/).map(part => part.startsWith("<") ? part : part.split(/(\s+)/).map(w => w && !/^\s+$/.test(w) ? '<span class="kw" style="--i:' + (i++) + '">' + w + '</span>' : w).join("")).join(""); };
 const { esc, md, arDigits, waLink, prettyPhone, ic, scene, carSvg, skyline, rMark } = require("./shared.js");
 
 const LANGS = ["ar", "en", "fr", "de"];
@@ -84,7 +86,7 @@ function renderPage(lang, c, page) {
 
   const pills = '<div class="hero-pills">' + X.highlights.map((t, i) => '<span>' + ic(TRUST_ICONS[i % 4]) + esc(t) + '</span>').join("") + '</div>';
   const ctas = '<div class="ctas"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn btn-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div>';
-  const heroText = '<div><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + md(X.hero.title) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p>' + ctas + pills + '</div>';
+  const heroText = '<div><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p>' + ctas + pills + '</div>';
   const hero = ar
     ? '<section class="hero-ar pattern" id="top"><div class="wrap"><div class="grid">' + heroText
       + '<div class="arch">' + ((set.hero_image_tall || set.hero_image) ? heroImg(set.hero_image_tall || set.hero_image, X.hero.title) : scene("giza")) + (X.hero.photo_caption ? '<div class="tag">' + ic("pin") + '<span>' + md(fill(X.hero.photo_caption)).replace(/<em>(.*?)<\/em>/g, "<b>$1</b>") + '</span></div>' : '') + '</div></div></div></section>'
@@ -151,7 +153,7 @@ function renderPage(lang, c, page) {
   /* ---------- North Coast page ---------- */
   const ZN = z => ar ? z.name_ar : z.name_en;
   const ncPlaces = Object.fromEntries(Object.entries(NC.places).map(([k, list]) => [k, list.filter(p => p.visible).map(p => ({ n: ar ? p.name_ar : p.name_en, a: ar ? "" : p.name_ar, area: ar ? p.area_ar : p.area_en, g: p.zone, t: "", img: p.image || "", d: p["desc_" + lang] || "" }))]));
-  const sHero = () => '<section class="hero-lt hero-nc" id="top"><div class="scene">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.hero.eyebrow) + '">' : scene("sahel")) + '</div><div class="veil"></div><div class="wrap"><div><p class="eyebrow">' + esc(N.hero.eyebrow) + '</p><h1>' + md(N.hero.title) + '</h1><p class="sub">' + esc(N.hero.subtitle) + '</p>'
+  const sHero = () => '<section class="hero-lt hero-nc" id="top"><div class="scene">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.hero.eyebrow) + '">' : scene("sahel")) + '</div><div class="veil"></div><div class="wrap"><div><p class="eyebrow">' + esc(N.hero.eyebrow) + '</p><h1>' + kinetic(md(N.hero.title)) + '</h1><p class="sub">' + esc(N.hero.subtitle) + '</p>'
     + '<div class="ctas"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(SAHEL_WA[lang].hello) + '">' + ic("chat") + esc(N.hero.button_1) + '</a><a class="btn btn-ghost" href="#s-calc">' + esc(N.hero.button_2) + '</a></div>'
     + '<div class="hero-pills">' + N.highlights.map((t, i) => '<span>' + ic(["car", "route", "pin", "tag"][i % 4]) + esc(t) + '</span>').join("") + '</div></div></div></section>';
   const SICON = { day: "wheel", transfer: "route", airport: "plane", family: "user", night: "music" };
