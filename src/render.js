@@ -41,7 +41,12 @@ function analytics(lang, set) {
     + '<script async src="https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id) + '"></script>';
   // The TikTok pixel script is sync so ttq exists before the banner script runs; it holds events until consent is granted.
   const tiktokHead = pixel ? '<script src="/tiktok-pixel.js"></script>' : "";
-  const head = googleHead + tiktokHead;
+  // Google Ads: WhatsApp and phone taps count as conversions. Uses the same gtag and consent as Analytics.
+  const adsSendTo = (set.google_ads_send_to || "").trim();
+  const adsHead = !id || !adsSendTo ? "" : '<script>gtag("config",' + JSON.stringify(adsSendTo.split("/")[0]) + ');'
+    + 'document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(\'a[href*="wa.me"], a[href^="tel:"]\');'
+    + 'if(a)gtag("event","conversion",{send_to:' + JSON.stringify(adsSendTo) + ',value:1.0,currency:"EGP"})},true);</script>';
+  const head = googleHead + adsHead + tiktokHead;
   const body = '<div class="cookie" id="cookie" hidden><p>' + esc(u.text) + '</p><div class="cookie-b">'
     + '<button type="button" data-consent="denied">' + esc(u.reject) + '</button><button type="button" data-consent="granted">' + esc(u.accept) + '</button></div></div>'
     + '<script>(function(){var k="cv-consent",b=document.getElementById("cookie"),c=null;try{c=localStorage.getItem(k)}catch(e){}'

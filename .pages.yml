@@ -43,6 +43,11 @@
           "type": "string"
         },
         {
+          "name": "google_ads_send_to",
+          "label": "Google Ads conversion (AW-XXXX/label، سيبه فاضي لو مش عايز)",
+          "type": "string"
+        },
+        {
           "name": "tiktok_pixel_id",
           "label": "TikTok Pixel ID (سيبه فاضي لو مش عايز تتبع TikTok)",
           "type": "string"
