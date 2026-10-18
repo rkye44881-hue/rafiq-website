@@ -94,9 +94,9 @@ function renderPage(lang, c, page) {
       + '</div><div class="hx-ctas"><a class="btn hx-main" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn hx-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div></div>' : '';
   const hero = ar
     ? '<section class="hero-x" id="top"><div class="wrap hx-grid"><div class="hx-text"><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p></div>'
-      + '<div class="hx-media">' + heroImg("/media/car-jetour-t2.webp", X.hero.title) + '</div>'
+      + '<div class="hx-media">' + heroImg("/media/car-jetour-t2.webp", "سيارة جيتور T2 مع سائق خاص في القاهرة") + '</div>'
       + whereCard + '<div class="hx-trust">' + X.highlights.map((t, i) => '<span>' + ic(TRUST_ICONS[i % 4]) + esc(t) + '</span>').join("") + '</div></div></section>'
-    : '<section class="hero-lt" id="top"><div class="scene">' + (set.hero_image ? heroImg(set.hero_image, X.hero.title) : scene("giza")) + '</div><div class="veil"></div><div class="wrap">' + heroText + '</div></section>';
+    : '<section class="hero-lt" id="top"><div class="scene">' + (set.hero_image ? heroImg(set.hero_image, X.hero.title.replace(/\*/g, "")) : scene("giza")) + '</div><div class="veil"></div><div class="wrap">' + heroText + '</div></section>';
 
   const explore = () => {
     const visCount = id => id === "tours" ? c.tours.filter(t => t.visible).length : (c.places[id] || []).filter(p => p.visible).length;
