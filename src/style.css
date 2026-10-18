@@ -573,3 +573,19 @@ body.has-picks .fab{display:none}
 /* headline: words rise out of a soft blur one after another on page load */
 .kw{display:inline-block;animation:kwIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 140ms + 150ms)}
 @keyframes kwIn{from{opacity:0;transform:translateY(.4em);filter:blur(10px)}}
+/* hero skyline backdrop (Arabic home): gold line art along the bottom, drawn in once after the headline */
+.hero-ar{position:relative;overflow:hidden}
+.hero-ar>.wrap{position:relative;z-index:1}
+.ar .hero-ar{padding-bottom:calc(clamp(40px,6vw,80px) + min(100vw,1100px) * .17)}
+.hero-ar .skyline{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,1100px);height:auto;z-index:0;pointer-events:none;opacity:.6;color:var(--accent);fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.skyline .o{fill:var(--dark)}
+.skyline .thin{stroke-width:1.2;opacity:.7}
+.skyline .faint{opacity:.4}
+.skyline .sun{fill:rgba(201,160,74,.14)}
+.skyline path{stroke-dasharray:1;stroke-dashoffset:1;animation:skDraw 2.4s ease-in-out forwards;animation-delay:1s}
+.skyline .sk-pyr path,.skyline .sk-sun path{animation-delay:1.2s}
+.skyline .sk-tower path,.skyline .sk-mosque path{animation-delay:1.5s}
+.skyline .sk-church path,.skyline .sk-palm path,.skyline .sk-palm2 path{animation-delay:1.8s}
+.skyline .sk-nile path{animation-delay:2.1s}
+@keyframes skDraw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.skyline path{stroke-dashoffset:0}}
