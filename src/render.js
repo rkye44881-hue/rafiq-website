@@ -32,16 +32,21 @@ const CONSENT_UI = {
 };
 function analytics(lang, set) {
   const id = (set.ga_id || "").trim();
-  if (!id) return { head: "", body: "" };
+  const pixel = (set.tiktok_pixel_id || "").replace(/[^A-Za-z0-9]/g, "");
+  if (!id && !pixel) return { head: "", body: "" };
   const u = CONSENT_UI[lang];
-  const head = '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}'
+  const googleHead = !id ? "" : '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}'
     + 'gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});'
     + 'gtag("js",new Date());gtag("config",' + JSON.stringify(id) + ');</script>'
     + '<script async src="https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id) + '"></script>';
+  // The TikTok pixel script is sync so ttq exists before the banner script runs; it holds events until consent is granted.
+  const tiktokHead = pixel ? '<script src="/tiktok-pixel.js"></script>' : "";
+  const head = googleHead + tiktokHead;
   const body = '<div class="cookie" id="cookie" hidden><p>' + esc(u.text) + '</p><div class="cookie-b">'
     + '<button type="button" data-consent="denied">' + esc(u.reject) + '</button><button type="button" data-consent="granted">' + esc(u.accept) + '</button></div></div>'
     + '<script>(function(){var k="cv-consent",b=document.getElementById("cookie"),c=null;try{c=localStorage.getItem(k)}catch(e){}'
-    + 'function update(v){gtag("consent","update",{analytics_storage:v,ad_storage:v,ad_user_data:v,ad_personalization:v})}'
+    + 'function update(v){if(window.gtag)gtag("consent","update",{analytics_storage:v,ad_storage:v,ad_user_data:v,ad_personalization:v});'
+    + 'if(window.ttq)ttq[v==="granted"?"grantConsent":"revokeConsent"]()}'
     + 'if(c==="granted"||c==="denied")update(c);else b.hidden=false;'
     + 'b.addEventListener("click",function(e){var v=e.target.getAttribute("data-consent");if(!v)return;try{localStorage.setItem(k,v)}catch(err){}update(v);b.hidden=true})})();</script>';
   return { head, body };

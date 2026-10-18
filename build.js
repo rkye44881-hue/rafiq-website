@@ -41,6 +41,8 @@ fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(OUT, "assets/style.c
 fs.writeFileSync(path.join(OUT, "assets/app.js"),
   fs.readFileSync(path.join(ROOT, "src/shared.js"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "src/client.js"), "utf8"));
 fs.cpSync(path.join(ROOT, "public"), OUT, { recursive: true });
+const pixelId = (content.settings.tiktok_pixel_id || "").replace(/[^A-Za-z0-9]/g, "");
+if (pixelId) fs.writeFileSync(path.join(OUT, "tiktok-pixel.js"), fs.readFileSync(path.join(ROOT, "src/tiktok-pixel.js"), "utf8").replace("__PIXEL_ID__", pixelId));
 if (fs.existsSync(path.join(ROOT, "media"))) fs.cpSync(path.join(ROOT, "media"), path.join(OUT, "media"), { recursive: true });
 
 const base = (content.settings.site_url || "").replace(/\/$/, "");
