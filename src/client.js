@@ -215,6 +215,8 @@
   let running = 0, ended = 0;
   cards.sort((a, b) => b.dataset.end.localeCompare(a.dataset.end)).forEach(card => {
     const s = card.dataset.start, e = card.dataset.end;
+    const dt = card.querySelector(".of-date");
+    if (dt) dt.textContent = e < today ? dt.dataset.ended : dt.dataset.now;
     if (e < today) { card.classList.add("is-ended"); past.appendChild(card); ended++; }
     else if (s <= today) {
       card.classList.remove("is-ended"); now.appendChild(card); running++;

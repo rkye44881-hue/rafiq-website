@@ -645,6 +645,7 @@ body.has-picks .fab{display:none}
 .of-card.is-ended{grid-template-columns:1fr;filter:grayscale(1);opacity:.65;box-shadow:none}
 .of-card.is-ended .of-pic{min-height:150px}
 .of-card.is-ended .of-ended{display:block}
-.of-card.is-ended .of-book,.of-card.is-ended .of-left,.of-card.is-ended .of-badge{display:none}
+.of-card.is-ended .of-book,.of-card.is-ended .of-left{display:none}
+.of-card.is-ended .of-badge{box-shadow:none}
 .of-card.is-ended .of-price b{font-size:1.6rem}
 @media (max-width:760px){.of-card{grid-template-columns:1fr}.of-pic{min-height:0;aspect-ratio:16/10}.of-book{justify-self:stretch}}
