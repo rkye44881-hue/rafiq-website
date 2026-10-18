@@ -556,3 +556,17 @@ body.has-picks .fab{display:none}
 /* gentle reveal while scrolling (classes added by client.js) */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease var(--rv-d,0ms),transform .6s cubic-bezier(.2,.7,.2,1) var(--rv-d,0ms)}
 .rv.in{opacity:1;transform:none}
+/* soft "neumorphic" booking form: light panel that looks pressed out of the page,
+   fields pressed in, gold send button kept strong for contrast */
+#s-book .bookbox{--neu-dk:rgba(150,132,100,.42);--neu-lt:#fff;background:var(--bg);color:var(--ink);border:0;box-shadow:10px 10px 26px var(--neu-dk),-10px -10px 26px var(--neu-lt)}
+#s-book .bookbox .bk-t small,#s-book .book-ar .note{color:var(--muted)}
+#s-book .bookbox .bk-chev{color:var(--ink)}
+#s-book .bookbox .bk-ic{box-shadow:4px 4px 10px var(--neu-dk),-4px -4px 10px var(--neu-lt)}
+#s-book .bk-tabs{gap:10px}
+#s-book .bk-tabs button{background:var(--bg);border:0;color:var(--muted);padding:8px 16px;box-shadow:4px 4px 10px var(--neu-dk),-4px -4px 10px var(--neu-lt);transition:box-shadow .2s,color .2s}
+#s-book .bk-tabs button[aria-pressed="true"]{background:var(--bg);color:var(--accent-strong);box-shadow:inset 3px 3px 7px var(--neu-dk),inset -3px -3px 7px var(--neu-lt)}
+#s-book .book-ar .fld label{color:var(--muted)}
+#s-book .book-ar .fld input,#s-book .book-ar .fld select{background:var(--bg);color:var(--ink);border:0;border-radius:12px;color-scheme:light;box-shadow:inset 3px 3px 7px var(--neu-dk),inset -3px -3px 7px var(--neu-lt)}
+#s-book .book-ar .fld input::placeholder{color:#8A8E9C}
+#s-book .book-ar .fld input:focus,#s-book .book-ar .fld select:focus{outline:2px solid var(--accent);outline-offset:2px}
+#s-book .btn-acc{box-shadow:5px 5px 12px var(--neu-dk),-5px -5px 12px var(--neu-lt)}
