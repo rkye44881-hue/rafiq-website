@@ -87,9 +87,15 @@ function renderPage(lang, c, page) {
   const pills = '<div class="hero-pills">' + X.highlights.map((t, i) => '<span>' + ic(TRUST_ICONS[i % 4]) + esc(t) + '</span>').join("") + '</div>';
   const ctas = '<div class="ctas"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn btn-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div>';
   const heroText = '<div><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p>' + ctas + pills + '</div>';
+  /* Arabic hero: light and clean, the car photo up front and a "where to?" picker that opens WhatsApp */
+  const W = L.where;
+  const whereCard = W ? '<div class="hx-where"><b class="hx-q">' + esc(W.title) + '</b><div class="hx-picks">'
+      + W.items.map(([icn, t, msg], i) => '<a class="hx-pick" style="--i:' + i + '" target="_blank" rel="noopener" href="' + wa(L.wa.service.replace("{t}", msg)) + '"><span class="ic">' + ic(icn) + '</span>' + esc(t) + '</a>').join("")
+      + '</div><div class="hx-ctas"><a class="btn hx-main" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn hx-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div></div>' : '';
   const hero = ar
-    ? '<section class="hero-ar pattern" id="top"><div class="wrap"><div class="grid">' + heroText
-      + '<div class="arch">' + ((set.hero_image_tall || set.hero_image) ? heroImg(set.hero_image_tall || set.hero_image, X.hero.title) : scene("giza")) + (X.hero.photo_caption ? '<div class="tag">' + ic("pin") + '<span>' + md(fill(X.hero.photo_caption)).replace(/<em>(.*?)<\/em>/g, "<b>$1</b>") + '</span></div>' : '') + '</div></div></div></section>'
+    ? '<section class="hero-x" id="top"><div class="wrap hx-grid"><div class="hx-text"><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p></div>'
+      + '<div class="hx-media">' + heroImg("/media/car-jetour-t2.webp", X.hero.title) + '</div>'
+      + whereCard + '<div class="hx-trust">' + X.highlights.map((t, i) => '<span>' + ic(TRUST_ICONS[i % 4]) + esc(t) + '</span>').join("") + '</div></div></section>'
     : '<section class="hero-lt" id="top"><div class="scene">' + (set.hero_image ? heroImg(set.hero_image, X.hero.title) : scene("giza")) + '</div><div class="veil"></div><div class="wrap">' + heroText + '</div></section>';
 
   const explore = () => {

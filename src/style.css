@@ -573,3 +573,39 @@ body.has-picks .fab{display:none}
 /* headline: words rise out of a soft blur one after another on page load */
 .kw{display:inline-block;animation:kwIn .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 140ms + 150ms)}
 @keyframes kwIn{from{opacity:0;transform:translateY(.4em);filter:blur(10px)}}
+/* ===== Arabic hero, light version: white & soft grey, car photo first, "where to?" picker ===== */
+.hero-x{--hx-ink:#14181F;--hx-soft:#5E6573;--hx-line:#E2E5EA;--hx-tint:#F1F3F6;--hx-steel:#4A5A75;
+  background:linear-gradient(180deg,#FFFFFF 0%,#F3F4F7 100%);color:var(--hx-ink);padding-block:clamp(28px,5vw,72px) clamp(36px,5vw,72px);overflow:hidden}
+.hx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"text media" "where media" "trust trust";gap:clamp(18px,3vw,36px) clamp(28px,4vw,56px);align-items:start}
+.hx-text{grid-area:text}
+.hx-media{grid-area:media;align-self:center}
+.hx-where{grid-area:where}
+.hx-trust{grid-area:trust}
+.hero-x .eyebrow{color:var(--hx-steel);font-weight:600;font-size:.9rem;letter-spacing:0;margin:0}
+.hero-x h1{font-size:clamp(2.6rem,6.4vw,5rem);line-height:1.12;font-weight:700;color:var(--hx-ink);margin:10px 0 14px}
+.hero-x h1 em{font-style:normal;color:var(--hx-steel)}
+.hero-x .sub{color:var(--hx-soft);font-size:1.05rem;line-height:1.85;max-width:44ch;margin:0}
+.hx-media{position:relative;border-radius:28px;overflow:hidden;background:var(--hx-tint);box-shadow:0 40px 70px -40px rgba(20,24,31,.45);aspect-ratio:16/11}
+.hx-media img{width:100%;height:100%;object-fit:cover;animation:hxZoom 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes hxZoom{from{transform:scale(1.08);opacity:0}}
+.hx-where{background:#fff;border:1px solid var(--hx-line);border-radius:24px;padding:18px;box-shadow:0 24px 50px -34px rgba(20,24,31,.35);display:grid;gap:14px}
+.hx-q{font-size:1.25rem;font-weight:700}
+.hx-picks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.hx-pick{display:grid;justify-items:center;gap:8px;padding:14px 6px;border:1px solid var(--hx-line);border-radius:16px;text-decoration:none;color:var(--hx-ink);font-weight:600;font-size:.92rem;background:#fff;transition:border-color .2s,transform .2s,box-shadow .2s;animation:kwIn .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 90ms + .7s)}
+.hx-pick:hover{border-color:var(--hx-steel);transform:translateY(-2px);box-shadow:0 10px 22px -14px rgba(20,24,31,.4)}
+.hx-pick .ic{width:42px;height:42px;border-radius:50%;background:var(--hx-tint);display:grid;place-items:center;color:var(--hx-steel)}
+.hx-pick .ic svg{width:22px;height:22px}
+.hx-ctas{display:flex;flex-wrap:wrap;gap:10px}
+.hx-main{background:var(--hx-steel);color:#fff;flex:1 1 auto}
+.hx-main:hover{background:#37445C;color:#fff}
+.hx-ghost{background:transparent;border:1px solid var(--hx-line);color:var(--hx-ink)}
+.hx-ghost:hover{border-color:var(--hx-steel)}
+.hx-trust{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--hx-soft);font-size:.9rem}
+.hx-trust span{display:inline-flex;align-items:center;gap:6px}
+.hx-trust svg{width:18px;height:18px;color:var(--hx-steel)}
+@media (max-width:900px){
+  .hx-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"text" "media" "where" "trust"}
+  .hx-media{aspect-ratio:16/11;margin-inline:-6px}
+  .hx-where{margin-top:-56px;position:relative;z-index:1;margin-inline:6px}
+}
+@media (max-width:380px){.hx-picks{grid-template-columns:repeat(2,minmax(0,1fr))}}
