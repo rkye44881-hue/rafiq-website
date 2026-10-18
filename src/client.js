@@ -169,3 +169,22 @@
     try { navigator.clipboard.writeText(b.dataset.copy).then(done, select); } catch (e) { select(); }
   }));
 })();
+
+/* ---------- gentle reveal while scrolling ----------
+   Cards fade and rise a little as they come into view. Added by script only,
+   so without JavaScript (or with "reduce motion" on) everything shows at once. */
+(function () {
+  "use strict";
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const els = document.querySelectorAll(".svc-card, .city, .car, .step, .pr");
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { rootMargin: "0px 0px -8% 0px" });
+  els.forEach(el => {
+    const sibs = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty("--rv-d", Math.min(sibs, 5) * 80 + "ms");
+    el.classList.add("rv");
+    io.observe(el);
+  });
+})();

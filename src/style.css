@@ -553,3 +553,6 @@ body.has-picks .fab{display:none}
 .soc span{font-weight:600;color:var(--on-dark);margin-inline-end:6px}
 .soc a{display:inline-flex;align-items:center;padding:8px 16px;border:1px solid var(--dark-line);border-radius:999px;color:var(--on-dark);text-decoration:none;font-size:.9rem;transition:border-color .2s,color .2s}
 .soc a:hover{border-color:var(--accent);color:var(--accent)}
+/* gentle reveal while scrolling (classes added by client.js) */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease var(--rv-d,0ms),transform .6s cubic-bezier(.2,.7,.2,1) var(--rv-d,0ms)}
+.rv.in{opacity:1;transform:none}
