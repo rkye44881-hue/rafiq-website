@@ -1,0 +1,18 @@
+# Cloudflare Pages response headers.
+# Security: block the site from being framed by other sites, limit where scripts/fonts/images
+# may load from (only this site, Google Fonts and Google Analytics), force HTTPS.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000
+
+# Speed: design files carry a version number in their link, so browsers can keep them for a year.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Photos: keep for a week, then check for a newer copy.
+/media/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
