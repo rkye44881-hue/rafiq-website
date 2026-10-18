@@ -6,3 +6,12 @@
   ttq.holdConsent();
   ttq.page();
 }(window, document, 'ttq');
+
+// Track WhatsApp and phone clicks as "Contact" in TikTok (held until the visitor accepts cookies, like the page views)
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
+  if (!a || !window.ttq) return;
+  ttq.track('Contact', {
+    content_name: a.href.indexOf('wa.me') > -1 ? 'whatsapp' : 'phone'
+  });
+}, true);
