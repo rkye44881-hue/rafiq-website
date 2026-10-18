@@ -196,3 +196,33 @@
     io.observe(el);
   });
 })();
+
+/* ---------- monthly offers ----------
+   Checks today's date (Cairo time) every time the page opens: running offers stay on top with a
+   "days left" count, ended ones move to "past offers", and the home-page bar hides once the offer ends. */
+(function () {
+  "use strict";
+  let today;
+  try { today = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Cairo" }).format(new Date()); } catch (e) { return; }
+  const D = (() => { try { return JSON.parse(document.getElementById("data").textContent); } catch (e) { return {}; } })();
+  const digits = n => D.lang === "ar" ? String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]) : String(n);
+  const strip = document.querySelector(".of-strip");
+  if (strip) strip.hidden = !(strip.dataset.start <= today && strip.dataset.end >= today);
+  const now = document.getElementById("ofNow");
+  if (!now) return;
+  const past = document.getElementById("ofPast"), pastWrap = document.getElementById("ofPastWrap"), empty = document.getElementById("ofEmpty");
+  const cards = Array.prototype.slice.call(document.querySelectorAll(".of-card"));
+  let running = 0, ended = 0;
+  cards.sort((a, b) => b.dataset.end.localeCompare(a.dataset.end)).forEach(card => {
+    const s = card.dataset.start, e = card.dataset.end;
+    if (e < today) { card.classList.add("is-ended"); past.appendChild(card); ended++; }
+    else if (s <= today) {
+      card.classList.remove("is-ended"); now.appendChild(card); running++;
+      const left = card.querySelector(".of-left");
+      const days = Math.round((Date.parse(e + "T00:00:00Z") - Date.parse(today + "T00:00:00Z")) / 86400000);
+      if (left) left.textContent = days === 0 ? left.dataset.last : left.dataset.left.replace("{n}", digits(days));
+    }
+  });
+  empty.hidden = running > 0;
+  pastWrap.hidden = ended === 0;
+})();

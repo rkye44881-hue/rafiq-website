@@ -1,0 +1,21 @@
+{
+  "offers": [
+    {
+      "id": "2026-10",
+      "start": "2026-10-01",
+      "end": "2026-10-31",
+      "price": 75,
+      "old_price": 100,
+      "discount": 25,
+      "image": "/media/car-jetour-t2.webp",
+      "title_ar": "عرض أكتوبر: جيتور T2 موديل 2027",
+      "points_ar": "العمل لمدة 10 ساعات أو 120 كيلومتر\nمياه معدنية مجانًا\nشامل الضريبة والخدمة",
+      "title_en": "October offer: Jetour T2, 2027 model",
+      "points_en": "10 hours or 120 km of driving\nFree mineral water\nTaxes and service included",
+      "title_fr": "Offre d'octobre : Jetour T2, modèle 2027",
+      "points_fr": "10 heures ou 120 km de route\nEau minérale offerte\nTaxes et service compris",
+      "title_de": "Oktober-Angebot: Jetour T2, Modell 2027",
+      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive"
+    }
+  ]
+}

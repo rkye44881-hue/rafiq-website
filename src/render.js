@@ -56,9 +56,21 @@ function socials(set, lang) {
   return links ? '<div class="soc"><span>' + FOLLOW[lang] + '</span>' + links + '</div>' : "";
 }
 
+/* ---------- monthly offers page: interface words per language ---------- */
+const OFFERS_UI = {
+  ar: { nav: "العروض", title: "عروض رحلة القاهرة", intro: "عروض لفترة محدودة على سيارة بسائق خاص. احجز قبل ما العرض يخلص.", past: "عروض سابقة", ended: "انتهى", ends: "ينتهي {d}", left: "باقي {n} يوم", last: "آخر يوم في العرض!", book: "احجز العرض على واتساب", msg: "مرحبًا {B}، أريد حجز العرض: {t}", emptyT: "عروض جديدة قريبًا ✨", emptyP: "اسألنا على واتساب عن أفضل سعر لرحلتك.", emptyBtn: "اسألنا على واتساب", strip: "🔥 {t} بـ {p}", off: "خصم", seoTitle: "عروض رحلة القاهرة | خصومات سائق خاص في القاهرة", seoDesc: "عروض شهرية على سيارة بسائق خاص في القاهرة: خصومات لفترة محدودة، سعر ثابت شامل الضريبة والخدمة، والحجز على واتساب.", locale: "ar-EG" },
+  en: { nav: "Offers", title: "Cairo Voyage offers", intro: "Limited-time deals on a private car with driver. Book before the offer ends.", past: "Past offers", ended: "Ended", ends: "Ends {d}", left: "{n} days left", last: "Last day of the offer!", book: "Book this offer on WhatsApp", msg: "Hello {B}, I'd like to book the offer: {t}", emptyT: "New offers coming soon ✨", emptyP: "Ask us on WhatsApp for the best price for your trip.", emptyBtn: "Ask on WhatsApp", strip: "🔥 {t} for {p}", off: "off", seoTitle: "Offers | Private driver deals in Cairo | Cairo Voyage", seoDesc: "Monthly deals on a private car with driver in Cairo: limited-time discounts, fixed price with taxes and service included, book on WhatsApp.", locale: "en-GB" },
+  fr: { nav: "Offres", title: "Offres Cairo Voyage", intro: "Offres à durée limitée sur une voiture privée avec chauffeur. Réservez avant la fin de l'offre.", past: "Offres passées", ended: "Terminée", ends: "Se termine le {d}", left: "Plus que {n} jours", last: "Dernier jour de l'offre !", book: "Réserver cette offre sur WhatsApp", msg: "Bonjour {B}, je souhaite réserver l'offre : {t}", emptyT: "Nouvelles offres bientôt ✨", emptyP: "Demandez-nous sur WhatsApp le meilleur prix pour votre voyage.", emptyBtn: "Demander sur WhatsApp", strip: "🔥 {t} à {p}", off: "de remise", seoTitle: "Offres | Chauffeur privé au Caire à prix réduit | Cairo Voyage", seoDesc: "Offres mensuelles sur une voiture privée avec chauffeur au Caire : remises à durée limitée, prix fixe taxes et service compris, réservation sur WhatsApp.", locale: "fr-FR" },
+  de: { nav: "Angebote", title: "Cairo Voyage Angebote", intro: "Zeitlich begrenzte Angebote für ein Privatauto mit Fahrer. Buchen Sie, bevor das Angebot endet.", past: "Frühere Angebote", ended: "Beendet", ends: "Endet am {d}", left: "Noch {n} Tage", last: "Letzter Tag des Angebots!", book: "Dieses Angebot auf WhatsApp buchen", msg: "Hallo {B}, ich möchte das Angebot buchen: {t}", emptyT: "Neue Angebote in Kürze ✨", emptyP: "Fragen Sie uns auf WhatsApp nach dem besten Preis für Ihre Reise.", emptyBtn: "Auf WhatsApp fragen", strip: "🔥 {t} für {p}", off: "Rabatt", seoTitle: "Angebote | Privatfahrer in Kairo günstiger | Cairo Voyage", seoDesc: "Monatliche Angebote für ein Privatauto mit Fahrer in Kairo: zeitlich begrenzte Rabatte, Festpreis inkl. Steuern und Service, Buchung per WhatsApp.", locale: "de-DE" }
+};
+/* today's date in Cairo as YYYY-MM-DD (offers switch on Cairo time) */
+const cairoToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Cairo" }).format(new Date());
+
 function renderPage(lang, c, page) {
   page = page || "home";
-  const sahel = page === "sahel";
+  const sahel = page === "sahel", offersPg = page === "offers";
+  const pagePath = sahel ? "north-coast/" : offersPg ? "offers/" : "";
+  const OU = OFFERS_UI[lang];
   const ar = lang === "ar";
   const L = c.labels[lang], X = c.text[lang], set = c.settings;
   const brand = ar ? set.brand_ar : set.brand_latin;
@@ -74,11 +86,12 @@ function renderPage(lang, c, page) {
 
   const header = () => {
     const logo = '<a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
-    const pre = sahel ? "/" + lang + "/" : "";
+    const pre = (sahel || offersPg) ? "/" + lang + "/" : "";
     const sahelLink = '<a class="nav-sahel" href="/' + lang + '/north-coast/"' + (sahel ? ' aria-current="page"' : '') + '>' + esc(N.nav) + '</a>';
+    const offersLink = '<a class="nav-sahel nav-offers" href="/' + lang + '/offers/"' + (offersPg ? ' aria-current="page"' : '') + '>' + esc(OU.nav) + '</a>';
     const guideLink = '<a class="nav-sahel" href="/' + lang + '/guide/">' + esc(GUIDE_UI[lang].title) + '</a>';
-    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + sahelLink + guideLink + '</nav>';
-    const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/' + (sahel ? 'north-coast/' : '') + '" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
+    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + offersLink + sahelLink + guideLink + '</nav>';
+    const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/' + pagePath + '" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
     return '<header class="hdr" id="hdr"><div class="wrap">' + logo + nav + langs
       + '<a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(L.whatsapp) + '</a>'
       + '<button class="menu-btn" type="button" id="menuBtn" aria-expanded="false">' + esc(L.menu) + '</button></div></header>';
@@ -182,8 +195,36 @@ function renderPage(lang, c, page) {
   const sTips = () => '<section class="sec dark-band" id="s-tips"><div class="wrap">' + secHead(N.tips) + '<div class="prom tips">'
     + N.tips.items.map((p, i) => '<div class="pr">' + ic(["clock", "shield", "fork", "music", "wave"][i % 5]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>').join("") + '</div></div></section>';
 
+  /* ---------- offers: cards sorted by date; the browser re-checks the date so ended offers move down by themselves ---------- */
+  const today = cairoToday();
+  const offers = (c.offers || []).filter(o => o.start && o.end && o["title_" + lang]).slice().sort((a, b) => b.end.localeCompare(a.end));
+  const price = n => n || n === 0 ? (ar ? num(n) + "$" : lang === "en" ? "$" + n : n + " $") : "";
+  const dayName = d => new Date(d + "T12:00:00Z").toLocaleDateString(OU.locale, { day: "numeric", month: "long", timeZone: "UTC" });
+  const offerCard = (o, i) => {
+    const t = o["title_" + lang], pts = String(o["points_" + lang] || "").split("\n").map(x => x.trim()).filter(Boolean);
+    return '<article class="of-card" data-start="' + esc(o.start) + '" data-end="' + esc(o.end) + '">'
+      + '<div class="of-pic">' + (o.image ? '<img src="' + esc(o.image) + '" alt="' + esc(t) + '"' + (i ? ' loading="lazy"' : '') + '>' : '') + (o.discount ? '<span class="of-badge">' + (ar ? OU.off + " " + num(o.discount) + "٪" : "-" + o.discount + "%") + '</span>' : '') + '<span class="of-ended">' + esc(OU.ended) + '</span></div>'
+      + '<div class="of-body"><p class="of-when"><span class="of-left" data-left="' + esc(OU.left) + '" data-last="' + esc(OU.last) + '"></span><span class="of-date">' + esc(OU.ends.replace("{d}", dayName(o.end))) + '</span></p>'
+      + '<h2>' + esc(t) + '</h2><div class="of-price"><b>' + price(o.price) + '</b>' + (o.old_price ? '<s>' + price(o.old_price) + '</s>' : '') + '</div>'
+      + '<ul>' + pts.map(x => '<li>' + ic("check") + esc(x) + '</li>').join("") + '</ul>'
+      + '<a class="btn of-book" target="_blank" rel="noopener" href="' + wa(OU.msg.replace("{t}", t)) + '">' + ic("chat") + esc(OU.book) + '</a></div></article>';
+  };
+  const offersPage = () => {
+    const now = offers.filter(o => o.start <= today && o.end >= today), past = offers.filter(o => o.end < today), soon = offers.filter(o => o.start > today);
+    return '<section class="of-head"><div class="wrap"><h1>' + esc(OU.title) + '</h1><p>' + esc(OU.intro) + '</p></div></section>'
+      + '<section class="sec of-sec"><div class="wrap" id="offers">'
+      + '<div class="of-now" id="ofNow">' + now.map(offerCard).join("") + '</div>'
+      + '<div class="of-empty" id="ofEmpty"' + (now.length ? ' hidden' : '') + '><h2>' + esc(OU.emptyT) + '</h2><p>' + esc(OU.emptyP) + '</p><a class="btn of-book" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(OU.emptyBtn) + '</a></div>'
+      + '<div class="of-soon" hidden>' + soon.map(offerCard).join("") + '</div>'
+      + '<div id="ofPastWrap"' + (past.length ? '' : ' hidden') + '><h2 class="of-past-h">' + esc(OU.past) + '</h2><div class="of-past" id="ofPast">' + past.map((o, i) => offerCard(o, i + 1)).join("") + '</div></div>'
+      + '</div></section>';
+  };
+  /* small bar at the top of the home page while an offer is running (hidden by the browser once it ends) */
+  const live = offers.find(o => o.end >= today);
+  const offerStrip = live ? '<a class="of-strip" href="/' + lang + '/offers/" data-start="' + esc(live.start) + '" data-end="' + esc(live.end) + '"' + (live.start <= today ? '' : ' hidden') + '><span>' + esc(OU.strip.replace("{t}", live["title_" + lang]).replace("{p}", price(live.price))) + '</span><b>' + (ar ? "←" : "→") + '</b></a>' : '';
+
   /* data the browser script needs for the explorer and booking form */
-  const clientData = sahel ? {
+  const clientData = offersPg ? { lang, brand, whatsapp: set.whatsapp, labels: L, categories: [], places: {}, tours: [] } : sahel ? {
     lang, brand, whatsapp: set.whatsapp,
     labels: Object.assign({}, L, { explore: Object.assign({}, L.explore, { gov: Object.fromEntries(NC.zones.map(z => [z.id, ZN(z)])) }) }),
     categories: N.categories, places: ncPlaces, tours: [], govs: NC.zones.map(z => z.id),
@@ -196,8 +237,8 @@ function renderPage(lang, c, page) {
   };
 
   const base = (set.site_url || "").replace(/\/$/, "");
-  const seo = (sahel ? N.seo : X.seo) || {};
-  const path = sahel ? "north-coast/" : "";
+  const seo = offersPg ? { title: OU.seoTitle, description: OU.seoDesc } : (sahel ? N.seo : X.seo) || {};
+  const path = pagePath;
   const desc = seo.description || X.hero.subtitle;
   const title = seo.title || (ar ? set.brand_ar + " | " : set.brand_latin + " | ") + X.hero.eyebrow;
   const OG_LOCALE = { ar: "ar_EG", en: "en_US", fr: "fr_FR", de: "de_DE" };
@@ -225,13 +266,13 @@ function renderPage(lang, c, page) {
     + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=optional">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">'
-    + ld(business) + ld(faqLd) + analytics(lang, c.settings).head
+    + ld(business) + (offersPg ? ld({ "@context": "https://schema.org", "@type": "OfferCatalog", name: OU.title, url: base + "/" + lang + "/offers/", itemListElement: offers.filter(o => o.end >= today).map(o => ({ "@type": "Offer", name: o["title_" + lang], description: String(o["points_" + lang] || "").split("\n").join(" · "), price: o.price, priceCurrency: "USD", validFrom: o.start, validThrough: o.end, availability: "https://schema.org/InStock", url: base + "/" + lang + "/offers/" })) }) : ld(faqLd)) + analytics(lang, c.settings).head
     + '</head><body>';
 
-  const body = sahel
+  const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : "") + '">' + header() + body + footer() + '</div>' + analytics(lang, c.settings).body
+    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + footer() + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }

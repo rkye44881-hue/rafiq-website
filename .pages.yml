@@ -102,6 +102,98 @@
       ]
     },
     {
+      "name": "offers",
+      "label": "🔥 العروض الشهرية",
+      "type": "file",
+      "path": "content/offers.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "offers",
+          "label": "العروض (ضيف عرض جديد كل شهر)",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "كود العرض (مثال: 2026-11)",
+              "type": "string"
+            },
+            {
+              "name": "start",
+              "label": "أول يوم في العرض",
+              "type": "date"
+            },
+            {
+              "name": "end",
+              "label": "آخر يوم في العرض (بعده العرض يتنقل لوحده لـ «عروض سابقة»)",
+              "type": "date"
+            },
+            {
+              "name": "price",
+              "label": "السعر بعد الخصم بالدولار",
+              "type": "number"
+            },
+            {
+              "name": "old_price",
+              "label": "السعر قبل الخصم بالدولار (اختياري)",
+              "type": "number"
+            },
+            {
+              "name": "discount",
+              "label": "نسبة الخصم % (اختياري)",
+              "type": "number"
+            },
+            {
+              "name": "image",
+              "label": "صورة العرض",
+              "type": "image"
+            },
+            {
+              "name": "title_ar",
+              "label": "اسم العرض — العربي",
+              "type": "string"
+            },
+            {
+              "name": "points_ar",
+              "label": "المميزات — العربي (كل ميزة في سطر)",
+              "type": "text"
+            },
+            {
+              "name": "title_en",
+              "label": "اسم العرض — English",
+              "type": "string"
+            },
+            {
+              "name": "points_en",
+              "label": "المميزات — English (كل ميزة في سطر)",
+              "type": "text"
+            },
+            {
+              "name": "title_fr",
+              "label": "اسم العرض — Français",
+              "type": "string"
+            },
+            {
+              "name": "points_fr",
+              "label": "المميزات — Français (كل ميزة في سطر)",
+              "type": "text"
+            },
+            {
+              "name": "title_de",
+              "label": "اسم العرض — Deutsch",
+              "type": "string"
+            },
+            {
+              "name": "points_de",
+              "label": "المميزات — Deutsch (كل ميزة في سطر)",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "places",
       "label": "📍 أماكن استكشف (القاهرة والجيزة)",
       "type": "file",
