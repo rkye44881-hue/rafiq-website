@@ -126,15 +126,23 @@
   const svcSel = document.getElementById("bk-svc");
   if (svcSel) {
   const v = id => (document.getElementById(id) || {}).value || "—";
+  /* "by the day" needs no pick-up / drop-off: hide those two fields and leave them out of the message */
+  const NO_ROUTE = ["driver"];
+  const routeFlds = ["bk-from", "bk-to"].map(id => (document.getElementById(id) || {}).parentNode).filter(Boolean);
   function updateBooking() {
     const svc = svcSel.selectedIndex >= 0 ? svcSel.options[svcSel.selectedIndex].text : "—";
-    const msg = L.wa.booking.replace("{svc}", svc).replace("{from}", v("bk-from")).replace("{to}", v("bk-to"))
+    const noRoute = NO_ROUTE.includes(svcSel.value);
+    routeFlds.forEach(f => { f.hidden = noRoute; });
+    const tpl = noRoute ? L.wa.booking.split("\n").filter(l => !/\{(from|to)\}/.test(l)).join("\n") : L.wa.booking;
+    const msg = tpl.replace("{svc}", svc).replace("{from}", v("bk-from")).replace("{to}", v("bk-to"))
       .replace("{date}", v("bk-date")).replace("{time}", v("bk-time")).replace("{pax}", v("bk-pax")).replace("{name}", v("bk-name"));
     document.getElementById("bk-send").href = wa(msg);
   }
   ["bk-svc", "bk-from", "bk-to", "bk-date", "bk-time", "bk-pax", "bk-name"].forEach(id => {
     const el = document.getElementById(id); if (el) { el.addEventListener("input", updateBooking); el.addEventListener("change", updateBooking); }
   });
+  /* choosing the service from the list also lights up the matching tab */
+  svcSel.addEventListener("change", () => tabs.forEach(x => x.setAttribute("aria-pressed", x.dataset.bt === svcSel.value)));
   document.getElementById("bookForm").addEventListener("submit", e => e.preventDefault());
   const tabs = document.querySelectorAll("[data-bt]");
   const pickTab = b => {
