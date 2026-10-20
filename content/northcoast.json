@@ -859,7 +859,7 @@
       "more": "Explore the North Coast",
       "seo": {
         "title": "Private Driver North Coast & New Alamein | Cairo Voyage",
-        "description": "Car with driver by the day on Egypt's North Coast and New Alamein. Transfers from Cairo, Alexandria and El Alamein airport to any resort. Hotels, restaurants, beaches and events."
+        "description": "Car with driver by the day on Egypt's North Coast and New Alamein. Transfers from Cairo, Alexandria and El Alamein airport. Hotels, restaurants and beaches."
       },
       "hero": {
         "eyebrow": "North Coast · New Alamein · Ras El Hekma",
@@ -1060,7 +1060,7 @@
       "more": "Découvrir la Côte Nord",
       "seo": {
         "title": "Chauffeur privé Côte Nord & New Alamein | Cairo Voyage",
-        "description": "Voiture avec chauffeur à la journée sur la Côte Nord et à New Alamein. Transferts depuis Le Caire, Alexandrie et l'aéroport d'El Alamein. Hôtels, restaurants, plages et événements."
+        "description": "Voiture avec chauffeur à la journée sur la Côte Nord et à Alamein. Transferts depuis Le Caire et Alexandrie. Hôtels, restaurants, plages."
       },
       "hero": {
         "eyebrow": "Côte Nord · New Alamein · Ras El Hekma",
@@ -1261,7 +1261,7 @@
       "more": "Die Nordküste entdecken",
       "seo": {
         "title": "Privatfahrer Nordküste & New Alamein | Cairo Voyage",
-        "description": "Auto mit Fahrer tageweise an Ägyptens Nordküste und in New Alamein. Transfers ab Kairo, Alexandria und Flughafen El Alamein. Hotels, Restaurants, Strände und Events."
+        "description": "Auto mit Fahrer tageweise an Ägyptens Nordküste und in El Alamein. Transfers ab Kairo, Alexandria und Flughafen El Alamein. Hotels, Restaurants, Strände."
       },
       "hero": {
         "eyebrow": "Nordküste · New Alamein · Ras El Hekma",
@@ -1454,6 +1454,207 @@
           "Fahrzeitrechner",
           "Hotels, Restaurants, Strände",
           "Events in Alamein"
+        ]
+      }
+    },
+    "it": {
+      "nav": "Costa Nord",
+      "more": "Scopri la Costa Nord",
+      "seo": {
+        "title": "Autista privato Costa Nord ed El Alamein | Cairo Voyage",
+        "description": "Auto con autista a giornata sulla Costa Nord e a El Alamein. Transfer da Cairo, Alessandria e dall'aeroporto di El Alamein. Hotel, ristoranti e spiagge."
+      },
+      "hero": {
+        "eyebrow": "Costa Nord · El Alamein · Ras El Hekma",
+        "title": "La tua estate sulla costa, *a modo tuo.*",
+        "subtitle": "Auto con autista a giornata tra resort, spiagge, ristoranti e concerti, più transfer porta a porta da Cairo, Alessandria o dall'aeroporto.",
+        "button_1": "Prenota un'auto per la costa",
+        "button_2": "Guarda i tempi di percorrenza"
+      },
+      "highlights": [
+        "Auto con autista a giornata",
+        "Da Cairo, Alessandria e aeroporti",
+        "Ogni resort da Marina a Matrouh",
+        "Prezzo fisso, anche in alta stagione"
+      ],
+      "services": {
+        "eyebrow": "Sulla costa",
+        "title": "Tutta la costa, con un solo autista",
+        "intro": "",
+        "items": [
+          {
+            "id": "day",
+            "title": "Auto con autista a giornata",
+            "desc": "Auto e autista restano con voi tutto il giorno: la spiaggia al mattino, pranzo alla marina, un concerto la sera. 8 o 12 ore, oppure per tutta la vacanza.",
+            "points": [
+              "Tra tutti i resort",
+              "Attesa inclusa",
+              "Serate e concerti"
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transfer verso il vostro chalet",
+            "desc": "Porta a porta da Cairo o Alessandria fino al chalet o all'hotel, andata o andata e ritorno, con spazio per i bagagli.",
+            "points": [
+              "Un prezzo per auto",
+              "Soste lungo il percorso"
+            ]
+          },
+          {
+            "id": "airport",
+            "title": "Aeroporti di El Alamein e Borg El Arab",
+            "desc": "Ritiro dall'aeroporto di El Alamein (DBB) o Borg El Arab (HBE) verso qualsiasi resort. L'autista segue il volo.",
+            "points": [
+              "Monitoraggio del volo",
+              "Cartello con il nome"
+            ]
+          },
+          {
+            "id": "family",
+            "title": "Auto per famiglie numerose",
+            "desc": "Hyundai H1 o Geely a 7 posti per famiglie, amici e tanti bagagli.",
+            "points": [
+              "Fino a 7 posti",
+              "Molto spazio per i bagagli"
+            ]
+          },
+          {
+            "id": "night",
+            "title": "Serate da concerto",
+            "desc": "Vi accompagniamo ai concerti di Alamein e ai beach club, aspettiamo fino alla fine e vi riportiamo a casa in sicurezza.",
+            "points": [
+              "Niente stress per il parcheggio",
+              "Ritorno sicuro"
+            ]
+          }
+        ]
+      },
+      "calc": {
+        "eyebrow": "Tempi di percorrenza",
+        "title": "Quanto ci vuole per la costa?",
+        "intro": "Scegliete da dove partite e dove andate, poi inviateci la richiesta su WhatsApp.",
+        "from_": "Da",
+        "to": "A",
+        "result": "Circa {h} in auto, a seconda del traffico.",
+        "hour": "ora",
+        "hours": "ore",
+        "send": "Richiedi un prezzo su WhatsApp",
+        "origins": {
+          "cairo": "Cairo e Giza",
+          "alex": "Alessandria",
+          "dbb": "Aeroporto di El Alamein (DBB)",
+          "hbe": "Aeroporto di Borg El Arab (HBE)"
+        }
+      },
+      "coast": {
+        "eyebrow": "La strada della costa",
+        "title": "Da Alamein a Matrouh",
+        "intro": "Le zone della costa in ordine, con tempi di percorrenza indicativi.",
+        "fromCairo": "Da Cairo",
+        "fromAlex": "Da Alessandria",
+        "bookHere": "Prenota un passaggio qui"
+      },
+      "explore": {
+        "eyebrow": "Guida alla costa",
+        "title": "Tutto sulla Costa Nord",
+        "intro": "Hotel, ristoranti, spiagge, resort ed eventi. Scegliete un luogo e prenotate un passaggio, oppure raccogliete più tappe in una giornata con il vostro autista."
+      },
+      "tips": {
+        "eyebrow": "Da sapere",
+        "title": "Consigli per la costa",
+        "items": [
+          {
+            "title": "Evitate il traffico",
+            "description": "Il giovedì pomeriggio e il venerdì mattina sono i momenti più affollati. Partire presto o tardi fa risparmiare un'ora o più."
+          },
+          {
+            "title": "Ingressi dei resort",
+            "description": "La maggior parte dei resort richiede un pass per gli ospiti. Tenetelo pronto; l'autista parlerà con la sicurezza."
+          },
+          {
+            "title": "Prenotate i tavoli in anticipo",
+            "description": "I ristoranti della marina si riempiono in fretta in estate. Prenotate con anticipo."
+          },
+          {
+            "title": "Serate da concerto",
+            "description": "Parcheggiare vicino ai concerti è difficile. Fatevi lasciare dall'autista che vi aspetta."
+          },
+          {
+            "title": "Sole e acqua",
+            "description": "Portate acqua e crema solare, soprattutto per Matrouh e i siti di El Alamein."
+          }
+        ]
+      },
+      "faq": {
+        "eyebrow": "Domande frequenti sulla costa",
+        "title": "Prima di prenotare",
+        "intro": "",
+        "items": [
+          {
+            "question": "Posso noleggiare un'auto con autista a giornata sulla costa?",
+            "answer": "Sì. Auto e autista per 8 o 12 ore al giorno, oppure per tutto il soggiorno, tra qualsiasi resort, ristorante e spiaggia."
+          },
+          {
+            "question": "Quanto dura il viaggio da Cairo?",
+            "answer": "Circa 3 ore per El Alamein Nuova e Marina, e 4 ore per Ras El Hekma, a seconda del traffico."
+          },
+          {
+            "question": "Potete entrare nel resort?",
+            "answer": "La maggior parte dei resort fa entrare l'auto con un pass dell'ospite. Se non è possibile, vi lasciamo il più vicino possibile al cancello."
+          },
+          {
+            "question": "I prezzi aumentano in alta stagione?",
+            "answer": "Il prezzo si concorda prima del viaggio e non cambia dopo."
+          },
+          {
+            "question": "Potete portarci a un concerto e aspettare?",
+            "answer": "Certo. È uno dei servizi estivi più richiesti."
+          }
+        ]
+      },
+      "categories": [
+        {
+          "id": "villages",
+          "name": "Resort e villaggi",
+          "description": "Da Marina ed El Alamein Nuova a Ras El Hekma e Matrouh."
+        },
+        {
+          "id": "hotels",
+          "name": "Hotel e soggiorni",
+          "description": "Hotel e resort sulla costa."
+        },
+        {
+          "id": "restaurants",
+          "name": "Ristorazione di qualità",
+          "description": "I migliori tavoli a Marassi, alla marina e oltre."
+        },
+        {
+          "id": "beaches",
+          "name": "Spiagge e giornata in spiaggia",
+          "description": "Spiagge libere e pass giornalieri degli hotel."
+        },
+        {
+          "id": "events",
+          "name": "Eventi di Alamein",
+          "description": "Festival, concerti e serate."
+        },
+        {
+          "id": "trips",
+          "name": "Gite e luoghi da visitare",
+          "description": "El Alamein storica, Matrouh e Siwa."
+        }
+      ],
+      "promo": {
+        "eyebrow": "Novità · Costa Nord",
+        "title": "La tua estate sulla costa, *a modo tuo.*",
+        "text": "Auto con autista a giornata tra resort, spiagge, ristoranti e concerti, più transfer da Cairo, Alessandria e dagli aeroporti. Con una guida completa a hotel, ristoranti, spiagge ed eventi di Alamein.",
+        "button": "Scopri la Costa Nord",
+        "chips": [
+          "Auto con autista a giornata",
+          "Calcolatore dei tempi",
+          "Hotel, ristoranti e spiagge",
+          "Eventi di Alamein"
         ]
       }
     }

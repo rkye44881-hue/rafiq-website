@@ -49,9 +49,10 @@ if (pixelId) fs.writeFileSync(path.join(OUT, "tiktok-pixel.js"), fs.readFileSync
 if (fs.existsSync(path.join(ROOT, "media"))) fs.cpSync(path.join(ROOT, "media"), path.join(OUT, "media"), { recursive: true });
 
 const base = (content.settings.site_url || "").replace(/\/$/, "");
+const TODAY = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-  + ["", "offers/", "north-coast/", "guide/", "gallery/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
+  + ["", "offers/", "north-coast/", "guide/", "gallery/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc><lastmod>" + TODAY + "</lastmod>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
   + "\n</urlset>\n");
 fs.writeFileSync(path.join(OUT, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: " + base + "/sitemap.xml\n");
 
