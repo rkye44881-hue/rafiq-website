@@ -15,7 +15,9 @@
       "title_fr": "Offre d'octobre : Jetour T2, modèle 2027",
       "points_fr": "10 heures ou 120 km de route\nEau minérale offerte\nTaxes et service compris",
       "title_de": "Oktober-Angebot: Jetour T2, Modell 2027",
-      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive"
+      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive",
+      "title_it": "Offerta di ottobre: Jetour T2, modello 2027",
+      "points_it": "10 ore o 120 km di guida\nAcqua minerale gratis\nTasse e servizio inclusi"
     },
     {
       "id": "2026-09",
@@ -32,7 +34,9 @@
       "title_fr": "Offre septembre : Jetour T2, modèle 2027",
       "points_fr": "10 heures ou 120 km de route\nEau minérale offerte\nTaxes et service compris",
       "title_de": "September-Angebot: Jetour T2, Modell 2027",
-      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive"
+      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive",
+      "title_it": "Offerta di settembre: Jetour T2, modello 2027",
+      "points_it": "10 ore o 120 km di guida\nAcqua minerale gratis\nTasse e servizio inclusi"
     },
     {
       "id": "2026-08",
@@ -49,7 +53,9 @@
       "title_fr": "Offre d'août : Jetour T2, modèle 2027",
       "points_fr": "10 heures ou 120 km de route\nEau minérale offerte\nTaxes et service compris",
       "title_de": "August-Angebot: Jetour T2, Modell 2027",
-      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive"
+      "points_de": "10 Stunden oder 120 km Fahrt\nMineralwasser gratis\nSteuern und Service inklusive",
+      "title_it": "Offerta di agosto: Jetour T2, modello 2027",
+      "points_it": "10 ore o 120 km di guida\nAcqua minerale gratis\nTasse e servizio inclusi"
     }
   ]
 }

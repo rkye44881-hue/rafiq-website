@@ -4,20 +4,21 @@
 const kinetic = html => { let i = 0; return html.split(/(<[^>]+>)/).map(part => part.startsWith("<") ? part : part.split(/(\s+)/).map(w => w && !/^\s+$/.test(w) ? '<span class="kw" style="--i:' + (i++) + '">' + w + '</span>' : w).join("")).join(""); };
 const { esc, md, arDigits, waLink, prettyPhone, ic, scene, carSvg, skyline, rMark } = require("./shared.js");
 
-const LANGS = ["ar", "en", "fr", "de"];
-const LANG_BTN = { ar: "ع", en: "EN", fr: "FR", de: "DE" };
-const HTML_LANG = { ar: "ar", en: "en", fr: "fr", de: "de" };
+const LANGS = ["ar", "en", "fr", "de", "it"];
+const LANG_BTN = { ar: "ع", en: "EN", fr: "FR", de: "DE", it: "IT" };
+const HTML_LANG = { ar: "ar", en: "en", fr: "fr", de: "de", it: "it" };
 const NAV_IDS = ["s-services", "s-explore", "s-cities", "s-fleet", "s-steps", "s-faq", "s-contact"];
 const SVC_ICONS = { driver: "wheel", airport: "plane", yourday: "compass", tours: "pyramid", intercity: "route" };
 const CAT_ICONS = { villages: "pin", hotels: "bed", restaurants: "fork", beaches: "wave", events: "music", trips: "route", museums: "museum", sites: "pyramid", mosques: "mosque", malls: "bag", parks: "tree", markets: "lamp", tours: "compass" };
 const CITY_SCENES = { cairo: "giza", alex: "alex", sahel: "sahel", egypt: "road" };
 const PROM_ICONS = ["tag", "clock", "car", "shield", "swap", "pin"];
 const TRUST_ICONS = ["pin", "route", "tag", "chat"];
-const CALC_AND = { ar: " و", en: " ", fr: " ", de: " " };
-const CALC_MIN = { ar: "دقيقة", en: "min", fr: "min", de: "Min." };
+const CALC_AND = { ar: " و", en: " ", fr: " ", de: " ", it: " " };
+const CALC_MIN = { ar: "دقيقة", en: "min", fr: "min", de: "Min.", it: "min" };
 const SAHEL_WA = {
   ar: { hello: "مرحبًا {B}، أريد حجز عربية بسائق في الساحل الشمالي.", calc: "مرحبًا {B}، أريد توصيلة من {from} إلى {to}. التاريخ: \nعدد الركاب: " },
   en: { hello: "Hello {B}, I'd like a car with driver on the North Coast.", calc: "Hello {B}, I'd like a transfer from {from} to {to}. Date: \nPassengers: " },
+  it: { hello: "Ciao {B}, vorrei un'auto con autista sulla Costa Nord.", calc: "Ciao {B}, vorrei un transfer da {from} a {to}. Data: \nPasseggeri: " },
   fr: { hello: "Bonjour {B}, je souhaite une voiture avec chauffeur sur la Côte Nord.", calc: "Bonjour {B}, je souhaite un transfert de {from} à {to}. Date : \nPassagers : " },
   de: { hello: "Hallo {B}, ich möchte ein Auto mit Fahrer an der Nordküste.", calc: "Hallo {B}, ich möchte einen Transfer von {from} nach {to}. Datum: \nPersonen: " }
 };
@@ -27,6 +28,7 @@ const SAHEL_WA = {
 const CONSENT_UI = {
   ar: { text: "بنستخدم كوكيز عشان نفهم الزيارات ونحسن الموقع.", accept: "موافق", reject: "رفض" },
   en: { text: "We use cookies to understand visits and improve the site.", accept: "Accept", reject: "Decline" },
+  it: { text: "Usiamo i cookie per capire le visite e migliorare il sito.", accept: "Accetta", reject: "Rifiuta" },
   fr: { text: "Nous utilisons des cookies pour comprendre les visites et améliorer le site.", accept: "Accepter", reject: "Refuser" },
   de: { text: "Wir verwenden Cookies, um Besuche zu verstehen und die Website zu verbessern.", accept: "Akzeptieren", reject: "Ablehnen" }
 };
@@ -58,7 +60,7 @@ function analytics(lang, set) {
 }
 
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
-const FOLLOW = { ar: "تابعنا", en: "Follow us", fr: "Suivez-nous", de: "Folgen Sie uns" };
+const FOLLOW = { ar: "تابعنا", en: "Follow us", fr: "Suivez-nous", de: "Folgen Sie uns", it: "Seguici" };
 function socials(set, lang) {
   const links = [["instagram_url", "Instagram"], ["tiktok_url", "TikTok"], ["facebook_url", "Facebook"], ["x_url", "X"]]
     .filter(([k]) => set[k])
@@ -70,6 +72,7 @@ function socials(set, lang) {
 const OFFERS_UI = {
   ar: { nav: "العروض", title: "عروض رحلة القاهرة", intro: "عروض لفترة محدودة على سيارة بسائق خاص. احجز قبل ما العرض يخلص.", past: "عروض سابقة", ended: "انتهى", ends: "ينتهي {d}", endedOn: "انتهى {d}", left: "باقي {n} يوم", last: "آخر يوم في العرض!", book: "احجز العرض على واتساب", msg: "مرحبًا {B}، أريد حجز العرض: {t}", emptyT: "عروض جديدة قريبًا ✨", emptyP: "اسألنا على واتساب عن أفضل سعر لرحلتك.", emptyBtn: "اسألنا على واتساب", strip: "🔥 {t} بـ {p}", off: "خصم", seoTitle: "عروض رحلة القاهرة | خصومات سائق خاص في القاهرة", seoDesc: "عروض شهرية على سيارة بسائق خاص في القاهرة: خصومات لفترة محدودة، سعر ثابت شامل الضريبة والخدمة، والحجز على واتساب.", locale: "ar-EG" },
   en: { nav: "Offers", title: "Cairo Voyage offers", intro: "Limited-time deals on a private car with driver. Book before the offer ends.", past: "Past offers", ended: "Ended", ends: "Ends {d}", endedOn: "Ended {d}", left: "{n} days left", last: "Last day of the offer!", book: "Book this offer on WhatsApp", msg: "Hello {B}, I'd like to book the offer: {t}", emptyT: "New offers coming soon ✨", emptyP: "Ask us on WhatsApp for the best price for your trip.", emptyBtn: "Ask on WhatsApp", strip: "🔥 {t} for {p}", off: "off", seoTitle: "Offers | Private driver deals in Cairo | Cairo Voyage", seoDesc: "Monthly deals on a private car with driver in Cairo: limited-time discounts, fixed price with taxes and service included, book on WhatsApp.", locale: "en-GB" },
+  it: { nav: "Offerte", title: "Offerte Cairo Voyage", intro: "Offerte a tempo limitato su un'auto privata con autista. Prenota prima che l'offerta finisca.", past: "Offerte passate", ended: "Terminata", ends: "Termina il {d}", endedOn: "Terminata il {d}", left: "Mancano {n} giorni", last: "Ultimo giorno dell'offerta!", book: "Prenota questa offerta su WhatsApp", msg: "Ciao {B}, vorrei prenotare l'offerta: {t}", emptyT: "Nuove offerte in arrivo ✨", emptyP: "Chiedici su WhatsApp il prezzo migliore per il tuo viaggio.", emptyBtn: "Chiedi su WhatsApp", strip: "🔥 {t} a {p}", off: "di sconto", seoTitle: "Offerte | Autista privato al Cairo | Cairo Voyage", seoDesc: "Offerte mensili su un'auto privata con autista al Cairo: sconti a tempo limitato, prezzo fisso con tasse e servizio inclusi, prenota su WhatsApp.", locale: "it-IT" },
   fr: { nav: "Offres", title: "Offres Cairo Voyage", intro: "Offres à durée limitée sur une voiture privée avec chauffeur. Réservez avant la fin de l'offre.", past: "Offres passées", ended: "Terminée", ends: "Se termine le {d}", endedOn: "Terminée le {d}", left: "Plus que {n} jours", last: "Dernier jour de l'offre !", book: "Réserver cette offre sur WhatsApp", msg: "Bonjour {B}, je souhaite réserver l'offre : {t}", emptyT: "Nouvelles offres bientôt ✨", emptyP: "Demandez-nous sur WhatsApp le meilleur prix pour votre voyage.", emptyBtn: "Demander sur WhatsApp", strip: "🔥 {t} à {p}", off: "de remise", seoTitle: "Offres | Chauffeur privé au Caire à prix réduit | Cairo Voyage", seoDesc: "Offres mensuelles sur une voiture privée avec chauffeur au Caire : remises à durée limitée, prix fixe taxes et service compris, réservation sur WhatsApp.", locale: "fr-FR" },
   de: { nav: "Angebote", title: "Cairo Voyage Angebote", intro: "Zeitlich begrenzte Angebote für ein Privatauto mit Fahrer. Buchen Sie, bevor das Angebot endet.", past: "Frühere Angebote", ended: "Beendet", ends: "Endet am {d}", endedOn: "Beendet am {d}", left: "Noch {n} Tage", last: "Letzter Tag des Angebots!", book: "Dieses Angebot auf WhatsApp buchen", msg: "Hallo {B}, ich möchte das Angebot buchen: {t}", emptyT: "Neue Angebote in Kürze ✨", emptyP: "Fragen Sie uns auf WhatsApp nach dem besten Preis für Ihre Reise.", emptyBtn: "Auf WhatsApp fragen", strip: "🔥 {t} für {p}", off: "Rabatt", seoTitle: "Angebote | Privatfahrer in Kairo günstiger | Cairo Voyage", seoDesc: "Monatliche Angebote für ein Privatauto mit Fahrer in Kairo: zeitlich begrenzte Rabatte, Festpreis inkl. Steuern und Service, Buchung per WhatsApp.", locale: "de-DE" }
 };
@@ -92,7 +95,7 @@ function renderPage(lang, c, page) {
   const heroImg = (src, alt) => src ? '<img src="' + esc(src) + '" alt="' + esc(alt || "") + '" fetchpriority="high">' : "";
   const secHead = s => '<div class="sec-head"><p class="eyebrow">' + esc(s.eyebrow) + '</p><h2>' + md(s.title) + '</h2>' + (s.intro ? '<p>' + esc(s.intro) + '</p>' : '') + '</div>';
   const services = c.services.filter(s => s.visible);
-  const NC = c.northcoast, N = NC.text[lang];
+  const NC = c.northcoast, N = NC.text[lang] || NC.text.en;
 
   const header = () => {
     const logo = '<a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
@@ -251,7 +254,7 @@ function renderPage(lang, c, page) {
   const path = pagePath;
   const desc = seo.description || X.hero.subtitle;
   const title = seo.title || (ar ? set.brand_ar + " | " : set.brand_latin + " | ") + X.hero.eyebrow;
-  const OG_LOCALE = { ar: "ar_EG", en: "en_US", fr: "fr_FR", de: "de_DE" };
+  const OG_LOCALE = { ar: "ar_EG", en: "en_US", fr: "fr_FR", de: "de_DE", it: "it_IT" };
   const ld = obj => '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, "\\u003c") + '</script>';
   const business = {
     "@context": "https://schema.org", "@type": "LocalBusiness", "@id": base + "/#business",
@@ -291,6 +294,7 @@ function renderPage(lang, c, page) {
 const GUIDE_UI = {
   ar: { title: "دليل القاهرة والجيزة", intro: "اختار المدينة، وبعدين القسم، وبعدين المكان. كل مكان فيه كيف توصله ونصايح، ولو محتاج عربية بسائق اضغط احجز.", places: "مكان", tips: "نصايح السائح", services: "خدماتنا", how: "كيف توصله", tip: "نصيحة", map: "الخريطة", official: "الموقع الرسمي", book: "احجز عربية بس", bookMsg: "مرحبًا {B}، عايز أحجز عربية بس لـ: {p}" },
   en: { title: "Cairo & Giza guide", intro: "Pick a city, then a category, then a place. Each place shows how to get there and tips. Tap book if you need a car with a driver.", places: "places", tips: "Traveller tips", services: "Our services", how: "How to get there", tip: "Tip", map: "Map", official: "Official site", book: "Book a car only", bookMsg: "Hello {B}, I'd like to book a car only for: {p}" },
+  it: { title: "Guida del Cairo e Giza", intro: "Scegli una città, poi una categoria, poi un luogo. Ogni luogo indica come arrivarci e qualche consiglio. Premi prenota se ti serve un'auto con autista.", places: "luoghi", tips: "Consigli per i viaggiatori", services: "I nostri servizi", how: "Come arrivarci", tip: "Consiglio", map: "Mappa", official: "Sito ufficiale", book: "Prenota solo l'auto", bookMsg: "Ciao {B}, vorrei prenotare solo un'auto per: {p}" },
   fr: { title: "Guide du Caire et de Gizeh", intro: "Choisissez une ville, puis une catégorie, puis un lieu. Chaque lieu indique comment s'y rendre et des conseils. Appuyez sur réserver si vous voulez seulement une voiture avec chauffeur.", places: "lieux", tips: "Conseils voyageurs", services: "Nos services", how: "Comment s'y rendre", tip: "Conseil", map: "Carte", official: "Site officiel", book: "Réserver une voiture seule", bookMsg: "Bonjour {B}, je souhaite réserver une voiture seule pour : {p}" },
   de: { title: "Kairo & Gizeh Guide", intro: "Wählen Sie eine Stadt, dann eine Kategorie, dann einen Ort. Jeder Ort zeigt die Anfahrt und Tipps. Tippen Sie auf Buchen, wenn Sie nur ein Auto mit Fahrer möchten.", places: "Orte", tips: "Reisetipps", services: "Unsere Leistungen", how: "Anfahrt", tip: "Tipp", map: "Karte", official: "Offizielle Seite", book: "Nur Auto buchen", bookMsg: "Hallo {B}, ich möchte nur ein Auto buchen für: {p}" }
 };

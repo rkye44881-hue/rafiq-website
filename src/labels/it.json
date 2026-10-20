@@ -1,0 +1,94 @@
+{
+  "nav": [
+    "Servizi",
+    "Esplora",
+    "Dove guidiamo",
+    "Flotta",
+    "Come funziona",
+    "FAQ",
+    "Contatti"
+  ],
+  "whatsapp": "WhatsApp",
+  "menu": "Menu",
+  "book": {
+    "title": "Ricevi un preventivo fisso",
+    "svc": "Servizio",
+    "from": "Ritiro",
+    "to": "Destinazione",
+    "date": "Data",
+    "time": "Ora",
+    "pax": "Passeggeri",
+    "name": "Nome",
+    "fromPh": "es. Aeroporto del Cairo",
+    "toPh": "es. Piramidi di Giza",
+    "namePh": "Il tuo nome",
+    "send": "Invia la richiesta su WhatsApp",
+    "note": "Ti rispondiamo con un unico prezzo fisso prima che tu confermi qualsiasi cosa."
+  },
+  "bookTabs": [
+    [
+      "airport",
+      "Transfer"
+    ],
+    [
+      "driver",
+      "A ore"
+    ],
+    [
+      "tours",
+      "Tour"
+    ],
+    [
+      "intercity",
+      "Da città a città"
+    ]
+  ],
+  "serviceLink": "Chiedi informazioni",
+  "hours": "ore",
+  "priceFrom": "Da {p}",
+  "priceAsk": "Prezzo su richiesta",
+  "tourLink": "Prenota questo tour",
+  "seats": "posti",
+  "bags": "bagagli",
+  "contact": {
+    "wa": "WhatsApp",
+    "email": "Email",
+    "open": "Apri WhatsApp",
+    "copy": "Copia",
+    "copied": "Copiato",
+    "mail": "Invia email"
+  },
+  "wa": {
+    "booking": "Ciao {B}, vorrei prenotare: {svc}\nDa: {from}\nA: {to}\nData: {date} {time}\nPasseggeri: {pax}\nNome: {name}",
+    "tour": "Ciao {B}, vorrei informazioni sul tour: {t}",
+    "service": "Ciao {B}, vorrei informazioni su: {t}",
+    "hello": "Ciao {B}, vorrei informazioni su una prenotazione.",
+    "place": "Ciao {B}, vorrei un passaggio per: {p}",
+    "plan": "Ciao {B}, vorrei un autista per la giornata per visitare:\n{list}\nData: \nPasseggeri: "
+  },
+  "explore": {
+    "close": "Chiudi",
+    "more": "Mostra tutti i {n} luoghi",
+    "less": "Mostra meno",
+    "all": "Tutti",
+    "gov": {
+      "cairo": "Cairo",
+      "giza": "Giza"
+    },
+    "type": {
+      "pharaonic": "Faraonico",
+      "islamic": "Islamico",
+      "coptic": "Copto",
+      "jewish": "Ebraico"
+    },
+    "search": "Cerca per luogo o zona",
+    "count": "{n} luoghi",
+    "take": "Portami lì",
+    "add": "Aggiungi alla mia giornata",
+    "added": "Nella mia giornata",
+    "empty": "Nessun risultato. Prova un'altra parola.",
+    "myday": "La mia giornata",
+    "plan": "Invia il piano della mia giornata su WhatsApp",
+    "clear": "Cancella tutto"
+  }
+}

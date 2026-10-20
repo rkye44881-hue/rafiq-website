@@ -30,6 +30,13 @@
         "Individuell geplant",
         "Unterwegs änderbar",
         "Ein Fahrer für den ganzen Tag"
+      ],
+      "title_it": "Il tuo giorno, a modo tuo",
+      "desc_it": "Dicci cosa vuoi vedere e come ti piace viaggiare. Organizziamo il percorso, le soste e i tempi intorno a te, e cambiamo tutto il giorno stesso se cambi idea.",
+      "points_it": [
+        "Pianificato su misura",
+        "Cambi di programma al volo",
+        "Un solo autista per tutto il giorno"
       ]
     },
     {
@@ -62,6 +69,13 @@
         "8 oder 12 Stunden",
         "Wartezeit inklusive",
         "Diskret und pünktlich"
+      ],
+      "title_it": "Autista privato a ore o a giornata",
+      "desc_it": "Un'auto e un autista riservati solo a te. Riunioni, shopping, una dozzina di soste o un pranzo lungo. Il tempo di attesa è incluso, quindi nessun contatore che corre.",
+      "points_it": [
+        "Giornate da 8 o 12 ore",
+        "Attesa inclusa",
+        "Discreto e puntuale"
       ]
     },
     {
@@ -93,6 +107,13 @@
         "Flugverfolgung",
         "Hilfe mit dem Gepäck",
         "Zu jeder Uhrzeit"
+      ],
+      "title_it": "Transfer aeroportuali",
+      "desc_it": "Cairo (CAI), Sphinx (SPX), Borg El Arab (HBE) ed El Alamein (DBB). Il tuo autista segue il volo e ti aspetta all'arrivo con il tuo nome su un cartello.",
+      "points_it": [
+        "Monitoraggio del volo",
+        "Aiuto con i bagagli",
+        "Qualsiasi indirizzo, a qualsiasi ora"
       ]
     },
     {
@@ -124,6 +145,13 @@
         "Deutschsprachiger Guide auf Anfrage",
         "Freie Startzeit",
         "Tickets in Absprache"
+      ],
+      "title_it": "Tour privati di visita",
+      "desc_it": "Le Piramidi, il Grande Museo Egizio, il Cairo antico, Alessandria ed El Alamein, solo per il tuo gruppo. Niente pullman, niente orari fissi.",
+      "points_it": [
+        "Guida autorizzata su richiesta",
+        "Si parte quando vuoi",
+        "Biglietti d'ingresso organizzati con te"
       ]
     },
     {
@@ -155,6 +183,13 @@
         "Festpreis pro Fahrzeug",
         "Pausen nach Wunsch",
         "Erfahrene Langstreckenfahrer"
+      ],
+      "title_it": "Transfer tra città",
+      "desc_it": "Porta a porta da Cairo o Alessandria verso Hurghada, El Gouna, Sharm El Sheikh, Ain Sokhna, Luxor, Assuan, Marsa Matrouh o Siwa.",
+      "points_it": [
+        "Un prezzo per auto",
+        "Soste lungo il percorso su richiesta",
+        "Autisti per lunghe distanze"
       ]
     }
   ]

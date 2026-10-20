@@ -12,7 +12,9 @@
       "name_fr": "Berline · Fiat Tipo",
       "desc_fr": "Trajets en ville et aéroport.",
       "name_de": "Limousine · Fiat Tipo",
-      "desc_de": "Stadtfahrten und Flughafentransfers."
+      "desc_de": "Stadtfahrten und Flughafentransfers.",
+      "name_it": "Berlina · Fiat Tipo",
+      "desc_it": "Giri in città e transfer aeroportuali."
     },
     {
       "id": "suv",
@@ -26,7 +28,9 @@
       "name_fr": "SUV · Jetour T2",
       "desc_fr": "Confort et puissance pour les longues routes.",
       "name_de": "SUV · Jetour T2",
-      "desc_de": "Komfort und Kraft für lange Strecken."
+      "desc_de": "Komfort und Kraft für lange Strecken.",
+      "name_it": "SUV · Jetour T2",
+      "desc_it": "Comfort e potenza per le strade lunghe e la costa."
     },
     {
       "id": "minivan",
@@ -40,7 +44,9 @@
       "name_fr": "SUV familial · Geely Okavango",
       "desc_fr": "Sept places pour familles et petits groupes.",
       "name_de": "Familien-SUV · Geely Okavango",
-      "desc_de": "Sieben Sitze für Familien und kleine Gruppen."
+      "desc_de": "Sieben Sitze für Familien und kleine Gruppen.",
+      "name_it": "SUV per famiglie · Geely Okavango",
+      "desc_it": "Sette posti per famiglie e piccoli gruppi."
     },
     {
       "id": "van",
@@ -54,7 +60,9 @@
       "name_fr": "Van · Hyundai H1",
       "desc_fr": "Groupes et trajets entre villes.",
       "name_de": "Van · Hyundai H1",
-      "desc_de": "Gruppen und Fahrten zwischen Städten."
+      "desc_de": "Gruppen und Fahrten zwischen Städten.",
+      "name_it": "Van · Hyundai H1",
+      "desc_it": "Gruppi e viaggi tra città."
     }
   ]
 }

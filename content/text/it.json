@@ -1,0 +1,207 @@
+{
+  "hero": {
+    "eyebrow": "Autista privato · Transfer privati · Tour privati",
+    "title": "La tua giornata, *a modo tuo.*",
+    "subtitle": "Un'auto privata e un autista professionista al Cairo, ad Alessandria e sulla Costa Nord, con transfer in tutto l'Egitto. Concordi il prezzo prima di salire, e resta quello.",
+    "button_1": "Prenota su WhatsApp",
+    "button_2": "Scopri i servizi",
+    "photo_caption": ""
+  },
+  "highlights": [
+    "Cairo · Alessandria · Costa Nord",
+    "Transfer in ogni città dell'Egitto",
+    "Prezzo fisso, concordato in anticipo",
+    "Su WhatsApp 24 ore su 24"
+  ],
+  "sections": {
+    "explore": {
+      "eyebrow": "Esplora",
+      "title": "Il Cairo e Giza, a un tocco di distanza",
+      "intro": "Scegli una categoria e sfoglia tutti i luoghi. Prenota un passaggio verso uno qualsiasi, o raccoglievi più tappe in una giornata e pianifichiamo il percorso."
+    },
+    "services": {
+      "eyebrow": "Servizi",
+      "title": "Ogni viaggio, un autista di cui ti fidi",
+      "intro": "Da un giro di trenta minuti a un viaggio di più giorni in tutto il Paese. L'auto è solo tua, e anche l'orario lo decidi tu."
+    },
+    "cities": {
+      "eyebrow": "Dove guidiamo",
+      "title": "Ogni giorno in tre regioni, e ovunque in Egitto",
+      "intro": "Cairo, Alessandria e la Costa Nord sono il nostro territorio. Altrove, ti portiamo porta a porta a un prezzo fisso."
+    },
+    "fleet": {
+      "eyebrow": "Flotta",
+      "title": "Scegli l'auto per il tuo viaggio",
+      "intro": "Ogni auto è pulita e con aria condizionata. Dicci quante persone e bagagli siete, e ti suggeriamo la misura giusta."
+    },
+    "steps": {
+      "eyebrow": "Come funziona",
+      "title": "Tre passi verso il tuo autista",
+      "intro": ""
+    },
+    "promises": {
+      "eyebrow": "La nostra promessa",
+      "title": "Su cosa puoi contare, ogni volta",
+      "intro": ""
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Prima di prenotare",
+      "intro": "Non trovi la risposta? Chiedila a noi su WhatsApp."
+    },
+    "contact": {
+      "eyebrow": "Contatti",
+      "title": "Parla direttamente con noi",
+      "intro": "WhatsApp è il modo più veloce per raggiungerci. Per aziende e prenotazioni di gruppo va bene anche l'email."
+    }
+  },
+  "cities": [
+    {
+      "id": "cairo",
+      "name": "Cairo",
+      "description": "Giri in città, transfer aeroportuali, le Piramidi e il Grande Museo Egizio.",
+      "chips": [
+        "CAI",
+        "SPX",
+        "Nuova Cairo",
+        "Zayed"
+      ]
+    },
+    {
+      "id": "alex",
+      "name": "Alessandria",
+      "description": "Dall'aeroporto alla Corniche, dalla Cittadella di Qaitbay alla Biblioteca.",
+      "chips": [
+        "HBE",
+        "Montaza",
+        "Corniche"
+      ]
+    },
+    {
+      "id": "sahel",
+      "name": "Costa Nord",
+      "description": "Giri estivi tra Marina, El Alamein Nuova e Ras El Hekma, più gite in spiaggia.",
+      "chips": [
+        "Marina",
+        "El Alamein Nuova",
+        "Ras El Hekma"
+      ]
+    },
+    {
+      "id": "egypt",
+      "name": "Tutto l'Egitto",
+      "description": "Transfer diretti porta a porta in qualsiasi città, con il prezzo definito prima della partenza.",
+      "chips": [
+        "Hurghada",
+        "Sharm",
+        "Luxor",
+        "Assuan",
+        "Siwa"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "museums",
+      "name": "Musei",
+      "description": "Dal Grande Museo Egizio ai palazzi reali."
+    },
+    {
+      "id": "sites",
+      "name": "Siti storici",
+      "description": "Patrimonio faraonico, islamico, copto ed ebraico."
+    },
+    {
+      "id": "mosques",
+      "name": "Moschee storiche",
+      "description": "Le grandi moschee del Cairo, da Amr ibn al-As a Muhammad Ali."
+    },
+    {
+      "id": "malls",
+      "name": "Centri commerciali",
+      "description": "Shopping, ristoranti e cinema tra Cairo e Giza."
+    },
+    {
+      "id": "parks",
+      "name": "Parchi e gite",
+      "description": "Giardini, il Nilo e luoghi per tutta la famiglia."
+    },
+    {
+      "id": "markets",
+      "name": "Mercati e artigianato",
+      "description": "Khan el-Khalili, i tendaggi e l'artigianato fatto a mano."
+    },
+    {
+      "id": "tours",
+      "name": "Tour pronti",
+      "description": "Programmi di una giornata che organizziamo dall'inizio alla fine."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Scrivici su WhatsApp",
+      "description": "Da dove, verso dove, quando e quanti siete. Basta una frase."
+    },
+    {
+      "title": "Ricevi un prezzo fisso",
+      "description": "Ti rispondiamo con un unico prezzo chiaro per tutto il viaggio. Nessun extra aggiunto dopo."
+    },
+    {
+      "title": "Incontra il tuo autista",
+      "description": "L'autista arriva in anticipo, con un'auto pulita e con aria condizionata, e ti scrive durante il tragitto."
+    }
+  ],
+  "promises": [
+    {
+      "title": "Un prezzo, concordato prima",
+      "description": "Il prezzo che ti diamo è quello che paghi, a meno che tu non chieda di cambiare percorso o orari."
+    },
+    {
+      "title": "Puntuali per abitudine",
+      "description": "Gli autisti arrivano prima dell'orario di ritiro e ti avvisano subito di qualsiasi ritardo."
+    },
+    {
+      "title": "Auto pulite e fresche",
+      "description": "Ogni auto viene preparata prima di ogni viaggio, in estate come in inverno."
+    },
+    {
+      "title": "Privacy rispettata",
+      "description": "L'auto è solo tua. I tuoi programmi restano tra te e il tuo autista."
+    },
+    {
+      "title": "Flessibili il giorno stesso",
+      "description": "Vuoi un'altra tappa o una nuova destinazione? Dillo al tuo autista e ci adattiamo."
+    },
+    {
+      "title": "Autisti che conoscono le strade",
+      "description": "Esperienza quotidiana nel traffico del Cairo, sulla strada desertica per Alessandria e sulla costa."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Come prenoto?",
+      "answer": "Mandaci i dettagli del viaggio su WhatsApp o usa il modulo in cima alla pagina. Ti rispondiamo con un prezzo fisso, e la prenotazione è confermata quando sei d'accordo."
+    },
+    {
+      "question": "Il prezzo è davvero fisso?",
+      "answer": "Sì. Il prezzo concordato prima del viaggio è quello che paghi, a meno che tu non chieda di cambiare percorso o durata."
+    },
+    {
+      "question": "Posso prenotare un autista per una giornata intera?",
+      "answer": "Sì, per 8 o 12 ore, con tutte le tappe che vuoi dentro la città."
+    },
+    {
+      "question": "Andate oltre il Cairo, Alessandria e la Costa Nord?",
+      "answer": "Sì, in qualsiasi città dell'Egitto. Mandaci destinazione e data e ti rispondiamo con un prezzo."
+    },
+    {
+      "question": "E se il mio volo è in ritardo?",
+      "answer": "Il tuo autista segue il volo e ti aspetta quando atterri davvero."
+    }
+  ],
+  "footer": "Autista privato e tour privati in Egitto.",
+  "seo": {
+    "title": "Cairo Voyage | Autista privato al Cairo, Alessandria e Costa Nord",
+    "description": "Autista privato al Cairo, Giza, Alessandria e sulla Costa Nord. Transfer aeroportuali, autista per la giornata intera e tour privati. Prezzo fisso, prenota su WhatsApp."
+  }
+}

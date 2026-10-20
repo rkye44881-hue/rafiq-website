@@ -14,7 +14,9 @@
       "title_fr": "Pyramides de Gizeh, Sphinx et Saqqarah",
       "desc_fr": "Une journée entière face aux plus anciennes merveilles du monde, à l'écart des groupes.",
       "title_de": "Pyramiden von Gizeh, Sphinx und Sakkara",
-      "desc_de": "Ein ganzer Tag bei den ältesten Weltwundern, mit Zeit für Fotos und abseits der großen Gruppen."
+      "desc_de": "Ein ganzer Tag bei den ältesten Weltwundern, mit Zeit für Fotos und abseits der großen Gruppen.",
+      "title_it": "Piramidi di Giza, Sfinge e Saqqara",
+      "desc_it": "Una giornata intera tra le più antiche meraviglie del mondo, con tempo per le foto e lontano dai grandi gruppi."
     },
     {
       "id": "gem",
@@ -30,7 +32,9 @@
       "title_fr": "Grand Musée égyptien",
       "desc_fr": "Le trésor complet de Toutânkhamon réuni en un seul lieu, avec vue sur les pyramides.",
       "title_de": "Großes Ägyptisches Museum",
-      "desc_de": "Der vollständige Schatz des Tutanchamun unter einem Dach, mit Blick auf die Pyramiden."
+      "desc_de": "Der vollständige Schatz des Tutanchamun unter einem Dach, mit Blick auf die Pyramiden.",
+      "title_it": "Grande Museo Egizio",
+      "desc_it": "Il tesoro completo di Tutankhamon sotto un unico tetto, con le Piramidi in vista."
     },
     {
       "id": "old",
@@ -46,7 +50,9 @@
       "title_fr": "Le Caire islamique et copte",
       "desc_fr": "La rue El-Moez, l'Église suspendue et un thé à la menthe au cœur du Khan el-Khalili.",
       "title_de": "Islamisches und koptisches Kairo",
-      "desc_de": "Al-Muizz-Straße, die Hängende Kirche und ein Minztee im Khan el-Khalili."
+      "desc_de": "Al-Muizz-Straße, die Hängende Kirche und ein Minztee im Khan el-Khalili.",
+      "title_it": "Il Cairo islamico e copto",
+      "desc_it": "Via al-Muizz, la Chiesa Sospesa e un tè alla menta dentro il Khan el-Khalili."
     },
     {
       "id": "alex",
@@ -62,7 +68,9 @@
       "title_fr": "Alexandrie en une journée depuis Le Caire",
       "desc_fr": "Aller-retour depuis votre hôtel au Caire, avec 8 à 10 heures sur place : citadelle de Qaitbay, Bibliotheca Alexandrina, catacombes de Kom el-Chouqafa et poisson grillé face à la mer.",
       "title_de": "Tagesausflug nach Alexandria ab Kairo",
-      "desc_de": "Hin- und Rückfahrt ab Ihrem Hotel in Kairo, mit 8 bis 10 Stunden vor Ort: Zitadelle Qaitbay, Bibliotheca Alexandrina, Katakomben von Kom el-Schukafa und frischer Fisch am Meer."
+      "desc_de": "Hin- und Rückfahrt ab Ihrem Hotel in Kairo, mit 8 bis 10 Stunden vor Ort: Zitadelle Qaitbay, Bibliotheca Alexandrina, Katakomben von Kom el-Schukafa und frischer Fisch am Meer.",
+      "title_it": "Gita ad Alessandria da Cairo",
+      "desc_it": "Andata e ritorno dal tuo hotel o da casa al Cairo, con 8-10 ore ad Alessandria: Cittadella di Qaitbay, Biblioteca di Alessandria, catacombe di Kom el-Shoqafa e pesce fresco sul mare."
     },
     {
       "id": "sahel",
@@ -78,7 +86,9 @@
       "title_fr": "El Alamein et la Côte Nord",
       "desc_fr": "Le musée militaire d'El Alamein, du sable blanc, une eau turquoise, et le retour quand vous le souhaitez.",
       "title_de": "El Alamein und die Nordküste",
-      "desc_de": "Militärmuseum El Alamein, weißer Sand, türkisfarbenes Wasser und Rückfahrt nach Ihrem Zeitplan."
+      "desc_de": "Militärmuseum El Alamein, weißer Sand, türkisfarbenes Wasser und Rückfahrt nach Ihrem Zeitplan.",
+      "title_it": "El Alamein e la Costa Nord",
+      "desc_it": "Il museo militare di El Alamein, sabbia bianca, acqua turchese e il ritorno quando sei pronto."
     },
     {
       "id": "fayoum",
@@ -93,7 +103,9 @@
       "title_fr": "Fayoum : Wadi el-Rayan et Wadi al-Hitan",
       "desc_fr": "Des cascades en plein désert et des fossiles de baleines vieux de 40 millions d'années.",
       "title_de": "Fayoum: Wadi el-Rayan und Wadi al-Hitan",
-      "desc_de": "Wasserfälle mitten in der Wüste und 40 Millionen Jahre alte Walfossilien."
+      "desc_de": "Wasserfälle mitten in der Wüste und 40 Millionen Jahre alte Walfossilien.",
+      "title_it": "Fayum: Wadi El Rayan e Wadi Al-Hitan",
+      "desc_it": "Cascate nel deserto e fossili di balene vecchie di 40 milioni di anni."
     }
   ]
 }
