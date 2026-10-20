@@ -60,7 +60,7 @@ function analytics(lang, set) {
 }
 
 /* Call numbers in the footer: each one is a tap-to-call link. WhatsApp stays on set.whatsapp. */
-const phoneLinks = set => (set.phones || []).map(n => '<a href="tel:+' + esc(n) + '">' + esc(prettyPhone(n)) + '</a>').join(" · ");
+const phoneLinks = set => (set.phones || []).map(n => '<a href="tel:+' + esc(n) + '">+' + esc(n) + '</a>').join(" · ");
 
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
