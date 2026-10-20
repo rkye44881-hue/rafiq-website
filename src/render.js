@@ -390,4 +390,34 @@ function renderGallery(lang, c) {
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, renderGallery, LANGS };
+/* ---------- service page: private driver in Cairo, with a price table (prices include driver, fuel and taxes) ---------- */
+function renderDriverPage(lang, c) {
+  const ar = lang === "ar", T = c.driverPage[lang], set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const ld = { "@context": "https://schema.org", "@type": "Service", name: T.h1, serviceType: "Private driver", inLanguage: lang, url: base + "/" + lang + "/private-driver-cairo/", provider: { "@type": "LocalBusiness", name: brand, telephone: "+" + set.whatsapp },
+    areaServed: ["Cairo", "Giza"], offers: T.rows.map(r => ({ "@type": "Offer", name: r[0], price: r[1].replace(/[^0-9]/g, ""), priceCurrency: "USD", description: r[3] })) };
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(T.title) + '</title><meta name="description" content="' + esc(T.description) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/private-driver-cairo/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/private-driver-cairo/"><link rel="canonical" href="' + base + '/' + lang + '/private-driver-cairo/">'
+    + '<meta property="og:title" content="' + esc(T.title) + '"><meta property="og:description" content="' + esc(T.description) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/private-driver-cairo/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
+    + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
+  const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/private-driver-cairo/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+  // three columns in the table; the "what's included" list below carries the rest
+  const table = '<div class="pt-wrap"><table class="pt"><thead><tr>' + T.headers.slice(0, 3).map(h => '<th scope="col">' + esc(h) + '</th>').join("") + '</tr></thead><tbody>'
+    + T.rows.map(r => '<tr>' + r.slice(0, 3).map((v, i) => i === 1 ? '<td class="pt-price">' + esc(v) + '</td>' : '<td>' + esc(v) + '</td>').join("") + '</tr>').join("") + '</tbody></table></div>';
+  const body = '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(T.h1) + '</h1><p class="sub">' + esc(T.intro) + '</p></div></section>'
+    + '<section class="sec"><div class="wrap">' + table + '<h2 class="svc-h">' + esc(T.includes_title) + '</h2><ul class="svc-list">' + T.includes.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul>'
+    + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(T.msg) + '">' + ic("chat") + esc(T.cta) + '</a></p></div></section>'
+    + '<section class="sec"><div class="wrap"><h2 class="svc-h">' + esc(T.faq_title) + '</h2>' + T.faq.map(f => '<details class="gcity"><summary><span>' + esc(f[0]) + '</span></summary><p class="gp-h" style="padding:14px 18px">' + esc(f[1]) + '</p></details>').join("") + '</div></section>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, LANGS };

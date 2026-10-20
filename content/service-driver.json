@@ -1,0 +1,252 @@
+{
+  "en": {
+    "title": "Private Driver in Cairo | Cairo Voyage",
+    "description": "Private car with driver in Cairo: 8 hours for $80 (120 km) or 12 hours for $100 (140 km). Driver, fuel and taxes included. Book on WhatsApp.",
+    "h1": "Private driver in Cairo",
+    "intro": "A private car and a professional driver for your day in Cairo and Giza. One fixed price that includes the driver, fuel and taxes.",
+    "headers": [
+      "Package",
+      "Price",
+      "Kilometres",
+      "Included"
+    ],
+    "rows": [
+      [
+        "8 hours",
+        "$80",
+        "120 km",
+        "Driver, fuel, taxes"
+      ],
+      [
+        "12 hours",
+        "$100",
+        "140 km",
+        "Driver, fuel, taxes"
+      ]
+    ],
+    "includes_title": "What you get",
+    "includes": [
+      "Professional driver",
+      "Fuel",
+      "Taxes",
+      "Jetour T2 or similar, air-conditioned"
+    ],
+    "faq_title": "Questions",
+    "faq": [
+      [
+        "What's included in the price?",
+        "The driver, fuel and taxes."
+      ],
+      [
+        "What if I need more kilometres?",
+        "Message us on WhatsApp with your route and we'll give you a price."
+      ],
+      [
+        "Can I choose the start time?",
+        "Yes, tell us the time you want."
+      ]
+    ],
+    "cta": "Book on WhatsApp",
+    "msg": "Hello {B}, I'd like a private driver in Cairo: 8 hours or 12 hours. Date: ..."
+  },
+  "ar": {
+    "title": "سواق خاص في القاهرة | رحلة القاهرة",
+    "description": "عربية بسواق خاص في القاهرة: 8 ساعات بـ 80$ (120 كم) أو 12 ساعة بـ 100$ (140 كم). السائق والبنزين والضريبة شاملين. احجز على واتساب.",
+    "h1": "سواق خاص في القاهرة",
+    "intro": "عربية مكيفة وسواق محترف ليومك في القاهرة والجيزة. سعر ثابت يشمل السائق والبنزين والضريبة.",
+    "headers": [
+      "الباقة",
+      "السعر",
+      "الكيلومترات",
+      "يشمل"
+    ],
+    "rows": [
+      [
+        "8 ساعات",
+        "80$",
+        "120 كم",
+        "السائق والبنزين والضريبة"
+      ],
+      [
+        "12 ساعة",
+        "100$",
+        "140 كم",
+        "السائق والبنزين والضريبة"
+      ]
+    ],
+    "includes_title": "اللي هتاخده",
+    "includes": [
+      "سائق محترف",
+      "بنزين",
+      "ضريبة",
+      "جيتور T2 أو ما يماثلها، مكيفة"
+    ],
+    "faq_title": "أسئلة شائعة",
+    "faq": [
+      [
+        "إيه اللي شامل في السعر؟",
+        "السائق والبنزين والضريبة."
+      ],
+      [
+        "لو محتاج كيلومترات أكتر؟",
+        "ابعتلنا على واتساب المسار وهنقولك السعر."
+      ],
+      [
+        "أقدر أختار ميعاد البداية؟",
+        "أيوه، قولنا الساعة اللي عايزها."
+      ]
+    ],
+    "cta": "احجز على واتساب",
+    "msg": "مرحبًا {B}، عايز سواق خاص في القاهرة: 8 ساعات أو 12 ساعة. التاريخ: ..."
+  },
+  "fr": {
+    "title": "Chauffeur privé au Caire | Cairo Voyage",
+    "description": "Voiture avec chauffeur au Caire : 8 heures pour 80 $ (120 km) ou 12 heures pour 100 $ (140 km). Chauffeur, carburant et taxes inclus. Réservez sur WhatsApp.",
+    "h1": "Chauffeur privé au Caire",
+    "intro": "Une voiture privée et un chauffeur professionnel pour votre journée au Caire et à Gizeh. Un prix fixe qui inclut le chauffeur, le carburant et les taxes.",
+    "headers": [
+      "Formule",
+      "Prix",
+      "Kilomètres",
+      "Inclus"
+    ],
+    "rows": [
+      [
+        "8 heures",
+        "80 $",
+        "120 km",
+        "Chauffeur, carburant, taxes"
+      ],
+      [
+        "12 heures",
+        "100 $",
+        "140 km",
+        "Chauffeur, carburant, taxes"
+      ]
+    ],
+    "includes_title": "Ce que vous obtenez",
+    "includes": [
+      "Chauffeur professionnel",
+      "Carburant",
+      "Taxes",
+      "Jetour T2 ou équivalent, climatisée"
+    ],
+    "faq_title": "Questions",
+    "faq": [
+      [
+        "Qu'est-ce qui est inclus dans le prix ?",
+        "Le chauffeur, le carburant et les taxes."
+      ],
+      [
+        "Et si j'ai besoin de plus de kilomètres ?",
+        "Écrivez-nous sur WhatsApp avec votre itinéraire, nous vous donnerons un prix."
+      ],
+      [
+        "Puis-je choisir l'heure de départ ?",
+        "Oui, indiquez-nous l'heure souhaitée."
+      ]
+    ],
+    "cta": "Réserver sur WhatsApp",
+    "msg": "Bonjour {B}, je souhaite un chauffeur privé au Caire : 8 heures ou 12 heures. Date : ..."
+  },
+  "de": {
+    "title": "Privatfahrer in Kairo | Cairo Voyage",
+    "description": "Auto mit Fahrer in Kairo: 8 Stunden für 80 $ (120 km) oder 12 Stunden für 100 $ (140 km). Fahrer, Kraftstoff und Steuern inklusive. Buchung per WhatsApp.",
+    "h1": "Privatfahrer in Kairo",
+    "intro": "Ein privates Auto und ein professioneller Fahrer für Ihren Tag in Kairo und Gizeh. Ein Festpreis inklusive Fahrer, Kraftstoff und Steuern.",
+    "headers": [
+      "Paket",
+      "Preis",
+      "Kilometer",
+      "Inklusive"
+    ],
+    "rows": [
+      [
+        "8 Stunden",
+        "80 $",
+        "120 km",
+        "Fahrer, Kraftstoff, Steuern"
+      ],
+      [
+        "12 Stunden",
+        "100 $",
+        "140 km",
+        "Fahrer, Kraftstoff, Steuern"
+      ]
+    ],
+    "includes_title": "Das bekommen Sie",
+    "includes": [
+      "Professioneller Fahrer",
+      "Kraftstoff",
+      "Steuern",
+      "Jetour T2 oder ähnlich, klimatisiert"
+    ],
+    "faq_title": "Fragen",
+    "faq": [
+      [
+        "Was ist im Preis enthalten?",
+        "Fahrer, Kraftstoff und Steuern."
+      ],
+      [
+        "Was, wenn ich mehr Kilometer brauche?",
+        "Schreiben Sie uns Ihre Route per WhatsApp, wir nennen Ihnen den Preis."
+      ],
+      [
+        "Kann ich die Abfahrtszeit wählen?",
+        "Ja, sagen Sie uns die gewünschte Uhrzeit."
+      ]
+    ],
+    "cta": "Per WhatsApp buchen",
+    "msg": "Hallo {B}, ich möchte einen Privatfahrer in Kairo: 8 oder 12 Stunden. Datum: ..."
+  },
+  "it": {
+    "title": "Autista privato al Cairo | Cairo Voyage",
+    "description": "Auto con autista al Cairo: 8 ore per 80 $ (120 km) o 12 ore per 100 $ (140 km). Autista, carburante e tasse inclusi. Prenota su WhatsApp.",
+    "h1": "Autista privato al Cairo",
+    "intro": "Un'auto privata e un autista professionista per la vostra giornata al Cairo e a Giza. Un prezzo fisso che include autista, carburante e tasse.",
+    "headers": [
+      "Pacchetto",
+      "Prezzo",
+      "Chilometri",
+      "Incluso"
+    ],
+    "rows": [
+      [
+        "8 ore",
+        "80 $",
+        "120 km",
+        "Autista, carburante, tasse"
+      ],
+      [
+        "12 ore",
+        "100 $",
+        "140 km",
+        "Autista, carburante, tasse"
+      ]
+    ],
+    "includes_title": "Cosa ottenete",
+    "includes": [
+      "Autista professionista",
+      "Carburante",
+      "Tasse",
+      "Jetour T2 o simile, con aria condizionata"
+    ],
+    "faq_title": "Domande",
+    "faq": [
+      [
+        "Cosa è incluso nel prezzo?",
+        "Autista, carburante e tasse."
+      ],
+      [
+        "E se mi servono più chilometri?",
+        "Scriveteci su WhatsApp con il percorso e vi diamo un prezzo."
+      ],
+      [
+        "Posso scegliere l'orario di partenza?",
+        "Sì, indicateci l'orario che preferite."
+      ]
+    ],
+    "cta": "Prenota su WhatsApp",
+    "msg": "Ciao {B}, vorrei un autista privato al Cairo: 8 ore o 12 ore. Data: ..."
+  }
+}

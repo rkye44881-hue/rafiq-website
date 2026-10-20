@@ -662,3 +662,12 @@ body.has-picks .fab{display:none}
 .gal-item{break-inside:avoid;margin:0 0 14px}
 .gal-item img{width:100%;height:auto;border-radius:16px;display:block;background:var(--surface)}
 .gal-item figcaption{font-size:.85rem;color:var(--muted);padding:6px 4px 0}
+.pt-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);margin-bottom:28px}
+.pt{width:100%;border-collapse:collapse;font-size:.98rem}
+.pt th,.pt td{padding:14px 16px;text-align:start;border-bottom:1px solid var(--line)}
+.pt th{font-size:.82rem;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.pt tr:last-child td{border-bottom:0}
+.pt-price{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--accent-strong);white-space:nowrap}
+.svc-h{font-size:clamp(1.3rem,3vw,1.7rem);margin:8px 0 12px}
+.svc-list{margin:0 0 24px;padding-inline-start:20px;line-height:1.9}
+.svc-cta{margin:8px 0 0}
