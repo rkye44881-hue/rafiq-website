@@ -214,11 +214,6 @@ function renderPage(lang, c, page) {
   /* ---------- North Coast page ---------- */
   const ZN = z => ar ? z.name_ar : z.name_en;
   const ncPlaces = Object.fromEntries(Object.entries(NC.places).map(([k, list]) => [k, list.filter(p => p.visible).map(p => ({ n: ar ? p.name_ar : p.name_en, a: ar ? "" : p.name_ar, area: ar ? p.area_ar : p.area_en, g: p.zone, t: "", img: p.image || "", d: p["desc_" + lang] || "" }))]));
-  /* client review videos: portrait clips with sound on, controls on, loaded only when the visitor reaches them */
-  const REV_UI = { ar: { title: "آراء عملائنا", label: "رأي عميل" }, en: { title: "What our clients say", label: "Client review" }, fr: { title: "Ce que disent nos clients", label: "Avis client" }, de: { title: "Was unsere Kunden sagen", label: "Kundenbewertung" }, it: { title: "Cosa dicono i nostri clienti", label: "Recensione cliente" } };
-  const reviews = () => '<section class="sec reviews" id="s-reviews"><div class="wrap">' + '<h2 class="svc-h">' + esc(REV_UI[lang].title) + '</h2><div class="rv-row">'
-    + [1, 2, 3].map(n => '<video class="rv-vid" src="/media/reviews/review-' + n + '.mp4" poster="/media/reviews/review-' + n + '-poster.webp" controls playsinline preload="metadata" aria-label="' + esc(REV_UI[lang].label) + ' ' + n + '"></video>').join("")
-    + '</div></div></section>';
   const sHero = () => '<section class="hero-lt hero-nc" id="top"><div class="scene">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.hero.eyebrow) + '">' : scene("sahel")) + '</div><div class="veil"></div><div class="wrap"><div><p class="eyebrow">' + esc(N.hero.eyebrow) + '</p><h1>' + kinetic(md(N.hero.title)) + '</h1><p class="sub">' + esc(N.hero.subtitle) + '</p>'
     + '<div class="ctas"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(SAHEL_WA[lang].hello) + '">' + ic("chat") + esc(N.hero.button_1) + '</a><a class="btn btn-ghost" href="#s-calc">' + esc(N.hero.button_2) + '</a></div>'
     + '<div class="hero-pills">' + N.highlights.map((t, i) => '<span>' + ic(["car", "route", "pin", "tag"][i % 4]) + esc(t) + '</span>').join("") + '</div></div></div></section>';
@@ -318,7 +313,7 @@ function renderPage(lang, c, page) {
 
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + reviews() + faq() + contact();
+    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';

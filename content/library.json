@@ -210,6 +210,42 @@
         "de": "Video: Jetour T2 unterwegs",
         "it": "Video: Jetour T2 in viaggio"
       }
+    },
+    {
+      "slug": "library-video-1",
+      "category": "cars",
+      "type": "video",
+      "caption": {
+        "ar": "فيديو: جيتور T2 قدام القلعة",
+        "en": "Video: Jetour T2 at the Citadel",
+        "fr": "Vidéo : Jetour T2 devant la Citadelle",
+        "de": "Video: Jetour T2 an der Zitadelle",
+        "it": "Video: Jetour T2 alla Cittadella"
+      }
+    },
+    {
+      "slug": "library-video-2",
+      "category": "cars",
+      "type": "video",
+      "caption": {
+        "ar": "فيديو: جيتور T2 في الشارع",
+        "en": "Video: Jetour T2 in the street",
+        "fr": "Vidéo : Jetour T2 dans la rue",
+        "de": "Video: Jetour T2 auf der Straße",
+        "it": "Video: Jetour T2 in strada"
+      }
+    },
+    {
+      "slug": "library-video-3",
+      "category": "cars",
+      "type": "video",
+      "caption": {
+        "ar": "فيديو: جيتور T2 بالليل",
+        "en": "Video: Jetour T2 by night",
+        "fr": "Vidéo : Jetour T2 de nuit",
+        "de": "Video: Jetour T2 bei Nacht",
+        "it": "Video: Jetour T2 di notte"
+      }
     }
   ]
 }
