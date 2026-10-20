@@ -175,7 +175,7 @@ function renderPage(lang, c, page) {
   };
 
   const servicesSec = () => '<section class="sec" id="s-services"><div class="wrap">' + secHead(X.sections.services) + '<div class="svc-cards">'
-    + services.map(s => '<article class="svc-card' + (s.id === "yourday" ? " feat" : "") + '"><div class="ic">' + ic(SVC_ICONS[s.id] || "car") + '</div><h3>' + esc(s["title_" + lang]) + '</h3><p>' + esc(s["desc_" + lang]) + '</p><ul>' + (s["points_" + lang] || []).map(p => '<li>' + esc(p) + '</li>').join("") + '</ul><a class="go" target="_blank" rel="noopener" href="' + wa(L.wa.service.replace("{t}", s["title_" + lang])) + '">' + esc(L.serviceLink) + arrow + '</a></article>').join("")
+    + services.map(s => '<article class="svc-card' + (s.id === "yourday" ? " feat" : "") + '"><div class="ic">' + ic(SVC_ICONS[s.id] || "car") + '</div><h3>' + esc(s["title_" + lang]) + '</h3><p>' + esc(s["desc_" + lang]) + '</p><ul>' + (s["points_" + lang] || []).map(p => '<li>' + esc(p) + '</li>').join("") + '</ul>' + (s.id === "driver" ? '<a class="svc-more" href="/' + lang + '/private-driver-cairo/">' + DRIVER_LINK[lang] + '</a>' : '') + '<a class="go" target="_blank" rel="noopener" href="' + wa(L.wa.service.replace("{t}", s["title_" + lang])) + '">' + esc(L.serviceLink) + arrow + '</a></article>').join("")
     + '</div></div></section>';
 
   const cities = () => '<section class="sec dark-band" id="s-cities"><div class="wrap">' + secHead(X.sections.cities) + '<div class="cities">'
@@ -390,6 +390,7 @@ function renderGallery(lang, c) {
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
+const DRIVER_LINK = { ar: "شوف الأسعار", en: "See prices", fr: "Voir les prix", de: "Preise ansehen", it: "Vedi i prezzi" };
 /* ---------- service page: private driver in Cairo, with a price table (prices include driver, fuel and taxes) ---------- */
 function renderDriverPage(lang, c) {
   const ar = lang === "ar", T = c.driverPage[lang], set = c.settings;
