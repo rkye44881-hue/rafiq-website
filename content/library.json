@@ -186,6 +186,30 @@
         "de": "Jetour T2 Dreiviertelansicht",
         "it": "Jetour T2 vista tre quarti"
       }
+    },
+    {
+      "slug": "car-jetour-video-1",
+      "category": "cars",
+      "type": "video",
+      "caption": {
+        "ar": "فيديو: جيتور T2",
+        "en": "Video: Jetour T2",
+        "fr": "Vidéo : Jetour T2",
+        "de": "Video: Jetour T2",
+        "it": "Video: Jetour T2"
+      }
+    },
+    {
+      "slug": "car-jetour-video-2",
+      "category": "cars",
+      "type": "video",
+      "caption": {
+        "ar": "فيديو: جيتور T2 في الطريق",
+        "en": "Video: Jetour T2 on the road",
+        "fr": "Vidéo : Jetour T2 sur la route",
+        "de": "Video: Jetour T2 unterwegs",
+        "it": "Video: Jetour T2 in viaggio"
+      }
     }
   ]
 }

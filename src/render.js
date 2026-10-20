@@ -82,7 +82,8 @@ const GALLERY_UI = {
 const photoCaption = (p, lang) => (p.caption && (p.caption[lang] || p.caption.en)) || "";
 function libraryStrip(lang, c) {
   const u = MEDIA_UI[lang], G = GALLERY_UI[lang];
-  const tile = (p, hidden) => '<img src="/media/library/' + p.slug + '-sm.webp" alt="' + (hidden ? "" : esc(photoCaption(p, lang))) + '" loading="lazy"' + (hidden ? ' aria-hidden="true"' : '') + '>';
+  // a video shows its poster in the strip (no video loads there); the gallery page plays it
+  const tile = (p, hidden) => '<img src="' + (p.type === "video" ? "/media/" + p.slug + "-poster-sm.webp" : "/media/library/" + p.slug + "-sm.webp") + '" alt="' + (hidden ? "" : esc(photoCaption(p, lang))) + '" loading="lazy"' + (hidden ? ' aria-hidden="true"' : '') + '>';
   const once = c.library.map(p => tile(p, false)).join("") , twice = c.library.map(p => tile(p, true)).join("");
   return '<section class="sec media-strip" aria-label="' + esc(G.title) + '"><div class="wrap ms-head"><h2 class="ms-title">' + esc(G.title) + '</h2><a class="ms-link" href="/' + lang + '/gallery/">' + esc(G.link) + '</a></div>'
     + '<div class="ms-marquee"><div class="ms-track" style="--n:' + c.library.length + '">' + once + twice + '</div></div></section>';
@@ -370,9 +371,12 @@ function renderGallery(lang, c) {
   const brand = ar ? set.brand_ar : set.brand_latin;
   const base = (set.site_url || "").replace(/\/$/, "");
   const photos = c.library;
-  const figs = photos.map(p => { const t = esc(photoCaption(p, lang)); return '<figure class="gal-item"><img src="/media/library/' + p.slug + '.webp" alt="' + t + '" loading="lazy"><figcaption>' + t + '</figcaption></figure>'; }).join("");
+  const figs = photos.map(p => { const t = esc(photoCaption(p, lang)); const media = p.type === "video"
+    ? '<video src="/media/' + p.slug + '.mp4" poster="/media/' + p.slug + '-poster.webp" controls playsinline preload="metadata" aria-label="' + t + '"></video>'
+    : '<img src="/media/library/' + p.slug + '.webp" alt="' + t + '" loading="lazy">';
+    return '<figure class="gal-item">' + media + '<figcaption>' + t + '</figcaption></figure>'; }).join("");
   const ld = { "@context": "https://schema.org", "@type": "ImageGallery", name: G.title, inLanguage: lang, url: base + "/" + lang + "/gallery/",
-    image: photos.map(p => ({ "@type": "ImageObject", contentUrl: base + "/media/library/" + p.slug + ".webp", url: base + "/media/library/" + p.slug + ".webp", name: photoCaption(p, lang), description: photoCaption(p, lang), creditText: brand, copyrightNotice: "© " + new Date().getFullYear() + " " + brand })) };
+    image: photos.filter(p => p.type !== "video").map(p => ({ "@type": "ImageObject", contentUrl: base + "/media/library/" + p.slug + ".webp", url: base + "/media/library/" + p.slug + ".webp", name: photoCaption(p, lang), description: photoCaption(p, lang), creditText: brand, copyrightNotice: "© " + new Date().getFullYear() + " " + brand })) };
   const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
     + '<title>' + esc(G.seoTitle) + '</title><meta name="description" content="' + esc(G.seoDesc) + '">'
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/gallery/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/gallery/"><link rel="canonical" href="' + base + '/' + lang + '/gallery/">'
