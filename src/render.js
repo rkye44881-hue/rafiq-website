@@ -28,7 +28,7 @@ const SAHEL_WA = {
 const CONSENT_UI = {
   ar: { text: "بنستخدم كوكيز عشان نفهم الزيارات ونحسن الموقع.", accept: "موافق", reject: "رفض" },
   en: { text: "We use cookies to understand visits and improve the site.", accept: "Accept", reject: "Decline" },
-  it: { text: "Usiamo i cookie per capire le visite e migliorare il sito.", accept: "Accetta", reject: "Rifiuta" },
+  it: { text: "Usiamo i cookie per capire come viene usato il sito e migliorarlo.", accept: "Accetta", reject: "Rifiuta" },
   fr: { text: "Nous utilisons des cookies pour comprendre les visites et améliorer le site.", accept: "Accepter", reject: "Refuser" },
   de: { text: "Wir verwenden Cookies, um Besuche zu verstehen und die Website zu verbessern.", accept: "Akzeptieren", reject: "Ablehnen" }
 };

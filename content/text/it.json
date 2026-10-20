@@ -1,58 +1,58 @@
 {
   "hero": {
-    "eyebrow": "Autista privato · Transfer privati · Tour privati",
-    "title": "La tua giornata, *a modo tuo.*",
-    "subtitle": "Un'auto privata e un autista professionista al Cairo, ad Alessandria e sulla Costa Nord, con transfer in tutto l'Egitto. Concordi il prezzo prima di salire, e resta quello.",
+    "eyebrow": "Autista privato · Transfer · Tour privati",
+    "title": "La tua giornata, *come piace a te.*",
+    "subtitle": "Auto privata con autista professionista al Cairo, ad Alessandria e sulla Costa Nord, e transfer in tutto l'Egitto. Il prezzo lo concordate prima di partire, e non cambia.",
     "button_1": "Prenota su WhatsApp",
     "button_2": "Scopri i servizi",
     "photo_caption": ""
   },
   "highlights": [
     "Cairo · Alessandria · Costa Nord",
-    "Transfer in ogni città dell'Egitto",
-    "Prezzo fisso, concordato in anticipo",
-    "Su WhatsApp 24 ore su 24"
+    "Transfer in tutto l'Egitto",
+    "Prezzo fisso, deciso in anticipo",
+    "Su WhatsApp, tutti i giorni"
   ],
   "sections": {
     "explore": {
-      "eyebrow": "Esplora",
-      "title": "Il Cairo e Giza, a un tocco di distanza",
-      "intro": "Scegli una categoria e sfoglia tutti i luoghi. Prenota un passaggio verso uno qualsiasi, o raccoglievi più tappe in una giornata e pianifichiamo il percorso."
+      "eyebrow": "Scopri",
+      "title": "Il Cairo e Giza a portata di clic",
+      "intro": "Scegli una categoria e sfoglia tutti i luoghi. Prenota un passaggio per quello che ti interessa, oppure metti insieme più tappe in una giornata e ti organizziamo il percorso."
     },
     "services": {
       "eyebrow": "Servizi",
-      "title": "Ogni viaggio, un autista di cui ti fidi",
-      "intro": "Da un giro di trenta minuti a un viaggio di più giorni in tutto il Paese. L'auto è solo tua, e anche l'orario lo decidi tu."
+      "title": "Ogni viaggio, un solo autista di fiducia",
+      "intro": "Dal giro di mezz'ora al viaggio di più giorni in tutto il Paese. L'auto è solo per voi e anche gli orari li decidete voi."
     },
     "cities": {
       "eyebrow": "Dove guidiamo",
-      "title": "Ogni giorno in tre regioni, e ovunque in Egitto",
-      "intro": "Cairo, Alessandria e la Costa Nord sono il nostro territorio. Altrove, ti portiamo porta a porta a un prezzo fisso."
+      "title": "Ogni giorno in tre zone, e in tutto l'Egitto",
+      "intro": "Cairo, Alessandria e la Costa Nord sono casa nostra. Per il resto del Paese vi portiamo porta a porta, a un prezzo fisso."
     },
     "fleet": {
       "eyebrow": "Flotta",
-      "title": "Scegli l'auto per il tuo viaggio",
-      "intro": "Ogni auto è pulita e con aria condizionata. Dicci quante persone e bagagli siete, e ti suggeriamo la misura giusta."
+      "title": "Scegli l'auto giusta per il tuo viaggio",
+      "intro": "Ogni auto è pulita e con l'aria condizionata. Dicci quante persone e quanti bagagli siete e ti consigliamo la misura giusta."
     },
     "steps": {
       "eyebrow": "Come funziona",
-      "title": "Tre passi verso il tuo autista",
+      "title": "Tre passi per il tuo autista",
       "intro": ""
     },
     "promises": {
       "eyebrow": "La nostra promessa",
-      "title": "Su cosa puoi contare, ogni volta",
+      "title": "Su cosa puoi contare, sempre",
       "intro": ""
     },
     "faq": {
-      "eyebrow": "FAQ",
+      "eyebrow": "Domande frequenti",
       "title": "Prima di prenotare",
       "intro": "Non trovi la risposta? Chiedila a noi su WhatsApp."
     },
     "contact": {
       "eyebrow": "Contatti",
-      "title": "Parla direttamente con noi",
-      "intro": "WhatsApp è il modo più veloce per raggiungerci. Per aziende e prenotazioni di gruppo va bene anche l'email."
+      "title": "Parlaci direttamente",
+      "intro": "WhatsApp è il modo più veloce per raggiungerci. Per aziende e gruppi va bene anche l'email."
     }
   },
   "cities": [
@@ -140,68 +140,68 @@
   "steps": [
     {
       "title": "Scrivici su WhatsApp",
-      "description": "Da dove, verso dove, quando e quanti siete. Basta una frase."
+      "description": "Da dove partite, dove andate, quando e quante persone siete. Bastano due righe."
     },
     {
       "title": "Ricevi un prezzo fisso",
-      "description": "Ti rispondiamo con un unico prezzo chiaro per tutto il viaggio. Nessun extra aggiunto dopo."
+      "description": "Ti rispondiamo con un prezzo chiaro per tutto il viaggio. Nessuna sorpresa dopo."
     },
     {
       "title": "Incontra il tuo autista",
-      "description": "L'autista arriva in anticipo, con un'auto pulita e con aria condizionata, e ti scrive durante il tragitto."
+      "description": "L'autista arriva in anticipo, con un'auto pulita e fresca, e ti tiene informato durante il percorso."
     }
   ],
   "promises": [
     {
-      "title": "Un prezzo, concordato prima",
-      "description": "Il prezzo che ti diamo è quello che paghi, a meno che tu non chieda di cambiare percorso o orari."
+      "title": "Un prezzo, deciso prima",
+      "description": "Quello che vi diciamo è quello che pagate, a meno che non cambiate percorso o orari."
     },
     {
       "title": "Puntuali per abitudine",
-      "description": "Gli autisti arrivano prima dell'orario di ritiro e ti avvisano subito di qualsiasi ritardo."
+      "description": "L'autista arriva prima dell'orario di ritiro e vi avvisa subito se c'è un ritardo."
     },
     {
       "title": "Auto pulite e fresche",
-      "description": "Ogni auto viene preparata prima di ogni viaggio, in estate come in inverno."
+      "description": "Ogni auto viene preparata prima di ogni viaggio, d'estate come d'inverno."
     },
     {
-      "title": "Privacy rispettata",
-      "description": "L'auto è solo tua. I tuoi programmi restano tra te e il tuo autista."
+      "title": "La tua privacy",
+      "description": "L'auto è solo vostra. I vostri programmi restano tra voi e l'autista."
     },
     {
-      "title": "Flessibili il giorno stesso",
-      "description": "Vuoi un'altra tappa o una nuova destinazione? Dillo al tuo autista e ci adattiamo."
+      "title": "Flessibili sul momento",
+      "description": "Vuoi fermarti in un altro posto o cambiare destinazione? Dillo all'autista e ci adattiamo."
     },
     {
-      "title": "Autisti che conoscono le strade",
-      "description": "Esperienza quotidiana nel traffico del Cairo, sulla strada desertica per Alessandria e sulla costa."
+      "title": "Autisti che conoscono la strada",
+      "description": "Esperienza ogni giorno nel traffico del Cairo, sulla strada del deserto verso Alessandria e lungo la costa."
     }
   ],
   "faq": [
     {
-      "question": "Come prenoto?",
-      "answer": "Mandaci i dettagli del viaggio su WhatsApp o usa il modulo in cima alla pagina. Ti rispondiamo con un prezzo fisso, e la prenotazione è confermata quando sei d'accordo."
+      "question": "Come si prenota?",
+      "answer": "Scrivete i dettagli del viaggio su WhatsApp oppure usate il modulo in cima alla pagina. Vi rispondiamo con un prezzo fisso e la prenotazione è confermata quando siete d'accordo."
     },
     {
       "question": "Il prezzo è davvero fisso?",
-      "answer": "Sì. Il prezzo concordato prima del viaggio è quello che paghi, a meno che tu non chieda di cambiare percorso o durata."
+      "answer": "Sì. Il prezzo concordato prima del viaggio è quello che pagate, a meno che non cambiate percorso o durata."
     },
     {
-      "question": "Posso prenotare un autista per una giornata intera?",
-      "answer": "Sì, per 8 o 12 ore, con tutte le tappe che vuoi dentro la città."
+      "question": "Posso prenotare un autista per tutta la giornata?",
+      "answer": "Certo, per 8 o 12 ore, con tutte le soste che volete dentro la città."
     },
     {
-      "question": "Andate oltre il Cairo, Alessandria e la Costa Nord?",
-      "answer": "Sì, in qualsiasi città dell'Egitto. Mandaci destinazione e data e ti rispondiamo con un prezzo."
+      "question": "Andate anche fuori dal Cairo, Alessandria e la Costa Nord?",
+      "answer": "Sì, in qualsiasi città dell'Egitto. Scriveteci destinazione e data e vi rispondiamo con il prezzo."
     },
     {
-      "question": "E se il mio volo è in ritardo?",
-      "answer": "Il tuo autista segue il volo e ti aspetta quando atterri davvero."
+      "question": "E se il volo ha ritardo?",
+      "answer": "L'autista segue il volo e vi aspetta quando atterrate davvero."
     }
   ],
   "footer": "Autista privato e tour privati in Egitto.",
   "seo": {
     "title": "Cairo Voyage | Autista privato al Cairo, Alessandria e Costa Nord",
-    "description": "Autista privato al Cairo, Giza, Alessandria e sulla Costa Nord. Transfer aeroportuali, autista per la giornata intera e tour privati. Prezzo fisso, prenota su WhatsApp."
+    "description": "Autista privato al Cairo, Giza, Alessandria e sulla Costa Nord. Transfer aeroportuali, autista per la giornata e tour privati. Prezzo fisso, prenota su WhatsApp."
   }
 }
