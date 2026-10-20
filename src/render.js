@@ -62,6 +62,9 @@ function analytics(lang, set) {
 /* Call numbers in the footer: each one is a tap-to-call link. WhatsApp stays on set.whatsapp. */
 const phoneLinks = set => '<bdi dir="ltr">' + (set.phones || []).map(n => '<a href="tel:+' + esc(n) + '">+' + esc(n) + '</a>').join(" · ") + '</bdi>';
 
+/* small footer link to the client reviews page (the page itself is not on the home page) */
+const REV_LINK = { ar: "آراء العملاء", en: "Client reviews", fr: "Avis clients", de: "Kundenbewertungen", it: "Recensioni" };
+const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a>';
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
 const MEDIA_UI = {
@@ -207,7 +210,7 @@ function renderPage(lang, c, page) {
       + '</div></div></section>';
   };
 
-  const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
+  const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '<a class="fab" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '" aria-label="WhatsApp">' + ic("chat") + '<span>' + esc(L.whatsapp) + '</span></a>';
 
   const ncPromo = () => { const P = N.promo; return '<section class="nc-promo" id="s-north-coast"><div class="wrap"><a class="nc-card" href="/' + lang + '/north-coast/"><div class="nc-pic">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.nav) + '" loading="lazy">' : scene("sahel")) + '</div><div class="nc-tx"><p class="eyebrow">' + esc(P.eyebrow) + '</p><h2>' + md(P.title) + '</h2><p>' + esc(P.text) + '</p><div class="hero-pills">' + P.chips.map((t, i) => '<span>' + ic(["car", "clock", "fork", "music"][i % 4]) + esc(t) + '</span>').join("") + '</div><span class="btn btn-acc">' + ic("wave") + esc(P.button) + arrow + '</span></div></a></div></section>'; };
@@ -359,7 +362,7 @@ function renderGuide(lang, c) {
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(U.intro) + '</p></div></section>'
     + '<section class="sec guide-list"><div class="wrap">' + cities.map(([cn, cat, first]) => city(cat, cn, first)).join("") + tips + svc + '</div></section>'
     + libraryStrip(lang, c)
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body
     + '<script type="application/json" id="data">' + JSON.stringify({ lang, brand, whatsapp: set.whatsapp, labels: c.labels[lang], categories: [], places: {}, tours: [] }).replace(/</g, "\\u003c") + '</script>'
     + '</body></html>';
@@ -390,7 +393,7 @@ function renderGallery(lang, c) {
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(G.title) + '</h1><p class="sub">' + esc(G.intro) + '</p><p class="sub">' + esc(G.more) + '</p></div></section>'
     + '<section class="sec gal-sec"><div class="wrap"><div class="gal">' + figs + '</div></div></section>'
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
@@ -421,8 +424,45 @@ function renderDriverPage(lang, c) {
     + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(T.msg) + '">' + ic("chat") + esc(T.cta) + '</a></p></div></section>'
     + '<section class="sec"><div class="wrap"><h2 class="svc-h">' + esc(T.faq_title) + '</h2>' + T.faq.map(f => '<details class="gcity"><summary><span>' + esc(f[0]) + '</span></summary><p class="gp-h" style="padding:14px 18px">' + esc(f[1]) + '</p></details>').join("") + '</div></section>';
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, LANGS };
+/* ---------- client reviews page: video reviews, each with name, city, trip and a short quote ---------- */
+const REVIEWS_UI = {
+  ar: { title: "آراء عملائنا", intro: "عملاؤنا اتكلموا عن رحلاتهم معانا. دي آرائهم بكلامهم.", empty: "قريبًا، فيديوهات آراء عملائنا.", cta: "احجز رحلتك على واتساب", seoTitle: "آراء العملاء | رحلة القاهرة", seoDesc: "آراء عملاء رحلة القاهرة عن السواق الخاص والجولات وخدمة المطار بالفيديو.", locale: "ar_EG" },
+  en: { title: "What our clients say", intro: "Our clients talk about their trips with us, in their own words.", empty: "Client video reviews are coming soon.", cta: "Book your trip on WhatsApp", seoTitle: "Client reviews | Cairo Voyage", seoDesc: "Video reviews from Cairo Voyage clients about private drivers, tours and airport transfers.", locale: "en_US" },
+  fr: { title: "Ce que disent nos clients", intro: "Nos clients racontent leur voyage avec nous, avec leurs propres mots.", empty: "Les avis vidéo de nos clients arrivent bientôt.", cta: "Réservez votre voyage sur WhatsApp", seoTitle: "Avis clients | Cairo Voyage", seoDesc: "Avis vidéo de clients de Cairo Voyage sur les chauffeurs privés, les circuits et les transferts aéroport.", locale: "fr_FR" },
+  de: { title: "Was unsere Kunden sagen", intro: "Unsere Kunden erzählen von ihrer Reise mit uns, in ihren eigenen Worten.", empty: "Video-Bewertungen unserer Kunden folgen bald.", cta: "Reise per WhatsApp buchen", seoTitle: "Kundenbewertungen | Cairo Voyage", seoDesc: "Video-Bewertungen von Cairo-Voyage-Kunden zu Privatfahrern, Touren und Flughafentransfers.", locale: "de_DE" },
+  it: { title: "Cosa dicono i nostri clienti", intro: "I nostri clienti raccontano il loro viaggio con noi, con parole loro.", empty: "Le recensioni video dei nostri clienti arriveranno presto.", cta: "Prenota il tuo viaggio su WhatsApp", seoTitle: "Recensioni clienti | Cairo Voyage", seoDesc: "Recensioni video dei clienti di Cairo Voyage su autisti privati, tour e transfer aeroportuali.", locale: "it_IT" }
+};
+function renderReviews(lang, c) {
+  const ar = lang === "ar", R = REVIEWS_UI[lang], set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const pick = o => (o && (o[lang] || o.en)) || "";
+  const cards = c.reviews.map(r => {
+    const who = esc(r.name) + (r.city ? " · " + esc(r.city) : "");
+    return '<figure class="rev-card"><video src="/media/reviews/' + esc(r.video) + '.mp4" poster="/media/reviews/' + esc(r.video) + '-poster.webp" controls playsinline preload="none" aria-label="' + who + '"></video>'
+      + '<figcaption><strong>' + who + '</strong>' + (r.trip ? '<span class="rev-trip">' + esc(pick(r.trip)) + '</span>' : '') + (pick(r.quote) ? '<q>' + esc(pick(r.quote)) + '</q>' : '') + '</figcaption></figure>';
+  }).join("");
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(R.seoTitle) + '</title><meta name="description" content="' + esc(R.seoDesc) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/reviews/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/reviews/"><link rel="canonical" href="' + base + '/' + lang + '/reviews/">'
+    + '<meta property="og:title" content="' + esc(R.seoTitle) + '"><meta property="og:description" content="' + esc(R.seoDesc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/reviews/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + R.locale + '">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
+  const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/reviews/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+  const list = cards ? '<div class="rev-grid">' + cards + '</div>' : '<p class="rev-empty">' + esc(R.empty) + '</p>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
+    + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(R.title) + '</h1><p class="sub">' + esc(R.intro) + '</p></div></section>'
+    + '<section class="sec"><div class="wrap">' + list + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(R.cta) + '</a></p></div></section>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+const L_HELLO = lang => ({ ar: "مرحبًا {B}، عايز أحجز رحلة.", en: "Hello {B}, I'd like to book a trip.", fr: "Bonjour {B}, je souhaite réserver un voyage.", de: "Hallo {B}, ich möchte eine Reise buchen.", it: "Ciao {B}, vorrei prenotare un viaggio." })[lang];
+
+module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, LANGS };

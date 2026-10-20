@@ -680,3 +680,11 @@ body.has-picks .fab{display:none}
 .rv-row::-webkit-scrollbar{display:none}
 .rv-vid{flex:0 0 min(72vw,270px);aspect-ratio:9/16;height:auto;border-radius:var(--radius);background:var(--dark2);object-fit:cover;scroll-snap-align:start;box-shadow:0 12px 26px rgba(27,43,87,.18)}
 @media (min-width:900px){.rv-row{justify-content:center;overflow:visible}.rv-vid{flex:0 0 240px}}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.rev-card{margin:0;background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 24px rgba(27,43,87,.12)}
+.rev-card video{width:100%;aspect-ratio:9/16;height:auto;display:block;background:var(--dark2);object-fit:cover}
+.rev-card figcaption{padding:12px 14px 16px;display:grid;gap:4px;font-size:.92rem}
+.rev-trip{color:var(--muted);font-size:.85rem}
+.rev-card q{color:var(--ink);font-style:italic;margin-top:4px}
+.rev-empty{padding:40px 0;color:var(--muted);text-align:center;font-size:1.05rem}
+.rev-link{display:inline-block;color:var(--on-dark);text-decoration:underline;text-underline-offset:3px;font-weight:600}

@@ -3,7 +3,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const { renderPage, renderGuide, renderGallery, renderDriverPage, LANGS } = require("./src/render.js");
+const { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, LANGS } = require("./src/render.js");
 
 const ROOT = __dirname;
 const OUT = path.join(ROOT, "dist");
@@ -20,6 +20,7 @@ const content = {
   guide: read("content/guide.json"),
   library: read("content/library.json").photos,
   driverPage: read("content/service-driver.json"),
+  reviews: read("content/reviews.json").reviews,
   offers: fs.existsSync(path.join(ROOT, "content/offers.json")) ? read("content/offers.json").offers : [],
   text: Object.fromEntries(LANGS.map(l => [l, read("content/text/" + l + ".json")])),
   labels: Object.fromEntries(LANGS.map(l => [l, read("src/labels/" + l + ".json")]))
@@ -41,6 +42,8 @@ for (const lang of LANGS) {
   fs.writeFileSync(path.join(OUT, lang, "gallery", "index.html"), renderGallery(lang, content));
   fs.mkdirSync(path.join(OUT, lang, "private-driver-cairo"), { recursive: true });
   fs.writeFileSync(path.join(OUT, lang, "private-driver-cairo", "index.html"), renderDriverPage(lang, content));
+  fs.mkdirSync(path.join(OUT, lang, "reviews"), { recursive: true });
+  fs.writeFileSync(path.join(OUT, lang, "reviews", "index.html"), renderReviews(lang, content));
 }
 
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(OUT, "assets/style.css"));
@@ -57,7 +60,7 @@ const base = (content.settings.site_url || "").replace(/\/$/, "");
 const TODAY = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-  + ["", "offers/", "north-coast/", "guide/", "gallery/", "private-driver-cairo/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc><lastmod>" + TODAY + "</lastmod>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
+  + ["", "offers/", "north-coast/", "guide/", "gallery/", "private-driver-cairo/", "reviews/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc><lastmod>" + TODAY + "</lastmod>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
   + "\n</urlset>\n");
 fs.writeFileSync(path.join(OUT, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: " + base + "/sitemap.xml\n");
 
