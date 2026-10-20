@@ -60,6 +60,22 @@ function analytics(lang, set) {
 }
 
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
+/* Photos and short clips of our Jetour T2, shown on every page just above the footer */
+const MEDIA_UI = {
+  ar: { title: "شوف العربية", alt: "جيتور T2 مع سائق خاص" },
+  en: { title: "See the car", alt: "Jetour T2 with a private driver" },
+  fr: { title: "Voir la voiture", alt: "Jetour T2 avec chauffeur privé" },
+  de: { title: "Das Auto ansehen", alt: "Jetour T2 mit Privatfahrer" },
+  it: { title: "Guarda l'auto", alt: "Jetour T2 con autista privato" }
+};
+function carStrip(lang) {
+  const u = MEDIA_UI[lang], a = esc(u.alt);
+  const video = (n) => '<video class="ms-vid" src="/media/car-jetour-video-' + n + '.mp4" poster="/media/car-jetour-video-' + n + '-poster.webp" muted autoplay loop playsinline preload="metadata" aria-label="' + a + '"></video>';
+  const photo = (f) => '<img class="ms-img" src="/media/car-jetour-' + f + '.webp" alt="' + a + '" width="800" height="1000" loading="lazy">';
+  return '<section class="sec media-strip" aria-label="' + esc(u.title) + '"><div class="wrap"><h2 class="ms-title">' + esc(u.title) + '</h2></div>'
+    + '<div class="ms-row">' + video(1) + photo("front") + photo("interior") + video(2) + photo("side") + photo("angle") + '</div></section>';
+}
+
 const FOLLOW = { ar: "تابعنا", en: "Follow us", fr: "Suivez-nous", de: "Folgen Sie uns", it: "Seguici" };
 function socials(set, lang) {
   const links = [["instagram_url", "Instagram"], ["tiktok_url", "TikTok"], ["facebook_url", "Facebook"], ["x_url", "X"]]
@@ -285,7 +301,7 @@ function renderPage(lang, c, page) {
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
     : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + footer() + '</div>' + analytics(lang, c.settings).body
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + carStrip(lang) + footer() + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }
@@ -329,6 +345,7 @@ function renderGuide(lang, c) {
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(U.intro) + '</p></div></section>'
     + '<section class="sec guide-list"><div class="wrap">' + cities.map(([cn, cat, first]) => city(cat, cn, first)).join("") + tips + svc + '</div></section>'
+    + carStrip(lang)
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body
     + '<script type="application/json" id="data">' + JSON.stringify({ lang, brand, whatsapp: set.whatsapp, labels: c.labels[lang], categories: [], places: {}, tours: [] }).replace(/</g, "\\u003c") + '</script>'

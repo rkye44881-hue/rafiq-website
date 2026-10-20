@@ -649,3 +649,10 @@ body.has-picks .fab{display:none}
 .of-card.is-ended .of-badge{box-shadow:none}
 .of-card.is-ended .of-price b{font-size:1.6rem}
 @media (max-width:760px){.of-card{grid-template-columns:1fr}.of-pic{min-height:0;aspect-ratio:16/10}.of-book{justify-self:stretch}}
+.media-strip{padding-bottom:0}
+.media-strip .ms-title{font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:18px}
+.ms-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 8px;scrollbar-width:none}
+.ms-row::-webkit-scrollbar{display:none}
+.ms-row>*{flex:0 0 min(62vw,260px);aspect-ratio:4/5;border-radius:var(--radius);object-fit:cover;background:var(--dark2);scroll-snap-align:start;width:min(62vw,260px);height:auto}
+.ms-row>video.ms-vid{aspect-ratio:9/16;height:auto}
+@media (min-width:900px){.ms-row{justify-content:center;overflow:visible;flex-wrap:nowrap}.ms-row>*{flex:0 0 220px;width:220px}}
