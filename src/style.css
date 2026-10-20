@@ -675,3 +675,8 @@ body.has-picks .fab{display:none}
 .pt-offer{margin:-12px 0 26px;color:var(--muted)}
 .pt-offer a{color:var(--accent-strong);font-weight:700}
 .gal-item video{width:100%;height:auto;border-radius:16px;display:block;background:var(--dark2)}
+.reviews{padding-top:0}
+.rv-row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:none}
+.rv-row::-webkit-scrollbar{display:none}
+.rv-vid{flex:0 0 min(72vw,270px);aspect-ratio:9/16;height:auto;border-radius:var(--radius);background:var(--dark2);object-fit:cover;scroll-snap-align:start;box-shadow:0 12px 26px rgba(27,43,87,.18)}
+@media (min-width:900px){.rv-row{justify-content:center;overflow:visible}.rv-vid{flex:0 0 240px}}
