@@ -47,6 +47,8 @@ fs.cpSync(path.join(ROOT, "public"), OUT, { recursive: true });
 const pixelId = (content.settings.tiktok_pixel_id || "").replace(/[^A-Za-z0-9]/g, "");
 if (pixelId) fs.writeFileSync(path.join(OUT, "tiktok-pixel.js"), fs.readFileSync(path.join(ROOT, "src/tiktok-pixel.js"), "utf8").replace("__PIXEL_ID__", pixelId));
 if (fs.existsSync(path.join(ROOT, "media"))) fs.cpSync(path.join(ROOT, "media"), path.join(OUT, "media"), { recursive: true });
+// The root address shows the English home page itself (no redirect), with its canonical set to /en/
+fs.writeFileSync(path.join(OUT, "index.html"), renderPage("en", content));
 
 const base = (content.settings.site_url || "").replace(/\/$/, "");
 const TODAY = new Date().toISOString().slice(0, 10);
