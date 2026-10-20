@@ -411,7 +411,7 @@ function renderDriverPage(lang, c) {
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/private-driver-cairo/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
   // three columns in the table; the "what's included" list below carries the rest
   const table = '<div class="pt-wrap"><table class="pt"><thead><tr>' + T.headers.slice(0, 3).map(h => '<th scope="col">' + esc(h) + '</th>').join("") + '</tr></thead><tbody>'
-    + T.rows.map(r => '<tr>' + r.slice(0, 3).map((v, i) => i === 1 ? '<td class="pt-price">' + esc(v) + '</td>' : '<td>' + esc(v) + '</td>').join("") + '</tr>').join("") + '</tbody></table></div>';
+    + T.rows.map(r => '<tr>' + r.slice(0, 3).map((v, i) => i === 1 ? '<td class="pt-price">' + esc(v) + '</td>' : '<td>' + esc(v) + '</td>').join("") + '</tr>').join("") + '</tbody></table></div><p class="pt-offer">' + esc(T.offer) + ' <a href="/' + lang + '/offers/">' + esc(T.offer_link) + '</a></p>';
   const body = '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(T.h1) + '</h1><p class="sub">' + esc(T.intro) + '</p></div></section>'
     + '<section class="sec"><div class="wrap">' + table + '<h2 class="svc-h">' + esc(T.includes_title) + '</h2><ul class="svc-list">' + T.includes.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul>'
     + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(T.msg) + '">' + ic("chat") + esc(T.cta) + '</a></p></div></section>'

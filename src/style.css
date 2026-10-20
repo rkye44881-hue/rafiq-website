@@ -672,3 +672,5 @@ body.has-picks .fab{display:none}
 .svc-list{margin:0 0 24px;padding-inline-start:20px;line-height:1.9}
 .svc-cta{margin:8px 0 0}
 .svc-more{display:inline-block;margin-top:10px;font-weight:700;color:var(--accent-strong);text-decoration:underline;text-underline-offset:4px}
+.pt-offer{margin:-12px 0 26px;color:var(--muted)}
+.pt-offer a{color:var(--accent-strong);font-weight:700}

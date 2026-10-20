@@ -47,7 +47,9 @@
       ]
     ],
     "cta": "Book on WhatsApp",
-    "msg": "Hello {B}, I'd like a private driver in Cairo: 8 hours or 12 hours. Date: ..."
+    "msg": "Hello {B}, I'd like a private driver in Cairo: 8 hours or 12 hours. Date: ...",
+    "offer": "Monthly offer: 10 hours or 120 km for $75 in a Jetour T2. Limited time, see the offers page.",
+    "offer_link": "See offers"
   },
   "ar": {
     "title": "سائق خاص باليوم في القاهرة | رحلة القاهرة",
@@ -97,7 +99,9 @@
       ]
     ],
     "cta": "احجز على واتساب",
-    "msg": "مرحبًا {B}، عايز سواق خاص في القاهرة: 8 ساعات أو 12 ساعة. التاريخ: ..."
+    "msg": "مرحبًا {B}، عايز سواق خاص في القاهرة: 8 ساعات أو 12 ساعة. التاريخ: ...",
+    "offer": "عرض الشهر: 10 ساعات أو 120 كم بـ 75$ في جيتور T2. لفترة محدودة، شوف صفحة العروض.",
+    "offer_link": "شوف العروض"
   },
   "fr": {
     "title": "Chauffeur privé au Caire | Cairo Voyage",
@@ -147,7 +151,9 @@
       ]
     ],
     "cta": "Réserver sur WhatsApp",
-    "msg": "Bonjour {B}, je souhaite un chauffeur privé au Caire : 8 heures ou 12 heures. Date : ..."
+    "msg": "Bonjour {B}, je souhaite un chauffeur privé au Caire : 8 heures ou 12 heures. Date : ...",
+    "offer": "Offre du mois : 10 heures ou 120 km pour 75 $ dans une Jetour T2. Durée limitée, voir la page des offres.",
+    "offer_link": "Voir les offres"
   },
   "de": {
     "title": "Privatfahrer in Kairo | Cairo Voyage",
@@ -197,7 +203,9 @@
       ]
     ],
     "cta": "Per WhatsApp buchen",
-    "msg": "Hallo {B}, ich möchte einen Privatfahrer in Kairo: 8 oder 12 Stunden. Datum: ..."
+    "msg": "Hallo {B}, ich möchte einen Privatfahrer in Kairo: 8 oder 12 Stunden. Datum: ...",
+    "offer": "Angebot des Monats: 10 Stunden oder 120 km für 75 $ im Jetour T2. Zeitlich begrenzt, siehe Angebotsseite.",
+    "offer_link": "Angebote ansehen"
   },
   "it": {
     "title": "Autista privato al Cairo | Cairo Voyage",
@@ -247,6 +255,8 @@
       ]
     ],
     "cta": "Prenota su WhatsApp",
-    "msg": "Ciao {B}, vorrei un autista privato al Cairo: 8 ore o 12 ore. Data: ..."
+    "msg": "Ciao {B}, vorrei un autista privato al Cairo: 8 ore o 12 ore. Data: ...",
+    "offer": "Offerta del mese: 10 ore o 120 km per 75 $ con Jetour T2. A tempo limitato, vedi la pagina delle offerte.",
+    "offer_link": "Vedi le offerte"
   }
 }
