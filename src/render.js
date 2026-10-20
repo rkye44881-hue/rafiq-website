@@ -68,12 +68,21 @@ const MEDIA_UI = {
   de: { title: "Das Auto ansehen", alt: "Jetour T2 mit Privatfahrer" },
   it: { title: "Guarda l'auto", alt: "Jetour T2 con autista privato" }
 };
-function carStrip(lang) {
-  const u = MEDIA_UI[lang], a = esc(u.alt);
-  const video = (n) => '<video class="ms-vid" src="/media/car-jetour-video-' + n + '.mp4" poster="/media/car-jetour-video-' + n + '-poster.webp" muted autoplay loop playsinline preload="metadata" aria-label="' + a + '"></video>';
-  const photo = (f) => '<img class="ms-img" src="/media/car-jetour-' + f + '.webp" alt="' + a + '" width="800" height="1000" loading="lazy">';
-  return '<section class="sec media-strip" aria-label="' + esc(u.title) + '"><div class="wrap"><h2 class="ms-title">' + esc(u.title) + '</h2></div>'
-    + '<div class="ms-row">' + video(1) + photo("front") + photo("interior") + video(2) + photo("side") + photo("angle") + '</div></section>';
+/* Photo library: an endless strip of library photos (duplicated once so the loop has no jump) */
+const GALLERY_UI = {
+  ar: { title: "مكتبة الصور", intro: "صور حقيقية من القاهرة والجيزة والإسكندرية والساحل الشمالي، وعربيات جيتور T2 مع سائق.", link: "المكتبة كاملة", seoTitle: "مكتبة الصور | القاهرة والجيزة والساحل | رحلة القاهرة", seoDesc: "صور حقيقية من القاهرة والجيزة والإسكندرية والساحل الشمالي، وعربيات جيتور T2 بسائق خاص.", locale: "ar_EG" },
+  en: { title: "Photo library", intro: "Real photos from Cairo, Giza, Alexandria and the North Coast, and our Jetour T2 cars with drivers.", link: "See the full library", seoTitle: "Photo library | Cairo, Giza, Alexandria & North Coast | Cairo Voyage", seoDesc: "Real photos of Cairo, Giza, Alexandria and the North Coast, and our Jetour T2 cars with private drivers.", locale: "en_US" },
+  fr: { title: "Photothèque", intro: "De vraies photos du Caire, de Gizeh, d'Alexandrie et de la Côte Nord, et nos Jetour T2 avec chauffeur.", link: "Voir toute la photothèque", seoTitle: "Photothèque | Le Caire, Gizeh, Alexandrie et Côte Nord | Cairo Voyage", seoDesc: "Vraies photos du Caire, de Gizeh, d'Alexandrie et de la Côte Nord, et nos Jetour T2 avec chauffeur privé.", locale: "fr_FR" },
+  de: { title: "Fotogalerie", intro: "Echte Fotos aus Kairo, Gizeh, Alexandria und der Nordküste sowie unsere Jetour T2 mit Fahrer.", link: "Ganze Galerie ansehen", seoTitle: "Fotogalerie | Kairo, Gizeh, Alexandria & Nordküste | Cairo Voyage", seoDesc: "Echte Fotos von Kairo, Gizeh, Alexandria und der Nordküste und unsere Jetour T2 mit Privatfahrer.", locale: "de_DE" },
+  it: { title: "Galleria fotografica", intro: "Foto reali del Cairo, di Giza, Alessandria e della Costa Nord, e le nostre Jetour T2 con autista.", link: "Guarda tutta la galleria", seoTitle: "Galleria fotografica | Cairo, Giza, Alessandria e Costa Nord | Cairo Voyage", seoDesc: "Foto reali del Cairo, Giza, Alessandria e della Costa Nord, e le nostre Jetour T2 con autista privato.", locale: "it_IT" }
+};
+const photoCaption = (p, lang) => (p.caption && (p.caption[lang] || p.caption.en)) || "";
+function libraryStrip(lang, c) {
+  const u = MEDIA_UI[lang], G = GALLERY_UI[lang];
+  const tile = (p, hidden) => '<img src="/media/library/' + p.slug + '-sm.webp" alt="' + (hidden ? "" : esc(photoCaption(p, lang))) + '" loading="lazy"' + (hidden ? ' aria-hidden="true"' : '') + '>';
+  const once = c.library.map(p => tile(p, false)).join("") , twice = c.library.map(p => tile(p, true)).join("");
+  return '<section class="sec media-strip" aria-label="' + esc(G.title) + '"><div class="wrap ms-head"><h2 class="ms-title">' + esc(G.title) + '</h2><a class="ms-link" href="/' + lang + '/gallery/">' + esc(G.link) + '</a></div>'
+    + '<div class="ms-marquee"><div class="ms-track" style="--n:' + c.library.length + '">' + once + twice + '</div></div></section>';
 }
 
 const FOLLOW = { ar: "تابعنا", en: "Follow us", fr: "Suivez-nous", de: "Folgen Sie uns", it: "Seguici" };
@@ -301,7 +310,7 @@ function renderPage(lang, c, page) {
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
     : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + carStrip(lang) + footer() + '</div>' + analytics(lang, c.settings).body
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }
@@ -345,11 +354,37 @@ function renderGuide(lang, c) {
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(U.intro) + '</p></div></section>'
     + '<section class="sec guide-list"><div class="wrap">' + cities.map(([cn, cat, first]) => city(cat, cn, first)).join("") + tips + svc + '</div></section>'
-    + carStrip(lang)
+    + libraryStrip(lang, c)
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body
     + '<script type="application/json" id="data">' + JSON.stringify({ lang, brand, whatsapp: set.whatsapp, labels: c.labels[lang], categories: [], places: {}, tours: [] }).replace(/</g, "\\u003c") + '</script>'
     + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, LANGS };
+/* ---------- photo library page: every photo, with captions and structured data ---------- */
+function renderGallery(lang, c) {
+  const ar = lang === "ar", G = GALLERY_UI[lang], set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const photos = c.library;
+  const figs = photos.map(p => { const t = esc(photoCaption(p, lang)); return '<figure class="gal-item"><img src="/media/library/' + p.slug + '.webp" alt="' + t + '" loading="lazy"><figcaption>' + t + '</figcaption></figure>'; }).join("");
+  const ld = { "@context": "https://schema.org", "@type": "ImageGallery", name: G.title, inLanguage: lang, url: base + "/" + lang + "/gallery/",
+    image: photos.map(p => ({ "@type": "ImageObject", contentUrl: base + "/media/library/" + p.slug + ".webp", url: base + "/media/library/" + p.slug + ".webp", name: photoCaption(p, lang), description: photoCaption(p, lang), creditText: brand, copyrightNotice: "© " + new Date().getFullYear() + " " + brand })) };
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(G.seoTitle) + '</title><meta name="description" content="' + esc(G.seoDesc) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/gallery/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/gallery/"><link rel="canonical" href="' + base + '/' + lang + '/gallery/">'
+    + '<meta property="og:title" content="' + esc(G.seoTitle) + '"><meta property="og:description" content="' + esc(G.seoDesc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/gallery/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + G.locale + '">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
+    + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
+  const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/gallery/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
+    + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(G.title) + '</h1><p class="sub">' + esc(G.intro) + '</p></div></section>'
+    + '<section class="sec gal-sec"><div class="wrap"><div class="gal">' + figs + '</div></div></section>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + esc(prettyPhone(set.whatsapp)) + ' · ' + esc(set.email) + '</span>' + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderGallery, LANGS };

@@ -649,10 +649,16 @@ body.has-picks .fab{display:none}
 .of-card.is-ended .of-badge{box-shadow:none}
 .of-card.is-ended .of-price b{font-size:1.6rem}
 @media (max-width:760px){.of-card{grid-template-columns:1fr}.of-pic{min-height:0;aspect-ratio:16/10}.of-book{justify-self:stretch}}
-.media-strip{padding-bottom:0}
-.media-strip .ms-title{font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:18px}
-.ms-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 8px;scrollbar-width:none}
-.ms-row::-webkit-scrollbar{display:none}
-.ms-row>*{flex:0 0 min(62vw,260px);aspect-ratio:4/5;border-radius:var(--radius);object-fit:cover;background:var(--dark2);scroll-snap-align:start;width:min(62vw,260px);height:auto}
-.ms-row>video.ms-vid{aspect-ratio:9/16;height:auto}
-@media (min-width:900px){.ms-row{justify-content:center;overflow:visible;flex-wrap:nowrap}.ms-row>*{flex:0 0 220px;width:220px}}
+.ms-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.ms-title{font-size:clamp(1.4rem,3vw,1.9rem)}
+.ms-link{color:var(--accent-strong);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
+.ms-marquee{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.ms-track{display:flex;width:max-content;animation:ms-scroll calc(var(--n) * 3.2s) linear infinite;will-change:transform}
+.ms-track img{height:220px;width:auto;border-radius:16px;flex:none;display:block;margin-inline-end:12px;background:var(--surface)}
+.ms-marquee:hover .ms-track{animation-play-state:paused}
+@keyframes ms-scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ms-track{animation:none}}
+.gal{columns:2 150px;column-gap:12px}
+.gal-item{break-inside:avoid;margin:0 0 14px}
+.gal-item img{width:100%;height:auto;border-radius:16px;display:block;background:var(--surface)}
+.gal-item figcaption{font-size:.85rem;color:var(--muted);padding:6px 4px 0}
