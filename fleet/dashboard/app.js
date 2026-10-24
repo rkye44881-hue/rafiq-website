@@ -9,6 +9,7 @@ import { getFirestore, collection, doc, getDoc, onSnapshot, addDoc, setDoc, upda
 const DRIVER_EMAIL_DOMAIN = "drivers.rafiq.app"; // same as Driver.kt in the Android app
 const ONLINE_WINDOW_MS = 10 * 60 * 1000;         // the app sends at least every 5 minutes while on shift
 const CAIRO = [30.0444, 31.2357];
+const SPEED_LIMIT = 100;                         // km/h: faster than this shows in red
 
 const STATUS = {
   new: "جديد", accepted: "مقبول", onway: "في الطريق للعميل", arrived: "مع العميل", done: "تم", cancelled: "ملغي"
@@ -31,6 +32,12 @@ function ago(date) {
   return date.toLocaleDateString("ar-EG");
 }
 const isOnline = d => d.online && toDate(d.updatedAt) && Date.now() - toDate(d.updatedAt).getTime() < ONLINE_WINDOW_MS;
+// A moving phone reports every 20 seconds, so no report for 90 seconds means the car is standing still
+const speedOf = d => isOnline(d) && Date.now() - toDate(d.updatedAt).getTime() < 90000 ? Math.round(d.speed || 0) : 0;
+const speedTag = d => {
+  const v = speedOf(d);
+  return v >= 5 ? `<span class="speed ${v > SPEED_LIMIT ? "fast" : ""}">${v} كم/س</span>` : "";
+};
 
 /* ---------- start ---------- */
 let config;
@@ -163,7 +170,7 @@ function renderSelects() {
 function popupHtml(d) {
   const job = activeJobOf(d.id);
   return `<b>${esc(d.name)}</b><br>${esc(carLabel(d.carId))}<br>`
-    + (isOnline(d) ? `السرعة: ${Math.round(d.speed || 0)} كم/س<br>` : "خارج الدوام<br>")
+    + (isOnline(d) ? `السرعة: ${speedOf(d)} كم/س${speedOf(d) > SPEED_LIMIT ? " ⚠️" : ""}<br>` : "خارج الدوام<br>")
     + (d.battery ? `البطارية: ${d.battery}%<br>` : "")
     + `آخر تحديث: ${ago(toDate(d.updatedAt))}`
     + (job ? `<br><br>الطلب: ${esc(job.title || job.pickup)}<br>${STATUS[job.status] || ""}` : "")
@@ -182,7 +189,7 @@ function renderMap() {
   $("#driver-list").innerHTML = drivers.map(d => {
     const job = activeJobOf(d.id);
     return `<li data-id="${esc(d.id)}">
-      <span class="name"><span class="dot ${isOnline(d) ? "on" : ""}"></span>${esc(d.name)}</span>
+      <span class="name"><span class="dot ${isOnline(d) ? "on" : ""}"></span>${esc(d.name)}${speedTag(d)}</span>
       <span class="sub">${esc(carLabel(d.carId) || "بدون سيارة")}</span>
       <span class="sub">${job ? esc(STATUS[job.status] + " — " + (job.title || job.pickup)) : isOnline(d) ? "متاح" : esc(ago(toDate(d.updatedAt)))}</span>
     </li>`;
@@ -191,7 +198,7 @@ function renderMap() {
   for (const [id, m] of markers) if (!state.drivers.has(id)) { map.removeLayer(m); markers.delete(id); }
   const withPos = drivers.filter(d => typeof d.lat === "number" && typeof d.lng === "number");
   for (const d of withPos) {
-    const icon = L.divIcon({ className: "car-marker", html: `<div class="${isOnline(d) ? "on" : ""}">🚗 ${esc(d.name)}</div>`, iconSize: [0, 0] });
+    const icon = L.divIcon({ className: "car-marker", html: `<div class="${isOnline(d) ? "on" : ""} ${speedOf(d) > SPEED_LIMIT ? "fast" : ""}">🚗 ${esc(d.name)}${speedOf(d) >= 5 ? " · " + speedOf(d) + " كم/س" : ""}</div>`, iconSize: [0, 0] });
     let m = markers.get(d.id);
     if (!m) {
       m = L.marker([d.lat, d.lng], { icon }).addTo(map).bindPopup("");

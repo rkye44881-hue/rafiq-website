@@ -75,6 +75,9 @@ td select { min-width: 130px; padding: 5px 8px; }
 .car-marker { background: none; border: 0; }
 .car-marker div { background: #8a9490; color: #fff; padding: 3px 8px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,.3); transform: translate(-50%, -50%); display: inline-block; border: 2px solid #fff; }
 .car-marker div.on { background: var(--green); }
+.car-marker div.fast { background: var(--red); }
+.speed { margin-inline-start: auto; font-size: 12px; font-weight: 600; background: #e8f0fe; color: #1a5fd0; padding: 2px 8px; border-radius: 99px; }
+.speed.fast { background: #fbe9e8; color: var(--red); }
 
 @media (max-width: 760px) {
   .map-tab { flex-direction: column; }
