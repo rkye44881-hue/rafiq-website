@@ -1,9 +1,9 @@
 {
-  "apiKey": "PASTE_API_KEY",
-  "authDomain": "PASTE_PROJECT_ID.firebaseapp.com",
-  "projectId": "PASTE_PROJECT_ID",
-  "storageBucket": "PASTE_PROJECT_ID.firebasestorage.app",
-  "messagingSenderId": "PASTE_SENDER_ID",
-  "appId": "PASTE_WEB_APP_ID",
+  "apiKey": "AIzaSyCToYLVNV1gtr3hF87BR1TivyYEVleJ09I",
+  "authDomain": "rafiq-fleet.firebaseapp.com",
+  "projectId": "rafiq-fleet",
+  "storageBucket": "rafiq-fleet.firebasestorage.app",
+  "messagingSenderId": "67403747079",
+  "appId": "1:67403747079:web:d589a290d7d0c5f384ffa2",
   "androidAppId": "PASTE_ANDROID_APP_ID"
 }
