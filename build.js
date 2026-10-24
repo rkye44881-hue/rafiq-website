@@ -50,6 +50,9 @@ fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(OUT, "assets/style.c
 fs.writeFileSync(path.join(OUT, "assets/app.js"),
   fs.readFileSync(path.join(ROOT, "src/shared.js"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "src/client.js"), "utf8"));
 fs.cpSync(path.join(ROOT, "public"), OUT, { recursive: true });
+// Drivers control panel (fleet/README.md): served at /fleet/, not linked from the site
+fs.cpSync(path.join(ROOT, "fleet/dashboard"), path.join(OUT, "fleet"), { recursive: true });
+fs.copyFileSync(path.join(ROOT, "fleet/firebase-config.json"), path.join(OUT, "fleet/firebase-config.json"));
 const pixelId = (content.settings.tiktok_pixel_id || "").replace(/[^A-Za-z0-9]/g, "");
 if (pixelId) fs.writeFileSync(path.join(OUT, "tiktok-pixel.js"), fs.readFileSync(path.join(ROOT, "src/tiktok-pixel.js"), "utf8").replace("__PIXEL_ID__", pixelId));
 if (fs.existsSync(path.join(ROOT, "media"))) fs.cpSync(path.join(ROOT, "media"), path.join(OUT, "media"), { recursive: true });
@@ -62,6 +65,6 @@ fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
   + ["", "offers/", "north-coast/", "guide/", "gallery/", "private-driver-cairo/", "reviews/"].map(pg => LANGS.map(l => "  <url><loc>" + base + "/" + l + "/" + pg + "</loc><lastmod>" + TODAY + "</lastmod>" + LANGS.map(k => '<xhtml:link rel="alternate" hreflang="' + k + '" href="' + base + "/" + k + "/" + pg + '"/>').join("") + "</url>").join("\n")).join("\n")
   + "\n</urlset>\n");
-fs.writeFileSync(path.join(OUT, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: " + base + "/sitemap.xml\n");
+fs.writeFileSync(path.join(OUT, "robots.txt"), "User-agent: *\nAllow: /\nDisallow: /fleet/\nSitemap: " + base + "/sitemap.xml\n");
 
 console.log("Built " + LANGS.length + " pages into dist/");
