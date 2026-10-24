@@ -42,8 +42,15 @@ class LocationService : Service() {
     private var jobsListener: ListenerRegistration? = null
     private val knownJobs = HashSet<String>()
     private var firstJobsSnapshot = true
+    private var driverListener: ListenerRegistration? = null
+    private var carId: String? = null
     private var lastSent: Location? = null
     private var lastSentAt = 0L
+    // Route points are collected and saved together every half minute, to keep the number of writes down
+    private val pendingPoints = ArrayList<Map<String, Any>>()
+    private var pendingKm = 0.0
+    private var lastFlushAt = 0L
+    private var lastTrackPoint: Location? = null
 
     private val callback = object : LocationCallback() {
         override fun onLocationResult(result: LocationResult) {
@@ -82,13 +89,14 @@ class LocationService : Service() {
         }
         startLocation()
         listenForJobs(uid)
+        listenForCar(uid)
         return START_STICKY
     }
 
     @SuppressLint("MissingPermission")
     private fun startLocation() {
         val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, UPDATE_EVERY_MS)
-            .setMinUpdateIntervalMillis(UPDATE_EVERY_MS / 2)
+            .setMinUpdateIntervalMillis(UPDATE_EVERY_MS)
             .build()
         fused.removeLocationUpdates(callback)
         fused.requestLocationUpdates(request, callback, Looper.getMainLooper())
@@ -98,12 +106,11 @@ class LocationService : Service() {
         val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val now = System.currentTimeMillis()
         val moved = lastSent?.distanceTo(loc)?.let { it >= MIN_MOVE_METERS } ?: true
-        // Standing still: only a heartbeat every few minutes, so the panel still shows the driver as online
+        // Standing still: only a heartbeat every two minutes, so the panel still shows the driver as online
         if (!moved && now - lastSentAt < HEARTBEAT_MS) return
 
-        val batch = db.batch()
-        batch.update(
-            db.collection("drivers").document(uid), mapOf(
+        db.collection("drivers").document(uid).update(
+            mapOf(
                 "lat" to loc.latitude,
                 "lng" to loc.longitude,
                 "speed" to (if (loc.hasSpeed()) loc.speed * 3.6 else 0.0),
@@ -114,21 +121,53 @@ class LocationService : Service() {
                 "updatedAt" to FieldValue.serverTimestamp()
             )
         )
-        if (moved) {
-            val day = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date(now))
+        lastSentAt = now
+        if (moved) lastSent = loc
+
+        // Distance for the reports and oil changes: only from accurate fixes, so GPS jitter does not add kilometres
+        if (loc.accuracy <= MAX_ACCURACY_METERS) {
+            val prev = lastTrackPoint
+            if (prev == null || prev.distanceTo(loc) >= MIN_MOVE_METERS) {
+                if (prev != null) pendingKm += prev.distanceTo(loc) / 1000.0
+                lastTrackPoint = loc
+                pendingPoints += mapOf("lat" to loc.latitude, "lng" to loc.longitude, "t" to Timestamp(Date(now)))
+            }
+        }
+        if (pendingPoints.isNotEmpty() && now - lastFlushAt >= FLUSH_EVERY_MS) flush(uid, now)
+    }
+
+    private fun flush(uid: String, now: Long) {
+        val day = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date(now))
+        val batch = db.batch()
+        batch.set(
+            db.collection("tracks").document("${uid}_$day"), mapOf(
+                "driverId" to uid,
+                "date" to day,
+                "points" to FieldValue.arrayUnion(*pendingPoints.toTypedArray())
+            ), SetOptions.merge()
+        )
+        if (pendingKm > 0) {
             batch.set(
-                db.collection("tracks").document("${uid}_$day"), mapOf(
+                db.collection("kmDaily").document("${uid}_$day"), mapOf(
                     "driverId" to uid,
+                    "carId" to carId,
                     "date" to day,
-                    "points" to FieldValue.arrayUnion(
-                        mapOf("lat" to loc.latitude, "lng" to loc.longitude, "t" to Timestamp(Date(now)))
-                    )
+                    "km" to FieldValue.increment(pendingKm),
+                    "updatedAt" to FieldValue.serverTimestamp()
                 ), SetOptions.merge()
             )
-            lastSent = loc
         }
         batch.commit()
-        lastSentAt = now
+        pendingPoints.clear()
+        pendingKm = 0.0
+        lastFlushAt = now
+    }
+
+    private fun listenForCar(uid: String) {
+        if (driverListener != null) return
+        driverListener = db.collection("drivers").document(uid).addSnapshotListener { doc, _ ->
+            if (doc != null && doc.exists()) carId = doc.getString("carId")
+        }
     }
 
     private fun listenForJobs(uid: String) {
@@ -189,6 +228,7 @@ class LocationService : Service() {
 
     private fun setOffline() {
         val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        if (pendingPoints.isNotEmpty()) flush(uid, System.currentTimeMillis())
         db.collection("drivers").document(uid)
             .update(mapOf("online" to false, "updatedAt" to FieldValue.serverTimestamp()))
     }
@@ -197,15 +237,20 @@ class LocationService : Service() {
         fused.removeLocationUpdates(callback)
         jobsListener?.remove()
         jobsListener = null
+        driverListener?.remove()
+        driverListener = null
         super.onDestroy()
     }
 
     companion object {
         const val ACTION_STOP = "app.rafiq.driver.STOP"
         private const val NOTIFICATION_SHIFT = 1
-        private const val UPDATE_EVERY_MS = 20_000L
-        private const val MIN_MOVE_METERS = 25f
-        private const val HEARTBEAT_MS = 5 * 60_000L
+        // While moving the car shows on the map every 5 seconds
+        private const val UPDATE_EVERY_MS = 5_000L
+        private const val MIN_MOVE_METERS = 15f
+        private const val MAX_ACCURACY_METERS = 40f
+        private const val HEARTBEAT_MS = 2 * 60_000L
+        private const val FLUSH_EVERY_MS = 30_000L
 
         fun start(context: Context) {
             Driver.setOnShift(context, true)

@@ -4,13 +4,17 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.Network
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager
 import android.provider.Settings
+import android.text.InputType
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity() {
     private val listeners = mutableListOf<ListenerRegistration>()
     private var carListener: ListenerRegistration? = null
     private var carId: String? = null
+    private var carOdometer: Long? = null
+    private var networkCallback: ConnectivityManager.NetworkCallback? = null
 
     private lateinit var shiftButton: Button
     private lateinit var shiftState: TextView
@@ -73,6 +79,7 @@ class MainActivity : AppCompatActivity() {
             if (Driver.isOnShift(this)) endShift() else askPermissionsAndStart()
         }
         findViewById<TextView>(R.id.logout).setOnClickListener { confirmLogout() }
+        watchNetwork()
 
         // Keep tracking alive if Android restarted the app while on shift
         if (Driver.isOnShift(this) && hasLocationPermission()) LocationService.start(this)
@@ -94,6 +101,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         listeners.forEach { it.remove() }
         carListener?.remove()
+        networkCallback?.let { getSystemService(ConnectivityManager::class.java).unregisterNetworkCallback(it) }
         super.onDestroy()
     }
 
@@ -102,6 +110,7 @@ class MainActivity : AppCompatActivity() {
         val newCar = doc.getString("carId")
         if (newCar == carId) return
         carId = newCar
+        carOdometer = null
         carListener?.remove()
         val carView = findViewById<TextView>(R.id.car)
         if (newCar.isNullOrBlank()) {
@@ -112,6 +121,7 @@ class MainActivity : AppCompatActivity() {
             if (car != null && car.exists()) {
                 carView.text = listOf(car.getString("model"), car.getString("plate"))
                     .filter { !it.isNullOrBlank() }.joinToString(" • ")
+                carOdometer = (car.get("odometer") as? Number)?.toLong()
             }
         }
     }
@@ -135,16 +145,101 @@ class MainActivity : AppCompatActivity() {
         if (missing.isEmpty()) startShift() else permissionRequest.launch(missing.toTypedArray())
     }
 
+    /** With a car assigned, the shift starts with the odometer reading. */
     private fun startShift() {
+        val car = carId
+        if (car.isNullOrBlank()) {
+            beginShift(null, null)
+            return
+        }
+        val input = EditText(this).apply {
+            inputType = InputType.TYPE_CLASS_NUMBER
+            hint = getString(R.string.odometer_hint)
+            textSize = 22f
+        }
+        val box = LinearLayout(this).apply {
+            setPadding(48, 24, 48, 0)
+            addView(input, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT))
+        }
+        val dialog = AlertDialog.Builder(this)
+            .setTitle(R.string.odometer_title)
+            .setView(box)
+            .setPositiveButton(R.string.start_shift, null)
+            .setNegativeButton(R.string.cancel, null)
+            .create()
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                val km = input.text.toString().trim().toLongOrNull()
+                val last = carOdometer
+                when {
+                    km == null -> input.error = getString(R.string.odometer_empty)
+                    last != null && km < last -> input.error = getString(R.string.odometer_low, last)
+                    else -> {
+                        dialog.dismiss()
+                        beginShift(car, km)
+                    }
+                }
+            }
+        }
+        dialog.show()
+    }
+
+    private fun beginShift(car: String?, km: Long?) {
+        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        val shift = db.collection("shifts").document()
+        val batch = db.batch()
+        batch.set(
+            shift, mapOf(
+                "driverId" to uid,
+                "carId" to car,
+                "startKm" to km,
+                "date" to java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).format(java.util.Date()),
+                "startAt" to FieldValue.serverTimestamp()
+            )
+        )
+        if (car != null && km != null) {
+            batch.update(
+                db.collection("cars").document(car),
+                mapOf("odometer" to km, "odometerAt" to FieldValue.serverTimestamp(), "odometerBy" to uid)
+            )
+        }
+        // Saved in the background (also offline); the shift does not wait for it
+        batch.commit()
+        Driver.setShiftId(this, shift.id)
         LocationService.start(this)
         showShift()
         askBatteryExemption()
+    }
+
+    private fun closeShift() {
+        val id = Driver.shiftId(this) ?: return
+        db.collection("shifts").document(id).update("endAt", FieldValue.serverTimestamp())
+        Driver.setShiftId(this, null)
+    }
+
+    /** A bar at the top when the phone has no internet; locations are kept and sent once it is back. */
+    private fun watchNetwork() {
+        val bar = findViewById<TextView>(R.id.offline)
+        val cm = getSystemService(ConnectivityManager::class.java)
+        bar.visibility = if (cm.activeNetwork == null) View.VISIBLE else View.GONE
+        val cb = object : ConnectivityManager.NetworkCallback() {
+            override fun onAvailable(network: Network) {
+                runOnUiThread { bar.visibility = View.GONE }
+            }
+
+            override fun onLost(network: Network) {
+                runOnUiThread { bar.visibility = if (cm.activeNetwork == null) View.VISIBLE else View.GONE }
+            }
+        }
+        cm.registerDefaultNetworkCallback(cb)
+        networkCallback = cb
     }
 
     private fun endShift() {
         AlertDialog.Builder(this)
             .setMessage(R.string.end_shift_confirm)
             .setPositiveButton(R.string.end_shift) { _, _ ->
+                closeShift()
                 LocationService.stop(this)
                 Driver.setOnShift(this, false)
                 showShift()
@@ -168,7 +263,10 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setMessage(R.string.logout_confirm)
             .setPositiveButton(R.string.logout) { _, _ ->
-                if (Driver.isOnShift(this)) LocationService.stop(this)
+                if (Driver.isOnShift(this)) {
+                    closeShift()
+                    LocationService.stop(this)
+                }
                 Driver.setOnShift(this, false)
                 FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this, LoginActivity::class.java))

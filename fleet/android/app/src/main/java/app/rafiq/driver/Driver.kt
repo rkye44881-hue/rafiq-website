@@ -20,6 +20,15 @@ object Driver {
     fun setOnShift(context: Context, on: Boolean) {
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putBoolean(KEY_ON_SHIFT, on).apply()
     }
+
+    private const val KEY_SHIFT_ID = "shift_id"
+
+    fun shiftId(context: Context): String? =
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY_SHIFT_ID, null)
+
+    fun setShiftId(context: Context, id: String?) {
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putString(KEY_SHIFT_ID, id).apply()
+    }
 }
 
 /** Job statuses, in the order a driver moves through them. */

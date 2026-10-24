@@ -24,6 +24,11 @@
     <string name="logout">خروج</string>
     <string name="logout_confirm">تسجيل الخروج من التطبيق؟</string>
     <string name="no_car">لا توجد سيارة مسجلة</string>
+    <string name="odometer_title">عداد الكيلومتر</string>
+    <string name="odometer_hint">اكتب الرقم اللي على العداد</string>
+    <string name="odometer_empty">اكتب رقم العداد</string>
+    <string name="odometer_low">الرقم أقل من آخر قراءة (%1$d كم). راجع العداد.</string>
+    <string name="offline">⚠️ مفيش إنترنت — موقعك والطلبات هيتبعتوا أول ما النت يرجع</string>
 
     <string name="my_jobs">طلباتي</string>
     <string name="no_jobs">لا توجد طلبات حالياً</string>
