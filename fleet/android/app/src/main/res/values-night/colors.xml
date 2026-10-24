@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Night mode: dark surfaces, same brand colours -->
+<resources>
+    <color name="bg">#121614</color>
+    <color name="card">#1D2321</color>
+    <color name="text">#E6EBE9</color>
+    <color name="muted">#9AA5A1</color>
+    <color name="line">#2E3633</color>
+</resources>

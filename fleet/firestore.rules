@@ -21,9 +21,29 @@ service cloud.firestore {
         && onlyChanges(['lat', 'lng', 'speed', 'heading', 'accuracy', 'battery', 'online', 'updatedAt']));
     }
 
+    // A driver may only write the odometer reading of the car given to them
     match /cars/{id} {
       allow read: if signedIn();
       allow write: if isAdmin();
+      allow update: if signedIn()
+        && get(/databases/$(database)/documents/drivers/$(request.auth.uid)).data.carId == id
+        && onlyChanges(['odometer', 'odometerAt', 'odometerBy']);
+    }
+
+    // One document per shift: odometer at the start, start and end time
+    match /shifts/{id} {
+      allow read: if isAdmin() || (signedIn() && resource.data.driverId == request.auth.uid);
+      allow create: if signedIn() && request.resource.data.driverId == request.auth.uid;
+      allow update: if isAdmin() || (signedIn() && resource.data.driverId == request.auth.uid && onlyChanges(['endAt', 'endKm']));
+      allow delete: if isAdmin();
+    }
+
+    // Kilometres per driver per day, named <driverId>_<date>
+    match /kmDaily/{id} {
+      allow read: if isAdmin();
+      allow create, update: if signedIn() && id.matches(request.auth.uid + '_.*')
+        && request.resource.data.driverId == request.auth.uid;
+      allow delete: if isAdmin();
     }
 
     // A driver sees only the jobs given to them and may only move the status forward

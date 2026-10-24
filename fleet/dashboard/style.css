@@ -1,6 +1,19 @@
 :root {
   --brand: #0f5c4d; --brand-dark: #0a4338; --bg: #f4f6f5; --card: #fff; --text: #1b1f1e;
   --muted: #6b7471; --line: #e2e6e4; --green: #1e8e3e; --red: #c5221f; --amber: #b06000;
+  --soft: #eef2f1; --alert-bg: #fbe9e8;
+  color-scheme: light;
+}
+/* Night mode follows the phone or computer setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121614; --card: #1d2321; --text: #e6ebe9; --muted: #9aa5a1; --line: #2e3633;
+    --green: #34a853; --red: #ef6b62; --amber: #f0a64a; --soft: #27302d; --alert-bg: #3a2220;
+    color-scheme: dark;
+  }
+  .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.9) contrast(.9); }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--card); color: var(--text); }
+  input, select, textarea { background: var(--soft) !important; }
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
@@ -10,9 +23,9 @@ button { font: inherit; cursor: pointer; border: 0; border-radius: 8px; padding:
 button:hover { background: var(--brand-dark); }
 button.link { background: none; color: inherit; text-decoration: underline; padding: 6px; }
 button.small { padding: 5px 10px; font-size: 13px; }
-button.ghost { background: #eef2f1; color: var(--text); }
-button.danger { background: #fbe9e8; color: var(--red); }
-input, select, textarea { font: inherit; width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--text); }
+button.ghost { background: var(--soft); color: var(--text); }
+button.danger { background: var(--alert-bg); color: var(--red); }
+input, select, textarea { font: inherit; width: 100%; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); }
 h1, h2 { margin: 0 0 12px; }
 h2 { font-size: 18px; }
 .error { color: var(--red); min-height: 1em; margin: 0; }
@@ -52,7 +65,7 @@ h2 { font-size: 18px; }
 .form-grid label, .track-form label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
 .row-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .filters { display: flex; gap: 4px; }
-.filters button { background: #eef2f1; color: var(--text); padding: 6px 12px; }
+.filters button { background: var(--soft); color: var(--text); padding: 6px 12px; }
 .filters button.active { background: var(--brand); color: #fff; }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; }
@@ -61,7 +74,7 @@ th { color: var(--muted); font-weight: 500; font-size: 13px; }
 td .sub { color: var(--muted); font-size: 13px; }
 td select { min-width: 130px; padding: 5px 8px; }
 .actions { display: flex; gap: 4px; flex-wrap: wrap; }
-.badge { display: inline-block; padding: 3px 9px; border-radius: 99px; font-size: 12px; background: #eef2f1; white-space: nowrap; }
+.badge { display: inline-block; padding: 3px 9px; border-radius: 99px; font-size: 12px; background: var(--soft); white-space: nowrap; }
 .badge.new { background: #fff3e0; color: var(--amber); }
 .badge.accepted, .badge.onway { background: #e8f0fe; color: #1a5fd0; }
 .badge.arrived { background: #f3e8fd; color: #7b2cbf; }
@@ -72,12 +85,33 @@ td select { min-width: 130px; padding: 5px 8px; }
 .track-form { display: grid; gap: 10px; }
 .track-info { margin-top: 16px; line-height: 1.9; }
 
+/* Cars on the map: an arrow turned to where the car is heading, the name and speed under it */
 .car-marker { background: none; border: 0; }
-.car-marker div { background: #8a9490; color: #fff; padding: 3px 8px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,.3); transform: translate(-50%, -50%); display: inline-block; border: 2px solid #fff; }
-.car-marker div.on { background: var(--green); }
-.car-marker div.fast { background: var(--red); }
+.pin { position: absolute; left: 0; top: 0; transform: translate(-50%, -13px); display: flex; flex-direction: column; align-items: center; gap: 3px; pointer-events: auto; }
+.car-marker.g .pin { position: relative; transform: translateY(calc(50% - 13px)); }
+.pin .arrow { width: 26px; height: 26px; border-radius: 50%; background: #8a9490; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.35); position: relative; transition: transform .6s; }
+.pin .arrow::after { content: ""; position: absolute; left: 50%; top: 3px; transform: translateX(-50%); border: 6px solid transparent; border-bottom: 10px solid #fff; border-top: 0; }
+.pin .arrow.still::after { width: 8px; height: 8px; border: 0; border-radius: 50%; background: #fff; top: 6px; }
+.pin .label { background: #8a9490; color: #fff; padding: 2px 8px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.pin.on .arrow, .pin.on .label { background: var(--green); }
+.pin.fast .arrow, .pin.fast .label, .pin.lost .arrow, .pin.lost .label { background: var(--red); }
+.pin.dot-start .label { background: var(--green); }
+.pin.dot-end .label { background: var(--red); }
+
+.dot.lost { background: var(--red); }
 .speed { margin-inline-start: auto; font-size: 12px; font-weight: 600; background: #e8f0fe; color: #1a5fd0; padding: 2px 8px; border-radius: 99px; }
-.speed.fast { background: #fbe9e8; color: var(--red); }
+.speed.fast { background: var(--alert-bg); color: var(--red); }
+@media (prefers-color-scheme: dark) { .speed { background: #1f3350; color: #9cc0ff; } }
+.driver-list li.following { background: var(--soft); outline: 2px solid var(--green); }
+.driver-list .follow { justify-self: start; margin-top: 4px; }
+.alert { background: var(--alert-bg); color: var(--text); border-inline-start: 4px solid var(--red); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; font-size: 14px; }
+.count { display: inline-block; min-width: 18px; padding: 0 5px; border-radius: 99px; background: var(--red); color: #fff; font-size: 11px; line-height: 18px; text-align: center; }
+.soon { color: var(--amber); font-weight: 600; }
+.report-form { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; margin: 12px 0; }
+.report-form label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.report-totals { margin: 12px 0; }
+#report-periods { flex-wrap: wrap; }
+h3 { margin: 18px 0 8px; font-size: 16px; }
 
 @media (max-width: 760px) {
   .map-tab { flex-direction: column; }
