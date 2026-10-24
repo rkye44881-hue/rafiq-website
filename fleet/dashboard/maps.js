@@ -4,7 +4,8 @@
 const CAIRO = { lat: 30.0444, lng: 31.2357 };
 
 export async function loadMaps(config) {
-  if (config.googleMapsKey) {
+  // "?osm" in the address forces OpenStreetMap (also used when Google refuses the key)
+  if (config.googleMapsKey && !new URLSearchParams(location.search).has("osm")) {
     try {
       await loadGoogle(config.googleMapsKey);
       return el => new GoogleView(el, config.googleMapId || "DEMO_MAP_ID");
@@ -18,7 +19,11 @@ export async function loadMaps(config) {
 function loadGoogle(key) {
   return new Promise((resolve, reject) => {
     window.__gmReady = resolve;
-    window.gm_authFailure = () => reject(new Error("Google Maps key refused"));
+    // A refused key is reported after the map loaded: switch to OpenStreetMap so the panel keeps working
+    window.gm_authFailure = () => {
+      reject(new Error("Google Maps key refused"));
+      if (!location.search.includes("osm")) location.replace(location.pathname + "?osm=1");
+    };
     const s = document.createElement("script");
     s.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(key)
       + "&v=weekly&libraries=marker&language=ar&region=EG&loading=async&callback=__gmReady";
