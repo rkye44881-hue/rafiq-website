@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private var carListener: ListenerRegistration? = null
     private var carId: String? = null
     private var carOdometer: Long? = null
+    private var carShown = false
     private var networkCallback: ConnectivityManager.NetworkCallback? = null
 
     private lateinit var shiftButton: Button
@@ -108,7 +109,9 @@ class MainActivity : AppCompatActivity() {
     private fun showDriver(doc: DocumentSnapshot) {
         findViewById<TextView>(R.id.driver_name).text = doc.getString("name") ?: ""
         val newCar = doc.getString("carId")
-        if (newCar == carId) return
+        // The first time through also shows "no car" when none is assigned
+        if (carShown && newCar == carId) return
+        carShown = true
         carId = newCar
         carOdometer = null
         carListener?.remove()
