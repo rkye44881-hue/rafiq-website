@@ -34,10 +34,11 @@
     <header class="top">
       <strong>Go2cairo</strong>
       <nav id="tabs">
-        <button data-tab="map" class="active">الخريطة</button>
+        <button data-tab="map" class="active">الخريطة <span id="alert-count" class="count hidden"></span></button>
         <button data-tab="jobs">الطلبات</button>
         <button data-tab="drivers">السائقين</button>
         <button data-tab="cars">السيارات</button>
+        <button data-tab="reports">التقارير</button>
         <button data-tab="tracks">المسارات</button>
       </nav>
       <button id="logout" class="link">خروج</button>
@@ -46,6 +47,7 @@
     <!-- Map -->
     <section id="tab-map" class="tab map-tab">
       <aside class="side">
+        <div id="alerts"></div>
         <div class="stats" id="stats"></div>
         <ul id="driver-list" class="driver-list"></ul>
       </aside>
@@ -102,12 +104,34 @@
         <label>النوع والموديل<input name="model" placeholder="مثال: هيونداي H1 2022"></label>
         <label>اللون<input name="color"></label>
         <label>عداد الكيلومترات<input name="odometer" type="number" min="0"></label>
+        <label>تغيير الزيت كل (كم)<input name="oilEveryKm" type="number" min="0" placeholder="5000"></label>
+        <label>العداد عند آخر تغيير زيت<input name="lastOilKm" type="number" min="0"></label>
         <label>موعد الصيانة القادمة<input name="nextService" type="date"></label>
         <label>انتهاء الرخصة<input name="licenseExpiry" type="date"></label>
         <label class="wide">ملاحظات<textarea name="notes" rows="2"></textarea></label>
         <button type="submit" class="wide">حفظ السيارة</button>
       </form>
       <div class="card"><h2>السيارات</h2><div class="table-wrap"><table id="cars-table"></table></div></div>
+    </section>
+
+    <!-- Reports -->
+    <section id="tab-reports" class="tab hidden page">
+      <div class="card">
+        <h2>التقارير</h2>
+        <div class="filters" id="report-periods">
+          <button data-p="today" class="active">اليوم</button>
+          <button data-p="yesterday">أمس</button>
+          <button data-p="week">آخر 7 أيام</button>
+          <button data-p="month">هذا الشهر</button>
+          <button data-p="lastMonth">الشهر الماضي</button>
+        </div>
+        <form id="report-form" class="report-form">
+          <label>من<input name="from" type="date" required></label>
+          <label>إلى<input name="to" type="date" required></label>
+          <button type="submit">عرض التقرير</button>
+        </form>
+        <div id="report-out"></div>
+      </div>
     </section>
 
     <!-- Tracks -->
