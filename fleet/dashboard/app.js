@@ -691,16 +691,136 @@ const km = (a, b) => {
   return 2 * R * Math.asin(Math.sqrt(h));
 };
 
+const STOP_MIN_MS = 10 * 60 * 1000;   // standing this long counts as a stop
+const STOP_RADIUS_KM = 0.12;           // GPS drift while standing stays within this
+const REPLAY_BASE = 60;                // at ×1, one minute of the day plays in one second
+const REPLAY_GAP_CAP_MS = 60 * 1000;   // a long gap (stop, no signal) plays as at most one minute
+const clock = d => d ? d.toLocaleTimeString("ar-EG", { hour: "numeric", minute: "2-digit" }) : "";
+const minutes = ms => {
+  const m = Math.round(ms / 60000);
+  return m >= 60 ? Math.floor(m / 60) + " س " + (m % 60) + " د" : m + " د";
+};
+
+/* The phone only saves a point after moving 15 m, so standing still leaves a time gap
+   between points that are close together. Points within a small circle for 10+ minutes = a stop. */
+function findStops(points) {
+  const stops = [];
+  let i = 0;
+  while (i < points.length - 1) {
+    let j = i;
+    while (j + 1 < points.length && km(points[i], points[j + 1]) <= STOP_RADIUS_KM) j++;
+    // Left when the first point outside the circle was saved
+    const leftAt = j + 1 < points.length ? points[j + 1].t : points[j].t;
+    if (leftAt - points[i].t >= STOP_MIN_MS) {
+      stops.push({ lat: points[i].lat, lng: points[i].lng, from: points[i].t, to: leftAt, ms: leftAt - points[i].t, ongoing: j + 1 >= points.length });
+      i = j + 1;
+    } else {
+      i++;
+    }
+  }
+  return stops;
+}
+
+// Replay: a car moves along the day's route; the line behind it fills in as it goes
+const replay = { points: [], timeline: [], total: 0, pos: 0, speed: 1, playing: false, last: 0, drawn: 0 };
+let stopIds = [];
+
+function buildTimeline(points) {
+  // Play time for each point, with long gaps shortened so a 40-minute stop does not take 40 seconds
+  let acc = 0;
+  replay.timeline = points.map((p, i) => {
+    if (i) acc += Math.min(p.t - points[i - 1].t, REPLAY_GAP_CAP_MS);
+    return acc;
+  });
+  replay.total = acc;
+}
+
+function replayAt(pos) {
+  const tl = replay.timeline, pts = replay.points;
+  let i = 1;
+  while (i < tl.length - 1 && tl[i] < pos) i++;
+  const a = pts[i - 1], b = pts[i];
+  const span = tl[i] - tl[i - 1];
+  const f = span > 0 ? Math.min(1, Math.max(0, (pos - tl[i - 1]) / span)) : 1;
+  return {
+    i,
+    p: { lat: a.lat + (b.lat - a.lat) * f, lng: a.lng + (b.lng - a.lng) * f },
+    t: new Date(a.t.getTime() + (b.t - a.t) * f),
+    heading: Math.atan2(b.lng - a.lng, b.lat - a.lat) * 180 / Math.PI,
+    kmh: span > 0 && b.t - a.t > 0 ? km(a, b) / ((b.t - a.t) / 3600000) : 0
+  };
+}
+
+function drawReplay() {
+  const r = replayAt(replay.pos);
+  const moving = r.kmh >= 5 && r.kmh < 200;
+  trackMap.upsert("replay", r.p, `<div class="pin on replay"><span class="arrow ${moving ? "" : "still"}" style="transform:rotate(${Math.round(r.heading)}deg)"></span><span class="label">${esc(clock(r.t))}${moving ? " · " + Math.round(r.kmh) + " كم/س" : ""}</span></div>`);
+  // Redraw the played line only when it gains a point
+  if (r.i !== replay.drawn) {
+    replay.drawn = r.i;
+    trackMap.line("played", replay.points.slice(0, r.i).map(p => ({ lat: p.lat, lng: p.lng })).concat([r.p]), { color: "#34a853", weight: 6 });
+  }
+  const bar = $("#replay-bar");
+  if (bar) bar.value = Math.round(replay.pos / replay.total * 1000);
+  const now = $("#replay-time");
+  if (now) now.textContent = clock(r.t);
+}
+
+function replayFrame(ts) {
+  if (!replay.playing) return;
+  const dt = replay.last ? ts - replay.last : 0;
+  replay.last = ts;
+  replay.pos = Math.min(replay.total, replay.pos + dt * REPLAY_BASE * replay.speed);
+  drawReplay();
+  if (replay.pos >= replay.total) { setPlaying(false); return; }
+  requestAnimationFrame(replayFrame);
+}
+
+function setPlaying(on) {
+  replay.playing = on;
+  replay.last = 0;
+  const b = $("#replay-play");
+  if (b) b.textContent = on ? "⏸ إيقاف" : "▶ تشغيل";
+  if (on) {
+    if (replay.pos >= replay.total) { replay.pos = 0; replay.drawn = 0; }
+    requestAnimationFrame(replayFrame);
+  }
+}
+
+$("#track-info").addEventListener("click", e => {
+  if (e.target.id === "replay-play") setPlaying(!replay.playing);
+  const sp = e.target.closest("[data-speed]");
+  if (sp) {
+    replay.speed = Number(sp.dataset.speed);
+    document.querySelectorAll("#replay-speeds button").forEach(x => x.classList.toggle("active", x === sp));
+  }
+  const st = e.target.closest("[data-stop]");
+  if (st) {
+    const s = replay.stops[Number(st.dataset.stop)];
+    trackMap.setView(s, 17);
+    trackMap.openPopup("stop-" + st.dataset.stop);
+  }
+});
+$("#track-info").addEventListener("input", e => {
+  if (e.target.id !== "replay-bar") return;
+  replay.pos = Number(e.target.value) / 1000 * replay.total;
+  replay.drawn = -1;
+  drawReplay();
+});
+
 $("#track-form").addEventListener("submit", async e => {
   e.preventDefault();
   const { driverId, date } = Object.fromEntries(new FormData(e.target));
   const info = $("#track-info");
+  setPlaying(false);
   trackMap.line("route", []);
-  trackMap.remove("start");
-  trackMap.remove("end");
+  trackMap.line("played", []);
+  ["start", "end", "replay", ...stopIds].forEach(id => trackMap.remove(id));
+  stopIds = [];
   const snap = await getDoc(doc(db, "tracks", driverId + "_" + date));
   const points = (snap.exists() ? snap.data().points || [] : [])
     .map(p => ({ lat: p.lat, lng: p.lng, t: toDate(p.t) }))
+    .filter(p => p.t)
     .sort((a, b) => a.t - b.t);
   if (points.length < 2) {
     info.innerHTML = "لا يوجد مسار مسجّل لهذا السائق في هذا اليوم.";
@@ -709,13 +829,42 @@ $("#track-form").addEventListener("submit", async e => {
   let dist = 0;
   for (let i = 1; i < points.length; i++) dist += km(points[i - 1], points[i]);
   const path = points.map(p => ({ lat: p.lat, lng: p.lng }));
-  trackMap.line("route", path);
+  trackMap.line("route", path, { color: "#7a8a85", weight: 5, opacity: 0.7 });
   trackMap.upsert("start", path[0], '<div class="pin dot-start"><span class="label">البداية</span></div>');
   trackMap.upsert("end", path.at(-1), '<div class="pin dot-end"><span class="label">النهاية</span></div>');
+
+  const stops = findStops(points);
+  stops.forEach((s, k) => {
+    const id = "stop-" + k;
+    stopIds.push(id);
+    trackMap.upsert(id, s, `<div class="pin stop"><span class="label">⏸ ${esc(minutes(s.ms))}</span></div>`,
+      `<b>وقفة ${esc(minutes(s.ms))}</b><br>من ${esc(clock(s.from))} إلى ${esc(s.ongoing ? "آخر نقطة " + clock(s.to) : clock(s.to))}`);
+  });
   trackMap.fit(path, 17);
-  const time = d => d ? d.toLocaleTimeString("ar-EG", { hour: "numeric", minute: "2-digit" }) : "";
+
+  replay.points = points;
+  replay.stops = stops;
+  replay.pos = 0;
+  replay.drawn = -1;
+  buildTimeline(points);
+  const stopTotal = stops.reduce((t, s) => t + s.ms, 0);
+
   info.innerHTML = `<b>${esc(driverName(driverId))}</b><br>
     المسافة: <b>${dist.toFixed(1)} كم</b><br>
-    من ${time(points[0].t)} إلى ${time(points.at(-1).t)}<br>
-    <span class="sub">${points.length} نقطة</span>`;
+    من ${esc(clock(points[0].t))} إلى ${esc(clock(points.at(-1).t))}<br>
+    <div class="replay">
+      <div class="replay-row"><button id="replay-play" type="button">▶ تشغيل</button><b id="replay-time">${esc(clock(points[0].t))}</b></div>
+      <input id="replay-bar" type="range" min="0" max="1000" value="0" aria-label="مكان العرض">
+      <div class="filters" id="replay-speeds" dir="ltr">
+        <button type="button" data-speed="1" class="active">×1</button>
+        <button type="button" data-speed="2">×2</button>
+        <button type="button" data-speed="3">×3</button>
+        <button type="button" data-speed="4">×4</button>
+        <button type="button" data-speed="8">×8</button>
+      </div>
+      <p class="sub">×1 = كل دقيقة من اليوم في ثانية</p>
+    </div>
+    <h3>الوقفات (10 دقايق أو أكتر): ${stops.length}${stops.length ? " — المجموع " + esc(minutes(stopTotal)) : ""}</h3>
+    ${stops.map((s, k) => `<button type="button" class="stop-row ghost" data-stop="${k}">⏸ <b>${esc(minutes(s.ms))}</b> — ${esc(clock(s.from))} إلى ${esc(clock(s.to))}</button>`).join("") || '<p class="sub">مفيش وقفات طويلة</p>'}`;
+  drawReplay();
 });
