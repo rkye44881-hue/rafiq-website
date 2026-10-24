@@ -38,6 +38,7 @@
         <button data-tab="jobs">الطلبات</button>
         <button data-tab="drivers">السائقين</button>
         <button data-tab="cars">السيارات</button>
+        <button data-tab="expenses">المصاريف</button>
         <button data-tab="reports">التقارير</button>
         <button data-tab="tracks">المسارات</button>
       </nav>
@@ -113,6 +114,23 @@
       </form>
       <div class="card"><h2>السيارات</h2><div class="table-wrap"><table id="cars-table"></table></div></div>
     </section>
+
+    <!-- Expenses sent by drivers -->
+    <section id="tab-expenses" class="tab hidden page">
+      <div class="card">
+        <h2>المصاريف</h2>
+        <div class="filters" id="expense-periods">
+          <button data-p="today" class="active">اليوم</button>
+          <button data-p="yesterday">أمس</button>
+          <button data-p="week">آخر 7 أيام</button>
+          <button data-p="month">هذا الشهر</button>
+          <button data-p="lastMonth">الشهر الماضي</button>
+        </div>
+        <div id="expense-out"></div>
+      </div>
+    </section>
+
+    <div id="photo-view" class="photo-view hidden"><img alt="صورة الوصل"><button class="ghost">إغلاق</button></div>
 
     <!-- Reports -->
     <section id="tab-reports" class="tab hidden page">
