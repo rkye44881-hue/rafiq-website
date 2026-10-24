@@ -50,7 +50,16 @@
       <aside class="side">
         <div id="alerts"></div>
         <div class="stats" id="stats"></div>
-        <ul id="driver-list" class="driver-list"></ul>
+        <!-- Fold the list away so the map gets the screen; filter who is shown -->
+        <button id="list-toggle" class="list-toggle" type="button"></button>
+        <div id="list-body">
+          <div class="filters" id="driver-filter">
+            <button data-f="all" class="active">الكل</button>
+            <button data-f="on">متصل</button>
+            <button data-f="off">غير متصل</button>
+          </div>
+          <ul id="driver-list" class="driver-list"></ul>
+        </div>
       </aside>
       <div id="map"></div>
     </section>
