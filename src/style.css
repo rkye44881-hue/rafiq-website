@@ -688,3 +688,4 @@ body.has-picks .fab{display:none}
 .rev-card q{color:var(--ink);font-style:italic;margin-top:4px}
 .rev-empty{padding:40px 0;color:var(--muted);text-align:center;font-size:1.05rem}
 .rev-link{display:inline-block;color:var(--on-dark);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.foot a[href^="mailto:"]{color:inherit;text-decoration:underline;text-underline-offset:3px;word-break:break-all}

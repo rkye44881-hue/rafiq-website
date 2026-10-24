@@ -65,6 +65,8 @@ const phoneLinks = set => '<bdi dir="ltr">' + (set.phones || []).map(n => '<a hr
 /* small footer link to the client reviews page (the page itself is not on the home page) */
 const REV_LINK = { ar: "آراء العملاء", en: "Client reviews", fr: "Avis clients", de: "Kundenbewertungen", it: "Recensioni" };
 const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a>';
+/* the contact email as a tap-to-write link */
+const emailLink = set => '<a href="mailto:' + esc(set.email) + '">' + esc(set.email) + '</a>';
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
 const MEDIA_UI = {
@@ -210,7 +212,7 @@ function renderPage(lang, c, page) {
       + '</div></div></section>';
   };
 
-  const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+  const footer = () => '<footer class="foot"><div class="wrap"><span class="logo">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></span><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '. ' + esc(X.footer) + '</span><span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '<a class="fab" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '" aria-label="WhatsApp">' + ic("chat") + '<span>' + esc(L.whatsapp) + '</span></a>';
 
   const ncPromo = () => { const P = N.promo; return '<section class="nc-promo" id="s-north-coast"><div class="wrap"><a class="nc-card" href="/' + lang + '/north-coast/"><div class="nc-pic">' + (NC.hero_image ? '<img src="' + esc(NC.hero_image) + '" alt="' + esc(N.nav) + '" loading="lazy">' : scene("sahel")) + '</div><div class="nc-tx"><p class="eyebrow">' + esc(P.eyebrow) + '</p><h2>' + md(P.title) + '</h2><p>' + esc(P.text) + '</p><div class="hero-pills">' + P.chips.map((t, i) => '<span>' + ic(["car", "clock", "fork", "music"][i % 4]) + esc(t) + '</span>').join("") + '</div><span class="btn btn-acc">' + ic("wave") + esc(P.button) + arrow + '</span></div></a></div></section>'; };
@@ -362,7 +364,7 @@ function renderGuide(lang, c) {
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(U.intro) + '</p></div></section>'
     + '<section class="sec guide-list"><div class="wrap">' + cities.map(([cn, cat, first]) => city(cat, cn, first)).join("") + tips + svc + '</div></section>'
     + libraryStrip(lang, c)
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body
     + '<script type="application/json" id="data">' + JSON.stringify({ lang, brand, whatsapp: set.whatsapp, labels: c.labels[lang], categories: [], places: {}, tours: [] }).replace(/</g, "\\u003c") + '</script>'
     + '</body></html>';
@@ -379,7 +381,7 @@ function renderGallery(lang, c) {
     : '<img src="/media/library/' + p.slug + '.webp" alt="' + t + '" loading="lazy">';
     return '<figure class="gal-item">' + media + '<figcaption>' + t + '</figcaption></figure>'; }).join("");
   const ld = { "@context": "https://schema.org", "@type": "ImageGallery", name: G.title, inLanguage: lang, url: base + "/" + lang + "/gallery/",
-    image: photos.filter(p => p.type !== "video").map(p => ({ "@type": "ImageObject", contentUrl: base + "/media/library/" + p.slug + ".webp", url: base + "/media/library/" + p.slug + ".webp", name: photoCaption(p, lang), description: photoCaption(p, lang), creditText: brand, copyrightNotice: "© " + new Date().getFullYear() + " " + brand })) };
+    image: photos.filter(p => p.type !== "video").map(p => ({ "@type": "ImageObject", contentUrl: base + "/media/library/" + p.slug + ".webp", url: base + "/media/library/" + p.slug + ".webp", name: photoCaption(p, lang), description: photoCaption(p, lang), creditText: brand, copyrightNotice: "© " + new Date().getFullYear() + " " + brand, creator: { "@type": "Organization", name: brand, url: base + "/" + lang + "/" }, license: base + "/" + lang + "/#contact", acquireLicensePage: "https://wa.me/" + set.whatsapp })) };
   const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
     + '<title>' + esc(G.seoTitle) + '</title><meta name="description" content="' + esc(G.seoDesc) + '">'
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/gallery/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/gallery/"><link rel="canonical" href="' + base + '/' + lang + '/gallery/">'
@@ -393,7 +395,7 @@ function renderGallery(lang, c) {
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(G.title) + '</h1><p class="sub">' + esc(G.intro) + '</p><p class="sub">' + esc(G.more) + '</p></div></section>'
     + '<section class="sec gal-sec"><div class="wrap"><div class="gal">' + figs + '</div></div></section>'
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
@@ -424,7 +426,7 @@ function renderDriverPage(lang, c) {
     + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(T.msg) + '">' + ic("chat") + esc(T.cta) + '</a></p></div></section>'
     + '<section class="sec"><div class="wrap"><h2 class="svc-h">' + esc(T.faq_title) + '</h2>' + T.faq.map(f => '<details class="gcity"><summary><span>' + esc(f[0]) + '</span></summary><p class="gp-h" style="padding:14px 18px">' + esc(f[1]) + '</p></details>').join("") + '</div></section>';
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
@@ -460,7 +462,7 @@ function renderReviews(lang, c) {
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(R.title) + '</h1><p class="sub">' + esc(R.intro) + '</p></div></section>'
     + '<section class="sec"><div class="wrap">' + list + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(R.cta) + '</a></p></div></section>'
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span><span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 const L_HELLO = lang => ({ ar: "مرحبًا {B}، عايز أحجز رحلة.", en: "Hello {B}, I'd like to book a trip.", fr: "Bonjour {B}, je souhaite réserver un voyage.", de: "Hallo {B}, ich möchte eine Reise buchen.", it: "Ciao {B}, vorrei prenotare un viaggio." })[lang];
