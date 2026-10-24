@@ -84,6 +84,14 @@ td select { min-width: 130px; padding: 5px 8px; }
 
 .track-form { display: grid; gap: 10px; }
 .track-info { margin-top: 16px; line-height: 1.9; }
+.replay { margin: 12px 0; display: grid; gap: 8px; }
+.replay-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.replay-row b { font-size: 18px; }
+#replay-bar { width: 100%; padding: 0; accent-color: var(--green); }
+#replay-speeds { flex-wrap: wrap; }
+.stop-row { display: block; width: 100%; text-align: start; margin-bottom: 6px; }
+.pin.stop .label { background: var(--amber); }
+.pin.replay { z-index: 1000; }
 
 /* Cars on the map: an arrow turned to where the car is heading, the name and speed under it */
 .car-marker { background: none; border: 0; }
