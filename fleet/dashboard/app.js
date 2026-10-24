@@ -67,7 +67,7 @@ const db = getFirestore(app);
 // A second Firebase instance only for creating driver accounts, so the admin stays signed in
 const creatorAuth = getAuth(initializeApp(config, "creator"));
 
-const state = { drivers: new Map(), cars: new Map(), jobs: new Map(), jobFilter: "active", kmDaily: [], follow: null };
+const state = { drivers: new Map(), cars: new Map(), jobs: new Map(), jobFilter: "active", driverFilter: "all", kmDaily: [], follow: null };
 const makeMap = await loadMaps(config);
 let unsubs = [];
 
@@ -225,7 +225,10 @@ function renderMap() {
     + `<div class="stat"><b>${busy.length}</b><span>في طلب</span></div>`
     + `<div class="stat"><b>${[...state.jobs.values()].filter(j => j.status === "new").length}</b><span>طلبات تنتظر</span></div>`;
 
-  $("#driver-list").innerHTML = drivers.map(d => {
+  const onCount = drivers.filter(isOnline).length;
+  $("#list-toggle").innerHTML = `<span>السائقين: <span style="color:var(--green)">● ${onCount} متصل</span> • ${drivers.length - onCount} غير متصل</span><span class="arrow-icon">▲</span>`;
+  const shown = state.driverFilter === "on" ? drivers.filter(isOnline) : state.driverFilter === "off" ? drivers.filter(d => !isOnline(d)) : drivers;
+  $("#driver-list").innerHTML = shown.map(d => {
     const job = activeJobOf(d.id);
     const status = isLost(d) ? `<span class="warn">انقطع الاتصال ${esc(ago(toDate(d.updatedAt)))}</span>`
       : esc(job ? STATUS[job.status] + " — " + (job.title || job.pickup) : isOnline(d) ? "متاح" : ago(toDate(d.updatedAt)));
@@ -235,7 +238,7 @@ function renderMap() {
       <span class="sub">${status}</span>
       ${typeof d.lat === "number" ? `<button class="small ghost follow" data-follow="${esc(d.id)}">${state.follow === d.id ? "إيقاف المتابعة" : "🎯 تابع العربية"}</button>` : ""}
     </li>`;
-  }).join("") || '<li class="sub">لا يوجد سائقين بعد. أضفهم من تبويب السائقين.</li>';
+  }).join("") || (drivers.length ? '<li class="sub">لا يوجد سائقين هنا</li>' : '<li class="sub">لا يوجد سائقين بعد. أضفهم من تبويب السائقين.</li>');
 
   for (const id of map.ids()) if (!state.drivers.has(id)) { map.remove(id); anim.delete(id); map.line("trail-" + id, []); }
   const withPos = drivers.filter(d => typeof d.lat === "number" && typeof d.lng === "number");
@@ -256,6 +259,22 @@ function renderMap() {
     map.fit(withPos.map(d => ({ lat: d.lat, lng: d.lng })), 14);
   }
 }
+
+// The list folds away to give the map the screen; the choice is remembered on this device
+const side = $("#tab-map .side");
+try { if (localStorage.getItem("listFolded") === "1" || (localStorage.getItem("listFolded") === null && innerWidth < 760)) side.classList.add("folded"); } catch (e) {}
+$("#list-toggle").addEventListener("click", () => {
+  side.classList.toggle("folded");
+  try { localStorage.setItem("listFolded", side.classList.contains("folded") ? "1" : "0"); } catch (e) {}
+  setTimeout(() => map.invalidate(), 50);
+});
+$("#driver-filter").addEventListener("click", e => {
+  const b = e.target.closest("button[data-f]");
+  if (!b) return;
+  state.driverFilter = b.dataset.f;
+  document.querySelectorAll("#driver-filter button").forEach(x => x.classList.toggle("active", x === b));
+  renderMap();
+});
 
 $("#driver-list").addEventListener("click", e => {
   const f = e.target.closest("[data-follow]");
