@@ -503,11 +503,22 @@ $("#expense-periods").addEventListener("click", e => {
 });
 
 async function loadExpenses() {
-  const [from, to] = PERIODS[expensePeriod]();
   const out = $("#expense-out");
+  try {
+    await renderExpenses(out);
+  } catch (err) {
+    out.innerHTML = '<p class="warn">تعذر عرض المصاريف: ' + esc(err.code || err.message) + '</p>';
+  }
+}
+
+async function renderExpenses(out) {
+  const [from, to] = PERIODS[expensePeriod]();
   out.innerHTML = '<p class="sub">جاري التحميل…</p>';
-  const snap = await getDocs(query(collection(db, "expenses"), where("date", ">=", from), where("date", "<=", to))).catch(() => null);
-  if (!snap) { out.innerHTML = '<p class="warn">تعذر التحميل. اتأكد إن قواعد الأمان الجديدة منشورة في Firebase.</p>'; return; }
+  const snap = await getDocs(query(collection(db, "expenses"), where("date", ">=", from), where("date", "<=", to))).catch(err => err);
+  if (!snap || !snap.docs) {
+    out.innerHTML = '<p class="warn">تعذر التحميل' + (snap && snap.code === "permission-denied" ? ': قواعد الأمان الجديدة لسه ما اتنشرتش في Firebase.' : '.') + '</p>';
+    return;
+  }
   const list = snap.docs.map(d => ({ id: d.id, ...d.data() }))
     .sort((a, b) => (toDate(b.createdAt)?.getTime() || 0) - (toDate(a.createdAt)?.getTime() || 0));
   const total = list.reduce((t, x) => t + (x.amount || 0), 0);

@@ -6,5 +6,10 @@
         <item name="colorSecondary">@color/brand</item>
         <item name="android:windowBackground">@color/bg</item>
         <item name="android:statusBarColor">@color/brand_dark</item>
+        <!-- Light-on-dark readable buttons in the night theme too -->
+        <item name="colorSecondaryContainer">@color/soft</item>
+        <item name="colorOnSecondaryContainer">@color/brand_text</item>
+        <item name="alertDialogTheme">@style/Dialog.Rafiq</item>
+        <item name="materialAlertDialogTheme">@style/Dialog.Rafiq</item>
     </style>
 </resources>
