@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A job waiting after the current one -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -41,37 +42,34 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/call"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/JobButton"
             android:layout_marginEnd="6dp"
-            android:layout_weight="1"
             android:text="@string/call" />
 
-        <Button
-            android:id="@+id/nav_pickup"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/whatsapp"
+            style="@style/JobButton"
             android:layout_marginEnd="6dp"
-            android:layout_weight="1"
-            android:text="@string/nav_pickup" />
+            android:text="@string/whatsapp" />
 
-        <Button
-            android:id="@+id/nav_dropoff"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/nav_dropoff" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nav_pickup"
+            style="@style/JobButton"
+            android:text="@string/nav_pickup" />
     </LinearLayout>
 
-    <Button
+    <!-- Kept for the shared binding code; the map to the drop-off is on the current job -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nav_dropoff"
+        style="@style/JobButton"
+        android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/action"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:textSize="17sp" />
+        android:textSize="16sp" />
 </LinearLayout>

@@ -112,6 +112,7 @@ $("#tabs").addEventListener("click", e => {
   if (currentTab === "map") map.invalidate();
   if (currentTab === "tracks") trackMap.invalidate();
   if (currentTab === "cars" || currentTab === "reports") loadKm().then(() => { renderCars(); renderAlerts(); });
+  if (currentTab === "expenses") loadExpenses();
 });
 
 /* ---------- maps ---------- */
@@ -489,6 +490,78 @@ $("#cars-table").addEventListener("click", async e => {
   if (act === "delete" && confirm("حذف السيارة؟")) await deleteDoc(ref);
 });
 
+/* ---------- expenses ---------- */
+const EXPENSE_TYPES = { fuel: "⛽ بنزين", toll: "🛣 كارتة", parking: "🅿️ ركنة", wash: "🧽 غسيل", repair: "🔧 صيانة", other: "أخرى" };
+let expensePeriod = "today";
+
+$("#expense-periods").addEventListener("click", e => {
+  const b = e.target.closest("button[data-p]");
+  if (!b) return;
+  expensePeriod = b.dataset.p;
+  document.querySelectorAll("#expense-periods button").forEach(x => x.classList.toggle("active", x === b));
+  loadExpenses();
+});
+
+async function loadExpenses() {
+  const [from, to] = PERIODS[expensePeriod]();
+  const out = $("#expense-out");
+  out.innerHTML = '<p class="sub">جاري التحميل…</p>';
+  const snap = await getDocs(query(collection(db, "expenses"), where("date", ">=", from), where("date", "<=", to))).catch(() => null);
+  if (!snap) { out.innerHTML = '<p class="warn">تعذر التحميل. اتأكد إن قواعد الأمان الجديدة منشورة في Firebase.</p>'; return; }
+  const list = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    .sort((a, b) => (toDate(b.createdAt)?.getTime() || 0) - (toDate(a.createdAt)?.getTime() || 0));
+  const total = list.reduce((t, x) => t + (x.amount || 0), 0);
+  const sumBy = key => {
+    const m = new Map();
+    list.forEach(x => m.set(x[key], (m.get(x[key]) || 0) + (x.amount || 0)));
+    return [...m.entries()].sort((a, b) => b[1] - a[1]);
+  };
+  const time = d => d ? d.toLocaleString("ar-EG", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }) : "";
+  out.innerHTML = `
+    <div class="stats report-totals">
+      <div class="stat"><b>${fmt(total)}</b><span>إجمالي (جنيه)</span></div>
+      <div class="stat"><b>${list.length}</b><span>مصروف</span></div>
+      <div class="stat"><b>${list.filter(x => x.hasPhoto).length}</b><span>بوصل</span></div>
+    </div>
+    ${list.length ? `<h3>حسب النوع</h3><p>${sumBy("type").map(([k, v]) => `${esc(EXPENSE_TYPES[k] || k)}: <b>${fmt(v)}</b>`).join(" &nbsp;•&nbsp; ")}</p>
+    <h3>حسب السائق</h3><p>${sumBy("driverId").map(([k, v]) => `${esc(driverName(k))}: <b>${fmt(v)}</b>`).join(" &nbsp;•&nbsp; ")}</p>` : ""}
+    <div class="table-wrap"><table><tr><th>الوقت</th><th>السائق</th><th>النوع</th><th>المبلغ</th><th>ملاحظة</th><th>الوصل</th><th></th></tr>
+    ${list.map(x => `<tr data-id="${esc(x.id)}">
+      <td>${esc(time(toDate(x.createdAt)))}</td>
+      <td><b>${esc(driverName(x.driverId))}</b><div class="sub">${esc(carLabel(x.carId))}</div></td>
+      <td>${esc(EXPENSE_TYPES[x.type] || x.type)}</td>
+      <td><b>${fmt(x.amount || 0)}</b></td>
+      <td>${esc(x.note)}</td>
+      <td>${x.hasPhoto ? '<button class="small ghost" data-act="photo">📷 عرض</button>' : '<span class="sub">—</span>'}</td>
+      <td><button class="small danger" data-act="delete">حذف</button></td>
+    </tr>`).join("") || '<tr><td colspan="7" class="sub">لا توجد مصاريف في هذه الفترة</td></tr>'}
+    </table></div>`;
+}
+
+$("#expense-out").addEventListener("click", async e => {
+  const act = e.target.dataset.act;
+  const tr = e.target.closest("tr[data-id]");
+  if (!act || !tr) return;
+  const id = tr.dataset.id;
+  if (act === "photo") {
+    const view = $("#photo-view");
+    const img = view.querySelector("img");
+    img.removeAttribute("src");
+    view.classList.add("loading");
+    show(view, true);
+    const p = await getDoc(doc(db, "expensePhotos", id)).catch(() => null);
+    view.classList.remove("loading");
+    if (p && p.exists()) img.src = "data:image/jpeg;base64," + p.data().data;
+    else { show(view, false); alert("الصورة لسه ما وصلتش (ممكن السائق مفيش عنده نت)"); }
+  }
+  if (act === "delete" && confirm("حذف المصروف؟")) {
+    await deleteDoc(doc(db, "expensePhotos", id)).catch(() => {});
+    await deleteDoc(doc(db, "expenses", id));
+    loadExpenses();
+  }
+});
+$("#photo-view").addEventListener("click", e => { if (e.target.tagName !== "IMG") show($("#photo-view"), false); });
+
 /* ---------- reports ---------- */
 const PERIODS = {
   today: () => [localDay(), localDay()],
@@ -518,7 +591,7 @@ $("#report-form").addEventListener("submit", async e => {
   const out = $("#report-out");
   out.innerHTML = '<p class="sub">جاري الحساب…</p>';
   const inRange = q => getDocs(query(collection(db, q), where("date", ">=", from), where("date", "<=", to))).then(s => s.docs.map(d => d.data())).catch(() => []);
-  const [kms, shifts] = await Promise.all([inRange("kmDaily"), inRange("shifts")]);
+  const [kms, shifts, expenses] = await Promise.all([inRange("kmDaily"), inRange("shifts"), inRange("expenses")]);
   const jobs = [...state.jobs.values()].filter(j => {
     if (j.status !== "done") return false;
     const day = localDay(toDate(j.doneAt) || toDate(j.updatedAt) || new Date());
@@ -526,7 +599,8 @@ $("#report-form").addEventListener("submit", async e => {
   });
 
   const byDriver = new Map();
-  const row = id => byDriver.get(id) || byDriver.set(id, { days: new Set(), trips: 0, money: 0, km: 0 }).get(id);
+  const row = id => byDriver.get(id) || byDriver.set(id, { days: new Set(), trips: 0, money: 0, km: 0, spent: 0 }).get(id);
+  expenses.forEach(x => { if (x.driverId) row(x.driverId).spent += x.amount || 0; });
   shifts.forEach(s => row(s.driverId).days.add(s.date));
   kms.forEach(k => { const r = row(k.driverId); r.km += k.km || 0; r.days.add(k.date); });
   jobs.forEach(j => { if (!j.driverId) return; const r = row(j.driverId); r.trips++; r.money += num(j.price); });
@@ -536,13 +610,13 @@ $("#report-form").addEventListener("submit", async e => {
   kms.forEach(k => { if (k.carId) carRow(k.carId).km += k.km || 0; });
   shifts.forEach(s => { if (s.carId && s.startKm != null) carRow(s.carId).readings.push(Number(s.startKm)); });
 
-  const drivers = [...byDriver.entries()].map(([id, r]) => ({ name: driverName(id), days: r.days.size, trips: r.trips, money: r.money, km: r.km }));
+  const drivers = [...byDriver.entries()].map(([id, r]) => ({ name: driverName(id), days: r.days.size, trips: r.trips, money: r.money, km: r.km, spent: r.spent }));
   const cars = [...byCar.entries()].map(([id, r]) => {
     const c = state.cars.get(id);
     const odo = r.readings.length > 1 ? Math.max(...r.readings) - Math.min(...r.readings) : null;
     return { name: c ? c.plate + (c.model ? " • " + c.model : "") : "سيارة محذوفة", km: r.km, odo };
   });
-  const total = drivers.reduce((t, d) => ({ trips: t.trips + d.trips, money: t.money + d.money, km: t.km + d.km }), { trips: 0, money: 0, km: 0 });
+  const total = drivers.reduce((t, d) => ({ trips: t.trips + d.trips, money: t.money + d.money, km: t.km + d.km, spent: t.spent + d.spent }), { trips: 0, money: 0, km: 0, spent: 0 });
   lastReport = { from, to, drivers, cars };
 
   out.innerHTML = `
@@ -550,10 +624,12 @@ $("#report-form").addEventListener("submit", async e => {
       <div class="stat"><b>${fmt(total.trips)}</b><span>رحلة مكتملة</span></div>
       <div class="stat"><b>${fmt(total.money)}</b><span>الإيراد</span></div>
       <div class="stat"><b>${fmt(total.km)}</b><span>كيلومتر</span></div>
+      <div class="stat"><b>${fmt(total.spent)}</b><span>مصاريف</span></div>
+      <div class="stat"><b>${fmt(total.money - total.spent)}</b><span>الصافي</span></div>
     </div>
     <h3>السائقين</h3>
-    <div class="table-wrap"><table><tr><th>السائق</th><th>أيام الدوام</th><th>الرحلات</th><th>الإيراد</th><th>كم (GPS)</th></tr>
-    ${drivers.map(d => `<tr><td><b>${esc(d.name)}</b></td><td>${d.days}</td><td>${d.trips}</td><td>${fmt(d.money)}</td><td>${fmt(d.km)}</td></tr>`).join("") || '<tr><td colspan="5" class="sub">لا توجد بيانات في هذه الفترة</td></tr>'}
+    <div class="table-wrap"><table><tr><th>السائق</th><th>أيام الدوام</th><th>الرحلات</th><th>الإيراد</th><th>المصاريف</th><th>كم (GPS)</th></tr>
+    ${drivers.map(d => `<tr><td><b>${esc(d.name)}</b></td><td>${d.days}</td><td>${d.trips}</td><td>${fmt(d.money)}</td><td>${fmt(d.spent)}</td><td>${fmt(d.km)}</td></tr>`).join("") || '<tr><td colspan="6" class="sub">لا توجد بيانات في هذه الفترة</td></tr>'}
     </table></div>
     <h3>السيارات</h3>
     <div class="table-wrap"><table><tr><th>السيارة</th><th>كم (GPS)</th><th>كم حسب العداد</th></tr>
@@ -566,8 +642,8 @@ $("#report-form").addEventListener("submit", async e => {
 $("#report-out").addEventListener("click", e => {
   if (e.target.id !== "report-csv" || !lastReport) return;
   const r = lastReport;
-  const lines = [["الفترة", r.from + " - " + r.to], [], ["السائق", "أيام الدوام", "الرحلات", "الإيراد", "كم"]]
-    .concat(r.drivers.map(d => [d.name, d.days, d.trips, Math.round(d.money), Math.round(d.km)]))
+  const lines = [["الفترة", r.from + " - " + r.to], [], ["السائق", "أيام الدوام", "الرحلات", "الإيراد", "المصاريف", "كم"]]
+    .concat(r.drivers.map(d => [d.name, d.days, d.trips, Math.round(d.money), Math.round(d.spent), Math.round(d.km)]))
     .concat([[], ["السيارة", "كم GPS", "كم العداد"]])
     .concat(r.cars.map(c => [c.name, Math.round(c.km), c.odo ?? ""]));
   const csv = "\ufeff" + lines.map(l => l.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(",")).join("\n");

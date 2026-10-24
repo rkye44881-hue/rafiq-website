@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/TopBar">
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_expense_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView style="@style/FieldLabel" android:text="@string/expense_type" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip android:id="@+id/type_fuel" style="@style/ExpenseChip" android:checked="true" android:text="@string/type_fuel" />
+                <com.google.android.material.chip.Chip android:id="@+id/type_toll" style="@style/ExpenseChip" android:text="@string/type_toll" />
+                <com.google.android.material.chip.Chip android:id="@+id/type_parking" style="@style/ExpenseChip" android:text="@string/type_parking" />
+                <com.google.android.material.chip.Chip android:id="@+id/type_wash" style="@style/ExpenseChip" android:text="@string/type_wash" />
+                <com.google.android.material.chip.Chip android:id="@+id/type_repair" style="@style/ExpenseChip" android:text="@string/type_repair" />
+                <com.google.android.material.chip.Chip android:id="@+id/type_other" style="@style/ExpenseChip" android:text="@string/type_other" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView style="@style/FieldLabel" android:text="@string/expense_amount" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/card_bg"
+                android:hint="@string/expense_amount_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/text"
+                android:textSize="22sp" />
+
+            <TextView style="@style/FieldLabel" android:text="@string/expense_note" />
+
+            <EditText
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/card_bg"
+                android:hint="@string/expense_note_hint"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/text" />
+
+            <TextView style="@style/FieldLabel" android:text="@string/expense_photo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/take_photo"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/take_photo" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/pick_photo"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:text="@string/pick_photo" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_bg"
+                android:contentDescription="@string/expense_photo"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/red"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/save_expense"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/SectionTitle"
+                android:paddingStart="0dp"
+                android:text="@string/my_expenses" />
+
+            <LinearLayout
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

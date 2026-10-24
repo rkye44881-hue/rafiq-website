@@ -55,6 +55,19 @@ service cloud.firestore {
         && onlyChanges(['status', 'updatedAt', 'acceptedAt', 'onwayAt', 'arrivedAt', 'doneAt']));
     }
 
+    // Expenses sent by drivers (fuel, toll, …); the receipt photo is in expensePhotos under the same id
+    match /expenses/{id} {
+      allow read: if isAdmin() || (signedIn() && resource.data.driverId == request.auth.uid);
+      allow create: if signedIn() && request.resource.data.driverId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    match /expensePhotos/{id} {
+      allow read: if isAdmin() || (signedIn() && resource.data.driverId == request.auth.uid);
+      allow create: if signedIn() && request.resource.data.driverId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
     // Route history: one document per driver per day, named <driverId>_<date>
     match /tracks/{id} {
       allow read: if isAdmin();

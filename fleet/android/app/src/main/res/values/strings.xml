@@ -11,10 +11,12 @@
     <string name="login_empty">اكتب رقم الجوال وكلمة المرور</string>
     <string name="login_failed">الرقم أو كلمة المرور غير صحيحة، أو لا يوجد اتصال بالإنترنت</string>
 
-    <string name="start_shift">بدء الدوام</string>
-    <string name="end_shift">إنهاء الدوام</string>
+    <string name="start_shift">بدء\nالدوام</string>
+    <string name="end_shift">إنهاء\nالدوام</string>
+    <string name="end_shift_button">إنهاء الدوام</string>
+    <string name="start_shift_button">بدء الدوام</string>
     <string name="end_shift_confirm">إنهاء الدوام؟ سيتوقف إرسال موقعك.</string>
-    <string name="state_on">● في الدوام — موقعك يظهر للإدارة</string>
+    <string name="state_on">● في الدوام من %1$s</string>
     <string name="state_off">خارج الدوام</string>
     <string name="on_shift_title">أنت في الدوام</string>
     <string name="on_shift_text">موقعك يُرسل للإدارة</string>
@@ -39,9 +41,10 @@
     <string name="label_dropoff">إلى: %1$s</string>
     <string name="label_customer">العميل: %1$s</string>
     <string name="label_notes">ملاحظات: %1$s</string>
-    <string name="call">اتصال</string>
-    <string name="nav_pickup">خريطة الاستلام</string>
-    <string name="nav_dropoff">خريطة التوصيل</string>
+    <string name="call">📞 اتصال</string>
+    <string name="whatsapp">💬 واتساب</string>
+    <string name="nav_pickup">📍 الاستلام</string>
+    <string name="nav_dropoff">🏁 التوصيل</string>
 
     <string name="status_new">جديد</string>
     <string name="status_accepted">مقبول</string>
@@ -54,4 +57,45 @@
     <string name="action_onway">انطلقت للعميل</string>
     <string name="action_arrived">وصلت للعميل</string>
     <string name="action_done">إنهاء الرحلة</string>
+
+    <string name="hello">أهلاً 👋</string>
+    <string name="stat_trips">رحلات اليوم</string>
+    <string name="stat_km">كم اليوم</string>
+    <string name="stat_hours">ساعات الدوام</string>
+    <string name="current_job">الطلب الحالي</string>
+    <string name="other_jobs">طلبات بعدها</string>
+    <string name="duration">%1$d س %2$d د</string>
+    <string name="duration_min">%1$d دقيقة</string>
+
+    <string name="back">→</string>
+    <string name="my_trips">📋 رحلاتي</string>
+    <string name="my_trips_title">رحلاتي</string>
+    <string name="today">اليوم</string>
+    <string name="last_7_days">آخر 7 أيام</string>
+    <string name="this_month">هذا الشهر</string>
+    <string name="no_trips">لسه ما خلصتش رحلات</string>
+
+    <string name="new_expense">🧾 مصروف</string>
+    <string name="new_expense_title">مصروف جديد</string>
+    <string name="expense_type">النوع</string>
+    <string name="type_fuel">⛽ بنزين</string>
+    <string name="type_toll">🛣 كارتة</string>
+    <string name="type_parking">🅿️ ركنة</string>
+    <string name="type_wash">🧽 غسيل</string>
+    <string name="type_repair">🔧 صيانة</string>
+    <string name="type_other">أخرى</string>
+    <string name="expense_amount">المبلغ (جنيه)</string>
+    <string name="expense_amount_hint">مثلاً 500</string>
+    <string name="expense_note">ملاحظة</string>
+    <string name="expense_note_hint">اختياري</string>
+    <string name="expense_photo">صورة الوصل</string>
+    <string name="take_photo">📷 صوّر الوصل</string>
+    <string name="pick_photo">🖼 من الصور</string>
+    <string name="save_expense">حفظ المصروف</string>
+    <string name="expense_saved">اتحفظ المصروف ✅</string>
+    <string name="expense_amount_missing">اكتب المبلغ</string>
+    <string name="photo_failed">ما قدرناش نقرا الصورة، جرّب تاني</string>
+    <string name="my_expenses">آخر مصاريفي</string>
+    <string name="no_expenses">مفيش مصاريف لسه</string>
+    <string name="expense_row">%1$s • %2$s جنيه</string>
 </resources>
