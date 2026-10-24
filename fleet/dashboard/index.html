@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>لوحة السائقين — رفيق</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login -->
+  <section id="login" class="login hidden">
+    <form id="login-form" class="login-box">
+      <h1>لوحة السائقين</h1>
+      <input id="login-email" type="email" placeholder="البريد الإلكتروني" required autocomplete="username">
+      <input id="login-password" type="password" placeholder="كلمة المرور" required autocomplete="current-password">
+      <p id="login-error" class="error"></p>
+      <button type="submit">دخول</button>
+    </form>
+  </section>
+
+  <p id="setup-msg" class="setup hidden"></p>
+
+  <!-- App -->
+  <div id="app" class="hidden">
+    <header class="top">
+      <strong>رفيق — لوحة السائقين</strong>
+      <nav id="tabs">
+        <button data-tab="map" class="active">الخريطة</button>
+        <button data-tab="jobs">الطلبات</button>
+        <button data-tab="drivers">السائقين</button>
+        <button data-tab="cars">السيارات</button>
+        <button data-tab="tracks">المسارات</button>
+      </nav>
+      <button id="logout" class="link">خروج</button>
+    </header>
+
+    <!-- Map -->
+    <section id="tab-map" class="tab map-tab">
+      <aside class="side">
+        <div class="stats" id="stats"></div>
+        <ul id="driver-list" class="driver-list"></ul>
+      </aside>
+      <div id="map"></div>
+    </section>
+
+    <!-- Jobs -->
+    <section id="tab-jobs" class="tab hidden page">
+      <form id="job-form" class="card form-grid">
+        <h2>طلب جديد</h2>
+        <label>العنوان<input name="title" placeholder="مثال: توصيل مطار"></label>
+        <label>الموعد<input name="pickupTime" placeholder="مثال: اليوم 5:30 م"></label>
+        <label>من (عنوان أو رابط خرائط)<input name="pickup" required></label>
+        <label>إلى<input name="dropoff"></label>
+        <label>اسم العميل<input name="customerName"></label>
+        <label>جوال العميل<input name="customerPhone" type="tel"></label>
+        <label>السعر<input name="price"></label>
+        <label>السائق<select name="driverId" class="driver-select"></select></label>
+        <label class="wide">ملاحظات<textarea name="notes" rows="2"></textarea></label>
+        <button type="submit" class="wide">إرسال الطلب للسائق</button>
+      </form>
+      <div class="card">
+        <div class="row-head">
+          <h2>الطلبات</h2>
+          <div class="filters" id="job-filter">
+            <button data-f="active" class="active">الجارية</button>
+            <button data-f="today">اليوم</button>
+            <button data-f="all">الكل</button>
+          </div>
+        </div>
+        <div class="table-wrap"><table id="jobs-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Drivers -->
+    <section id="tab-drivers" class="tab hidden page">
+      <form id="driver-form" class="card form-grid">
+        <h2>إضافة سائق</h2>
+        <label>الاسم<input name="name" required></label>
+        <label>رقم الجوال (للدخول)<input name="phone" type="tel" required></label>
+        <label>كلمة المرور (6 أحرف أو أكثر)<input name="password" minlength="6" required></label>
+        <label>السيارة<select name="carId" class="car-select"></select></label>
+        <p id="driver-msg" class="wide msg"></p>
+        <button type="submit" class="wide">إضافة السائق</button>
+      </form>
+      <div class="card"><h2>السائقين</h2><div class="table-wrap"><table id="drivers-table"></table></div></div>
+    </section>
+
+    <!-- Cars -->
+    <section id="tab-cars" class="tab hidden page">
+      <form id="car-form" class="card form-grid">
+        <h2>إضافة سيارة</h2>
+        <label>رقم اللوحة<input name="plate" required></label>
+        <label>النوع والموديل<input name="model" placeholder="مثال: هيونداي H1 2022"></label>
+        <label>اللون<input name="color"></label>
+        <label>عداد الكيلومترات<input name="odometer" type="number" min="0"></label>
+        <label>موعد الصيانة القادمة<input name="nextService" type="date"></label>
+        <label>انتهاء الرخصة<input name="licenseExpiry" type="date"></label>
+        <label class="wide">ملاحظات<textarea name="notes" rows="2"></textarea></label>
+        <button type="submit" class="wide">حفظ السيارة</button>
+      </form>
+      <div class="card"><h2>السيارات</h2><div class="table-wrap"><table id="cars-table"></table></div></div>
+    </section>
+
+    <!-- Tracks -->
+    <section id="tab-tracks" class="tab hidden map-tab">
+      <aside class="side">
+        <form id="track-form" class="track-form">
+          <label>السائق<select name="driverId" class="driver-select" required></select></label>
+          <label>اليوم<input name="date" type="date" required></label>
+          <button type="submit">عرض المسار</button>
+        </form>
+        <div id="track-info" class="track-info"></div>
+      </aside>
+      <div id="track-map"></div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

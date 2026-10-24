@@ -16,3 +16,9 @@
 # Photos: keep for a week, then check for a newer copy.
 /media/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Drivers control panel: also talks to Firebase and loads the map from unpkg and OpenStreetMap.
+/fleet/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.gstatic.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://*.googleapis.com https://www.gstatic.com wss://*.firebaseio.com; frame-src https://*.firebaseapp.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  Cache-Control: no-cache

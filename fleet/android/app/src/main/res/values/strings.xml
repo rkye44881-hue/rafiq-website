@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">رفيق للسائقين</string>
+    <string name="channel_shift">الدوام</string>
+    <string name="channel_jobs">الطلبات الجديدة</string>
+
+    <string name="login_title">تسجيل دخول السائق</string>
+    <string name="phone">رقم الجوال</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">دخول</string>
+    <string name="login_empty">اكتب رقم الجوال وكلمة المرور</string>
+    <string name="login_failed">الرقم أو كلمة المرور غير صحيحة، أو لا يوجد اتصال بالإنترنت</string>
+
+    <string name="start_shift">بدء الدوام</string>
+    <string name="end_shift">إنهاء الدوام</string>
+    <string name="end_shift_confirm">إنهاء الدوام؟ سيتوقف إرسال موقعك.</string>
+    <string name="state_on">● في الدوام — موقعك يظهر للإدارة</string>
+    <string name="state_off">خارج الدوام</string>
+    <string name="on_shift_title">أنت في الدوام</string>
+    <string name="on_shift_text">موقعك يُرسل للإدارة</string>
+    <string name="location_needed">التطبيق يحتاج إذن الموقع عشان تبدأ الدوام. افتح الإعدادات واسمح بالموقع.</string>
+    <string name="open_settings">فتح الإعدادات</string>
+    <string name="cancel">إلغاء</string>
+    <string name="logout">خروج</string>
+    <string name="logout_confirm">تسجيل الخروج من التطبيق؟</string>
+    <string name="no_car">لا توجد سيارة مسجلة</string>
+
+    <string name="my_jobs">طلباتي</string>
+    <string name="no_jobs">لا توجد طلبات حالياً</string>
+    <string name="new_job">طلب جديد</string>
+    <string name="job">طلب</string>
+    <string name="label_time">الموعد: %1$s</string>
+    <string name="label_pickup">من: %1$s</string>
+    <string name="label_dropoff">إلى: %1$s</string>
+    <string name="label_customer">العميل: %1$s</string>
+    <string name="label_notes">ملاحظات: %1$s</string>
+    <string name="call">اتصال</string>
+    <string name="nav_pickup">خريطة الاستلام</string>
+    <string name="nav_dropoff">خريطة التوصيل</string>
+
+    <string name="status_new">جديد</string>
+    <string name="status_accepted">مقبول</string>
+    <string name="status_onway">في الطريق للعميل</string>
+    <string name="status_arrived">مع العميل</string>
+    <string name="status_done">تم</string>
+    <string name="status_cancelled">ملغي</string>
+
+    <string name="action_accept">قبول الطلب</string>
+    <string name="action_onway">انطلقت للعميل</string>
+    <string name="action_arrived">وصلت للعميل</string>
+    <string name="action_done">إنهاء الرحلة</string>
+</resources>

@@ -1,0 +1,43 @@
+# Builds the drivers' Android app (fleet/android) and publishes it as the "driver-app" release.
+name: Driver app (Android)
+
+on:
+  push:
+    paths:
+      - "fleet/android/**"
+      - "fleet/firebase-config.json"
+      - ".github/workflows/driver-app.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: fleet/android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build APK
+        run: ./gradlew assembleDebug --no-daemon
+      - name: Rename APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk rafiq-driver.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rafiq-driver
+          path: fleet/android/rafiq-driver.apk
+      # Fixed download link for the drivers' phones:
+      # https://github.com/rkye44881-hue/rafiq-website/releases/download/driver-app/rafiq-driver.apk
+      - name: Publish download link
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete driver-app --yes --cleanup-tag || true
+          gh release create driver-app rafiq-driver.apk --target "$GITHUB_SHA" --title "Rafiq driver app" --notes "Android app for Rafiq drivers. Open this link on the phone to install." --latest
