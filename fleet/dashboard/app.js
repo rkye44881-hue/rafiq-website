@@ -764,6 +764,7 @@ function drawReplay() {
   if (bar) bar.value = Math.round(replay.pos / replay.total * 1000);
   const now = $("#replay-time");
   if (now) now.textContent = clock(r.t);
+  $("#float-time").textContent = clock(r.t);
 }
 
 function replayFrame(ts) {
@@ -781,6 +782,7 @@ function setPlaying(on) {
   replay.last = 0;
   const b = $("#replay-play");
   if (b) b.textContent = on ? "⏸ إيقاف" : "▶ تشغيل";
+  $("#float-play").textContent = on ? "⏸" : "▶";
   if (on) {
     if (replay.pos >= replay.total) { replay.pos = 0; replay.drawn = 0; }
     requestAnimationFrame(replayFrame);
@@ -790,10 +792,7 @@ function setPlaying(on) {
 $("#track-info").addEventListener("click", e => {
   if (e.target.id === "replay-play") setPlaying(!replay.playing);
   const sp = e.target.closest("[data-speed]");
-  if (sp) {
-    replay.speed = Number(sp.dataset.speed);
-    document.querySelectorAll("#replay-speeds button").forEach(x => x.classList.toggle("active", x === sp));
-  }
+  if (sp) setSpeed(Number(sp.dataset.speed));
   const st = e.target.closest("[data-stop]");
   if (st) {
     const s = replay.stops[Number(st.dataset.stop)];
@@ -801,6 +800,23 @@ $("#track-info").addEventListener("click", e => {
     trackMap.openPopup("stop-" + st.dataset.stop);
   }
 });
+const SPEEDS = [1, 2, 3, 4, 8];
+function setSpeed(v) {
+  replay.speed = v;
+  document.querySelectorAll("#replay-speeds button").forEach(x => x.classList.toggle("active", Number(x.dataset.speed) === v));
+  $("#float-speed").textContent = "×" + v;
+}
+$("#float-play").addEventListener("click", () => setPlaying(!replay.playing));
+$("#float-speed").addEventListener("click", () => setSpeed(SPEEDS[(SPEEDS.indexOf(replay.speed) + 1) % SPEEDS.length]));
+
+// Full-screen map: one button hides the bars and side panel, the same button brings them back
+document.querySelectorAll(".full-btn").forEach(btn => btn.addEventListener("click", () => {
+  const on = document.body.classList.toggle("full-map");
+  document.querySelectorAll(".full-btn").forEach(b => b.textContent = on ? "✕ رجوع" : "⛶ كامل الشاشة");
+  show($("#replay-float"), on && replay.points.length > 1);
+  setTimeout(() => { map.invalidate(); trackMap.invalidate(); }, 60);
+}));
+
 $("#track-info").addEventListener("input", e => {
   if (e.target.id !== "replay-bar") return;
   replay.pos = Number(e.target.value) / 1000 * replay.total;
@@ -867,4 +883,6 @@ $("#track-form").addEventListener("submit", async e => {
     <h3>الوقفات (10 دقايق أو أكتر): ${stops.length}${stops.length ? " — المجموع " + esc(minutes(stopTotal)) : ""}</h3>
     ${stops.map((s, k) => `<button type="button" class="stop-row ghost" data-stop="${k}">⏸ <b>${esc(minutes(s.ms))}</b> — ${esc(clock(s.from))} إلى ${esc(clock(s.to))}</button>`).join("") || '<p class="sub">مفيش وقفات طويلة</p>'}`;
   drawReplay();
+  setSpeed(replay.speed);
+  show($("#replay-float"), document.body.classList.contains("full-map"));
 });

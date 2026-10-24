@@ -61,7 +61,10 @@
           <ul id="driver-list" class="driver-list"></ul>
         </div>
       </aside>
-      <div id="map"></div>
+      <div class="map-wrap">
+        <div id="map"></div>
+        <button type="button" class="full-btn" title="الخريطة بكامل الشاشة">⛶ كامل الشاشة</button>
+      </div>
     </section>
 
     <!-- Jobs -->
@@ -171,7 +174,16 @@
         </form>
         <div id="track-info" class="track-info"></div>
       </aside>
-      <div id="track-map"></div>
+      <div class="map-wrap">
+        <div id="track-map"></div>
+        <button type="button" class="full-btn" title="الخريطة بكامل الشاشة">⛶ كامل الشاشة</button>
+        <!-- Replay controls that stay on the map in full screen -->
+        <div id="replay-float" class="replay-float hidden">
+          <button type="button" id="float-play">▶</button>
+          <b id="float-time"></b>
+          <button type="button" id="float-speed" dir="ltr">×1</button>
+        </div>
+      </div>
     </section>
   </div>
 
