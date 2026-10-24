@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">رفيق للسائقين</string>
+    <string name="app_name">Go2cairo</string>
     <string name="channel_shift">الدوام</string>
     <string name="channel_jobs">الطلبات الجديدة</string>
 
-    <string name="login_title">تسجيل دخول السائق</string>
+    <string name="login_title">Go2cairo — دخول السائق</string>
     <string name="phone">رقم الجوال</string>
     <string name="password">كلمة المرور</string>
     <string name="login">دخول</string>
