@@ -65,6 +65,8 @@ const phoneLinks = set => '<bdi dir="ltr">' + (set.phones || []).map(n => '<a hr
 /* small footer link to the client reviews page (the page itself is not on the home page) */
 const REV_LINK = { ar: "آراء العملاء", en: "Client reviews", fr: "Avis clients", de: "Kundenbewertungen", it: "Recensioni" };
 const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a>';
+/* the contact email as a tap-to-write link */
+const emailLink = set => '<a href="mailto:' + esc(set.email) + '">' + esc(set.email) + '</a>';
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
 const MEDIA_UI = {
@@ -424,7 +426,7 @@ function renderDriverPage(lang, c) {
     + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(T.msg) + '">' + ic("chat") + esc(T.cta) + '</a></p></div></section>'
     + '<section class="sec"><div class="wrap"><h2 class="svc-h">' + esc(T.faq_title) + '</h2>' + T.faq.map(f => '<details class="gcity"><summary><span>' + esc(f[0]) + '</span></summary><p class="gp-h" style="padding:14px 18px">' + esc(f[1]) + '</p></details>').join("") + '</div></section>';
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
-    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + esc(set.email) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
