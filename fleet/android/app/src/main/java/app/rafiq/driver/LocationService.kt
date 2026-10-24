@@ -138,17 +138,17 @@ class LocationService : Service() {
 
     private fun flush(uid: String, now: Long) {
         val day = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date(now))
-        val batch = db.batch()
-        batch.set(
-            db.collection("tracks").document("${uid}_$day"), mapOf(
+        db.collection("tracks").document("${uid}_$day").set(
+            mapOf(
                 "driverId" to uid,
                 "date" to day,
                 "points" to FieldValue.arrayUnion(*pendingPoints.toTypedArray())
             ), SetOptions.merge()
         )
+        // Separate from the route, so a refused kilometre count never loses route points
         if (pendingKm > 0) {
-            batch.set(
-                db.collection("kmDaily").document("${uid}_$day"), mapOf(
+            db.collection("kmDaily").document("${uid}_$day").set(
+                mapOf(
                     "driverId" to uid,
                     "carId" to carId,
                     "date" to day,
@@ -157,7 +157,6 @@ class LocationService : Service() {
                 ), SetOptions.merge()
             )
         }
-        batch.commit()
         pendingPoints.clear()
         pendingKm = 0.0
         lastFlushAt = now
