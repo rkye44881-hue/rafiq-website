@@ -8,6 +8,11 @@ export async function loadMaps(config) {
   if (config.googleMapsKey && !new URLSearchParams(location.search).has("osm")) {
     try {
       await loadGoogle(config.googleMapsKey);
+      // Some Google errors (API not allowed for the key, billing) only show a grey "something went wrong" box
+      // and never call gm_authFailure: if that box appears, switch to OpenStreetMap
+      setTimeout(() => {
+        if (document.querySelector(".gm-err-container")) location.replace(location.pathname + "?osm=1");
+      }, 5000);
       return el => new GoogleView(el, config.googleMapId || "DEMO_MAP_ID");
     } catch (e) {
       console.warn("Google Maps did not load, using OpenStreetMap", e);
