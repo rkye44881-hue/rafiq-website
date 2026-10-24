@@ -28,16 +28,16 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleDebug --no-daemon
       - name: Rename APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk rafiq-driver.apk
+        run: cp app/build/outputs/apk/debug/app-debug.apk go2cairo.apk
       - uses: actions/upload-artifact@v4
         with:
           name: rafiq-driver
-          path: fleet/android/rafiq-driver.apk
+          path: fleet/android/go2cairo.apk
       # Fixed download link for the drivers' phones:
-      # https://github.com/rkye44881-hue/rafiq-website/releases/download/driver-app/rafiq-driver.apk
+      # https://github.com/rkye44881-hue/rafiq-website/releases/download/driver-app/go2cairo.apk
       - name: Publish download link
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete driver-app --yes --cleanup-tag || true
-          gh release create driver-app rafiq-driver.apk --target "$GITHUB_SHA" --title "Rafiq driver app" --notes "Android app for Rafiq drivers. Open this link on the phone to install." --latest
+          gh release create driver-app go2cairo.apk --target "$GITHUB_SHA" --title "Go2cairo driver app" --notes "Go2cairo Android app for drivers. Open this link on the phone to install." --latest
