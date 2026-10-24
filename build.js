@@ -53,6 +53,14 @@ fs.cpSync(path.join(ROOT, "public"), OUT, { recursive: true });
 // Drivers control panel (fleet/README.md): served at /fleet/, not linked from the site
 fs.cpSync(path.join(ROOT, "fleet/dashboard"), path.join(OUT, "fleet"), { recursive: true });
 fs.copyFileSync(path.join(ROOT, "fleet/firebase-config.json"), path.join(OUT, "fleet/firebase-config.json"));
+{
+  // A new address on every build, so a phone (or the home-screen app) never keeps an old copy of the panel
+  const v = "?v=" + content.version;
+  const page = path.join(OUT, "fleet/index.html");
+  fs.writeFileSync(page, fs.readFileSync(page, "utf8").replace('href="style.css"', 'href="style.css' + v + '"').replace('src="app.js"', 'src="app.js' + v + '"'));
+  const app = path.join(OUT, "fleet/app.js");
+  fs.writeFileSync(app, fs.readFileSync(app, "utf8").replace('from "./maps.js"', 'from "./maps.js' + v + '"'));
+}
 const pixelId = (content.settings.tiktok_pixel_id || "").replace(/[^A-Za-z0-9]/g, "");
 if (pixelId) fs.writeFileSync(path.join(OUT, "tiktok-pixel.js"), fs.readFileSync(path.join(ROOT, "src/tiktok-pixel.js"), "utf8").replace("__PIXEL_ID__", pixelId));
 if (fs.existsSync(path.join(ROOT, "media"))) fs.cpSync(path.join(ROOT, "media"), path.join(OUT, "media"), { recursive: true });

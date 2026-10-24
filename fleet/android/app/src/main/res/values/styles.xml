@@ -92,4 +92,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">15sp</item>
     </style>
+
+    <!-- Confirm boxes (end shift, log out): buttons in a colour that reads on the dialog in day and night -->
+    <style name="Dialog.Rafiq" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="colorPrimary">@color/brand_text</item>
+        <item name="android:textSize">17sp</item>
+    </style>
 </resources>
