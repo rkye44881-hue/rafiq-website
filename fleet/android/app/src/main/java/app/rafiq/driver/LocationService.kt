@@ -157,6 +157,7 @@ class LocationService : Service() {
                 ), SetOptions.merge()
             )
         }
+        if (pendingKm > 0) Driver.addKm(this, day, pendingKm)
         pendingPoints.clear()
         pendingKm = 0.0
         lastFlushAt = now

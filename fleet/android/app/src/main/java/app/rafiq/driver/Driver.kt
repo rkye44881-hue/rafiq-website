@@ -29,6 +29,37 @@ object Driver {
     fun setShiftId(context: Context, id: String?) {
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putString(KEY_SHIFT_ID, id).apply()
     }
+
+    private const val KEY_SHIFT_START = "shift_start"
+
+    /** When the current shift started (ms), or 0 when off shift. */
+    fun shiftStart(context: Context): Long =
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getLong(KEY_SHIFT_START, 0L)
+
+    fun setShiftStart(context: Context, at: Long) {
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putLong(KEY_SHIFT_START, at).apply()
+    }
+
+    /** Kilometres driven today, kept on the phone for the driver's own summary. */
+    fun kmToday(context: Context): Double =
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getFloat("km_" + today(), 0f).toDouble()
+
+    fun addKm(context: Context, day: String, km: Double) {
+        val prefs = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        prefs.edit().putFloat("km_$day", prefs.getFloat("km_$day", 0f) + km.toFloat()).apply()
+    }
+
+    fun today(): String = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).format(java.util.Date())
+
+    /** An Egyptian mobile number in the international form WhatsApp links need. */
+    fun whatsappNumber(phone: String): String {
+        val d = phone.filter { it.isDigit() }
+        return when {
+            d.startsWith("00") -> d.substring(2)
+            d.startsWith("0") && d.length == 11 -> "20" + d.substring(1)
+            else -> d
+        }
+    }
 }
 
 /** Job statuses, in the order a driver moves through them. */

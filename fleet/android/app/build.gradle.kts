@@ -18,8 +18,8 @@ android {
         applicationId = "app.rafiq.driver"
         minSdk = 24
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.1.1"
+        versionCode = 4
+        versionName = "1.2"
         buildConfigField("String", "FIREBASE_API_KEY", str("apiKey"))
         buildConfigField("String", "FIREBASE_PROJECT_ID", str("projectId"))
         buildConfigField("String", "FIREBASE_APP_ID", str("androidAppId"))
@@ -68,4 +68,8 @@ dependencies {
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
+    // Small map on the main screen (OpenStreetMap, no key needed)
+    implementation("org.osmdroid:osmdroid-android:6.1.20")
+    // Turns receipt photos the right way up
+    implementation("androidx.exifinterface:exifinterface:1.3.7")
 }

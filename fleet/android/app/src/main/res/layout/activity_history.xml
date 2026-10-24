@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/TopBar">
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_trips_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <LinearLayout style="@style/StatCard">
+            <TextView android:id="@+id/count_today" style="@style/StatValue" />
+            <TextView style="@style/StatLabel" android:text="@string/today" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/StatCard">
+            <TextView android:id="@+id/count_week" style="@style/StatValue" />
+            <TextView style="@style/StatLabel" android:text="@string/last_7_days" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/StatCard">
+            <TextView android:id="@+id/count_month" style="@style/StatValue" />
+            <TextView style="@style/StatLabel" android:text="@string/this_month" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="@string/no_trips"
+        android:textColor="@color/muted"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="24dp" />
+    </ScrollView>
+</LinearLayout>

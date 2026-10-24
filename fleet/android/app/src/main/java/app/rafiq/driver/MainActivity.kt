@@ -9,6 +9,8 @@ import android.net.Network
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.os.PowerManager
 import android.provider.Settings
 import android.text.InputType
@@ -21,12 +23,22 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.Priority
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
+import org.osmdroid.config.Configuration
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +53,25 @@ class MainActivity : AppCompatActivity() {
     private lateinit var shiftButton: Button
     private lateinit var shiftState: TextView
     private lateinit var jobsList: LinearLayout
+    private lateinit var currentJob: android.widget.FrameLayout
     private lateinit var emptyText: TextView
+    private lateinit var mapView: MapView
+    private var myMarker: Marker? = null
+    private var jobDocs: List<DocumentSnapshot> = emptyList()
+    private val ticker = Handler(Looper.getMainLooper())
+    private val tick = object : Runnable {
+        override fun run() {
+            showShift()
+            showStats()
+            ticker.postDelayed(this, 30_000)
+        }
+    }
+    private val fused by lazy { LocationServices.getFusedLocationProviderClient(this) }
+    private val mapCallback = object : LocationCallback() {
+        override fun onLocationResult(result: LocationResult) {
+            result.lastLocation?.let { showOnMap(it.latitude, it.longitude, false) }
+        }
+    }
 
     private val permissionRequest = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -69,12 +99,25 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
+        // The map caches tiles in the app's own folder and identifies itself to OpenStreetMap
+        Configuration.getInstance().apply {
+            userAgentValue = packageName
+            osmdroidBasePath = java.io.File(cacheDir, "osm")
+            osmdroidTileCache = java.io.File(cacheDir, "osm/tiles")
+        }
         setContentView(R.layout.activity_main)
 
         shiftButton = findViewById(R.id.shift_button)
         shiftState = findViewById(R.id.shift_state)
         jobsList = findViewById(R.id.jobs)
+        currentJob = findViewById(R.id.current_job)
         emptyText = findViewById(R.id.empty)
+        findViewById<TextView>(R.id.hello).setText(R.string.hello)
+        setupMap()
+        findViewById<View>(R.id.open_history).setOnClickListener { startActivity(Intent(this, HistoryActivity::class.java)) }
+        findViewById<View>(R.id.open_expense).setOnClickListener {
+            startActivity(Intent(this, ExpenseActivity::class.java).putExtra("carId", carId))
+        }
 
         shiftButton.setOnClickListener {
             if (Driver.isOnShift(this)) endShift() else askPermissionsAndStart()
@@ -90,13 +133,81 @@ class MainActivity : AppCompatActivity() {
             if (doc != null && doc.exists()) showDriver(doc)
         }
         listeners += db.collection("jobs").whereEqualTo("driverId", user.uid).addSnapshotListener { snap, _ ->
-            if (snap != null) showJobs(snap.documents)
+            if (snap != null) {
+                jobDocs = snap.documents
+                showJobs(snap.documents)
+                showStats()
+            }
         }
     }
 
     override fun onResume() {
         super.onResume()
-        if (::shiftButton.isInitialized) showShift()
+        if (!::shiftButton.isInitialized) return
+        mapView.onResume()
+        ticker.removeCallbacks(tick)
+        ticker.post(tick)
+        followMe()
+    }
+
+    override fun onPause() {
+        if (::shiftButton.isInitialized) {
+            mapView.onPause()
+            ticker.removeCallbacks(tick)
+            fused.removeLocationUpdates(mapCallback)
+        }
+        super.onPause()
+    }
+
+    /** The small map at the top: shows where the driver is, follows them while the screen is open. */
+    private fun setupMap() {
+        mapView = findViewById(R.id.map)
+        mapView.setTileSource(TileSourceFactory.MAPNIK)
+        mapView.setMultiTouchControls(false)
+        mapView.zoomController.setVisibility(org.osmdroid.views.CustomZoomButtonsController.Visibility.NEVER)
+        mapView.controller.setZoom(15.0)
+        mapView.controller.setCenter(GeoPoint(30.0444, 31.2357))
+        // Only for looking: the page scrolls over it
+        mapView.setOnTouchListener { _, _ -> true }
+    }
+
+    private fun showOnMap(lat: Double, lng: Double, jump: Boolean) {
+        val p = GeoPoint(lat, lng)
+        val m = myMarker ?: Marker(mapView).also {
+            it.icon = ContextCompat.getDrawable(this, R.drawable.my_location)
+            it.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
+            it.setInfoWindow(null)
+            mapView.overlays.add(it)
+            myMarker = it
+        }
+        m.position = p
+        if (jump) mapView.controller.setCenter(p) else mapView.controller.animateTo(p)
+        mapView.invalidate()
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun followMe() {
+        if (!hasLocationPermission()) return
+        fused.lastLocation.addOnSuccessListener { loc -> if (loc != null) showOnMap(loc.latitude, loc.longitude, true) }
+        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5_000L).build()
+        fused.removeLocationUpdates(mapCallback)
+        fused.requestLocationUpdates(request, mapCallback, Looper.getMainLooper())
+    }
+
+    /** Today's numbers: finished trips, kilometres, hours on shift. */
+    private fun showStats() {
+        val today = Driver.today()
+        val fmt = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
+        val trips = jobDocs.count {
+            it.getString("status") == JobStatus.DONE &&
+                (it.getTimestamp("doneAt") ?: it.getTimestamp("updatedAt"))?.toDate()?.let { d -> fmt.format(d) == today } == true
+        }
+        findViewById<TextView>(R.id.stat_trips).text = trips.toString()
+        val km = Driver.kmToday(this)
+        findViewById<TextView>(R.id.stat_km).text = if (km < 10) String.format(java.util.Locale.US, "%.1f", km) else km.toInt().toString()
+        val start = Driver.shiftStart(this)
+        val mins = if (Driver.isOnShift(this) && start > 0) ((System.currentTimeMillis() - start) / 60_000).toInt() else 0
+        findViewById<TextView>(R.id.stat_hours).text = String.format(java.util.Locale.US, "%d:%02d", mins / 60, mins % 60)
     }
 
     override fun onDestroy() {
@@ -133,7 +244,14 @@ class MainActivity : AppCompatActivity() {
         val on = Driver.isOnShift(this)
         shiftButton.setText(if (on) R.string.end_shift else R.string.start_shift)
         shiftButton.backgroundTintList = ContextCompat.getColorStateList(this, if (on) R.color.red else R.color.green)
-        shiftState.setText(if (on) R.string.state_on else R.string.state_off)
+        if (on) {
+            val start = Driver.shiftStart(this)
+            val mins = if (start > 0) ((System.currentTimeMillis() - start) / 60_000).toInt() else 0
+            val since = if (mins >= 60) getString(R.string.duration, mins / 60, mins % 60) else getString(R.string.duration_min, mins)
+            shiftState.text = getString(R.string.state_on, since)
+        } else {
+            shiftState.setText(R.string.state_off)
+        }
         shiftState.setTextColor(ContextCompat.getColor(this, if (on) R.color.green else R.color.muted))
     }
 
@@ -167,7 +285,7 @@ class MainActivity : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this)
             .setTitle(R.string.odometer_title)
             .setView(box)
-            .setPositiveButton(R.string.start_shift, null)
+            .setPositiveButton(R.string.start_shift_button, null)
             .setNegativeButton(R.string.cancel, null)
             .create()
         dialog.setOnShowListener {
@@ -209,8 +327,11 @@ class MainActivity : AppCompatActivity() {
         // Saved in the background (also offline); the shift does not wait for it
         batch.commit()
         Driver.setShiftId(this, shift.id)
+        Driver.setShiftStart(this, System.currentTimeMillis())
         LocationService.start(this)
         showShift()
+        showStats()
+        followMe()
         askBatteryExemption()
     }
 
@@ -218,6 +339,7 @@ class MainActivity : AppCompatActivity() {
         val id = Driver.shiftId(this) ?: return
         db.collection("shifts").document(id).update("endAt", FieldValue.serverTimestamp())
         Driver.setShiftId(this, null)
+        Driver.setShiftStart(this, 0L)
     }
 
     /** A bar at the top when the phone has no internet; locations are kept and sent once it is back. */
@@ -241,11 +363,12 @@ class MainActivity : AppCompatActivity() {
     private fun endShift() {
         AlertDialog.Builder(this)
             .setMessage(R.string.end_shift_confirm)
-            .setPositiveButton(R.string.end_shift) { _, _ ->
+            .setPositiveButton(R.string.end_shift_button) { _, _ ->
                 closeShift()
                 LocationService.stop(this)
                 Driver.setOnShift(this, false)
                 showShift()
+                showStats()
             }
             .setNegativeButton(R.string.cancel, null)
             .show()
@@ -283,13 +406,18 @@ class MainActivity : AppCompatActivity() {
         val active = docs
             .filter { it.getString("status") != JobStatus.DONE && it.getString("status") != JobStatus.CANCELLED }
             .sortedBy { it.getTimestamp("createdAt") ?: Timestamp.now() }
+            // The job already started comes first
+            .sortedBy { if (it.getString("status") == JobStatus.NEW) 1 else 0 }
+        currentJob.removeAllViews()
         jobsList.removeAllViews()
         emptyText.visibility = if (active.isEmpty()) View.VISIBLE else View.GONE
-        for (doc in active) jobsList.addView(jobCard(doc))
+        active.firstOrNull()?.let { currentJob.addView(jobCard(it, R.layout.item_job_current, currentJob)) }
+        for (doc in active.drop(1)) jobsList.addView(jobCard(doc, R.layout.item_job, jobsList))
+        findViewById<View>(R.id.others_title).visibility = if (active.size > 1) View.VISIBLE else View.GONE
     }
 
-    private fun jobCard(doc: DocumentSnapshot): View {
-        val v = layoutInflater.inflate(R.layout.item_job, jobsList, false)
+    private fun jobCard(doc: DocumentSnapshot, layout: Int, parent: android.view.ViewGroup): View {
+        val v = layoutInflater.inflate(layout, parent, false)
         val status = doc.getString("status") ?: JobStatus.NEW
         val pickup = doc.getString("pickup") ?: ""
         val dropoff = doc.getString("dropoff") ?: ""
@@ -306,6 +434,14 @@ class MainActivity : AppCompatActivity() {
         val call = v.findViewById<Button>(R.id.call)
         call.visibility = if (phone.isBlank()) View.GONE else View.VISIBLE
         call.setOnClickListener { startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone"))) }
+        val whatsapp = v.findViewById<Button>(R.id.whatsapp)
+        whatsapp.visibility = if (phone.isBlank()) View.GONE else View.VISIBLE
+        whatsapp.setOnClickListener {
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/" + Driver.whatsappNumber(phone))))
+            } catch (_: Exception) {
+            }
+        }
 
         val navPickup = v.findViewById<Button>(R.id.nav_pickup)
         navPickup.visibility = if (pickup.isBlank()) View.GONE else View.VISIBLE
