@@ -23,49 +23,92 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <LinearLayout style="@style/StatCard">
-            <TextView android:id="@+id/count_today" style="@style/StatValue" />
-            <TextView style="@style/StatLabel" android:text="@string/today" />
-        </LinearLayout>
-
-        <LinearLayout style="@style/StatCard">
-            <TextView android:id="@+id/count_week" style="@style/StatValue" />
-            <TextView style="@style/StatLabel" android:text="@string/last_7_days" />
-        </LinearLayout>
-
-        <LinearLayout style="@style/StatCard">
-            <TextView android:id="@+id/count_month" style="@style/StatValue" />
-            <TextView style="@style/StatLabel" android:text="@string/this_month" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/empty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="32dp"
-        android:text="@string/no_trips"
-        android:textColor="@color/muted"
-        android:visibility="gone" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
         <LinearLayout
-            android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="12dp"
-            android:paddingBottom="24dp" />
+            android:paddingBottom="24dp">
+
+            <!-- Hours on shift -->
+            <TextView style="@style/SectionTitle" android:text="@string/hours_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <LinearLayout style="@style/StatCard">
+                    <TextView android:id="@+id/hours_today" style="@style/StatValue" />
+                    <TextView style="@style/StatLabel" android:text="@string/today" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/StatCard">
+                    <TextView android:id="@+id/hours_week" style="@style/StatValue" />
+                    <TextView style="@style/StatLabel" android:text="@string/last_7_days" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/StatCard">
+                    <TextView android:id="@+id/hours_month" style="@style/StatValue" />
+                    <TextView style="@style/StatLabel" android:text="@string/this_month" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp" />
+
+            <!-- Finished trips -->
+            <TextView style="@style/SectionTitle" android:text="@string/trips_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp">
+
+                <LinearLayout style="@style/StatCard">
+                    <TextView android:id="@+id/count_today" style="@style/StatValue" />
+                    <TextView style="@style/StatLabel" android:text="@string/today" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/StatCard">
+                    <TextView android:id="@+id/count_week" style="@style/StatValue" />
+                    <TextView style="@style/StatLabel" android:text="@string/last_7_days" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/StatCard">
+                    <TextView android:id="@+id/count_month" style="@style/StatValue" />
+                    <TextView style="@style/StatLabel" android:text="@string/this_month" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/no_trips"
+                android:textColor="@color/muted"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp" />
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
