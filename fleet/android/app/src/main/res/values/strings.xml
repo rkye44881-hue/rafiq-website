@@ -68,7 +68,7 @@
     <string name="duration_min">%1$d دقيقة</string>
 
     <string name="back">→</string>
-    <string name="my_trips">📋 رحلاتي</string>
+    <string name="my_trips">📋 رحلاتي وساعاتي</string>
     <string name="my_trips_title">رحلاتي</string>
     <string name="today">اليوم</string>
     <string name="last_7_days">آخر 7 أيام</string>
@@ -98,4 +98,12 @@
     <string name="my_expenses">آخر مصاريفي</string>
     <string name="no_expenses">مفيش مصاريف لسه</string>
     <string name="expense_row">%1$s • %2$s جنيه</string>
+
+    <string name="hours_title">ساعات الدوام</string>
+    <string name="trips_title">الرحلات</string>
+    <string name="hours_value">%1$d:%2$02d</string>
+    <string name="day_span">من %1$s إلى %2$s</string>
+    <string name="day_span_open">من %1$s • لسه في الدوام</string>
+    <string name="shifts_count">%1$d دوام</string>
+    <string name="no_shifts">لسه مفيش أيام دوام</string>
 </resources>
