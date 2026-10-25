@@ -629,7 +629,17 @@ $("#report-form").addEventListener("submit", async e => {
   });
 
   const byDriver = new Map();
-  const row = id => byDriver.get(id) || byDriver.set(id, { days: new Set(), trips: 0, money: 0, km: 0, spent: 0 }).get(id);
+  const row = id => byDriver.get(id) || byDriver.set(id, { days: new Set(), trips: 0, money: 0, km: 0, spent: 0, ms: 0 }).get(id);
+  /* Hours on shift: from "start shift" to "end shift". A shift still open counts until now
+     while the driver is online, else until the phone was last heard from. */
+  shifts.forEach(sh => {
+    const start = toDate(sh.startAt);
+    if (!start || !sh.driverId) return;
+    const d = state.drivers.get(sh.driverId);
+    let end = toDate(sh.endAt);
+    if (!end) end = d && isOnline(d) ? new Date() : toDate(d?.updatedAt);
+    if (end && end > start) row(sh.driverId).ms += Math.min(end - start, 24 * 3600000);
+  });
   expenses.forEach(x => { if (x.driverId) row(x.driverId).spent += x.amount || 0; });
   shifts.forEach(s => row(s.driverId).days.add(s.date));
   kms.forEach(k => { const r = row(k.driverId); r.km += k.km || 0; r.days.add(k.date); });
@@ -640,26 +650,27 @@ $("#report-form").addEventListener("submit", async e => {
   kms.forEach(k => { if (k.carId) carRow(k.carId).km += k.km || 0; });
   shifts.forEach(s => { if (s.carId && s.startKm != null) carRow(s.carId).readings.push(Number(s.startKm)); });
 
-  const drivers = [...byDriver.entries()].map(([id, r]) => ({ name: driverName(id), days: r.days.size, trips: r.trips, money: r.money, km: r.km, spent: r.spent }));
+  const drivers = [...byDriver.entries()].map(([id, r]) => ({ name: driverName(id), days: r.days.size, hours: r.ms, trips: r.trips, money: r.money, km: r.km, spent: r.spent }));
   const cars = [...byCar.entries()].map(([id, r]) => {
     const c = state.cars.get(id);
     const odo = r.readings.length > 1 ? Math.max(...r.readings) - Math.min(...r.readings) : null;
     return { name: c ? c.plate + (c.model ? " • " + c.model : "") : "سيارة محذوفة", km: r.km, odo };
   });
-  const total = drivers.reduce((t, d) => ({ trips: t.trips + d.trips, money: t.money + d.money, km: t.km + d.km, spent: t.spent + d.spent }), { trips: 0, money: 0, km: 0, spent: 0 });
+  const total = drivers.reduce((t, d) => ({ trips: t.trips + d.trips, money: t.money + d.money, km: t.km + d.km, spent: t.spent + d.spent, hours: t.hours + d.hours }), { trips: 0, money: 0, km: 0, spent: 0, hours: 0 });
   lastReport = { from, to, drivers, cars };
 
   out.innerHTML = `
     <div class="stats report-totals">
       <div class="stat"><b>${fmt(total.trips)}</b><span>رحلة مكتملة</span></div>
       <div class="stat"><b>${fmt(total.money)}</b><span>الإيراد</span></div>
+      <div class="stat"><b>${esc(minutes(total.hours))}</b><span>ساعات الدوام</span></div>
       <div class="stat"><b>${fmt(total.km)}</b><span>كيلومتر</span></div>
       <div class="stat"><b>${fmt(total.spent)}</b><span>مصاريف</span></div>
       <div class="stat"><b>${fmt(total.money - total.spent)}</b><span>الصافي</span></div>
     </div>
     <h3>السائقين</h3>
-    <div class="table-wrap"><table><tr><th>السائق</th><th>أيام الدوام</th><th>الرحلات</th><th>الإيراد</th><th>المصاريف</th><th>كم (GPS)</th></tr>
-    ${drivers.map(d => `<tr><td><b>${esc(d.name)}</b></td><td>${d.days}</td><td>${d.trips}</td><td>${fmt(d.money)}</td><td>${fmt(d.spent)}</td><td>${fmt(d.km)}</td></tr>`).join("") || '<tr><td colspan="6" class="sub">لا توجد بيانات في هذه الفترة</td></tr>'}
+    <div class="table-wrap"><table><tr><th>السائق</th><th>أيام الدوام</th><th>الساعات</th><th>الرحلات</th><th>الإيراد</th><th>المصاريف</th><th>كم (GPS)</th></tr>
+    ${drivers.map(d => `<tr><td><b>${esc(d.name)}</b></td><td>${d.days}</td><td>${esc(minutes(d.hours))}</td><td>${d.trips}</td><td>${fmt(d.money)}</td><td>${fmt(d.spent)}</td><td>${fmt(d.km)}</td></tr>`).join("") || '<tr><td colspan="7" class="sub">لا توجد بيانات في هذه الفترة</td></tr>'}
     </table></div>
     <h3>السيارات</h3>
     <div class="table-wrap"><table><tr><th>السيارة</th><th>كم (GPS)</th><th>كم حسب العداد</th></tr>
@@ -672,8 +683,8 @@ $("#report-form").addEventListener("submit", async e => {
 $("#report-out").addEventListener("click", e => {
   if (e.target.id !== "report-csv" || !lastReport) return;
   const r = lastReport;
-  const lines = [["الفترة", r.from + " - " + r.to], [], ["السائق", "أيام الدوام", "الرحلات", "الإيراد", "المصاريف", "كم"]]
-    .concat(r.drivers.map(d => [d.name, d.days, d.trips, Math.round(d.money), Math.round(d.spent), Math.round(d.km)]))
+  const lines = [["الفترة", r.from + " - " + r.to], [], ["السائق", "أيام الدوام", "الساعات", "الرحلات", "الإيراد", "المصاريف", "كم"]]
+    .concat(r.drivers.map(d => [d.name, d.days, (d.hours / 3600000).toFixed(1), d.trips, Math.round(d.money), Math.round(d.spent), Math.round(d.km)]))
     .concat([[], ["السيارة", "كم GPS", "كم العداد"]])
     .concat(r.cars.map(c => [c.name, Math.round(c.km), c.odo ?? ""]));
   const csv = "\ufeff" + lines.map(l => l.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(",")).join("\n");
