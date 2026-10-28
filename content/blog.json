@@ -2,7 +2,7 @@
   "posts": [
     {
       "slug": "pyramids-private-driver-guide",
-      "draft": true,
+      "draft": false,
       "date": "2026-10-28",
       "cover": "/media/library/pyramids-of-giza.webp",
       "cover_alt": {

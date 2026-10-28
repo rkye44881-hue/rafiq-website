@@ -65,7 +65,8 @@ const phoneLinks = set => '<bdi dir="ltr">' + (set.phones || []).map(n => '<a hr
 /* small footer link to the client reviews page (the page itself is not on the home page) */
 const REV_LINK = { ar: "آراء العملاء", en: "Client reviews", fr: "Avis clients", de: "Kundenbewertungen", it: "Recensioni" };
 const ABOUT_LINK = { ar: "عنّا", en: "About", fr: "À propos", de: "Über uns", it: "Chi siamo" };
-const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/about/">' + ABOUT_LINK[lang] + '</a>';
+const BLOG_LINK = { ar: "المدونة", en: "Blog", fr: "Blog", de: "Blog", it: "Blog" };
+const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/about/">' + ABOUT_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/blog/">' + BLOG_LINK[lang] + '</a>';
 /* the founder line shown in every footer */
 const FOUNDER_LABEL = { ar: "المؤسس", en: "Founder", fr: "Fondateur", de: "Gründer", it: "Fondatore" };
 const founderLine = (set, lang) => '<span>' + esc(FOUNDER_LABEL[lang]) + ': ' + esc(lang === "ar" ? set.founder_ar : set.founder_en) + '</span>';

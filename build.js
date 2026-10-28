@@ -86,4 +86,11 @@ fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   + "\n</urlset>\n");
 fs.writeFileSync(path.join(OUT, "robots.txt"), "User-agent: *\nAllow: /\nDisallow: /fleet/\nSitemap: " + base + "/sitemap.xml\n");
 
+// published articles go into the sitemap too (one entry per language that has the article)
+const postUrls = content.blog.filter(p => !p.draft).flatMap(p => LANGS.filter(l => p.body && p.body[l]).map(l => ({ l, slug: p.slug })));
+const postLocs = postUrls.map(u => "  <url><loc>" + base + "/" + u.l + "/blog/" + u.slug + "/</loc><lastmod>" + TODAY + "</lastmod></url>").join("\n");
+if (postLocs) {
+  const sm = fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8").replace("\n</urlset>", "\n" + postLocs + "\n</urlset>");
+  fs.writeFileSync(path.join(OUT, "sitemap.xml"), sm);
+}
 console.log("Built " + LANGS.length + " pages into dist/");
