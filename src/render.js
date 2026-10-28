@@ -324,7 +324,7 @@ function renderPage(lang, c, page) {
 
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + faq() + contact();
+    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + blogTeaser(lang, c) + faq() + contact();
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
@@ -500,6 +500,16 @@ function renderAbout(lang, c) {
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+/* home page: the latest articles, linking the blog to the home page (and the blog index) */
+const TEASER_UI = { ar: { eyebrow: "من المدونة", title: "آخر مقالات من قلب القاهرة", all: "كل المقالات" }, en: { eyebrow: "From the blog", title: "Latest from From Cairo", all: "All articles" }, fr: { eyebrow: "Du blog", title: "Derniers articles", all: "Tous les articles" }, de: { eyebrow: "Aus dem Blog", title: "Neueste Artikel", all: "Alle Artikel" }, it: { eyebrow: "Dal blog", title: "Ultimi articoli", all: "Tutti gli articoli" } };
+function blogTeaser(lang, c) {
+  const posts = blogPosts(c, lang).slice(0, 2);
+  if (!posts.length) return "";
+  const T = TEASER_UI[lang];
+  const cards = posts.map(p => '<a class="bl-card" href="/' + lang + '/blog/' + esc(p.slug) + '/"><figure><img src="' + esc(p.cover) + '" alt="' + esc(p.cover_alt[lang]) + '" width="720" height="480" loading="lazy"></figure><div class="bl-meta"><time>' + esc(p.date) + '</time></div><h3>' + esc(p.title[lang]) + '</h3><p>' + esc(p.excerpt[lang]) + '</p></a>').join("");
+  return '<section class="sec bl-teaser" id="s-blog"><div class="wrap">' + '<p class="eyebrow">' + esc(T.eyebrow) + '</p><div class="bl-head"><h2>' + esc(T.title) + '</h2><a class="svc-more" href="/' + lang + '/blog/">' + esc(T.all) + '</a></div><div class="bl-grid">' + cards + '</div></div></section>';
 }
 
 /* ---------- blog: an index and one page per article. Drafts only appear when PREVIEW=1 (for review, never on the live site) ---------- */
