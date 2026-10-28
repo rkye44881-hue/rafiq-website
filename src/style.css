@@ -724,3 +724,6 @@ body.has-picks .fab{display:none}
 .bl-body h2{font-size:clamp(1.3rem,3vw,1.6rem);margin:34px 0 10px;color:var(--dark)}
 .bl-body p{font-size:1.07rem;line-height:1.95;margin-bottom:14px;color:var(--ink)}
 .bl-cta{margin:30px 0 10px}
+.guide-hero.bl-hero h1,.bl-top h1{color:var(--on)}
+.bl-top .eyebrow{color:var(--accent)}
+.bl-top .sub{color:var(--on-dark-muted)}
