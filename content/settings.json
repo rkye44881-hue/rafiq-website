@@ -20,5 +20,10 @@
   "tiktok_url": "https://www.tiktok.com/@saiq_eg",
   "facebook_url": "https://www.facebook.com/Driver.ramadan",
   "x_url": "https://x.com/driver_in_cairo",
-  "phones": ["201201473544", "201141054441"]
+  "phones": [
+    "201201473544",
+    "201141054441"
+  ],
+  "founder_ar": "رمضان أبو خالد",
+  "founder_en": "Ramadan Abu Khaled"
 }
