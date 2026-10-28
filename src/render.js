@@ -64,7 +64,8 @@ const phoneLinks = set => '<bdi dir="ltr">' + (set.phones || []).map(n => '<a hr
 
 /* small footer link to the client reviews page (the page itself is not on the home page) */
 const REV_LINK = { ar: "آراء العملاء", en: "Client reviews", fr: "Avis clients", de: "Kundenbewertungen", it: "Recensioni" };
-const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a>';
+const ABOUT_LINK = { ar: "عنّا", en: "About", fr: "À propos", de: "Über uns", it: "Chi siamo" };
+const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/about/">' + ABOUT_LINK[lang] + '</a>';
 /* the founder line shown in every footer */
 const FOUNDER_LABEL = { ar: "المؤسس", en: "Founder", fr: "Fondateur", de: "Gründer", it: "Fondatore" };
 const founderLine = (set, lang) => '<span>' + esc(FOUNDER_LABEL[lang]) + ': ' + esc(lang === "ar" ? set.founder_ar : set.founder_en) + '</span>';
@@ -471,4 +472,33 @@ function renderReviews(lang, c) {
 }
 const L_HELLO = lang => ({ ar: "مرحبًا {B}، عايز أحجز رحلة.", en: "Hello {B}, I'd like to book a trip.", fr: "Bonjour {B}, je souhaite réserver un voyage.", de: "Hallo {B}, ich möchte eine Reise buchen.", it: "Ciao {B}, vorrei prenotare un viaggio." })[lang];
 
-module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, LANGS };
+/* ---------- about page: the founder, with his own story and figures ---------- */
+function renderAbout(lang, c) {
+  const ar = lang === "ar", A = c.about[lang], set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const ld = { "@context": "https://schema.org", "@type": "AboutPage", name: A.seoTitle, inLanguage: lang, url: base + "/" + lang + "/about/",
+    mainEntity: { "@type": "Person", name: A.name.split(" – ")[0], alternateName: "Abu Khaled", jobTitle: A.role, worksFor: { "@type": "Organization", name: brand, url: base + "/" + lang + "/" }, image: base + "/media/about-ramadan.webp" } };
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(A.seoTitle) + '</title><meta name="description" content="' + esc(A.seoDesc) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/about/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/about/"><link rel="canonical" href="' + base + '/' + lang + '/about/">'
+    + '<meta property="og:title" content="' + esc(A.seoTitle) + '"><meta property="og:description" content="' + esc(A.seoDesc) + '"><meta property="og:type" content="profile"><meta property="og:url" content="' + base + '/' + lang + '/about/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:image" content="' + esc(base + '/media/about-ramadan.webp') + '">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
+    + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
+  const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/about/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+  const stats = '<div class="ab-stats">' + A.stats.map(x => '<div class="ab-stat"><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div>').join("") + '</div>';
+  const body = '<section class="sec ab-sec"><div class="wrap ab-grid"><figure class="ab-photo"><img src="/media/about-ramadan.webp" alt="' + esc(A.photo_alt) + '" width="800" height="1000" loading="eager" fetchpriority="high"></figure>'
+    + '<div class="ab-text"><p class="eyebrow">' + esc(A.eyebrow) + '</p><h1>' + esc(A.title) + '</h1><p class="ab-name">' + esc(A.name) + ' · ' + esc(A.role) + '</p>' + stats
+    + A.paras.map(p => '<p class="ab-p">' + esc(p) + '</p>').join("")
+    + '<blockquote class="ab-quote">' + esc(A.quote) + '</blockquote>'
+    + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(A.cta) + '</a></p></div></div></section>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, LANGS };
