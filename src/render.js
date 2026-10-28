@@ -501,4 +501,64 @@ function renderAbout(lang, c) {
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, LANGS };
+/* ---------- blog: an index and one page per article. Drafts only appear when PREVIEW=1 (for review, never on the live site) ---------- */
+const BLOG_UI = {
+  ar: { name: "من قلب القاهرة", intro: "نصايح عملية لزيارة القاهرة والجيزة والساحل، من حد بيعرف الطرق كويس.", more: "اقرأ المقال", soon: "قريبًا مقالات بالعربي.", back: "كل المقالات", min: "دقايق قراءة", cta: "احجز سواق خاص على واتساب", seoTitle: "من قلب القاهرة | مدونة رحلة القاهرة", seoDesc: "نصايح عملية لزيارة القاهرة والجيزة والساحل الشمالي، من سواقين بيعرفوا الطرق.", locale: "ar_EG" },
+  en: { name: "From Cairo", intro: "Practical advice for visiting Cairo, Giza and the coast, from drivers who know the roads.", more: "Read the article", soon: "Articles in English are coming soon.", back: "All articles", min: "min read", cta: "Book a private driver on WhatsApp", seoTitle: "From Cairo | Cairo Voyage blog", seoDesc: "Practical advice for visiting Cairo, Giza and the North Coast, from drivers who know the roads.", locale: "en_US" },
+  fr: { name: "Depuis Le Caire", soon: "Les articles en français arrivent bientôt.", more: "Lire l'article", back: "Tous les articles", min: "min de lecture", cta: "Réserver un chauffeur sur WhatsApp", seoTitle: "Depuis Le Caire | Blog Cairo Voyage", seoDesc: "Conseils pratiques pour visiter Le Caire, Gizeh et la Côte Nord.", locale: "fr_FR", intro: "Conseils pratiques pour visiter Le Caire, Gizeh et la Côte Nord." },
+  de: { name: "Aus Kairo", soon: "Artikel auf Deutsch folgen bald.", more: "Artikel lesen", back: "Alle Artikel", min: "Min. Lesezeit", cta: "Privatfahrer per WhatsApp buchen", seoTitle: "Aus Kairo | Cairo Voyage Blog", seoDesc: "Praktische Tipps für Kairo, Gizeh und die Nordküste.", locale: "de_DE", intro: "Praktische Tipps für Kairo, Gizeh und die Nordküste." },
+  it: { name: "Da Il Cairo", soon: "Gli articoli in italiano arrivano presto.", more: "Leggi l'articolo", back: "Tutti gli articoli", min: "min di lettura", cta: "Prenota un autista su WhatsApp", seoTitle: "Da Il Cairo | Blog Cairo Voyage", seoDesc: "Consigli pratici per visitare il Cairo, Giza e la Costa Nord.", locale: "it_IT", intro: "Consigli pratici per visitare il Cairo, Giza e la Costa Nord." }
+};
+const blogPosts = (c, lang) => (c.blog || []).filter(p => p.body && p.body[lang] && (!p.draft || c.previewDrafts));
+function blogHead(lang, c, title, desc, path, extra) {
+  const set = c.settings, base = (set.site_url || "").replace(/\/$/, "");
+  return '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (lang === "ar" ? "rtl" : "ltr") + '" data-site="' + (lang === "ar" ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(title) + '</title><meta name="description" content="' + esc(desc) + '"><link rel="canonical" href="' + base + '/' + lang + '/' + path + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/' + path + '">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/' + path + '">'
+    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:site_name" content="' + esc(set.brand_latin) + '">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + (extra || '') + '</head><body>';
+}
+function blogHeader(lang, c, section) {
+  const set = c.settings, ar = lang === "ar";
+  return '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/blog/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+}
+function blogFoot(lang, c) {
+  const set = c.settings, ar = lang === "ar", brand = ar ? set.brand_ar : set.brand_latin;
+  return '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>';
+}
+function renderBlog(lang, c) {
+  const B = BLOG_UI[lang], set = c.settings, base = (set.site_url || "").replace(/\/$/, "");
+  const posts = blogPosts(c, lang);
+  const cards = posts.map(p => {
+    const t = p.title[lang], ex = p.excerpt[lang];
+    return '<a class="bl-card" href="/' + lang + '/blog/' + esc(p.slug) + '/"><figure><img src="' + esc(p.cover) + '" alt="' + esc(p.cover_alt[lang]) + '" width="720" height="480" loading="lazy"></figure><div class="bl-meta"><time>' + esc(p.date) + '</time></div><h2>' + esc(t) + '</h2><p>' + esc(ex) + '</p><span class="bl-more">' + esc(B.more) + ' →</span></a>';
+  }).join("");
+  const title = B.seoTitle, desc = B.seoDesc;
+  const head = blogHead(lang, c, title, desc, "blog/", '<script type="application/ld+json">' + JSON.stringify({ "@context": "https://schema.org", "@type": "Blog", name: B.name, inLanguage: lang, url: base + "/" + lang + "/blog/" }).replace(/</g, "\\u003c") + '</script>');
+  return head + '<div id="site" class="' + (lang === "ar" ? "ar" : "lt") + ' page-guide">' + blogHeader(lang, c)
+    + '<section class="sec guide-hero bl-hero"><div class="wrap"><p class="eyebrow">' + esc(set.brand_latin) + '</p><h1>' + esc(B.name) + '</h1><p class="sub">' + esc(B.intro) + '</p></div></section>'
+    + '<section class="sec"><div class="wrap">' + (cards ? '<div class="bl-grid">' + cards + '</div>' : '<p class="rev-empty">' + esc(B.soon) + '</p>') + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, B.cta) + '">' + ic("chat") + esc(B.cta) + '</a></p></div></section>'
+    + blogFoot(lang, c) + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+function renderPost(lang, c, post) {
+  const B = BLOG_UI[lang], set = c.settings, base = (set.site_url || "").replace(/\/$/, "");
+  const t = post.title[lang], ex = post.excerpt[lang];
+  const blocks = post.body[lang].map(b => {
+    if (b[0] === "h2") return '<h2>' + esc(b[1]) + '</h2>';
+    if (b[0] === "p") return '<p>' + esc(b[1]) + '</p>';
+    if (b[0] === "cta") return '<p class="bl-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, B.cta) + '">' + ic("chat") + esc(b[1]) + '</a></p>';
+    return '';
+  }).join("");
+  const ld = { "@context": "https://schema.org", "@type": "Article", headline: t, description: ex, inLanguage: lang, datePublished: post.date, dateModified: post.date, image: base + post.cover, author: { "@type": "Person", name: "Ramadan Mamdouh Younis", alternateName: "Abu Khaled" }, publisher: { "@type": "Organization", name: set.brand_latin, url: base + "/" + lang + "/" }, mainEntityOfPage: base + "/" + lang + "/blog/" + post.slug + "/" };
+  const head = blogHead(lang, c, t + " | " + set.brand_latin, ex, "blog/" + post.slug + "/", '<meta property="og:type" content="article"><meta property="og:image" content="' + esc(base + post.cover) + '"><script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script>');
+  return head + '<div id="site" class="' + (lang === "ar" ? "ar" : "lt") + ' page-guide">' + blogHeader(lang, c)
+    + '<article class="bl-post"><header class="bl-top"><div class="wrap"><p class="bl-back"><a href="/' + lang + '/blog/">← ' + esc(B.back) + '</a></p><p class="eyebrow">' + esc(B.name) + ' · <time>' + esc(post.date) + '</time></p><h1>' + esc(t) + '</h1><p class="sub">' + esc(ex) + '</p></div></header>'
+    + '<figure class="bl-cover"><img src="' + esc(post.cover) + '" alt="' + esc(post.cover_alt[lang]) + '" width="720" height="480" fetchpriority="high"></figure>'
+    + '<div class="wrap bl-body">' + blocks + '</div></article>'
+    + blogFoot(lang, c) + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, LANGS };

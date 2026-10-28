@@ -701,3 +701,26 @@ body.has-picks .fab{display:none}
 .ab-stat span{font-size:.82rem;color:var(--muted)}
 .ab-p{line-height:1.9;margin-bottom:14px;color:var(--ink)}
 .ab-quote{margin:22px 0;padding:16px 20px;border-inline-start:4px solid var(--accent);font-size:1.15rem;font-weight:700;color:var(--dark)}
+.bl-hero{padding-bottom:34px}
+.bl-grid{display:grid;gap:22px;grid-template-columns:1fr}
+@media (min-width:820px){.bl-grid{grid-template-columns:repeat(2,1fr)}}
+.bl-card{display:block;background:var(--surface);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 12px 28px rgba(27,43,87,.12);transition:transform .25s}
+.bl-card:hover{transform:translateY(-3px)}
+.bl-card figure{margin:0;aspect-ratio:3/2;overflow:hidden;background:var(--dark2)}
+.bl-card img{width:100%;height:100%;object-fit:cover;display:block}
+.bl-card h2{font-size:1.35rem;line-height:1.35;padding:0 20px;margin-top:10px}
+.bl-card p{padding:0 20px;color:var(--muted);line-height:1.7;margin-top:8px}
+.bl-meta{padding:14px 20px 0;font-size:.82rem;color:var(--accent-strong);font-weight:700;letter-spacing:.04em}
+.bl-more{display:block;padding:14px 20px 20px;font-weight:700;color:var(--accent-strong)}
+.bl-top{background:var(--dark);color:var(--on);padding:40px 0 34px}
+.bl-top .eyebrow{color:var(--accent)}
+.bl-top h1{font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.25;margin:8px 0 14px;color:var(--on)}
+.bl-top .sub{color:var(--on-dark-muted);font-size:1.1rem;line-height:1.7;max-width:46rem}
+.bl-back{margin-bottom:18px}
+.bl-back a{color:var(--on-dark-muted);text-decoration:none;font-weight:600}
+.bl-cover{margin:-24px auto 0;max-width:min(920px,calc(100% - 32px));aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;box-shadow:0 22px 44px rgba(27,43,87,.22);position:relative;z-index:1}
+.bl-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.bl-body{max-width:720px;padding:40px 16px 20px}
+.bl-body h2{font-size:clamp(1.3rem,3vw,1.6rem);margin:34px 0 10px;color:var(--dark)}
+.bl-body p{font-size:1.07rem;line-height:1.95;margin-bottom:14px;color:var(--ink)}
+.bl-cta{margin:30px 0 10px}
