@@ -194,7 +194,7 @@ function renderPage(lang, c, page) {
     + '</div></div></section>';
 
   const fleet = () => '<section class="sec" id="s-fleet"><div class="wrap">' + secHead(X.sections.fleet) + '<div class="fleet">'
-    + c.fleet.map(f => '<article class="car"><div class="shot">' + (f.image ? img(f.image, f["name_" + lang]) : skyline() + '<div class="cv">' + carSvg(f.id) + '</div>') + '</div><div class="ct"><h3>' + esc(f["name_" + lang]) + '</h3><div class="spec"><span>' + ic("user") + num(f.seats) + ' ' + esc(L.seats) + '</span><span>' + ic("bag") + num(f.bags) + ' ' + esc(L.bags) + '</span></div><p>' + esc(f["desc_" + lang]) + '</p></div></article>').join("")
+    + c.fleet.map(f => '<article class="car"><div class="shot">' + (f.image ? img(f.image, f["name_" + lang]) : skyline() + '<div class="cv">' + carSvg(f.id) + '</div>') + '</div><div class="ct"><h3>' + esc(f["name_" + lang]) + '</h3><div class="spec"><span>' + ic("user") + num(f.seats) + ' ' + esc(L.seats) + '</span>' + (f.bags != null ? '<span>' + ic("bag") + num(f.bags) + ' ' + esc(L.bags) + '</span>' : '') + '</div><p>' + esc(f["desc_" + lang]) + '</p></div></article>').join("")
     + '</div></div></section>';
 
   const steps = () => '<section class="sec dark-band" id="s-steps"><div class="wrap">' + secHead(X.sections.steps) + '<div class="steps">'

@@ -33,6 +33,21 @@
       "desc_it": "Comfort e potenza per le strade lunghe e la costa."
     },
     {
+      "id": "x70",
+      "seats": 7,
+      "image": "/media/library/jetour-x70-plus-front.webp",
+      "name_ar": "SUV · جيتور X70 Plus",
+      "desc_ar": "7 مقاعد للعيلة والمجموعات.",
+      "name_en": "SUV · Jetour X70 Plus",
+      "desc_en": "Seven seats for families and groups.",
+      "name_fr": "SUV · Jetour X70 Plus",
+      "desc_fr": "Sept places pour les familles et les groupes.",
+      "name_de": "SUV · Jetour X70 Plus",
+      "desc_de": "Sieben Sitze für Familien und Gruppen.",
+      "name_it": "SUV · Jetour X70 Plus",
+      "desc_it": "Sette posti per famiglie e gruppi."
+    },
+    {
       "id": "minivan",
       "seats": 6,
       "bags": 4,
