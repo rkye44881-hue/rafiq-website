@@ -313,6 +313,50 @@
         "de": "Video: im Jetour T2",
         "it": "Video: dentro la Jetour T2"
       }
+    },
+    {
+      "slug": "jetour-x70-plus-front",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور X70 Plus من الأمام",
+        "en": "Jetour X70 Plus, front view",
+        "fr": "Jetour X70 Plus, vue de face",
+        "de": "Jetour X70 Plus, Frontansicht",
+        "it": "Jetour X70 Plus, vista frontale"
+      }
+    },
+    {
+      "slug": "jetour-x70-plus-front-2",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور X70 Plus زاوية أمامية",
+        "en": "Jetour X70 Plus, front three-quarter view",
+        "fr": "Jetour X70 Plus, vue avant trois quarts",
+        "de": "Jetour X70 Plus, Frontansicht schräg",
+        "it": "Jetour X70 Plus, vista anteriore tre quarti"
+      }
+    },
+    {
+      "slug": "jetour-x70-plus-rear",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور X70 Plus من الخلف",
+        "en": "Jetour X70 Plus, rear view",
+        "fr": "Jetour X70 Plus, vue arrière",
+        "de": "Jetour X70 Plus, Heckansicht",
+        "it": "Jetour X70 Plus, vista posteriore"
+      }
+    },
+    {
+      "slug": "jetour-x70-plus-rear-2",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور X70 Plus زاوية خلفية",
+        "en": "Jetour X70 Plus, rear three-quarter view",
+        "fr": "Jetour X70 Plus, vue arrière trois quarts",
+        "de": "Jetour X70 Plus, Heckansicht schräg",
+        "it": "Jetour X70 Plus, vista posteriore tre quarti"
+      }
     }
   ]
 }
