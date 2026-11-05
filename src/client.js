@@ -228,3 +228,17 @@
   empty.hidden = running > 0;
   pastWrap.hidden = ended === 0;
 })();
+
+/* back to top: appears after the first screen, on the side opposite the WhatsApp button */
+(function () {
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "to-top";
+  btn.setAttribute("aria-label", document.documentElement.lang === "ar" ? "ارجع لأول الصفحة" : "Back to top");
+  btn.innerHTML = "&#8593;";
+  document.body.appendChild(btn);
+  function sync() { btn.classList.toggle("show", window.scrollY > window.innerHeight); }
+  window.addEventListener("scroll", sync, { passive: true });
+  btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+  sync();
+})();

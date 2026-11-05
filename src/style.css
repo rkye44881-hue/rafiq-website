@@ -730,3 +730,7 @@ body.has-picks .fab{display:none}
 .bl-teaser .bl-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:22px}
 .bl-teaser h3{font-size:1.2rem;line-height:1.35;padding:0 20px;margin-top:10px}
 #site .bl-top h1{color:var(--on-dark)!important}
+.to-top{position:fixed;z-index:40;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-start:calc(18px + env(safe-area-inset-left,0px));width:46px;height:46px;border-radius:50%;border:0;background:var(--dark);color:var(--on-dark);font-size:1.3rem;line-height:1;cursor:pointer;box-shadow:0 8px 20px rgba(27,43,87,.3);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--dark2)}
+.cookie:not([hidden]) ~ .to-top{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
