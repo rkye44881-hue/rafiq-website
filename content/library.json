@@ -246,6 +246,73 @@
         "de": "Video: Jetour T2 bei Nacht",
         "it": "Video: Jetour T2 di notte"
       }
+    },
+    {
+      "slug": "jetour-t2-airport-front",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور T2 قدام مطار القاهرة وقت الغروب",
+        "en": "Jetour T2 at Cairo Airport at sunset",
+        "fr": "Jetour T2 devant l'aéroport du Caire au coucher du soleil",
+        "de": "Jetour T2 am Flughafen Kairo bei Sonnenuntergang",
+        "it": "Jetour T2 all'aeroporto del Cairo al tramonto"
+      }
+    },
+    {
+      "slug": "jetour-t2-black-side",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور T2 سوداء من الجانب",
+        "en": "Black Jetour T2, side view",
+        "fr": "Jetour T2 noire, vue de côté",
+        "de": "Schwarzer Jetour T2, Seitenansicht",
+        "it": "Jetour T2 nera, vista laterale"
+      }
+    },
+    {
+      "slug": "jetour-t2-silver-historic",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور T2 فضي قدام مسجد تاريخي في القاهرة",
+        "en": "Silver Jetour T2 in front of a historic mosque in Cairo",
+        "fr": "Jetour T2 argentée devant une mosquée historique du Caire",
+        "de": "Silbener Jetour T2 vor einer historischen Moschee in Kairo",
+        "it": "Jetour T2 argento davanti a una moschea storica del Cairo"
+      }
+    },
+    {
+      "slug": "jetour-t2-interior-seats",
+      "category": "cars",
+      "caption": {
+        "ar": "داخل جيتور T2 بمقاعد جلد وفتحة سقف",
+        "en": "Jetour T2 interior with leather seats and sunroof",
+        "fr": "Intérieur de la Jetour T2 avec sièges cuir et toit ouvrant",
+        "de": "Innenraum des Jetour T2 mit Ledersitzen und Schiebedach",
+        "it": "Interno della Jetour T2 con sedili in pelle e tetto apribile"
+      }
+    },
+    {
+      "slug": "jetour-t2-silver-rear",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور T2 فضي من الخلف قدام الجبل",
+        "en": "Silver Jetour T2 from behind, by the hills",
+        "fr": "Jetour T2 argentée vue de l'arrière, devant les collines",
+        "de": "Silbener Jetour T2 von hinten, vor den Hügeln",
+        "it": "Jetour T2 argento da dietro, davanti alle colline"
+      }
+    },
+    {
+      "slug": "library-video-4",
+      "category": "cars",
+      "type": "video",
+      "caption": {
+        "ar": "فيديو: داخل جيتور T2",
+        "en": "Video: inside the Jetour T2",
+        "fr": "Vidéo : à l'intérieur de la Jetour T2",
+        "de": "Video: im Jetour T2",
+        "it": "Video: dentro la Jetour T2"
+      }
     }
   ]
 }
