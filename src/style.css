@@ -734,3 +734,5 @@ body.has-picks .fab{display:none}
 .to-top.show{opacity:1;transform:none;pointer-events:auto}
 .to-top:hover{background:var(--dark2)}
 .cookie:not([hidden]) ~ .to-top{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+.bl-video{margin:26px 0;border-radius:var(--radius);overflow:hidden;max-width:360px;margin-inline:auto;background:var(--dark2)}
+.bl-video video{width:100%;height:auto;display:block}

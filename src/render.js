@@ -560,6 +560,7 @@ function renderPost(lang, c, post) {
   const blocks = post.body[lang].map(b => {
     if (b[0] === "h2") return '<h2>' + esc(b[1]) + '</h2>';
     if (b[0] === "p") return '<p>' + esc(b[1]) + '</p>';
+    if (b[0] === "video") return '<figure class="bl-video"><video src="' + esc(b[1]) + '" controls playsinline preload="metadata"' + (post.video && post.video.poster ? ' poster="' + esc(post.video.poster) + '"' : '') + '></video></figure>';
     if (b[0] === "cta") return '<p class="bl-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, B.cta) + '">' + ic("chat") + esc(b[1]) + '</a></p>';
     return '';
   }).join("");

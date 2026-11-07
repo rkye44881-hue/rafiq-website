@@ -174,6 +174,143 @@
           ]
         ]
       }
+    },
+    {
+      "slug": "nile-corniche-private-driver",
+      "draft": true,
+      "date": "2026-11-07",
+      "cover": "/media/library/nile-river-cairo-skyline.webp",
+      "cover_alt": {
+        "ar": "القاهرة من على النيل",
+        "en": "Cairo skyline from the Nile"
+      },
+      "keywords": [
+        "كورنيش النيل القاهرة",
+        "سواق خاص القاهرة النيل",
+        "Cairo Nile corniche private driver"
+      ],
+      "title": {
+        "ar": "كورنيش النيل في القاهرة: إزاي تشوفه في يوم مريح بسواق خاص",
+        "en": "Cairo's Nile Corniche: how to see it in a relaxed day with a private driver"
+      },
+      "excerpt": {
+        "ar": "النيل قلب القاهرة. تعرف إزاي تختار الوقت والمكان والعربية، وليه السواق الخاص يوفر عليك الوقت والتعب.",
+        "en": "The Nile is the heart of Cairo. How to pick the time, the places and the car, and why a private driver saves you time and effort."
+      },
+      "video": {
+        "src": "/media/blog/nile-corniche-montage.mp4",
+        "poster": "/media/blog/nile-corniche-montage-poster.webp"
+      },
+      "body": {
+        "ar": [
+          [
+            "p",
+            "النيل مش مجرد نهر في القاهرة، ده اللي شكّل المدينة من أول يوم. الكورنيش والمراكب والمباني اللي على الضفة كلها حكايات تستاهل تتشاف بهدوء."
+          ],
+          [
+            "video",
+            "/media/blog/nile-corniche-montage.mp4"
+          ],
+          [
+            "h2",
+            "الوقت المناسب"
+          ],
+          [
+            "p",
+            "أحسن وقت للكورنيش الصبح بدري أو قبل الغروب بشوية، الضوء بيكون ناعم والزحمة أقل، والصور بتطلع أحسن."
+          ],
+          [
+            "h2",
+            "المراكب والكورنيش"
+          ],
+          [
+            "p",
+            "المراكب الشراعية (الفلوكة) بتفضل في الكورنيش، والمشي على الممشى بيديك منظر على المباني والكباري. اتفق على السعر والمدة قبل ما تركب."
+          ],
+          [
+            "h2",
+            "ليه سواق خاص؟"
+          ],
+          [
+            "p",
+            "السواق الخاص بيعرف الطريق والزحمة وأماكن الوقوف، وبيستنى معاك وقت ما تحب. العربية ليك وحدك، والسعر متفق عليه من الأول، وده بيوفر عليك التفاوض مع كل تاكسي."
+          ],
+          [
+            "h2",
+            "العربية المناسبة"
+          ],
+          [
+            "p",
+            "لو مشوارك مع العيلة أو مجموعة، جيتور X70 Plus موديل 2027 بسبعة مقاعد. ولو أنت لوحدك أو مع اتنين، جيتور T2 مريحة للطرق الطويلة والكباري."
+          ],
+          [
+            "h2",
+            "خطة يوم مقترحة"
+          ],
+          [
+            "p",
+            "8 ساعات بـ 80$ للعربية، أو 12 ساعة بـ 100$. البنزين والضريبة والسواق شاملين. ابدأ الصبح على الكورنيش، وبعدها الغدا، وبعدين الأماكن اللي نفسك تشوفها في المدينة."
+          ],
+          [
+            "cta",
+            "احجز سواق خاص على واتساب"
+          ]
+        ],
+        "en": [
+          [
+            "p",
+            "The Nile is not just a river in Cairo. It shaped the city from the very beginning. The corniche, the feluccas and the buildings along the bank are stories worth seeing slowly."
+          ],
+          [
+            "video",
+            "/media/blog/nile-corniche-montage.mp4"
+          ],
+          [
+            "h2",
+            "The right time"
+          ],
+          [
+            "p",
+            "The best time for the corniche is early morning or just before sunset. The light is soft, there are fewer people, and photos come out better."
+          ],
+          [
+            "h2",
+            "Feluccas and the promenade"
+          ],
+          [
+            "p",
+            "Traditional sailing boats (feluccas) line the corniche, and walking along the promenade gives you views of the buildings and bridges. Agree the price and the time before you board."
+          ],
+          [
+            "h2",
+            "Why a private driver?"
+          ],
+          [
+            "p",
+            "A private driver knows the roads, the traffic and where to stop, and waits for you when you want. The car is yours alone, and the price is agreed from the start, so there is no haggling with every taxi."
+          ],
+          [
+            "h2",
+            "The right car"
+          ],
+          [
+            "p",
+            "For a family or a group, the Jetour X70 Plus 2027 model has seven seats. If you are on your own or with one other person, the Jetour T2 is comfortable on long roads and over the bridges."
+          ],
+          [
+            "h2",
+            "A suggested day"
+          ],
+          [
+            "p",
+            "8 hours for $80 per car, or 12 hours for $100. Driver, fuel and taxes included. Start on the corniche in the morning, then lunch, then the places you want to see in the city."
+          ],
+          [
+            "cta",
+            "Book a private driver on WhatsApp"
+          ]
+        ]
+      }
     }
   ]
 }
