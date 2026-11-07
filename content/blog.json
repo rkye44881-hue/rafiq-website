@@ -177,7 +177,7 @@
     },
     {
       "slug": "nile-corniche-private-driver",
-      "draft": true,
+      "draft": false,
       "date": "2026-11-07",
       "cover": "/media/library/nile-river-cairo-skyline.webp",
       "cover_alt": {
