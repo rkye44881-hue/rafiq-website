@@ -66,7 +66,7 @@ const phoneLinks = set => '<bdi dir="ltr">' + (set.phones || []).map(n => '<a hr
 const REV_LINK = { ar: "آراء العملاء", en: "Client reviews", fr: "Avis clients", de: "Kundenbewertungen", it: "Recensioni" };
 const ABOUT_LINK = { ar: "عنّا", en: "About", fr: "À propos", de: "Über uns", it: "Chi siamo" };
 const BLOG_LINK = { ar: "المدونة", en: "Blog", fr: "Blog", de: "Blog", it: "Blog" };
-const revLink = lang => '<a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/about/">' + ABOUT_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/blog/">' + BLOG_LINK[lang] + '</a>';
+const revLink = lang => '<a class="rev-link" href="/' + lang + '/prices/">' + PRICE_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/reviews/">' + REV_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/about/">' + ABOUT_LINK[lang] + '</a><a class="rev-link" href="/' + lang + '/blog/">' + BLOG_LINK[lang] + '</a>';
 /* the founder line shown in every footer */
 const FOUNDER_LABEL = { ar: "المؤسس", en: "Founder", fr: "Fondateur", de: "Gründer", it: "Fondatore" };
 const founderLine = (set, lang) => '<span>' + esc(FOUNDER_LABEL[lang]) + ': ' + esc(lang === "ar" ? set.founder_ar : set.founder_en) + '</span>';
@@ -416,7 +416,7 @@ function renderDriverPage(lang, c) {
   const base = (set.site_url || "").replace(/\/$/, "");
   const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
   const ld = { "@context": "https://schema.org", "@type": "Service", name: T.h1, serviceType: "Private driver", inLanguage: lang, url: base + "/" + lang + "/private-driver-cairo/", provider: { "@type": "LocalBusiness", name: brand, telephone: "+" + set.whatsapp },
-    areaServed: ["Cairo", "Giza"], offers: T.rows.map(r => ({ "@type": "Offer", name: r[0], price: r[1].replace(/[^0-9]/g, ""), priceCurrency: "USD", description: r[3] })) };
+    areaServed: ["Cairo", "Giza"], offers: T.rows.map(r => ({ "@type": "Offer", name: r[0], price: r[1].replace(/[^0-9]/g, ""), priceCurrency: /\$/.test(r[1]) ? "USD" : "EUR", description: r[2] })) };
   const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
     + '<title>' + esc(T.title) + '</title><meta name="description" content="' + esc(T.description) + '">'
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/private-driver-cairo/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/private-driver-cairo/"><link rel="canonical" href="' + base + '/' + lang + '/private-driver-cairo/">'
@@ -576,4 +576,33 @@ function renderPost(lang, c, post) {
     + blogFoot(lang, c) + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, LANGS };
+/* ---------- prices page: hourly and airport tables, notes (euro prices for French, German and Italian) ---------- */
+const PRICE_LINK = { ar: "الأسعار", en: "Prices", fr: "Tarifs", de: "Preise", it: "Prezzi" };
+function renderPrices(lang, c) {
+  const ar = lang === "ar", P = c.prices[lang], set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const table = (head, rows) => '<div class="pt-wrap"><table class="pt"><thead><tr>' + head.map(h => '<th scope="col">' + esc(h) + '</th>').join("") + '</tr></thead><tbody>'
+    + rows.map(r => '<tr>' + r.map((v, i) => i === 1 ? '<td class="pt-price">' + esc(v) + '</td>' : '<td>' + esc(v) + '</td>').join("") + '</tr>').join("") + '</tbody></table></div>';
+  const ld = { "@context": "https://schema.org", "@type": "PriceSpecification", name: P.title, url: base + "/" + lang + "/prices/" };
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(P.seo_title) + '</title><meta name="description" content="' + esc(P.seo_desc) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/prices/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/prices/"><link rel="canonical" href="' + base + '/' + lang + '/prices/">'
+    + '<meta property="og:title" content="' + esc(P.seo_title) + '"><meta property="og:description" content="' + esc(P.seo_desc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/prices/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
+    + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
+  const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/prices/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
+  const body = '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(P.title) + '</h1><p class="sub">' + esc(P.intro) + '</p></div></section>'
+    + '<section class="sec"><div class="wrap"><h2 class="svc-h">' + esc(P.h_hourly) + '</h2>' + table(P.headers_hourly, P.rows_hourly)
+    + '<h2 class="svc-h">' + esc(P.h_air) + '</h2>' + table(P.headers_air, P.rows_air)
+    + '<ul class="svc-list">' + P.notes.map(n => '<li>' + esc(n) + '</li>').join("") + '</ul>'
+    + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa("Hello {B}") + '">' + ic("chat") + esc(P.cta) + '</a> <a class="svc-more" href="/' + lang + '/offers/">' + esc(P.offer_link) + '</a></p></div></section>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr + body
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };
