@@ -74,7 +74,7 @@ const founderLine = (set, lang) => '<span>' + esc(FOUNDER_LABEL[lang]) + ': ' + 
 const emailLink = set => '<a href="mailto:' + esc(set.email) + '">' + esc(set.email) + '</a>';
 /* mobile bottom bar: book, WhatsApp and call (replaces the floating WhatsApp button under 900px) */
 const MBAR = { ar: { book: "احجز", wa: "واتساب" }, en: { book: "Book", wa: "WhatsApp" }, fr: { book: "Réserver", wa: "WhatsApp" }, de: { book: "Buchen", wa: "WhatsApp" }, it: { book: "Prenota", wa: "WhatsApp" } };
-const mobileBar = (lang, set) => { const M = MBAR[lang]; return '<nav class="m-bar" aria-label="' + esc(M.book) + '"><a class="m-book" href="#s-book">' + esc(M.book) + '</a><a class="m-wa" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, "Hello {B}") + '">' + esc(M.wa) + '</a></nav>'; };
+const mobileBar = (lang, set) => { const M = MBAR[lang]; return '<nav class="m-bar" aria-label="' + esc(M.book) + '"><a class="m-book" href="#s-book">' + esc(M.book) + '</a><a class="m-wa" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, "Hello " + (lang === "ar" ? set.brand_ar : set.brand_latin)) + '">' + esc(M.wa) + '</a></nav>'; };
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
 const MEDIA_UI = {
