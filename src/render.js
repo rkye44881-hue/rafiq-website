@@ -73,8 +73,8 @@ const founderLine = (set, lang) => '<span>' + esc(FOUNDER_LABEL[lang]) + ': ' + 
 /* the contact email as a tap-to-write link */
 const emailLink = set => '<a href="mailto:' + esc(set.email) + '">' + esc(set.email) + '</a>';
 /* mobile bottom bar: book, WhatsApp and call (replaces the floating WhatsApp button under 900px) */
-const MBAR = { ar: { book: "احجز", wa: "واتساب", call: "اتصل" }, en: { book: "Book", wa: "WhatsApp", call: "Call" }, fr: { book: "Réserver", wa: "WhatsApp", call: "Appeler" }, de: { book: "Buchen", wa: "WhatsApp", call: "Anrufen" }, it: { book: "Prenota", wa: "WhatsApp", call: "Chiama" } };
-const mobileBar = (lang, set) => { const M = MBAR[lang]; return '<nav class="m-bar" aria-label="' + esc(M.book) + '"><a class="m-book" href="#s-book">' + esc(M.book) + '</a><a class="m-wa" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, "Hello {B}") + '">' + esc(M.wa) + '</a><a class="m-call" href="tel:+' + esc(set.phones[0]) + '">' + esc(M.call) + '</a></nav>'; };
+const MBAR = { ar: { book: "احجز", wa: "واتساب" }, en: { book: "Book", wa: "WhatsApp" }, fr: { book: "Réserver", wa: "WhatsApp" }, de: { book: "Buchen", wa: "WhatsApp" }, it: { book: "Prenota", wa: "WhatsApp" } };
+const mobileBar = (lang, set) => { const M = MBAR[lang]; return '<nav class="m-bar" aria-label="' + esc(M.book) + '"><a class="m-book" href="#s-book">' + esc(M.book) + '</a><a class="m-wa" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, "Hello {B}") + '">' + esc(M.wa) + '</a></nav>'; };
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
 const MEDIA_UI = {
