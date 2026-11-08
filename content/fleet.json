@@ -78,6 +78,21 @@
       "desc_de": "Gruppen und Fahrten zwischen Städten.",
       "name_it": "Van · Hyundai H1",
       "desc_it": "Gruppi e viaggi tra città."
+    },
+    {
+      "id": "x90",
+      "seats": 7,
+      "image": "/media/library/jetour-x90-plus-front.webp",
+      "name_ar": "SUV · جيتور X90 Plus",
+      "desc_ar": "7 مقاعد، فخمة ومريحة للعيلة والمجموعات.",
+      "name_en": "SUV · Jetour X90 Plus",
+      "desc_en": "Seven seats, premium comfort for families and groups.",
+      "name_fr": "SUV · Jetour X90 Plus",
+      "desc_fr": "Sept places, confort haut de gamme pour les familles et groupes.",
+      "name_de": "SUV · Jetour X90 Plus",
+      "desc_de": "Sieben Sitze, gehobener Komfort für Familien und Gruppen.",
+      "name_it": "SUV · Jetour X90 Plus",
+      "desc_it": "Sette posti, comfort di alta gamma per famiglie e gruppi."
     }
   ]
 }

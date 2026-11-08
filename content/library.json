@@ -357,6 +357,28 @@
         "de": "Jetour X70 Plus, Heckansicht schräg",
         "it": "Jetour X70 Plus, vista posteriore tre quarti"
       }
+    },
+    {
+      "slug": "jetour-x90-plus-front",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور X90 Plus من الأمام",
+        "en": "Jetour X90 Plus, front view",
+        "fr": "Jetour X90 Plus, vue de face",
+        "de": "Jetour X90 Plus, Frontansicht",
+        "it": "Jetour X90 Plus, vista frontale"
+      }
+    },
+    {
+      "slug": "jetour-x90-plus-rear",
+      "category": "cars",
+      "caption": {
+        "ar": "جيتور X90 Plus من الخلف",
+        "en": "Jetour X90 Plus, rear view",
+        "fr": "Jetour X90 Plus, vue arrière",
+        "de": "Jetour X90 Plus, Heckansicht",
+        "it": "Jetour X90 Plus, vista posteriore"
+      }
     }
   ]
 }

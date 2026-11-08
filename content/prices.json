@@ -1,0 +1,382 @@
+{
+  "ar": {
+    "title": "أسعار سواق خاص وتوصيل المطار",
+    "intro": "الأسعار للعربية كاملة، شاملة السائق والبنزين والضريبة.",
+    "h_hourly": "سواق خاص: 10 ساعات أو 120 كم",
+    "h_air": "توصيل المطار (اتجاه واحد)",
+    "headers_hourly": [
+      "العربية",
+      "10 ساعات أو 120 كم"
+    ],
+    "headers_air": [
+      "العربية",
+      "المطار"
+    ],
+    "rows_hourly": [
+      [
+        "Geely Okavango",
+        "80$"
+      ],
+      [
+        "Jetour X70 Plus",
+        "70$"
+      ],
+      [
+        "Jetour X90 Plus",
+        "90$"
+      ],
+      [
+        "Jetour T2",
+        "100$"
+      ],
+      [
+        "Fiat Tipo",
+        "اطلب السعر"
+      ],
+      [
+        "Hyundai H1",
+        "اطلب السعر"
+      ]
+    ],
+    "rows_air": [
+      [
+        "Geely Okavango",
+        "40$"
+      ],
+      [
+        "Jetour X70 Plus",
+        "40$"
+      ],
+      [
+        "Jetour X90 Plus",
+        "50$"
+      ],
+      [
+        "Jetour T2",
+        "50$"
+      ],
+      [
+        "Fiat Tipo",
+        "30$"
+      ],
+      [
+        "Hyundai H1",
+        "80$"
+      ]
+    ],
+    "notes": [
+      "الساعة الزيادة والكيلومتر الزيادة: بالاتفاق المسبق.",
+      "الشيخ زايد وأكتوبر: زيادة 10$ على المطار والسواق باليوم.",
+      "المطار: مطار القاهرة (CAI) ومطار السفنكس (SPX) يشملهم السعر. باقي المطارات: اطلب السعر.",
+      "الأسعار لكل القاهرة."
+    ],
+    "cta": "احجز على واتساب",
+    "offer_link": "شوف العروض",
+    "seo_title": "أسعار سواق خاص وتوصيل المطار | رحلة القاهرة",
+    "seo_desc": "أسعار واضحة للسواق الخاص بالساعات ولتوصيل المطار في القاهرة، شاملة السائق والبنزين والضريبة."
+  },
+  "en": {
+    "title": "Private driver and airport transfer prices",
+    "intro": "Prices are per car, and include the driver, fuel and taxes.",
+    "h_hourly": "Private driver: 10 hours or 120 km",
+    "h_air": "Airport transfer (one way)",
+    "headers_hourly": [
+      "Car",
+      "10 hours or 120 km"
+    ],
+    "headers_air": [
+      "Car",
+      "Airport"
+    ],
+    "rows_hourly": [
+      [
+        "Geely Okavango",
+        "$80"
+      ],
+      [
+        "Jetour X70 Plus",
+        "$70"
+      ],
+      [
+        "Jetour X90 Plus",
+        "$90"
+      ],
+      [
+        "Jetour T2",
+        "$100"
+      ],
+      [
+        "Fiat Tipo",
+        "On request"
+      ],
+      [
+        "Hyundai H1",
+        "On request"
+      ]
+    ],
+    "rows_air": [
+      [
+        "Geely Okavango",
+        "$40"
+      ],
+      [
+        "Jetour X70 Plus",
+        "$40"
+      ],
+      [
+        "Jetour X90 Plus",
+        "$50"
+      ],
+      [
+        "Jetour T2",
+        "$50"
+      ],
+      [
+        "Fiat Tipo",
+        "$30"
+      ],
+      [
+        "Hyundai H1",
+        "$80"
+      ]
+    ],
+    "notes": [
+      "Extra hours and extra kilometres: agreed in advance.",
+      "Sheikh Zayed and 6th October: +$10 on airport transfers and daily hire.",
+      "Airport: Cairo Airport (CAI) and Sphinx Airport (SPX) are included. Other airports: ask for a price.",
+      "Prices apply across Cairo."
+    ],
+    "cta": "Book on WhatsApp",
+    "offer_link": "See the offers",
+    "seo_title": "Private driver and airport transfer prices | Cairo Voyage",
+    "seo_desc": "Clear prices for a private driver by the hour and for Cairo airport transfers, driver, fuel and taxes included."
+  },
+  "fr": {
+    "title": "Tarifs chauffeur privé et transfert aéroport",
+    "intro": "Prix par voiture, chauffeur, carburant et taxes inclus.",
+    "h_hourly": "Chauffeur privé : 10 heures ou 120 km",
+    "h_air": "Transfert aéroport (aller simple)",
+    "headers_hourly": [
+      "Voiture",
+      "10 heures ou 120 km"
+    ],
+    "headers_air": [
+      "Voiture",
+      "Aéroport"
+    ],
+    "rows_hourly": [
+      [
+        "Geely Okavango",
+        "80 €"
+      ],
+      [
+        "Jetour X70 Plus",
+        "70 €"
+      ],
+      [
+        "Jetour X90 Plus",
+        "90 €"
+      ],
+      [
+        "Jetour T2",
+        "100 €"
+      ],
+      [
+        "Fiat Tipo",
+        "Sur demande"
+      ],
+      [
+        "Hyundai H1",
+        "Sur demande"
+      ]
+    ],
+    "rows_air": [
+      [
+        "Geely Okavango",
+        "40 €"
+      ],
+      [
+        "Jetour X70 Plus",
+        "40 €"
+      ],
+      [
+        "Jetour X90 Plus",
+        "50 €"
+      ],
+      [
+        "Jetour T2",
+        "50 €"
+      ],
+      [
+        "Fiat Tipo",
+        "30 €"
+      ],
+      [
+        "Hyundai H1",
+        "80 €"
+      ]
+    ],
+    "notes": [
+      "Heure et kilomètre supplémentaires : convenus à l'avance.",
+      "Sheikh Zayed et 6 Octobre : +10 € sur les transferts aéroport et la location à la journée.",
+      "Aéroport : l'aéroport du Caire (CAI) et l'aéroport Sphinx (SPX) sont inclus. Autres aéroports : demandez un prix.",
+      "Prix valables dans tout le Caire."
+    ],
+    "cta": "Réserver sur WhatsApp",
+    "offer_link": "Voir les offres",
+    "seo_title": "Tarifs chauffeur privé et transfert aéroport | Cairo Voyage",
+    "seo_desc": "Tarifs clairs pour un chauffeur privé à l'heure et pour les transferts aéroport au Caire, chauffeur, carburant et taxes inclus."
+  },
+  "de": {
+    "title": "Preise Privatfahrer und Flughafentransfer",
+    "intro": "Preise pro Auto, inklusive Fahrer, Kraftstoff und Steuern.",
+    "h_hourly": "Privatfahrer: 10 Stunden oder 120 km",
+    "h_air": "Flughafentransfer (einfache Fahrt)",
+    "headers_hourly": [
+      "Auto",
+      "10 Stunden oder 120 km"
+    ],
+    "headers_air": [
+      "Auto",
+      "Flughafen"
+    ],
+    "rows_hourly": [
+      [
+        "Geely Okavango",
+        "80 €"
+      ],
+      [
+        "Jetour X70 Plus",
+        "70 €"
+      ],
+      [
+        "Jetour X90 Plus",
+        "90 €"
+      ],
+      [
+        "Jetour T2",
+        "100 €"
+      ],
+      [
+        "Fiat Tipo",
+        "Auf Anfrage"
+      ],
+      [
+        "Hyundai H1",
+        "Auf Anfrage"
+      ]
+    ],
+    "rows_air": [
+      [
+        "Geely Okavango",
+        "40 €"
+      ],
+      [
+        "Jetour X70 Plus",
+        "40 €"
+      ],
+      [
+        "Jetour X90 Plus",
+        "50 €"
+      ],
+      [
+        "Jetour T2",
+        "50 €"
+      ],
+      [
+        "Fiat Tipo",
+        "30 €"
+      ],
+      [
+        "Hyundai H1",
+        "80 €"
+      ]
+    ],
+    "notes": [
+      "Zusätzliche Stunde und zusätzlicher Kilometer: vorab vereinbart.",
+      "Sheikh Zayed und 6. Oktober: +10 € auf Flughafentransfers und Tagesmiete.",
+      "Flughafen: Flughafen Kairo (CAI) und Flughafen Sphinx (SPX) sind enthalten. Andere Flughäfen: Preis anfragen.",
+      "Preise gelten im gesamten Kairo."
+    ],
+    "cta": "Per WhatsApp buchen",
+    "offer_link": "Angebote ansehen",
+    "seo_title": "Preise Privatfahrer und Flughafentransfer | Cairo Voyage",
+    "seo_desc": "Klare Preise für Privatfahrer stundenweise und für Flughafentransfers in Kairo, inklusive Fahrer, Kraftstoff und Steuern."
+  },
+  "it": {
+    "title": "Prezzi autista privato e transfer aeroporto",
+    "intro": "Prezzi per auto, con autista, carburante e tasse inclusi.",
+    "h_hourly": "Autista privato: 10 ore o 120 km",
+    "h_air": "Transfer aeroporto (sola andata)",
+    "headers_hourly": [
+      "Auto",
+      "10 ore o 120 km"
+    ],
+    "headers_air": [
+      "Auto",
+      "Aeroporto"
+    ],
+    "rows_hourly": [
+      [
+        "Geely Okavango",
+        "80 €"
+      ],
+      [
+        "Jetour X70 Plus",
+        "70 €"
+      ],
+      [
+        "Jetour X90 Plus",
+        "90 €"
+      ],
+      [
+        "Jetour T2",
+        "100 €"
+      ],
+      [
+        "Fiat Tipo",
+        "Su richiesta"
+      ],
+      [
+        "Hyundai H1",
+        "Su richiesta"
+      ]
+    ],
+    "rows_air": [
+      [
+        "Geely Okavango",
+        "40 €"
+      ],
+      [
+        "Jetour X70 Plus",
+        "40 €"
+      ],
+      [
+        "Jetour X90 Plus",
+        "50 €"
+      ],
+      [
+        "Jetour T2",
+        "50 €"
+      ],
+      [
+        "Fiat Tipo",
+        "30 €"
+      ],
+      [
+        "Hyundai H1",
+        "80 €"
+      ]
+    ],
+    "notes": [
+      "Ora extra e chilometro extra: concordati in anticipo.",
+      "Sheikh Zayed e 6 Ottobre: +10 € sui transfer aeroporto e sulla giornata.",
+      "Aeroporto: l'aeroporto del Cairo (CAI) e l'aeroporto Sphinx (SPX) sono inclusi. Altri aeroporti: chiedete il prezzo.",
+      "Prezzi validi in tutto il Cairo."
+    ],
+    "cta": "Prenota su WhatsApp",
+    "offer_link": "Vedi le offerte",
+    "seo_title": "Prezzi autista privato e transfer aeroporto | Cairo Voyage",
+    "seo_desc": "Prezzi chiari per autista privato a ore e per transfer aeroporto al Cairo, autista, carburante e tasse inclusi."
+  }
+}
