@@ -454,7 +454,7 @@ function renderReviews(lang, c) {
   const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
   const pick = o => (o && (o[lang] || o.en)) || "";
   const cards = c.reviews.map(r => {
-    const who = esc(r.name) + (r.city ? " · " + esc(r.city) : "");
+    const who = r.name ? esc(r.name) + (r.city ? " · " + esc(r.city) : "") : esc({ ar: "عميل", en: "Client", fr: "Client", de: "Kunde", it: "Cliente" }[lang]);
     return '<figure class="rev-card"><video src="/media/reviews/' + esc(r.video) + '.mp4" poster="/media/reviews/' + esc(r.video) + '-poster.webp" controls playsinline preload="none" aria-label="' + who + '"></video>'
       + '<figcaption><strong>' + who + '</strong>' + (r.trip ? '<span class="rev-trip">' + esc(pick(r.trip)) + '</span>' : '') + (pick(r.quote) ? '<q>' + esc(pick(r.quote)) + '</q>' : '') + '</figcaption></figure>';
   }).join("");
