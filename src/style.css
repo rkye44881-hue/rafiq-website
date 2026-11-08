@@ -736,3 +736,14 @@ body.has-picks .fab{display:none}
 .cookie:not([hidden]) ~ .to-top{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
 .bl-video{margin:26px 0;border-radius:var(--radius);overflow:hidden;max-width:360px;margin-inline:auto;background:var(--dark2)}
 .bl-video video{width:100%;height:auto;display:block}
+.m-bar{display:none}
+@media (max-width:899px){
+  .fab{display:none}
+  .m-bar{position:fixed;inset-inline:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1fr;background:var(--dark);border-top:1px solid var(--dark-line);padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
+  .m-bar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:14px;font-weight:700;text-decoration:none;font-size:.95rem}
+  .m-book{background:var(--accent);color:var(--accent-ink)}
+  .m-wa{background:#14703F;color:#fff}
+  .to-top{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .cookie:not([hidden]) ~ .to-top{bottom:calc(230px + env(safe-area-inset-bottom,0px))}
+  .foot{padding-bottom:84px}
+}

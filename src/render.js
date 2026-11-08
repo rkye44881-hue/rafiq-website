@@ -72,6 +72,9 @@ const FOUNDER_LABEL = { ar: "المؤسس", en: "Founder", fr: "Fondateur", de: 
 const founderLine = (set, lang) => '<span>' + esc(FOUNDER_LABEL[lang]) + ': ' + esc(lang === "ar" ? set.founder_ar : set.founder_en) + '</span>';
 /* the contact email as a tap-to-write link */
 const emailLink = set => '<a href="mailto:' + esc(set.email) + '">' + esc(set.email) + '</a>';
+/* mobile bottom bar: book, WhatsApp and call (replaces the floating WhatsApp button under 900px) */
+const MBAR = { ar: { book: "احجز", wa: "واتساب" }, en: { book: "Book", wa: "WhatsApp" }, fr: { book: "Réserver", wa: "WhatsApp" }, de: { book: "Buchen", wa: "WhatsApp" }, it: { book: "Prenota", wa: "WhatsApp" } };
+const mobileBar = (lang, set) => { const M = MBAR[lang]; return '<nav class="m-bar" aria-label="' + esc(M.book) + '"><a class="m-book" href="#s-book">' + esc(M.book) + '</a><a class="m-wa" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, "Hello " + (lang === "ar" ? set.brand_ar : set.brand_latin)) + '">' + esc(M.wa) + '</a></nav>'; };
 /* Footer links for the social accounts that have a URL in settings (empty ones are skipped) */
 /* Photos and short clips of our Jetour T2, shown on every page just above the footer */
 const MEDIA_UI = {
@@ -316,8 +319,8 @@ function renderPage(lang, c, page) {
     + '<link rel="canonical" href="' + base + '/' + lang + '/' + path + '">'
     + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/' + path + '"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + OG_LOCALE[lang] + '">' + ((sahel ? NC.hero_image : set.hero_image) ? '<meta property="og:image" content="' + esc(base + (sahel ? NC.hero_image : set.hero_image)) + '"><meta name="twitter:card" content="summary_large_image">' : '')
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=optional">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">'
     + ld(business) + (offersPg ? ld({ "@context": "https://schema.org", "@type": "OfferCatalog", name: OU.title, url: base + "/" + lang + "/offers/", itemListElement: offers.filter(o => o.end >= today).map(o => ({ "@type": "Offer", name: o["title_" + lang], description: String(o["points_" + lang] || "").split("\n").join(" · "), price: o.price, priceCurrency: "USD", validFrom: o.start, validThrough: o.end, availability: "https://schema.org/InStock", url: base + "/" + lang + "/offers/" })) }) : ld(faqLd)) + analytics(lang, c.settings).head
     + '</head><body>';
@@ -325,7 +328,7 @@ function renderPage(lang, c, page) {
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
     : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + blogTeaser(lang, c) + faq() + contact();
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + '</div>' + analytics(lang, c.settings).body
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + mobileBar(lang, set) + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }
@@ -362,8 +365,8 @@ function renderGuide(lang, c) {
     + '<title>' + esc(U.title + " | " + brand) + '</title><meta name="description" content="' + esc(U.seoDesc) + '">'
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/guide/">').join("") + '<link rel="canonical" href="' + base + '/' + lang + '/guide/">'
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/guide/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
@@ -393,8 +396,8 @@ function renderGallery(lang, c) {
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/gallery/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/gallery/"><link rel="canonical" href="' + base + '/' + lang + '/gallery/">'
     + '<meta property="og:title" content="' + esc(G.seoTitle) + '"><meta property="og:description" content="' + esc(G.seoDesc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/gallery/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + G.locale + '">'
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
     + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/gallery/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
@@ -419,8 +422,8 @@ function renderDriverPage(lang, c) {
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/private-driver-cairo/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/private-driver-cairo/"><link rel="canonical" href="' + base + '/' + lang + '/private-driver-cairo/">'
     + '<meta property="og:title" content="' + esc(T.title) + '"><meta property="og:description" content="' + esc(T.description) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/private-driver-cairo/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '">'
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
     + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/private-driver-cairo/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
@@ -460,8 +463,8 @@ function renderReviews(lang, c) {
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/reviews/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/reviews/"><link rel="canonical" href="' + base + '/' + lang + '/reviews/">'
     + '<meta property="og:title" content="' + esc(R.seoTitle) + '"><meta property="og:description" content="' + esc(R.seoDesc) + '"><meta property="og:type" content="website"><meta property="og:url" content="' + base + '/' + lang + '/reviews/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:locale" content="' + R.locale + '">'
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/reviews/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
   const list = cards ? '<div class="rev-grid">' + cards + '</div>' : '<p class="rev-empty">' + esc(R.empty) + '</p>';
@@ -486,8 +489,8 @@ function renderAbout(lang, c) {
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/about/">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/about/"><link rel="canonical" href="' + base + '/' + lang + '/about/">'
     + '<meta property="og:title" content="' + esc(A.seoTitle) + '"><meta property="og:description" content="' + esc(A.seoDesc) + '"><meta property="og:type" content="profile"><meta property="og:url" content="' + base + '/' + lang + '/about/"><meta property="og:site_name" content="' + esc(set.brand_latin) + '"><meta property="og:image" content="' + esc(base + '/media/about-ramadan.webp') + '">'
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head
     + '<script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script></head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/about/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
@@ -528,8 +531,8 @@ function blogHead(lang, c, title, desc, path, extra) {
     + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/' + path + '">').join("") + '<link rel="alternate" hreflang="x-default" href="' + base + '/en/' + path + '">'
     + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(desc) + '"><meta property="og:site_name" content="' + esc(set.brand_latin) + '">'
     + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    + '<link rel="stylesheet" media="print" onload="this.media=&quot;all&quot;" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">'
+    
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + (extra || '') + '</head><body>';
 }
 function blogHeader(lang, c, section) {
