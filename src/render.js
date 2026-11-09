@@ -335,7 +335,7 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
 
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + stepsAndPromises() + blogTeaser(lang, c) + faq() + contact();
+    : offerStrip + hero + explore() + booking() + servicesSec() + '<div class="combo combo-places">' + cities() + fleet() + '</div>' + stepsAndPromises() + '<div class="combo combo-end">' + faq() + contact() + '</div>' + blogTeaser(lang, c) + ncPromo();
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + mobileBar(lang, set) + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';

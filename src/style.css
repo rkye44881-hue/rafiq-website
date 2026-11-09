@@ -751,3 +751,14 @@ body.has-picks .fab{display:none}
 .hx-where .hero-price{margin-top:12px}
 .sp-promises{margin-top:56px;padding-top:40px;border-top:1px solid var(--dark-line)}
 .sp-h{font-size:clamp(1.3rem,3vw,1.7rem);margin-bottom:18px;color:var(--on-dark)}
+/* merged sections on the home page: keep one background and one rhythm */
+.combo > .sec{padding-block:clamp(40px,6vw,64px)}
+.combo > .sec + .sec{border-top:1px solid var(--line);padding-top:clamp(32px,5vw,48px)}
+/* North Coast: a slim banner near the end of the home page */
+.nc-promo{padding-block:clamp(24px,4vw,40px)}
+.nc-promo .nc-card{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;padding:14px}
+.nc-promo .nc-pic{aspect-ratio:1/1;border-radius:14px;overflow:hidden}
+.nc-promo .nc-tx h2{font-size:clamp(1.15rem,2.6vw,1.45rem);margin:2px 0 6px}
+.nc-promo .nc-tx p:not(.eyebrow){font-size:.92rem;line-height:1.5;margin-bottom:8px}
+.nc-promo .hero-pills{display:none}
+.nc-promo .btn{padding:9px 14px;font-size:.86rem}
