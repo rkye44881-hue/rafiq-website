@@ -9,7 +9,7 @@ img{max-width:100%;display:block}
   --dark:#1B2B57; --dark2:#243769; --on-dark:#F5EFE4; --on-dark-muted:#B8BFD3; --dark-line:rgba(245,239,228,.16);
   --accent:#C9A04A; --accent-strong:#85661F; --accent-ink:#16203D;
   --display:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --serif:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --radius:18px; --ok:#2E7D5B; --warn:#B07A1E; --info:#2F5E8C;
   color-scheme:light;
@@ -294,7 +294,7 @@ body.has-picks .fab{display:none}
 
 /* ===== Latin languages: black & gold chauffeur + airy rounded cards ===== */
 .lt h1,.lt h2,.lt h3{font-weight:700;letter-spacing:-.025em}
-.lt h1 em,.lt h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+.lt h1 em,.lt h2 em{font-family:var(--serif);font-style:normal;font-weight:700;letter-spacing:0;color:var(--accent-strong)}
 .lt .logo .l1{font-family:var(--body);font-weight:800;letter-spacing:.32em;font-size:1.25rem}
 #site .btn{border-radius:999px}
 .lt .eyebrow{color:var(--accent-strong);letter-spacing:.2em;font-size:.72rem}
@@ -333,7 +333,7 @@ body.has-picks .fab{display:none}
 .lt .bk-tabs button{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
 /* Arabic: same black & gold look, Arabic type */
 .ar h1,.ar h2,.ar h3{font-weight:700}
-.ar .logo .l1{font-family:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;color:var(--on-dark)}
+.ar .logo .l1{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif;color:var(--on-dark)}
 .ar .hdr{background:rgba(20,31,64,.96);color:var(--on-dark);border-bottom:1px solid var(--dark-line)}
 .ar .langs,.ar .menu-btn{border-color:var(--dark-line)}
 @media (max-width:980px){.ar .nav{background:var(--dark)}.ar .nav a{border-color:var(--dark-line)}}
@@ -772,3 +772,7 @@ body.has-picks .fab{display:none}
 .nc-promo .nc-tx p:not(.eyebrow){max-width:none;color:var(--on-dark);font-size:1rem;line-height:1.7;margin-bottom:6px}
 .nc-promo .nc-tx .btn{justify-self:stretch;text-align:center}
 @media (min-width:600px){.nc-promo .nc-card{grid-template-columns:200px minmax(0,1fr);align-items:center}.nc-promo .nc-pic{width:200px;height:200px}}
+.bl-related{max-width:720px;padding:0 16px 40px}
+.bl-related ul{list-style:none;padding:0;display:grid;gap:10px;margin-top:10px}
+.bl-related a{display:block;padding:14px 18px;background:var(--surface);border-radius:14px;color:var(--dark);text-decoration:none;font-weight:700;box-shadow:0 6px 14px rgba(27,43,87,.08)}
+.bl-related a:hover{color:var(--accent-strong)}
