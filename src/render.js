@@ -565,6 +565,14 @@ function renderBlog(lang, c) {
     + '<section class="sec"><div class="wrap">' + (cards ? '<div class="bl-grid">' + cards + '</div>' : '<p class="rev-empty">' + esc(B.soon) + '</p>') + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, B.cta) + '">' + ic("chat") + esc(B.cta) + '</a></p></div></section>'
     + blogFoot(lang, c) + '</div>' + analytics(lang, set).body + '</body></html>';
 }
+/* internal links at the end of every article: the services and prices that the article is about */
+const RELATED_UI = {
+  ar: { title: "محتاج تكمل؟", links: [["private-driver-cairo/", "سواق خاص باليوم في القاهرة"], ["prices/", "كل الأسعار"], ["north-coast/", "الساحل الشمالي"], ["gallery/", "مكتبة الصور"]] },
+  en: { title: "Read next", links: [["private-driver-cairo/", "Private driver in Cairo, by the day"], ["prices/", "All prices"], ["north-coast/", "The North Coast"], ["gallery/", "Photo library"]] },
+  fr: { title: "À lire ensuite", links: [["private-driver-cairo/", "Chauffeur privé au Caire"], ["prices/", "Tous les tarifs"], ["north-coast/", "La Côte Nord"], ["gallery/", "Photothèque"]] },
+  de: { title: "Als Nächstes lesen", links: [["private-driver-cairo/", "Privatfahrer in Kairo"], ["prices/", "Alle Preise"], ["north-coast/", "Die Nordküste"], ["gallery/", "Fotogalerie"]] },
+  it: { title: "Continua a leggere", links: [["private-driver-cairo/", "Autista privato al Cairo"], ["prices/", "Tutti i prezzi"], ["north-coast/", "La Costa Nord"], ["gallery/", "Galleria"]] }
+};
 function renderPost(lang, c, post) {
   const B = BLOG_UI[lang], set = c.settings, base = (set.site_url || "").replace(/\/$/, "");
   const t = post.title[lang], ex = post.excerpt[lang];
@@ -580,7 +588,8 @@ function renderPost(lang, c, post) {
   return head + '<div id="site" class="' + (lang === "ar" ? "ar" : "lt") + ' page-guide">' + blogHeader(lang, c)
     + '<article class="bl-post"><header class="bl-top"><div class="wrap"><p class="bl-back"><a href="/' + lang + '/blog/">← ' + esc(B.back) + '</a></p><p class="eyebrow">' + esc(B.name) + ' · <time>' + esc(post.date) + '</time></p><h1>' + esc(t) + '</h1><p class="sub">' + esc(ex) + '</p></div></header>'
     + '<figure class="bl-cover"><img src="' + esc(post.cover) + '" alt="' + esc(post.cover_alt[lang]) + '" width="720" height="480" fetchpriority="high"></figure>'
-    + '<div class="wrap bl-body">' + blocks + '</div></article>'
+    + '<div class="wrap bl-body">' + blocks + '</div>'
+    + '<div class="wrap bl-related"><h2 class="svc-h">' + esc(RELATED_UI[lang].title) + '</h2><ul>' + RELATED_UI[lang].links.map(l => '<li><a href="/' + lang + '/' + l[0] + '">' + esc(l[1]) + '</a></li>').join("") + '</ul></div></article>'
     + blogFoot(lang, c) + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
