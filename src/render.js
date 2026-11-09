@@ -206,6 +206,12 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
     + X.steps.map((s, i) => '<div class="step"><span class="n">' + num(i + 1) + '</span><h3>' + esc(s.title) + '</h3><p>' + esc(s.description) + '</p></div>').join("")
     + '</div></div></section>';
 
+  /* one section instead of two: the three steps, then the promises as a compact list (same copy) */
+  const stepsAndPromises = () => '<section class="sec dark-band" id="s-steps"><div class="wrap">' + secHead(X.sections.steps) + '<div class="steps">'
+    + X.steps.map((s, i) => '<div class="step"><span class="n">' + num(i + 1) + '</span><h3>' + esc(s.title) + '</h3><p>' + esc(s.description) + '</p></div>').join("")
+    + '</div><div class="sp-promises"><h3 class="sp-h">' + esc(X.sections.promises.title) + '</h3><div class="prom">'
+    + X.promises.map((p, i) => '<div class="pr">' + ic(PROM_ICONS[i % PROM_ICONS.length]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>').join("")
+    + '</div></div></div></section>';
   const promises = () => '<section class="sec" id="s-promise"><div class="wrap">' + secHead(X.sections.promises) + '<div class="prom">'
     + X.promises.map((p, i) => '<div class="pr">' + ic(PROM_ICONS[i % PROM_ICONS.length]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>').join("")
     + '</div></div></section>';
@@ -329,7 +335,7 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
 
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + steps() + promises() + blogTeaser(lang, c) + faq() + contact();
+    : offerStrip + hero + explore() + ncPromo() + booking() + servicesSec() + cities() + fleet() + stepsAndPromises() + blogTeaser(lang, c) + faq() + contact();
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + mobileBar(lang, set) + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';

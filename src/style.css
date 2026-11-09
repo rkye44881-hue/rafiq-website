@@ -749,3 +749,5 @@ body.has-picks .fab{display:none}
 }
 .hero-price{margin-top:14px;font-size:.95rem;font-weight:700;color:var(--accent-strong);letter-spacing:.01em}
 .hx-where .hero-price{margin-top:12px}
+.sp-promises{margin-top:56px;padding-top:40px;border-top:1px solid var(--dark-line)}
+.sp-h{font-size:clamp(1.3rem,3vw,1.7rem);margin-bottom:18px;color:var(--on-dark)}
