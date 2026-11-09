@@ -762,3 +762,5 @@ body.has-picks .fab{display:none}
 .nc-promo .nc-tx p:not(.eyebrow){font-size:.92rem;line-height:1.5;margin-bottom:8px}
 .nc-promo .hero-pills{display:none}
 .nc-promo .btn{padding:9px 14px;font-size:.86rem}
+.nc-promo .nc-card{grid-template-columns:110px minmax(0,1fr)}
+.nc-promo .nc-pic{width:110px;height:110px;min-height:0;aspect-ratio:auto}
