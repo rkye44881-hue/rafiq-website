@@ -747,3 +747,5 @@ body.has-picks .fab{display:none}
   .cookie:not([hidden]) ~ .to-top{bottom:calc(230px + env(safe-area-inset-bottom,0px))}
   .foot{padding-bottom:84px}
 }
+.hero-price{margin-top:14px;font-size:.95rem;font-weight:700;color:var(--accent-strong);letter-spacing:.01em}
+.hx-where .hero-price{margin-top:12px}

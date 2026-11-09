@@ -152,14 +152,16 @@ function renderPage(lang, c, page) {
       + '<button class="menu-btn" type="button" id="menuBtn" aria-expanded="false">' + esc(L.menu) + '</button></div></header>';
   };
 
+/* hero: the fixed price in one line, under the buttons */
+const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر ثابت", en: "From $70 · 10 hours or 120 km · Fixed price", fr: "Dès 70 € · 10 heures ou 120 km · Prix fixe", de: "Ab 70 € · 10 Stunden oder 120 km · Festpreis", it: "Da 70 € · 10 ore o 120 km · Prezzo fisso" };
   const pills = '<div class="hero-pills">' + X.highlights.map((t, i) => '<span>' + ic(TRUST_ICONS[i % 4]) + esc(t) + '</span>').join("") + '</div>';
   const ctas = '<div class="ctas"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn btn-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div>';
-  const heroText = '<div><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p>' + ctas + pills + '</div>';
+  const heroText = '<div><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p>' + ctas + '<p class="hero-price">' + esc(HERO_PRICE[lang]) + '</p>' + pills + '</div>';
   /* Arabic hero: light and clean, the car photo up front and a "where to?" picker that opens WhatsApp */
   const W = L.where;
   const whereCard = W ? '<div class="hx-where"><b class="hx-q">' + esc(W.title) + '</b><div class="hx-picks">'
       + W.items.map(([icn, t, msg], i) => '<a class="hx-pick" style="--i:' + i + '" target="_blank" rel="noopener" href="' + wa(L.wa.service.replace("{t}", msg)) + '"><span class="ic">' + ic(icn) + '</span>' + esc(t) + '</a>').join("")
-      + '</div><div class="hx-ctas"><a class="btn hx-main" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn hx-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div></div>' : '';
+      + '</div><div class="hx-ctas"><a class="btn hx-main" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(X.hero.button_1) + '</a><a class="btn hx-ghost" href="#s-services">' + esc(X.hero.button_2) + '</a></div><p class="hero-price">' + esc(HERO_PRICE[lang]) + '</p></div>' : '';
   const hero = ar
     ? '<section class="hero-x" id="top"><div class="wrap hx-grid"><div class="hx-text"><p class="eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="sub">' + esc(X.hero.subtitle) + '</p></div>'
       + '<div class="hx-media">' + heroImg("/media/car-jetour-t2.webp", "سيارة جيتور T2 مع سائق خاص في القاهرة") + '</div>'
