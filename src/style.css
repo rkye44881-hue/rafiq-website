@@ -776,3 +776,5 @@ body.has-picks .fab{display:none}
 .bl-related ul{list-style:none;padding:0;display:grid;gap:10px;margin-top:10px}
 .bl-related a{display:block;padding:14px 18px;background:var(--surface);border-radius:14px;color:var(--dark);text-decoration:none;font-weight:700;box-shadow:0 6px 14px rgba(27,43,87,.08)}
 .bl-related a:hover{color:var(--accent-strong)}
+/* phones: the wordmark steps aside so the language switch and the menu button both fit */
+@media (max-width:520px){.hdr .logo .l1{display:none}.hdr .logo{flex:none}.hdr .langs{flex:0 1 auto;min-width:0}.menu-btn{flex:none}}
