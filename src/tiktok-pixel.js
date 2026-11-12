@@ -15,3 +15,12 @@ document.addEventListener('click', function (e) {
     content_name: a.href.indexOf('wa.me') > -1 ? 'whatsapp' : 'phone'
   });
 }, true);
+
+// The pixel loads with defer, so it may start after the banner. Apply the visitor's saved choice here as well.
+(function () {
+  try {
+    var choice = localStorage.getItem('cv-consent');
+    if (choice === 'granted') ttq.grantConsent();
+    else if (choice === 'denied') ttq.revokeConsent();
+  } catch (e) {}
+})();

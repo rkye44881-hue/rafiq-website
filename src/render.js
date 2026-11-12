@@ -42,7 +42,7 @@ function analytics(lang, set) {
     + 'gtag("js",new Date());gtag("config",' + JSON.stringify(id) + ');</script>'
     + '<script async src="https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id) + '"></script>';
   // The TikTok pixel script is sync so ttq exists before the banner script runs; it holds events until consent is granted.
-  const tiktokHead = pixel ? '<script src="/tiktok-pixel.js"></script>' : "";
+  const tiktokHead = pixel ? '<script defer src="/tiktok-pixel.js"></script>' : "";
   // Google Ads: WhatsApp and phone taps count as conversions. Uses the same gtag and consent as Analytics.
   const adsSendTo = (set.google_ads_send_to || "").trim();
   const adsHead = !id || !adsSendTo ? "" : '<script>gtag("config",' + JSON.stringify(adsSendTo.split("/")[0]) + ');'
