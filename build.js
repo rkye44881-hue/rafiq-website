@@ -96,4 +96,15 @@ if (postLocs) {
   const sm = fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8").replace("\n</urlset>", "\n" + postLocs + "\n</urlset>");
   fs.writeFileSync(path.join(OUT, "sitemap.xml"), sm);
 }
+// Accessibility: every page gets one <main> landmark around its content (between the site header and footer)
+const walkHtml = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walkHtml(path.join(dir, e.name)) : e.name === "index.html" ? [path.join(dir, e.name)] : []);
+for (const f of walkHtml(OUT)) {
+  const h = fs.readFileSync(f, "utf8");
+  if (h.includes("<main")) continue;
+  const headerEnd = h.indexOf("</header>");
+  const footerAt = h.indexOf('<footer class="foot">');
+  if (headerEnd < 0 || footerAt < headerEnd) continue;
+  const cut = headerEnd + "</header>".length;
+  fs.writeFileSync(f, h.slice(0, cut) + '<main id="main">' + h.slice(cut, footerAt) + "</main>" + h.slice(footerAt));
+}
 console.log("Built " + LANGS.length + " pages into dist/");
