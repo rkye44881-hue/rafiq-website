@@ -140,7 +140,7 @@ function renderPage(lang, c, page) {
   const NC = c.northcoast, N = NC.text[lang] || NC.text.en;
 
   const header = () => {
-    const logo = '<a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
+    const logo = '<a class="logo" href="/' + lang + '/" aria-label="' + esc(ar ? set.brand_ar : set.brand_latin) + '">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
     const pre = (sahel || offersPg) ? "/" + lang + "/" : "";
     const sahelLink = '<a class="nav-sahel" href="/' + lang + '/north-coast/"' + (sahel ? ' aria-current="page"' : '') + '>' + esc(N.nav) + '</a>';
     const offersLink = '<a class="nav-sahel nav-offers" href="/' + lang + '/offers/"' + (offersPg ? ' aria-current="page"' : '') + '>' + esc(OU.nav) + '</a>';
