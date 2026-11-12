@@ -584,7 +584,7 @@ function renderPost(lang, c, post) {
     return '';
   }).join("");
   const ld = { "@context": "https://schema.org", "@type": "Article", headline: t, description: ex, inLanguage: lang, datePublished: post.date, dateModified: post.date, image: base + post.cover, author: { "@type": "Person", name: "Ramadan Mamdouh Younis", alternateName: "Abu Khaled" }, publisher: { "@type": "Organization", name: set.brand_latin, url: base + "/" + lang + "/" }, mainEntityOfPage: base + "/" + lang + "/blog/" + post.slug + "/" };
-  const head = blogHead(lang, c, t + " | " + set.brand_latin, ex, "blog/" + post.slug + "/", '<meta property="og:type" content="article"><meta property="og:image" content="' + esc(base + post.cover) + '"><script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script>');
+  const head = blogHead(lang, c, (post.seo_title && post.seo_title[lang] || t) + " | " + set.brand_latin, ex, "blog/" + post.slug + "/", '<meta property="og:type" content="article"><meta property="og:image" content="' + esc(base + post.cover) + '"><script type="application/ld+json">' + JSON.stringify(ld).replace(/</g, "\\u003c") + '</script>');
   return head + '<div id="site" class="' + (lang === "ar" ? "ar" : "lt") + ' page-guide">' + blogHeader(lang, c)
     + '<article class="bl-post"><header class="bl-top"><div class="wrap"><p class="bl-back"><a href="/' + lang + '/blog/">← ' + esc(B.back) + '</a></p><p class="eyebrow">' + esc(B.name) + ' · <time>' + esc(post.date) + '</time></p><h1>' + esc(t) + '</h1><p class="sub">' + esc(ex) + '</p></div></header>'
     + '<figure class="bl-cover"><img src="' + esc(post.cover) + '" alt="' + esc(post.cover_alt[lang]) + '" width="720" height="480" fetchpriority="high"></figure>'
