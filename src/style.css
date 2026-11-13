@@ -778,3 +778,7 @@ body.has-picks .fab{display:none}
 .bl-related a:hover{color:var(--accent-strong)}
 /* phones: the wordmark steps aside so the language switch and the menu button both fit */
 @media (max-width:520px){.hdr .logo .l1{display:none}.hdr .logo{flex:none}.hdr .langs{flex:0 1 auto;min-width:0}.menu-btn{flex:none}}
+/* promises inside the dark band: light text and gold icons so every line reads clearly */
+.sp-promises .pr h3{color:var(--on-dark)}
+.sp-promises .pr p{color:var(--on-dark-muted)}
+.sp-promises .pr svg{color:var(--accent)}
