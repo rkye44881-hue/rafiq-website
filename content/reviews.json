@@ -40,7 +40,9 @@
       "name": "",
       "city": "México",
       "trip": null,
-      "quote": null
+      "quote": {
+        "en": "\"We're so, so happy. We spent the best time in Cairo, with the best and friendliest service. We'll leave happy and we'll always come back.\""
+      }
     }
   ]
 }
