@@ -26,5 +26,5 @@
   ],
   "founder_ar": "رمضان ممدوح يونس – أبو خالد",
   "founder_en": "Ramadan Mamdouh Younis – Abu Khaled",
-  "tidio_script": "https://code.tidio.co/ivygqbrakde7njz36djmtghcxwfyjcmw.js"
+  "tidio_script_disabled_until_flow_fixed": true
 }

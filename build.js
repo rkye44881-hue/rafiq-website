@@ -108,7 +108,7 @@ for (const f of walkHtml(OUT)) {
   fs.writeFileSync(f, h.slice(0, cut) + '<main id="main">' + h.slice(cut, footerAt) + "</main>" + h.slice(footerAt));
 }
 // Live chat (Tidio): the standard async snippet on every page. async does not block rendering, so pages stay as fast.
-if (content.settings.tidio_script) {
+if (content.settings.tidio_script && content.settings.tidio_enabled !== false) {
   for (const f of walkHtml(OUT)) {
     const h = fs.readFileSync(f, "utf8");
     if (h.includes(content.settings.tidio_script) || !h.includes("</body>")) continue;
