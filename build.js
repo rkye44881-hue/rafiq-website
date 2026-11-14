@@ -112,6 +112,9 @@ if (content.settings.tidio_script) {
   for (const f of walkHtml(OUT)) {
     const h = fs.readFileSync(f, "utf8");
     if (h.includes(content.settings.tidio_script) || !h.includes("</body>")) continue;
+    // the home pages (/ and /<lang>/) stay without the chat
+    const rel = path.relative(OUT, f).split(path.sep).join("/");
+    if (rel === "index.html" || /^[a-z]{2}\/index\.html$/.test(rel)) continue;
     fs.writeFileSync(f, h.replace("</body>", '<script src="' + content.settings.tidio_script + '" async></script></body>'));
   }
 }
