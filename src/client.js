@@ -242,22 +242,3 @@
   btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
   sync();
 })();
-
-/* live chat (Tidio): loads only after the visitor first interacts or after 10 s, so it never slows the first paint.
-   Skipped when the visitor refused cookies in the banner. */
-(function () {
-  var loaded = false, timer;
-  function load() {
-    if (loaded) return;
-    loaded = true;
-    clearTimeout(timer);
-    ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (ev) { window.removeEventListener(ev, load, true); });
-    try { if (localStorage.getItem("cv-consent") === "denied") return; } catch (e) {}
-    var s = document.createElement("script");
-    s.src = "https://code.tidio.co/ivygqbrakde7njz36djmtghcxwfyjcmw.js";
-    s.async = true;
-    document.body.appendChild(s);
-  }
-  ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (ev) { window.addEventListener(ev, load, { capture: true, passive: true, once: true }); });
-  timer = setTimeout(load, 10000);
-})();
