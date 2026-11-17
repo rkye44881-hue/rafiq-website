@@ -242,3 +242,14 @@
   btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
   sync();
 })();
+
+/* "احجز" buttons open the booking form straight away (it stays closed on the page until a visitor asks for it) */
+(function () {
+  function openBook() { var d = document.getElementById("bookBox"); if (d && !d.open) d.open = true; }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="#s-book"], a[href*="#bookBox"]');
+    if (a) openBook();
+  }, true);
+  if (/#(s-book|bookBox)$/.test(location.hash)) openBook();
+  window.addEventListener("hashchange", function () { if (/#(s-book|bookBox)$/.test(location.hash)) openBook(); });
+})();
