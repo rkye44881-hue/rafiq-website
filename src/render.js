@@ -476,14 +476,20 @@ function renderReviews(lang, c) {
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/reviews/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
   const list = cards ? '<div class="rev-grid">' + cards + '</div>' : '<p class="rev-empty">' + esc(R.empty) + '</p>';
-  /* TripAdvisor: a plain link to the Abu Khalid reviews page (no third-party script, no review text copied) */
+  /* TripAdvisor: a navy card at the top of the page, linking to the Abu Khalid reviews (no third-party script, no review text copied) */
   const TA_URL = "https://www.tripadvisor.com.eg/Attraction_Review-g294201-d33028807-Reviews-Abu_Khalid_Tourist_Transport_in_Cairo-Cairo_Cairo_Governorate.html";
-  const TA_LABEL = { ar: "اقرأ التقييمات على TripAdvisor", en: "Read reviews on TripAdvisor", fr: "Lire les avis sur TripAdvisor", de: "Bewertungen auf TripAdvisor lesen", it: "Leggi le recensioni su TripAdvisor" };
-  const TA = '<p class="ta-wrap"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + TA_URL + '">' + esc(TA_LABEL[lang]) + '</a></p>';
+  const TA_UI = {
+    ar: ["شوف تقييمات العملاء على TripAdvisor", "تقييمات حقيقية من عملاء زاروا القاهرة مع أبو خالد.", "اقرأ التقييمات"],
+    en: ["See client reviews on TripAdvisor", "Real reviews from clients who visited Cairo with Abu Khalid.", "Read reviews"],
+    fr: ["Voir les avis clients sur TripAdvisor", "Des avis réels de clients venus au Caire avec Abu Khalid.", "Lire les avis"],
+    de: ["Kundenbewertungen auf TripAdvisor ansehen", "Echte Bewertungen von Gästen, die mit Abu Khalid in Kairo unterwegs waren.", "Bewertungen lesen"],
+    it: ["Guarda le recensioni dei clienti su TripAdvisor", "Recensioni reali di clienti che hanno visitato il Cairo con Abu Khalid.", "Leggi le recensioni"]
+  }[lang];
+  const TA = '<div class="ta-card"><span class="ta-stars" aria-hidden="true">★★★★★</span><p class="ta-t">' + esc(TA_UI[0]) + '</p><p class="ta-d">' + esc(TA_UI[1]) + '</p><a class="ta-btn" target="_blank" rel="noopener" href="' + TA_URL + '">' + esc(TA_UI[2]) + '</a></div>';
 
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(R.title) + '</h1><p class="sub">' + esc(R.intro) + '</p></div></section>'
-    + '<section class="sec"><div class="wrap">' + list + TA + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(R.cta) + '</a></p></div></section>'
+    + '<section class="sec"><div class="wrap">' + TA + list + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(R.cta) + '</a></p></div></section>'
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }

@@ -783,6 +783,10 @@ body.has-picks .fab{display:none}
 .sp-promises .pr p{color:var(--on-dark-muted)}
 .sp-promises .pr svg{color:var(--accent)}
 
-/* TripAdvisor write-a-review button, centred under the reviews */
-.ta-wrap{margin:28px 0 8px;display:flex;justify-content:center;align-items:center;min-height:40px}
-.ta-wrap img{max-width:100%;height:auto}
+/* TripAdvisor card at the top of the reviews page (navy, gold button) */
+.ta-card{background:var(--dark);color:var(--on-dark);border-radius:18px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;margin:0 0 28px}
+.ta-stars{color:var(--accent);letter-spacing:2px;font-size:15px}
+.ta-t{font-weight:700;font-size:1.05rem;margin:0}
+.ta-d{font-size:.92rem;opacity:.85;margin:0;line-height:1.7}
+.ta-btn{align-self:flex-start;background:var(--accent);color:var(--dark);font-weight:700;padding:11px 22px;border-radius:999px;text-decoration:none;font-size:.95rem;transition:background .2s}
+.ta-btn:hover{background:#b8903d}
