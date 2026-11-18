@@ -1,0 +1,944 @@
+SUB|Storia • Monumenti • Musei • Quartieri • Architettura • Cultura • Cucina • Mercati • Natura • Intrattenimento
+FRONT|Enciclopedia turistica del Cairo e di Giza
+FRONT|CAIRO &amp; GIZA – THE COMPREHENSIVE TOURISM ENCYCLOPEDIA
+FRONT|Storia • Monumenti • Musei • Quartieri • Architettura • Cultura • Natura • Mercati • Cucina • Intrattenimento
+FRONT|Un riferimento ampio per il turismo, l'orientamento e la pianificazione dei viaggi
+FRONT|Introduzione e metodo
+FRONT|Questa edizione tratta il Cairo e Giza come un paesaggio storico, urbano e culturale unitario, e non come un semplice elenco di luoghi famosi o un programma di una sola giornata. Comprende siti archeologici, musei, palazzi, quartieri, luoghi religiosi, mercati, artigianato, la scena artistica, la natura, la cucina, l'intrattenimento e le escursioni nei dintorni.
+FRONT|L'enciclopedia non include prezzi dei biglietti o dei servizi e non conferma gli orari di apertura, perché queste informazioni cambiano. Alla fine del file sono indicati link ufficiali ed enciclopedici, così che il lettore possa verificare e aggiornare i dettagli prima di pubblicare una versione o confermare una prenotazione.
+FRONT|Metodo delle fonti: l'UNESCO e gli enti egiziani ufficiali sono il primo riferimento per le informazioni sul patrimonio e sull'operatività. Wikipedia e gli indici enciclopedici servono a scoprire siti, nomi, classificazioni e collegamenti incrociati; le informazioni importanti vengono poi verificate con fonti specializzate. Wikipedia non è un riferimento definitivo per orari di visita, stato di apertura o prezzi.
+FRONT|Ambito di copertura
+FRONT|Il Cairo e Giza come aree urbane, distinguendo i confini dei governatorati dall'espansione urbana più ampia.
+FRONT|Monumenti dell'Antico Egitto, dai campi di Menfi e dalle piramidi fino al Cairo islamica e moderna.
+FRONT|Musei pubblici e specializzati, palazzi e case storiche.
+FRONT|Moschee, chiese, monasteri, templi e altri luoghi di storia religiosa.
+FRONT|Quartieri, mercati, artigianato e scena culturale del Cairo moderno.
+FRONT|Il Nilo, le sue isole, i giardini, le riserve e le attività all'aperto.
+FRONT|Cucina egiziana, caffè, centri commerciali e intrattenimento per famiglie.
+FRONT|Itinerari suggeriti e indici per tipo di visitatore.
+FRONT|Indice
+CH|1|Geografia e comprensione della Grande Cairo
+P|Il Cairo non è solo un centro amministrativo. È il cuore di una vasta regione urbana in cui il governatorato del Cairo si collega a quello di Giza e alle aree urbane vicine, su entrambe le sponde del Nilo. Il nucleo storico si trova a est del fiume, mentre l'altopiano di Giza e la città di Giza si trovano a ovest. Per questo è meglio pianificare le visite per zone, e non secondo l'ordine in cui sono elencati i luoghi.
+P|La zona
+P|Esempi di quartieri
+P|Il carattere di ciascuna zona
+H|Riva occidentale – Giza
+P|Altopiano di Giza, Haram, Giza, Dokki, Mohandessin, piramidi, Saqqara, Menfi, Dahshur, 6 Ottobre
+P|Monumenti antichi, grandi musei, giardini, intrattenimento e shopping
+H|Il nucleo storico
+P|Gamaleya, Husayn, via al-Muizz, Darb al-Ahmar, la Cittadella, Sayyida Zeinab, il Cairo Antica
+P|Architettura islamica e copta, mercati, moschee, chiese e musei
+P|Il centro khedivale
+P|Tahrir, Qasr al-Nil, Abdin, Ezbekiya, Bab al-Louk, Garden City
+P|Architettura dei secoli XIX e XX, musei, teatri e caffè
+P|Le isole del Nilo
+P|Zamalek / Gezira, Roda, Manial
+P|Il Nilo, palazzi, musei, arti e ristoranti
+P|Cairo orientale
+P|Heliopolis, Korba, Roxy, Nasr City, Abbassia
+P|Architettura dei sobborghi, palazzi, musei, giardini e shopping
+P|Le espansioni moderne
+P|Nuovo Cairo, Tagamoa, Shorouk, 6 Ottobre, Sheikh Zayed
+P|Centri commerciali, ristoranti e attività per famiglie; servono un'auto e una pianificazione
+H|Una base geografica per la pianificazione
+P|Non combinate le piramidi, Saqqara, il Cairo islamica e il Cairo orientale in un solo giorno. Traffico, spostamenti a piedi, controlli di sicurezza, il tempo trascorso nei siti e le pause rendono indispensabile il raggruppamento geografico. Le guide turistiche moderne consigliano anche di pianificare il Cairo per quartieri anziché attraversare la città più volte [m1].
+CH|2|Cronologia della storia del Cairo e di Giza
+P|Periodo
+P|Caratteristiche storiche
+P|Ciò che vi è collegato oggi
+P|Periodo predinastico e inizi dello Stato
+P|Insediamento della valle del Nilo e sviluppo dell'organizzazione politica
+P|Prime collezioni archeologiche nei musei e nelle necropoli
+P|Epoca arcaica e Antico Regno
+P|Menfi come capitale reale; sviluppo delle mastaba e delle piramidi
+P|Giza, Saqqara, Dahshur, Menfi, Abu Sir
+P|Medio e Nuovo Regno
+P|Espansione delle tombe reali e d'élite e spostamento dei centri del potere
+P|Tombe, collezioni dei musei e strati della necropoli di Menfi
+P|Epoca greco-romana
+P|I legami dell'Egitto con il mondo mediterraneo; città e fortificazioni
+P|Fortezza di Babilonia, il Cairo Antica e collezioni dei musei
+P|La conquista araba e Fustat – 641/642 d.C.
+P|Fondazione della prima capitale islamica d'Egitto presso la Fortezza di Babilonia
+P|Moschea di Amr, scavi di Fustat, complesso delle religioni
+P|Epoca abbaside e tulunide
+P|Al-Askar e al-Qata'i' e lo sviluppo dell'architettura islamica primitiva
+P|Moschea di Ibn Tulun e il tessuto storico che la circonda
+P|Epoca fatimide – 969 d.C.
+P|Fondazione del Cairo fatimide, delle sue mura, delle sue porte e di al-Azhar
+P|Via al-Muizz, Bab al-Futuh, Bab al-Nasr, Bab Zuweila e al-Azhar
+P|Epoca ayyubide
+P|La Cittadella fondata come centro di governo e difesa
+P|Cittadella di Saladino e dintorni
+P|Epoca mamelucca
+P|Fioritura dell'architettura religiosa e commerciale, sabil e wakala
+P|Sultano Hassan, Qalawun, Barquq, al-Ghuri, Qaitbay
+P|Epoca ottomana
+P|Continuità della vita urbana e sviluppo delle case e delle wakala
+P|Case storiche, moschee ed edifici di servizio
+P|L'età di Muhammad Ali e la dinastia alawita
+P|Modernizzazione dello Stato, dell'esercito, dell'urbanistica e dei palazzi
+P|Abdin, Manial, moschea di Muhammad Ali, Manstirli
+P|Il Cairo khedivale e il secolo XIX
+P|Espansione verso ovest, strade e piazze, e architettura con forte influenza europea
+P|Centro città, Garden City e Tahrir
+P|Il secolo XX e la città moderna
+P|Sobborghi pianificati e grande espansione urbana
+H|Heliopolis, Maadi, Nasr City, Nuovo Cairo e 6 Ottobre
+P|Nota storica: il Cairo fatimide fu fondata nel 969 d.C., mentre Fustat fu fondata dopo la conquista araba dell'Egitto nel 641/642 d.C. Alcune fonti contengono errori nella conversione tra calendario gregoriano e islamico o nella scrittura di a.C./d.C.; la sequenza storica va quindi verificata con l'UNESCO e con i riferimenti storici standard [m2, m3].
+CH|3|L'altopiano delle piramidi di Giza e la Sfinge
+SEC|3.1|Altopiano di Giza – Giza Plateau
+P|L'altopiano ospita complessi funerari reali della IV dinastia, tra cui le più note sono le piramidi di Cheope, Chefren e Micerino. La piramide non è un edificio isolato; fa parte di un sistema che comprende il tempio della valle, la strada rialzata, il tempio funerario, le tombe della famiglia reale e dell'élite e, talvolta, piramidi minori e fosse per le barche. Leggere il sito come una città funeraria ne rivela le funzioni religiose, politiche e sociali [m4].
+H|La Grande Piramide – Cheope / Great Pyramid
+P|È la più grande delle piramidi di Giza, e l'ultima sopravvissuta delle Sette Meraviglie del mondo antico. Il sito ufficiale delle antichità indica che la sua altezza originaria era di circa 146,5 metri e che all'interno si trovano la Grande Galleria e camere interne, tra cui la camera del re. La sua struttura rivela anche la complessità dei trasporti, del rivestimento, della lavorazione della pietra e dell'ingegneria [m5].
+H|Piramide di Chefren – Pyramid of Khafre
+P|A volte appare visivamente più alta, per la sua posizione relativamente elevata e perché la sommità conserva parte del rivestimento originale. È collegata al tempio della valle, alla strada rialzata e alla Sfinge, il che ne fa un asse principale per comprendere la pianta del complesso funerario.
+H|Piramide di Micerino – Pyramid of Menkaure
+P|È la più piccola delle tre piramidi principali. Alla base si notano tracce dell'uso del granito accanto al calcare. È collegata a piramidi di regine e a un tempio funerario.
+H|La Grande Sfinge – Great Sphinx
+P|Un'enorme statua con corpo di leone e testa umana, scolpita nella roccia naturale e collegata nel contesto al complesso di Chefren. È uno dei simboli più famosi dell'Antico Egitto. Le ipotesi sulla datazione di alcune parti dell'area o sulla funzione della statua vanno presentate come dibattiti di ricerca quando vi sono disaccordi, non come fatti accertati.
+P|Altri elementi sull'altopiano
+H|Tempio della valle di Chefren: una stazione legata ai riti di accoglienza del corpo reale.
+P|La strada rialzata: un corridoio cerimoniale che collega il tempio della valle con il tempio funerario.
+P|Piramidi delle regine: strutture minori legate alla famiglia reale.
+H|Mastaba e tombe: luoghi di sepoltura per alti funzionari, parenti e élite.
+P|Tombe degli operai e villaggio legato alla costruzione: aiutano a comprendere la comunità dei lavoratori, l'amministrazione e i rifornimenti.
+H|Fosse per le barche: legate alle credenze e ai riti funerari reali.
+P|Aree di scavo: non si deve presumere che siano aperte alla visita solo perché compaiono sulla mappa.
+H|Come si costruisce un giro delle piramidi?
+P|L'esperienza può dividersi in vista esterna e panorama, spiegazione degli elementi del complesso funerario, e poi ingresso interno facoltativo quando una delle piramidi è aperta. I passaggi interni possono essere stretti, ripidi e caldi, quindi non si adattano a tutti i visitatori. Non promettete l'ingresso prima di aver confermato il biglietto e la reale disponibilità.
+SEC|3.2|Altri campi di piramidi intorno a Giza
+P|Posizione
+P|Valore storico
+P|Nota sull'accesso
+H|Abu Rawash
+P|L'area della piramide del re Djedefra, a nord di Giza, all'interno dell'estensione della necropoli di Menfi
+P|Sito specializzato; verificare disponibilità e restrizioni
+H|Zawiyet el-Aryan
+P|Un campo di piramidi e tombe dell'Antico Regno tra Giza e Abu Sir
+P|Non è una tappa turistica di massa; l'accesso può essere limitato
+H|Abu Sir
+P|Piramidi, templi solari e tombe della V dinastia
+P|Visita specializzata dopo aver confermato il funzionamento
+H|Abu Ghurab
+P|L'area dei templi solari legati ai re della V dinastia
+P|Sito specializzato; non si deve presumere che tutte le sue parti siano aperte
+SEC|3.3|Grande Museo Egizio – Grand Egyptian Museum
+P|Si trova vicino all'altopiano delle piramidi e costituisce una tappa naturale insieme alla sua visita. Comprende l'edificio d'ingresso, la grande scalinata, le sale e collezioni archeologiche varie. Non presumete che tutte le sezioni del museo o tutti i pezzi siano esposti in ogni momento; consultate la mappa di visita e il biglietto ufficiale prima di descrivere contenuti specifici.
+P|Biglietti ufficiali del GEM — https://tickets.gem.eg/
+P|Piano di visita ufficiale — https://gem.eg/en/visit/plan-your-visit/
+SEC|3.4|Esperienze intorno alle piramidi
+H|Vista panoramica dai punti previsti sull'altopiano.
+P|Conoscere Nazlet el-Samman e la comunità di servizi legata al turismo, nel rispetto della privacy dei residenti.
+P|Ristoranti con vista sulle piramidi; sceglieteli in base a pulizia e trasparenza di menu e conto.
+H|Spettacoli di suono e luce, dove disponibili, dopo aver verificato lingua e programma.
+P|Giri a cavallo o in cammello presso un fornitore responsabile e a condizioni chiare che tutelino la sicurezza del visitatore e il benessere degli animali.
+P|Aggiungere un'esperienza culturale o museale invece di attività commerciali che il cliente non desidera.
+CH|4|Necropoli di Menfi: Saqqara, Menfi, Dahshur e Abu Sir
+P|L'UNESCO descrive «Menfi e la sua necropoli – i campi di piramidi da Giza a Dahshur» come un ampio sistema archeologico che comprende piramidi, tombe rupestri, mastaba, templi e antichi insediamenti. Registra lo sviluppo dell'architettura funeraria dalla mastaba alla piramide a gradoni, fino alla piramide a facce lisce [m6].
+SEC|4.1|Saqqara – Saqqara
+P|Saqqara è una delle più importanti necropoli di Menfi ed è considerata un museo a cielo aperto dell'evoluzione dell'architettura funeraria. Il suo monumento più noto è la piramide a gradoni di Djoser con il suo complesso. Vi sono anche piramidi della V e VI dinastia e tombe decorate con scene di vita quotidiana. Il sito ufficiale elenca inoltre il Museo di Imhotep e i resti del monastero di San Geremia come componenti del sito [m7].
+P|Piramide a gradoni di Djoser: un importante passaggio architettonico nella costruzione in pietra, legato al nome dell'architetto Imhotep.
+P|Complesso funerario di Djoser: un muro, edifici rituali ed elementi simbolici che circondano la piramide.
+P|La tomba sud: parte del complesso; l'accesso dipende dal funzionamento.
+P|Piramide di Unas: uno dei siti più celebri dei Testi delle piramidi, all'interno della camera funeraria.
+H|Piramide di Teti: legata alle tombe di alti funzionari della zona.
+P|Mastaba di Mereruka: una delle tombe decorate che rivelano scene di vita quotidiana.
+H|Tomba di Ti: un esempio importante di scultura in rilievo e pittura.
+P|Tombe di Kagemni e dei nobili: esempi della vita sociale e dello status amministrativo.
+P|Il Serapeo: gallerie per la sepoltura dei tori sacri Apis, legati al culto di Ptah a Menfi; il sito ufficiale ne spiega funzione e storia [m8].
+H|Museo di Imhotep: una tappa per comprendere i ritrovamenti e la storia degli scavi a Saqqara.
+P|Monastero di San Geremia: testimonianza della prosecuzione dell'uso dell'area in epoca copta.
+SEC|4.2|Menfi – Memphis / Mit Rahina
+P|Menfi fu una delle più importanti capitali dell'Antico Egitto e un centro del culto del dio Ptah. Il sito archeologico si trova presso Mit Rahina e comprende un museo a cielo aperto e pezzi enormi, il più celebre dei quali è la statua di Ramses II. L'UNESCO collega Menfi alla catena di necropoli che si estende da Giza a Dahshur [m6].
+SEC|4.3|Dahshur – Dahshur
+P|Dahshur è una tappa essenziale per comprendere lo sviluppo della piramide. Il re Snefru scelse la zona per costruire la piramide romboidale e poi la piramide rossa, una delle prime vere piramidi a forma completa. L'area comprende anche piramidi del Medio Regno, tra cui la piramide nera, con un evidente divario nello stato di conservazione e nell'accesso [m9].
+P|La piramide romboidale: mostra la correzione dell'angolo di inclinazione durante la costruzione ed è una testimonianza di un esperimento ingegneristico.
+P|La piramide rossa: una piramide con facce dritte complete, tra le più grandi d'Egitto.
+P|Piramidi del Medio Regno: resti architettonici di stato variabile, non tutti predisposti per la visita pubblica.
+P|Il paesaggio desertico: offre al visitatore una sensazione diversa dalla folla dell'altopiano di Giza.
+SEC|4.4|Abu Sir, Abu Ghurab, Zawiyet el-Aryan e Abu Rawash
+P|Questi siti completano il quadro della necropoli di Menfi e rivelano la varietà dell'architettura reale e dei riti del culto solare e della sepoltura. Hanno un alto valore per gli specialisti, ma non sono tutti trattati come siti aperti al pubblico ogni giorno. Documentate stato di accesso, strade e permessi prima di inserirli in un programma.
+SEC|4.5|Ordine di visita suggerito
+P|Saqqara per primo, con un numero limitato di tombe e ingressi interni.
+P|Il Museo di Imhotep, se è aperto con il biglietto scelto.
+P|Menfi / Mit Rahina per visitare il museo a cielo aperto.
+P|Dahshur, se il tempo e il meteo lo consentono, dopo aver verificato l'accesso alla piramide.
+CH|5|Musei del Cairo e di Giza
+P|I musei del Cairo spaziano dalle grandi antichità e dalle arti islamiche, copte e moderne, ai palazzi e alle case, fino ai musei dei personaggi, della musica, dei tessuti, delle poste, dell'infanzia e della vita quotidiana. Il portale del governatorato del Cairo ne elenca un'ampia gamma; tuttavia lo stato di funzionamento e di visita può variare, quindi la tabella va usata come indice e non come garanzia dell'apertura di ogni museo ogni giorno [m10].
+P|Museo
+P|Zona
+P|Tema e valore
+H|Grande Museo Egizio
+P|Giza – Al-Remaya
+P|Un allestimento moderno della civiltà dell'Antico Egitto e vaste collezioni archeologiche
+H|Museo Egizio di Tahrir
+P|Piazza Tahrir
+P|Un museo storico aperto nel 1902 con collezioni dai periodi dell'Antico Egitto
+H|Museo Nazionale della Civiltà Egizia
+P|Fustat
+P|Un racconto della civiltà attraverso le epoche e la sala delle mummie reali
+H|Museo d'Arte Islamica
+P|Bab al-Khalq
+P|Arti islamiche di regioni ed epoche diverse
+H|Museo Copto
+P|Il Cairo Antica
+P|Patrimonio copto, manoscritti, tessuti e icone
+H|Museo Egizio del Tessuto
+P|Via al-Muizz
+P|L'evoluzione dei tessuti, dell'abbigliamento e delle stoffe attraverso i secoli
+H|Museo Gayer-Anderson
+P|Sayyida Zeinab / Ibn Tulun
+P|Due case ottomane con oggetti e arti domestiche
+H|Museo del palazzo di Manial
+P|Manial / Roda
+P|Il palazzo del principe Muhammad Ali, le sue collezioni e i suoi stili islamici
+H|Museo delle carrozze reali
+P|Bulaq Abu al-Ela
+P|Carrozze ufficiali, veicoli reali e storia delle cerimonie
+H|Complesso museale del palazzo di Abdin
+P|Abdin
+P|Collezioni della dinastia alawita, medaglie, argenteria e documenti
+H|Museo Umm Kulthum
+P|Roda / Manial
+P|Collezioni e vita della «Stella d'Oriente» e storia della musica
+H|Museo dell'arte egizia moderna
+P|Area dell'Opera – Zamalek
+P|Belle arti egizie moderne
+H|Museo della ceramica islamica
+P|Zamalek
+P|Ceramiche e arti applicate nel palazzo del principe Amr Ibrahim
+H|Museo Postale Egizio
+P|Al-Ataba
+P|Storia della posta, dei francobolli e delle comunicazioni
+H|Centro per l'infanzia, la civiltà e la creatività
+P|Heliopolis
+P|Un museo interattivo ed educativo per bambini
+H|Museo Inji Aflatoun
+P|Palazzo del principe Taz / del califfo
+P|Le opere dell'artista, la sua vita e le sue collezioni
+H|Bayt al-Umma
+P|Sayyida Zeinab / Palazzo al-Aini
+P|Casa di Saad Zaghloul e collezioni della storia nazionale
+H|Museo Mustafa Kamel
+P|La Cittadella
+P|Documenti e collezioni della storia del movimento nazionale
+H|Museo della polizia
+P|Cittadella di Saladino
+P|Storia della polizia e delle istituzioni di sicurezza
+H|Museo del palazzo al-Gawhara
+P|La Cittadella
+P|Sale e collezioni legate alla storia della Cittadella
+H|Museo militare
+P|La Cittadella
+P|Storia militare e collezioni di guerra
+H|Museo dell'agricoltura
+P|Dokki – Giza
+P|Storia dell'agricoltura, delle colture e della vita rurale egiziana
+H|Museo Mahmoud Mokhtar
+P|Gezira / Area dell'Opera
+P|Opere dello scultore egiziano Mahmoud Mokhtar
+H|Museo Mahmoud Khalil e sua moglie
+P|Dokki
+P|Una collezione d'arte e un edificio storico; verificare lo stato di funzionamento
+H|Museo Farouk Corner
+P|Helwan
+P|Una casa storica e un padiglione di riposo con collezioni dell'epoca reale
+H|Museo delle cere
+P|Helwan
+P|Scene e statue storiche; verificare lo stato di funzionamento
+H|Museo dell'aeroporto
+P|Aeroporto del Cairo
+P|Reperti e oggetti all'interno dell'area aeroportuale
+H|Museo della caccia
+P|All'interno del complesso del palazzo di Manial / secondo l'allestimento espositivo
+P|Oggetti legati alla caccia e alle collezioni reali
+H|Scegliere un museo in base all'interesse del visitatore
+P|Per una prima visita: il Grande Museo Egizio, poi il Museo Nazionale della Civiltà Egizia o il Museo Egizio di Tahrir.
+P|Per la storia islamica: il Museo d'Arte Islamica, il Museo del Tessuto e il Museo Gayer-Anderson.
+H|Per la storia copta: il Museo Copto insieme al complesso delle religioni.
+P|Per architettura e palazzi: il palazzo di Manial, Abdin, Gayer-Anderson e il palazzo Baron.
+P|Per arte e musica: il Museo d'arte moderna, Mahmoud Mokhtar, Umm Kulthum e Inji Aflatoun.
+P|Per le famiglie: il Centro per l'infanzia e un museo adatto all'età dei bambini, con giardino o attività ricreativa.
+CH|6|Il Cairo islamica: fatimide, mamelucca e ottomana
+P|Il Cairo storica è iscritta nella lista del patrimonio mondiale dell'UNESCO dal 1979. Il suo valore sta nella sopravvivenza di un tessuto urbano continuo: strade, mercati, porte, mura, case, wakala, sabil, scuole, moschee e cimiteri, non solo nei singoli edifici. L'UNESCO segnala gli strati di Fustat, al-Askar, al-Qata'i', del Cairo fatimide e delle estensioni ayyubidi, mamelucche e ottomane [m2].
+SEC|6.1|Il Cairo fatimide, le sue mura e le sue porte
+H|Bab al-Futuh: una porta settentrionale superstite delle mura del Cairo fatimide.
+P|Bab al-Nasr: una porta difensiva a nord, dove si notano caratteri dell'architettura militare.
+H|Bab Zuweila: una delle porte storiche più celebri del Cairo, a sud.
+P|Moschea di al-Azhar: moschea e centro di studi fondato in epoca fatimide, divenuto un'istituzione educativa di influenza mondiale.
+P|Moschea di al-Hakim bi-Amr Allah: uno dei principali monumenti fatimidi all'estremità settentrionale del Cairo storica.
+P|Moschea di al-Aqmar: una facciata in pietra caratteristica su via al-Muizz.
+P|Moschea di al-Salih Talai: una costruzione fatimide conservata vicino a Bab Zuweila.
+SEC|6.2|Via al-Muizz, Gamaleya e Husayn
+P|Via al-Muizz è l'asse principale del Cairo fatimide. L'esperienza consiste nel leggere facciate, ingressi, cupole, minareti, sabil e wakala, e nel notare come l'architettura sia legata al commercio, all'abitare, all'istruzione e al culto.
+P|Complesso del sultano Qalawun: un insieme architettonico di valore artistico e storico, con elementi religiosi e caritativi.
+H|Complesso del sultano Barquq: una scuola, una moschea e un mausoleo lungo via al-Muizz.
+P|Complesso del sultano al-Ghuri: edifici religiosi, commerciali e culturali nel cuore del Cairo storica.
+P|Casa al-Suhaymi: una casa storica che mette in evidenza il cortile, le maschrabiyya e la sala interna di ricevimento.
+P|Casa di Zeinab Khatoun, casa al-Harawi e casa di Sitt Wasila: esempi dell'architettura residenziale del Cairo; verificare i programmi di visita.
+P|Wakalat al-Ghuri: un edificio commerciale storico e uno spazio culturale che ospita talvolta spettacoli tradizionali.
+H|Museo Egizio del Tessuto: situato nel sabil di Muhammad Ali, vicino a Bayn al-Qasrayn.
+P|Moschea e cortile di Husayn: un centro religioso e sociale vicino al khan e ad al-Azhar.
+P|Khan al-Khalili: un mercato storico dell'epoca mamelucca, con mercati specializzati, caffè e artigianato.
+SEC|6.3|Darb al-Ahmar e Bab Zuweila
+P|Darb al-Ahmar è un quartiere vivo in cui edifici mamelucchi e ottomani convivono con botteghe, abitazioni e mercati. Mostra che il Cairo storica non è un museo chiuso, ma una città che continua a vivere.
+P|Moschea del sultano al-Mu'ayyad Shaykh: vicino a Bab Zuweila, con i suoi due minareti sopra la porta.
+H|Moschea Qijmas al-Ishaqi: uno dei capolavori dell'architettura mamelucca tarda.
+P|Moschea Aq Sunqur / Moschea Blu: riconoscibile per le sue piastrelle di ceramica blu e per le decorazioni.
+H|Moschea dell'emiro Shaykhu e il suo complesso: un monumento del periodo mamelucco bahrita.
+P|Sabil e kuttab Umm Abbas: una struttura idrica ed educativa del XIX secolo su via Salibah.
+P|Botteghe di khayamiya: un artigianato tradizionale che produce tessuti ricamati e decori colorati.
+SEC|6.4|Via Salibah e Sayyida Zeinab
+P|Via Salibah è uno degli assi più importanti del Cairo islamica. Corre tra la piazza della Cittadella e la piazza di Sayyida Zeinab ed è costeggiata da moschee, scuole, case, sabil ed edifici di beneficenza. Il Ministero del Turismo e delle Antichità la descrive come un museo a cielo aperto dell'architettura islamica [m11].
+P|Moschea di Ahmad ibn Tulun: una delle più antiche moschee conservate nel suo aspetto storico, con un ampio cortile e un minareto a spirale.
+P|Casa Qaraita / Museo Gayer-Anderson: un insieme di case ottomane accanto a Ibn Tulun.
+H|Moschea e scuola dell'emiro Shaykhu: del periodo mamelucco bahrita.
+P|Moschea del sultano Hassan: una scuola e un'enorme moschea del XIV secolo, uno degli esempi più importanti dell'architettura mamelucca.
+P|Moschea al-Rifa'i: un edificio del XIX secolo legato alle tombe della dinastia alawita.
+P|Moschea di Sayyida Zeinab: uno dei centri religiosi popolari più noti del Cairo.
+SEC|6.5|La Cittadella di Saladino e i suoi dintorni
+P|La Cittadella di Saladino, sulle alture del Mokattam, fu per secoli un centro di governo e di difesa. Comprende moschee, musei, edifici storici e vedute sulla città. Tra i suoi elementi più importanti: la moschea di Muhammad Ali, la moschea di al-Nasir Muhammad, la moschea di Sulayman Pascià, il palazzo al-Gawhara, il Museo della polizia e il Museo militare [m12].
+SEC|6.6|I cimiteri storici – la Qarafa
+P|I cimiteri del Cairo non costituiscono un'unica zona; comprendono la Grande Qarafa, il cimitero dell'imam al-Shafi'i, il cimitero di Qaitbay e il cimitero Settentrionale. Contengono cupole, tombe, moschee e sepolture di personaggi storici di epoche diverse. Tra gli elementi più noti figurano il complesso del sultano Qaitbay, la cupola dell'imam al-Shafi'i, il complesso del sultano Barquq nel deserto e le tombe di principi e famiglie storiche.
+P|Nota: queste aree uniscono patrimonio, abitazioni e cimiteri in uso sociale. Non entrate in edifici privati o passaggi non aperti ai visitatori e non fotografate i residenti senza autorizzazione. Verificate l'accessibilità di ogni sito e rispettate la riservatezza religiosa e funeraria.
+SEC|6.7|Percorsi del Cairo islamica
+P|Percorso
+P|Ordine suggerito
+P|Natura dell'esperienza
+H|Fatimide
+P|Bab al-Futuh ← Muizz ← al-Aqmar ← Qalawun ← al-Ghuri ← Bab Zuweila
+P|Architettura, mercati e storia della città
+H|Muizz e Husayn
+P|al-Azhar ← Muizz ← casa al-Suhaymi ← il khan ← Husayn
+P|Patrimonio, shopping e caffè
+H|Salibah e la Cittadella
+P|La Cittadella ← Sultano Hassan e al-Rifa'i ← Salibah ← Ibn Tulun e Gayer-Anderson
+P|Architettura mamelucca e tulunide
+H|La Qarafa
+P|Imam al-Shafi'i ← Qaitbay ← il cimitero Settentrionale, secondo l'accesso
+P|Architettura funeraria e storia sociale
+CH|7|Il Cairo Antica e il patrimonio copto ed ebraico
+P|L'area del Cairo Antica e di Fustat è una delle zone più importanti di diversità religiosa e patrimoniale del Cairo. Comprende i resti della Fortezza di Babilonia, un insieme di chiese e monasteri, il Museo Copto, la sinagoga Ben Ezra, la moschea di Amr ibn al-As, i resti della città di Fustat e il nilometro sull'isola di Roda [m13].
+SEC|7.1|La Fortezza di Babilonia e il complesso delle religioni
+P|Fortezza di Babilonia: una fortezza romana legata all'area attorno alla quale si sviluppò l'Antico Egitto.
+P|La Chiesa Sospesa: la chiesa della Vergine Maria, che sorge sopra una delle torri / porte della fortezza ed è nota per i suoi elementi lignei e iconografici.
+P|Chiesa di Abu Sarga: una chiesa storica legata alla tradizione ecclesiale del viaggio della Sacra Famiglia in Egitto.
+H|Chiesa di San Giorgio: una delle chiese più importanti all'interno del recinto della fortezza.
+P|Chiesa di Santa Barbara: una chiesa storica nell'area delle antiche chiese.
+P|Chiesa di Abu Sifein: dedicata a san Mercurio e conosciuta con questo nome popolare.
+P|Museo Copto: espone l'arte copta e lo sviluppo della cultura cristiana egiziana.
+P|Sinagoga Ben Ezra: un luogo importante nella storia della comunità ebraica d'Egitto; verificare le regole di visita.
+P|Moschea di Amr ibn al-As: legata alla fondazione di Fustat e agli inizi dell'architettura islamica in Egitto.
+SEC|7.2|Altri siti copti al Cairo
+P|Cattedrale di San Marco ad Abbassia: una sede ecclesiale moderna di rilievo religioso e storico.
+P|Chiesa di San Simone il Conciatore al Mokattam: un complesso ecclesiale scavato nella montagna, nell'area del Mokattam.
+H|Chiese del quartiere di Haret Zuweila: un gruppo di chiese copte con una lunga storia.
+P|Chiese di Shubra, Heliopolis e Zeitoun: riflettono l'espansione della comunità copta nei quartieri del Cairo moderno.
+P|Siti legati al viaggio della Sacra Famiglia: il racconto va presentato come tradizione ecclesiale, e l'accesso reale va verificato.
+SEC|7.3|Patrimonio ebraico
+P|Oltre alla sinagoga Ben Ezra nel Cairo Antica, il Cairo ha luoghi legati alla storia ebraica moderna, tra cui il tempio dei Samaritani nel centro città e altri siti che possono essere chiusi o avere accesso limitato. Non si deve presumere che tutti i luoghi di culto siano aperti al turismo generale; contattate l'ente responsabile e ottenete un'autorizzazione preventiva quando necessario.
+SEC|7.4|Galateo della visita religiosa
+H|Rispettate gli orari di preghiera, le messe e le ricorrenze religiose.
+P|Indossate un abbigliamento adeguato; potrebbe essere richiesto di togliersi le scarpe o coprirsi il capo.
+P|Non fotografate preghiere o persone senza autorizzazione.
+H|Non toccate icone, antichità, tessuti o oggetti religiosi.
+P|Non presentate un sito come aperto al pubblico senza conferma dell'amministrazione responsabile.
+CH|8|Palazzi, case storiche e architettura moderna
+SEC|8.1|Palazzi storici
+P|Palazzo / edificio
+P|Posizione
+P|Valore e note
+H|Palazzo di Abdin
+H|Centro del Cairo
+P|Un palazzo dell'epoca del khedivè Ismail, con un complesso museale, sale e collezioni della famiglia alawita; la visita è organizzata
+H|Palazzo del principe Muhammad Ali – Manial
+H|Isola di Roda
+P|Un misto di stili islamico, marocchino, andaluso e ottomano, con giardini e collezioni d'arte
+H|Palazzo Baron Empain
+H|Heliopolis
+P|Un'architettura di gusto indiano legata alla fondazione di Heliopolis all'inizio del XX secolo
+H|Palazzo Manstirli
+P|Isola di Roda
+P|Un palazzo storico sul Nilo, legato al Museo Umm Kulthum e agli eventi
+H|Palazzo del principe Taz
+P|Califfo / Sakakini
+P|Un edificio mamelucco riutilizzato come centro culturale
+H|Palazzo del principe Bashtak
+P|Via al-Muizz
+P|Un esempio di architettura residenziale ufficiale dell'epoca mamelucca
+H|Palazzo Sakakini
+P|Piazza Sakakini
+P|Architettura rococò con influenze europee; non si deve presumere che l'interno sia aperto
+H|Palazzo Zaafran
+P|Abbassia
+P|Un palazzo del XIX secolo utilizzato negli edifici dell'università di Ain Shams
+H|Palazzo Musafirkhana
+P|Gamaleya
+P|Un edificio storico nel Cairo Antica; verificare lo stato di conservazione e l'accesso
+SEC|8.2|Case e wakala
+P|Casa al-Suhaymi: una delle case storiche più note, con il cortile, la maschrabiyya e la sala interna.
+P|Casa Qaraita: parte della collezione Gayer-Anderson accanto alla moschea di Ibn Tulun.
+P|Casa di Zeinab Khatoun, casa al-Harawi e casa di Sitt Wasila: case del patrimonio nell'area di al-Azhar e della via al-Muizz; i programmi di visita e gli eventi variano.
+P|Wakalat al-Ghuri e Wakalat Qaitbay: esempi di architettura per il commercio, l'alloggio e il deposito.
+P|Sabil e kuttab: edifici di servizio che fornivano acqua e istruzione, e che sono diffusi nel Cairo storica.
+P|Bagni storici: alcuni edifici sopravvivono o sono noti storicamente, ma non tutti i bagni antichi sono aperti o adatti alla visita pubblica.
+SEC|8.3|Il Cairo khedivale e il centro città
+P|Il centro città, o Cairo khedivale, è un'espansione urbana del XIX e dell'inizio del XX secolo a ovest della città storica. Vi si trovano viali ampi, piazze, palazzi e facciate con influenze europee e locali. Gli studi accademici mostrano che i sobborghi del Cairo, come Garden City, Zamalek, Maadi ed Heliopolis, si sono formati attraverso esperienze urbanistiche diverse e non secondo un unico modello [m14].
+P|Piazza Tahrir e dintorni: un nodo urbano moderno e un punto di riferimento politico e storico.
+H|Via Talaat Harb: facciate commerciali ed edifici dell'inizio del XX secolo.
+P|Piazza Mustafa Kamel, piazza Abdin e piazza dell'Opera: punti per comprendere la pianificazione khedivale.
+P|Palazzi del centro città: balconi, facciate, ingressi, scale e vecchi ascensori.
+P|Edifici di istituzioni, banche, giornali e teatri: parte della storia moderna della città.
+P|Caffè e passaggi: aiutano a leggere la vita culturale e sociale del Cairo.
+SEC|8.4|Architettura moderna e punti di riferimento civici
+P|La Torre del Cairo: un punto di riferimento moderno sull'isola di Zamalek, con vista panoramica sul Nilo e sulla città.
+P|Opera del Cairo: un centro culturale e artistico sull'area di Gezira; l'edificio attuale è stato inaugurato nel 1988.
+P|Panorama della guerra d'ottobre: un museo e una mostra documentaria sulla guerra d'ottobre a Nasr City.
+P|Monumento al Milite Ignoto: un luogo nazionale e commemorativo a Nasr City.
+P|Università del Cairo: edifici di valore storico ed educativo a Giza, soggetti alle regole di accesso.
+P|La Radio-Televisione e Maspero: parte della storia dei media e dello sviluppo urbano moderno sul Nilo.
+P|Grandi impianti sportivi: rientrano nel turismo degli eventi quando si svolge una partita o un torneo.
+CH|9|I quartieri della Grande Cairo e il carattere di ciascuno
+P|Quartiere / zona
+P|Carattere urbano
+P|Ciò che può attirare il visitatore
+H|Zamalek
+P|Un'isola culturale e residenziale con strade alberate
+P|La Torre del Cairo, l'Opera, i musei d'arte, le gallerie e i caffè
+H|Garden City
+P|Un quartiere residenziale storico vicino al Nilo e ai grandi hotel
+P|Architettura, facciate, giardini e un percorso pedonale limitato
+H|Centro città
+P|Un cuore commerciale e culturale dei secoli XIX e XX
+P|Il Cairo khedivale, Tahrir, musei, caffè e teatri
+H|Cairo islamica
+P|Un tessuto storico con mercati e monumenti successivi
+P|Via al-Muizz, il khan, al-Azhar, le porte e le case
+H|Cairo Antica e Fustat
+P|Strati romani, copti e islamici
+P|Il complesso delle religioni, il Museo Copto, Ben Ezra e la moschea di Amr
+H|Manial e Roda
+P|Un quartiere sul Nilo e palazzi storici
+P|Palazzo di Manial, Manstirli, Umm Kulthum, il nilometro
+H|Heliopolis e Korba
+P|Un sobborgo pianificato dell'inizio del XX secolo
+P|Palazzo Baron, Korba, Roxy, architettura e chiese
+H|Nasr City
+P|Un'espansione urbana moderna con centri commerciali e sportivi
+P|Il panorama dell'Ottobre, il monumento e i giardini
+H|Maadi
+P|Un quartiere residenziale relativamente verde con zone di ville
+P|Wadi Degla, caffè, ristoranti e lungofiume
+H|Dokki e Mohandessin
+P|Quartieri urbani, commerciali ed educativi sulla riva occidentale del Nilo
+P|Il Museo dell'agricoltura, l'università del Cairo nelle vicinanze e ristoranti
+H|Haram e Remaya
+P|La porta turistica di Giza e la vista sulle piramidi
+P|Le piramidi, il Grande Museo ed esperienze legate alle antichità
+H|6 Ottobre e Sheikh Zayed
+P|Espansioni urbane moderne con centri commerciali e di intrattenimento
+P|Mall of Egypt, Mall of Arabia, Dream Park e ristoranti
+H|Nuovo Cairo e Tagamoa
+P|Una città moderna che dipende dall'auto e dai centri commerciali
+P|Cairo Festival City, Point 90, ristoranti e intrattenimento
+H|Scegliere dove alloggiare
+P|Per i monumenti islamici e il Museo Egizio di Tahrir: una posizione centrale che rende facile raggiungere il centro città e il Cairo storico.
+P|Per le piramidi e il Grande Museo: Giza o la zona ovest del Cairo possono ridurre gli spostamenti tra alcune tappe; confrontatelo con il resto del programma.
+P|Per ristoranti, gallerie e passeggiate serali: Zamalek o il centro città, in base al livello della sistemazione.
+P|Per la vicinanza all'aeroporto o per motivi di lavoro: Heliopolis o il Nuovo Cairo, in base alla destinazione del viaggio.
+P|Per soggiorni lunghi e famiglie: si possono valutare Maadi e alcuni quartieri a est o a ovest del Cairo, secondo le esigenze della famiglia.
+CH|10|Il Nilo, le sue isole, i giardini e le riserve
+SEC|10.1|Esperienze sul Nilo
+P|Feluca: una barca a vela tradizionale per un breve giro; concordate il punto di imbarco, la durata e il ritorno.
+P|Crociere con cena sul Nilo: variano per imbarcazione, tipo di spettacolo, cibo e durata; verificate cosa comprende il servizio prima di prenotare.
+P|Passeggiata sul lungofiume: adatta in alcune zone, facendo attenzione ai marciapiedi e al traffico.
+P|Battelli fluviali: un giro panoramico o di trasporto ricreativo, secondo l'operatore e il punto di approdo.
+P|Fotografia al tramonto: Zamalek, Garden City, Manial e alcuni punti del lungofiume offrono angolazioni diverse.
+SEC|10.2|Le isole del Nilo
+P|L'isola di Zamalek / Gezira è un importante centro culturale e artistico, mentre l'isola di Roda è legata a palazzi, al nilometro e ai siti storici. Esistono altre isole di carattere residenziale, agricolo o ambientale, come le isole di al-Dahab e al-Qursaya. Non si deve presumere che ogni isola sia aperta al turismo organizzato; verificate il diritto di accesso, la natura della comunità locale e i requisiti di tutela.
+SEC|10.3|Giardini e parchi
+P|Giardino
+P|Posizione
+P|Esperienza
+H|Giardino di al-Azhar
+P|Il Cairo storica / Darb al-Ahmar
+P|Spazi verdi, vedute sul Cairo antica e ristoranti
+H|Giardino dei pesci / al-Gabalaya
+P|Zamalek
+P|Un giardino storico e formazioni rocciose; verificare il funzionamento
+H|Giardino Orman
+P|Dokki – Giza
+P|Un giardino botanico storico, collezioni di piante ed esposizioni stagionali
+H|Giardino internazionale
+P|Nasr City
+P|Un giardino per famiglie con aree varie
+H|Giardino dei bambini
+P|Nasr City
+P|Spazi e attività per bambini, secondo il funzionamento
+H|Parco Merryland
+P|Heliopolis
+P|Uno spazio urbano di respiro e un giardino nell'est del Cairo
+H|Giardino giapponese
+P|Helwan
+P|Un progetto paesaggistico in stile orientale con vedute sull'acqua
+H|Giardino della Libertà
+P|Zamalek
+P|Uno spazio verde con monumenti e statue di personaggi culturali
+H|Giardini del palazzo di Manial
+P|Manial
+P|Un giardino legato al complesso del palazzo; può essere soggetto a un'organizzazione di visita speciale
+H|Isola di Maadi
+P|Maadi
+P|Una destinazione di ristoranti e intrattenimento sul Nilo, gestita da un operatore privato
+SEC|10.4|Riserve e aree naturali
+P|Riserva della valle di Degla: una valle desertica calcarea a est di Maadi, ricca di formazioni geologiche, fossili e fauna selvatica, utilizzata per camminate, corsa, ciclismo e campeggio secondo le regole della riserva [m15].
+P|La foresta pietrificata: un sito geologico nell'area dell'est del Cairo / Nuovo Cairo che contiene resti di alberi pietrificati; restate sui sentieri protetti e non prelevate campioni.
+P|Altopiano del Mokattam: vedute urbane e siti religiosi e culturali; non tutte le aree sono adatte a camminare o a una sosta turistica.
+P|Rive del Nilo: habitat urbani limitati in alcuni siti; non lasciate rifiuti e non disturbate gli uccelli.
+P|Le attività ambientali devono avere un basso impatto: non raccogliete pietre o fossili, non uscite dal sentiero, accendete fuochi solo in un luogo autorizzato e non lasciate rifiuti. Verificate lo stato della strada, il meteo e le autorizzazioni prima delle gite nel deserto.
+CH|11|Mercati, artigianato e shopping
+P|Mercato / zona
+P|Specialità o esperienza
+P|Note
+H|Khan al-Khalili
+P|Regali, rame, argento, profumi, lanterne e oggetti d'arte
+P|Un mercato storico legato al Cairo fatimide e mamelucca
+H|Via al-Muizz
+P|Artigianato tradizionale, piccoli negozi e ambiente storico
+P|L'esperienza architettonica è una parte fondamentale della visita
+H|Via Khayamiya
+P|Tessuti decorati, tende e pezzi tessili
+P|Un noto artigianato tradizionale egiziano
+H|Mercato dei ramai
+P|Lavorazione del rame e dei metalli
+P|Una specialità di mercato legata alla storia dei mestieri
+H|Mercato degli orafi
+P|Oro e gioielli
+P|Chiedete una fattura e verificate il titolo e il punzone
+H|Mosky e Ataba
+P|Commercio all'ingrosso e al dettaglio e merci varie
+P|Molto affollato e un'esperienza di mercato locale
+H|Wakalat al-Balah
+P|Abbigliamento, tessuti e commercio popolare
+P|Richiede attenzione alla folla e il controllo della merce
+H|Centro artigianale di Fustat
+P|Vasellame, ceramica, vetro e artigianato
+P|Acquistare prodotti locali e vedere alcuni artigiani al lavoro
+H|Darb al-Ahmar e il mercato delle armi
+P|Botteghe, artigianato e storia commerciale
+P|Un'esperienza specializzata nella città storica
+H|City Stars
+P|Marchi, ristoranti e cinema
+P|Un centro commerciale moderno
+H|Cairo Festival City
+P|Shopping, ristoranti e intrattenimento
+P|Adatto al Nuovo Cairo
+H|Mall of Egypt
+P|Shopping, intrattenimento e sci indoor
+P|Nel 6 Ottobre
+H|Mall of Arabia
+P|Shopping, ristoranti e destinazioni per famiglie
+P|Nel 6 Ottobre
+H|Arkan Plaza e Walk of Cairo
+P|Ristoranti, caffè e un'esperienza sociale
+P|A Sheikh Zayed
+H|Point 90 e Downtown Katameya
+P|Shopping, ristoranti e cinema
+P|Nell'area del Nuovo Cairo
+P|Shopping responsabile
+H|Chiedete il prezzo finale, la valuta, la taglia e il peso prima di pagare.
+P|Chiedete una fattura per gli oggetti di valore e distinguete i pezzi di artigianato moderno dalle antichità.
+P|Non acquistate alcun pezzo che possa essere un'antichità o parte di un sito archeologico.
+P|Rispettate il diritto del venditore di rifiutare fotografie o riprese commerciali.
+P|Non rendete lo shopping obbligatorio; presentatelo come una scelta chiara per il visitatore.
+CH|12|Cucina, caffè e cultura della tavola
+P|Il cibo è un elemento fondamentale dell'esperienza turistica. È meglio presentare al visitatore prima gli stili di cucina, i piatti e le zone, e solo dopo consigliare ristoranti specifici, dopo aver verificato recensioni recenti, pulizia, menu e compatibilità con le diete.
+P|Categoria
+P|Esempi
+P|Natura dell'esperienza
+H|Colazione egiziana
+P|Ful, ta'ameya, uova, formaggio, pane baladi, patate
+P|Un pasto popolare di base
+H|Cibo di strada
+P|Koshari, hawawshi, fegato, salsiccia, patate
+P|Velocità e sapori locali
+H|Cucina casalinga
+P|Molokhia, verdure ripiene, fattah, tajine, ruqaq, okra
+P|Cucina domestica e tradizionale
+H|Grigliate
+P|Kebab, kofta, tarb, riso, pollo
+P|Ristoranti di famiglia ed esperienza tradizionale
+H|Prodotti da forno salati
+P|Pasta mushaltit, ruqaq, hawawshi, pane baladi
+P|Un patrimonio della panificazione
+H|Dolci
+P|Om Ali, kunafa, basbousa, qatayef, riso al latte, mushabbak
+P|Dolci stagionali e tradizionali
+H|Bevande
+P|Tè, caffè, karkadé, tamarindo, sobya, canna da zucchero
+P|La cultura dei caffè e delle bevande
+H|Pesce e frutti di mare
+P|Specie di pesce e frutti di mare
+P|Scegliere ristoranti specializzati e verificare la provenienza
+P|Zone e scene gastronomiche
+H|Centro città: caffè storici, ristoranti antichi e pasti variati.
+P|Husayn e il khan: ristoranti e caffè in un contesto storico che si può abbinare a via al-Muizz.
+P|Zamalek: ristoranti, caffè, cucine internazionali e un'esperienza serale.
+P|Maadi: ristoranti di famiglia, caffè e zone relativamente tranquille.
+H|Dokki e Mohandessin: una scelta varia di ristoranti, panifici e caffè.
+P|Giza e le piramidi: ristoranti vicino alle piramidi, alcuni dei quali puntano sulla vista.
+P|Nuovo Cairo, Sheikh Zayed e 6 Ottobre: luoghi di ritrovo moderni per ristoranti e intrattenimento.
+P|Criteri per consigliare un ristorante
+P|Verificate le recensioni più recenti, non solo una vecchia media.
+P|Controllate il menu, le tasse, il servizio e la politica di prenotazione.
+P|Chiedete delle opzioni vegetariane, delle allergie e degli ingredienti.
+P|Verificate che, se necessario, ci sia uno spazio adatto a bambini e famiglie.
+P|Verificate la posizione, la facilità di parcheggio e lo spostamento dalla tappa del giro.
+P|Non confondete un ristorante adatto alle foto con uno che offre una buona esperienza gastronomica.
+CH|13|Arti, eventi, intrattenimento e famiglie
+SEC|13.1|Teatri, musica e arti
+P|Opera del Cairo: opera, balletto, musica classica, concerti e festival.
+P|Sakiet El Sawy: un centro culturale a Zamalek che ospita concerti, teatro, incontri ed eventi.
+P|Centro artistico El Hanager: uno spazio per spettacoli teatrali ed eventi vicino all'Opera.
+P|Sale espositive e musei d'arte a Zamalek: legati all'area dell'Opera e ai centri d'arte.
+P|Darb 1718: uno spazio per l'arte contemporanea e gli eventi nell'area di Fustat; verificare il programma in corso.
+P|Townhouse Gallery e spazi d'arte indipendenti: mostre ed eventi nel centro città; verificare le sedi e i programmi attuali.
+P|Istituti culturali stranieri: ospitano spettacoli, mostre ed eventi in momenti precisi.
+P|Festival di cinema, musica e libri: eventi stagionali che richiedono la prenotazione in anticipo.
+SEC|13.2|Attività per famiglie e bambini
+P|Centro per l'infanzia, la civiltà e la creatività a Heliopolis: contenuti interattivi ed educativi per i più piccoli.
+P|Villaggio faraonico a Giza: un'esperienza educativa e ricreativa con scene della vita quotidiana nell'Antico Egitto.
+P|Dream Park nel 6 Ottobre: un parco di divertimenti; verificare lo stato di funzionamento e le attrazioni disponibili.
+P|Ski Egypt al Mall of Egypt: un'esperienza sulla neve al chiuso per chi cerca un'attività diversa.
+P|Kidzania e centri di gioco per famiglie in alcuni centri commerciali: verificare le età e la prenotazione.
+P|Parco al-Azhar e giardini pubblici: spazi per camminare e riposare, secondo il meteo.
+H|Giardino al-Gabalaya a Zamalek: verificare l'accesso attuale.
+P|Cinema e aree gioco nei centri commerciali: un'opzione per la sera o per le giornate calde.
+SEC|13.3|Sport ed eventi
+P|Partite, tornei, esposizioni e conferenze possono rientrare nel turismo degli eventi, soprattutto allo Stadio internazionale del Cairo, nei centri espositivi e nelle sale congressi. Trattateli come eventi legati a una data precisa, non come luoghi aperti in ogni momento. Verificate biglietti, ingressi, procedure di accesso e affluenza.
+SEC|13.4|Esperienze locali
+P|Un giro fotografico nell'architettura khedivale o nel Cairo islamica con un fotografo locale.
+P|Un breve laboratorio per conoscere lo khayamiya, la ceramica o la calligrafia araba, presso un organizzatore responsabile.
+H|Un giro gastronomico con una guida che conosce la cucina locale e i suoi ingredienti.
+P|Assistere a uno spettacolo di musica o di tradizione presso un'istituzione nota, dopo aver verificato la natura dello spettacolo.
+P|Visitare un caffè storico e osservare la vita sociale del centro città.
+P|Una crociera sul Nilo al tramonto con una presentazione dei monumenti che si affacciano sul fiume.
+CH|14|Visite religiose e culturali specializzate
+P|Tipo di interesse
+P|Tappe
+P|Note
+H|Patrimonio islamico
+P|al-Azhar, Muizz, al-Hakim, al-Aqmar, Qalawun, Sultano Hassan, la Cittadella, Ibn Tulun
+P|Una giornata intera o due giorni per camminare e per l'architettura
+H|Patrimonio copto
+P|Fortezza di Babilonia, la Chiesa Sospesa, Abu Sarga, San Giorgio, il Museo Copto, Abu Sifein
+P|Rispetto dei riti e della privacy
+H|Storia ebraica
+P|Sinagoga Ben Ezra e alcuni siti ebraici moderni selezionati
+P|Verificare autorizzazioni e accesso
+H|Storia nazionale recente
+P|Abdin, Bayt al-Umma, il panorama dell'Ottobre, il monumento, i musei dei personaggi
+P|Legata alla storia dello Stato moderno
+H|Arti e musica
+P|Museo Umm Kulthum, l'Opera, i musei d'arte moderna, le mostre
+P|Verificare il programma degli spettacoli
+CH|15|Escursioni nei dintorni, fuori dal Cairo
+P|Queste destinazioni non si trovano tutte nei governatorati del Cairo e di Giza, ma rientrano nella pianificazione del soggiorno del visitatore al Cairo. Devono essere presentate chiaramente come escursioni fuori dalla città o fuori dai suoi confini amministrativi.
+P|Destinazione
+P|Natura dell'escursione
+P|Assi possibili
+P|Nota di pianificazione
+H|Fayoum
+P|Natura, deserto, villaggi e arti
+P|Lago Qarun, villaggio di Tunis, Wadi al-Rayan, Wadi al-Hitan, Karanis
+P|Una giornata lunga o un pernottamento; Wadi al-Hitan richiede una pianificazione particolare
+H|Ain Sokhna
+P|Costa del Mar Rosso e resort
+P|Spiaggia, resort e attività acquatiche
+P|Verificare l'ingresso per la giornata
+H|Alessandria
+P|Storia del Mediterraneo, musei e architettura
+P|La Biblioteca di Alessandria, la Cittadella di Qaitbay, il lungomare, musei e siti archeologici
+P|Un viaggio lungo; stabilite le priorità della giornata
+H|Wadi al-Natrun
+P|Monasteri e luoghi religiosi
+P|Monasteri storici soggetti all'approvazione dei monaci e agli orari di visita
+P|Coordinamento preventivo necessario
+H|Suez
+P|Storia, siti costieri e il Canale di Suez a livello regionale
+P|Secondo la destinazione disponibile
+P|Specificare il punto di visita e le restrizioni
+H|Meidum / Beni Suef
+P|Un'estensione archeologica a sud di Giza
+P|La piramide di Meidum e i siti archeologici della regione
+P|Un viaggio specializzato oltre la classica visita del Cairo
+H|Meidum
+P|La piramide di Meidum è importante per studiare il passaggio dell'architettura piramidale dalla forma a gradoni a quella a facce lisce. Si trova però al di fuori del consueto nucleo turistico del Cairo e di Giza, quindi è inserita tra le escursioni specializzate e non nel giro quotidiano del Cairo.
+H|Wadi al-Hitan
+P|Un sito naturale e geologico del Fayoum che contiene fossili di antiche balene; è un sito del patrimonio mondiale. La visita richiede una preparazione preventiva, un veicolo adatto e la preparazione a un'escursione nel deserto; non si presta ad essere aggiunta rapidamente a un giro del Cairo.
+CH|16|Itinerari e programmi suggeriti
+P|Tipo di programma
+P|Distribuzione suggerita
+P|Nota
+H|Prima visita – 3 giorni
+P|1 Piramidi e il Grande Museo; 2 Cairo islamica, la Cittadella e il khan; 3 Cairo Antica e il Museo della Civiltà, Zamalek la sera
+P|Un itinerario centrale equilibrato
+H|Antico Egitto – 4 giorni
+P|Giza, Saqqara e Menfi, Dahshur, i grandi musei
+P|Per gli appassionati di egittologia e antichità
+H|Storia del Cairo – 3 giorni
+P|Centro città, Cairo fatimide, la Cittadella e Salibah, Cairo Antica
+P|Richiede tempo per camminare e visitare gli interni
+H|Arte e architettura – 2 giorni
+P|Centro città e Zamalek, palazzo Baron e Korba, musei d'arte e palazzi
+P|Dipende dagli orari dei musei e degli spettacoli
+H|Famiglia – 3 giorni
+P|Le piramidi, il Grande Museo, un giardino o un'attività al chiuso, il Villaggio faraonico o il Centro per l'infanzia, un centro commerciale o un cinema
+P|Un equilibrio tra apprendimento e gioco
+H|Patrimonio religioso – 2 giorni
+P|Il complesso delle religioni e il Cairo Antica, poi al-Azhar, Muizz e la Cittadella
+P|Abbigliamento, riti e accesso sono importanti
+H|Natura – 1 giorno
+P|Wadi Degla o la foresta pietrificata, oppure i giardini cittadini secondo l'interesse
+P|Distinguere la riserva protetta dal giardino
+H|Giro notturno – mezza giornata
+P|Centro città o Zamalek, la Torre del Cairo, una cena sul Nilo o una feluca
+P|Confermare il mezzo per il ritorno
+H|Programma di cinque giorni
+P|Giorno 1: l'altopiano di Giza e la Sfinge, poi il Grande Museo Egizio.
+P|Giorno 2: Saqqara, il Museo di Imhotep e tombe selezionate, poi Menfi se il tempo lo consente.
+P|Giorno 3: la Cittadella, Sultano Hassan, al-Rifa'i, via Salibah e Ibn Tulun.
+P|Giorno 4: Cairo Antica, il complesso delle religioni, il Museo Copto e il Museo Nazionale della Civiltà.
+P|Giorno 5: centro città e Museo Egizio di Tahrir, oppure Zamalek, l'Opera e la Torre, oppure Dahshur secondo l'interesse.
+P|Programma di sette giorni
+H|I cinque giorni precedenti con un ritmo confortevole.
+P|Giorno 6: il Cairo fatimide da Bab al-Futuh a Bab Zuweila, con il khan e il Museo del Tessuto.
+P|Giorno 7: palazzo Baron e Korba, e giardini o musei dell'est del Cairo, oppure un'escursione al Fayoum.
+H|Principio di gestione della giornata
+P|Un programma giornaliero non è una corsa per accumulare il maggior numero di siti. È meglio scegliere una tappa principale e due o tre tappe di supporto, lasciando tempo per pranzo, riposo, foto e affollamento. Preparate un piano alternativo per il caldo estremo, un sito chiuso o il traffico rallentato.
+CH|17|Guida pratica per visitatori, organizzatori e autisti
+SEC|17.1|Trasporti
+P|La metropolitana: utile per alcuni percorsi; la sua idoneità dipende dalla posizione dell'hotel e dalla destinazione. Verificate le informazioni ufficiali sulle linee prima di affidarvi a un percorso specifico [m16].
+P|Auto private e taxi: flessibili per visitare siti distanti, ma i tempi di percorrenza dipendono dal traffico.
+P|Autobus e servizi di trasporto condiviso: possono andare bene per alcuni tragitti; copertura e disponibilità variano.
+P|A piedi: meglio all'interno delle aree storiche, dopo aver scelto una distanza ragionevole; i marciapiedi possono essere irregolari o affollati.
+P|Battelli sul Nilo: un giro panoramico o di trasporto ricreativo, secondo l'operatore e il punto di approdo.
+SEC|17.2|Meteo e abbigliamento
+P|Le visite all'aperto sono generalmente più confortevoli nei periodi miti dell'anno. I mesi estivi richiedono una partenza presto, acqua, cappello, crema solare e pause all'ombra. In inverno la sera può fare freddo. Seguite le previsioni meteo prima del viaggio.
+SEC|17.3|Fotografia
+P|La fotografia personale e commerciale può essere soggetta a regole diverse nei siti archeologici e nei musei.
+P|Alle donne in gravidanza, all'illuminazione, al flash o alla fotografia in alcune sale può essere vietato l'accesso.
+H|Fotografare abitanti, dipendenti e bambini richiede un'autorizzazione chiara.
+P|I droni sono soggetti a regole e permessi speciali, quindi non promettete il loro utilizzo.
+P|Non toccate antichità né salite su un edificio o un muro non destinati a questo, per ottenere una foto.
+SEC|17.4|Sicurezza e comfort
+H|Sorvegliate i vostri effetti personali e conservate una copia dei dati dell'hotel e del passaporto.
+P|Concordate in anticipo l'auto, il punto di incontro, la natura del servizio e gli eventuali costi extra.
+H|Bevete acqua da una fonte sicura e fate pause nelle giornate di lunghe camminate.
+P|Non entrate in gallerie, tombe, edifici chiusi o zone non autorizzate.
+P|Seguite le indicazioni del personale di sicurezza e dei dipendenti nei siti archeologici e religiosi.
+SEC|17.5|Accessibilità
+P|Alcuni siti archeologici hanno pavimenti irregolari, scale e passaggi stretti; non si deve quindi presumere che ogni sito sia adatto a sedie a rotelle o passeggini. Chiedete all'operatore gli ingressi alternativi, i servizi igienici, le sedute, le zone d'ombra e gli ascensori, e definite il livello di camminata richiesto prima di confermare il programma.
+SEC|17.6|Indicazioni operative per un'azienda di trasporto turistico
+P|Confermate il nome del cliente, il numero di contatto, l'hotel, il punto di incontro e l'orario di partenza prima del giorno della visita.
+P|Chiarite se il prezzo include auto, autista, carburante, tempo di attesa, pedaggi e parcheggi, biglietti e guida.
+P|Spiegate per iscritto la durata della giornata, la distanza, i costi per il tempo o la distanza extra e le spese di ingresso.
+P|Non garantite l'apertura di un sito, di una tomba o di una piramide interna prima di aver verificato il funzionamento e i biglietti.
+P|Non presentate l'autista come una guida archeologica autorizzata, a meno che non possieda la licenza adatta.
+P|Usate una guida turistica autorizzata quando il cliente ha bisogno di una spiegazione archeologica specializzata.
+P|Evitate di fare pressione sul turista per acquistare prodotti, salire su un cammello o lasciare mance.
+P|Inviate dopo ogni visita un piano scritto delle tappe, dei punti di sosta e del luogo di incontro.
+P|Registrate il nome dell'autista, il numero dell'auto e i dati di contatto e di emergenza.
+P|Lista di controllo prima di confermare un programma
+H|☐ Confermare giorno della visita e orari dalla fonte ufficiale.
+P|☐ Confermare tipo di biglietto, nazionalità, fascia d'età ed eventuali esigenze particolari.
+P|☐ Verificare se serve la prenotazione anticipata o la scelta di un orario d'ingresso.
+P|☐ Rivedere le regole su fotografia, borse, cibo e bevande.
+P|☐ Prevedere il tempo di spostamento con un margine per la folla.
+P|☐ Fissare i punti di discesa, attesa e incontro.
+P|☐ Assicurarsi che il percorso sia adatto a bambini, anziani e persone con disabilità.
+P|☐ Informare il cliente su cosa comprende il prezzo e su cosa non comprende.
+P|☐ Conservare le prenotazioni e i dati di contatto e inviarne una copia al cliente.
+CH|18|Indice dei luoghi per tipo di visitatore
+P|Tipo di visitatore
+P|Luoghi prioritari
+P|Aggiunta suggerita
+H|Prima visita
+P|Le piramidi, il Grande Museo, la Cittadella, Muizz e il khan
+P|Il Nilo o la Torre del Cairo la sera
+H|Appassionato di antichità egizie
+P|Giza, Saqqara, Menfi, Dahshur, il Grande Museo
+P|Abu Sir e siti specializzati dopo verifica
+H|Appassionato di architettura islamica
+P|Muizz, Sultano Hassan, al-Rifa'i, Ibn Tulun, la Cittadella, Salibah
+P|Qaitbay e l'imam al-Shafi'i
+H|Appassionato del patrimonio copto
+P|Il complesso delle religioni, il Museo Copto, il Cairo Antica
+P|La Cattedrale di San Marco e altri siti su accordo
+H|Appassionato di architettura moderna
+P|Centro città, Garden City, Zamalek, Heliopolis
+P|Palazzo Baron e Korba
+H|Appassionati d'arte e di musica
+P|Opera, Museo d'arte moderna, Umm Kulthum, mostre
+P|Sakiet El Sawy ed eventi stagionali
+H|Una famiglia con bambini
+P|Il Grande Museo, il Villaggio faraonico, il Centro per l'infanzia, giardini e centri commerciali
+P|Un'attività al chiuso, secondo il meteo
+H|Appassionati di mercati e artigianato
+P|Khan al-Khalili, khayamiya, Fustat, Mosky
+P|Un laboratorio artigianale organizzato
+H|Appassionati di natura
+P|Wadi Degla, la foresta pietrificata, i giardini, il Nilo
+P|Una gita di un'intera giornata nel Fayoum
+H|Appassionati di cucina
+P|Centro città, Husayn, Zamalek, Maadi, Mohandessin
+P|Un giro gastronomico con uno specialista
+H|Soggiorno breve o per lavoro
+P|Un museo vicino, un giro architettonico, un ristorante o uno spettacolo serale
+P|Un programma flessibile
+CH|19|Glossario dei termini storici e architettonici
+P|Termine
+P|Significato semplificato
+H|Necropoli
+P|Un'area di tombe legata a un antico centro residenziale o reale.
+H|Mastaba
+P|Una tomba rettangolare a terra, con lati inclinati e tetto piatto.
+H|Tempio della valle
+P|Un edificio legato ai riti di accoglienza del corpo reale sulla riva del fiume o sul bordo della valle.
+H|Strada rialzata
+P|Un corridoio cerimoniale che collega il tempio della valle con il tempio funerario vicino alla piramide.
+H|Tempio funerario
+P|Un tempio per riti e offerte legati al re defunto.
+H|Minareto
+P|Una torre legata alla chiamata alla preghiera, diventata un elemento caratteristico dell'architettura islamica.
+H|Mihrab
+P|Una nicchia che indica la direzione della qibla nella moschea.
+H|Madrasa
+P|Un'istituzione educativa religiosa, che può far parte di un complesso architettonico.
+H|Sabil
+P|Una struttura di beneficenza che fornisce acqua potabile, talvolta sormontata da un kuttab.
+H|Kuttab
+P|Un luogo tradizionale in cui si insegnano ai bambini il Corano, la lettura e la scrittura.
+H|Wakala / khan
+P|Un edificio commerciale per alloggiare i mercanti e immagazzinare le merci.
+H|Khanqah
+P|Un edificio legato al sufismo, all'alloggio, al culto e all'insegnamento.
+H|Maschrabiyya
+P|Un elemento sporgente in legno che assicura ventilazione, riservatezza e controllo della luce.
+H|Cupola funeraria
+P|Una copertura architettonica sopra una tomba o un santuario.
+H|Qarafa
+P|Il nome storico dei cimiteri del Cairo e delle sue aree funerarie.
+H|Muqarnas
+P|Elementi decorativi geometrici di transizione, simili a nicchie a gradoni.
+H|Mosaico
+P|Un'arte che consiste nel comporre piccole unità per formare immagini o decorazioni.
+H|Patrimonio urbano
+P|L'insieme di edifici, strade, piazze e attività che costituiscono l'identità di un luogo storico.
+H|Riserva naturale
+P|Un'area protetta per conservare la diversità biologica, geologica o il paesaggio naturale.
+H|Appendice A. Elenco ampliato di monumenti meno noti
+P|L'elenco seguente amplia la ricerca oltre le tappe turistiche più famose. Alcuni siti possono essere visti dall'esterno o inclusi in un giro specializzato; altri possono essere chiusi, in restauro o richiedere un coordinamento. L'elenco non è una garanzia che ogni sito sia aperto alla visita.
+P|Gruppo
+P|Nomi e monumenti aggiuntivi da approfondire
+P|Nota
+H|Moschee fatimidi
+P|Moschea di al-Hakim bi-Amr Allah, moschea di al-Aqmar, moschea di al-Juyushi, moschea di al-Salih Talai, le porte del Cairo fatimide
+P|Da leggere come un sistema storico legato alle mura e alla pianificazione fatimide
+H|Moschee mamelucche
+P|Moschea del sultano al-Mu'ayyad Shaykh, moschea del sultano Barquq, moschea di Qalawun, moschea di al-Ghuri, moschea di al-Nasir Muhammad nella Cittadella, moschea di Aq Sunqur, moschea di al-Mardani
+P|Gli orari d'ingresso e la possibilità di fotografare variano da un sito all'altro
+H|Scuole e santuari
+P|Madrasa dell'emiro Sarghatmish, madrasa del sultano Hassan, mausoleo / complesso di Qaitbay, cupola dell'imam al-Shafi'i, santuario di Sayyida Ruqayya
+P|Importanti per l'architettura funeraria ed educativa
+H|Strutture idriche e commerciali
+P|Sabil di Abd al-Rahman Katkhuda, sabil Umm Abbas, sabil Muhammad Ali, Wakalat al-Ghuri, Wakalat Qaitbay, il muro del canale di Aynayn
+P|Spiegano il ruolo dell'acqua, del commercio e dei servizi pubblici
+H|Siti dell'Antico Egitto
+P|Fortezza di Babilonia, chiesa della Vergine nel quartiere di Haret Zuweila, chiesa di Abu Sifein, chiesa di Santa Barbara, chiesa di Abu Sarga, sinagoga Ben Ezra
+P|Le visite devono rispettare la riservatezza dei luoghi religiosi
+H|Palazzi ed edifici moderni
+P|Palazzo Sakakini, palazzo Zaafran, palazzo di Abdin, palazzo Baron, gli edifici khedivali del centro città
+P|Alcuni edifici non sono aperti alla visita interna
+H|Musei specializzati
+P|Museo postale, museo del tessuto, Museo Umm Kulthum, Museo Inji Aflatoun, Casa della Nazione, Museo dell'infanzia, Museo dell'agricoltura
+P|Verificare lo stato di funzionamento e gli orari di visita
+H|Giza e l'estensione archeologica
+P|Abu Rawash, Zawiyet al-Aryan, Abu Sir, Abu Ghurab, Saqqara, Dahshur, Mit Rahina
+P|Alcuni siti richiedono un'organizzazione specializzata o la verifica di restrizioni
+H|Giza moderna e culturale
+P|Università del Cairo, giardino Orman, Museo dell'agricoltura, Villaggio faraonico, zone del 6 Ottobre e di Sheikh Zayed
+P|Unisce architettura, istruzione e intrattenimento
+P|Appendice B. Idee per contenuti turistici ampliati sul sito
+H|Un articolo introduttivo separato per ogni monumento principale, in arabo e in inglese.
+P|Una pagina dedicata a ogni zona geografica, con una mappa e le tappe di visita suggerite.
+P|Una pagina per ogni museo con la collezione principale, gli oggetti più significativi, la durata prevista e il link all'ente ufficiale.
+P|Una pagina dedicata al patrimonio islamico, copto ed ebraico che rispetti la precisione dei termini e la riservatezza dei luoghi.
+P|Articoli sulla cucina egiziana, l'artigianato, i mercati e la vita quotidiana, con consigli aggiornati.
+H|Pagine per programmi turistici diversi in base alla durata del soggiorno e agli interessi.
+P|Un allegato interno per gli autisti con l'ordine delle tappe, i punti di incontro e le note su traffico e attese.
+P|Una libreria di foto con licenza, mappe, link di verifica e una data di ultimo aggiornamento per ogni pagina.
+CH|20|Riferimenti e siti web
+P|Questo elenco è un punto di partenza per la ricerca e l'aggiornamento. Usate prima le fonti ufficiali per verificare lo stato di una visita, le regole per le foto, i biglietti o gli orari. Le enciclopedie aiutano ad ampliare l'indice e a scoprire nomi aggiuntivi, ma non sono il riferimento operativo finale.
+H|A. Fonti internazionali e patrimonio mondiale
+P|[m2] UNESCO – Il Cairo storica — https://whc.unesco.org/en/list/89/
+P|[m6] UNESCO – Menfi e la sua necropoli, i campi di piramidi da Giza a Dahshur — https://whc.unesco.org/en/list/86/
+P|UNESCO – Progetto Cairo storica — https://whc.unesco.org/en/historic-cairo-project/
+P|ICOMOS – Valutazione della candidatura del Cairo storica — https://whc.unesco.org/archive/2023/whc23-45com-inf8B1-en.pdf
+P|[m1] National Geographic – Guida di viaggio al Cairo — https://www.nationalgeographic.com/travel/article/cairo-egypt-travel-guide
+P|[m14] Cambridge University Press – Making Cairo modern? — https://www.cambridge.org/core/journals/urban-history/article/abs/making-cairo-modern-innovation-urban-form-and-the-development-of-suburbia-c-18801922/8E393329EA597D4087972D701574469B
+P|B. Ministero del Turismo e delle Antichità e musei
+H|Portale Scopri le antichità egizie — https://egymonuments.gov.eg/
+P|[m3] Ministero del Turismo e delle Antichità – Cairo storica — https://egymonuments.gov.eg/world-heritage/historic-cairo/
+P|[m4] Ministero del Turismo e delle Antichità – Altopiano di Giza — https://egymonuments.gov.eg/archaeological-sites/giza-plateau/
+P|[m5] Ministero del Turismo e delle Antichità – La Grande Piramide — https://egymonuments.gov.eg/monuments/the-great-pyramid/
+P|[m7] Ministero del Turismo e delle Antichità – Saqqara — https://egymonuments.gov.eg/archaeological-sites/saqqara/
+P|[m9] Ministero del Turismo e delle Antichità – Dahshur — https://egymonuments.gov.eg/en/archaeological-sites/dahshur/
+P|La piramide romboidale — https://egymonuments.gov.eg/en/monuments/the-bent-pyramid/
+P|La piramide rossa — https://egymonuments.gov.eg/monuments/the-red-pyramid/
+P|[m8] Ministero del Turismo e delle Antichità – Il Serapeo — https://egymonuments.gov.eg/monuments/serapeum/
+P|Museo Gayer-Anderson — https://egymonuments.gov.eg/en/museums/gayer-anderson-museum/
+P|Museo del palazzo di Manial — https://egymonuments.gov.eg/en/museums/manial-palace-museum/
+P|[m11] Ministero del Turismo e delle Antichità – Via Salibah — https://egymonuments.gov.eg/en/archaeological-sites/al-saliba-street/
+P|[m12] Ministero del Turismo e delle Antichità – Cittadella di Saladino — https://egymonuments.gov.eg/en/archaeological-sites/cairo-citadel/
+P|Museo Egizio di Tahrir — https://egymonuments.gov.eg/en/museums/egyptian-museum/
+P|Grande Museo Egizio – piano di visita — https://gem.eg/en/visit/plan-your-visit/
+P|Biglietti del Grande Museo Egizio — https://tickets.gem.eg/
+H|Museo Nazionale della Civiltà Egizia — https://nmec.gov.eg/
+P|Servizio informazioni dello Stato – Giza — https://sis.gov.eg/en/egypt/tourism/famous-cities/giza/
+P|Polizia del turismo e delle antichità – Ministero dell'Interno — https://www.moi.gov.eg/TourismAndAntiquities/home/TourismDepartments
+H|C. Portale del governatorato del Cairo
+P|Destinazioni e luoghi turistici del Cairo — https://cairo.gov.eg/en/tourism/tourism-destinations/
+P|[m10] Portale del governatorato del Cairo – Musei del Cairo — https://cairo.gov.eg/en/tourism/tourism-destinations/cultural/museums/
+P|Palazzi del Cairo — https://www.cairo.gov.eg/en/tourism/tourism-destinations/cultural/palaces/
+P|Moschee e monumenti — https://cairo.gov.eg/en/tourism/tourism-destinations/cultural/tourist-attractions/
+P|[m13] Portale del governatorato del Cairo – Complesso delle religioni — https://cairo.gov.eg/en/tourism/tourism-destinations/cultural/religious-complex/
+P|Khan al-Khalili — https://www.cairo.gov.eg/en/tourism/tourism-destinations/cultural/khan-al-khalili/
+P|Giardini del Cairo — https://cairo.gov.eg/en/tourism/tourism-destinations/entertainment/gardens/
+P|Riserve naturali — https://www.cairo.gov.eg/en/tourism/tourism-destinations/nature-reserves/
+P|[m15] Portale del governatorato del Cairo – Wadi Degla — https://cairo.gov.eg/ar/culture/cairo-history/ancient-landmarks/wadi-tigris-reserve/
+P|Museo Egizio del Tessuto — https://www.cairo.gov.eg/en/culture/cultural-destinations/cairo-museums/the-egyptian-textile-museum/
+P|[m16] Portale del governatorato del Cairo – Metropolitana del Cairo — https://www.cairo.gov.eg/en/governorate-services/transportation-services/metro/
+H|D. Wikipedia ed enciclopedie – indici esplorativi
+P|Le pagine seguenti servono ad ampliare l'elenco dei nomi e a scoprire le relazioni tra i siti. Verificate ogni informazione precisa, descrizione di funzionamento o accesso con una fonte primaria o ufficiale.
+H|Wikipedia – Cairo — https://en.wikipedia.org/wiki/Cairo
+P|Wikipedia – Giza pyramid complex — https://en.wikipedia.org/wiki/Giza_pyramid_complex
+P|Wikipedia – Coptic Cairo — https://en.wikipedia.org/wiki/Coptic_Cairo
+P|Wikipedia – Downtown Cairo — https://en.wikipedia.org/wiki/Downtown_Cairo
+P|Wikipedia – List of historic monuments in Cairo — https://en.wikipedia.org/wiki/List_of_historic_monuments_in_Cairo
+P|Wikipedia – List of mosques in Cairo — https://en.wikipedia.org/wiki/List_of_mosques_in_Cairo
+P|Wikipedia – List of buildings in Cairo — https://en.wikipedia.org/wiki/List_of_buildings_in_Cairo
+P|Wikipedia – List of museums in Egypt — https://en.wikipedia.org/wiki/List_of_museums_in_Egypt
+P|Wikipedia – Memphis, Egypt — https://en.wikipedia.org/wiki/Memphis,_Egypt
+P|Wikipedia – Saqqara — https://en.wikipedia.org/wiki/Saqqara
+H|Wikipedia – Dahshur — https://en.wikipedia.org/wiki/Dahshur
+P|Wikipedia – Heliopolis, Cairo — https://en.wikipedia.org/wiki/Heliopolis,_Cairo
+H|E. Guide e riferimenti turistici di supporto
+P|Visit Egypt – Cairo e Giza — https://visitegypt.travel/destinations/giza.html
+P|Cairo Tourism – Quartieri del Cairo per i visitatori — https://www.cairotourism.org/best-neighborhoods-in-cairo-for-tourists-location-guide/
+P|Holiday in Egypt – Dove alloggiare al Cairo? — https://holidayinegypt.net/en/where-to-stay/where-to-stay-in-cairo
+H|Note conclusive e sviluppo futuro
+P|Questa enciclopedia offre una copertura tematica e geografica ampia, ma non è un inventario definitivo di ogni monumento o edificio della Grande Cairo; il solo Cairo storica contiene un gran numero di piccole strutture che non sono tutte adatte alla visita pubblica. Alcuni siti sono chiusi, in restauro o richiedono un permesso o un coordinamento speciale.
+P|La fase successiva opportuna è costruire un database spaziale per ogni sito, con: il nome in arabo e in inglese, la categoria, il quartiere, la descrizione, il periodo, l'importanza della visita, una durata approssimativa, la facilità di accesso, il link al sito ufficiale, il link alla mappa, lo stato di verifica e la data dell'ultima revisione. Si possono poi aggiungere foto con licenza, mappe e link interattivi.
+P|In questa edizione non ci sono prezzi dei biglietti. Se in futuro verranno aggiunti, dovranno stare in un'appendice separata e datata, con la data dell'ultima verifica, così da non mescolarsi con le informazioni storiche più stabili.
