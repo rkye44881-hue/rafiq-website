@@ -486,10 +486,20 @@ function renderReviews(lang, c) {
     it: ["Guarda le recensioni dei clienti su TripAdvisor", "Recensioni reali di clienti che hanno visitato il Cairo con Abu Khalid.", "Leggi le recensioni"]
   }[lang];
   const TA = '<div class="ta-card"><span class="ta-stars" aria-hidden="true">★★★★★</span><p class="ta-t">' + esc(TA_UI[0]) + '</p><p class="ta-d">' + esc(TA_UI[1]) + '</p><a class="ta-btn" target="_blank" rel="noopener" href="' + TA_URL + '">' + esc(TA_UI[2]) + '</a></div>';
+  /* Instagram: the highlight with real client videos, same card style as the TripAdvisor one */
+  const IG_URL = "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTY1MzE5ODc5NDQ2NTg1?story_media_id=3159125926405558390&cnvx=bjJlYm0wZXFuejE2";
+  const IG_UI = {
+    ar: ["شوف لحظات حقيقية من رحلاتنا", "فيديوهات من جولاتنا في القاهرة وتوصيل المطار والسواق الخاص مع مسافرين من كل مكان.", "شوف الفيديوهات على Instagram"],
+    en: ["Watch real moments from our trips", "Videos from our Cairo tours, airport transfers and private drivers with travelers from around the world.", "Watch on Instagram"],
+    fr: ["Découvrez de vrais moments de nos voyages", "Des vidéos de nos circuits au Caire, transferts aéroport et chauffeurs privés.", "Voir sur Instagram"],
+    de: ["Echte Momente aus unseren Reisen", "Videos von unseren Touren in Kairo, Flughafentransfers und Privatfahrern.", "Auf Instagram ansehen"],
+    it: ["Guarda momenti reali dei nostri viaggi", "Video dei nostri tour al Cairo, transfer aeroportuali e autisti privati.", "Guarda su Instagram"]
+  }[lang];
+  const IG = '<div class="ig-card"><span class="ig-ic" aria-hidden="true">&#9654;</span><p class="ig-t">' + esc(IG_UI[0]) + '</p><p class="ig-d">' + esc(IG_UI[1]) + '</p><a class="ig-btn" target="_blank" rel="noopener" href="' + IG_URL + '">' + esc(IG_UI[2]) + '</a></div>';
 
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(R.title) + '</h1><p class="sub">' + esc(R.intro) + '</p></div></section>'
-    + '<section class="sec"><div class="wrap">' + TA + list + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(R.cta) + '</a></p></div></section>'
+    + '<section class="sec"><div class="wrap"><div class="ta-row">' + TA + IG + '</div>' + list + '<p class="svc-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(L_HELLO(lang)) + '">' + ic("chat") + esc(R.cta) + '</a></p></div></section>'
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
