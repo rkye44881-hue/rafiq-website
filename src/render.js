@@ -476,9 +476,10 @@ function renderReviews(lang, c) {
     + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
   const hdr = '<header class="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/reviews/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div></div></header>';
   const list = cards ? '<div class="rev-grid">' + cards + '</div>' : '<p class="rev-empty">' + esc(R.empty) + '</p>';
-  /* TripAdvisor "write a review" button (official widget code; it does not copy any review text onto the page) */
-  const TA = '<div class="ta-wrap" aria-label="TripAdvisor">' + '<div id="TA_cdswritereviewlgvi711" class="TA_cdswritereviewlgvi"><ul id="Ac5RmP0" class="TA_links fJw7vToz"><li id="co6FW7mCk" class="c5x4RGjwfbX"><a target="_blank" rel="noopener" href="https://www.tripadvisor.com/"><img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="TripAdvisor" width="160" height="36" loading="lazy"></a></li></ul></div>'
-    + '<script async src="https://www.jscache.com/wejs?wtype=cdswritereviewlgvi&amp;uniq=711&amp;locationId=33039242&amp;lang=en_US&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script></div>';
+  /* TripAdvisor: a plain link to the Abu Khalid reviews page (no third-party script, no review text copied) */
+  const TA_URL = "https://www.tripadvisor.com.eg/Attraction_Review-g294201-d33028807-Reviews-Abu_Khalid_Tourist_Transport_in_Cairo-Cairo_Cairo_Governorate.html";
+  const TA_LABEL = { ar: "اقرأ التقييمات على TripAdvisor", en: "Read reviews on TripAdvisor", fr: "Lire les avis sur TripAdvisor", de: "Bewertungen auf TripAdvisor lesen", it: "Leggi le recensioni su TripAdvisor" };
+  const TA = '<p class="ta-wrap"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + TA_URL + '">' + esc(TA_LABEL[lang]) + '</a></p>';
 
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide">' + hdr
     + '<section class="sec guide-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(R.title) + '</h1><p class="sub">' + esc(R.intro) + '</p></div></section>'
