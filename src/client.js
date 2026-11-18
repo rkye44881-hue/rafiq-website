@@ -254,3 +254,14 @@
   if (/#(s-book|bookBox)$/.test(location.hash)) openBook();
   window.addEventListener("hashchange", function () { if (/#(s-book|bookBox)$/.test(location.hash)) openBook(); });
 })();
+
+/* scroll reveal for the home page sections (skipped for people who ask for less motion) */
+(function () {
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js-rv");
+  var targets = document.querySelectorAll(".sec .sec-head, .svc-cards > *, .fleet > *, .cities > *, .steps > *");
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  targets.forEach(function (el) { el.classList.add("rv"); io.observe(el); });
+})();
