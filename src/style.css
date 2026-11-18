@@ -907,3 +907,5 @@ body.has-picks .fab{display:none}
 .enc-search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,160,74,.25)}
 .enc-count{margin:0;font-size:.9rem;color:var(--muted)}
 .enc-body mark,.gp-b mark,.gp-n mark,.gplace mark{background:rgba(201,160,74,.35);color:inherit;padding:0 2px;border-radius:4px}
+.pay-block{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.pay-t{font-weight:700;margin:0 0 10px}

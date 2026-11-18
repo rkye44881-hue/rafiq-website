@@ -181,6 +181,8 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
     return '<section class="sec" id="s-explore"><div class="wrap">' + secHead(X.sections.explore) + '<div class="ex-cats" id="exCats" role="group">' + cats + '<div class="ex-panel" id="exPanel" hidden></div></div><div id="exTray"></div></div></section>';
   };
 
+  /* PayPal hosted button under the booking form; the PayPal script loads only when the form is opened (client.js) */
+  const payHtml = '<div class="pay-block"><p class="pay-t">' + esc(lang === "ar" ? "أو ادفع الآن للسواق باليوم" : "Or pay now for a day driver") + '</p><div id="paypal-container-VE3EKWRRAUJYE"></div></div>';
   const booking = () => {
     const B = L.book;
     const f = (id, lab, inp) => '<div class="fld"><label for="' + id + '">' + esc(lab) + '</label>' + inp + '</div>';
@@ -194,7 +196,7 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
       + f("bk-date", B.date, '<input id="bk-date" type="date">')
       + f("bk-time", B.time, '<input id="bk-time" type="time" value="09:00">')
       + f("bk-pax", B.pax, '<select id="bk-pax">' + [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14].map(n => '<option>' + n + '</option>').join("") + '</select>')
-      + '<div class="fld" style="align-self:end"><a class="btn btn-acc" id="bk-send" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(B.send) + '</a></div></div></form></details></div></section>';
+      + '<div class="fld" style="align-self:end"><a class="btn btn-acc" id="bk-send" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(B.send) + '</a></div></div></form>' + payHtml + '</details></div></section>';
   };
 
   const servicesSec = () => '<section class="sec" id="s-services"><div class="wrap">' + secHead(X.sections.services) + '<div class="svc-cards">'

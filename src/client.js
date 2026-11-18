@@ -265,3 +265,22 @@
   }, { threshold: 0.15 });
   targets.forEach(function (el) { el.classList.add("rv"); io.observe(el); });
 })();
+
+/* PayPal: loads the PayPal script and the "day driver" button only when the booking form is opened */
+(function () {
+  var bb = document.getElementById("bookBox");
+  var box = document.getElementById("paypal-container-VE3EKWRRAUJYE");
+  if (!bb || !box) return;
+  var started = false;
+  function load() {
+    if (started) return;
+    started = true;
+    var s = document.createElement("script");
+    s.src = "https://www.paypal.com/sdk/js?client-id=BAADdkVVcs6ARQU0_CjQtwJVeRlMWQIMhae3W03OLCftR8pKcD-VJfM76glegxkUg74p4yEM38UyI7RYj8&components=hosted-buttons&disable-funding=venmo&currency=USD";
+    s.onload = function () {
+      try { window.paypal.HostedButtons({ hostedButtonId: "VE3EKWRRAUJYE" }).render("#paypal-container-VE3EKWRRAUJYE"); } catch (e) {}
+    };
+    document.body.appendChild(s);
+  }
+  bb.addEventListener("toggle", function () { if (bb.open) load(); });
+})();
