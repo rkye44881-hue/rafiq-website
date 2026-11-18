@@ -692,7 +692,7 @@ function renderEncyclopedia(lang, c) {
     + '<section class="sec enc-sec"><div class="wrap"><div class="enc-search" role="search"><label class="enc-search-l" for="encQ">' + esc(U.search) + '</label><input id="encQ" type="search" autocomplete="off" placeholder="' + esc(U.searchPh) + '" data-none="' + esc(U.none) + '" data-count="' + esc(U.count) + '"><p id="encCount" class="enc-count" aria-live="polite"></p></div>' + toc + front + body + cta + '</div></section>'
     + guideListOnly(lang, c)
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
-    + '</div>' + analytics(lang, set).body + '</body></html>';
+    + '</div>' + analytics(lang, set).body + '<script src="/assets/guide-search.js?v=' + c.version + '" defer></script></body></html>';
 }
 
 module.exports = { renderPage, renderGuide, renderEncyclopedia, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };

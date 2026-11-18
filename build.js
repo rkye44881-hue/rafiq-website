@@ -63,6 +63,7 @@ for (const lang of LANGS) {
 }
 
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(OUT, "assets/style.css"));
+fs.copyFileSync(path.join(ROOT, "src/guide-search.js"), path.join(OUT, "assets/guide-search.js"));
 fs.writeFileSync(path.join(OUT, "assets/app.js"),
   fs.readFileSync(path.join(ROOT, "src/shared.js"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "src/client.js"), "utf8"));
 fs.cpSync(path.join(ROOT, "public"), OUT, { recursive: true });
