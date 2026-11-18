@@ -650,4 +650,35 @@ function renderPrices(lang, c) {
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };
+
+/* ---------- Cairo & Giza encyclopedia (Arabic): 20 chapters from the document, in accordions with a table of contents ---------- */
+function renderEncyclopedia(lang, c) {
+  const ar = lang === "ar", E = c.encyclopedia, set = c.settings;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const bookMsg = "مرحبًا {B}، عايز أحجز سواق لزيارة: موسوعة القاهرة والجيزة";
+  const paras = arr => arr.map(t => '<p>' + esc(t) + '</p>').join("");
+  const chapters = E.chapters;
+  const toc = '<nav class="enc-toc" aria-label="الفهرس"><h2>الفهرس</h2><ol>' + chapters.map(ch => '<li><a href="#ch-' + ch.num + '"><span class="n">' + ch.num + '</span>' + esc(ch.title) + '</a></li>').join("") + '</ol></nav>';
+  const body = chapters.map(ch => '<details class="enc-ch" id="ch-' + ch.num + '"><summary><span class="n">' + ch.num + '</span><span class="t">' + esc(ch.title) + '</span></summary><div class="enc-body">'
+    + paras(ch.blocks)
+    + ch.sections.map(s => '<h3><span class="sn">' + esc(s.num) + '</span> ' + esc(s.title) + '</h3>' + paras(s.blocks)).join("")
+    + '</div></details>').join("");
+  const front = '<details class="enc-ch enc-front"><summary><span class="t">مقدمة ومنهج إعداد الموسوعة</span></summary><div class="enc-body">' + paras(E.front) + '</div></details>';
+  const cta = '<div class="enc-cta"><p>عايز تزور أي مكان من دول بسواق خاص؟</p><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(bookMsg) + '">' + ic("chat") + esc(ar ? "احجز عبر واتساب" : "Book on WhatsApp") + '</a></div>';
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc("دليل القاهرة والجيزة | " + brand) + '</title><meta name="description" content="' + esc("موسوعة سياحية عن القاهرة والجيزة: الأهرامات والمتاحف والقاهرة الإسلامية والأسواق والطعام ورحلات قريبة.") + '">'
+    + '<link rel="canonical" href="' + base + '/' + lang + '/guide/">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
+  const hdr = '<header class="hdr" id="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(set.brand_ar) + '</span></a><div class="langs" role="group"><a class="lang-pick" href="/ar/guide/" aria-current="true">' + LANG_BTN.ar + '</a></div><a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(bookMsg) + '">' + ic("chat") + esc("واتساب") + '</a></div></header>';
+  return head + '<div id="site" class="ar page-guide enc-page">' + hdr
+    + '<section class="sec guide-hero enc-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>دليل القاهرة والجيزة</h1><p class="sub">' + esc(E.subtitle) + '</p></div></section>'
+    + '<section class="sec enc-sec"><div class="wrap">' + toc + front + body + cta + '</div></section>'
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderEncyclopedia, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };

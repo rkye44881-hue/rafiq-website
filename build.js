@@ -3,7 +3,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS } = require("./src/render.js");
+const { renderPage, renderGuide, renderEncyclopedia, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS } = require("./src/render.js");
 
 const ROOT = __dirname;
 const OUT = path.join(ROOT, "dist");
@@ -18,6 +18,7 @@ const content = {
   services: read("content/services.json").services,
   northcoast: read("content/northcoast.json"),
   guide: read("content/guide.json"),
+  encyclopedia: read("content/encyclopedia-ar.json"),
   library: read("content/library.json").photos,
   driverPage: read("content/service-driver.json"),
   reviews: read("content/reviews.json").reviews,
@@ -41,7 +42,7 @@ for (const lang of LANGS) {
   fs.mkdirSync(path.join(OUT, lang, "offers"), { recursive: true });
   fs.writeFileSync(path.join(OUT, lang, "offers", "index.html"), renderPage(lang, content, "offers"));
   fs.mkdirSync(path.join(OUT, lang, "guide"), { recursive: true });
-  fs.writeFileSync(path.join(OUT, lang, "guide", "index.html"), renderGuide(lang, content));
+  fs.writeFileSync(path.join(OUT, lang, "guide", "index.html"), lang === "ar" ? renderEncyclopedia(lang, content) : renderGuide(lang, content));
   fs.mkdirSync(path.join(OUT, lang, "gallery"), { recursive: true });
   fs.writeFileSync(path.join(OUT, lang, "gallery", "index.html"), renderGallery(lang, content));
   fs.mkdirSync(path.join(OUT, lang, "private-driver-cairo"), { recursive: true });
