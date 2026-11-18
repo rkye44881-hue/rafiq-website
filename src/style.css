@@ -816,3 +816,11 @@ body.has-picks .fab{display:none}
 .svc-cards > *,.fleet > *,.cities > *{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .svc-cards > *:active,.fleet > *:active,.cities > *:active{transform:scale(.98)}
 @media (prefers-reduced-motion:reduce){.js-rv .rv{opacity:1;transform:none;transition:none}.hero-lt::before{animation:none}}
+
+/* ---------- redesign (branch: redesign-home): full-bleed hero photo on phones, text on a bottom fade ---------- */
+@media (max-width:700px){
+  .hero-lt{min-height:640px;display:flex;align-items:flex-end}
+  .hero-lt .veil{background:linear-gradient(180deg,rgba(20,31,64,.25) 0%,rgba(20,31,64,.55) 45%,rgba(20,31,64,.95) 100%)}
+  .hero-lt .scene img{object-position:50% 35%}
+  .hero-lt .wrap{padding-block:120px 44px}
+}
