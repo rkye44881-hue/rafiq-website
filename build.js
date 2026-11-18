@@ -19,7 +19,7 @@ const content = {
   services: read("content/services.json").services,
   northcoast: read("content/northcoast.json"),
   guide: read("content/guide.json"),
-  encyclopedia: { ar: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/ar.txt"), "utf8")), en: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/en.txt"), "utf8")), fr: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/fr.txt"), "utf8")) },
+  encyclopedia: { ar: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/ar.txt"), "utf8")), en: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/en.txt"), "utf8")), fr: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/fr.txt"), "utf8")), de: parseEncyclopedia(fs.readFileSync(path.join(ROOT, "content/encyclopedia/de.txt"), "utf8")) },
   library: read("content/library.json").photos,
   driverPage: read("content/service-driver.json"),
   reviews: read("content/reviews.json").reviews,
@@ -43,7 +43,7 @@ for (const lang of LANGS) {
   fs.mkdirSync(path.join(OUT, lang, "offers"), { recursive: true });
   fs.writeFileSync(path.join(OUT, lang, "offers", "index.html"), renderPage(lang, content, "offers"));
   fs.mkdirSync(path.join(OUT, lang, "guide"), { recursive: true });
-  fs.writeFileSync(path.join(OUT, lang, "guide", "index.html"), (lang === "ar" || lang === "en" || lang === "fr") ? renderEncyclopedia(lang, content) : renderGuide(lang, content));
+  fs.writeFileSync(path.join(OUT, lang, "guide", "index.html"), (lang === "ar" || lang === "en" || lang === "fr" || lang === "de") ? renderEncyclopedia(lang, content) : renderGuide(lang, content));
   fs.mkdirSync(path.join(OUT, lang, "gallery"), { recursive: true });
   fs.writeFileSync(path.join(OUT, lang, "gallery", "index.html"), renderGallery(lang, content));
   fs.mkdirSync(path.join(OUT, lang, "private-driver-cairo"), { recursive: true });
