@@ -836,3 +836,12 @@ body.has-picks .fab{display:none}
 .svc-card:hover .svc-ph img{transform:scale(1.06)}
 .svc-card .ic{margin-top:-24px;border:3px solid var(--surface)}
 @media (prefers-reduced-motion:reduce){.svc-card,.svc-ph img{transition:none}}
+
+/* ---------- redesign: promises as cards, footer with a deeper brand gradient ---------- */
+#s-promise{position:relative;overflow:hidden}
+#s-promise::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(27,43,87,.10),transparent 65%);bottom:-180px;inset-inline-end:-160px;pointer-events:none}
+#s-promise .wrap{position:relative}
+.prom .pr{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.prom .pr:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(27,43,87,.12)}
+.foot{background:linear-gradient(180deg,var(--dark) 0%,#16224a 100%);border-top:2px solid var(--accent)}
+@media (prefers-reduced-motion:reduce){.prom .pr{transition:none}}
