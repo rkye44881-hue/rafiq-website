@@ -13,7 +13,7 @@ function parseEncyclopedia(text) {
     else if (tag === "FRONT") out.front.push(rest);
     else if (tag === "CH") { const [n, ...t] = rest.split("|"); ch = { num: Number(n), title: t.join("|"), blocks: [], sections: [] }; out.chapters.push(ch); sec = null; }
     else if (tag === "SEC") { const [n, ...t] = rest.split("|"); sec = { num: n, title: t.join("|"), blocks: [] }; if (ch) ch.sections.push(sec); }
-    else if (tag === "P") { if (sec) sec.blocks.push(rest); else if (ch) ch.blocks.push(rest); }
+    else if (tag === "P" || tag === "H") { const v = tag === "H" ? "\u0001" + rest : rest; if (sec) sec.blocks.push(v); else if (ch) ch.blocks.push(v); }
   });
   return out;
 }

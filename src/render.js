@@ -671,7 +671,7 @@ function renderEncyclopedia(lang, c) {
   const brand = ar ? set.brand_ar : set.brand_latin;
   const base = (set.site_url || "").replace(/\/$/, "");
   const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
-  const paras = arr => arr.map(t => '<p>' + esc(t) + '</p>').join("");
+  const paras = arr => arr.map(t => t.charAt(0) === "\u0001" ? '<h4 class="enc-h">' + esc(t.slice(1)) + '</h4>' : '<p>' + esc(t) + '</p>').join("");
   const chapters = E.chapters;
   const toc = '<nav class="enc-toc" aria-label="' + esc(U.toc) + '"><h2>' + esc(U.toc) + '</h2><ol>' + chapters.map(ch => '<li><a href="#ch-' + ch.num + '"><span class="n">' + ch.num + '</span>' + esc(ch.title) + '</a></li>').join("") + '</ol></nav>';
   const body = chapters.map(ch => '<details class="enc-ch" id="ch-' + ch.num + '"><summary><span class="n">' + ch.num + '</span><span class="t">' + esc(ch.title) + '</span></summary><div class="enc-body">'

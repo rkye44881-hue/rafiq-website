@@ -898,3 +898,4 @@ body.has-picks .fab{display:none}
 @media (max-width:640px){.enc-toc ol{grid-template-columns:1fr}.enc-ch summary{padding:16px}.enc-body{padding:4px 16px 18px}}
 .enc-places{background:var(--bg);padding-block:8px 40px}
 .enc-places-h{font-size:1.5rem;margin:0 0 14px;color:var(--dark);padding-top:12px;border-top:1px solid var(--line)}
+.enc-body h4.enc-h{font-size:1.2rem;color:var(--dark);margin:18px 0 6px;font-weight:700;line-height:1.5}
