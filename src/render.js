@@ -142,11 +142,18 @@ function renderPage(lang, c, page) {
   const header = () => {
     const logo = '<a class="logo" href="/' + lang + '/" aria-label="' + esc(ar ? set.brand_ar : set.brand_latin) + '">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span><span class="l2">' + esc(ar ? set.brand_latin.toUpperCase() : set.brand_ar) + '</span></a>';
     const pre = (sahel || offersPg) ? "/" + lang + "/" : "";
+    const sahelLinkText = N.nav;
     const sahelLink = '<a class="nav-sahel" href="/' + lang + '/north-coast/"' + (sahel ? ' aria-current="page"' : '') + '>' + esc(N.nav) + '</a>';
     const offersLink = '<a class="nav-sahel nav-offers" href="/' + lang + '/offers/"' + (offersPg ? ' aria-current="page"' : '') + '>' + esc(OU.nav) + '</a>';
     const guideLink = '<a class="nav-sahel" href="/' + lang + '/guide/">' + esc(GUIDE_UI[lang].title) + '</a>';
-    const nav = '<nav class="nav" id="nav">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + offersLink + sahelLink + guideLink + '</nav>';
     const langs = '<div class="langs" role="group" aria-label="Language">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/' + pagePath + '" hreflang="' + k + '" aria-current="' + (k === lang ? "true" : "false") + '">' + LANG_BTN[k] + '</a>').join("") + '</div>';
+    /* mobile menu (redesign): brand + close, four tiles, the list, then the languages */
+    const tiles = '<div class="nav-tiles"><a class="nav-tile gold" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '"><span class="nt-ic" aria-hidden="true">' + ic("chat") + '</span><b>' + esc(L.whatsapp) + '</b><small>' + esc(lang === "ar" ? "عبر واتساب" : "WhatsApp") + '</small></a>'
+      + '<a class="nav-tile" href="/' + lang + '/offers/"><span class="nt-ic" aria-hidden="true">&#9733;</span><b>' + esc(OU.nav) + '</b></a>'
+      + '<a class="nav-tile" href="/' + lang + '/guide/"><span class="nt-ic" aria-hidden="true">&#9673;</span><b>' + esc(GUIDE_UI[lang].title) + '</b></a>'
+      + '<a class="nav-tile" href="/' + lang + '/north-coast/"><span class="nt-ic" aria-hidden="true">&#8962;</span><b>' + esc(sahelLinkText) + '</b></a></div>';
+    const navHead = '<div class="nav-head"><span class="nav-brand">' + esc(lang === "ar" ? set.brand_ar : set.brand_latin) + '</span><button class="nav-x" type="button" aria-label="' + esc(L.menu) + '">&#10005;</button></div>';
+    const nav = '<nav class="nav" id="nav">' + navHead + tiles + '<div class="nav-list">' + L.nav.map((n, i) => '<a href="' + pre + '#' + NAV_IDS[i] + '">' + esc(n) + '</a>').join("") + '</div><div class="nav-langs">' + langs + '</div></nav>';
     return '<header class="hdr" id="hdr"><div class="wrap">' + logo + nav + langs
       + '<a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(L.wa.hello) + '">' + ic("chat") + esc(L.whatsapp) + '</a>'
       + '<button class="menu-btn" type="button" id="menuBtn" aria-expanded="false">' + esc(L.menu) + '</button></div></header>';
