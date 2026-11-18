@@ -907,3 +907,7 @@ body.has-picks .fab{display:none}
 .enc-search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,160,74,.25)}
 .enc-count{margin:0;font-size:.9rem;color:var(--muted)}
 .enc-body mark,.gp-b mark,.gp-n mark,.gplace mark{background:rgba(201,160,74,.35);color:inherit;padding:0 2px;border-radius:4px}
+
+/* promise cards inside the dark steps band: keep them dark so the light text stays readable */
+.sp-promises .prom .pr{background:rgba(245,239,228,.08);border:1px solid var(--dark-line);box-shadow:none}
+.sp-promises .prom .pr:hover{box-shadow:none}
