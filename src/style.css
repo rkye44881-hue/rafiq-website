@@ -782,3 +782,7 @@ body.has-picks .fab{display:none}
 .sp-promises .pr h3{color:var(--on-dark)}
 .sp-promises .pr p{color:var(--on-dark-muted)}
 .sp-promises .pr svg{color:var(--accent)}
+
+/* TripAdvisor write-a-review button, centred under the reviews */
+.ta-wrap{margin:28px 0 8px;display:flex;justify-content:center;align-items:center;min-height:40px}
+.ta-wrap img{max-width:100%;height:auto}
