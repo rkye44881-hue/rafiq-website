@@ -1,6 +1,20 @@
 {
   "reviews": [
     {
+      "video": "review-10",
+      "name": "",
+      "city": "France",
+      "trip": null,
+      "quote": null
+    },
+    {
+      "video": "review-11",
+      "name": "",
+      "city": "",
+      "trip": null,
+      "quote": null
+    },
+    {
       "video": "review-4",
       "name": "",
       "city": "",
@@ -43,20 +57,6 @@
       "quote": {
         "en": "\"We're so, so happy. We spent the best time in Cairo, with the best and friendliest service. We'll leave happy and we'll always come back.\""
       }
-    },
-    {
-      "video": "review-10",
-      "name": "",
-      "city": "France",
-      "trip": null,
-      "quote": null
-    },
-    {
-      "video": "review-11",
-      "name": "",
-      "city": "",
-      "trip": null,
-      "quote": null
     }
   ]
 }
