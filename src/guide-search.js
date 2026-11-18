@@ -50,6 +50,10 @@
       pl.hidden = !hit;
       if (hit) { count++; }
     });
+    /* while searching, the contents list and the intro step aside so the results start right under the search box */
+    var toc = document.querySelector(".enc-toc"), intro = document.querySelector(".enc-front");
+    if (toc) toc.hidden = words.length > 0;
+    if (intro) intro.hidden = words.length > 0;
     var out = document.getElementById("encCount");
     if (!words.length) out.textContent = "";
     else out.textContent = count ? box.getAttribute("data-count") + ": " + count : box.getAttribute("data-none");
