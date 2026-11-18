@@ -650,4 +650,49 @@ function renderPrices(lang, c) {
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
 
-module.exports = { renderPage, renderGuide, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };
+
+
+/* the places, tips and services of the existing guide, kept under the encyclopedia (Arabic) */
+function guideListOnly(lang, c) {
+  const full = renderGuide(lang, c);
+  const start = full.indexOf('<section class="sec guide-list">');
+  if (start < 0) return "";
+  const end = full.indexOf('</section>', start) + '</section>'.length;
+  return '<section class="sec enc-places" id="places"><div class="wrap"><h2 class="enc-places-h">' + esc(ENC_UI[lang] ? ENC_UI[lang].places : "") + '</h2></div>' + full.slice(start + '<section class="sec guide-list">'.length, end - '</section>'.length) + '</section>';
+}
+/* ---------- Cairo & Giza encyclopedia: one page per language (text in content/encyclopedia/<lang>.txt) ---------- */
+const ENC_UI = {
+  ar: { title: "دليل القاهرة والجيزة", toc: "الفهرس", intro: "مقدمة ومنهج إعداد الموسوعة", cta: "عايز تزور أي مكان من دول بسواق خاص؟", btn: "احجز عبر واتساب", wa: "واتساب", msg: "مرحبًا {B}، عايز أحجز سواق لزيارة: موسوعة القاهرة والجيزة", places: "الأماكن وإزاي توصلها", desc: "موسوعة سياحية عن القاهرة والجيزة: الأهرامات والمتاحف والقاهرة الإسلامية والأسواق والطعام ورحلات قريبة." },
+  en: { title: "Cairo & Giza guide", toc: "Contents", intro: "Introduction and method", cta: "Want to visit any of these places with a private driver?", btn: "Book on WhatsApp", wa: "WhatsApp", msg: "Hello {B}, I'd like to book a private driver for the Cairo & Giza encyclopedia", places: "Places and how to get there", desc: "A tourism encyclopedia of Cairo and Giza: the pyramids, museums, Islamic Cairo, markets, food and nearby trips." }
+};
+function renderEncyclopedia(lang, c) {
+  const ar = lang === "ar", U = ENC_UI[lang] || ENC_UI.en, set = c.settings;
+  const E = c.encyclopedia[lang] || c.encyclopedia.en;
+  const brand = ar ? set.brand_ar : set.brand_latin;
+  const base = (set.site_url || "").replace(/\/$/, "");
+  const wa = text => waLink(set.whatsapp, text.split("{B}").join(brand));
+  const paras = arr => arr.map(t => '<p>' + esc(t) + '</p>').join("");
+  const chapters = E.chapters;
+  const toc = '<nav class="enc-toc" aria-label="' + esc(U.toc) + '"><h2>' + esc(U.toc) + '</h2><ol>' + chapters.map(ch => '<li><a href="#ch-' + ch.num + '"><span class="n">' + ch.num + '</span>' + esc(ch.title) + '</a></li>').join("") + '</ol></nav>';
+  const body = chapters.map(ch => '<details class="enc-ch" id="ch-' + ch.num + '"><summary><span class="n">' + ch.num + '</span><span class="t">' + esc(ch.title) + '</span></summary><div class="enc-body">'
+    + paras(ch.blocks)
+    + ch.sections.map(s => '<h3><span class="sn">' + esc(s.num) + '</span> ' + esc(s.title) + '</h3>' + paras(s.blocks)).join("")
+    + '</div></details>').join("");
+  const front = '<details class="enc-ch enc-front"><summary><span class="t">' + esc(U.intro) + '</span></summary><div class="enc-body">' + paras(E.front) + '</div></details>';
+  const cta = '<div class="enc-cta"><p>' + esc(U.cta) + '</p><a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa(U.msg) + '">' + ic("chat") + esc(U.btn) + '</a></div>';
+  const head = '<!doctype html><html lang="' + HTML_LANG[lang] + '" dir="' + (ar ? "rtl" : "ltr") + '" data-site="' + (ar ? "ar" : "lt") + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+    + '<title>' + esc(U.title + " | " + brand) + '</title><meta name="description" content="' + esc(U.desc) + '">'
+    + LANGS.map(k => '<link rel="alternate" hreflang="' + k + '" href="' + base + '/' + k + '/guide/">').join("") + '<link rel="canonical" href="' + base + '/' + lang + '/guide/">'
+    + '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#1B2B57">'
+    + '<link rel="stylesheet" href="/media/fonts/fonts.css">'
+    + '<link rel="stylesheet" href="/assets/style.css?v=' + c.version + '">' + analytics(lang, set).head + '</head><body>';
+  const hdr = '<header class="hdr" id="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/guide/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div><a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(U.msg) + '">' + ic("chat") + esc(U.wa) + '</a></div></header>';
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide enc-page">' + hdr
+    + '<section class="sec guide-hero enc-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(E.subtitle) + '</p></div></section>'
+    + '<section class="sec enc-sec"><div class="wrap">' + toc + front + body + cta + '</div></section>'
+    + guideListOnly(lang, c)
+    + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
+    + '</div>' + analytics(lang, set).body + '</body></html>';
+}
+
+module.exports = { renderPage, renderGuide, renderEncyclopedia, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };
