@@ -13,7 +13,8 @@
   /* ---------- mobile menu ---------- */
   const hdr = document.getElementById("hdr"), mb = document.getElementById("menuBtn");
   mb.addEventListener("click", () => { const o = hdr.classList.toggle("open"); mb.setAttribute("aria-expanded", o); });
-  document.getElementById("nav").addEventListener("click", e => { if (e.target.tagName === "A") { hdr.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } });
+  /* a tap on a link OR on any empty part of the open menu closes it */
+  document.getElementById("nav").addEventListener("click", () => { hdr.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); });
   /* the menu closes by itself when the page moves, or when the person taps outside it */
   const closeMenu = () => { if (hdr.classList.contains("open")) { hdr.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } };
   window.addEventListener("scroll", closeMenu, { passive: true });
