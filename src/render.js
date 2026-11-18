@@ -651,6 +651,15 @@ function renderPrices(lang, c) {
 }
 
 
+
+/* the places, tips and services of the existing guide, kept under the encyclopedia (Arabic) */
+function guideListOnly(lang, c) {
+  const full = renderGuide(lang, c);
+  const start = full.indexOf('<section class="sec guide-list">');
+  if (start < 0) return "";
+  const end = full.indexOf('</section>', start) + '</section>'.length;
+  return '<section class="sec enc-places" id="places"><div class="wrap"><h2 class="enc-places-h">الأماكن وإزاي توصلها</h2></div>' + full.slice(start + '<section class="sec guide-list">'.length, end - '</section>'.length) + '</section>';
+}
 /* ---------- Cairo & Giza encyclopedia (Arabic): 20 chapters from the document, in accordions with a table of contents ---------- */
 function renderEncyclopedia(lang, c) {
   const ar = lang === "ar", E = c.encyclopedia, set = c.settings;
@@ -677,6 +686,7 @@ function renderEncyclopedia(lang, c) {
   return head + '<div id="site" class="ar page-guide enc-page">' + hdr
     + '<section class="sec guide-hero enc-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>دليل القاهرة والجيزة</h1><p class="sub">' + esc(E.subtitle) + '</p></div></section>'
     + '<section class="sec enc-sec"><div class="wrap">' + toc + front + body + cta + '</div></section>'
+    + guideListOnly(lang, c)
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
     + '</div>' + analytics(lang, set).body + '</body></html>';
 }
