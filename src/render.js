@@ -662,8 +662,8 @@ function guideListOnly(lang, c) {
 }
 /* ---------- Cairo & Giza encyclopedia: one page per language (text in content/encyclopedia/<lang>.txt) ---------- */
 const ENC_UI = {
-  ar: { title: "دليل القاهرة والجيزة", toc: "الفهرس", intro: "مقدمة ومنهج إعداد الموسوعة", cta: "عايز تزور أي مكان من دول بسواق خاص؟", btn: "احجز عبر واتساب", wa: "واتساب", msg: "مرحبًا {B}، عايز أحجز سواق لزيارة: موسوعة القاهرة والجيزة", places: "الأماكن وإزاي توصلها", desc: "موسوعة سياحية عن القاهرة والجيزة: الأهرامات والمتاحف والقاهرة الإسلامية والأسواق والطعام ورحلات قريبة." },
-  en: { title: "Cairo & Giza guide", toc: "Contents", intro: "Introduction and method", cta: "Want to visit any of these places with a private driver?", btn: "Book on WhatsApp", wa: "WhatsApp", msg: "Hello {B}, I'd like to book a private driver for the Cairo & Giza encyclopedia", places: "Places and how to get there", desc: "A tourism encyclopedia of Cairo and Giza: the pyramids, museums, Islamic Cairo, markets, food and nearby trips." }
+  ar: { title: "دليل القاهرة والجيزة", toc: "الفهرس", intro: "مقدمة ومنهج إعداد الموسوعة", cta: "عايز تزور أي مكان من دول بسواق خاص؟", btn: "احجز عبر واتساب", wa: "واتساب", msg: "مرحبًا {B}، عايز أحجز سواق لزيارة: موسوعة القاهرة والجيزة", search: "ابحث في الدليل", searchPh: "اكتب كلمة أو جملة، مثلاً: خان الخليلي", none: "مافيش نتايج، جرب كلمة تانية", count: "عدد النتائج", places: "الأماكن وإزاي توصلها", desc: "موسوعة سياحية عن القاهرة والجيزة: الأهرامات والمتاحف والقاهرة الإسلامية والأسواق والطعام ورحلات قريبة." },
+  en: { title: "Cairo & Giza guide", toc: "Contents", intro: "Introduction and method", cta: "Want to visit any of these places with a private driver?", btn: "Book on WhatsApp", wa: "WhatsApp", msg: "Hello {B}, I'd like to book a private driver for the Cairo & Giza encyclopedia", search: "Search the guide", searchPh: "Type a word or phrase, e.g. Khan el-Khalili", none: "No results, try another word", count: "Results", places: "Places and how to get there", desc: "A tourism encyclopedia of Cairo and Giza: the pyramids, museums, Islamic Cairo, markets, food and nearby trips." }
 };
 function renderEncyclopedia(lang, c) {
   const ar = lang === "ar", U = ENC_UI[lang] || ENC_UI.en, set = c.settings;
@@ -689,10 +689,10 @@ function renderEncyclopedia(lang, c) {
   const hdr = '<header class="hdr" id="hdr"><div class="wrap"><a class="logo" href="/' + lang + '/">' + rMark() + '<span class="l1">' + esc(ar ? set.brand_ar : set.brand_latin.toUpperCase()) + '</span></a><div class="langs" role="group">' + LANGS.map(k => '<a class="lang-pick" href="/' + k + '/guide/" aria-current="' + (k === lang) + '">' + LANG_BTN[k] + '</a>').join("") + '</div><a class="btn btn-acc btn-wa-h" target="_blank" rel="noopener" href="' + wa(U.msg) + '">' + ic("chat") + esc(U.wa) + '</a></div></header>';
   return head + '<div id="site" class="' + (ar ? "ar" : "lt") + ' page-guide enc-page">' + hdr
     + '<section class="sec guide-hero enc-hero"><div class="wrap"><p class="eyebrow">' + esc(brand) + '</p><h1>' + esc(U.title) + '</h1><p class="sub">' + esc(E.subtitle) + '</p></div></section>'
-    + '<section class="sec enc-sec"><div class="wrap">' + toc + front + body + cta + '</div></section>'
+    + '<section class="sec enc-sec"><div class="wrap"><div class="enc-search" role="search"><label class="enc-search-l" for="encQ">' + esc(U.search) + '</label><input id="encQ" type="search" autocomplete="off" placeholder="' + esc(U.searchPh) + '" data-none="' + esc(U.none) + '" data-count="' + esc(U.count) + '"><p id="encCount" class="enc-count" aria-live="polite"></p></div>' + toc + front + body + cta + '</div></section>'
     + guideListOnly(lang, c)
     + '<footer class="foot"><div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(brand) + '</span>' + founderLine(set, lang) + '<span>' + phoneLinks(set) + '</span><span>' + emailLink(set) + '</span>' + revLink(lang) + socials(set, lang) + '</div></footer>'
-    + '</div>' + analytics(lang, set).body + '</body></html>';
+    + '</div>' + analytics(lang, set).body + '<script src="/assets/guide-search.js?v=' + c.version + '" defer></script></body></html>';
 }
 
 module.exports = { renderPage, renderGuide, renderEncyclopedia, renderGallery, renderDriverPage, renderReviews, renderAbout, renderBlog, renderPost, blogPosts, renderPrices, LANGS };
