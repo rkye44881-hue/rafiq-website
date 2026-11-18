@@ -253,13 +253,13 @@ P|Antiquities and objects within the airport area
 H|Hunting Museum
 P|Within the Manial Palace complex / depending on the display arrangement
 P|Objects linked to hunting and royal collections
-H|Choosing a museum according to the visitor's interest
+P|Choosing a museum according to the visitor's interest
 P|For a first visit: the Grand Egyptian Museum, then the National Museum of Egyptian Civilisation or the Egyptian Museum in Tahrir.
 P|For Islamic history: the Museum of Islamic Art, the Textile Museum and the Gayer-Anderson Museum.
-H|For Coptic history: the Coptic Museum together with the Religions Complex.
+P|For Coptic history: the Coptic Museum together with the Religions Complex.
 P|For architecture and palaces: Manial Palace, Abdeen, Gayer-Anderson and the Baron Palace.
 P|For art and music: the Museum of Modern Art, Mahmoud Mokhtar, Umm Kulthum and Inji Aflatoun.
-H|For families: the Children's Centre and a museum suitable for children's ages, with a garden or an entertainment activity.
+P|For families: the Children's Centre and a museum suitable for children's ages, with a garden or an entertainment activity.
 CH|6|Islamic Cairo: Fatimid, Mamluk and Ottoman
 P|Historic Cairo has been on UNESCO's World Heritage List since 1979. Its value lies in the survival of a connected urban fabric: streets, markets, gates, walls, houses, wakalas, sabils, schools, mosques and cemeteries, not in individual buildings alone. UNESCO points to the layers of Fustat, al-Askar, al-Qata'i', Fatimid Cairo and the Ayyubid, Mamluk and Ottoman extensions [m2].
 SEC|6.1|Fatimid Cairo, its walls and gates
@@ -442,10 +442,10 @@ P|Mall of Egypt, Mall of Arabia, Dream Park and restaurants
 H|New Cairo and Tagamoa
 P|A modern city that depends on the car and on commercial centres
 P|Cairo Festival City, Point 90, restaurants and entertainment
-H|Choosing where to stay
+P|Choosing where to stay
 P|For Islamic monuments and the Egyptian Museum in Tahrir: a central location that makes it easy to reach downtown and historic Cairo.
 P|For the pyramids and the Grand Museum: Giza or west Cairo can reduce travel between some stops; compare this with the rest of the programme.
-H|For restaurants, galleries and evening walks: Zamalek or downtown, depending on the level of accommodation.
+P|For restaurants, galleries and evening walks: Zamalek or downtown, depending on the level of accommodation.
 P|For proximity to the airport or for business: Heliopolis or New Cairo, depending on the destination of the trip.
 P|For long stays and families: Maadi and some districts east or west of Cairo can be considered, depending on the family's needs.
 CH|10|The Nile, its islands, gardens and reserves
@@ -546,10 +546,10 @@ P|In Sheikh Zayed
 H|Point 90 and Downtown Katameya
 P|Shopping, restaurants and cinema
 P|In the New Cairo area
-H|Responsible shopping
+P|Responsible shopping
 P|Ask about the final price, the currency, the size and the weight before paying.
 P|Ask for an invoice for valuable goods, and distinguish modern handicraft pieces from antiquities.
-H|Do not buy any piece that may be an antiquity or part of an archaeological site.
+P|Do not buy any piece that may be an antiquity or part of an archaeological site.
 P|Respect the seller's right to refuse photography or commercial filming.
 P|Do not make shopping compulsory; present it as a clear choice for the visitor.
 CH|12|Food, cafés and the culture of eating
@@ -581,19 +581,19 @@ P|The culture of cafés and drinks
 H|Fish and seafood
 P|Types of fish and seafood
 P|Choosing specialised restaurants and checking the source
-H|Food areas and scenes
+P|Food areas and scenes
 P|Downtown: historic cafés, old restaurants and varied meals.
 P|Hussein and the Khan: restaurants and cafés in a heritage setting that can be combined with Muizz.
-H|Zamalek: restaurants, cafés, international cuisines and an evening experience.
+P|Zamalek: restaurants, cafés, international cuisines and an evening experience.
 P|Maadi: family restaurants, cafés and relatively quiet areas.
 P|Dokki and Mohandessin: a varied choice of restaurants, bakeries and cafés.
-H|Giza and the Pyramids: restaurants near the pyramids, some of which rely on the view.
+P|Giza and the Pyramids: restaurants near the pyramids, some of which rely on the view.
 P|New Cairo, Sheikh Zayed and 6th of October: modern gathering places for restaurants and entertainment.
 P|Criteria for recommending a restaurant
-H|Check the most recent reviews, not only an old average.
+P|Check the most recent reviews, not only an old average.
 P|Review the menu, the taxes, the service charge and the booking policy.
 P|Ask about vegetarian options, allergies and the ingredients of the food.
-H|Make sure there is a suitable area for children and families when needed.
+P|Make sure there is a suitable area for children and families when needed.
 P|Check the location, ease of parking and transfer from the tour stop.
 P|Do not confuse a restaurant suitable for photography with one that offers a good food experience.
 CH|13|Arts, events, entertainment and families
@@ -673,7 +673,7 @@ H|Meidum / Beni Suef
 P|An archaeological extension south of Giza
 P|The Meidum pyramid and archaeological sites in the region
 P|A specialised trip further than the usual Cairo tour
-H|Meidum
+P|Meidum
 P|The Meidum pyramid is important in studying the transition of pyramid architecture from the stepped form to smooth faces. But it lies outside the usual tourist core of Cairo and Giza, so it is listed among specialised trips rather than the daily Cairo tour.
 P|Wadi al-Hitan
 P|A natural and geological site in Fayoum containing fossils of ancient whales, and it is a World Heritage site. A visit requires advance arrangement, a suitable vehicle and preparation for a desert trip, and it does not suit being added as a quick extension to a Cairo tour.
@@ -705,16 +705,16 @@ P|Distinguish between the protected area and the garden
 H|Night tour – half a day
 P|Downtown or Zamalek, the Cairo Tower, a Nile dinner or a felucca
 P|Confirm the means of return
-H|Five-day programme
+P|Five-day programme
 P|Day 1: the Giza plateau and the Sphinx, then the Grand Egyptian Museum.
 P|Day 2: Saqqara, the Imhotep Museum and selected tombs, then Memphis if time allows.
-H|Day 3: the Citadel, Sultan Hassan, al-Rifa'i, Salibah Street and Ibn Tulun.
+P|Day 3: the Citadel, Sultan Hassan, al-Rifa'i, Salibah Street and Ibn Tulun.
 P|Day 4: Old Cairo, the Religions Complex, the Coptic Museum and the National Museum of Civilisation.
 P|Day 5: downtown and the Egyptian Museum in Tahrir, or Zamalek, the Opera and the Tower, or Dahshur depending on interest.
-H|Seven-day programme
+P|Seven-day programme
 P|The previous five days at a comfortable pace.
 P|Day 6: Fatimid Cairo from Bab al-Futuh to Bab Zuweila, with the Khan and the Textile Museum.
-H|Day 7: Baron Palace and Korba, and gardens or museums in east Cairo, or an outside trip to Fayoum.
+P|Day 7: Baron Palace and Korba, and gardens or museums in east Cairo, or an outside trip to Fayoum.
 P|Principle of managing the day
 P|A day programme is not a race to collect the largest number of sites. It is better to choose one main stop and two or three supporting stops, and leave time for lunch, rest, photography and crowds. Prepare an alternative plan for extreme heat, a closed site or delayed traffic.
 CH|17|Practical guide for visitors, organisers and drivers
@@ -838,47 +838,47 @@ H|Urban heritage
 P|The group of buildings, streets, squares and activities that shape the identity of a historic place.
 H|Nature reserve
 P|A protected area that preserves biological, geological or landscape diversity.
-H|Appendix A. An expanded list of less famous landmarks
+P|Appendix A. An expanded list of less famous landmarks
 P|The following list widens the search beyond the most famous tourist stops. Some sites can be seen from outside or included in a specialised tour, and some may be closed, under restoration or require coordination. The list is not a promise that every site is open to visitors.
-H|Group
+P|Group
 P|Additional names and landmarks worth researching
-H|Note
+P|Note
 P|Fatimid mosques
-H|Mosque of al-Hakim bi-Amr Allah, Mosque of al-Aqmar, Mosque of al-Juyushi, Mosque of al-Salih Talai, the gates of Fatimid Cairo
+P|Mosque of al-Hakim bi-Amr Allah, Mosque of al-Aqmar, Mosque of al-Juyushi, Mosque of al-Salih Talai, the gates of Fatimid Cairo
 P|Read as a historical system linked to the walls and Fatimid planning
-H|Mamluk mosques
+P|Mamluk mosques
 P|Mosque of al-Mu'ayyad Shaykh, Mosque of Sultan Barquq, Mosque of Qalawun, Mosque of al-Ghuri, Mosque of al-Nasir Muhammad in the Citadel, Mosque of Aq Sunqur, Mosque of al-Mardani
-H|Entry times and the possibility of photography vary from site to site
+P|Entry times and the possibility of photography vary from site to site
 P|Schools and shrines
-H|Madrasa of Amir Sarghatmish, Madrasa of Sultan Hassan, the shrine / complex of Qaitbay, the dome of Imam al-Shafi'i, the shrine of Sayyida Ruqayya
+P|Madrasa of Amir Sarghatmish, Madrasa of Sultan Hassan, the shrine / complex of Qaitbay, the dome of Imam al-Shafi'i, the shrine of Sayyida Ruqayya
 P|Important for funerary and educational architecture
-H|Water and commercial structures
+P|Water and commercial structures
 P|Sabil of Abd al-Rahman Katkhuda, Sabil Umm Abbas, Sabil Muhammad Ali, Wikalat al-Ghuri, Wikalat Qaitbay, the Wall of the Canal of Aynayn
-H|Explain the role of water, trade and public services
+P|Explain the role of water, trade and public services
 P|Ancient Egyptian sites
-H|Babylon Fortress, the Church of the Virgin in Haret Zuweila, the Church of Abu Sifein, the Church of St Barbara, the Church of Abu Sarga, Ben Ezra Synagogue
+P|Babylon Fortress, the Church of the Virgin in Haret Zuweila, the Church of Abu Sifein, the Church of St Barbara, the Church of Abu Sarga, Ben Ezra Synagogue
 P|Visits should respect the privacy of religious sites
-H|Palaces and modern buildings
+P|Palaces and modern buildings
 P|Sakakini Palace, Zaafran Palace, Abdeen Palace, Baron Palace, the Khedivial buildings of downtown
-H|Some buildings are not open for internal visits
+P|Some buildings are not open for internal visits
 P|Specialised museums
-H|Postal Museum, Textile Museum, Umm Kulthum Museum, Inji Aflatoun Museum, Umma House, the Children's Museum, the Agriculture Museum
+P|Postal Museum, Textile Museum, Umm Kulthum Museum, Inji Aflatoun Museum, Umma House, the Children's Museum, the Agriculture Museum
 P|Check the operating status and visiting times
-H|Giza and the archaeological extension
+P|Giza and the archaeological extension
 P|Abu Rawash, Zawiyet al-Aryan, Abu Sir, Abu Ghurab, Saqqara, Dahshur, Mit Rahina
-H|Some sites need specialised arrangement or a check of restrictions
+P|Some sites need specialised arrangement or a check of restrictions
 P|Modern and cultural Giza
-H|Cairo University, the Orman Garden, the Agriculture Museum, the Pharaonic Village, the areas of 6th of October and Sheikh Zayed
+P|Cairo University, the Orman Garden, the Agriculture Museum, the Pharaonic Village, the areas of 6th of October and Sheikh Zayed
 P|Combines architecture, education and entertainment
-H|Appendix B. Ideas for expanded tourism content on the website
+P|Appendix B. Ideas for expanded tourism content on the website
 P|A separate introductory article for each main landmark in Arabic and English.
-H|A separate page for each geographic area, with a map and suggested visiting stops.
+P|A separate page for each geographic area, with a map and suggested visiting stops.
 P|A museum page that includes the main collection, the notable exhibits, the expected duration and the link to the official body.
-H|A page dedicated to Islamic, Coptic and Jewish heritage that respects the accuracy of terms and the privacy of places.
+P|A page dedicated to Islamic, Coptic and Jewish heritage that respects the accuracy of terms and the privacy of places.
 P|Articles on Egyptian food, crafts, markets and daily culture, with updated recommendations.
-H|Pages for different tour programmes according to length of stay and interests.
+P|Pages for different tour programmes according to length of stay and interests.
 P|An internal guide for drivers with the order of stops, meeting points and notes on traffic and waiting.
-H|A library of licensed photos, maps, verification links and a date of last update for each page.
+P|A library of licensed photos, maps, verification links and a date of last update for each page.
 CH|20|References and websites
 P|This record is a starting point for research and updating. Use official sources first when checking the status of a visit, photography rules, tickets or times. Encyclopedias help expand the index and discover additional names, but they are not the final operational reference.
 P|A. International sources and world heritage
