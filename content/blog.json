@@ -2,7 +2,7 @@
   "posts": [
     {
       "slug": "private-driver-cairo-guide",
-      "draft": true,
+      "draft": false,
       "date": "2026-11-19",
       "cover": "/media/library/nile-river-cairo-skyline.webp",
       "cover_alt": {
