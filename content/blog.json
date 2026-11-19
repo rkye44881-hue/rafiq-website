@@ -1,6 +1,160 @@
 {
   "posts": [
     {
+      "slug": "private-driver-cairo-guide",
+      "draft": true,
+      "date": "2026-11-19",
+      "cover": "/media/library/nile-river-cairo-skyline.webp",
+      "cover_alt": {
+        "ar": "نيل القاهرة ومبانيها من على الكورنيش",
+        "en": "The Nile and Cairo's skyline from the corniche"
+      },
+      "keywords": [
+        "سائق خاص في القاهرة",
+        "سيارة بسائق في القاهرة",
+        "استئجار سيارة بسائق في القاهرة",
+        "سائق ليوم كامل بالقاهرة",
+        "انتقالات مطار القاهرة",
+        "Private Driver in Cairo",
+        "Car with Driver in Cairo",
+        "Rent a Car with Driver in Cairo",
+        "Driver for a Day in Cairo",
+        "Cairo Airport Transfer",
+        "Tourist Transportation Cairo",
+        "Family Car with Driver Cairo"
+      ],
+      "title": {
+        "ar": "سائق خاص في القاهرة: دليلك لسيارة بسائق ليوم كامل أو توصيل المطار",
+        "en": "Private driver in Cairo: your guide to a car with a driver for a full day or an airport transfer"
+      },
+      "excerpt": {
+        "ar": "إزاي تختار سيارة بسائق في القاهرة، وإيه الفرق بين الباقة اليومية وتوصيل المطار، وإيه اللي تتفق عليه قبل ما تتحرك.",
+        "en": "How to choose a car with a driver in Cairo, the difference between the day package and an airport transfer, and what to agree on before you set off."
+      },
+      "seo_title": {
+        "ar": "سائق خاص في القاهرة وسيارة بسائق | رحلة القاهرة",
+        "en": "Private Driver in Cairo and Car with Driver | Cairo Voyage"
+      },
+      "body": {
+        "ar": [
+          [
+            "p",
+            "لو بتدور على سائق خاص في القاهرة، غالباً محتاج واحد من تلاتة: يوم كامل بسيارة مريحة، أو توصيلة مطار في ميعاد ما يتأخرش، أو تنقلات متفرقة بين المعالم والمولات. الدليل ده بيشرح الفرق بينهم، وإيه اللي تتفق عليه قبل ما تركب."
+          ],
+          [
+            "h2",
+            "ليه سيارة بسائق بدل التاكسي؟"
+          ],
+          [
+            "p",
+            "السيارة بسائق معناها إن المشوار بتاعك متظبط من أوله: نفس السواق، نفس العربية، ومواعيد معروفة. الفرق بيبان أكتر لما يكون عندك عيلة، أو شنطة كبيرة، أو برنامج فيه أماكن كتير في يوم واحد."
+          ],
+          [
+            "h2",
+            "الباقة اليومية: 10 ساعات أو 120 كم"
+          ],
+          [
+            "p",
+            "سواق ليوم كامل بيشتغل بنظام واضح: 10 ساعات أو 120 كيلومتر، أيهما يجي الأول. بكده تعرف من البداية هتدفع كام، ومفيش مفاجآت في آخر اليوم. لو حابب تزور الأهرامات والمتحف المصري الكبير والقاهرة الإسلامية في نفس اليوم، الباقة دي هي الأنسب."
+          ],
+          [
+            "h2",
+            "توصيل المطار واستقباله"
+          ],
+          [
+            "p",
+            "انتقالات مطار القاهرة من أكتر الحاجات اللي بيطلبها الناس، خصوصاً لو الطيارة بتوصل متأخر بالليل أو لو عندك ميعاد بدري. السواق بيكون مستنيك في المطار بعد ما تخلص الجمارك، أو بيوصلك للمطار في الوقت اللي يناسب رحلتك. بلغنا رقم الرحلة قبل الوصول بيوم عشان نتابع أي تأخير."
+          ],
+          [
+            "h2",
+            "اختار السيارة اللي تناسب عددكم"
+          ],
+          [
+            "p",
+            "للعيلة أو المجموعات، السيارة العائلية بسائق أو الـ SUV أريح من عربية صغيرة، لأن المساحة والشنط بتفرق في الرحلات الطويلة. لو الهدف فخامة أكتر، فيه سيارات أعلى مستوى. الاختيار كله قبل الحجز، عشان تعرف السعة بالظبط."
+          ],
+          [
+            "h2",
+            "اتفق على الحاجات دي قبل ما تتحرك"
+          ],
+          [
+            "p",
+            "قبل أول مشوار، اتفق مع السواق على نقطة الالتقاء، والمعالم اللي هتزورها، ووقت الانتظار لو وقفت في مكان. السعر يتفق عليه قبل التحرك، ومايتغيرش إلا لو طلبت تغيير في المسار أو المدة."
+          ],
+          [
+            "h2",
+            "احجز بسهولة"
+          ],
+          [
+            "p",
+            "تقدر تحجز من الموقع عن طريق الواتساب، وتقولنا الخدمة اللي تحتاجها والتاريخ ونقطة الانطلاق وعدد الركاب، وإحنا نرد عليك بالتفاصيل والسعر. ده أسرع طريقة، ومن غير ما تدفع أي حاجة قبل ما تتأكد."
+          ],
+          [
+            "cta",
+            "احجز سواق خاص في القاهرة"
+          ]
+        ],
+        "en": [
+          [
+            "p",
+            "If you are looking for a private driver in Cairo, you usually need one of three things: a full day in a comfortable car, an airport transfer at a time you cannot miss, or several trips between sights, malls and restaurants. This guide explains the difference and what to agree before you set off."
+          ],
+          [
+            "h2",
+            "Why a car with a driver instead of a taxi?"
+          ],
+          [
+            "p",
+            "A car with a driver means your trip is planned from the start: the same driver, the same car, and clear times. The difference is clearer when you travel as a family, carry big luggage, or have a day packed with stops."
+          ],
+          [
+            "h2",
+            "The day package: 10 hours or 120 km"
+          ],
+          [
+            "p",
+            "Our driver-for-a-day package works on a clear basis: 10 hours or 120 kilometres, whichever comes first. You know the cost from the start, with no surprises at the end of the day. If you want to visit the Pyramids, the Grand Egyptian Museum and Islamic Cairo in one day, this package suits you best."
+          ],
+          [
+            "h2",
+            "Airport pickup and drop-off"
+          ],
+          [
+            "p",
+            "Cairo airport transfers are one of the most requested services, especially for late-night arrivals or early departures. The driver waits for you at the airport after you clear immigration, or collects you at the time that suits your flight. Send us your flight number a day ahead so we can follow any delay."
+          ],
+          [
+            "h2",
+            "Choose the car that fits your group"
+          ],
+          [
+            "p",
+            "For families and groups, a family car with a driver or an SUV is more comfortable than a small car, because space and luggage matter on longer trips. If you want a more premium feel, we have higher-end cars as well. Pick the vehicle before you book so you know exactly how many people and bags it fits."
+          ],
+          [
+            "h2",
+            "Agree on these points before you leave"
+          ],
+          [
+            "p",
+            "Before the first trip, agree with the driver on the meeting point, the sights you want to see, and the waiting time if you stop somewhere. The price is agreed before the trip starts and does not change unless you ask for a different route or a longer day."
+          ],
+          [
+            "h2",
+            "Booking is simple"
+          ],
+          [
+            "p",
+            "You can book through the website on WhatsApp. Tell us the service, the date, the pick-up point and the number of passengers, and we reply with the details and the price. It is the quickest way, and you pay nothing until you have confirmed."
+          ],
+          [
+            "cta",
+            "Book a private driver in Cairo"
+          ]
+        ]
+      }
+    },
+    {
       "slug": "pyramids-private-driver-guide",
       "draft": false,
       "date": "2026-10-28",
