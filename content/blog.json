@@ -7,7 +7,10 @@
       "cover": "/media/library/nile-river-cairo-skyline.webp",
       "cover_alt": {
         "ar": "نيل القاهرة ومبانيها من على الكورنيش",
-        "en": "The Nile and Cairo's skyline from the corniche"
+        "en": "The Nile and Cairo's skyline from the corniche",
+        "fr": "Le Nil et les immeubles du Caire vus depuis la corniche",
+        "de": "Der Nil und die Skyline von Kairo von der Uferpromenade aus",
+        "it": "Il Nilo e lo skyline del Cairo dal lungofiume"
       },
       "keywords": [
         "سائق خاص في القاهرة",
@@ -25,15 +28,24 @@
       ],
       "title": {
         "ar": "سائق خاص في القاهرة: دليلك لسيارة بسائق ليوم كامل أو توصيل المطار",
-        "en": "Private driver in Cairo: your guide to a car with a driver for a full day or an airport transfer"
+        "en": "Private driver in Cairo: your guide to a car with a driver for a full day or an airport transfer",
+        "fr": "Chauffeur privé au Caire : votre guide pour une voiture avec chauffeur à la journée ou un transfert aéroport",
+        "de": "Privatfahrer in Kairo: Ihr Leitfaden zum Auto mit Fahrer für einen ganzen Tag oder einen Flughafentransfer",
+        "it": "Autista privato al Cairo: la tua guida a un'auto con autista per una giornata intera o un transfer aeroportuale"
       },
       "excerpt": {
         "ar": "إزاي تختار سيارة بسائق في القاهرة، وإيه الفرق بين الباقة اليومية وتوصيل المطار، وإيه اللي تتفق عليه قبل ما تتحرك.",
-        "en": "How to choose a car with a driver in Cairo, the difference between the day package and an airport transfer, and what to agree on before you set off."
+        "en": "How to choose a car with a driver in Cairo, the difference between the day package and an airport transfer, and what to agree on before you set off.",
+        "fr": "Comment choisir une voiture avec chauffeur au Caire, la différence entre la formule journée et le transfert aéroport, et ce qu'il faut convenir avant de partir.",
+        "de": "Wie Sie in Kairo ein Auto mit Fahrer wählen, worin sich der Tagespreis vom Flughafentransfer unterscheidet und was Sie vor der Abfahrt vereinbaren sollten.",
+        "it": "Come scegliere un'auto con autista al Cairo, la differenza tra il pacchetto giornaliero e il transfer aeroportuale, e cosa concordare prima di partire."
       },
       "seo_title": {
         "ar": "سائق خاص في القاهرة وسيارة بسائق | رحلة القاهرة",
-        "en": "Private Driver in Cairo and Car with Driver | Cairo Voyage"
+        "en": "Private Driver in Cairo and Car with Driver | Cairo Voyage",
+        "fr": "Chauffeur privé au Caire et voiture avec chauffeur | Cairo Voyage",
+        "de": "Privatfahrer in Kairo und Auto mit Fahrer | Cairo Voyage",
+        "it": "Autista privato al Cairo e auto con autista | Cairo Voyage"
       },
       "body": {
         "ar": [
@@ -151,6 +163,180 @@
             "cta",
             "Book a private driver in Cairo"
           ]
+        ],
+        "fr": [
+          [
+            "p",
+            "Si vous cherchez un chauffeur privé au Caire, vous avez généralement besoin de l'une de ces trois choses : une journée entière dans une voiture confortable, un transfert aéroport à une heure qui ne peut pas être manquée, ou plusieurs trajets entre les sites, les centres commerciaux et les restaurants. Ce guide explique la différence et ce qu'il faut convenir avant de partir."
+          ],
+          [
+            "h2",
+            "Pourquoi une voiture avec chauffeur plutôt qu'un taxi ?"
+          ],
+          [
+            "p",
+            "Une voiture avec chauffeur signifie que votre trajet est prévu dès le départ : le même chauffeur, la même voiture et des horaires clairs. La différence est plus nette quand vous voyagez en famille, avec de gros bagages, ou avec une journée chargée d'étapes."
+          ],
+          [
+            "h2",
+            "La formule journée : 10 heures ou 120 km"
+          ],
+          [
+            "p",
+            "Notre formule chauffeur à la journée repose sur une base claire : 10 heures ou 120 kilomètres, selon la première échéance. Vous connaissez le coût dès le départ, sans surprise en fin de journée. Si vous voulez visiter les pyramides, le Grand Musée égyptien et le Caire islamique dans la même journée, cette formule vous convient le mieux."
+          ],
+          [
+            "h2",
+            "Prise en charge et dépose à l'aéroport"
+          ],
+          [
+            "p",
+            "Les transferts aéroport du Caire font partie des services les plus demandés, surtout pour les arrivées tardives ou les départs très tôt. Le chauffeur vous attend à l'aéroport après les formalités, ou vient vous chercher à l'heure qui convient à votre vol. Envoyez-nous le numéro de votre vol la veille pour que nous suivions tout retard."
+          ],
+          [
+            "h2",
+            "Choisissez la voiture adaptée à votre groupe"
+          ],
+          [
+            "p",
+            "Pour les familles et les groupes, une voiture familiale avec chauffeur ou un SUV est plus confortable qu'une petite voiture, car l'espace et les bagages comptent sur les longs trajets. Si vous souhaitez une prestation plus haut de gamme, nous avons aussi des voitures haut de gamme. Choisissez le véhicule avant de réserver pour savoir exactement combien de personnes et de bagages il peut accueillir."
+          ],
+          [
+            "h2",
+            "Convenez de ces points avant de partir"
+          ],
+          [
+            "p",
+            "Avant le premier trajet, convenez avec le chauffeur du point de rendez-vous, des sites à visiter et du temps d'attente si vous vous arrêtez quelque part. Le prix est convenu avant le début du trajet et ne change que si vous demandez un autre itinéraire ou une journée plus longue."
+          ],
+          [
+            "h2",
+            "Réserver est simple"
+          ],
+          [
+            "p",
+            "Vous pouvez réserver via le site, sur WhatsApp. Indiquez-nous le service, la date, le lieu de prise en charge et le nombre de passagers, et nous vous répondons avec les détails et le prix. C'est le moyen le plus rapide, et vous ne payez rien tant que la réservation n'est pas confirmée."
+          ],
+          [
+            "cta",
+            "Réserver un chauffeur privé au Caire"
+          ]
+        ],
+        "de": [
+          [
+            "p",
+            "Wenn Sie in Kairo einen Privatfahrer suchen, brauchen Sie meist eines von drei Dingen: einen ganzen Tag in einem komfortablen Auto, einen Flughafentransfer zu einer Zeit, die Sie nicht verpassen dürfen, oder mehrere Fahrten zwischen Sehenswürdigkeiten, Einkaufszentren und Restaurants. Dieser Leitfaden erklärt den Unterschied und was Sie vor der Abfahrt vereinbaren sollten."
+          ],
+          [
+            "h2",
+            "Warum ein Auto mit Fahrer statt eines Taxis?"
+          ],
+          [
+            "p",
+            "Ein Auto mit Fahrer bedeutet, dass Ihre Fahrt von Anfang an geplant ist: derselbe Fahrer, dasselbe Auto und klare Zeiten. Der Unterschied wird noch deutlicher, wenn Sie als Familie reisen, großes Gepäck haben oder einen Tag mit vielen Stopps planen."
+          ],
+          [
+            "h2",
+            "Das Tagespaket: 10 Stunden oder 120 km"
+          ],
+          [
+            "p",
+            "Unser Tagespaket mit Fahrer folgt einer klaren Regel: 10 Stunden oder 120 Kilometer, je nachdem, was zuerst eintritt. Sie kennen die Kosten von Anfang an, ohne Überraschungen am Ende des Tages. Wenn Sie die Pyramiden, das Große Ägyptische Museum und das islamische Kairo an einem Tag besuchen möchten, passt dieses Paket am besten."
+          ],
+          [
+            "h2",
+            "Abholung und Absetzen am Flughafen"
+          ],
+          [
+            "p",
+            "Flughafentransfers in Kairo gehören zu den meistgefragten Leistungen, besonders bei späten Ankünften oder sehr frühen Abflügen. Der Fahrer wartet nach der Passkontrolle am Flughafen auf Sie oder holt Sie zu der Zeit ab, die zu Ihrem Flug passt. Schicken Sie uns am Vortag Ihre Flugnummer, damit wir Verspätungen verfolgen können."
+          ],
+          [
+            "h2",
+            "Das Auto wählen, das zu Ihrer Gruppe passt"
+          ],
+          [
+            "p",
+            "Für Familien und Gruppen ist ein Familienauto mit Fahrer oder ein SUV bequemer als ein kleines Auto, denn Platz und Gepäck zählen bei längeren Fahrten. Wenn Sie es eleganter möchten, haben wir auch höherwertige Fahrzeuge. Wählen Sie das Fahrzeug vor der Buchung, damit Sie genau wissen, wie viele Personen und Taschen hineinpassen."
+          ],
+          [
+            "h2",
+            "Diese Punkte vor der Abfahrt klären"
+          ],
+          [
+            "p",
+            "Vor der ersten Fahrt sollten Sie mit dem Fahrer den Treffpunkt, die Sehenswürdigkeiten und die Wartezeit vereinbaren, falls Sie irgendwo anhalten. Der Preis wird vor Fahrtbeginn vereinbart und ändert sich nur, wenn Sie eine andere Route oder einen längeren Tag wünschen."
+          ],
+          [
+            "h2",
+            "Buchen ist einfach"
+          ],
+          [
+            "p",
+            "Sie können über die Website per WhatsApp buchen. Nennen Sie uns die Leistung, das Datum, den Abholort und die Anzahl der Passagiere, und wir antworten mit den Details und dem Preis. Das ist der schnellste Weg, und Sie zahlen nichts, bevor Sie bestätigt haben."
+          ],
+          [
+            "cta",
+            "Privatfahrer in Kairo buchen"
+          ]
+        ],
+        "it": [
+          [
+            "p",
+            "Se cerchi un autista privato al Cairo, di solito ti serve una di tre cose: una giornata intera in un'auto comoda, un transfer aeroportuale a un orario che non puoi perdere, oppure più spostamenti tra siti, centri commerciali e ristoranti. Questa guida spiega la differenza e cosa concordare prima di partire."
+          ],
+          [
+            "h2",
+            "Perché un'auto con autista invece di un taxi?"
+          ],
+          [
+            "p",
+            "Un'auto con autista significa che il tuo viaggio è pianificato dall'inizio: stesso autista, stessa auto e orari chiari. La differenza si nota di più quando viaggi in famiglia, hai bagagli ingombranti o una giornata piena di tappe."
+          ],
+          [
+            "h2",
+            "Il pacchetto giornaliero: 10 ore o 120 km"
+          ],
+          [
+            "p",
+            "Il nostro pacchetto autista per una giornata funziona su una base chiara: 10 ore o 120 chilometri, a seconda di quale arriva per primo. Conosci il costo dall'inizio, senza sorprese alla fine della giornata. Se vuoi visitare le piramidi, il Grande Museo Egizio e il Cairo islamica nello stesso giorno, questo pacchetto è quello più adatto."
+          ],
+          [
+            "h2",
+            "Ritiro e consegna in aeroporto"
+          ],
+          [
+            "p",
+            "I transfer aeroportuali al Cairo sono tra i servizi più richiesti, soprattutto per arrivi tardivi o partenze molto presto. L'autista ti aspetta in aeroporto dopo i controlli, oppure ti ritira all'orario più adatto al tuo volo. Mandaci il numero del volo il giorno prima, così seguiamo eventuali ritardi."
+          ],
+          [
+            "h2",
+            "Scegli l'auto adatta al tuo gruppo"
+          ],
+          [
+            "p",
+            "Per famiglie e gruppi, un'auto familiare con autista o un SUV sono più comodi di un'auto piccola, perché spazio e bagagli contano nei viaggi lunghi. Se preferisci un'esperienza più di lusso, abbiamo anche auto di fascia alta. Scegli il veicolo prima di prenotare, così sai esattamente quante persone e borse ci stanno."
+          ],
+          [
+            "h2",
+            "Concorda questi punti prima di partire"
+          ],
+          [
+            "p",
+            "Prima del primo viaggio, concorda con l'autista il punto di incontro, i luoghi che vuoi visitare e il tempo di attesa se ti fermi da qualche parte. Il prezzo è concordato prima dell'inizio del viaggio e non cambia, a meno che tu non chieda un percorso diverso o una giornata più lunga."
+          ],
+          [
+            "h2",
+            "Prenotare è semplice"
+          ],
+          [
+            "p",
+            "Puoi prenotare dal sito tramite WhatsApp. Dicci il servizio, la data, il punto di partenza e il numero di passeggeri, e ti rispondiamo con i dettagli e il prezzo. È il modo più veloce, e non paghi nulla finché non hai confermato."
+          ],
+          [
+            "cta",
+            "Prenota un autista privato al Cairo"
+          ]
         ]
       }
     },
@@ -161,7 +347,10 @@
       "cover": "/media/library/pyramids-of-giza.webp",
       "cover_alt": {
         "ar": "الأهرامات من على الطريق",
-        "en": "The Pyramids of Giza from the road"
+        "en": "The Pyramids of Giza from the road",
+        "fr": "Les pyramides de Gizeh depuis la route",
+        "de": "Die Pyramiden von Gizeh von der Straße aus",
+        "it": "Le piramidi di Giza dalla strada"
       },
       "keywords": [
         "private driver Giza",
@@ -172,11 +361,17 @@
       ],
       "title": {
         "ar": "قبل ما تروح الأهرامات بسواق خاص: دليلك في 8 نقط",
-        "en": "Visiting the Pyramids with a private driver: 8 things to know"
+        "en": "Visiting the Pyramids with a private driver: 8 things to know",
+        "fr": "Visiter les pyramides avec un chauffeur privé : votre guide en 8 points",
+        "de": "Die Pyramiden mit einem Privatfahrer besuchen: Ihr Leitfaden in 8 Punkten",
+        "it": "Visitare le piramidi con un autista privato: la tua guida in 8 punti"
       },
       "excerpt": {
         "ar": "إزاي تخطط يومك في الهرم، ومدة الطريق، وأهم حاجة تتفق عليها مع السواق قبل ما تبدأ.",
-        "en": "How to plan your day at the Pyramids, how long the drive takes, and what to agree with your driver first."
+        "en": "How to plan your day at the Pyramids, how long the drive takes, and what to agree with your driver first.",
+        "fr": "Comment organiser votre journée aux pyramides, la durée du trajet, et ce qu'il faut convenir avec le chauffeur avant de commencer.",
+        "de": "Wie Sie Ihren Tag bei den Pyramiden planen, wie lange die Fahrt dauert und was Sie vor dem Start mit dem Fahrer vereinbaren sollten.",
+        "it": "Come organizzare la giornata alle piramidi, quanto dura il viaggio e cosa concordare con l'autista prima di iniziare."
       },
       "body": {
         "ar": [
@@ -326,11 +521,236 @@
             "cta",
             "Book a private driver for the Pyramids"
           ]
+        ],
+        "fr": [
+          [
+            "p",
+            "Les pyramides ne sont pas un arrêt de trente minutes. Avec un chauffeur privé, un bon plan rend la journée détendue et évite la foule."
+          ],
+          [
+            "h2",
+            "1. Commencez tôt"
+          ],
+          [
+            "p",
+            "Le matin est le meilleur moment : moins de monde, une lumière plus douce et de meilleures photos. Demandez à votre chauffeur de venir vous chercher à l'hôtel avant 8 h."
+          ],
+          [
+            "h2",
+            "2. Prévoyez le trajet"
+          ],
+          [
+            "p",
+            "Le plateau se trouve à environ 19 km au sud-ouest du centre du Caire. Le trajet prend de 30 à 60 minutes dans chaque sens, et les heures de pointe ajoutent du temps."
+          ],
+          [
+            "h2",
+            "3. Choisissez quelques sites"
+          ],
+          [
+            "p",
+            "Les pyramides de Gizeh, le Grand Sphinx et le musée de la Barque solaire demandent environ quatre heures ensemble. Visitez le Grand Musée égyptien un autre jour, ou en fin d'après-midi."
+          ],
+          [
+            "h2",
+            "4. Convenez du prix d'abord"
+          ],
+          [
+            "p",
+            "Convenez du prix, du nombre d'heures et de l'itinéraire avant de partir. Notre prix est fixe par voiture : 8 heures pour 80 $, ou 12 heures pour 100 $, avec chauffeur, carburant et taxes inclus."
+          ],
+          [
+            "h2",
+            "5. Chameaux et chevaux : convenez avant de monter"
+          ],
+          [
+            "p",
+            "Si vous voulez monter à dos de chameau ou de cheval, convenez d'abord du prix et de la durée, et payez à la fin. Votre chauffeur peut rester à proximité et vous aider."
+          ],
+          [
+            "h2",
+            "6. Portez les bonnes chaussures"
+          ],
+          [
+            "p",
+            "Vous marcherez sur un sol irrégulier. Portez des chaussures confortables, emportez de l'eau, de la crème solaire et un chapeau en été."
+          ],
+          [
+            "h2",
+            "7. Les billets sont séparés"
+          ],
+          [
+            "p",
+            "Les billets d'entrée à certains sites sont payés séparément du prix du chauffeur. Demandez à votre chauffeur les tarifs actuels avant de partir, car ils changent."
+          ],
+          [
+            "h2",
+            "8. Choisissez où loger"
+          ],
+          [
+            "p",
+            "Gizeh est proche des pyramides et facile pour une visite tôt le matin. Zamalek et le centre-ville sont plus agréables si vous voulez dîner dehors et vous promener le soir."
+          ],
+          [
+            "cta",
+            "Réserver un chauffeur privé pour les pyramides"
+          ]
+        ],
+        "de": [
+          [
+            "p",
+            "Die Pyramiden sind kein Halt von dreißig Minuten. Mit einem Privatfahrer sorgt ein guter Plan dafür, dass der Tag entspannt bleibt und das Gedränge vermieden wird."
+          ],
+          [
+            "h2",
+            "1. Früh anfangen"
+          ],
+          [
+            "p",
+            "Der Morgen ist die beste Zeit: weniger Andrang, angenehmeres Licht und bessere Fotos. Bitten Sie Ihren Fahrer, Sie vor 8 Uhr am Hotel abzuholen."
+          ],
+          [
+            "h2",
+            "2. Die Fahrt einplanen"
+          ],
+          [
+            "p",
+            "Das Plateau liegt etwa 19 km südwestlich der Innenstadt von Kairo. Die Fahrt dauert je Richtung 30 bis 60 Minuten, und der Berufsverkehr verlängert sie."
+          ],
+          [
+            "h2",
+            "3. Wenige Stätten auswählen"
+          ],
+          [
+            "p",
+            "Die Pyramiden von Gizeh, die Große Sphinx und das Sonnenbootmuseum brauchen zusammen etwa vier Stunden. Besuchen Sie das Große Ägyptische Museum an einem anderen Tag oder am späten Nachmittag."
+          ],
+          [
+            "h2",
+            "4. Zuerst den Preis vereinbaren"
+          ],
+          [
+            "p",
+            "Vereinbaren Sie Preis, Stundenzahl und Route, bevor Sie aufbrechen. Unser Preis gilt pro Fahrzeug: 8 Stunden für 80 $ oder 12 Stunden für 100 $, inklusive Fahrer, Kraftstoff und Steuern."
+          ],
+          [
+            "h2",
+            "5. Kamele und Pferde: vor dem Ritt vereinbaren"
+          ],
+          [
+            "p",
+            "Wenn Sie auf einem Kamel oder Pferd reiten möchten, vereinbaren Sie zuerst Preis und Dauer und zahlen Sie am Ende. Ihr Fahrer kann in der Nähe bleiben und helfen."
+          ],
+          [
+            "h2",
+            "6. Die richtigen Schuhe tragen"
+          ],
+          [
+            "p",
+            "Sie werden auf unebenem Boden laufen. Tragen Sie bequeme Schuhe, nehmen Sie Wasser und Sonnencreme mit und im Sommer einen Hut."
+          ],
+          [
+            "h2",
+            "7. Die Eintrittskarten sind separat"
+          ],
+          [
+            "p",
+            "Die Eintrittskarten für einige Stätten werden getrennt vom Preis des Fahrers bezahlt. Fragen Sie Ihren Fahrer vor der Abfahrt nach den aktuellen Preisen, da sie sich ändern."
+          ],
+          [
+            "h2",
+            "8. Die Unterkunft wählen"
+          ],
+          [
+            "p",
+            "Gizeh liegt nahe an den Pyramiden und ist für einen frühen Besuch leicht zu erreichen. Zamalek und die Innenstadt sind besser, wenn Sie abends essen gehen und spazieren möchten."
+          ],
+          [
+            "cta",
+            "Privatfahrer für die Pyramiden buchen"
+          ]
+        ],
+        "it": [
+          [
+            "p",
+            "Le piramidi non sono una tappa di trenta minuti. Con un autista privato, un buon piano rende la giornata rilassata ed evita la folla."
+          ],
+          [
+            "h2",
+            "1. Inizia presto"
+          ],
+          [
+            "p",
+            "La mattina è il momento migliore: meno folla, luce più morbida e foto migliori. Chiedi all'autista di venirti a prendere in hotel prima delle 8."
+          ],
+          [
+            "h2",
+            "2. Pianifica il percorso"
+          ],
+          [
+            "p",
+            "L'altopiano si trova a circa 19 km a sud-ovest del centro del Cairo. Il tragitto richiede da 30 a 60 minuti per tratta, e l'ora di punta aggiunge tempo."
+          ],
+          [
+            "h2",
+            "3. Scegli alcuni siti"
+          ],
+          [
+            "p",
+            "Le piramidi di Giza, la Grande Sfinge e il Museo della barca solare richiedono circa quattro ore in totale. Visita il Grande Museo Egizio un altro giorno o nel tardo pomeriggio."
+          ],
+          [
+            "h2",
+            "4. Concorda prima il prezzo"
+          ],
+          [
+            "p",
+            "Concorda prezzo, numero di ore e percorso prima di partire. Il nostro prezzo è fisso per auto: 8 ore per 80 $, oppure 12 ore per 100 $, con autista, carburante e tasse inclusi."
+          ],
+          [
+            "h2",
+            "5. Cammelli e cavalli: concorda prima di salire"
+          ],
+          [
+            "p",
+            "Se vuoi fare un giro a dorso di cammello o di cavallo, concorda prima prezzo e tempo, e paga alla fine. L'autista può restare vicino e aiutarti."
+          ],
+          [
+            "h2",
+            "6. Indossa le scarpe giuste"
+          ],
+          [
+            "p",
+            "Camminerai su un terreno irregolare. Porta scarpe comode, acqua, crema solare e, d'estate, un cappello."
+          ],
+          [
+            "h2",
+            "7. I biglietti sono separati"
+          ],
+          [
+            "p",
+            "I biglietti d'ingresso ad alcuni siti si pagano separatamente dal prezzo dell'autista. Chiedi all'autista le tariffe attuali prima di partire, perché cambiano."
+          ],
+          [
+            "h2",
+            "8. Scegli dove alloggiare"
+          ],
+          [
+            "p",
+            "Giza è vicina alle piramidi e comoda per una visita mattutina. Zamalek e il centro città sono migliori se vuoi cenare fuori e passeggiare la sera."
+          ],
+          [
+            "cta",
+            "Prenota un autista privato per le piramidi"
+          ]
         ]
       },
       "seo_title": {
         "ar": "الأهرامات بسواق خاص: دليلك في 8 نقط",
-        "en": "Pyramids with a private driver: 8 tips"
+        "en": "Pyramids with a private driver: 8 tips",
+        "fr": "Les pyramides avec un chauffeur privé : votre guide en 8 points",
+        "de": "Die Pyramiden mit Privatfahrer: Leitfaden in 8 Punkten",
+        "it": "Le piramidi con un autista privato: guida in 8 punti"
       }
     },
     {
@@ -340,7 +760,10 @@
       "cover": "/media/library/nile-river-cairo-skyline.webp",
       "cover_alt": {
         "ar": "القاهرة من على النيل",
-        "en": "Cairo skyline from the Nile"
+        "en": "Cairo skyline from the Nile",
+        "fr": "Le Caire vu depuis le Nil",
+        "de": "Kairo vom Nil aus gesehen",
+        "it": "Il Cairo visto dal Nilo"
       },
       "keywords": [
         "كورنيش النيل القاهرة",
@@ -349,11 +772,17 @@
       ],
       "title": {
         "ar": "كورنيش النيل في القاهرة: إزاي تشوفه في يوم مريح بسواق خاص",
-        "en": "Cairo's Nile Corniche: how to see it in a relaxed day with a private driver"
+        "en": "Cairo's Nile Corniche: how to see it in a relaxed day with a private driver",
+        "fr": "La corniche du Nil au Caire : comment la voir dans une journée tranquille avec un chauffeur privé",
+        "de": "Die Nil-Uferpromenade in Kairo: wie Sie sie an einem entspannten Tag mit Privatfahrer erleben",
+        "it": "Il lungofiume del Nilo al Cairo: come vederlo in una giornata tranquilla con un autista privato"
       },
       "excerpt": {
         "ar": "النيل قلب القاهرة. تعرف إزاي تختار الوقت والمكان والعربية، وليه السواق الخاص يوفر عليك الوقت والتعب.",
-        "en": "The Nile is the heart of Cairo. How to pick the time, the places and the car, and why a private driver saves you time and effort."
+        "en": "The Nile is the heart of Cairo. How to pick the time, the places and the car, and why a private driver saves you time and effort.",
+        "fr": "Le Nil est le cœur du Caire. Comment choisir le moment, les lieux et la voiture, et pourquoi un chauffeur privé vous fait gagner du temps et de l'énergie.",
+        "de": "Der Nil ist das Herz Kairos. Wie Sie Zeit, Orte und Auto auswählen und warum ein Privatfahrer Zeit und Mühe spart.",
+        "it": "Il Nilo è il cuore del Cairo. Come scegliere momento, luoghi e auto, e perché un autista privato ti fa risparmiare tempo e fatica."
       },
       "video": {
         "src": "/media/blog/nile-corniche-montage.mp4",
@@ -467,11 +896,176 @@
             "cta",
             "Book a private driver on WhatsApp"
           ]
+        ],
+        "fr": [
+          [
+            "p",
+            "Le Nil n'est pas seulement un fleuve au Caire. Il a façonné la ville depuis le début. La corniche, les felouques et les immeubles de la rive méritent d'être découverts lentement."
+          ],
+          [
+            "video",
+            "/media/blog/nile-corniche-montage.mp4"
+          ],
+          [
+            "h2",
+            "Le bon moment"
+          ],
+          [
+            "p",
+            "Le meilleur moment pour la corniche est tôt le matin ou juste avant le coucher du soleil. La lumière est douce, il y a moins de monde et les photos sont plus belles."
+          ],
+          [
+            "h2",
+            "Felouques et promenade"
+          ],
+          [
+            "p",
+            "Des bateaux à voiles traditionnels (felouques) bordent la corniche, et marcher le long de la promenade offre des vues sur les immeubles et les ponts. Convenez du prix et de la durée avant de monter."
+          ],
+          [
+            "h2",
+            "Pourquoi un chauffeur privé ?"
+          ],
+          [
+            "p",
+            "Un chauffeur privé connaît les routes, la circulation et les bons endroits pour s'arrêter, et il attend quand vous le souhaitez. La voiture est à vous seul, et le prix est convenu dès le départ, sans marchander avec chaque taxi."
+          ],
+          [
+            "h2",
+            "La bonne voiture"
+          ],
+          [
+            "p",
+            "Pour une famille ou un groupe, le modèle Jetour X70 Plus 2027 a sept places. Si vous voyagez seul ou à deux, la Jetour T2 est confortable sur les longs trajets et sur les ponts."
+          ],
+          [
+            "h2",
+            "Une journée suggérée"
+          ],
+          [
+            "p",
+            "8 heures pour 80 $ par voiture, ou 12 heures pour 100 $. Chauffeur, carburant et taxes inclus. Commencez par la corniche le matin, puis déjeuner, puis les lieux de la ville que vous voulez voir."
+          ],
+          [
+            "cta",
+            "Réserver un chauffeur privé sur WhatsApp"
+          ]
+        ],
+        "de": [
+          [
+            "p",
+            "Der Nil ist in Kairo mehr als ein Fluss. Er hat die Stadt von Anfang an geprägt. Die Uferpromenade, die Feluken und die Gebäude am Ufer sind Geschichten, die man in Ruhe erleben sollte."
+          ],
+          [
+            "video",
+            "/media/blog/nile-corniche-montage.mp4"
+          ],
+          [
+            "h2",
+            "Die richtige Zeit"
+          ],
+          [
+            "p",
+            "Die beste Zeit für die Uferpromenade sind die frühen Morgenstunden oder kurz vor Sonnenuntergang. Das Licht ist weich, es sind weniger Menschen unterwegs und die Fotos gelingen besser."
+          ],
+          [
+            "h2",
+            "Feluken und die Promenade"
+          ],
+          [
+            "p",
+            "Traditionelle Segelboote (Feluken) säumen die Uferpromenade, und ein Spaziergang entlang der Promenade bietet Ausblicke auf Gebäude und Brücken. Vereinbaren Sie Preis und Dauer, bevor Sie an Bord gehen."
+          ],
+          [
+            "h2",
+            "Warum ein Privatfahrer?"
+          ],
+          [
+            "p",
+            "Ein Privatfahrer kennt die Straßen, den Verkehr und die richtigen Haltepunkte und wartet, wann immer Sie möchten. Das Auto gehört nur Ihnen, und der Preis steht von Anfang an fest, ohne dass Sie mit jedem Taxi verhandeln müssen."
+          ],
+          [
+            "h2",
+            "Das richtige Auto"
+          ],
+          [
+            "p",
+            "Für eine Familie oder eine Gruppe hat das Modell Jetour X70 Plus 2027 sieben Sitze. Wenn Sie allein oder zu zweit unterwegs sind, ist der Jetour T2 auf langen Strecken und über die Brücken bequem."
+          ],
+          [
+            "h2",
+            "Ein empfohlener Tag"
+          ],
+          [
+            "p",
+            "8 Stunden für 80 $ pro Fahrzeug oder 12 Stunden für 100 $. Inklusive Fahrer, Kraftstoff und Steuern. Beginnen Sie am Morgen an der Uferpromenade, danach Mittagessen und dann die Orte in der Stadt, die Sie sehen möchten."
+          ],
+          [
+            "cta",
+            "Privatfahrer per WhatsApp buchen"
+          ]
+        ],
+        "it": [
+          [
+            "p",
+            "Il Nilo al Cairo non è solo un fiume. Ha plasmato la città fin dall'inizio. Il lungofiume, le feluche e gli edifici lungo la riva sono storie da vedere con calma."
+          ],
+          [
+            "video",
+            "/media/blog/nile-corniche-montage.mp4"
+          ],
+          [
+            "h2",
+            "Il momento giusto"
+          ],
+          [
+            "p",
+            "Il momento migliore per il lungofiume è la prima mattina o poco prima del tramonto. La luce è morbida, ci sono meno persone e le foto vengono meglio."
+          ],
+          [
+            "h2",
+            "Feluche e passeggiata"
+          ],
+          [
+            "p",
+            "Le barche a vela tradizionali (feluche) costeggiano il lungofiume, e camminare lungo la passeggiata regala viste su palazzi e ponti. Concorda prezzo e durata prima di salire a bordo."
+          ],
+          [
+            "h2",
+            "Perché un autista privato?"
+          ],
+          [
+            "p",
+            "Un autista privato conosce le strade, il traffico e i punti giusti dove fermarsi, e aspetta quando vuoi tu. L'auto è solo tua e il prezzo è concordato dall'inizio, senza dover contrattare con ogni taxi."
+          ],
+          [
+            "h2",
+            "L'auto giusta"
+          ],
+          [
+            "p",
+            "Per una famiglia o un gruppo, il modello Jetour X70 Plus 2027 ha sette posti. Se viaggi da solo o in due, la Jetour T2 è comoda sulle strade lunghe e sui ponti."
+          ],
+          [
+            "h2",
+            "Una giornata consigliata"
+          ],
+          [
+            "p",
+            "8 ore per 80 $ a auto, oppure 12 ore per 100 $. Autista, carburante e tasse inclusi. Inizia dal lungofiume al mattino, poi pranzo, poi i luoghi della città che vuoi vedere."
+          ],
+          [
+            "cta",
+            "Prenota un autista privato su WhatsApp"
+          ]
         ]
       },
       "seo_title": {
         "ar": "كورنيش النيل: يوم مريح بسواق خاص",
-        "en": "Nile Corniche day with a private driver"
+        "en": "Nile Corniche day with a private driver",
+        "fr": "La corniche du Nil : une journée tranquille avec un chauffeur privé",
+        "de": "Die Nil-Uferpromenade: ein entspannter Tag mit Privatfahrer",
+        "it": "Il lungofiume del Nilo: una giornata tranquilla con un autista privato"
       }
     }
   ]
