@@ -121,4 +121,20 @@ if (content.settings.tidio_script && content.settings.tidio_enabled !== false) {
     fs.writeFileSync(f, h.replace("</body>", '<script src="' + content.settings.tidio_script + '" async></script></body>'));
   }
 }
+// Images get their pixel size from the file header, so the browser reserves the space before the image loads (no layout jump)
+{
+  const { webpSize } = require("./src/image-size.js");
+  const sizeCache = {};
+  for (const f of walkHtml(OUT)) {
+    let h = fs.readFileSync(f, "utf8");
+    const next = h.replace(/<img\b([^>]*?)>/g, (tag, attrs) => {
+      if (/\bwidth=/.test(attrs) || !/\bsrc="\/media\/[^"]+\.webp"/.test(attrs)) return tag;
+      const src = attrs.match(/\bsrc="(\/media\/[^"]+\.webp)"/)[1];
+      if (!(src in sizeCache)) sizeCache[src] = webpSize(path.join(ROOT, src));
+      const s = sizeCache[src];
+      return s ? "<img" + attrs + ' width="' + s.w + '" height="' + s.h + '">' : tag;
+    });
+    if (next !== h) fs.writeFileSync(f, next);
+  }
+}
 console.log("Built " + LANGS.length + " pages into dist/");
