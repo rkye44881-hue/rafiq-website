@@ -985,3 +985,7 @@ body.has-picks .fab{display:none}
 .v2-founder{padding-top:0}
 .v2-founder-img{max-width:280px;margin:0 auto;border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:3/4;background:#eae9e3}
 .v2-founder-img img{width:100%;height:100%;object-fit:cover}
+/* hero eyebrow: lighter on the photo so the line is readable on phones */
+.v2-hero .v2-eyebrow{color:#FBE9DF;font-size:14px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.v2-hero .v2-eyebrow:after{background:#FBE9DF}
+.v2-hero::before{background:linear-gradient(180deg,rgba(9,19,32,.55) 0%,rgba(9,19,32,.7) 40%,rgba(9,19,32,.92) 100%)}
