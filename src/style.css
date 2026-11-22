@@ -1035,3 +1035,6 @@ body.has-picks .fab{display:none}
   .v2home .nav-list{display:flex;gap:22px;align-items:center}
   .v2home .nav-list a{white-space:nowrap}
 }
+/* contrast: white text on terracotta failed the accessibility check, so the buttons use a deeper terracotta (about 5.7:1) */
+.v2home .btn-acc,.v2home .m-wa{background:#8E5A45;color:#FFFFFF}
+.v2home .btn-acc:hover,.v2home .m-wa:hover{background:#7A4A38}
