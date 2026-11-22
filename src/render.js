@@ -340,10 +340,27 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
     + ld(business) + (offersPg ? ld({ "@context": "https://schema.org", "@type": "OfferCatalog", name: OU.title, url: base + "/" + lang + "/offers/", itemListElement: offers.filter(o => o.end >= today).map(o => ({ "@type": "Offer", name: o["title_" + lang], description: String(o["points_" + lang] || "").split("\n").join(" · "), price: o.price, priceCurrency: "USD", validFrom: o.start, validThrough: o.end, availability: "https://schema.org/InStock", url: base + "/" + lang + "/offers/" })) }) : ld(faqLd)) + analytics(lang, c.settings).head
     + '</head><body>';
 
+  /* ---------- home page, new design (branch homepage-dribbble-design): dark hero, booking card, services, cities, fleet, why, how, faq, contact ---------- */
+  const homeV2 = () => {
+    const hero = '<section class="v2-hero" id="top"><div class="v2-bg">' + (set.hero_image ? heroImg(set.hero_image, X.hero.title.replace(/\*/g, "")) : '') + '</div><div class="wrap v2-hero-in">'
+      + '<p class="v2-eyebrow">' + esc(X.hero.eyebrow) + '</p><h1>' + kinetic(md(X.hero.title)) + '</h1><p class="v2-sub">' + esc(X.hero.subtitle) + '</p>'
+      + ctas + '<p class="hero-price v2-price">' + esc(HERO_PRICE[lang]) + '</p>'
+      + '<div class="v2-pills">' + X.highlights.map((t, i) => '<span>' + ic(TRUST_ICONS[i % 4]) + esc(t) + '</span>').join("") + '</div></div></section>';
+    const pi = (p, i) => '<div class="v2-item">' + ic(PROM_ICONS[i % PROM_ICONS.length]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>';
+    const P = X.promises, PS = X.sections.promises || {};
+    const picked = c.fleet.filter(f => f.image);
+    const whyImg = picked.length ? picked[Math.min(2, picked.length - 1)].image : "";
+    const why = '<section class="sec v2-why" id="s-promise"><div class="wrap">' + '<div class="sec-head v2-center"><p class="eyebrow">' + esc(PS.eyebrow || "") + '</p><h2>' + md(PS.title || "") + '</h2>' + (PS.intro ? '<p>' + esc(PS.intro) + '</p>' : '') + '</div>'
+      + '<div class="v2-why-grid"><div class="v2-col">' + P.slice(0, 3).map(pi).join("") + '</div><div class="v2-why-img">' + (whyImg ? img(whyImg, "") : '') + '</div><div class="v2-col">' + P.slice(3, 6).map((p, i) => pi(p, i + 3)).join("") + '</div></div></div></section>';
+    const SS = X.sections.steps;
+    const how = '<section class="sec v2-how" id="s-steps"><div class="wrap"><div class="v2-banner"><div class="v2-banner-tx"><p class="eyebrow">' + esc(SS.eyebrow) + '</p><h2>' + md(SS.title) + '</h2>' + ctas.replace('<div class="ctas">', '<div class="ctas">') + '</div></div>'
+      + '<div class="steps v2-cards">' + X.steps.map((s, i) => '<div class="step"><span class="n">' + num(i + 1) + '</span><h3>' + esc(s.title) + '</h3><p>' + esc(s.description) + '</p></div>').join("") + '</div></div></section>';
+    return offerStrip + hero + '<div class="v2-book-wrap">' + booking() + '</div>' + explore() + servicesSec() + cities() + fleet() + why + how + faq() + contact() + blogTeaser(lang, c) + ncPromo();
+  };
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
-    : offerStrip + hero + explore() + booking() + servicesSec() + '<div class="combo combo-places">' + cities() + fleet() + '</div>' + stepsAndPromises() + '<div class="combo combo-end">' + faq() + contact() + '</div>' + blogTeaser(lang, c) + ncPromo();
-  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : "") + '">' + header() + body + libraryStrip(lang, c) + footer() + mobileBar(lang, set) + '</div>' + analytics(lang, c.settings).body
+    : homeV2();
+  return head + '<div id="site" class="' + (ar ? "ar" : "lt") + (sahel ? " page-nc" : offersPg ? " page-of" : " v2home") + '">' + header() + body + libraryStrip(lang, c) + footer() + mobileBar(lang, set) + '</div>' + analytics(lang, c.settings).body
     + '<script type="application/json" id="data">' + JSON.stringify(clientData).replace(/</g, "\\u003c") + '</script>'
     + '<script src="/assets/app.js?v=' + c.version + '" defer></script></body></html>';
 }

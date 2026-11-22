@@ -912,3 +912,71 @@ body.has-picks .fab{display:none}
 .sp-promises .prom .pr{background:#fffdf8;border:1px solid var(--line);box-shadow:0 10px 24px rgba(27,43,87,.12)}
 .sp-promises .prom .pr h3{color:var(--dark)}
 .sp-promises .prom .pr p{color:#4a5068}
+
+/* ---------- home page, new design (branch homepage-dribbble-design) ----------
+   Scoped to .v2home so the other pages keep their look. Palette from the approved preview:
+   deep navy, warm paper, terracotta accent. */
+.v2home{--v2-navy:#14243A;--v2-paper:#F6F5F1;--v2-accent:#BD806A;--v2-accent2:#D8A18B;--v2-muted:#6B7480}
+.v2home{background:var(--v2-paper)}
+.v2home .btn-acc{background:var(--v2-accent);color:#fff}
+.v2home .btn-acc:hover{background:#a96e59}
+.v2home .eyebrow{color:var(--v2-accent2,#D8A18B)}
+.v2hero,.v2-hero{position:relative;min-height:640px;color:#fff;display:flex;align-items:center;background:var(--v2-navy);overflow:hidden}
+.v2-hero .v2-bg{position:absolute;inset:0}
+.v2-hero .v2-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.v2-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(9,19,32,.9),rgba(9,19,32,.6) 50%,rgba(9,19,32,.15))}
+.v2-hero::after{content:"";position:absolute;inset:auto 0 0;height:120px;z-index:1;background:linear-gradient(transparent,var(--v2-paper))}
+.v2-hero-in{position:relative;z-index:2;padding-top:110px;padding-bottom:70px;max-width:1180px}
+.v2-hero h1{font-size:clamp(40px,9vw,72px);line-height:1.12;margin:18px 0;font-weight:800;color:#fff}
+.v2-eyebrow{color:var(--v2-accent2);font-size:12px;font-weight:700;margin:0;display:flex;align-items:center;gap:10px}
+.v2-eyebrow:after{content:"";width:34px;height:1px;background:var(--v2-accent2)}
+.v2-sub{color:rgba(255,255,255,.82);max-width:520px;margin:0 0 24px}
+.v2-hero .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.v2-hero .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff;background:transparent}
+.v2-price{color:rgba(255,255,255,.78)}
+.v2-pills{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:30px;font-size:13px;color:rgba(255,255,255,.8)}
+.v2-pills span{display:flex;align-items:center;gap:8px}
+.v2-book-wrap{position:relative;z-index:3;margin-top:-70px}
+.v2-book-wrap .bookbox{background:#fff;border-radius:18px;box-shadow:0 18px 50px rgba(16,26,43,.12)}
+.v2-sec-h{text-align:center}
+.v2-why .sec-head{text-align:center}
+.v2-why-grid{display:grid;gap:18px}
+.v2-col{display:grid;gap:4px}
+.v2-why-img{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:3/4;max-width:300px;width:100%;margin:0 auto;background:#eae9e3}
+.v2-why-img img{width:100%;height:100%;object-fit:cover}
+.v2-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #e5e4df}
+.v2-item:last-child{border-bottom:0}
+.v2-item h3{font-size:16px;margin:2px 0 4px}
+.v2-item p{margin:0;font-size:13px;color:var(--v2-muted)}
+.v2-item .ic{flex:0 0 40px;height:40px;border-radius:12px;background:#f0e6e1;color:var(--v2-accent);display:grid;place-items:center}
+.v2-how{background:#eae9e3}
+.v2-banner{position:relative;border-radius:24px;overflow:hidden;background:var(--v2-navy);color:#fff;padding:34px 26px;display:grid;gap:20px}
+.v2-banner-tx h2{font-size:clamp(28px,5vw,40px);line-height:1.2;margin:14px 0 18px;color:#fff}
+.v2-banner .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.v2-banner .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff;background:transparent}
+.v2-cards{margin:-40px 14px 0;position:relative;z-index:3;display:grid;gap:14px}
+.v2-cards .step{background:#fff;border-radius:16px;padding:22px;border:1px solid #e5e4df}
+.v2-cards .step .n{font-size:12px;font-weight:700;color:var(--v2-accent)}
+.v2-cards .step h3{font-size:19px;margin:10px 0 6px}
+.v2-cards .step p{margin:0;font-size:13px;color:var(--v2-muted)}
+#s-services,#s-cities,#s-fleet,#s-promise,#s-steps,#s-faq,#s-contact{position:relative}
+#s-services{background:#eae9e3}
+#s-fleet{background:var(--v2-navy);color:#fff}
+#s-fleet .sec-head p{color:#aeb8c4}
+#s-fleet .eyebrow{color:var(--v2-accent2)}
+#s-fleet h2{color:#fff}
+#s-fleet .car{background:#1b304a;border-color:transparent}
+#s-fleet .car h3{color:#fff}
+#s-fleet .car p,#s-fleet .spec{color:#c8cfd8}
+@media (min-width:760px){
+  .v2-hero{min-height:720px}
+  .v2-why-grid{grid-template-columns:1fr 300px 1fr;align-items:center;gap:30px}
+  .v2-why-img{max-width:none;margin:0}
+  .v2-banner{grid-template-columns:1fr 1fr;padding:50px}
+  .v2-cards{grid-template-columns:repeat(3,1fr);margin:-70px 40px 0}
+}
+@media (max-width:759px){
+  .v2-cards{grid-template-columns:1fr}
+}
+.v2-pills svg,.v2-item svg,.v2home .hero-price svg{width:18px;height:18px;flex:0 0 18px}
+.v2-item .ic svg{width:20px;height:20px}
