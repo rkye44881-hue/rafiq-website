@@ -993,3 +993,8 @@ body.has-picks .fab{display:none}
 .v2home .m-wa{background:#BD806A;color:#fff}
 .v2home .m-wa:hover{background:#a96e59}
 .v2home .fab{background:#BD806A}
+/* phones: no empty band above the hero text; the text sits at the bottom under the header */
+@media (max-width:759px){
+  .v2-hero{min-height:0;align-items:flex-end}
+  .v2-hero-in{padding-top:36px;padding-bottom:48px}
+}
