@@ -980,3 +980,5 @@ body.has-picks .fab{display:none}
 }
 .v2-pills svg,.v2-item svg,.v2home .hero-price svg{width:18px;height:18px;flex:0 0 18px}
 .v2-item .ic svg{width:20px;height:20px}
+.v2-video{margin-top:26px}
+.v2-video video{width:100%;height:auto;display:block;border-radius:18px;background:#14243A;box-shadow:0 18px 50px rgba(16,26,43,.18)}

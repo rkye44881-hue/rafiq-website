@@ -355,7 +355,11 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
     const SS = X.sections.steps;
     const how = '<section class="sec v2-how" id="s-steps"><div class="wrap"><div class="v2-banner"><div class="v2-banner-tx"><p class="eyebrow">' + esc(SS.eyebrow) + '</p><h2>' + md(SS.title) + '</h2>' + ctas.replace('<div class="ctas">', '<div class="ctas">') + '</div></div>'
       + '<div class="steps v2-cards">' + X.steps.map((s, i) => '<div class="step"><span class="n">' + num(i + 1) + '</span><h3>' + esc(s.title) + '</h3><p>' + esc(s.description) + '</p></div>').join("") + '</div></div></section>';
-    return offerStrip + hero + '<div class="v2-book-wrap">' + booking() + '</div>' + explore() + servicesSec() + cities() + fleet() + why + how + faq() + contact() + blogTeaser(lang, c) + ncPromo();
+    /* short animated explainer of the whole site (no voice): plays muted, user can press play, loads only when visible */
+    const EXPL = { ar: { eyebrow: "شرح سريع للموقع", title: "شوف الموقع في أقل من دقيقة", note: "فيديو توضيحي بدون صوت" }, en: { eyebrow: "Quick tour", title: "See the site in under a minute", note: "Silent explainer video" }, fr: { eyebrow: "Visite rapide", title: "Découvrez le site en moins d'une minute", note: "Vidéo explicative sans son" }, de: { eyebrow: "Kurzführung", title: "Die Seite in unter einer Minute", note: "Erklärvideo ohne Ton" }, it: { eyebrow: "Visita rapida", title: "Scopri il sito in meno di un minuto", note: "Video esplicativo senza audio" } }[lang] || { eyebrow: "", title: "", note: "" };
+    const explainer = '<section class="sec v2-expl" id="s-explainer"><div class="wrap"><div class="sec-head v2-center"><p class="eyebrow">' + esc(EXPL.eyebrow) + '</p><h2>' + esc(EXPL.title) + '</h2><p>' + esc(EXPL.note) + '</p></div>'
+      + '<div class="v2-video"><video controls playsinline preload="none" width="1280" height="720" aria-label="' + esc(EXPL.title) + '"><source src="/media/explainer/cairo-explainer.mp4" type="video/mp4"></video></div></div></section>';
+    return offerStrip + hero + '<div class="v2-book-wrap">' + booking() + '</div>' + explore() + servicesSec() + cities() + fleet() + why + how + explainer + faq() + contact() + blogTeaser(lang, c) + ncPromo();
   };
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
