@@ -1030,3 +1030,8 @@ body.has-picks .fab{display:none}
   .v2home .v2-book-wrap{margin-top:-60px}
 }
 .v2home a.btn,.v2home button,.v2home .m-bar a{min-height:44px}
+/* desktop header: space between the menu links */
+@media (min-width:901px){
+  .v2home .nav-list{display:flex;gap:22px;align-items:center}
+  .v2home .nav-list a{white-space:nowrap}
+}
