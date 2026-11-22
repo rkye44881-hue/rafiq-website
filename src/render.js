@@ -349,7 +349,7 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
     const pi = (p, i) => '<div class="v2-item">' + ic(PROM_ICONS[i % PROM_ICONS.length]) + '<div><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></div>';
     const P = X.promises, PS = X.sections.promises || {};
     const picked = c.fleet.filter(f => f.image);
-    const whyImg = picked.length ? picked[Math.min(2, picked.length - 1)].image : "";
+    const whyImg = "/media/why-jetour-grey.webp";
     const why = '<section class="sec v2-why" id="s-promise"><div class="wrap">' + '<div class="sec-head v2-center"><p class="eyebrow">' + esc(PS.eyebrow || "") + '</p><h2>' + md(PS.title || "") + '</h2>' + (PS.intro ? '<p>' + esc(PS.intro) + '</p>' : '') + '</div>'
       + '<div class="v2-why-grid"><div class="v2-col">' + P.slice(0, 3).map(pi).join("") + '</div><div class="v2-why-img">' + (whyImg ? img(whyImg, "") : '') + '</div><div class="v2-col">' + P.slice(3, 6).map((p, i) => pi(p, i + 3)).join("") + '</div></div></div></section>';
     const SS = X.sections.steps;
@@ -359,7 +359,7 @@ const HERO_PRICE = { ar: "من 70$ · 10 ساعات أو 120 كم · السعر 
     const EXPL = { ar: { eyebrow: "شرح سريع للموقع", title: "شوف الموقع في أقل من دقيقة", note: "فيديو توضيحي بدون صوت" }, en: { eyebrow: "Quick tour", title: "See the site in under a minute", note: "Silent explainer video" }, fr: { eyebrow: "Visite rapide", title: "Découvrez le site en moins d'une minute", note: "Vidéo explicative sans son" }, de: { eyebrow: "Kurzführung", title: "Die Seite in unter einer Minute", note: "Erklärvideo ohne Ton" }, it: { eyebrow: "Visita rapida", title: "Scopri il sito in meno di un minuto", note: "Video esplicativo senza audio" } }[lang] || { eyebrow: "", title: "", note: "" };
     const explainer = '<section class="sec v2-expl" id="s-explainer"><div class="wrap"><div class="sec-head v2-center"><p class="eyebrow">' + esc(EXPL.eyebrow) + '</p><h2>' + esc(EXPL.title) + '</h2><p>' + esc(EXPL.note) + '</p></div>'
       + '<div class="v2-video"><video controls playsinline preload="none" width="1280" height="720" aria-label="' + esc(EXPL.title) + '"><source src="/media/explainer/cairo-explainer.mp4" type="video/mp4"></video></div></div></section>';
-    return offerStrip + hero + '<div class="v2-book-wrap">' + booking() + '</div>' + explore() + servicesSec() + cities() + fleet() + why + how + explainer + faq() + contact() + blogTeaser(lang, c) + ncPromo();
+    return offerStrip + hero + '<div class="v2-book-wrap">' + booking() + '</div>' + explore() + servicesSec() + cities() + fleet() + why + how + (ar ? explainer : '') + faq() + contact() + blogTeaser(lang, c) + ncPromo();
   };
   const body = offersPg ? offersPage() + contact() : sahel
     ? sHero() + sServices() + sCalc() + sCoast() + sExplore() + sTips() + faq(N.faq, N.faq.items) + contact()
