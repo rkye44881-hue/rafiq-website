@@ -1006,3 +1006,27 @@ body.has-picks .fab{display:none}
 .v2home #s-fleet .sec-head h2,.v2home #s-fleet .sec-head .eyebrow,.v2home #s-fleet .sec-head p{color:#F6F1E8}
 .v2home #s-fleet .sec-head p{color:#CFC6B8}
 .v2home #s-fleet .sec-head .eyebrow{color:#D8A18B}
+
+/* ---------- home page spacing and readability (round 2) ---------- */
+/* 1. the price-request card sits lower, clear of the hero text above it (phones) */
+@media (max-width:759px){
+  .v2home .v2-hero-in{padding-bottom:118px}
+}
+/* 2. hero lines under the subtitle: brighter, easier to read on the photo */
+.v2home .v2-pills{color:#FFFFFF;opacity:1;font-weight:600;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.v2home .v2-pills span{color:#FFFFFF}
+.v2home .v2-hero .v2-sub,.v2home .v2-hero .hero-price{color:#FFFFFF;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+/* 3. headings: more room between lines, so two-line titles don't touch */
+.v2home h1,.v2home h2,.v2home h3{line-height:1.4}
+.v2home .v2-hero h1{line-height:1.25}
+.v2home .sec-head{margin-bottom:30px}
+.v2home .sec-head h2{margin-bottom:14px}
+.v2home .v2-expl h2{line-height:1.45;margin:12px 0 14px}
+.v2home .v2-expl .sec-head{margin-bottom:24px}
+/* 4. body text: line height at least 1.7, sections breathe on phones, tap targets at least 44px */
+.v2home p,.v2home li{line-height:1.75}
+@media (max-width:759px){
+  .v2home .sec{padding:72px 0}
+  .v2home .v2-book-wrap{margin-top:-60px}
+}
+.v2home a.btn,.v2home button,.v2home .m-bar a{min-height:44px}
