@@ -989,3 +989,7 @@ body.has-picks .fab{display:none}
 .v2-hero .v2-eyebrow{color:#FBE9DF;font-size:14px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .v2-hero .v2-eyebrow:after{background:#FBE9DF}
 .v2-hero::before{background:linear-gradient(180deg,rgba(9,19,32,.55) 0%,rgba(9,19,32,.7) 40%,rgba(9,19,32,.92) 100%)}
+/* home page: WhatsApp button in the bottom bar uses the same terracotta as the hero buttons */
+.v2home .m-wa{background:#BD806A;color:#fff}
+.v2home .m-wa:hover{background:#a96e59}
+.v2home .fab{background:#BD806A}
