@@ -916,7 +916,7 @@ body.has-picks .fab{display:none}
 /* ---------- home page, new design (branch homepage-dribbble-design) ----------
    Scoped to .v2home so the other pages keep their look. Palette from the approved preview:
    deep navy, warm paper, terracotta accent. */
-.v2home{--v2-navy:#14243A;--v2-paper:#F6F5F1;--v2-accent:#BD806A;--v2-accent2:#D8A18B;--v2-muted:#6B7480}
+.v2home{--v2-navy:#17140F;--v2-paper:#F6F5F1;--v2-accent:#BD806A;--v2-accent2:#D8A18B;--v2-muted:#6B7480}
 .v2home{background:var(--v2-paper)}
 .v2home .btn-acc{background:var(--v2-accent);color:#fff}
 .v2home .btn-acc:hover{background:#a96e59}
@@ -924,7 +924,7 @@ body.has-picks .fab{display:none}
 .v2hero,.v2-hero{position:relative;min-height:640px;color:#fff;display:flex;align-items:center;background:var(--v2-navy);overflow:hidden}
 .v2-hero .v2-bg{position:absolute;inset:0}
 .v2-hero .v2-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
-.v2-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(9,19,32,.9),rgba(9,19,32,.6) 50%,rgba(9,19,32,.15))}
+.v2-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(23,20,15,.9),rgba(23,20,15,.6) 50%,rgba(23,20,15,.15))}
 .v2-hero::after{content:"";position:absolute;inset:auto 0 0;height:120px;z-index:1;background:linear-gradient(transparent,var(--v2-paper))}
 .v2-hero-in{position:relative;z-index:2;padding-top:110px;padding-bottom:70px;max-width:1180px}
 .v2-hero h1{font-size:clamp(40px,9vw,72px);line-height:1.12;margin:18px 0;font-weight:800;color:#fff}
@@ -965,7 +965,7 @@ body.has-picks .fab{display:none}
 #s-fleet .sec-head p{color:#aeb8c4}
 #s-fleet .eyebrow{color:var(--v2-accent2)}
 #s-fleet h2{color:#fff}
-#s-fleet .car{background:#1b304a;border-color:transparent}
+#s-fleet .car{background:#26201A;border-color:transparent}
 #s-fleet .car h3{color:#fff}
 #s-fleet .car p,#s-fleet .spec{color:#c8cfd8}
 @media (min-width:760px){
@@ -981,14 +981,14 @@ body.has-picks .fab{display:none}
 .v2-pills svg,.v2-item svg,.v2home .hero-price svg{width:18px;height:18px;flex:0 0 18px}
 .v2-item .ic svg{width:20px;height:20px}
 .v2-video{margin-top:26px}
-.v2-video video{width:100%;height:auto;display:block;border-radius:18px;background:#14243A;box-shadow:0 18px 50px rgba(16,26,43,.18)}
+.v2-video video{width:100%;height:auto;display:block;border-radius:18px;background:#17140F;box-shadow:0 18px 50px rgba(16,26,43,.18)}
 .v2-founder{padding-top:0}
 .v2-founder-img{max-width:280px;margin:0 auto;border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:3/4;background:#eae9e3}
 .v2-founder-img img{width:100%;height:100%;object-fit:cover}
 /* hero eyebrow: lighter on the photo so the line is readable on phones */
 .v2-hero .v2-eyebrow{color:#FBE9DF;font-size:14px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .v2-hero .v2-eyebrow:after{background:#FBE9DF}
-.v2-hero::before{background:linear-gradient(180deg,rgba(9,19,32,.55) 0%,rgba(9,19,32,.7) 40%,rgba(9,19,32,.92) 100%)}
+.v2-hero::before{background:linear-gradient(180deg,rgba(23,20,15,.55) 0%,rgba(23,20,15,.7) 40%,rgba(23,20,15,.92) 100%)}
 /* home page: WhatsApp button in the bottom bar uses the same terracotta as the hero buttons */
 .v2home .m-wa{background:#BD806A;color:#fff}
 .v2home .m-wa:hover{background:#a96e59}
@@ -998,3 +998,11 @@ body.has-picks .fab{display:none}
   .v2-hero{min-height:0;align-items:flex-end}
   .v2-hero-in{padding-top:36px;padding-bottom:48px}
 }
+/* ---------- home page, warm charcoal palette (branch homepage-new-colors) ----------
+   Replaces the navy with a warm charcoal and makes terracotta the main accent. Home page only. */
+.v2home{--dark:#17140F;--dark2:#26201A;--ink:#17140F;--accent:#BD806A;--accent-strong:#8E5A45;--accent-ink:#FFFFFF;--on-dark:#F6F1E8;--on-dark-muted:#CFC6B8;--dark-line:rgba(246,241,232,.16);--bg:#F6F1E8;--muted:#6E675C;--line:rgba(23,20,15,.12)}
+.v2home .hdr,.v2home .foot,.v2home .m-bar{background:#17140F}
+.v2home .foot{color:#CFC6B8}
+.v2home #s-fleet .sec-head h2,.v2home #s-fleet .sec-head .eyebrow,.v2home #s-fleet .sec-head p{color:#F6F1E8}
+.v2home #s-fleet .sec-head p{color:#CFC6B8}
+.v2home #s-fleet .sec-head .eyebrow{color:#D8A18B}
