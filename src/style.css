@@ -912,3 +912,5 @@ body.has-picks .fab{display:none}
 .sp-promises .prom .pr{background:#fffdf8;border:1px solid var(--line);box-shadow:0 10px 24px rgba(27,43,87,.12)}
 .sp-promises .prom .pr h3{color:var(--dark)}
 .sp-promises .prom .pr p{color:#4a5068}
+.bl-img{margin:28px auto;max-width:520px}
+.bl-img img{width:100%;height:auto;border-radius:16px;display:block}

@@ -608,6 +608,7 @@ function renderPost(lang, c, post) {
     if (b[0] === "h2") return '<h2>' + esc(b[1]) + '</h2>';
     if (b[0] === "p") return '<p>' + esc(b[1]) + '</p>';
     if (b[0] === "video") return '<figure class="bl-video"><video src="' + esc(b[1]) + '" controls playsinline preload="metadata"' + (post.video && post.video.poster ? ' poster="' + esc(post.video.poster) + '"' : '') + '></video></figure>';
+    if (b[0] === "img") return '<figure class="bl-img"><img src="' + esc(b[1]) + '" alt="' + esc(b[2]) + '" loading="lazy" width="900" height="1200"></figure>';
     if (b[0] === "cta") return '<p class="bl-cta"><a class="btn btn-acc" target="_blank" rel="noopener" href="' + waLink(set.whatsapp, B.cta) + '">' + ic("chat") + esc(b[1]) + '</a></p>';
     return '';
   }).join("");
