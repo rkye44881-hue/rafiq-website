@@ -2,15 +2,15 @@
   "posts": [
     {
       "slug": "grand-egyptian-museum-private-driver",
-      "draft": true,
+      "draft": false,
       "date": "2026-11-23",
       "cover": "/media/blog/gem/gem-1.webp",
       "cover_alt": {
         "ar": "تمثال جالس لرجل مع طفلين في المتحف المصري الكبير",
         "en": "Seated statue of a man with two children at the Grand Egyptian Museum",
-        "fr": "",
-        "de": "",
-        "it": ""
+        "fr": "Statue assise d'un homme avec deux enfants au Musée égyptien de Grand",
+        "de": "Sitzende Statue eines Mannes mit zwei Kindern im Großen Ägyptischen Museum",
+        "it": "Statua seduta di un uomo con due bambini al Grande Museo Egizio"
       },
       "keywords": [
         "المتحف المصري الكبير بسائق خاص",
@@ -21,15 +21,24 @@
       ],
       "title": {
         "ar": "المتحف المصري الكبير بسائق خاص: دليل زيارة يوم كامل",
-        "en": "The Grand Egyptian Museum with a private driver: a full-day visit guide"
+        "en": "The Grand Egyptian Museum with a private driver: a full-day visit guide",
+        "fr": "Le Musée égyptien de Grand avec un chauffeur privé : guide d'une journée complète",
+        "de": "Das Große Ägyptische Museum mit Privatfahrer: Leitfaden für einen ganzen Tag",
+        "it": "Il Grande Museo Egizio con autista privato: guida per una giornata intera"
       },
       "excerpt": {
         "ar": "دليلك لزيارة المتحف المصري الكبير بسيارة وسائق خاص: إزاي تخطط اليوم، وإيه أهم القاعات، وإزاي تضيف الأهرامات في نفس الرحلة من غير تعب أو زحمة.",
-        "en": "How to plan a visit to the Grand Egyptian Museum with a private car and driver, which galleries to see, and how to add the Pyramids to the same day."
+        "en": "How to plan a visit to the Grand Egyptian Museum with a private car and driver, which galleries to see, and how to add the Pyramids to the same day.",
+        "fr": "Comment organiser une visite du Musée égyptien de Grand en voiture avec chauffeur privé, quelles salles voir, et comment ajouter les Pyramides le même jour.",
+        "de": "So planen Sie einen Besuch des Großen Ägyptischen Museums mit privatem Auto und Fahrer, welche Säle sich lohnen und wie Sie die Pyramiden am selben Tag einplanen.",
+        "it": "Come organizzare una visita al Grande Museo Egizio con auto e autista privati, quali sale vedere e come aggiungere le Piramidi nello stesso giorno."
       },
       "seo_title": {
         "ar": "المتحف المصري الكبير بسائق خاص: دليل زيارة كامل من القاهرة",
-        "en": "Grand Egyptian Museum with a private driver: day guide"
+        "en": "Grand Egyptian Museum with a private driver: day guide",
+        "fr": "Musée de Grand avec chauffeur privé : guide d'une journée",
+        "de": "Großes Ägyptisches Museum mit Fahrer: Tagesguide ab Kairo",
+        "it": "Grande Museo Egizio con autista: guida di una giornata"
       },
       "body": {
         "ar": [
@@ -206,6 +215,270 @@
           [
             "cta",
             "Book the visit on WhatsApp"
+          ]
+        ],
+        "fr": [
+          [
+            "p",
+            "Le Musée égyptien de Grand (GEM) mérite une journée entière au Caire. Le bâtiment est immense et abrite des milliers de pièces de l'histoire égyptienne. Avec une voiture et un chauffeur privés, vous pouvez vous concentrer sur la visite au lieu de perdre du temps dans les transports et les embouteillages."
+          ],
+          [
+            "h2",
+            "Pourquoi venir avec une voiture et un chauffeur privés ?"
+          ],
+          [
+            "p",
+            "Les distances dans le Grand Caire sont longues, et la circulation grignote votre journée. Le chauffeur vous dépose à l'entrée, vous attend, puis vous conduit à l'étape suivante : les Pyramides, le centre-ville ou l'aéroport."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-1.webp",
+            "Statue assise d'un homme accompagné de deux enfants, exposée au Musée égyptien de Grand"
+          ],
+          [
+            "h2",
+            "Ce qu'il faut voir à l'intérieur"
+          ],
+          [
+            "p",
+            "Le musée est organisé en salles selon les périodes historiques. Commencez par les salles de l'Ancien Empire, où les statues en bois et en pierre montrent clairement les détails des visages et des vêtements."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-2.webp",
+            "Groupe de statues en bois peint exposées dans le musée"
+          ],
+          [
+            "p",
+            "Passez ensuite aux salles qui présentent des statues d'époques plus récentes, et remarquez l'évolution du style. Le guide officiel du musée explique l'ordre de la visite, et vous pouvez vous renseigner à l'entrée."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-3.webp",
+            "Statue assise en granit au Musée égyptien de Grand"
+          ],
+          [
+            "h2",
+            "Les Pyramides le même jour"
+          ],
+          [
+            "p",
+            "Si vous voulez ajouter les Pyramides, organisez la journée ainsi : le musée le matin, Gizeh l'après-midi. Votre chauffeur connaît le trajet et peut garder l'ordre qui vous convient."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-4.webp",
+            "Statue en bois d'un homme debout en habit traditionnel"
+          ],
+          [
+            "h2",
+            "Conseils pratiques avant de partir"
+          ],
+          [
+            "p",
+            "Convenez avec le chauffeur de l'itinéraire et des arrêts éventuels avant de partir. Prenez de l'eau, chargez votre téléphone et déterminez le nombre d'heures dont vous avez besoin pour savoir quel forfait convient."
+          ],
+          [
+            "p",
+            "Les prix des billets et les horaires changent : vérifiez-les sur le site officiel du musée avant votre visite. Nous n'indiquons pas les chiffres ici, car ils évoluent souvent."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-5.webp",
+            "Statue double d'un homme et d'une femme assis, dans les salles du musée"
+          ],
+          [
+            "h2",
+            "Le forfait journée : 10 heures ou 120 km"
+          ],
+          [
+            "p",
+            "Notre forfait journée est un chauffeur pour toute la journée, avec une règle claire : 10 heures ou 120 kilomètres, selon ce qui arrive en premier. Vous connaissez le prix dès le départ, sans surprise en fin de journée."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-6.webp",
+            "Statue en pierre d'un homme debout, avec des détails du visage et de la coiffe"
+          ],
+          [
+            "cta",
+            "Réservez la visite sur WhatsApp"
+          ]
+        ],
+        "de": [
+          [
+            "p",
+            "Das Große Ägyptische Museum verdient in Kairo einen ganzen Tag. Das Gebäude ist riesig und beherbergt Tausende Stücke der ägyptischen Geschichte. Mit einem privaten Auto und Fahrer können Sie sich ganz auf den Besuch konzentrieren, statt Zeit im Verkehr und mit öffentlichen Verkehrsmitteln zu verlieren."
+          ],
+          [
+            "h2",
+            "Warum mit privatem Auto und Fahrer fahren?"
+          ],
+          [
+            "p",
+            "Die Entfernungen in Groß-Kairo sind lang, und der Verkehr frisst viel von Ihrem Tag. Der Fahrer setzt Sie am Eingang ab, wartet auf Sie und bringt Sie dann zur nächsten Station: zu den Pyramiden, in die Innenstadt oder zum Flughafen."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-1.webp",
+            "Sitzende Statue eines Mannes mit zwei Kindern, im Großen Ägyptischen Museum ausgestellt"
+          ],
+          [
+            "h2",
+            "Was Sie drinnen sehen sollten"
+          ],
+          [
+            "p",
+            "Das Museum ist nach historischen Epochen in Säle gegliedert. Beginnen Sie mit den Sälen des Alten Reiches, wo Holz- und Steinstatuen die Gesichter und Kleidung deutlich zeigen."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-2.webp",
+            "Gruppe bemalter Holzstatuen in der Ausstellung des Museums"
+          ],
+          [
+            "p",
+            "Gehen Sie danach zu den Sälen mit Statuen aus späteren Epochen und achten Sie auf den Wandel im Stil. Der offizielle Museumsführer erklärt die Reihenfolge, und Sie können am Eingang nachfragen."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-3.webp",
+            "Sitzende Granitstatue im Großen Ägyptischen Museum"
+          ],
+          [
+            "h2",
+            "Die Pyramiden am selben Tag"
+          ],
+          [
+            "p",
+            "Wenn Sie die Pyramiden einbeziehen möchten, planen Sie so: am Vormittag das Museum, am Nachmittag Giza. Ihr Fahrer kennt die Strecke und kann die Reihenfolge einhalten, die Ihnen zusagt."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-4.webp",
+            "Holzstatue eines stehenden Mannes in traditioneller Kleidung"
+          ],
+          [
+            "h2",
+            "Praktische Tipps vor dem Besuch"
+          ],
+          [
+            "p",
+            "Vereinbaren Sie mit dem Fahrer vor der Abfahrt die Route und eventuelle Stopps. Nehmen Sie Wasser mit, laden Sie Ihr Handy auf und überlegen Sie, wie viele Stunden Sie brauchen, damit Sie wissen, welches Paket passt."
+          ],
+          [
+            "p",
+            "Eintrittspreise und Öffnungszeiten ändern sich. Prüfen Sie sie vor Ihrem Besuch auf der offiziellen Website des Museums. Wir nennen die Zahlen hier nicht, weil sie oft wechseln."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-5.webp",
+            "Doppelstatue eines sitzenden Mannes und einer Frau aus den Ausstellungssälen"
+          ],
+          [
+            "h2",
+            "Das Tagespaket: 10 Stunden oder 120 km"
+          ],
+          [
+            "p",
+            "Unser Tagespaket bietet einen Fahrer für den ganzen Tag mit einer klaren Regel: 10 Stunden oder 120 Kilometer, je nachdem, was zuerst eintritt. Sie kennen den Preis von Anfang an, ohne Überraschungen am Ende des Tages."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-6.webp",
+            "Steinstatue eines stehenden Mannes mit Details von Gesicht und Kopfschmuck"
+          ],
+          [
+            "cta",
+            "Besuch per WhatsApp buchen"
+          ]
+        ],
+        "it": [
+          [
+            "p",
+            "Il Grande Museo Egizio merita una giornata intera al Cairo. L'edificio è enorme e ospita migliaia di pezzi della storia egizia. Con un'auto e un autista privati potete concentrarvi sulla visita, invece di perdere tempo tra trasporti e traffico."
+          ],
+          [
+            "h2",
+            "Perché andare con un'auto e un autista privati?"
+          ],
+          [
+            "p",
+            "Le distanze nella Grande Cairo sono lunghe e il traffico porta via parte della giornata. L'autista vi lascia all'ingresso, vi aspetta e vi porta alla tappa successiva: le Piramidi, il centro o l'aeroporto."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-1.webp",
+            "Statua seduta di un uomo con due bambini, esposta al Grande Museo Egizio"
+          ],
+          [
+            "h2",
+            "Cosa vedere all'interno"
+          ],
+          [
+            "p",
+            "Il museo è organizzato in sale per periodo storico. Iniziate dalle sale dell'Antico Regno, dove le statue in legno e in pietra mostrano chiaramente i dettagli di volti e abiti."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-2.webp",
+            "Gruppo di statue in legno dipinto esposte nel museo"
+          ],
+          [
+            "p",
+            "Passate poi alle sale con statue di epoche successive, e notate come cambia lo stile. La guida ufficiale del museo spiega l'ordine della visita, e potete chiedere all'ingresso."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-3.webp",
+            "Statua seduta in granito al Grande Museo Egizio"
+          ],
+          [
+            "h2",
+            "Le Piramidi nello stesso giorno"
+          ],
+          [
+            "p",
+            "Se volete aggiungere le Piramidi, organizzate così: il museo al mattino, Giza nel pomeriggio. L'autista conosce il percorso e può mantenere l'ordine che preferite."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-4.webp",
+            "Statua in legno di un uomo in piedi con abiti tradizionali"
+          ],
+          [
+            "h2",
+            "Consigli pratici prima di partire"
+          ],
+          [
+            "p",
+            "Concordate con l'autista il percorso e le eventuali soste prima di partire. Portate acqua, caricate il telefono e decidete quante ore vi servono, così saprete quale pacchetto fa per voi."
+          ],
+          [
+            "p",
+            "Prezzi dei biglietti e orari cambiano: verificateli sul sito ufficiale del museo prima della visita. Non indichiamo qui le cifre perché cambiano spesso."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-5.webp",
+            "Statua doppia di un uomo e una donna seduti, dalle sale del museo"
+          ],
+          [
+            "h2",
+            "Il pacchetto giornaliero: 10 ore o 120 km"
+          ],
+          [
+            "p",
+            "Il nostro pacchetto giornaliero prevede un autista per tutta la giornata con una regola chiara: 10 ore o 120 chilometri, a seconda di cosa arriva prima. Conoscete il prezzo dall'inizio, senza sorprese a fine giornata."
+          ],
+          [
+            "img",
+            "/media/blog/gem/gem-6.webp",
+            "Statua in pietra di un uomo in piedi, con dettagli del volto e del copricapo"
+          ],
+          [
+            "cta",
+            "Prenota la visita su WhatsApp"
           ]
         ]
       }
