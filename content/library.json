@@ -379,6 +379,171 @@
         "de": "Jetour X90 Plus, Heckansicht",
         "it": "Jetour X90 Plus, vista posteriore"
       }
+    },
+    {
+      "slug": "grand-egyptian-museum-01",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال جالس لرجل مع طفلين في المتحف المصري الكبير",
+        "en": "Seated statue of a man with two children at the Grand Egyptian Museum",
+        "fr": "Statue assise d'un homme avec deux enfants au Musée égyptien de Grand",
+        "de": "Sitzende Statue eines Mannes mit zwei Kindern im Großen Ägyptischen Museum",
+        "it": "Statua seduta di un uomo con due bambini al Grande Museo Egizio"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-02",
+      "category": "museums",
+      "caption": {
+        "ar": "مجموعة تماثيل خشبية ملونة في المتحف المصري الكبير",
+        "en": "Group of painted wooden statues at the Grand Egyptian Museum",
+        "fr": "Groupe de statues en bois peint au Musée égyptien de Grand",
+        "de": "Gruppe bemalter Holzstatuen im Großen Ägyptischen Museum",
+        "it": "Gruppo di statue in legno dipinto al Grande Museo Egizio"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-03",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال حجري لرجل واقف في المتحف المصري الكبير",
+        "en": "Standing stone statue at the Grand Egyptian Museum",
+        "fr": "Statue en pierre debout au Musée égyptien de Grand",
+        "de": "Stehende Steinstatue im Großen Ägyptischen Museum",
+        "it": "Statua in pietra in piedi al Grande Museo Egizio"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-04",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال جالس من الجرانيت في المتحف المصري الكبير",
+        "en": "Seated granite statue at the Grand Egyptian Museum",
+        "fr": "Statue assise en granit au Musée égyptien de Grand",
+        "de": "Sitzende Granitstatue im Großen Ägyptischen Museum",
+        "it": "Statua seduta in granito al Grande Museo Egizio"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-05",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال خشبي جالس ملون في المتحف المصري الكبير",
+        "en": "Painted wooden seated statue at the Grand Egyptian Museum",
+        "fr": "Statue assise en bois peint au Musée égyptien de Grand",
+        "de": "Bemalte sitzende Holzstatue im Großen Ägyptischen Museum",
+        "it": "Statua seduta in legno dipinto al Grande Museo Egizio"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-06",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال من الحجر الأسود لملك بملامح جانبية",
+        "en": "Dark stone statue of a king in profile",
+        "fr": "Statue en pierre sombre d'un roi de profil",
+        "de": "Dunkle Steinstatue eines Königs im Profil",
+        "it": "Statua in pietra scura di un re di profilo"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-07",
+      "category": "museums",
+      "caption": {
+        "ar": "رأس تمثال حجري لفرعون بالتاج",
+        "en": "Stone head of a pharaoh wearing the royal headdress",
+        "fr": "Tête de statue en pierre d'un pharaon coiffé du némès",
+        "de": "Steinkopf eines Pharaos mit Königshaube",
+        "it": "Testa in pietra di un faraone con il copricapo reale"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-08",
+      "category": "museums",
+      "caption": {
+        "ar": "جزء من تمثال حجري لملك بالتاج",
+        "en": "Part of a stone statue of a king with the headdress",
+        "fr": "Fragment de statue en pierre d'un roi coiffé",
+        "de": "Teil einer Steinstatue eines Königs mit Kopfschmuck",
+        "it": "Frammento di statua in pietra di un re con il copricapo"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-09",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال لرجل وسيدة جالسين من الحجر الجيري",
+        "en": "Limestone statue of a seated man and woman",
+        "fr": "Statue en calcaire d'un homme et d'une femme assis",
+        "de": "Kalksteinstatue eines sitzenden Mannes und einer Frau",
+        "it": "Statua in calcare di un uomo e una donna seduti"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-10",
+      "category": "museums",
+      "caption": {
+        "ar": "رأس تمثال لملك من الحجر",
+        "en": "Stone head of a king",
+        "fr": "Tête en pierre d'un roi",
+        "de": "Steinkopf eines Königs",
+        "it": "Testa in pietra di un re"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-11",
+      "category": "museums",
+      "caption": {
+        "ar": "رؤوس رخامية من العصر الروماني",
+        "en": "Marble heads from the Roman period",
+        "fr": "Têtes en marbre de l'époque romaine",
+        "de": "Marmorköpfe aus der römischen Zeit",
+        "it": "Teste in marmo dell'epoca romana"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-12",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال بيست من الجرانيت لملك",
+        "en": "Granite bust of a king",
+        "fr": "Buste en granit d'un roi",
+        "de": "Granitbüste eines Königs",
+        "it": "Busto in granito di un re"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-13",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال رخامي واقف من العصر الروماني",
+        "en": "Standing marble statue from the Roman period",
+        "fr": "Statue debout en marbre de l'époque romaine",
+        "de": "Stehende Marmorstatue aus der römischen Zeit",
+        "it": "Statua in marmo in piedi dell'epoca romana"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-14",
+      "category": "museums",
+      "caption": {
+        "ar": "تمثال من المتحف المصري الكبير",
+        "en": "Statue at the Grand Egyptian Museum",
+        "fr": "Statue au Musée égyptien de Grand",
+        "de": "Statue im Großen Ägyptischen Museum",
+        "it": "Statua al Grande Museo Egizio"
+      }
+    },
+    {
+      "slug": "grand-egyptian-museum-15",
+      "category": "museums",
+      "caption": {
+        "ar": "عرض من المتحف المصري الكبير",
+        "en": "Display at the Grand Egyptian Museum",
+        "fr": "Vitrine du Musée égyptien de Grand",
+        "de": "Ausstellung im Großen Ägyptischen Museum",
+        "it": "Esposizione al Grande Museo Egizio"
+      }
     }
   ]
 }
