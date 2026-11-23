@@ -1,6 +1,118 @@
 {
   "posts": [
     {
+      "slug": "alexandria-day-trip-private-driver",
+      "draft": true,
+      "date": "2026-11-23",
+      "cover": "/media/tour-alexandria-qaitbay.webp",
+      "cover_alt": {
+        "ar": "قلعة قايتباي في الإسكندرية على البحر",
+        "en": "Qaitbay Citadel in Alexandria by the sea",
+        "fr": "",
+        "de": "",
+        "it": ""
+      },
+      "keywords": [
+        "سائق خاص الإسكندرية",
+        "رحلة يوم الإسكندرية من القاهرة",
+        "سيارة بسائق للإسكندرية",
+        "قلعة قايتباي",
+        "Private driver Alexandria",
+        "Alexandria day trip from Cairo",
+        "Car with driver Alexandria"
+      ],
+      "title": {
+        "ar": "رحلة يوم إلى الإسكندرية بسائق خاص: خطة مريحة من القاهرة",
+        "en": "A day trip to Alexandria with a private driver: a relaxed plan from Cairo"
+      },
+      "excerpt": {
+        "ar": "إزاي تقضي يوم في الإسكندرية بسيارة وسائق خاص: المشوار، والوقفات المهمة، وإيه اللي تتفق عليه قبل ما تتحرك.",
+        "en": "How to spend a day in Alexandria with a private car and driver: the route, the key stops, and what to agree on before you leave."
+      },
+      "seo_title": {
+        "ar": "رحلة يوم للإسكندرية بسائق خاص من القاهرة | رحلة القاهرة",
+        "en": "Alexandria day trip with a private driver from Cairo | Cairo Voyage"
+      },
+      "body": {
+        "ar": [
+          [
+            "p",
+            "الإسكندرية قريبة من القاهرة، ومش محتاج تبات فيها عشان تشوفها. يوم واحد بسيارة وسائق خاص يكفيك تشوف أهم حاجاتها من غير ما تقضي وقتك في الزحمة أو تدور على مواعيد المواصلات."
+          ],
+          [
+            "h2",
+            "ليه سيارة بسائق للرحلة دي؟"
+          ],
+          [
+            "p",
+            "الطريق بين القاهرة والإسكندرية طويل نسبياً، والسواق بيعرف مواعيد الزحمة وأحسن وقت تمشي فيه. كمان تقدر تقف في أماكن على الطريق لو عايز تريح شوية، والسيارة بتفضل معاك طول اليوم."
+          ],
+          [
+            "h2",
+            "أهم المحطات"
+          ],
+          [
+            "p",
+            "قلعة قايتباي على البحر، والكورنيش عند المنتزه وبرج العرب للمشي وشرب حاجة، ومكتبة الإسكندرية لو عندك اهتمام بالتاريخ والكتب. ممكن تضيف أو تشيل حسب وقتك وعدد الركاب."
+          ],
+          [
+            "h2",
+            "اتفق على التفاصيل قبل ما تتحرك"
+          ],
+          [
+            "p",
+            "قبل الرحلة اتفق على المسار وعدد الساعات والوقفات، وعلى السعر كله، عشان تعرف هتدفع كام من الأول. مفيش مفاجآت في آخر اليوم."
+          ],
+          [
+            "h2",
+            "تحب تحجز؟"
+          ],
+          [
+            "p",
+            "ابعتلنا على واتساب من أين وإلى أين والتاريخ وعدد الركاب، ونرد عليك بالسعر الثابت للرحلة."
+          ]
+        ],
+        "en": [
+          [
+            "p",
+            "Alexandria is close enough to Cairo that you do not need to stay overnight to see it. One day with a private car and driver lets you see the highlights without fighting traffic or planning public transport."
+          ],
+          [
+            "h2",
+            "Why a car with a driver for this trip"
+          ],
+          [
+            "p",
+            "The road between Cairo and Alexandria is long, and a local driver knows the traffic and the best times to leave. You can also stop on the way to rest, and the car stays with you all day."
+          ],
+          [
+            "h2",
+            "The main stops"
+          ],
+          [
+            "p",
+            "Qaitbay Citadel by the sea, the corniche at Montaza and Bourj al Arab for a walk and a drink, and the Bibliotheca Alexandrina if you enjoy history and books. Add or skip stops depending on your time and group size."
+          ],
+          [
+            "h2",
+            "Agree on the details before you leave"
+          ],
+          [
+            "p",
+            "Before the trip, agree on the route, the hours, the stops and the total price, so you know what you will pay from the start. No surprises at the end of the day."
+          ],
+          [
+            "h2",
+            "Want to book?"
+          ],
+          [
+            "p",
+            "Send us your pick-up point, destination, date and number of passengers on WhatsApp, and we will reply with a fixed price for the trip."
+          ]
+        ]
+      }
+    },
+    {
       "slug": "private-driver-cairo-guide",
       "draft": false,
       "date": "2026-11-19",
