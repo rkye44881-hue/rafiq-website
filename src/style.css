@@ -950,3 +950,11 @@ p,li,.sub,.meta,small{color:inherit}
   .m-bar a{background:rgba(12,10,31,.45);text-shadow:0 1px 6px rgba(0,0,0,.45)}
   .m-bar .m-wa{background:rgba(12,10,31,.45);color:#E8C879}
 }
+
+/* ---------- readability (round 3): white tip cards on dark band, white hero headline ---------- */
+.dark-band .pr{background:#FFFFFF;color:#171717;border:1px solid rgba(220,199,156,.5)}
+.dark-band .pr h3{color:#0C0A1F}
+.dark-band .pr p{color:#5F5F5F}
+.dark-band .pr svg{color:#8A6D2E}
+.hero-lt h1,.hero-nc h1,.hero-x h1{color:#FFFFFF}
+.hero-lt .sub,.hero-nc .sub{color:rgba(255,255,255,.9)}
