@@ -923,3 +923,11 @@ body.has-picks .fab{display:none}
 /* ---------- text contrast (round 2): headings in deep navy, secondary text in #5F5F5F ---------- */
 h1,h2,h3,.sec-head h2,.sec-h h2{color:var(--heading,#0C0A1F)}
 p,li,.sub,.meta,small{color:inherit}
+
+/* ---------- VIP look: glass buttons and a gold-on-navy WhatsApp button (branch brand-navy-gold-palette) ---------- */
+.hx-main,#bk-send,.hx-ctas .btn-acc{background:rgba(12,10,31,.08);color:#0C0A1F;border:1px solid rgba(232,200,121,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(12,10,31,.10)}
+.hx-main:hover,#bk-send:hover,.hx-ctas .btn-acc:hover{background:rgba(232,200,121,.92);color:#0C0A1F;border-color:#E8C879;box-shadow:0 12px 30px rgba(232,200,121,.38)}
+.fab{background:rgba(12,10,31,.78);color:#E8C879;border:1px solid rgba(232,200,121,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 28px rgba(12,10,31,.28)}
+.fab:hover{background:#E8C879;color:#0C0A1F;border-color:#E8C879}
+.m-wa{background:rgba(232,200,121,.14);color:#E8C879;border:1px solid rgba(232,200,121,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.m-wa:hover{background:rgba(232,200,121,.9);color:#0C0A1F}
