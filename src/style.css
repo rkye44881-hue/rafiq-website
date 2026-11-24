@@ -958,3 +958,10 @@ p,li,.sub,.meta,small{color:inherit}
 .dark-band .pr svg{color:#8A6D2E}
 .hero-lt h1,.hero-nc h1,.hero-x h1{color:#FFFFFF}
 .hero-lt .sub,.hero-nc .sub{color:rgba(255,255,255,.9)}
+
+/* ---------- VIP headline accents (branch brand-navy-gold-palette): highlighted words are readable and distinctive ---------- */
+.hero-lt h1 em,.lt .hero-lt h1 em,.ar .hero-lt h1 em,.hero-nc h1 em{color:#E8C879;font-style:normal;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero-x h1 em{color:#8A6D2E;font-style:normal;position:relative;display:inline-block;padding-bottom:6px}
+.hero-x h1 em::after{content:"";position:absolute;inset-inline:0;bottom:-2px;height:3px;border-radius:3px;background:linear-gradient(90deg,#E8C879,#DCC79C,#E8C879)}
+.hero-x h1 .kw{will-change:auto}
+.hero-lt h1 .kw,.hero-nc h1 .kw{color:inherit}
