@@ -987,3 +987,9 @@ p,li,.sub,.meta,small{color:inherit}
 /* dark cards inside light sections: gold accents (found by the contrast audit) */
 .svc-card.feat,.ta-card{--accent:#E8C879;--accent-strong:#E8C879;--accent-ink:#0C0A1F}
 .svc-card.feat h3,.svc-card.feat p,.svc-card.feat li{color:#FFFFFF}
+
+/* mobile menu: the WhatsApp tile was navy on navy (invisible); now gold with navy text, arrows gold */
+.nav-tile.gold{background:#E8C879;color:#0C0A1F;border-color:transparent}
+.nav-tile.gold .nt-ic{background:rgba(12,10,31,.12);color:#0C0A1F}
+.nav-tile.gold small{color:#0C0A1F;opacity:.85}
+.hdr.open .nav-list a::after{color:#E8C879}
