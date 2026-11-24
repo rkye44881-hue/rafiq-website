@@ -966,3 +966,8 @@ p,li,.sub,.meta,small{color:inherit}
 .hero-x h1 em::after{content:"";position:absolute;inset-inline:0;bottom:-2px;height:3px;border-radius:3px;background:linear-gradient(90deg,#E8C879,#DCC79C,#E8C879)}
 .hero-x h1 .kw{will-change:auto}
 .hero-lt h1 .kw,.hero-nc h1 .kw{color:inherit}
+
+/* ---------- dark heroes in every language: the small line above the headline is readable (branch brand-navy-gold-palette) ---------- */
+.hero-lt .eyebrow,.hero-nc .eyebrow{color:#E8C879;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hero-lt .eyebrow:before,.hero-nc .eyebrow:before{background:#E8C879}
+.hero-lt .eyebrow,.hero-lt .eyebrow *{opacity:1}
