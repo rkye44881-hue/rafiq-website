@@ -971,3 +971,4 @@ p,li,.sub,.meta,small{color:inherit}
 .hero-lt .eyebrow,.hero-nc .eyebrow{color:#E8C879;text-shadow:0 1px 10px rgba(0,0,0,.4)}
 .hero-lt .eyebrow:before,.hero-nc .eyebrow:before{background:#E8C879}
 .hero-lt .eyebrow,.hero-lt .eyebrow *{opacity:1}
+#site .hero-lt .eyebrow,#site .hero-nc .eyebrow{color:#E8C879 !important}
