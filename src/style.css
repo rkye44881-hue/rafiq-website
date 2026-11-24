@@ -956,7 +956,8 @@ p,li,.sub,.meta,small{color:inherit}
 .dark-band .pr h3{color:#0C0A1F}
 .dark-band .pr p{color:#5F5F5F}
 .dark-band .pr svg{color:#8A6D2E}
-.hero-lt h1,.hero-nc h1,.hero-x h1{color:#FFFFFF}
+.hero-lt h1,.hero-nc h1{color:#FFFFFF}
+.hero-x h1{color:#0C0A1F}
 .hero-lt .sub,.hero-nc .sub{color:rgba(255,255,255,.9)}
 
 /* ---------- VIP headline accents (branch brand-navy-gold-palette): highlighted words are readable and distinctive ---------- */
