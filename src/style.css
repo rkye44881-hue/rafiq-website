@@ -931,3 +931,13 @@ p,li,.sub,.meta,small{color:inherit}
 .fab:hover{background:#E8C879;color:#0C0A1F;border-color:#E8C879}
 .m-wa{background:rgba(232,200,121,.14);color:#E8C879;border:1px solid rgba(232,200,121,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .m-wa:hover{background:rgba(232,200,121,.9);color:#0C0A1F}
+
+/* ---------- glass bottom bar (phones) and readable headings on dark cards (branch brand-navy-gold-palette) ---------- */
+@media (max-width:759px){
+  .m-bar{background:rgba(12,10,31,.28);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-top:1px solid rgba(232,200,121,.28);box-shadow:0 -8px 30px rgba(12,10,31,.12)}
+  .m-bar a{background:rgba(255,255,255,.12);color:#FFFFFF;border:1px solid rgba(232,200,121,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .m-bar .m-wa{background:rgba(255,255,255,.12);color:#E8C879;border:1px solid rgba(232,200,121,.6)}
+  .m-bar a:active{background:rgba(232,200,121,.85);color:#0C0A1F}
+}
+.city h3,.city .tx h3,.nc-card h2,.nc-tx h2,.dark-band h2,.dark-band h3,.svc-card.feat h3{color:#FFFFFF}
+.city p,.nc-tx p,.dark-band p{color:rgba(255,255,255,.82)}
