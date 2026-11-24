@@ -97,7 +97,7 @@ function libraryStrip(lang, c) {
   const u = MEDIA_UI[lang], G = GALLERY_UI[lang];
   // a video shows its poster in the strip (no video loads there); the gallery page plays it
   const tile = (p, hidden) => '<img src="' + (p.type === "video" ? "/media/" + p.slug + "-poster-sm.webp" : "/media/library/" + p.slug + "-sm.webp") + '" alt="' + (hidden ? "" : esc(photoCaption(p, lang))) + '" loading="lazy"' + (hidden ? ' aria-hidden="true"' : '') + '>';
-  const eager = (t, i) => t.replace('loading="lazy"', i < 12 ? 'loading="eager"' : 'loading="lazy"');
+  const eager = (t, i) => t;
   const once = c.library.map((p, i) => eager(tile(p, false), i)).join(""), twice = c.library.map((p, i) => eager(tile(p, true), i)).join("");
   return '<section class="sec media-strip" aria-label="' + esc(G.title) + '"><div class="wrap ms-head"><h2 class="ms-title">' + esc(G.title) + '</h2><a class="ms-link" href="/' + lang + '/gallery/">' + esc(G.link) + '</a></div>'
     + '<div class="ms-marquee"><div class="ms-track" style="--n:' + c.library.length + '">' + once + twice + '</div></div></section>';
