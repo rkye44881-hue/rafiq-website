@@ -941,3 +941,12 @@ p,li,.sub,.meta,small{color:inherit}
 }
 .city h3,.city .tx h3,.nc-card h2,.nc-tx h2,.dark-band h2,.dark-band h3,.svc-card.feat h3{color:#FFFFFF}
 .city p,.nc-tx p,.dark-band p{color:rgba(255,255,255,.82)}
+
+/* ---------- readability on dark city cards and glass bar (round 2) ---------- */
+.city-more,.city .tx a{color:#E8C879}
+.city-more:hover{color:#FFFFFF}
+@media (max-width:759px){
+  .m-bar{background:rgba(12,10,31,.62);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%)}
+  .m-bar a{background:rgba(12,10,31,.45);text-shadow:0 1px 6px rgba(0,0,0,.45)}
+  .m-bar .m-wa{background:rgba(12,10,31,.45);color:#E8C879}
+}
