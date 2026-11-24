@@ -631,7 +631,7 @@ body.has-picks .fab{display:none}
 .of-body h2{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.3;margin:0}
 .of-price{display:flex;align-items:baseline;gap:12px}
 .of-price b{font-size:clamp(2.4rem,5vw,3.2rem);font-weight:800;color:var(--of-steel);line-height:1}
-.of-price s{color:#8A8F9B;font-size:1.3rem}
+.of-price s{color:#5F5F5F;font-size:1.3rem}
 .of-body ul{list-style:none;margin:4px 0;padding:0;display:grid;gap:8px}
 .of-body li{display:flex;gap:10px;align-items:center;color:var(--of-ink)}
 .of-body li svg{width:20px;height:20px;flex:none;color:#2E7D5B}
@@ -724,7 +724,7 @@ body.has-picks .fab{display:none}
 .bl-body h2{font-size:clamp(1.3rem,3vw,1.6rem);margin:34px 0 10px;color:var(--dark)}
 .bl-body p{font-size:1.07rem;line-height:1.95;margin-bottom:14px;color:var(--ink)}
 .bl-cta{margin:30px 0 10px}
-.guide-hero.bl-hero h1,.bl-top h1{color:var(--on-dark)}
+.bl-top h1{color:var(--on-dark)}
 .bl-top .eyebrow{color:var(--accent)}
 .bl-top .sub{color:var(--on-dark-muted)}
 .bl-teaser .bl-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:22px}
@@ -972,3 +972,18 @@ p,li,.sub,.meta,small{color:inherit}
 .hero-lt .eyebrow:before,.hero-nc .eyebrow:before{background:#E8C879}
 .hero-lt .eyebrow,.hero-lt .eyebrow *{opacity:1}
 #site .hero-lt .eyebrow,#site .hero-nc .eyebrow{color:#E8C879 !important}
+
+/* ---------- full contrast audit fixes (branch brand-navy-gold-palette) ---------- */
+/* On dark surfaces, the accent colour becomes gold (it was navy, so navy text on navy was invisible) */
+.dark-band,.hero-lt,.hero-nc,.city,.nc-card,.nc-promo,.foot,.enc-toc,.hdr,.nav,.m-bar,.tiles,.nav-tiles,.svcsec,.dark{--accent:#E8C879;--accent-strong:#E8C879;--accent-ink:#0C0A1F}
+.dark-band .btn-acc,.hero-lt .btn-acc,.hero-nc .btn-acc,.city .btn-acc,.nc-card .btn-acc,.enc-toc .btn-acc{background:#E8C879;color:#0C0A1F}
+.dark-band .btn-acc:hover,.hero-lt .btn-acc:hover,.hero-nc .btn-acc:hover{background:#FFFFFF;color:#0C0A1F}
+/* light page-title block on the blog index */
+.bl-index h1,.blog-index h1,.page-guide .hero-lt h1{color:#0C0A1F}
+
+/* TripAdvisor button on the reviews page: navy button, white text (was navy on navy) */
+.ta-btn{background:#0C0A1F;color:#FFFFFF}
+.ta-btn:hover{background:#1A1738;color:#E8C879}
+/* dark cards inside light sections: gold accents (found by the contrast audit) */
+.svc-card.feat,.ta-card{--accent:#E8C879;--accent-strong:#E8C879;--accent-ink:#0C0A1F}
+.svc-card.feat h3,.svc-card.feat p,.svc-card.feat li{color:#FFFFFF}
