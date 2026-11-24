@@ -5,9 +5,9 @@ body{margin:0}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
 :root{
-  --bg:#F3EDE2; --surface:#FFFDF9; --ink:#16203D; --muted:#5D6275; --line:rgba(22,32,61,.12);
-  --dark:#1B2B57; --dark2:#243769; --on-dark:#F5EFE4; --on-dark-muted:#B8BFD3; --dark-line:rgba(245,239,228,.16);
-  --accent:#C9A04A; --accent-strong:#85661F; --accent-ink:#16203D;
+  --bg:#F7F6F3; --surface:#FFFFFF; --ink:#171717; --muted:#8B8B8B; --line:rgba(12,10,31,.10); --gold:#E8C879; --champagne:#DCC79C;
+  --dark:#0C0A1F; --dark2:#1A1738; --on-dark:#FFFFFF; --on-dark-muted:#DCC79C; --dark-line:rgba(220,199,156,.22);
+  --accent:#0C0A1F; --accent-strong:#8A6D2E; --accent-ink:#FFFFFF;
   --display:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -15,9 +15,9 @@ img{max-width:100%;display:block}
   color-scheme:light;
 }
 :root[data-site="ar"]{
-  --bg:#F3EDE2; --surface:#FFFDF9; --ink:#16203D; --muted:#5D6275; --line:rgba(22,32,61,.12);
-  --dark:#1B2B57; --dark2:#243769; --on-dark:#F5EFE4; --on-dark-muted:#B8BFD3; --dark-line:rgba(245,239,228,.16);
-  --accent:#C9A04A; --accent-strong:#85661F; --accent-ink:#16203D;
+  --bg:#F7F6F3; --surface:#FFFFFF; --ink:#171717; --muted:#8B8B8B; --line:rgba(12,10,31,.10); --gold:#E8C879; --champagne:#DCC79C;
+  --dark:#0C0A1F; --dark2:#1A1738; --on-dark:#FFFFFF; --on-dark-muted:#DCC79C; --dark-line:rgba(220,199,156,.22);
+  --accent:#0C0A1F; --accent-strong:#8A6D2E; --accent-ink:#FFFFFF;
   --display:"IBM Plex Sans Arabic",Tahoma,sans-serif;
   --body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
   --radius:18px;
@@ -56,7 +56,7 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;cursor:pointer;font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:var(--radius);transition:background .2s,transform .2s;white-space:nowrap}
 .btn svg{width:18px;height:18px;flex:none}
 .btn-acc{background:var(--accent);color:var(--accent-ink)}
-.btn-acc:hover{background:var(--accent-strong);color:#fff}
+.btn-acc:hover{background:var(--gold);color:var(--accent)}
 .btn-ghost{background:transparent;border:1px solid currentColor;color:inherit}
 .btn-ghost:hover{background:rgba(127,127,127,.12)}
 .hdr .btn{padding:9px 16px}
@@ -914,3 +914,8 @@ body.has-picks .fab{display:none}
 .sp-promises .prom .pr p{color:#4a5068}
 .bl-img{margin:28px auto;max-width:520px}
 .bl-img img{width:100%;height:auto;border-radius:16px;display:block}
+
+/* ---------- brand palette: deep navy, champagne and warm gold (branch brand-navy-gold-palette) ---------- */
+.btn-acc{background:#0C0A1F;color:#FFFFFF}
+.btn-acc:hover{background:#E8C879;color:#0C0A1F;box-shadow:0 8px 22px rgba(232,200,121,.35)}
+.btn:focus-visible{outline:2px solid #E8C879;outline-offset:2px}
