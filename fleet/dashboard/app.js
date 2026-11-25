@@ -356,34 +356,46 @@ function renderBookings() {
   show($("#booking-count"), soon > 0);
 
   const driverOpts = sortedDrivers().map(d => `<option value="${esc(d.id)}">${esc(d.name)}${isOnline(d) ? " ●" : ""}</option>`).join("");
-  const label = { pending: "لسه من غير سواق", assigned: "مع سواق", done: "خلص", cancelled: "ملغي" };
+  const label = { pending: "من غير سواق", assigned: "مع سواق", done: "خلص", cancelled: "ملغي" };
   let lastDay = "";
   $("#bookings-list").innerHTML = list.map(b => {
     const at = toDate(b.at);
     const st = bookingStatus(b);
     const job = b.jobId && state.jobs.get(b.jobId);
-    const head = dayLabel(at) !== lastDay ? `<div class="day-head">${esc(dayLabel(at))}${dayLabel(at) !== longDate(at) ? " — " + esc(longDate(at)) : ""}</div>` : "";
-    lastDay = dayLabel(at);
-    return head + `<div class="booking ${st}" data-id="${esc(b.id)}">
-      <div class="when"><b>${esc(clockOf(at))}</b><span>${esc(b.customerName)}</span>${b.customerPhone ? `<a href="tel:${esc(b.customerPhone)}" class="sub">${esc(b.customerPhone)}</a>` : ""}<span class="badge ${st === "pending" ? "new" : st === "assigned" ? "accepted" : st}">${esc(label[st])}</span></div>
-      <div class="route">📍 ${esc(b.pickup)}${b.dropoff ? `<br>🏁 ${esc(b.dropoff)}` : ""}</div>
-      <div class="meta">
-        ${b.flight ? `<span>✈️ <b dir="ltr">${esc(b.flight)}</b></span>` : ""}
-        <span>💵 السعر <b>${fmt(num(b.price))}</b></span>
-        ${num(b.deposit) ? `<span>عربون <b>${fmt(num(b.deposit))}</b> • الباقي <b>${fmt(due(b))}</b></span>` : ""}
-        ${job ? `<span>🚗 <b>${esc(driverName(job.driverId))}</b> — ${esc(STATUS[job.status] || "")}</span>` : ""}
+    const day = dayLabel(at);
+    const head = day !== lastDay ? `<div class="day-head"><b>${esc(day)}</b>${day !== longDate(at) ? `<span>${esc(longDate(at))}</span>` : ""}</div>` : "";
+    lastDay = day;
+    // "٦:٣٠ ص" → large time, small ص/م
+    const [hm, ampm] = clockOf(at).split(" ");
+    const who = st === "assigned" || st === "done" ? driverName(job.driverId) : label[st];
+    return head + `<article class="ticket ${st}" data-id="${esc(b.id)}">
+      <div class="t-main">
+        <div class="t-head">
+          <div class="t-time">${esc(hm)}<small>${esc(ampm || "")}</small></div>
+          <div class="t-who"><b>${esc(b.customerName)}</b>${b.customerPhone ? `<a href="tel:${esc(b.customerPhone)}">${esc(b.customerPhone)}</a>` : ""}</div>
+        </div>
+        <ol class="t-route"><li>${esc(b.pickup)}</li>${b.dropoff ? `<li>${esc(b.dropoff)}</li>` : ""}</ol>
+        <div class="t-money">
+          <span>السعر<b>${fmt(num(b.price))}</b></span>
+          ${num(b.deposit) ? `<span>العربون<b>${fmt(num(b.deposit))}</b></span><span class="due">الباقي<b>${fmt(due(b))}</b></span>` : ""}
+        </div>
+        ${b.notes ? `<div class="t-notes">${esc(b.notes)}</div>` : ""}
       </div>
-      ${b.notes ? `<div class="sub">📝 ${esc(b.notes)}</div>` : ""}
-      <div class="actions">
-        <button class="small" data-act="card">📤 كارت للسواق</button>
-        <select data-act="assign"><option value="">${job ? "غيّر السواق…" : "ادّيه لسواق…"}</option>${driverOpts}</select>
+      <div class="t-stub">
+        <span class="fl">${b.flight ? `<small>رحلة</small>${esc(b.flight)}` : "🚗"}</span>
+        <span class="who">${esc(who)}${job && st === "assigned" ? `<br>${esc(STATUS[job.status] || "")}` : ""}</span>
+      </div>
+      <div class="t-tear"></div>
+      <div class="t-actions">
+        <button class="small send" data-act="card">📤 كارت للسواق</button>
+        <select data-act="assign" aria-label="السواق"><option value="">${job ? "غيّر السواق" : "ادّيه لسواق"}</option>${driverOpts}</select>
         <button class="small ghost" data-act="remind">⏰ ذكّرني</button>
-        ${b.customerPhone ? '<button class="small ghost" data-act="whatsapp">💬 تذكير العميل</button>' : ""}
+        ${b.customerPhone ? '<button class="small ghost" data-act="whatsapp">💬 العميل</button>' : ""}
         <button class="small ghost" data-act="edit">تعديل</button>
         ${st === "cancelled" ? "" : '<button class="small danger" data-act="cancel">إلغاء</button>'}
       </div>
-    </div>`;
-  }).join("") || `<p class="sub">${state.bookingFilter === "upcoming" ? "مفيش حجوزات جاية" : "مفيش حجوزات قديمة"}</p>`;
+    </article>`;
+  }).join("") || `<p class="sub">${state.bookingFilter === "upcoming" ? "مفيش حجوزات جاية. دوس «+ حجز جديد» وسجّل أول واحد." : "مفيش حجوزات قديمة."}</p>`;
 }
 
 $("#booking-filter").addEventListener("click", e => {
@@ -561,44 +573,114 @@ function wrap(ctx, text, width) {
   return lines;
 }
 
+/* The driver's card is the same trip ticket: green header with the day and time,
+   a flight stub, a tear line, the route as a line between two points, the amount in amber. */
+const CARD = { bg: "#E9EEEC", paper: "#FFFFFF", brand: "#0F5C4D", ink: "#15201D", muted: "#5F6B67", line: "#D5DDDA", amber: "#F2B01E", amberInk: "#3A2A00", mint: "#CFE6E0" };
+const cardFont = (w, px, family = "Alexandria") => `${w} ${px}px "${family}", "IBM Plex Sans Arabic", system-ui, sans-serif`;
+const fontsReady = Promise.all([
+  "400 40px Alexandria", "600 40px Alexandria", "800 40px Alexandria", "400 40px 'IBM Plex Sans Arabic'", "600 40px 'IBM Plex Sans Arabic'"
+].map(f => document.fonts?.load(f, "٠١٢ أبج").catch(() => null)));
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+
 function drawCard(b, withMoney) {
-  const cv = $("#card-canvas"), W = 1080, pad = 70;
-  const font = (w, px) => `${w} ${px}px system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif`;
-  const ctx = cv.getContext("2d");
-  // Measure first, then size the card to its content
-  ctx.font = font(600, 50);
-  const rows = cardLines(b, withMoney).map(([icon, label, value]) => {
-    ctx.font = font(label === "الساعة" ? 800 : 600, label === "الساعة" ? 72 : 50);
-    return { icon, label, value, lines: wrap(ctx, value, W - pad * 2 - 90).slice(0, 3), big: label === "الساعة" };
-  });
-  const H = 230 + rows.reduce((t, r) => t + 52 + r.lines.length * (r.big ? 86 : 64) + 26, 0) + 90;
+  const cv = $("#card-canvas"), ctx = cv.getContext("2d");
+  const W = 1080, M = 40, X0 = M, X1 = W - M, pad = 64, R = X1 - pad;
+  const at = toDate(b.at);
+  const [hm, ampm] = clockOf(at).split(" ");
+  const textW = X1 - X0 - pad * 2 - 40;
+
+  // Lay the body out first, so the ticket is as tall as its content
+  const rows = [];
+  ctx.font = cardFont(600, 44, "IBM Plex Sans Arabic");
+  const pick = wrap(ctx, b.pickup, textW).slice(0, 3);
+  const drop = b.dropoff ? wrap(ctx, b.dropoff, textW).slice(0, 3) : [];
+  const who = [b.customerName, b.customerPhone && "\u2066" + b.customerPhone + "\u2069"].filter(Boolean).join("  —  ");
+  if (who) rows.push({ label: "العميل", lines: wrap(ctx, who, textW + 40).slice(0, 2) });
+  if (b.notes) rows.push({ label: "ملاحظات", lines: wrap(ctx, b.notes, textW + 40).slice(0, 3) });
+  const money = withMoney && due(b) ? fmt(due(b)) + " جنيه" : "";
+  const headH = 330, lineH = 60;
+  const routeH = 56 + pick.length * lineH + (drop.length ? 40 + 56 + drop.length * lineH : 0);
+  const rowsH = rows.reduce((t, r) => t + 52 + r.lines.length * lineH + 28, 0);
+  const H = M + headH + 70 + routeH + 40 + rowsH + (money ? 140 : 0) + 30 + M;
   cv.width = W; cv.height = H;
+
+  ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
+  // Ticket, with its green header
+  ctx.save();
+  roundRect(ctx, X0, M, X1 - X0, H - 2 * M, 40); ctx.clip();
+  ctx.fillStyle = CARD.paper; ctx.fillRect(X0, M, X1 - X0, H);
+  ctx.fillStyle = CARD.brand; ctx.fillRect(X0, M, X1 - X0, headH);
+  ctx.restore();
+
+  ctx.direction = "rtl"; ctx.textAlign = "right"; ctx.textBaseline = "alphabetic";
+  ctx.fillStyle = CARD.mint; ctx.font = cardFont(400, 34, "IBM Plex Sans Arabic");
+  ctx.fillText("مشوار Go2cairo", R, M + 72);
+  ctx.fillStyle = "#FFFFFF"; ctx.font = cardFont(600, 52);
+  ctx.fillText(dayLabel(at) === longDate(at) ? longDate(at) : dayLabel(at) + "، " + longDate(at), R, M + 146);
+  ctx.fillStyle = CARD.amber; ctx.font = cardFont(800, 132);
+  ctx.fillText(hm, R, M + 286);
+  const hmW = ctx.measureText(hm).width;
+  ctx.font = cardFont(600, 48); ctx.fillText(ampm || "", R - hmW - 18, M + 286);
+
+  // Flight stub on the left of the header
+  const sx = X0 + 40, sw = 250, sy = M + 50, sh = headH - 100;
+  roundRect(ctx, sx, sy, sw, sh, 24); ctx.fillStyle = "rgba(255,255,255,.12)"; ctx.fill();
+  ctx.textAlign = "center"; ctx.fillStyle = CARD.mint; ctx.font = cardFont(400, 30, "IBM Plex Sans Arabic");
+  ctx.fillText(b.flight ? "رحلة" : "مشوار", sx + sw / 2, sy + 62);
+  ctx.direction = "ltr"; ctx.fillStyle = "#FFFFFF"; ctx.font = cardFont(800, b.flight && b.flight.length > 7 ? 46 : 58);
+  ctx.fillText(b.flight || "🚗", sx + sw / 2, sy + sh - 52);
   ctx.direction = "rtl";
+
+  // Tear line with a notch on each edge
+  const ty = M + headH;
+  ctx.fillStyle = CARD.bg;
+  ctx.beginPath(); ctx.arc(X0, ty, 26, 0, Math.PI * 2); ctx.arc(X1, ty, 26, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = CARD.line; ctx.lineWidth = 4; ctx.setLineDash([16, 14]);
+  ctx.beginPath(); ctx.moveTo(X0 + 44, ty + 2); ctx.lineTo(X1 - 44, ty + 2); ctx.stroke(); ctx.setLineDash([]);
+
+  // Route: pickup dot, dotted line, drop-off square
   ctx.textAlign = "right";
-  ctx.fillStyle = "#f4f6f5"; ctx.fillRect(0, 0, W, H);
-  ctx.fillStyle = "#0f5c4d"; ctx.fillRect(0, 0, W, 190);
-  ctx.fillStyle = "#ffffff"; ctx.font = font(800, 64); ctx.textBaseline = "middle";
-  ctx.fillText("🚗 مشوار جديد", W - pad, 95);
-  ctx.textAlign = "left"; ctx.font = font(700, 44); ctx.fillStyle = "#cfe6e0";
-  ctx.fillText("Go2cairo", pad, 95);
-  ctx.textAlign = "right"; ctx.textBaseline = "alphabetic";
-  let y = 230;
-  for (const r of rows) {
-    ctx.font = font(500, 36); ctx.fillStyle = "#6b7471";
-    ctx.fillText(r.icon + "  " + r.label, W - pad, y + 36);
-    y += 52;
-    ctx.font = font(r.big ? 800 : 600, r.big ? 72 : 50); ctx.fillStyle = r.big ? "#0f5c4d" : "#1b1f1e";
-    for (const line of r.lines) { y += r.big ? 86 : 64; ctx.fillText(line, W - pad, y - 12); }
-    y += 26;
-    ctx.fillStyle = "#e2e6e4"; ctx.fillRect(pad, y - 10, W - pad * 2, 2);
+  let y = ty + 70;
+  const dotX = R - 10, tx = R - 52;
+  const label = (t, yy) => { ctx.fillStyle = CARD.muted; ctx.font = cardFont(400, 32, "IBM Plex Sans Arabic"); ctx.fillText(t, tx, yy); };
+  const body = (lines, yy) => { ctx.fillStyle = CARD.ink; ctx.font = cardFont(600, 44, "IBM Plex Sans Arabic"); lines.forEach((l, i) => ctx.fillText(l, tx, yy + i * lineH)); };
+  const pickY = y;
+  label("من", y); body(pick, y + 56);
+  y += 56 + pick.length * lineH;
+  ctx.fillStyle = CARD.brand; ctx.beginPath(); ctx.arc(dotX, pickY - 10, 14, 0, Math.PI * 2); ctx.fill();
+  if (drop.length) {
+    y += 40;
+    ctx.strokeStyle = CARD.muted; ctx.lineWidth = 4; ctx.setLineDash([2, 12]); ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(dotX, pickY + 14); ctx.lineTo(dotX, y - 30); ctx.stroke(); ctx.setLineDash([]); ctx.lineCap = "butt";
+    ctx.fillStyle = CARD.ink; ctx.fillRect(dotX - 13, y - 23, 26, 26);
+    label("إلى", y); body(drop, y + 56);
+    y += 56 + drop.length * lineH;
   }
-  ctx.font = font(500, 30); ctx.fillStyle = "#6b7471"; ctx.textAlign = "center";
-  ctx.fillText("Go2cairo", W / 2, H - 40);
+  y += 40;
+  for (const r of rows) {
+    ctx.fillStyle = CARD.line; ctx.fillRect(X0 + pad, y - 14, X1 - X0 - pad * 2, 2);
+    y += 38; label(r.label, y); body(r.lines, y + 56);
+    y += 14 + r.lines.length * lineH + 28;
+  }
+  if (money) {
+    y += 10;
+    roundRect(ctx, X0 + pad, y, X1 - X0 - pad * 2, 110, 24); ctx.fillStyle = CARD.amber; ctx.fill();
+    ctx.fillStyle = CARD.amberInk; ctx.font = cardFont(400, 32, "IBM Plex Sans Arabic");
+    ctx.fillText("المطلوب من العميل", R - 36, y + 66);
+    ctx.textAlign = "left"; ctx.font = cardFont(800, 54); ctx.fillText(money, X0 + pad + 36, y + 74); ctx.textAlign = "right";
+  }
 }
 
 // The image is made as soon as the card opens: phones only allow sharing right on the tap
-function prepareCard() {
+async function prepareCard() {
   const withMoney = $("#card-money").checked;
+  cardFile = null;
+  await fontsReady;
   drawCard(cardBooking, withMoney);
   cardFile = null;
   $("#card-canvas").toBlob(blob => { cardFile = blob && new File([blob], "go2cairo-booking.png", { type: "image/png" }); }, "image/png");
