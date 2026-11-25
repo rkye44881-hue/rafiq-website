@@ -602,7 +602,7 @@ function drawCard(b, withMoney) {
 
   // Lay the body out first, so the ticket is as tall as its content
   const rows = [];
-  ctx.font = cardFont(600, 44, "IBM Plex Sans Arabic");
+  ctx.font = cardFont(600, 40, "IBM Plex Sans Arabic");
   const pick = wrap(ctx, b.pickup, textW).slice(0, 3);
   const drop = b.dropoff ? wrap(ctx, b.dropoff, textW).slice(0, 3) : [];
   const who = [b.customerName, b.customerPhone && "\u2066" + b.customerPhone + "\u2069"].filter(Boolean).join("  —  ");
@@ -626,25 +626,25 @@ function drawCard(b, withMoney) {
   ctx.direction = "rtl"; ctx.textAlign = "right"; ctx.textBaseline = "alphabetic";
   ctx.fillStyle = CARD.mint; ctx.font = cardFont(400, 34, "IBM Plex Sans Arabic");
   ctx.fillText("مشوار Go2cairo", R, M + 72);
-  ctx.fillStyle = "#FFFFFF"; ctx.font = cardFont(600, 52);
+  ctx.fillStyle = "#FFFFFF"; ctx.font = cardFont(600, 46);
   ctx.fillText(dayLabel(at) === longDate(at) ? longDate(at) : dayLabel(at) + "، " + longDate(at), R, M + 146);
-  ctx.fillStyle = CARD.amber; ctx.font = cardFont(800, 132);
+  ctx.fillStyle = CARD.amber; ctx.font = cardFont(600, 104);
   ctx.fillText(hm, R, M + 286);
   const hmW = ctx.measureText(hm).width;
-  ctx.font = cardFont(600, 48); ctx.fillText(ampm || "", R - hmW - 18, M + 286);
+  ctx.font = cardFont(600, 42); ctx.fillText(ampm || "", R - hmW - 16, M + 280);
 
   // Flight stub on the left of the header
   const sx = X0 + 40, sw = 250, sy = M + 50, sh = headH - 100;
   roundRect(ctx, sx, sy, sw, sh, 24); ctx.fillStyle = "rgba(255,255,255,.12)"; ctx.fill();
-  ctx.textAlign = "center"; ctx.fillStyle = CARD.mint; ctx.font = cardFont(400, 30, "IBM Plex Sans Arabic");
+  ctx.textAlign = "center"; ctx.fillStyle = CARD.mint; ctx.font = cardFont(600, 38, "IBM Plex Sans Arabic");
   ctx.fillText(b.flight ? "رحلة" : "مشوار", sx + sw / 2, sy + 62);
   // The text is made smaller until it fits the box (two lines at most), so it never runs over the time
   const flight = b.flight || "🚗";
   ctx.fillStyle = "#FFFFFF";
   ctx.direction = /[\u0600-\u06FF]/.test(flight) ? "rtl" : "ltr";
-  let size = 58, lines = [flight];
+  let size = 46, lines = [flight];
   for (; size >= 24; size -= 4) {
-    ctx.font = cardFont(800, size);
+    ctx.font = cardFont(600, size);
     lines = ctx.measureText(flight).width <= sw - 36 ? [flight] : wrap(ctx, flight, sw - 36);
     if (lines.length <= 2 && lines.every(l => ctx.measureText(l).width <= sw - 36)) break;
   }
@@ -665,7 +665,7 @@ function drawCard(b, withMoney) {
   let y = ty + 70;
   const dotX = R - 10, tx = R - 52;
   const label = (t, yy) => { ctx.fillStyle = CARD.muted; ctx.font = cardFont(400, 32, "IBM Plex Sans Arabic"); ctx.fillText(t, tx, yy); };
-  const body = (lines, yy) => { ctx.fillStyle = CARD.ink; ctx.font = cardFont(600, 44, "IBM Plex Sans Arabic"); lines.forEach((l, i) => ctx.fillText(l, tx, yy + i * lineH)); };
+  const body = (lines, yy) => { ctx.fillStyle = CARD.ink; ctx.font = cardFont(600, 40, "IBM Plex Sans Arabic"); lines.forEach((l, i) => ctx.fillText(l, tx, yy + i * lineH)); };
   const pickY = y;
   label("من", y); body(pick, y + 56);
   y += 56 + pick.length * lineH;
@@ -689,7 +689,7 @@ function drawCard(b, withMoney) {
     roundRect(ctx, X0 + pad, y, X1 - X0 - pad * 2, 110, 24); ctx.fillStyle = CARD.amber; ctx.fill();
     ctx.fillStyle = CARD.amberInk; ctx.font = cardFont(400, 32, "IBM Plex Sans Arabic");
     ctx.fillText("المطلوب من العميل", R - 36, y + 66);
-    ctx.textAlign = "left"; ctx.font = cardFont(800, 54); ctx.fillText(amount, X0 + pad + 36, y + 74); ctx.textAlign = "right";
+    ctx.textAlign = "left"; ctx.font = cardFont(600, 46); ctx.fillText(amount, X0 + pad + 36, y + 74); ctx.textAlign = "right";
   }
 }
 
