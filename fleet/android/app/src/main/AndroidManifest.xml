@@ -53,6 +53,10 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <receiver
+            android:name=".ReminderReceiver"
+            android:exported="false" />
+
         <service
             android:name=".LocationService"
             android:exported="false"

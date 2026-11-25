@@ -135,6 +135,7 @@ class MainActivity : AppCompatActivity() {
         listeners += db.collection("jobs").whereEqualTo("driverId", user.uid).addSnapshotListener { snap, _ ->
             if (snap != null) {
                 jobDocs = snap.documents
+                Reminders.sync(this, snap.documents)
                 showJobs(snap.documents)
                 showStats()
             }
@@ -425,7 +426,11 @@ class MainActivity : AppCompatActivity() {
 
         v.findViewById<TextView>(R.id.title).text = doc.getString("title")?.takeIf { it.isNotBlank() } ?: getString(R.string.job)
         v.findViewById<TextView>(R.id.status).text = getString(statusLabel(status))
-        setLine(v.findViewById(R.id.time), doc.getString("pickupTime"), R.string.label_time)
+        // A booked job carries its exact time; show it with the day name so "tomorrow" never goes stale
+        val at = doc.getTimestamp("at")?.toDate()?.let {
+            java.text.SimpleDateFormat("EEEE d MMMM • h:mm a", java.util.Locale("ar", "EG")).format(it)
+        }
+        setLine(v.findViewById(R.id.time), at ?: doc.getString("pickupTime"), R.string.label_time)
         setLine(v.findViewById(R.id.pickup), pickup, R.string.label_pickup)
         setLine(v.findViewById(R.id.dropoff), dropoff, R.string.label_dropoff)
         setLine(v.findViewById(R.id.customer), listOf(doc.getString("customerName"), phone).filter { !it.isNullOrBlank() }.joinToString(" • "), R.string.label_customer)

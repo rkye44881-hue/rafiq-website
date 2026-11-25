@@ -55,6 +55,11 @@ service cloud.firestore {
         && onlyChanges(['status', 'updatedAt', 'acceptedAt', 'onwayAt', 'arrivedAt', 'doneAt']));
     }
 
+    // Bookings: only the admins see and change them; a driver gets the job made from a booking
+    match /bookings/{id} {
+      allow read, write: if isAdmin();
+    }
+
     // Expenses sent by drivers (fuel, toll, …); the receipt photo is in expensePhotos under the same id
     match /expenses/{id} {
       allow read: if isAdmin() || (signedIn() && resource.data.driverId == request.auth.uid);
