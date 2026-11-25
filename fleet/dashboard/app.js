@@ -3,7 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword }
   from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-import { getFirestore, collection, doc, getDoc, getDocs, query, where, onSnapshot, addDoc, setDoc, updateDoc, deleteDoc, serverTimestamp }
+import { getFirestore, collection, doc, getDoc, getDocs, query, where, onSnapshot, addDoc, setDoc, updateDoc, deleteDoc, serverTimestamp, Timestamp }
   from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 import { loadMaps } from "./maps.js";
 
@@ -67,7 +67,7 @@ const db = getFirestore(app);
 // A second Firebase instance only for creating driver accounts, so the admin stays signed in
 const creatorAuth = getAuth(initializeApp(config, "creator"));
 
-const state = { drivers: new Map(), cars: new Map(), jobs: new Map(), jobFilter: "active", driverFilter: "all", kmDaily: [], follow: null };
+const state = { drivers: new Map(), cars: new Map(), jobs: new Map(), bookings: new Map(), bookingFilter: "upcoming", jobFilter: "active", driverFilter: "all", kmDaily: [], follow: null };
 const makeMap = await loadMaps(config);
 let unsubs = [];
 
@@ -134,6 +134,12 @@ function startApp() {
     state.jobs = new Map(snap.docs.map(d => [d.id, { id: d.id, ...d.data() }]));
     renderAll();
   }));
+  unsubs.push(onSnapshot(collection(db, "bookings"), snap => {
+    state.bookings = new Map(snap.docs.map(d => [d.id, { id: d.id, ...d.data() }]));
+    renderAll();
+  }, () => {
+    $("#bookings-list").innerHTML = '<p class="warn">تعذر تحميل الحجوزات: انشر قواعد الأمان الجديدة في Firebase.</p>';
+  }));
   $("#track-form").date.value = localDay();
   setReportPeriod("today");
   loadKm().then(() => { renderCars(); renderAlerts(); });
@@ -147,6 +153,7 @@ function renderAll() {
   renderSelects();
   renderMap();
   renderAlerts();
+  renderBookings();
   renderJobs();
   renderDrivers();
   renderCars();
@@ -304,11 +311,329 @@ function renderAlerts() {
     const o = oilStatus(c);
     if (o && o.left < 0) alerts.push(`🛢 <b>${esc(c.plate)}</b> متأخرة على تغيير الزيت ${fmt(-o.left)} كم`);
   }
+  for (const b of upcomingBookings()) {
+    const at = toDate(b.at);
+    if (at - Date.now() < 36 * 3600000 && bookingStatus(b) === "pending") {
+      alerts.push(`📅 حجز <b>${esc(b.customerName)}</b> ${esc(dayLabel(at))} الساعة ${esc(clockOf(at))} لسه من غير سواق`);
+    }
+  }
   $("#alerts").innerHTML = alerts.map(a => `<div class="alert">${a}</div>`).join("");
   const badge = $("#alert-count");
   badge.textContent = alerts.length;
   show(badge, alerts.length > 0);
 }
+
+/* ---------- bookings ---------- */
+const clockOf = d => d ? d.toLocaleTimeString("ar-EG", { hour: "numeric", minute: "2-digit" }) : "";
+const longDate = d => d.toLocaleDateString("ar-EG", { weekday: "long", day: "numeric", month: "long" });
+function dayLabel(d) {
+  const day = localDay(d);
+  if (day === localDay()) return "النهارده";
+  if (day === localDay(new Date(Date.now() + 86400000))) return "بكرة";
+  return longDate(d);
+}
+const toInputTime = d => localDay(d) + "T" + String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+const due = b => Math.max(0, num(b.price) - num(b.deposit));
+
+// pending (no driver yet), assigned, done, cancelled — the driver's job decides once there is one
+function bookingStatus(b) {
+  if (b.status === "cancelled") return "cancelled";
+  const job = b.jobId && state.jobs.get(b.jobId);
+  if (!job || job.status === "cancelled") return "pending";
+  return job.status === "done" ? "done" : "assigned";
+}
+const upcomingBookings = () => [...state.bookings.values()]
+  .filter(b => toDate(b.at) && toDate(b.at) > Date.now() - 3 * 3600000 && !["done", "cancelled"].includes(bookingStatus(b)));
+
+function renderBookings() {
+  const now = Date.now();
+  const all = [...state.bookings.values()].filter(b => toDate(b.at));
+  const list = state.bookingFilter === "upcoming"
+    ? upcomingBookings().sort((a, b) => toDate(a.at) - toDate(b.at))
+    : all.filter(b => !upcomingBookings().includes(b)).sort((a, b) => toDate(b.at) - toDate(a.at)).slice(0, 100);
+  const soon = upcomingBookings().filter(b => toDate(b.at) - now < 36 * 3600000).length;
+  $("#booking-count").textContent = soon;
+  show($("#booking-count"), soon > 0);
+
+  const driverOpts = sortedDrivers().map(d => `<option value="${esc(d.id)}">${esc(d.name)}${isOnline(d) ? " ●" : ""}</option>`).join("");
+  const label = { pending: "لسه من غير سواق", assigned: "مع سواق", done: "خلص", cancelled: "ملغي" };
+  let lastDay = "";
+  $("#bookings-list").innerHTML = list.map(b => {
+    const at = toDate(b.at);
+    const st = bookingStatus(b);
+    const job = b.jobId && state.jobs.get(b.jobId);
+    const head = dayLabel(at) !== lastDay ? `<div class="day-head">${esc(dayLabel(at))}${dayLabel(at) !== longDate(at) ? " — " + esc(longDate(at)) : ""}</div>` : "";
+    lastDay = dayLabel(at);
+    return head + `<div class="booking ${st}" data-id="${esc(b.id)}">
+      <div class="when"><b>${esc(clockOf(at))}</b><span>${esc(b.customerName)}</span>${b.customerPhone ? `<a href="tel:${esc(b.customerPhone)}" class="sub">${esc(b.customerPhone)}</a>` : ""}<span class="badge ${st === "pending" ? "new" : st === "assigned" ? "accepted" : st}">${esc(label[st])}</span></div>
+      <div class="route">📍 ${esc(b.pickup)}${b.dropoff ? `<br>🏁 ${esc(b.dropoff)}` : ""}</div>
+      <div class="meta">
+        ${b.flight ? `<span>✈️ <b dir="ltr">${esc(b.flight)}</b></span>` : ""}
+        <span>💵 السعر <b>${fmt(num(b.price))}</b></span>
+        ${num(b.deposit) ? `<span>عربون <b>${fmt(num(b.deposit))}</b> • الباقي <b>${fmt(due(b))}</b></span>` : ""}
+        ${job ? `<span>🚗 <b>${esc(driverName(job.driverId))}</b> — ${esc(STATUS[job.status] || "")}</span>` : ""}
+      </div>
+      ${b.notes ? `<div class="sub">📝 ${esc(b.notes)}</div>` : ""}
+      <div class="actions">
+        <button class="small" data-act="card">📤 كارت للسواق</button>
+        <select data-act="assign"><option value="">${job ? "غيّر السواق…" : "ادّيه لسواق…"}</option>${driverOpts}</select>
+        <button class="small ghost" data-act="remind">⏰ ذكّرني</button>
+        ${b.customerPhone ? '<button class="small ghost" data-act="whatsapp">💬 تذكير العميل</button>' : ""}
+        <button class="small ghost" data-act="edit">تعديل</button>
+        ${st === "cancelled" ? "" : '<button class="small danger" data-act="cancel">إلغاء</button>'}
+      </div>
+    </div>`;
+  }).join("") || `<p class="sub">${state.bookingFilter === "upcoming" ? "مفيش حجوزات جاية" : "مفيش حجوزات قديمة"}</p>`;
+}
+
+$("#booking-filter").addEventListener("click", e => {
+  const b = e.target.closest("button[data-f]");
+  if (!b) return;
+  state.bookingFilter = b.dataset.f;
+  document.querySelectorAll("#booking-filter button").forEach(x => x.classList.toggle("active", x === b));
+  renderBookings();
+});
+
+function resetBookingForm() {
+  const f = $("#booking-form");
+  f.reset();
+  f.id.value = "";
+  $("#booking-form-title").textContent = "حجز جديد";
+  $("#booking-save").textContent = "حفظ الحجز";
+  show(f, false);
+  show($("#booking-new"), true);
+}
+$("#booking-new").addEventListener("click", () => {
+  show($("#booking-form"), true);
+  show($("#booking-new"), false);
+  $("#booking-form").customerName.focus();
+});
+$("#booking-cancel-edit").addEventListener("click", resetBookingForm);
+
+// What the driver's job carries from the booking
+function jobFields(b) {
+  const at = toDate(b.at);
+  return {
+    title: "حجز" + (b.flight ? " • " + b.flight : ""),
+    pickupTime: longDate(at) + " • " + clockOf(at),
+    at: b.at,
+    pickup: b.pickup || "",
+    dropoff: b.dropoff || "",
+    customerName: b.customerName || "",
+    customerPhone: b.customerPhone || "",
+    price: due(b) ? String(due(b)) : "",
+    notes: [b.flight ? "رحلة " + b.flight : "", b.notes || ""].filter(Boolean).join(" — "),
+    bookingId: b.id
+  };
+}
+
+$("#booking-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = Object.fromEntries(new FormData(e.target));
+  const data = {
+    customerName: f.customerName.trim(),
+    customerPhone: f.customerPhone.trim(),
+    at: Timestamp.fromDate(new Date(f.at)),
+    flight: f.flight.trim().toUpperCase(),
+    pickup: f.pickup.trim(),
+    dropoff: f.dropoff.trim(),
+    price: num(f.price),
+    deposit: num(f.deposit),
+    notes: f.notes.trim(),
+    updatedAt: serverTimestamp()
+  };
+  if (f.id) {
+    await updateDoc(doc(db, "bookings", f.id), data);
+    const b = { ...state.bookings.get(f.id), ...data, id: f.id };
+    // Keep the driver's job in step with the booking
+    const job = b.jobId && state.jobs.get(b.jobId);
+    if (job && !["done", "cancelled"].includes(job.status)) await updateDoc(doc(db, "jobs", b.jobId), { ...jobFields(b), updatedAt: serverTimestamp() });
+  } else {
+    await addDoc(collection(db, "bookings"), { ...data, status: "open", createdAt: serverTimestamp() });
+  }
+  resetBookingForm();
+});
+
+$("#bookings-list").addEventListener("change", async e => {
+  if (e.target.dataset.act !== "assign" || !e.target.value) return;
+  const b = state.bookings.get(e.target.closest("[data-id]").dataset.id);
+  const driverId = e.target.value;
+  const job = b.jobId && state.jobs.get(b.jobId);
+  if (job && !["done", "cancelled"].includes(job.status)) {
+    await updateDoc(doc(db, "jobs", b.jobId), { driverId, status: "new", updatedAt: serverTimestamp() });
+  } else {
+    const ref = await addDoc(collection(db, "jobs"), { ...jobFields(b), driverId, status: "new", createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+    await updateDoc(doc(db, "bookings", b.id), { jobId: ref.id, status: "open" });
+  }
+});
+
+$("#bookings-list").addEventListener("click", async e => {
+  const act = e.target.dataset.act;
+  const el = e.target.closest("[data-id]");
+  if (!act || !el || act === "assign") return;
+  const b = state.bookings.get(el.dataset.id);
+  const at = toDate(b.at);
+  if (act === "card") openCard(b);
+  if (act === "remind") downloadIcs(b);
+  if (act === "whatsapp") {
+    const text = `أهلاً ${b.customerName} 👋\nبنفكّرك بمشوارك ${dayLabel(at)} (${longDate(at)}) الساعة ${clockOf(at)}\n📍 من: ${b.pickup}` + (b.dropoff ? `\n🏁 إلى: ${b.dropoff}` : "") + (b.flight ? `\n✈️ رحلة: ${b.flight}` : "") + `\nGo2cairo 🚗`;
+    open("https://wa.me/" + waNumber(b.customerPhone) + "?text=" + encodeURIComponent(text), "_blank");
+  }
+  if (act === "edit") {
+    const f = $("#booking-form");
+    for (const k of ["customerName", "customerPhone", "flight", "pickup", "dropoff", "notes"]) f[k].value = b[k] || "";
+    f.price.value = b.price ?? "";
+    f.deposit.value = b.deposit || "";
+    f.at.value = toInputTime(at);
+    f.id.value = b.id;
+    $("#booking-form-title").textContent = "تعديل حجز " + b.customerName;
+    $("#booking-save").textContent = "حفظ التعديل";
+    show(f, true);
+    show($("#booking-new"), false);
+    f.scrollIntoView({ behavior: "smooth" });
+  }
+  if (act === "cancel" && confirm("إلغاء حجز " + b.customerName + "؟")) {
+    await updateDoc(doc(db, "bookings", b.id), { status: "cancelled", updatedAt: serverTimestamp() });
+    const job = b.jobId && state.jobs.get(b.jobId);
+    if (job && !["done", "cancelled"].includes(job.status)) await updateDoc(doc(db, "jobs", b.jobId), { status: "cancelled", updatedAt: serverTimestamp() });
+  }
+});
+
+// Egyptian 01… numbers become 201… for WhatsApp links
+function waNumber(phone) {
+  const d = String(phone || "").replace(/[٠-٩]/g, c => "٠١٢٣٤٥٦٧٨٩".indexOf(c)).replace(/\D/g, "");
+  if (d.startsWith("00")) return d.slice(2);
+  if (d.startsWith("0") && d.length === 11) return "2" + d;
+  return d;
+}
+
+/* Reminder in the phone's own calendar: it rings a day before and two hours before,
+   even when Go2cairo is closed. */
+function downloadIcs(b) {
+  const at = toDate(b.at);
+  const stamp = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const esc2 = t => String(t || "").replace(/[\\,;]/g, m => "\\" + m).replace(/\n/g, "\\n");
+  const summary = "🚗 " + b.customerName + (b.flight ? " • " + b.flight : "");
+  const desc = [b.pickup && "من: " + b.pickup, b.dropoff && "إلى: " + b.dropoff, b.flight && "رحلة: " + b.flight, b.customerPhone && "العميل: " + b.customerPhone, "السعر: " + fmt(num(b.price)), b.notes].filter(Boolean).join("\n");
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Go2cairo//Bookings//AR", "BEGIN:VEVENT",
+    "UID:" + b.id + "@go2cairo", "DTSTAMP:" + stamp(new Date()), "DTSTART:" + stamp(at), "DTEND:" + stamp(new Date(at.getTime() + 3600000)),
+    "SUMMARY:" + esc2(summary), "LOCATION:" + esc2(b.pickup), "DESCRIPTION:" + esc2(desc),
+    "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc2("بكرة: " + summary), "TRIGGER:-P1D", "END:VALARM",
+    "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + esc2("بعد ساعتين: " + summary), "TRIGGER:-PT2H", "END:VALARM",
+    "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  a.download = "go2cairo-" + localDay(at) + ".ics";
+  document.body.append(a);
+  a.click();
+  a.remove();
+}
+
+/* ---------- card for the driver ---------- */
+let cardBooking = null, cardFile = null;
+
+function cardLines(b, withMoney) {
+  const at = toDate(b.at);
+  return [
+    ["📅", "اليوم", longDate(at)],
+    ["⏰", "الساعة", clockOf(at)],
+    ["📍", "من", b.pickup],
+    ["🏁", "إلى", b.dropoff],
+    ["✈️", "رحلة الطيران", b.flight],
+    ["👤", "العميل", [b.customerName, b.customerPhone].filter(Boolean).join(" — ")],
+    ["💵", "المطلوب من العميل", withMoney && due(b) ? fmt(due(b)) + " جنيه" : ""],
+    ["📝", "ملاحظات", b.notes]
+  ].filter(l => l[2]);
+}
+
+function cardText(b, withMoney) {
+  return "🚗 *مشوار جديد — Go2cairo*\n" + cardLines(b, withMoney).map(([i, k, v]) => `${i} ${k}: ${k === "الساعة" ? "*" + v + "*" : v}`).join("\n");
+}
+
+function wrap(ctx, text, width) {
+  const words = String(text).split(/\s+/), lines = [];
+  let line = "";
+  for (const w of words) {
+    const test = line ? line + " " + w : w;
+    if (ctx.measureText(test).width > width && line) { lines.push(line); line = w; } else line = test;
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+function drawCard(b, withMoney) {
+  const cv = $("#card-canvas"), W = 1080, pad = 70;
+  const font = (w, px) => `${w} ${px}px system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif`;
+  const ctx = cv.getContext("2d");
+  // Measure first, then size the card to its content
+  ctx.font = font(600, 50);
+  const rows = cardLines(b, withMoney).map(([icon, label, value]) => {
+    ctx.font = font(label === "الساعة" ? 800 : 600, label === "الساعة" ? 72 : 50);
+    return { icon, label, value, lines: wrap(ctx, value, W - pad * 2 - 90).slice(0, 3), big: label === "الساعة" };
+  });
+  const H = 230 + rows.reduce((t, r) => t + 52 + r.lines.length * (r.big ? 86 : 64) + 26, 0) + 90;
+  cv.width = W; cv.height = H;
+  ctx.direction = "rtl";
+  ctx.textAlign = "right";
+  ctx.fillStyle = "#f4f6f5"; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "#0f5c4d"; ctx.fillRect(0, 0, W, 190);
+  ctx.fillStyle = "#ffffff"; ctx.font = font(800, 64); ctx.textBaseline = "middle";
+  ctx.fillText("🚗 مشوار جديد", W - pad, 95);
+  ctx.textAlign = "left"; ctx.font = font(700, 44); ctx.fillStyle = "#cfe6e0";
+  ctx.fillText("Go2cairo", pad, 95);
+  ctx.textAlign = "right"; ctx.textBaseline = "alphabetic";
+  let y = 230;
+  for (const r of rows) {
+    ctx.font = font(500, 36); ctx.fillStyle = "#6b7471";
+    ctx.fillText(r.icon + "  " + r.label, W - pad, y + 36);
+    y += 52;
+    ctx.font = font(r.big ? 800 : 600, r.big ? 72 : 50); ctx.fillStyle = r.big ? "#0f5c4d" : "#1b1f1e";
+    for (const line of r.lines) { y += r.big ? 86 : 64; ctx.fillText(line, W - pad, y - 12); }
+    y += 26;
+    ctx.fillStyle = "#e2e6e4"; ctx.fillRect(pad, y - 10, W - pad * 2, 2);
+  }
+  ctx.font = font(500, 30); ctx.fillStyle = "#6b7471"; ctx.textAlign = "center";
+  ctx.fillText("Go2cairo", W / 2, H - 40);
+}
+
+// The image is made as soon as the card opens: phones only allow sharing right on the tap
+function prepareCard() {
+  const withMoney = $("#card-money").checked;
+  drawCard(cardBooking, withMoney);
+  cardFile = null;
+  $("#card-canvas").toBlob(blob => { cardFile = blob && new File([blob], "go2cairo-booking.png", { type: "image/png" }); }, "image/png");
+}
+function openCard(b) {
+  cardBooking = b;
+  $("#card-msg").textContent = "";
+  prepareCard();
+  show($("#card-view"), true);
+}
+$("#card-money").addEventListener("change", prepareCard);
+$("#card-close").addEventListener("click", () => show($("#card-view"), false));
+$("#card-view").addEventListener("click", e => { if (e.target.id === "card-view") show($("#card-view"), false); });
+$("#card-share").addEventListener("click", async () => {
+  const msg = $("#card-msg");
+  if (!cardFile) { msg.textContent = "ثانية… جرّب تاني"; return; }
+  if (navigator.canShare && navigator.canShare({ files: [cardFile] })) {
+    try { await navigator.share({ files: [cardFile] }); } catch (e) { /* closed the share sheet */ }
+  } else {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(cardFile);
+    a.download = cardFile.name;
+    a.click();
+    msg.textContent = "اتحفظت الصورة، ابعتها للسواق من الواتساب";
+  }
+});
+$("#card-copy").addEventListener("click", async () => {
+  const text = cardText(cardBooking, $("#card-money").checked);
+  try {
+    await navigator.clipboard.writeText(text);
+    $("#card-msg").textContent = "اتنسخ ✅ الصقه في واتساب السواق";
+  } catch (e) {
+    prompt("انسخ الكلام ده:", text);
+  }
+});
 
 /* ---------- jobs ---------- */
 $("#job-form").addEventListener("submit", async e => {

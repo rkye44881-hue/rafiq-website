@@ -175,6 +175,7 @@ class LocationService : Service() {
         jobsListener = db.collection("jobs").whereEqualTo("driverId", uid)
             .addSnapshotListener { snap, _ ->
                 if (snap == null) return@addSnapshotListener
+                Reminders.sync(this, snap.documents)
                 for (doc in snap.documents) {
                     val isNew = knownJobs.add(doc.id)
                     if (isNew && !firstJobsSnapshot && doc.getString("status") == JobStatus.NEW) {

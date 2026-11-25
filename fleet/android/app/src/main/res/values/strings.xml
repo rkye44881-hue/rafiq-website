@@ -106,4 +106,6 @@
     <string name="day_span_open">من %1$s • لسه في الدوام</string>
     <string name="shifts_count">%1$d دوام</string>
     <string name="no_shifts">لسه مفيش أيام دوام</string>
+    <string name="reminder_title">⏰ عندك مشوار بعد ساعة</string>
+    <string name="label_time_at">الموعد: %1$s</string>
 </resources>
