@@ -334,6 +334,9 @@ function dayLabel(d) {
 }
 const toInputTime = d => localDay(d) + "T" + String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
 const due = b => Math.max(0, num(b.price) - num(b.deposit));
+const CURRENCY = { EGP: "جنيه", USD: "دولار", EUR: "يورو", SAR: "ريال" };
+const cur = b => CURRENCY[b.currency] || CURRENCY.EGP;
+const money = (n, b) => fmt(n) + " " + cur(b);
 
 // pending (no driver yet), assigned, done, cancelled — the driver's job decides once there is one
 function bookingStatus(b) {
@@ -376,13 +379,13 @@ function renderBookings() {
         </div>
         <ol class="t-route"><li>${esc(b.pickup)}</li>${b.dropoff ? `<li>${esc(b.dropoff)}</li>` : ""}</ol>
         <div class="t-money">
-          <span>السعر<b>${fmt(num(b.price))}</b></span>
-          ${num(b.deposit) ? `<span>العربون<b>${fmt(num(b.deposit))}</b></span><span class="due">الباقي<b>${fmt(due(b))}</b></span>` : ""}
+          <span>السعر<b>${fmt(num(b.price))}<small>${esc(cur(b))}</small></b></span>
+          ${num(b.deposit) ? `<span>العربون<b>${fmt(num(b.deposit))}<small>${esc(cur(b))}</small></b></span><span class="due">الباقي<b>${fmt(due(b))}<small>${esc(cur(b))}</small></b></span>` : ""}
         </div>
         ${b.notes ? `<div class="t-notes">${esc(b.notes)}</div>` : ""}
       </div>
       <div class="t-stub">
-        <span class="fl">${b.flight ? `<small>رحلة</small>${esc(b.flight)}` : "🚗"}</span>
+        <span class="fl${b.flight && b.flight.length > 9 ? " long" : ""}">${b.flight ? `<small>رحلة</small>${esc(b.flight)}` : "🚗"}</span>
         <span class="who">${esc(who)}${job && st === "assigned" ? `<br>${esc(STATUS[job.status] || "")}` : ""}</span>
       </div>
       <div class="t-tear"></div>
@@ -434,6 +437,7 @@ function jobFields(b) {
     customerName: b.customerName || "",
     customerPhone: b.customerPhone || "",
     price: due(b) ? String(due(b)) : "",
+    currency: b.currency || "EGP",
     notes: [b.flight ? "رحلة " + b.flight : "", b.notes || ""].filter(Boolean).join(" — "),
     bookingId: b.id
   };
@@ -451,6 +455,7 @@ $("#booking-form").addEventListener("submit", async e => {
     dropoff: f.dropoff.trim(),
     price: num(f.price),
     deposit: num(f.deposit),
+    currency: f.currency || "EGP",
     notes: f.notes.trim(),
     updatedAt: serverTimestamp()
   };
@@ -496,6 +501,7 @@ $("#bookings-list").addEventListener("click", async e => {
     for (const k of ["customerName", "customerPhone", "flight", "pickup", "dropoff", "notes"]) f[k].value = b[k] || "";
     f.price.value = b.price ?? "";
     f.deposit.value = b.deposit || "";
+    f.currency.value = b.currency || "EGP";
     f.at.value = toInputTime(at);
     f.id.value = b.id;
     $("#booking-form-title").textContent = "تعديل حجز " + b.customerName;
@@ -526,7 +532,7 @@ function downloadIcs(b) {
   const stamp = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   const esc2 = t => String(t || "").replace(/[\\,;]/g, m => "\\" + m).replace(/\n/g, "\\n");
   const summary = "🚗 " + b.customerName + (b.flight ? " • " + b.flight : "");
-  const desc = [b.pickup && "من: " + b.pickup, b.dropoff && "إلى: " + b.dropoff, b.flight && "رحلة: " + b.flight, b.customerPhone && "العميل: " + b.customerPhone, "السعر: " + fmt(num(b.price)), b.notes].filter(Boolean).join("\n");
+  const desc = [b.pickup && "من: " + b.pickup, b.dropoff && "إلى: " + b.dropoff, b.flight && "رحلة: " + b.flight, b.customerPhone && "العميل: " + b.customerPhone, "السعر: " + money(num(b.price), b), b.notes].filter(Boolean).join("\n");
   const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Go2cairo//Bookings//AR", "BEGIN:VEVENT",
     "UID:" + b.id + "@go2cairo", "DTSTAMP:" + stamp(new Date()), "DTSTART:" + stamp(at), "DTEND:" + stamp(new Date(at.getTime() + 3600000)),
     "SUMMARY:" + esc2(summary), "LOCATION:" + esc2(b.pickup), "DESCRIPTION:" + esc2(desc),
@@ -553,7 +559,7 @@ function cardLines(b, withMoney) {
     ["🏁", "إلى", b.dropoff],
     ["✈️", "رحلة الطيران", b.flight],
     ["👤", "العميل", [b.customerName, b.customerPhone].filter(Boolean).join(" — ")],
-    ["💵", "المطلوب من العميل", withMoney && due(b) ? fmt(due(b)) + " جنيه" : ""],
+    ["💵", "المطلوب من العميل", withMoney && due(b) ? money(due(b), b) : ""],
     ["📝", "ملاحظات", b.notes]
   ].filter(l => l[2]);
 }
@@ -602,11 +608,11 @@ function drawCard(b, withMoney) {
   const who = [b.customerName, b.customerPhone && "\u2066" + b.customerPhone + "\u2069"].filter(Boolean).join("  —  ");
   if (who) rows.push({ label: "العميل", lines: wrap(ctx, who, textW + 40).slice(0, 2) });
   if (b.notes) rows.push({ label: "ملاحظات", lines: wrap(ctx, b.notes, textW + 40).slice(0, 3) });
-  const money = withMoney && due(b) ? fmt(due(b)) + " جنيه" : "";
+  const amount = withMoney && due(b) ? money(due(b), b) : "";
   const headH = 330, lineH = 60;
   const routeH = 56 + pick.length * lineH + (drop.length ? 40 + 56 + drop.length * lineH : 0);
   const rowsH = rows.reduce((t, r) => t + 52 + r.lines.length * lineH + 28, 0);
-  const H = M + headH + 70 + routeH + 40 + rowsH + (money ? 140 : 0) + 30 + M;
+  const H = M + headH + 70 + routeH + 40 + rowsH + (amount ? 140 : 0) + 30 + M;
   cv.width = W; cv.height = H;
 
   ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
@@ -632,8 +638,19 @@ function drawCard(b, withMoney) {
   roundRect(ctx, sx, sy, sw, sh, 24); ctx.fillStyle = "rgba(255,255,255,.12)"; ctx.fill();
   ctx.textAlign = "center"; ctx.fillStyle = CARD.mint; ctx.font = cardFont(400, 30, "IBM Plex Sans Arabic");
   ctx.fillText(b.flight ? "رحلة" : "مشوار", sx + sw / 2, sy + 62);
-  ctx.direction = "ltr"; ctx.fillStyle = "#FFFFFF"; ctx.font = cardFont(800, b.flight && b.flight.length > 7 ? 46 : 58);
-  ctx.fillText(b.flight || "🚗", sx + sw / 2, sy + sh - 52);
+  // The text is made smaller until it fits the box (two lines at most), so it never runs over the time
+  const flight = b.flight || "🚗";
+  ctx.fillStyle = "#FFFFFF";
+  ctx.direction = /[\u0600-\u06FF]/.test(flight) ? "rtl" : "ltr";
+  let size = 58, lines = [flight];
+  for (; size >= 24; size -= 4) {
+    ctx.font = cardFont(800, size);
+    lines = ctx.measureText(flight).width <= sw - 36 ? [flight] : wrap(ctx, flight, sw - 36);
+    if (lines.length <= 2 && lines.every(l => ctx.measureText(l).width <= sw - 36)) break;
+  }
+  lines = lines.slice(0, 2);
+  const lh = size * 1.15, top = sy + sh - 44 - (lines.length - 1) * lh;
+  lines.forEach((l, i) => ctx.fillText(l, sx + sw / 2, top + i * lh));
   ctx.direction = "rtl";
 
   // Tear line with a notch on each edge
@@ -667,12 +684,12 @@ function drawCard(b, withMoney) {
     y += 38; label(r.label, y); body(r.lines, y + 56);
     y += 14 + r.lines.length * lineH + 28;
   }
-  if (money) {
+  if (amount) {
     y += 10;
     roundRect(ctx, X0 + pad, y, X1 - X0 - pad * 2, 110, 24); ctx.fillStyle = CARD.amber; ctx.fill();
     ctx.fillStyle = CARD.amberInk; ctx.font = cardFont(400, 32, "IBM Plex Sans Arabic");
     ctx.fillText("المطلوب من العميل", R - 36, y + 66);
-    ctx.textAlign = "left"; ctx.font = cardFont(800, 54); ctx.fillText(money, X0 + pad + 36, y + 74); ctx.textAlign = "right";
+    ctx.textAlign = "left"; ctx.font = cardFont(800, 54); ctx.fillText(amount, X0 + pad + 36, y + 74); ctx.textAlign = "right";
   }
 }
 
@@ -747,7 +764,7 @@ function renderJobs() {
   const driverOpts = sortedDrivers().map(d => `<option value="${esc(d.id)}">${esc(d.name)}</option>`).join("");
   $("#jobs-table").innerHTML = '<tr><th>الطلب</th><th>من / إلى</th><th>العميل</th><th>السائق</th><th>الحالة</th><th></th></tr>'
     + (jobs.map(j => `<tr data-id="${esc(j.id)}">
-      <td><b>${esc(j.title || "طلب")}</b><div class="sub">${esc(j.pickupTime)}${j.price ? " • " + esc(j.price) : ""}</div>${j.notes ? `<div class="sub">${esc(j.notes)}</div>` : ""}</td>
+      <td><b>${esc(j.title || "طلب")}</b><div class="sub">${esc(j.pickupTime)}${j.price ? " • " + esc(j.price) + (j.currency && CURRENCY[j.currency] ? " " + CURRENCY[j.currency] : "") : ""}</div>${j.notes ? `<div class="sub">${esc(j.notes)}</div>` : ""}</td>
       <td>${esc(j.pickup)}<div class="sub">${esc(j.dropoff)}</div></td>
       <td>${esc(j.customerName)}<div class="sub">${esc(j.customerPhone)}</div></td>
       <td><select data-act="assign"><option value="">—</option>${driverOpts}</select></td>
