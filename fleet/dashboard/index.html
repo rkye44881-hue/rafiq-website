@@ -81,11 +81,21 @@
         <label>اسم العميل<input name="customerName" required></label>
         <label>جوال العميل<input name="customerPhone" type="tel"></label>
         <label>اليوم والساعة<input name="at" type="datetime-local" required></label>
-        <label>رقم رحلة الطيران<input name="flight" placeholder="مثال: MS 985" dir="ltr"></label>
+        <label>رقم رحلة الطيران<input name="flight" placeholder="مثال: MS 985 (سيبها فاضية لو مفيش طيارة)" dir="ltr" maxlength="12"></label>
         <label>من (عنوان أو رابط خرائط)<input name="pickup" required></label>
         <label>إلى<input name="dropoff"></label>
-        <label>السعر<input name="price" inputmode="decimal" required></label>
-        <label>العربون المدفوع<input name="deposit" inputmode="decimal" placeholder="0"></label>
+        <label>السعر
+          <span class="money-in">
+            <input name="price" inputmode="decimal" required>
+            <select name="currency" aria-label="العملة">
+              <option value="EGP">جنيه</option>
+              <option value="USD">دولار</option>
+              <option value="EUR">يورو</option>
+              <option value="SAR">ريال</option>
+            </select>
+          </span>
+        </label>
+        <label>العربون المدفوع (بنفس العملة)<input name="deposit" inputmode="decimal" placeholder="0"></label>
         <label class="wide">ملاحظات<textarea name="notes" rows="2"></textarea></label>
         <input type="hidden" name="id">
         <div class="wide form-actions">
