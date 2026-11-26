@@ -431,8 +431,8 @@ class MainActivity : AppCompatActivity() {
             java.text.SimpleDateFormat("EEEE d MMMM • h:mm a", java.util.Locale("ar", "EG")).format(it)
         }
         setLine(v.findViewById(R.id.time), at ?: doc.getString("pickupTime"), R.string.label_time)
-        setLine(v.findViewById(R.id.pickup), pickup, R.string.label_pickup)
-        setLine(v.findViewById(R.id.dropoff), dropoff, R.string.label_dropoff)
+        setLine(v.findViewById(R.id.pickup), placeLabel(pickup), R.string.label_pickup)
+        setLine(v.findViewById(R.id.dropoff), placeLabel(dropoff), R.string.label_dropoff)
         setLine(v.findViewById(R.id.customer), listOf(doc.getString("customerName"), phone).filter { !it.isNullOrBlank() }.joinToString(" • "), R.string.label_customer)
         setLine(v.findViewById(R.id.notes), doc.getString("notes"), R.string.label_notes)
 
@@ -471,6 +471,12 @@ class MainActivity : AppCompatActivity() {
         return v
     }
 
+    /** A Google Maps link shows as a short label; the map buttons still open the link itself. */
+    private fun placeLabel(place: String): String {
+        val url = Regex("https?://\\S+").find(place)?.value ?: return place
+        return place.replace(url, "").trim().ifBlank { getString(R.string.map_link) }
+    }
+
     private fun setLine(view: TextView, value: String?, label: Int) {
         if (value.isNullOrBlank()) {
             view.visibility = View.GONE
@@ -482,7 +488,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigate(place: String) {
         // Coordinates or a Google Maps link work as-is; otherwise search for the address
-        val uri = if (place.startsWith("http")) Uri.parse(place) else Uri.parse("google.navigation:q=" + Uri.encode(place))
+        val url = Regex("https?://\\S+").find(place)?.value
+        val uri = if (url != null) Uri.parse(url) else Uri.parse("google.navigation:q=" + Uri.encode(place))
         try {
             startActivity(Intent(Intent.ACTION_VIEW, uri))
         } catch (_: Exception) {

@@ -377,7 +377,7 @@ function renderBookings() {
           <div class="t-time">${esc(hm)}<small>${esc(ampm || "")}</small></div>
           <div class="t-who"><b>${esc(b.customerName)}</b>${b.customerPhone ? `<a href="tel:${esc(b.customerPhone)}">${esc(b.customerPhone)}</a>` : ""}</div>
         </div>
-        <ol class="t-route"><li>${esc(b.pickup)}</li>${b.dropoff ? `<li>${esc(b.dropoff)}</li>` : ""}</ol>
+        <ol class="t-route"><li>${placeHtml(b.pickup)}</li>${b.dropoff ? `<li>${placeHtml(b.dropoff)}</li>` : ""}</ol>
         <div class="t-money">
           <span>السعر<b>${fmt(num(b.price))}<small>${esc(cur(b))}</small></b></span>
           ${num(b.deposit) ? `<span>العربون<b>${fmt(num(b.deposit))}<small>${esc(cur(b))}</small></b></span><span class="due">الباقي<b>${fmt(due(b))}<small>${esc(cur(b))}</small></b></span>` : ""}
@@ -550,13 +550,25 @@ function downloadIcs(b) {
 /* ---------- card for the driver ---------- */
 let cardBooking = null, cardFile = null;
 
+/* A place can be an address or a Google Maps link (sometimes with words around it).
+   Show the words, or a short label, instead of the long link; keep the link to open it. */
+const placeUrl = p => (String(p || "").match(/https?:\/\/\S+/) || [])[0] || "";
+function placeLabel(p) {
+  const url = placeUrl(p);
+  if (!url) return String(p || "");
+  return String(p).replace(url, "").replace(/\s+/g, " ").trim() || "موقع على خرائط جوجل";
+}
+const placeHtml = p => placeUrl(p)
+  ? `<a href="${esc(placeUrl(p))}" target="_blank" rel="noopener">📍 ${esc(placeLabel(p))}</a>`
+  : esc(p);
+
 function cardLines(b, withMoney) {
   const at = toDate(b.at);
   return [
     ["📅", "اليوم", longDate(at)],
     ["⏰", "الساعة", clockOf(at)],
-    ["📍", "من", b.pickup],
-    ["🏁", "إلى", b.dropoff],
+    ["📍", "من", placeLabel(b.pickup)],
+    ["🏁", "إلى", placeLabel(b.dropoff)],
     ["✈️", "رحلة الطيران", b.flight],
     ["👤", "العميل", [b.customerName, b.customerPhone].filter(Boolean).join(" — ")],
     ["💵", "المطلوب من العميل", withMoney && due(b) ? money(due(b), b) : ""],
@@ -564,8 +576,21 @@ function cardLines(b, withMoney) {
   ].filter(l => l[2]);
 }
 
+// The text that goes with the card: on WhatsApp the phone number and the map links can be tapped
 function cardText(b, withMoney) {
-  return "🚗 *مشوار جديد — Go2cairo*\n" + cardLines(b, withMoney).map(([i, k, v]) => `${i} ${k}: ${k === "الساعة" ? "*" + v + "*" : v}`).join("\n");
+  const at = toDate(b.at);
+  const place = (icon, label, p) => p ? `${icon} ${label}: ${placeLabel(p)}` + (placeUrl(p) ? "\n" + placeUrl(p) : "") : "";
+  return [
+    "🚗 *مشوار جديد — Go2cairo*",
+    `📅 ${longDate(at)} — ⏰ *${clockOf(at)}*`,
+    place("📍", "من", b.pickup),
+    place("🏁", "إلى", b.dropoff),
+    b.flight ? `✈️ رحلة: ${b.flight}` : "",
+    b.customerName ? `👤 العميل: ${b.customerName}` : "",
+    b.customerPhone ? `📞 ${b.customerPhone}` : "",
+    withMoney && due(b) ? `💵 المطلوب من العميل: ${money(due(b), b)}` : "",
+    b.notes ? `📝 ${b.notes}` : ""
+  ].filter(Boolean).join("\n");
 }
 
 function wrap(ctx, text, width) {
@@ -603,8 +628,8 @@ function drawCard(b, withMoney) {
   // Lay the body out first, so the ticket is as tall as its content
   const rows = [];
   ctx.font = cardFont(600, 40, "IBM Plex Sans Arabic");
-  const pick = wrap(ctx, b.pickup, textW).slice(0, 3);
-  const drop = b.dropoff ? wrap(ctx, b.dropoff, textW).slice(0, 3) : [];
+  const pick = wrap(ctx, placeLabel(b.pickup), textW).slice(0, 3);
+  const drop = b.dropoff ? wrap(ctx, placeLabel(b.dropoff), textW).slice(0, 3) : [];
   const who = [b.customerName, b.customerPhone && "\u2066" + b.customerPhone + "\u2069"].filter(Boolean).join("  —  ");
   if (who) rows.push({ label: "العميل", lines: wrap(ctx, who, textW + 40).slice(0, 2) });
   if (b.notes) rows.push({ label: "ملاحظات", lines: wrap(ctx, b.notes, textW + 40).slice(0, 3) });
@@ -714,8 +739,20 @@ $("#card-view").addEventListener("click", e => { if (e.target.id === "card-view"
 $("#card-share").addEventListener("click", async () => {
   const msg = $("#card-msg");
   if (!cardFile) { msg.textContent = "ثانية… جرّب تاني"; return; }
-  if (navigator.canShare && navigator.canShare({ files: [cardFile] })) {
-    try { await navigator.share({ files: [cardFile] }); } catch (e) { /* closed the share sheet */ }
+  // The text (with the number and map link that can be tapped) goes with the photo,
+  // and is also copied, in case the app drops it: then it is pasted under the photo
+  const text = cardText(cardBooking, $("#card-money").checked);
+  navigator.clipboard?.writeText(text).catch(() => {});
+  if (navigator.canShare && navigator.canShare({ files: [cardFile], text })) {
+    try {
+      await navigator.share({ files: [cardFile], text });
+      msg.textContent = "لو النص ما وصلش مع الصورة: هو متنسخ، الصقه في نفس المحادثة";
+    } catch (e) { /* closed the share sheet */ }
+  } else if (navigator.canShare && navigator.canShare({ files: [cardFile] })) {
+    try {
+      await navigator.share({ files: [cardFile] });
+      msg.textContent = "النص فيه الرقم والموقع متنسخ، الصقه تحت الصورة";
+    } catch (e) { /* closed the share sheet */ }
   } else {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(cardFile);

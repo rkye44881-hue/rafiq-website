@@ -18,8 +18,8 @@ android {
         applicationId = "app.rafiq.driver"
         minSdk = 24
         targetSdk = 35
-        versionCode = 7
-        versionName = "1.4"
+        versionCode = 8
+        versionName = "1.4.1"
         buildConfigField("String", "FIREBASE_API_KEY", str("apiKey"))
         buildConfigField("String", "FIREBASE_PROJECT_ID", str("projectId"))
         buildConfigField("String", "FIREBASE_APP_ID", str("androidAppId"))
