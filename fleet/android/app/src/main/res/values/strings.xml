@@ -108,4 +108,5 @@
     <string name="no_shifts">لسه مفيش أيام دوام</string>
     <string name="reminder_title">⏰ عندك مشوار بعد ساعة</string>
     <string name="label_time_at">الموعد: %1$s</string>
+    <string name="map_link">📍 موقع على الخرائط (دوس على زرار الخريطة)</string>
 </resources>
